@@ -545,7 +545,7 @@
         (at ? '<span class="o-at">' + esc(at) + " 기준</span>" : "") +
       "</div>" +
       (rows ? '<ul class="o-list">' + rows + "</ul>" : "") +
-      (lines.length ? '<p class="o-line">' + lines.map(esc).join("<br>") + "</p>" : "") +
+      (lines.length ? lines.map(function (l) { return '<p class="o-line">' + esc(l) + "</p>"; }).join("") : "") +
       impLine +
       '<p class="o-note">해외 배당이며 국내 배트맨·프로토 배당과 다를 수 있습니다. 소수 배당은 미국식 배당을 환산한 값입니다.</p>' +
       "</section>";
