@@ -83,7 +83,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-18T23:52:19+09:00",
+  updatedAt: "2026-11-19T01:02:27+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -133,10 +133,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 7명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 124.0점 · 131.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -265,9 +261,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 124.0,
-                "rpg": 40.0,
-                "tp": 25.0,
                 "players": [
                   {
                     "name": "Pascal Siakam",
@@ -292,8 +285,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.4점 · 야투 44.1%"
                   }
                 ],
-                "focus": "최근 5경기 Pascal Siakam의 평균은 23.8점·야투 50.6%·3점 41.9%입니다. 결장 3명의 시즌 평균 득점 합계는 24.8점입니다. 직전 경기에서는 Pascal Siakam가 19점·3리바운드·2어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 5경기 Pascal Siakam의 평균은 23.8점·야투 50.6%·3점 41.9%입니다. 결장 3명의 시즌 평균 득점 합계는 24.8점입니다. 직전 경기에서는 Pascal Siakam가 19점·3리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 24.8,
                 "injuries": [
@@ -379,9 +372,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 131.0,
-                "rpg": 40.0,
-                "tp": 42.9,
                 "players": [
                   {
                     "name": "Tyrese Maxey",
@@ -408,7 +398,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 19.4점 · 야투 38.2%"
                   }
                 ],
-                "focus": "최근 5경기 Tyrese Maxey의 평균은 23.8점·야투 54.4%·3점 40.6%입니다. 결장 4명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Joel Embiid가 37점·5리바운드·1어시스트입니다.",
+                "focus": "최근 5경기 Tyrese Maxey의 평균은 23.8점·야투 54.4%·3점 40.6%입니다. 결장 4명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Joel Embiid가 37점·5리바운드·1어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.7,
@@ -443,7 +433,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **124.0점 대 131.0점**, 평균 리바운드 40.0개 대 40.0개, 3점 성공률 25.0% 대 42.9%. 평균 득점 차 7.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 2-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -483,10 +472,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 3명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 131.0점 · 123.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -615,9 +600,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 131.0,
-                "rpg": 40.0,
-                "tp": 39.0,
                 "players": [
                   {
                     "name": "Luka Doncic",
@@ -642,7 +624,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 14.8점 · 야투 59.5%"
                   }
                 ],
-                "focus": "최근 4경기 Luka Doncic의 평균은 38.2점·야투 44.7%·3점 33.3%입니다. 결장 2명의 시즌 평균 득점 합계는 39.2점입니다. 직전 경기에서는 Quentin Grimes가 47점·6리바운드·3어시스트입니다.",
+                "focus": "최근 4경기 Luka Doncic의 평균은 38.2점·야투 44.7%·3점 33.3%입니다. 결장 2명의 시즌 평균 득점 합계는 39.2점입니다. 직전 경기에서는 Quentin Grimes가 47점·6리바운드·3어시스트를 기록했습니다.",
                 "injurySummary": "결장 2명(팀 득점 2·3위)",
                 "injuryOut": 2,
                 "injuryPpg": 39.2,
@@ -709,9 +691,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 123.0,
-                "rpg": 42.0,
-                "tp": 28.3,
                 "players": [
                   {
                     "name": "Devin Booker",
@@ -738,7 +717,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 11.2점 · 야투 34.8%"
                   }
                 ],
-                "focus": "최근 5경기 Devin Booker의 평균은 24.6점·야투 48.3%·3점 36.4%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Devin Booker가 20점·4리바운드·8어시스트입니다.",
+                "focus": "최근 5경기 Devin Booker의 평균은 24.6점·야투 48.3%·3점 36.4%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Devin Booker가 20점·4리바운드·8어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -752,7 +731,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **131.0점 대 123.0점**, 평균 리바운드 40.0개 대 42.0개, 3점 성공률 39.0% 대 28.3%. 평균 득점 차 8.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -792,10 +770,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 7명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 105.0점 · 113.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -924,9 +898,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 105.0,
-                "rpg": 46.0,
-                "tp": 32.7,
                 "players": [
                   {
                     "name": "Brandon Miller",
@@ -952,7 +923,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 15.8점 · 야투 46.3%"
                   }
                 ],
-                "focus": "최근 3경기 Brandon Miller의 평균은 15.3점·야투 34.1%·3점 24.0%입니다. 결장 3명의 시즌 평균 득점 합계는 28.1점입니다. 직전 경기에서는 Brandon Miller가 28점·2리바운드·4어시스트입니다.",
+                "focus": "최근 3경기 Brandon Miller의 평균은 15.3점·야투 34.1%·3점 24.0%입니다. 결장 3명의 시즌 평균 득점 합계는 28.1점입니다. 직전 경기에서는 Brandon Miller가 28점·2리바운드·4어시스트를 기록했습니다.",
                 "injurySummary": "결장 3명(팀 득점 3·6·13위)",
                 "injuryOut": 3,
                 "injuryPpg": 28.1,
@@ -1025,9 +996,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 113.0,
-                "rpg": 37.0,
-                "tp": 51.6,
                 "players": [
                   {
                     "name": "Darius Garland",
@@ -1054,7 +1022,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.0점 · 야투 43.3%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Garland의 평균은 21.4점·야투 49.3%·3점 41.9%입니다. 결장 4명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 23점·6리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Darius Garland의 평균은 21.4점·야투 49.3%·3점 41.9%입니다. 결장 4명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 23점·6리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuries": [
@@ -1086,7 +1054,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **105.0점 대 113.0점**, 평균 리바운드 46.0개 대 37.0개, 3점 성공률 32.7% 대 51.6%. 평균 득점 차 8.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -1126,10 +1093,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 6명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 110.0점 · 102.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -1257,9 +1220,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 110.0,
-                "rpg": 48.0,
-                "tp": 30.3,
                 "players": [
                   {
                     "name": "Victor Wembanyama",
@@ -1286,8 +1246,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.2점 · 야투 42.9%"
                   }
                 ],
-                "focus": "최근 5경기 Victor Wembanyama의 평균은 27.6점·야투 63.1%·3점 32.0%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 5경기 Victor Wembanyama의 평균은 27.6점·야투 63.1%·3점 32.0%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuries": [
                   {
@@ -1356,9 +1316,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 102.0,
-                "rpg": 40.0,
-                "tp": 42.5,
                 "players": [
                   {
                     "name": "Keyonte George",
@@ -1383,7 +1340,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 22.8점 · 야투 44.9%"
                   }
                 ],
-                "focus": "최근 4경기 Keyonte George의 평균은 22.2점·야투 42.6%·3점 38.5%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Keyonte George의 평균은 22.2점·야투 42.6%·3점 38.5%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 43.0,
@@ -1419,7 +1376,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **110.0점 대 102.0점**, 평균 리바운드 48.0개 대 40.0개, 3점 성공률 30.3% 대 42.5%. 평균 득점 차 8.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 3-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -1459,10 +1415,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 3명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 94.0점 · 131.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -1591,9 +1543,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 94.0,
-                "rpg": 38.0,
-                "tp": 34.1,
                 "players": [
                   {
                     "name": "Cooper Flagg",
@@ -1620,8 +1569,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.0점 · 야투 44.4%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 23.8점·야투 49.4%·3점 34.8%입니다. 결장 3명의 시즌 평균 득점 합계는 5.2점입니다. 직전 경기에서는 Kyrie Irving가 34점·6리바운드·5어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 5경기 Cooper Flagg의 평균은 23.8점·야투 49.4%·3점 34.8%입니다. 결장 3명의 시즌 평균 득점 합계는 5.2점입니다. 직전 경기에서는 Kyrie Irving가 34점·6리바운드·5어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 5.2,
                 "injuries": [
@@ -1705,9 +1654,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 131.0,
-                "rpg": 52.0,
-                "tp": 41.8,
                 "players": [
                   {
                     "name": "Jayson Tatum",
@@ -1734,13 +1680,12 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.4점 · 야투 40.9%"
                   }
                 ],
-                "focus": "최근 5경기 Jayson Tatum의 평균은 24.8점·야투 40.0%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트입니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jayson Tatum의 평균은 24.8점·야투 40.0%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트를 기록했습니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **94.0점 대 131.0점**, 평균 리바운드 38.0개 대 52.0개, 3점 성공률 34.1% 대 41.8%. 평균 득점 차 37.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -1780,10 +1725,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 2명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 112.0점 · 108.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -1913,9 +1854,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 112.0,
-                "rpg": 50.0,
-                "tp": 36.1,
                 "players": [
                   {
                     "name": "Jalen Brunson",
@@ -1942,7 +1880,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.0점 · 야투 37.9%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 29.0점·야투 47.3%·3점 39.5%입니다. 직전 경기에서는 Jalen Brunson가 31점·5리바운드·5어시스트입니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jalen Brunson의 평균은 29.0점·야투 47.3%·3점 39.5%입니다. 직전 경기에서는 Jalen Brunson가 31점·5리바운드·5어시스트를 기록했습니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               },
@@ -1992,9 +1930,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 108.0,
-                "rpg": 53.0,
-                "tp": 31.4,
                 "players": [
                   {
                     "name": "Scottie Barnes",
@@ -2019,8 +1954,8 @@ window.CLUTCH_DATA = {
                     "sub": "야투 32.4% · 3점 28.6% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 1경기 Scottie Barnes의 평균은 20.0점·야투 50.0%·3점 50.0%입니다. 결장 2명의 시즌 평균 득점 합계는 19.5점입니다. 직전 경기에서는 Ja'Kobe Walter가 25점·1리바운드·2어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 1경기 Scottie Barnes의 평균은 20.0점·야투 50.0%·3점 50.0%입니다. 결장 2명의 시즌 평균 득점 합계는 19.5점입니다. 직전 경기에서는 Ja'Kobe Walter가 25점·1리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuryPpg": 19.5,
                 "injuries": [
@@ -2047,7 +1982,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **112.0점 대 108.0점**, 평균 리바운드 50.0개 대 53.0개, 3점 성공률 36.1% 대 31.4%. 평균 득점 차 4.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -2087,10 +2021,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 5명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 147.0점 · 119.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -2218,9 +2148,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 147.0,
-                "rpg": 56.0,
-                "tp": 45.5,
                 "players": [
                   {
                     "name": "Alperen Sengun",
@@ -2246,8 +2173,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 14.0점 · 야투 52.4%"
                   }
                 ],
-                "focus": "최근 5경기 Alperen Sengun의 평균은 24.0점·야투 57.3%·3점 45.5%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 23점·7리바운드·2어시스트입니다.",
-                "injurySummary": "결장 1명(팀 득점 11위)",
+                "focus": "최근 5경기 Alperen Sengun의 평균은 24.0점·야투 57.3%·3점 45.5%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 23점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 11위) · 출전 불투명 2명",
                 "injuryOut": 1,
                 "injuryPpg": 3.2,
                 "injuries": [
@@ -2319,9 +2246,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 119.0,
-                "rpg": 35.0,
-                "tp": 40.5,
                 "players": [
                   {
                     "name": "Anthony Davis",
@@ -2348,8 +2272,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.6점 · 야투 47.7%"
                   }
                 ],
-                "focus": "최근 4경기 Anthony Davis의 평균은 29.5점·야투 57.1%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트입니다.",
-                "injurySummary": "결장 4명",
+                "focus": "최근 4경기 Anthony Davis의 평균은 29.5점·야투 57.1%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명 · 출전 불투명 1명",
                 "injuryOut": 4,
                 "injuryPpg": 7.2,
                 "injuries": [
@@ -2390,7 +2314,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **147.0점 대 119.0점**, 평균 리바운드 56.0개 대 35.0개, 3점 성공률 45.5% 대 40.5%. 평균 득점 차 28.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -2430,10 +2353,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 6명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 113.0점 · 106.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -2562,9 +2481,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 113.0,
-                "rpg": 55.0,
-                "tp": 30.0,
                 "players": [
                   {
                     "name": "Nickeil Alexander-Walker",
@@ -2591,7 +2507,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.8점 · 야투 39.1%"
                   }
                 ],
-                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 22.0점·야투 36.8%·3점 28.3%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 Jalen Johnson가 27점·11리바운드·10어시스트입니다.",
+                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 22.0점·야투 36.8%·3점 28.3%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 Jalen Johnson가 27점·11리바운드·10어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 32.7,
@@ -2678,9 +2594,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 106.0,
-                "rpg": 53.0,
-                "tp": 33.3,
                 "players": [
                   {
                     "name": "Tyler Herro",
@@ -2707,7 +2620,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.6점 · 야투 46.8%"
                   }
                 ],
-                "focus": "최근 4경기 Tyler Herro의 평균은 20.2점·야투 41.0%·3점 25.0%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Jaime Jaquez Jr.가 22점·6리바운드·4어시스트입니다.",
+                "focus": "최근 4경기 Tyler Herro의 평균은 20.2점·야투 41.0%·3점 25.0%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Jaime Jaquez Jr.가 22점·6리바운드·4어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명(팀 득점 12위)",
                 "injuryOut": 1,
                 "injuryPpg": 3.9,
@@ -2723,7 +2636,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **113.0점 대 106.0점**, 평균 리바운드 55.0개 대 53.0개, 3점 성공률 30.0% 대 33.3%. 평균 득점 차 7.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -2763,10 +2675,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 7명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 125.0점 · 103.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -2895,9 +2803,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 125.0,
-                "rpg": 40.0,
-                "tp": 32.3,
                 "players": [
                   {
                     "name": "Shai Gilgeous-Alexander",
@@ -2921,7 +2826,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 38.5% · 3점 33.3% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 31.0점·야투 49.1%·3점 32.0%입니다. 결장 5명의 시즌 평균 득점 합계는 34.9점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 40점·4리바운드·5어시스트입니다.",
+                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 31.0점·야투 49.1%·3점 32.0%입니다. 결장 5명의 시즌 평균 득점 합계는 34.9점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 40점·4리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 34.9,
@@ -3008,9 +2913,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 103.0,
-                "rpg": 37.0,
-                "tp": 32.6,
                 "players": [
                   {
                     "name": "Darius Acuff Jr.",
@@ -3037,8 +2939,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 16.8점 · 야투 44.4%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 24.4점·야투 41.9%·3점 34.8%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 De'Andre Hunter가 24점·5리바운드·2어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 24.4점·야투 41.9%·3점 34.8%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 De'Andre Hunter가 24점·5리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 2명",
                 "injuryOut": 2,
                 "injuries": [
                   {
@@ -3071,7 +2973,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **125.0점 대 103.0점**, 평균 리바운드 40.0개 대 37.0개, 3점 성공률 32.3% 대 32.6%. 평균 득점 차 22.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -3121,10 +3022,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 4명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 115.0점 · 105.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -3253,9 +3150,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 115.0,
-                "rpg": 46.0,
-                "tp": 38.2,
                 "players": [
                   {
                     "name": "Paolo Banchero",
@@ -3280,7 +3174,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 19.0점 · 야투 43.3%"
                   }
                 ],
-                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Franz Wagner가 35점·9리바운드·12어시스트입니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
+                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Franz Wagner가 35점·9리바운드·12어시스트를 기록했습니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.5,
@@ -3358,9 +3252,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 105.0,
-                "rpg": 40.0,
-                "tp": 35.7,
                 "players": [
                   {
                     "name": "Jayson Tatum",
@@ -3387,13 +3278,12 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.2점 · 야투 40.7%"
                   }
                 ],
-                "focus": "최근 5경기 Jayson Tatum의 평균은 26.4점·야투 44.4%·3점 44.4%입니다. 직전 경기에서는 Jayson Tatum가 32점·6리바운드·6어시스트입니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jayson Tatum의 평균은 26.4점·야투 44.4%·3점 44.4%입니다. 직전 경기에서는 Jayson Tatum가 32점·6리바운드·6어시스트를 기록했습니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **115.0점 대 105.0점**, 평균 리바운드 46.0개 대 40.0개, 3점 성공률 38.2% 대 35.7%. 평균 득점 차 10.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -3433,10 +3323,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 5명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 115.0점 · 126.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -3565,9 +3451,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 115.0,
-                "rpg": 37.0,
-                "tp": 27.3,
                 "players": [
                   {
                     "name": "Norman Powell",
@@ -3593,8 +3476,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.6점 · 야투 48.0%"
                   }
                 ],
-                "focus": "최근 3경기 Norman Powell의 평균은 23.0점·야투 50.0%·3점 38.9%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 24점·5리바운드·3어시스트입니다.",
-                "injurySummary": "결장 2명(팀 득점 2·16위)",
+                "focus": "최근 3경기 Norman Powell의 평균은 23.0점·야투 50.0%·3점 38.9%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 24점·5리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 2·16위) · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuryPpg": 20.9,
                 "injuries": [
@@ -3666,9 +3549,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 126.0,
-                "rpg": 51.0,
-                "tp": 30.3,
                 "players": [
                   {
                     "name": "Donovan Mitchell",
@@ -3692,8 +3572,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 17.5점 · 야투 42.2%"
                   }
                 ],
-                "focus": "최근 4경기 Donovan Mitchell의 평균은 24.0점·야투 49.3%·3점 37.1%입니다. 결장 3명의 시즌 평균 득점 합계는 24.6점입니다. 직전 경기에서는 Tyrese Proctor가 24점·11리바운드·10어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 4경기 Donovan Mitchell의 평균은 24.0점·야투 49.3%·3점 37.1%입니다. 결장 3명의 시즌 평균 득점 합계는 24.6점입니다. 직전 경기에서는 Tyrese Proctor가 24점·11리바운드·10어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 24.6,
                 "injuries": [
@@ -3735,7 +3615,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **115.0점 대 126.0점**, 평균 리바운드 37.0개 대 51.0개, 3점 성공률 27.3% 대 30.3%. 평균 득점 차 11.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -3775,10 +3654,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 9명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 136.0점 · 120.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -3907,9 +3782,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 136.0,
-                "rpg": 48.0,
-                "tp": 43.2,
                 "players": [
                   {
                     "name": "Ty Jerome",
@@ -3935,7 +3807,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.0점 · 야투 42.3%"
                   }
                 ],
-                "focus": "최근 4경기 Ty Jerome의 평균은 21.8점·야투 44.9%·3점 33.3%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cedric Coward가 23점·12리바운드·4어시스트입니다.",
+                "focus": "최근 4경기 Ty Jerome의 평균은 21.8점·야투 44.9%·3점 33.3%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cedric Coward가 23점·12리바운드·4어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 49.4,
@@ -4022,9 +3894,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 120.0,
-                "rpg": 31.0,
-                "tp": 34.4,
                 "players": [
                   {
                     "name": "Anthony Davis",
@@ -4051,8 +3920,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.2점 · 야투 41.2%"
                   }
                 ],
-                "focus": "최근 4경기 Anthony Davis의 평균은 27.2점·야투 54.8%·3점 25.0%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Amen Thompson가 26점·7리바운드·7어시스트입니다.",
-                "injurySummary": "결장 4명",
+                "focus": "최근 4경기 Anthony Davis의 평균은 27.2점·야투 54.8%·3점 25.0%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Amen Thompson가 26점·7리바운드·7어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명 · 출전 불투명 1명",
                 "injuryOut": 4,
                 "injuryPpg": 7.2,
                 "injuries": [
@@ -4093,7 +3962,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **136.0점 대 120.0점**, 평균 리바운드 48.0개 대 31.0개, 3점 성공률 43.2% 대 34.4%. 평균 득점 차 16.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -4133,10 +4001,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 4명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 135.0점 · 123.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -4265,9 +4129,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 135.0,
-                "rpg": 47.0,
-                "tp": 37.1,
                 "players": [
                   {
                     "name": "Tyrese Maxey",
@@ -4293,7 +4154,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 15.0점 · 야투 29.6%"
                   }
                 ],
-                "focus": "최근 5경기 Tyrese Maxey의 평균은 24.4점·야투 52.0%·3점 41.2%입니다. 결장 4명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Jaylen Brown가 31점·2리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Tyrese Maxey의 평균은 24.4점·야투 52.0%·3점 41.2%입니다. 결장 4명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Jaylen Brown가 31점·2리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.7,
@@ -4371,9 +4232,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 123.0,
-                "rpg": 38.0,
-                "tp": 41.9,
                 "players": [
                   {
                     "name": "Michael Porter Jr.",
@@ -4399,13 +4257,12 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 15.0점 · 야투 53.1%"
                   }
                 ],
-                "focus": "최근 4경기 Michael Porter Jr.의 평균은 23.0점·야투 44.4%·3점 36.6%입니다. 직전 경기에서는 Julius Randle가 22점·4리바운드·5어시스트입니다. 이어서 Julius Randle, Nolan Traore가 뒤를 받칩니다.",
+                "focus": "최근 4경기 Michael Porter Jr.의 평균은 23.0점·야투 44.4%·3점 36.6%입니다. 직전 경기에서는 Julius Randle가 22점·4리바운드·5어시스트를 기록했습니다. 이어서 Julius Randle, Nolan Traore가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **135.0점 대 123.0점**, 평균 리바운드 47.0개 대 38.0개, 3점 성공률 37.1% 대 41.9%. 평균 득점 차 12.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -4445,10 +4302,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 1명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 110.0점 · 128.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -4577,9 +4430,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 110.0,
-                "rpg": 52.0,
-                "tp": 27.8,
                 "players": [
                   {
                     "name": "Alperen Sengun",
@@ -4606,8 +4456,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.4점 · 야투 58.5%"
                   }
                 ],
-                "focus": "최근 5경기 Alperen Sengun의 평균은 23.2점·야투 55.7%·3점 41.7%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Amen Thompson가 26점·7리바운드·7어시스트입니다.",
-                "injurySummary": "결장 1명(팀 득점 11위)",
+                "focus": "최근 5경기 Alperen Sengun의 평균은 23.2점·야투 55.7%·3점 41.7%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Amen Thompson가 26점·7리바운드·7어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 11위) · 출전 불투명 2명",
                 "injuryOut": 1,
                 "injuryPpg": 3.2,
                 "injuries": [
@@ -4679,9 +4529,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 128.0,
-                "rpg": 40.0,
-                "tp": 36.0,
                 "players": [
                   {
                     "name": "Giannis Antetokounmpo",
@@ -4708,7 +4555,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 19.0점 · 야투 50.0%"
                   }
                 ],
-                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 30.0점·야투 64.9%·3점 33.3%입니다. 직전 경기에서는 Giannis Antetokounmpo가 34점·14리바운드·8어시스트입니다. 이어서 Bam Adebayo, Davion Mitchell가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 30.0점·야투 64.9%·3점 33.3%입니다. 직전 경기에서는 Giannis Antetokounmpo가 34점·14리바운드·8어시스트를 기록했습니다. 이어서 Bam Adebayo, Davion Mitchell가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음 · 출전 불투명 3명",
                 "injuries": [
                   {
@@ -4736,7 +4583,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **110.0점 대 128.0점**, 평균 리바운드 52.0개 대 40.0개, 3점 성공률 27.8% 대 36.0%. 평균 득점 차 18.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -4776,10 +4622,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 10명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 98.0점 · 106.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -4907,9 +4749,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 98.0,
-                "rpg": 49.0,
-                "tp": 29.3,
                 "players": [
                   {
                     "name": "Deni Avdija",
@@ -4933,7 +4772,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 4경기 Deni Avdija의 평균은 25.2점·야투 54.1%·3점 44.0%입니다. 결장 5명의 시즌 평균 득점 합계는 48.7점입니다. 직전 경기에서는 Damian Lillard가 25점·3리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Deni Avdija의 평균은 25.2점·야투 54.1%·3점 44.0%입니다. 결장 5명의 시즌 평균 득점 합계는 48.7점입니다. 직전 경기에서는 Damian Lillard가 25점·3리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 48.7,
@@ -5019,9 +4858,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 106.0,
-                "rpg": 53.0,
-                "tp": 29.4,
                 "players": [
                   {
                     "name": "Anthony Edwards",
@@ -5046,7 +4882,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 21.0점 · 야투 42.9%"
                   }
                 ],
-                "focus": "결장 5명의 시즌 평균 득점 합계는 51.4점입니다. 직전 경기에서는 Ayo Dosunmu가 30점·4리바운드·5어시스트입니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
+                "focus": "결장 5명의 시즌 평균 득점 합계는 51.4점입니다. 직전 경기에서는 Ayo Dosunmu가 30점·4리바운드·5어시스트를 기록했습니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 51.4,
@@ -5089,7 +4925,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **98.0점 대 106.0점**, 평균 리바운드 49.0개 대 53.0개, 3점 성공률 29.3% 대 29.4%. 평균 득점 차 8.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -5129,10 +4964,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 8명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 94.0점 · 115.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -5261,9 +5092,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 94.0,
-                "rpg": 50.0,
-                "tp": 23.9,
                 "players": [
                   {
                     "name": "Stephen Curry",
@@ -5289,8 +5117,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.8점 · 야투 45.8%"
                   }
                 ],
-                "focus": "최근 4경기 Stephen Curry의 평균은 24.5점·야투 56.9%·3점 51.6%입니다. 결장 3명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 LJ Cryer가 20점·2리바운드·6어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 4경기 Stephen Curry의 평균은 24.5점·야투 56.9%·3점 51.6%입니다. 결장 3명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 LJ Cryer가 20점·2리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 38.2,
                 "injuries": [
@@ -5376,9 +5204,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 115.0,
-                "rpg": 57.0,
-                "tp": 37.5,
                 "players": [
                   {
                     "name": "Zion Williamson",
@@ -5404,7 +5229,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 1경기 26.0점 · 야투 52.9%"
                   }
                 ],
-                "focus": "최근 4경기 Zion Williamson의 평균은 25.0점·야투 61.1%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Nikola Jokic가 26점·8리바운드·10어시스트입니다.",
+                "focus": "최근 4경기 Zion Williamson의 평균은 25.0점·야투 61.1%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Nikola Jokic가 26점·8리바운드·10어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명(팀 득점 3·5·9·13·15위)",
                 "injuryOut": 5,
                 "injuryPpg": 45.4,
@@ -5448,7 +5273,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **94.0점 대 115.0점**, 평균 리바운드 50.0개 대 57.0개, 3점 성공률 23.9% 대 37.5%. 평균 득점 차 21.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -5488,10 +5312,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 2명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 117.0점 · 105.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -5619,9 +5439,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 117.0,
-                "rpg": 51.0,
-                "tp": 44.4,
                 "players": [
                   {
                     "name": "Devin Booker",
@@ -5648,7 +5465,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 8.4점 · 야투 33.3%"
                   }
                 ],
-                "focus": "최근 5경기 Devin Booker의 평균은 24.0점·야투 47.2%·3점 34.4%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Collin Gillespie가 26점·4리바운드·4어시스트입니다.",
+                "focus": "최근 5경기 Devin Booker의 평균은 24.0점·야투 47.2%·3점 34.4%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Collin Gillespie가 26점·4리바운드·4어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -5706,9 +5523,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 105.0,
-                "rpg": 35.0,
-                "tp": 30.0,
                 "players": [
                   {
                     "name": "Jamal Murray",
@@ -5735,7 +5549,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 10.0점 · 야투 40.4%"
                   }
                 ],
-                "focus": "최근 5경기 Jamal Murray의 평균은 24.2점·야투 54.9%·3점 44.8%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 26점·8리바운드·10어시스트입니다.",
+                "focus": "최근 5경기 Jamal Murray의 평균은 24.2점·야투 54.9%·3점 44.8%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 26점·8리바운드·10어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -5749,7 +5563,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **117.0점 대 105.0점**, 평균 리바운드 51.0개 대 35.0개, 3점 성공률 44.4% 대 30.0%. 평균 득점 차 12.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -5799,10 +5612,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 2명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 111.0점 · 102.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -5930,9 +5739,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 111.0,
-                "rpg": 44.0,
-                "tp": 34.3,
                 "players": [
                   {
                     "name": "Jalen Brunson",
@@ -5959,7 +5765,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.0점 · 야투 39.0%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 28.4점·야투 46.4%·3점 42.4%입니다. 직전 경기에서는 Karl-Anthony Towns가 28점·17리바운드·3어시스트입니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jalen Brunson의 평균은 28.4점·야투 46.4%·3점 42.4%입니다. 직전 경기에서는 Karl-Anthony Towns가 28점·17리바운드·3어시스트를 기록했습니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               },
@@ -6009,9 +5815,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 102.0,
-                "rpg": 23.0,
-                "tp": 40.0,
                 "players": [
                   {
                     "name": "Scottie Barnes",
@@ -6036,8 +5839,8 @@ window.CLUTCH_DATA = {
                     "sub": "야투 32.4% · 3점 28.6% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 1경기 Scottie Barnes의 평균은 30.0점·야투 48.1%·3점 50.0%입니다. 결장 2명의 시즌 평균 득점 합계는 19.5점입니다. 직전 경기에서는 Scottie Barnes가 30점·9리바운드·4어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 1경기 Scottie Barnes의 평균은 30.0점·야투 48.1%·3점 50.0%입니다. 결장 2명의 시즌 평균 득점 합계는 19.5점입니다. 직전 경기에서는 Scottie Barnes가 30점·9리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuryPpg": 19.5,
                 "injuries": [
@@ -6064,7 +5867,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **111.0점 대 102.0점**, 평균 리바운드 44.0개 대 23.0개, 3점 성공률 34.3% 대 40.0%. 평균 득점 차 9.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 2-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -6104,10 +5906,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 10명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 105.0점 · 106.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -6235,9 +6033,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 105.0,
-                "rpg": 46.0,
-                "tp": 36.4,
                 "players": [
                   {
                     "name": "Deni Avdija",
@@ -6262,7 +6057,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 5경기 Deni Avdija의 평균은 25.6점·야투 55.0%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 48.7점입니다. 직전 경기에서는 Deni Avdija가 27점·8리바운드·4어시스트입니다.",
+                "focus": "최근 5경기 Deni Avdija의 평균은 25.6점·야투 55.0%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 48.7점입니다. 직전 경기에서는 Deni Avdija가 27점·8리바운드·4어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 48.7,
@@ -6348,9 +6143,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 106.0,
-                "rpg": 46.0,
-                "tp": 45.0,
                 "players": [
                   {
                     "name": "Anthony Edwards",
@@ -6375,7 +6167,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 18.6점 · 야투 39.1%"
                   }
                 ],
-                "focus": "결장 5명의 시즌 평균 득점 합계는 51.4점입니다. 직전 경기에서는 Terrence Shannon Jr.가 34점·3리바운드·6어시스트입니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
+                "focus": "결장 5명의 시즌 평균 득점 합계는 51.4점입니다. 직전 경기에서는 Terrence Shannon Jr.가 34점·3리바운드·6어시스트를 기록했습니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 51.4,
@@ -6418,7 +6210,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **105.0점 대 106.0점**으로 비슷하고, 평균 리바운드 46.0개 대 46.0개, 3점 성공률 36.4% 대 45.0%. 3점 성공률 차 8.6%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 2-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -6458,10 +6249,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 7명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 105.0점 · 93.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -6589,9 +6376,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 105.0,
-                "rpg": 43.0,
-                "tp": 24.0,
                 "players": [
                   {
                     "name": "Cade Cunningham",
@@ -6618,7 +6402,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.8점 · 야투 43.8%"
                   }
                 ],
-                "focus": "최근 5경기 Cade Cunningham의 평균은 28.4점·야투 46.9%·3점 25.0%입니다. 결장 5명의 시즌 평균 득점 합계는 44.6점입니다. 직전 경기에서는 Cade Cunningham가 33점·5리바운드·8어시스트입니다.",
+                "focus": "최근 5경기 Cade Cunningham의 평균은 28.4점·야투 46.9%·3점 25.0%입니다. 결장 5명의 시즌 평균 득점 합계는 44.6점입니다. 직전 경기에서는 Cade Cunningham가 33점·5리바운드·8어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명(팀 득점 2·4·9·11·14위)",
                 "injuryOut": 5,
                 "injuryPpg": 44.6,
@@ -6706,9 +6490,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 93.0,
-                "rpg": 43.0,
-                "tp": 22.5,
                 "players": [
                   {
                     "name": "Victor Wembanyama",
@@ -6735,8 +6516,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.2점 · 야투 47.6%"
                   }
                 ],
-                "focus": "최근 5경기 Victor Wembanyama의 평균은 27.8점·야투 63.4%·3점 37.9%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Dylan Harper가 31점·9리바운드·4어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 5경기 Victor Wembanyama의 평균은 27.8점·야투 63.4%·3점 37.9%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Dylan Harper가 31점·9리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuries": [
                   {
@@ -6762,7 +6543,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **105.0점 대 93.0점**, 평균 리바운드 43.0개 대 43.0개, 3점 성공률 24.0% 대 22.5%. 평균 득점 차 12.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -6802,10 +6582,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 8명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 132.0점 · 107.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -6934,9 +6710,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 132.0,
-                "rpg": 46.0,
-                "tp": 52.6,
                 "players": [
                   {
                     "name": "Keyonte George",
@@ -6961,7 +6734,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 23.6점 · 야투 44.4%"
                   }
                 ],
-                "focus": "최근 4경기 Keyonte George의 평균은 18.0점·야투 34.4%·3점 29.2%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Mo Bamba가 26점·5리바운드·4어시스트입니다.",
+                "focus": "최근 4경기 Keyonte George의 평균은 18.0점·야투 34.4%·3점 29.2%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Mo Bamba가 26점·5리바운드·4어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 43.0,
@@ -7041,9 +6814,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 107.0,
-                "rpg": 31.0,
-                "tp": 37.8,
                 "players": [
                   {
                     "name": "Darius Garland",
@@ -7070,7 +6840,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 11.8점 · 야투 36.4%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Garland의 평균은 22.8점·야투 54.2%·3점 42.4%입니다. 결장 4명이 명단에서 빠집니다. 직전 경기에서는 Darius Garland가 27점·6리바운드·7어시스트입니다.",
+                "focus": "최근 5경기 Darius Garland의 평균은 22.8점·야투 54.2%·3점 42.4%입니다. 결장 4명이 명단에서 빠집니다. 직전 경기에서는 Darius Garland가 27점·6리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuries": [
@@ -7102,7 +6872,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **132.0점 대 107.0점**, 평균 리바운드 46.0개 대 31.0개, 3점 성공률 52.6% 대 37.8%. 평균 득점 차 25.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -7142,10 +6911,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 5명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 114.0점 · 118.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -7276,9 +7041,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 114.0,
-                "rpg": 51.0,
-                "tp": 33.3,
                 "players": [
                   {
                     "name": "Brandon Miller",
@@ -7305,7 +7067,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.0점 · 야투 43.1%"
                   }
                 ],
-                "focus": "최근 3경기 Brandon Miller의 평균은 7.7점·야투 17.1%·3점 10.5%입니다. 결장 3명의 시즌 평균 득점 합계는 28.1점입니다. 직전 경기에서는 Coby White가 21점·0리바운드·1어시스트입니다.",
+                "focus": "최근 3경기 Brandon Miller의 평균은 7.7점·야투 17.1%·3점 10.5%입니다. 결장 3명의 시즌 평균 득점 합계는 28.1점입니다. 직전 경기에서는 Coby White가 21점·0리바운드·1어시스트를 기록했습니다.",
                 "injurySummary": "결장 3명(팀 득점 3·6·13위)",
                 "injuryOut": 3,
                 "injuryPpg": 28.1,
@@ -7379,9 +7141,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 118.0,
-                "rpg": 50.0,
-                "tp": 36.0,
                 "players": [
                   {
                     "name": "Luka Doncic",
@@ -7407,7 +7166,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.6점 · 야투 61.7%"
                   }
                 ],
-                "focus": "최근 4경기 Luka Doncic의 평균은 40.0점·야투 47.2%·3점 35.3%입니다. 결장 2명의 시즌 평균 득점 합계는 39.2점입니다. 직전 경기에서는 Luka Doncic가 43점·3리바운드·9어시스트입니다.",
+                "focus": "최근 4경기 Luka Doncic의 평균은 40.0점·야투 47.2%·3점 35.3%입니다. 결장 2명의 시즌 평균 득점 합계는 39.2점입니다. 직전 경기에서는 Luka Doncic가 43점·3리바운드·9어시스트를 기록했습니다.",
                 "injurySummary": "결장 2명(팀 득점 2·3위)",
                 "injuryOut": 2,
                 "injuryPpg": 39.2,
@@ -7430,7 +7189,6 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "두 팀 시즌 평균 득점 **114.0점 대 118.0점**, 평균 리바운드 51.0개 대 50.0개, 3점 성공률 33.3% 대 36.0%. 평균 득점 차 4.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
             "note": "출전 여부는 ESPN 2026-11-18 23:49 기준이며 경기 전까지 변동될 수 있습니다."
@@ -7495,7 +7253,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "세트 승리 수 차가 4입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "세트 승리 수 차가 4입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -7646,7 +7404,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "리그 3·4위로 바로 옆 순위, 승점 차가 3점, 세트 승리 수 차가 3입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "리그 3·4위로 바로 옆 순위, 승점 차가 3점, 세트 승리 수 차가 3입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -7898,7 +7656,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.6점 · 야투 47.2%"
                   }
                 ],
-                "focus": "최근 3경기 Ty Jerome의 평균은 22.0점·야투 43.6%·3점 34.8%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트입니다.",
+                "focus": "최근 3경기 Ty Jerome의 평균은 22.0점·야투 43.6%·3점 34.8%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 49.4,
@@ -8013,8 +7771,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 18.0점 · 야투 43.5%"
                   }
                 ],
-                "focus": "최근 4경기 Donovan Mitchell의 평균은 24.5점·야투 51.4%·3점 37.0%입니다. 결장 3명의 시즌 평균 득점 합계는 24.6점입니다. 직전 경기에서는 Donovan Mitchell가 39점·4리바운드·4어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 4경기 Donovan Mitchell의 평균은 24.5점·야투 51.4%·3점 37.0%입니다. 결장 3명의 시즌 평균 득점 합계는 24.6점입니다. 직전 경기에서는 Donovan Mitchell가 39점·4리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 24.6,
                 "injuries": [
@@ -8210,8 +7968,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 16.2점 · 야투 63.2%"
                   }
                 ],
-                "focus": "최근 5경기 Alperen Sengun의 평균은 24.8점·야투 63.5%·3점 45.5%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 23점·7리바운드·2어시스트입니다.",
-                "injurySummary": "결장 1명(팀 득점 11위)",
+                "focus": "최근 5경기 Alperen Sengun의 평균은 24.8점·야투 63.5%·3점 45.5%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 23점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 11위) · 출전 불투명 2명",
                 "injuryOut": 1,
                 "injuryPpg": 3.2,
                 "injuries": [
@@ -8308,8 +8066,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.5점 · 야투 40.9%"
                   }
                 ],
-                "focus": "최근 5경기 Pascal Siakam의 평균은 26.0점·야투 51.8%·3점 37.9%입니다. 결장 3명의 시즌 평균 득점 합계는 24.8점입니다. 직전 경기에서는 Pascal Siakam가 31점·2리바운드·2어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 5경기 Pascal Siakam의 평균은 26.0점·야투 51.8%·3점 37.9%입니다. 결장 3명의 시즌 평균 득점 합계는 24.8점입니다. 직전 경기에서는 Pascal Siakam가 31점·2리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 24.8,
                 "injuries": [
@@ -8507,7 +8265,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.8점 · 야투 42.9%"
                   }
                 ],
-                "focus": "최근 4경기 Tyler Herro의 평균은 15.8점·야투 34.5%·3점 20.8%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Kasparas Jakucionis가 25점·5리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Tyler Herro의 평균은 15.8점·야투 34.5%·3점 20.8%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Kasparas Jakucionis가 25점·5리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명(팀 득점 12위)",
                 "injuryOut": 1,
                 "injuryPpg": 3.9,
@@ -8596,7 +8354,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.8점 · 야투 49.2%"
                   }
                 ],
-                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 30.0점·야투 67.4%·3점 37.5%입니다. 직전 경기에서는 Giannis Antetokounmpo가 20점·13리바운드·6어시스트입니다. 이어서 Bam Adebayo, Davion Mitchell가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 30.0점·야투 67.4%·3점 37.5%입니다. 직전 경기에서는 Giannis Antetokounmpo가 20점·13리바운드·6어시스트를 기록했습니다. 이어서 Bam Adebayo, Davion Mitchell가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음 · 출전 불투명 3명",
                 "injuries": [
                   {
@@ -8780,7 +8538,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 22.8점 · 야투 43.3%"
                   }
                 ],
-                "focus": "최근 5경기 Tyrese Maxey의 평균은 25.8점·야투 56.9%·3점 48.5%입니다. 결장 4명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Joel Embiid가 37점·5리바운드·1어시스트입니다.",
+                "focus": "최근 5경기 Tyrese Maxey의 평균은 25.8점·야투 56.9%·3점 48.5%입니다. 결장 4명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Joel Embiid가 37점·5리바운드·1어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.7,
@@ -8886,7 +8644,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 21.2점 · 야투 47.5%"
                   }
                 ],
-                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Desmond Bane가 24점·8리바운드·5어시스트입니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
+                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Desmond Bane가 24점·8리바운드·5어시스트를 기록했습니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.5,
@@ -9074,8 +8832,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.8점 · 야투 50.9%"
                   }
                 ],
-                "focus": "최근 3경기 Norman Powell의 평균은 28.0점·야투 57.1%·3점 36.8%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 27점·2리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명(팀 득점 2·16위)",
+                "focus": "최근 3경기 Norman Powell의 평균은 28.0점·야투 57.1%·3점 36.8%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 27점·2리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 2·16위) · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuryPpg": 20.9,
                 "injuries": [
@@ -9177,7 +8935,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 16.8점 · 야투 52.0%"
                   }
                 ],
-                "focus": "최근 4경기 Michael Porter Jr.의 평균은 22.8점·야투 45.9%·3점 35.1%입니다. 직전 경기에서는 Julius Randle가 33점·6리바운드·1어시스트입니다. 이어서 Julius Randle, Nolan Traore가 뒤를 받칩니다.",
+                "focus": "최근 4경기 Michael Porter Jr.의 평균은 22.8점·야투 45.9%·3점 35.1%입니다. 직전 경기에서는 Julius Randle가 33점·6리바운드·1어시스트를 기록했습니다. 이어서 Julius Randle, Nolan Traore가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               }
@@ -9339,8 +9097,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.0점 · 야투 48.4%"
                   }
                 ],
-                "focus": "최근 5경기 Anthony Davis의 평균은 26.4점·야투 54.5%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트입니다.",
-                "injurySummary": "결장 4명",
+                "focus": "최근 5경기 Anthony Davis의 평균은 26.4점·야투 54.5%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명 · 출전 불투명 1명",
                 "injuryOut": 4,
                 "injuryPpg": 7.2,
                 "injuries": [
@@ -9452,8 +9210,8 @@ window.CLUTCH_DATA = {
                     "sub": "야투 32.4% · 3점 28.6% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 2경기 Scottie Barnes의 평균은 25.0점·야투 48.8%·3점 50.0%입니다. 결장 2명의 시즌 평균 득점 합계는 19.5점입니다. 직전 경기에서는 Ja'Kobe Walter가 25점·1리바운드·2어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 2경기 Scottie Barnes의 평균은 25.0점·야투 48.8%·3점 50.0%입니다. 결장 2명의 시즌 평균 득점 합계는 19.5점입니다. 직전 경기에서는 Ja'Kobe Walter가 25점·1리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuryPpg": 19.5,
                 "injuries": [
@@ -9634,7 +9392,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 21.8점 · 야투 46.8%"
                   }
                 ],
-                "focus": "최근 5경기 Cade Cunningham의 평균은 28.6점·야투 48.5%·3점 29.6%입니다. 결장 5명의 시즌 평균 득점 합계는 44.6점입니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트입니다.",
+                "focus": "최근 5경기 Cade Cunningham의 평균은 28.6점·야투 48.5%·3점 29.6%입니다. 결장 5명의 시즌 평균 득점 합계는 44.6점입니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명(팀 득점 2·4·9·11·14위)",
                 "injuryOut": 5,
                 "injuryPpg": 44.6,
@@ -9748,7 +9506,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 46.5% · 3점 37.7% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 4경기 Zion Williamson의 평균은 22.8점·야투 51.7%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트입니다.",
+                "focus": "최근 4경기 Zion Williamson의 평균은 22.8점·야투 51.7%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명(팀 득점 3·5·9·13·15위)",
                 "injuryOut": 5,
                 "injuryPpg": 45.4,
@@ -9947,7 +9705,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.8점 · 야투 41.5%"
                   }
                 ],
-                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 20.8점·야투 36.7%·3점 24.1%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 CJ McCollum가 20점·4리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 20.8점·야투 36.7%·3점 24.1%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 CJ McCollum가 20점·4리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 32.7,
@@ -10060,7 +9818,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 38.5% · 3점 33.3% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 32.8점·야투 51.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 34.9점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 37점·2리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 32.8점·야투 51.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 34.9점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 37점·2리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 34.9,
@@ -10258,8 +10016,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.0점 · 야투 45.8%"
                   }
                 ],
-                "focus": "최근 3경기 Stephen Curry의 평균은 23.0점·야투 62.5%·3점 52.6%입니다. 결장 3명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 3경기 Stephen Curry의 평균은 23.0점·야투 62.5%·3점 52.6%입니다. 결장 3명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 38.2,
                 "injuries": [
@@ -10373,8 +10131,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.4점 · 야투 38.1%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 23.0점·야투 47.6%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 5.2점입니다. 직전 경기에서는 Zaccharie Risacher가 18점·5리바운드·0어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 5경기 Cooper Flagg의 평균은 23.0점·야투 47.6%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 5.2점입니다. 직전 경기에서는 Zaccharie Risacher가 18점·5리바운드·0어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 5.2,
                 "injuries": [
@@ -10570,7 +10328,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.0점 · 야투 41.5%"
                   }
                 ],
-                "focus": "최근 5경기 Jayson Tatum의 평균은 24.4점·야투 41.2%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트입니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jayson Tatum의 평균은 24.4점·야투 41.2%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트를 기록했습니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               },
@@ -10648,7 +10406,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.8점 · 야투 38.8%"
                   }
                 ],
-                "focus": "최근 5경기 Jamal Murray의 평균은 27.0점·야투 55.6%·3점 40.0%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 28점·15리바운드·7어시스트입니다.",
+                "focus": "최근 5경기 Jamal Murray의 평균은 27.0점·야투 55.6%·3점 40.0%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 28점·15리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -10815,7 +10573,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 21.0점 · 야투 40.9%"
                   }
                 ],
-                "focus": "최근 4경기 Keyonte George의 평균은 20.8점·야투 40.0%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Keyonte George의 평균은 20.8점·야투 40.0%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 43.0,
@@ -10922,7 +10680,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 14.2점 · 야투 59.5%"
                   }
                 ],
-                "focus": "최근 4경기 Luka Doncic의 평균은 35.8점·야투 43.1%·3점 34.6%입니다. 결장 2명의 시즌 평균 득점 합계는 39.2점입니다. 직전 경기에서는 Quentin Grimes가 47점·6리바운드·3어시스트입니다.",
+                "focus": "최근 4경기 Luka Doncic의 평균은 35.8점·야투 43.1%·3점 34.6%입니다. 결장 2명의 시즌 평균 득점 합계는 39.2점입니다. 직전 경기에서는 Quentin Grimes가 47점·6리바운드·3어시스트를 기록했습니다.",
                 "injurySummary": "결장 2명(팀 득점 2·3위)",
                 "injuryOut": 2,
                 "injuryPpg": 39.2,
@@ -11100,7 +10858,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.2점 · 야투 32.8%"
                   }
                 ],
-                "focus": "최근 5경기 Devin Booker의 평균은 23.2점·야투 46.8%·3점 35.7%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Devin Booker가 20점·4리바운드·8어시스트입니다.",
+                "focus": "최근 5경기 Devin Booker의 평균은 23.2점·야투 46.8%·3점 35.7%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Devin Booker가 20점·4리바운드·8어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -11185,8 +10943,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 3경기 17.7점 · 야투 45.7%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 43.4%·3점 35.6%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 26점·0리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 43.4%·3점 35.6%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 26점·0리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 2명",
                 "injuryOut": 2,
                 "injuries": [
                   {
@@ -11286,7 +11044,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "리그 2·1위로 바로 옆 순위, 승점 차가 1점입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "리그 2·1위로 바로 옆 순위, 승점 차가 1점입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -11437,7 +11195,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "리그 1·2위로 바로 옆 순위, 승점 차가 0점, 세트 승리 수 차가 1입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "리그 1·2위로 바로 옆 순위, 승점 차가 0점, 세트 승리 수 차가 1입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -11664,8 +11422,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.0점 · 야투 45.8%"
                   }
                 ],
-                "focus": "최근 3경기 Stephen Curry의 평균은 23.0점·야투 62.5%·3점 52.6%입니다. 결장 3명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 3경기 Stephen Curry의 평균은 23.0점·야투 62.5%·3점 52.6%입니다. 결장 3명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 38.2,
                 "injuries": [
@@ -11779,7 +11537,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.6점 · 야투 47.2%"
                   }
                 ],
-                "focus": "최근 3경기 Ty Jerome의 평균은 22.0점·야투 43.6%·3점 34.8%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트입니다.",
+                "focus": "최근 3경기 Ty Jerome의 평균은 22.0점·야투 43.6%·3점 34.8%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 49.4,
@@ -11950,7 +11708,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 4경기 Deni Avdija의 평균은 28.2점·야투 58.2%·3점 48.0%입니다. 결장 5명의 시즌 평균 득점 합계는 48.7점입니다. 직전 경기에서는 Damian Lillard가 25점·3리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Deni Avdija의 평균은 28.2점·야투 58.2%·3점 48.0%입니다. 결장 5명의 시즌 평균 득점 합계는 48.7점입니다. 직전 경기에서는 Damian Lillard가 25점·3리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 48.7,
@@ -12066,7 +11824,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.8점 · 야투 42.9%"
                   }
                 ],
-                "focus": "최근 4경기 Tyler Herro의 평균은 15.8점·야투 34.5%·3점 20.8%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Kasparas Jakucionis가 25점·5리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Tyler Herro의 평균은 15.8점·야투 34.5%·3점 20.8%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Kasparas Jakucionis가 25점·5리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명(팀 득점 12위)",
                 "injuryOut": 1,
                 "injuryPpg": 3.9,
@@ -12213,7 +11971,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.2점 · 야투 42.1%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 28.4점·야투 45.8%·3점 40.5%입니다. 직전 경기에서는 Jalen Brunson가 31점·5리바운드·5어시스트입니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jalen Brunson의 평균은 28.4점·야투 45.8%·3점 40.5%입니다. 직전 경기에서는 Jalen Brunson가 31점·5리바운드·5어시스트를 기록했습니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               },
@@ -12290,7 +12048,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.8점 · 야투 38.2%"
                   }
                 ],
-                "focus": "결장 5명의 시즌 평균 득점 합계는 51.4점입니다. 직전 경기에서는 Ayo Dosunmu가 30점·4리바운드·5어시스트입니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
+                "focus": "결장 5명의 시즌 평균 득점 합계는 51.4점입니다. 직전 경기에서는 Ayo Dosunmu가 30점·4리바운드·5어시스트를 기록했습니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 51.4,
@@ -12463,7 +12221,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 11.6점 · 야투 42.6%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Garland의 평균은 21.6점·야투 46.6%·3점 37.5%입니다. 결장 4명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 23점·6리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Darius Garland의 평균은 21.6점·야투 46.6%·3점 37.5%입니다. 결장 4명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 23점·6리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuries": [
@@ -12567,8 +12325,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.4점 · 야투 45.2%"
                   }
                 ],
-                "focus": "최근 5경기 Victor Wembanyama의 평균은 27.0점·야투 58.7%·3점 29.0%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 5경기 Victor Wembanyama의 평균은 27.0점·야투 58.7%·3점 29.0%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuries": [
                   {
@@ -12660,7 +12418,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "세트 승리 수 차가 4입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "세트 승리 수 차가 4입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -12811,7 +12569,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "세트 승리 수 차가 3입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "세트 승리 수 차가 3입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -12984,7 +12742,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**에스파뇰** 3승 3무 6패(리그 13위), 1경기 연속 무승부, **아틀레틱 빌바오** 4승 4무 3패(리그 7위), 1경기 연속 무승부. 최근 맞대결은 2026.05.13 에스파뇰 2-0 아틀레틱 빌바오였습니다."
+              "text": "**에스파뇰** 3승 3무 6패(리그 13위), 최근 5경기 1승 1무 3패, **아틀레틱 빌바오** 4승 4무 3패(리그 7위), 최근 5경기 3승 1무 1패. 최근 맞대결은 2026.05.13 에스파뇰 2-0 아틀레틱 빌바오였습니다."
             },
             {
               "kind": "watch",
@@ -13042,7 +12800,7 @@ window.CLUTCH_DATA = {
                     "value": "-1"
                   }
                 ],
-                "streak": "1경기 연속 무승부",
+                "streak": "최근 5경기 1승 1무 3패",
                 "last5": "1승 1무 3패",
                 "last5Detail": [
                   {
@@ -13136,7 +12894,7 @@ window.CLUTCH_DATA = {
                     "value": "+4"
                   }
                 ],
-                "streak": "1경기 연속 무승부",
+                "streak": "최근 5경기 3승 1무 1패",
                 "last5": "3승 1무 1패",
                 "last5Detail": [
                   {
@@ -13295,7 +13053,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**풀럼** 2승 4무 4패(리그 15위), 2경기 연속 무승부, **맨체스터 시티** 7승 0무 3패(리그 3위), 1연패. 최근 맞대결은 2026.02.11 맨체스터 시티 3-0 풀럼였습니다."
+              "text": "**풀럼** 2승 4무 4패(리그 15위), 2경기 연속 무승부, **맨체스터 시티** 7승 0무 3패(리그 3위), 최근 5경기 2승 0무 3패. 최근 맞대결은 2026.02.11 맨체스터 시티 3-0 풀럼였습니다."
             },
             {
               "kind": "watch",
@@ -13447,7 +13205,7 @@ window.CLUTCH_DATA = {
                     "value": "+8"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 2승 0무 3패",
                 "last5": "2승 0무 3패",
                 "last5Detail": [
                   {
@@ -13606,7 +13364,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**데포르티보** 3승 6무 3패(리그 9위), 1경기 연속 무승부, **알라베스** 3승 4무 5패(리그 12위), 1연승. 최근 맞대결은 2021.01.06 데포르티보 0-1 알라베스였습니다."
+              "text": "**데포르티보** 3승 6무 3패(리그 9위), 최근 5경기 2승 2무 1패, **알라베스** 3승 4무 5패(리그 12위), 최근 5경기 1승 2무 2패. 최근 맞대결은 2021.01.06 데포르티보 0-1 알라베스였습니다."
             },
             {
               "kind": "watch",
@@ -13664,7 +13422,7 @@ window.CLUTCH_DATA = {
                     "value": "+1"
                   }
                 ],
-                "streak": "1경기 연속 무승부",
+                "streak": "최근 5경기 2승 2무 1패",
                 "last5": "2승 2무 1패",
                 "last5Detail": [
                   {
@@ -13758,7 +13516,7 @@ window.CLUTCH_DATA = {
                     "value": "-2"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 1승 2무 2패",
                 "last5": "1승 2무 2패",
                 "last5Detail": [
                   {
@@ -13974,7 +13732,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 13.2점 · 야투 40.0%"
                   }
                 ],
-                "focus": "최근 3경기 Brandon Miller의 평균은 13.7점·야투 35.9%·3점 28.6%입니다. 결장 3명의 시즌 평균 득점 합계는 28.1점입니다. 직전 경기에서는 Brandon Miller가 28점·2리바운드·4어시스트입니다.",
+                "focus": "최근 3경기 Brandon Miller의 평균은 13.7점·야투 35.9%·3점 28.6%입니다. 결장 3명의 시즌 평균 득점 합계는 28.1점입니다. 직전 경기에서는 Brandon Miller가 28점·2리바운드·4어시스트를 기록했습니다.",
                 "injurySummary": "결장 3명(팀 득점 3·6·13위)",
                 "injuryOut": 3,
                 "injuryPpg": 28.1,
@@ -14076,7 +13834,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.8점 · 야투 41.5%"
                   }
                 ],
-                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 20.8점·야투 36.7%·3점 24.1%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 CJ McCollum가 20점·4리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 20.8점·야투 36.7%·3점 24.1%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 CJ McCollum가 20점·4리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 32.7,
@@ -14248,7 +14006,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 21.2점 · 야투 47.5%"
                   }
                 ],
-                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Desmond Bane가 24점·8리바운드·5어시스트입니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
+                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Desmond Bane가 24점·8리바운드·5어시스트를 기록했습니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.5,
@@ -14355,7 +14113,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 16.8점 · 야투 52.0%"
                   }
                 ],
-                "focus": "최근 4경기 Michael Porter Jr.의 평균은 22.8점·야투 45.9%·3점 35.1%입니다. 직전 경기에서는 Julius Randle가 33점·6리바운드·1어시스트입니다. 이어서 Julius Randle, Nolan Traore가 뒤를 받칩니다.",
+                "focus": "최근 4경기 Michael Porter Jr.의 평균은 22.8점·야투 45.9%·3점 35.1%입니다. 직전 경기에서는 Julius Randle가 33점·6리바운드·1어시스트를 기록했습니다. 이어서 Julius Randle, Nolan Traore가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               }
@@ -14488,8 +14246,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.5점 · 야투 40.9%"
                   }
                 ],
-                "focus": "최근 5경기 Pascal Siakam의 평균은 26.0점·야투 51.8%·3점 37.9%입니다. 결장 3명의 시즌 평균 득점 합계는 24.8점입니다. 직전 경기에서는 Pascal Siakam가 31점·2리바운드·2어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 5경기 Pascal Siakam의 평균은 26.0점·야투 51.8%·3점 37.9%입니다. 결장 3명의 시즌 평균 득점 합계는 24.8점입니다. 직전 경기에서는 Pascal Siakam가 31점·2리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 24.8,
                 "injuries": [
@@ -14603,8 +14361,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 18.0점 · 야투 43.5%"
                   }
                 ],
-                "focus": "최근 4경기 Donovan Mitchell의 평균은 24.5점·야투 51.4%·3점 37.0%입니다. 결장 3명의 시즌 평균 득점 합계는 24.6점입니다. 직전 경기에서는 Donovan Mitchell가 39점·4리바운드·4어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 4경기 Donovan Mitchell의 평균은 24.5점·야투 51.4%·3점 37.0%입니다. 결장 3명의 시즌 평균 득점 합계는 24.6점입니다. 직전 경기에서는 Donovan Mitchell가 39점·4리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 24.6,
                 "injuries": [
@@ -14775,8 +14533,8 @@ window.CLUTCH_DATA = {
                     "sub": "야투 32.4% · 3점 28.6% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 2경기 Scottie Barnes의 평균은 25.0점·야투 48.8%·3점 50.0%입니다. 결장 2명의 시즌 평균 득점 합계는 19.5점입니다. 직전 경기에서는 Ja'Kobe Walter가 25점·1리바운드·2어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 2경기 Scottie Barnes의 평균은 25.0점·야투 48.8%·3점 50.0%입니다. 결장 2명의 시즌 평균 득점 합계는 19.5점입니다. 직전 경기에서는 Ja'Kobe Walter가 25점·1리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuryPpg": 19.5,
                 "injuries": [
@@ -14874,7 +14632,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 21.8점 · 야투 46.8%"
                   }
                 ],
-                "focus": "최근 5경기 Cade Cunningham의 평균은 28.6점·야투 48.5%·3점 29.6%입니다. 결장 5명의 시즌 평균 득점 합계는 44.6점입니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트입니다.",
+                "focus": "최근 5경기 Cade Cunningham의 평균은 28.6점·야투 48.5%·3점 29.6%입니다. 결장 5명의 시즌 평균 득점 합계는 44.6점입니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명(팀 득점 2·4·9·11·14위)",
                 "injuryOut": 5,
                 "injuryPpg": 44.6,
@@ -15049,8 +14807,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.0점 · 야투 48.4%"
                   }
                 ],
-                "focus": "최근 5경기 Anthony Davis의 평균은 26.4점·야투 54.5%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트입니다.",
-                "injurySummary": "결장 4명",
+                "focus": "최근 5경기 Anthony Davis의 평균은 26.4점·야투 54.5%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명 · 출전 불투명 1명",
                 "injuryOut": 4,
                 "injuryPpg": 7.2,
                 "injuries": [
@@ -15162,8 +14920,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.8점 · 야투 50.9%"
                   }
                 ],
-                "focus": "최근 3경기 Norman Powell의 평균은 28.0점·야투 57.1%·3점 36.8%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 27점·2리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명(팀 득점 2·16위)",
+                "focus": "최근 3경기 Norman Powell의 평균은 28.0점·야투 57.1%·3점 36.8%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 27점·2리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 2·16위) · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuryPpg": 20.9,
                 "injuries": [
@@ -15320,7 +15078,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 46.5% · 3점 37.7% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 4경기 Zion Williamson의 평균은 22.8점·야투 51.7%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트입니다.",
+                "focus": "최근 4경기 Zion Williamson의 평균은 22.8점·야투 51.7%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명(팀 득점 3·5·9·13·15위)",
                 "injuryOut": 5,
                 "injuryPpg": 45.4,
@@ -15434,7 +15192,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 38.5% · 3점 33.3% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 32.8점·야투 51.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 34.9점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 37점·2리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 32.8점·야투 51.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 34.9점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 37점·2리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 34.9,
@@ -15607,7 +15365,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.2점 · 야투 32.8%"
                   }
                 ],
-                "focus": "최근 5경기 Devin Booker의 평균은 23.2점·야투 46.8%·3점 35.7%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Devin Booker가 20점·4리바운드·8어시스트입니다.",
+                "focus": "최근 5경기 Devin Booker의 평균은 23.2점·야투 46.8%·3점 35.7%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Devin Booker가 20점·4리바운드·8어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -15691,7 +15449,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 21.0점 · 야투 40.9%"
                   }
                 ],
-                "focus": "최근 4경기 Keyonte George의 평균은 20.8점·야투 40.0%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Keyonte George의 평균은 20.8점·야투 40.0%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 43.0,
@@ -15856,8 +15614,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 16.2점 · 야투 63.2%"
                   }
                 ],
-                "focus": "최근 5경기 Alperen Sengun의 평균은 24.8점·야투 63.5%·3점 45.5%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 23점·7리바운드·2어시스트입니다.",
-                "injurySummary": "결장 1명(팀 득점 11위)",
+                "focus": "최근 5경기 Alperen Sengun의 평균은 24.8점·야투 63.5%·3점 45.5%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 23점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 11위) · 출전 불투명 2명",
                 "injuryOut": 1,
                 "injuryPpg": 3.2,
                 "injuries": [
@@ -15957,7 +15715,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.8점 · 야투 38.8%"
                   }
                 ],
-                "focus": "최근 5경기 Jamal Murray의 평균은 27.0점·야투 55.6%·3점 40.0%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 28점·15리바운드·7어시스트입니다.",
+                "focus": "최근 5경기 Jamal Murray의 평균은 27.0점·야투 55.6%·3점 40.0%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 28점·15리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -16100,8 +15858,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 3경기 17.7점 · 야투 45.7%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 43.4%·3점 35.6%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 26점·0리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 43.4%·3점 35.6%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 26점·0리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 2명",
                 "injuryOut": 2,
                 "injuries": [
                   {
@@ -16205,7 +15963,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 14.2점 · 야투 59.5%"
                   }
                 ],
-                "focus": "최근 4경기 Luka Doncic의 평균은 35.8점·야투 43.1%·3점 34.6%입니다. 결장 2명의 시즌 평균 득점 합계는 39.2점입니다. 직전 경기에서는 Quentin Grimes가 47점·6리바운드·3어시스트입니다.",
+                "focus": "최근 4경기 Luka Doncic의 평균은 35.8점·야투 43.1%·3점 34.6%입니다. 결장 2명의 시즌 평균 득점 합계는 39.2점입니다. 직전 경기에서는 Quentin Grimes가 47점·6리바운드·3어시스트를 기록했습니다.",
                 "injurySummary": "결장 2명(팀 득점 2·3위)",
                 "injuryOut": 2,
                 "injuryPpg": 39.2,
@@ -16294,7 +16052,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "세트 승리 수 차가 6입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "세트 승리 수 차가 6입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -16445,7 +16203,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "승점 차가 3점, 세트 승리 수 차가 3입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "승점 차가 3점, 세트 승리 수 차가 3입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -16618,7 +16376,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**크리스털 팰리스** 2승 1무 7패(리그 20위), 1연패, **코번트리 시티** 3승 0무 7패(리그 17위), 1연패. 최근 맞대결은 2012.03.06 코번트리 시티 1-1 크리스털 팰리스였습니다."
+              "text": "**크리스털 팰리스** 2승 1무 7패(리그 20위), 최근 5경기 1승 1무 3패, **코번트리 시티** 3승 0무 7패(리그 17위), 최근 5경기 2승 0무 3패. 최근 맞대결은 2012.03.06 코번트리 시티 1-1 크리스털 팰리스였습니다."
             },
             {
               "kind": "watch",
@@ -16676,7 +16434,7 @@ window.CLUTCH_DATA = {
                     "value": "-14"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 1승 1무 3패",
                 "last5": "1승 1무 3패",
                 "last5Detail": [
                   {
@@ -16770,7 +16528,7 @@ window.CLUTCH_DATA = {
                     "value": "-9"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 2승 0무 3패",
                 "last5": "2승 0무 3패",
                 "last5Detail": [
                   {
@@ -16929,7 +16687,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**입스위치 타운** 3승 2무 5패(리그 14위), 1연패, **토트넘 홋스퍼** 3승 3무 4패(리그 11위), 1연패. 최근 맞대결은 2025.02.22 입스위치 타운 1-4 토트넘 홋스퍼였습니다."
+              "text": "**입스위치 타운** 3승 2무 5패(리그 14위), 최근 5경기 1승 2무 2패, **토트넘 홋스퍼** 3승 3무 4패(리그 11위), 최근 5경기 3승 1무 1패. 최근 맞대결은 2025.02.22 입스위치 타운 1-4 토트넘 홋스퍼였습니다."
             },
             {
               "kind": "watch",
@@ -16987,7 +16745,7 @@ window.CLUTCH_DATA = {
                     "value": "-5"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 1승 2무 2패",
                 "last5": "1승 2무 2패",
                 "last5Detail": [
                   {
@@ -17081,7 +16839,7 @@ window.CLUTCH_DATA = {
                     "value": "-1"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 3승 1무 1패",
                 "last5": "3승 1무 1패",
                 "last5Detail": [
                   {
@@ -17240,7 +16998,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**리즈 유나이티드** 3승 5무 2패(리그 9위), 1연승, **첼시** 5승 1무 4패(리그 5위), 1연패. 최근 맞대결은 2026.09.09 첼시 6-3 리즈 유나이티드였습니다."
+              "text": "**리즈 유나이티드** 3승 5무 2패(리그 9위), 최근 5경기 1승 2무 2패, **첼시** 5승 1무 4패(리그 5위), 최근 5경기 2승 0무 3패. 최근 맞대결은 2026.09.09 첼시 6-3 리즈 유나이티드였습니다."
             },
             {
               "kind": "watch",
@@ -17298,7 +17056,7 @@ window.CLUTCH_DATA = {
                     "value": "+2"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 1승 2무 2패",
                 "last5": "1승 2무 2패",
                 "last5Detail": [
                   {
@@ -17392,7 +17150,7 @@ window.CLUTCH_DATA = {
                     "value": "+3"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 2승 0무 3패",
                 "last5": "2승 0무 3패",
                 "last5Detail": [
                   {
@@ -17551,7 +17309,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**노팅엄 포리스트** 2승 3무 5패(리그 16위), 1연승, **본머스** 4승 3무 3패(리그 7위), 5연승. 최근 맞대결은 2026.05.24 노팅엄 포리스트 1-1 본머스였습니다."
+              "text": "**노팅엄 포리스트** 2승 3무 5패(리그 16위), 최근 5경기 1승 1무 3패, **본머스** 4승 3무 3패(리그 7위), 5연승. 최근 맞대결은 2026.05.24 노팅엄 포리스트 1-1 본머스였습니다."
             },
             {
               "kind": "watch",
@@ -17609,7 +17367,7 @@ window.CLUTCH_DATA = {
                     "value": "-4"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 1승 1무 3패",
                 "last5": "1승 1무 3패",
                 "last5Detail": [
                   {
@@ -17862,7 +17620,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**선덜랜드** 2승 2무 6패(리그 19위), 1연승, **애스턴 빌라** 3승 4무 3패(리그 10위), 1경기 연속 무승부. 최근 맞대결은 2026.04.19 애스턴 빌라 4-3 선덜랜드였습니다."
+              "text": "**선덜랜드** 2승 2무 6패(리그 19위), 최근 5경기 2승 1무 2패, **애스턴 빌라** 3승 4무 3패(리그 10위), 최근 5경기 1승 2무 2패. 최근 맞대결은 2026.04.19 애스턴 빌라 4-3 선덜랜드였습니다."
             },
             {
               "kind": "watch",
@@ -17920,7 +17678,7 @@ window.CLUTCH_DATA = {
                     "value": "-9"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 2승 1무 2패",
                 "last5": "2승 1무 2패",
                 "last5Detail": [
                   {
@@ -18014,7 +17772,7 @@ window.CLUTCH_DATA = {
                     "value": "-3"
                   }
                 ],
-                "streak": "1경기 연속 무승부",
+                "streak": "최근 5경기 1승 2무 2패",
                 "last5": "1승 2무 2패",
                 "last5Detail": [
                   {
@@ -18173,7 +17931,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**발렌시아** 2승 3무 7패(리그 19위), 1연승, **라요 바예카노** 3승 3무 5패(리그 14위), 1연패. 최근 맞대결은 2026.05.14 발렌시아 1-1 라요 바예카노였습니다."
+              "text": "**발렌시아** 2승 3무 7패(리그 19위), 최근 5경기 2승 1무 2패, **라요 바예카노** 3승 3무 5패(리그 14위), 최근 5경기 2승 1무 2패. 최근 맞대결은 2026.05.14 발렌시아 1-1 라요 바예카노였습니다."
             },
             {
               "kind": "watch",
@@ -18231,7 +17989,7 @@ window.CLUTCH_DATA = {
                     "value": "-12"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 2승 1무 2패",
                 "last5": "2승 1무 2패",
                 "last5Detail": [
                   {
@@ -18325,7 +18083,7 @@ window.CLUTCH_DATA = {
                     "value": "-6"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 2승 1무 2패",
                 "last5": "2승 1무 2패",
                 "last5Detail": [
                   {
@@ -18484,7 +18242,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**아스널** 9승 0무 1패(리그 1위), 3연승, **뉴캐슬 유나이티드** 3승 3무 4패(리그 12위), 1경기 연속 무승부. 최근 맞대결은 2026.04.25 아스널 1-0 뉴캐슬 유나이티드였습니다."
+              "text": "**아스널** 9승 0무 1패(리그 1위), 3연승, **뉴캐슬 유나이티드** 3승 3무 4패(리그 12위), 최근 5경기 1승 1무 3패. 최근 맞대결은 2026.04.25 아스널 1-0 뉴캐슬 유나이티드였습니다."
             },
             {
               "kind": "watch",
@@ -18636,7 +18394,7 @@ window.CLUTCH_DATA = {
                     "value": "-3"
                   }
                 ],
-                "streak": "1경기 연속 무승부",
+                "streak": "최근 5경기 1승 1무 3패",
                 "last5": "1승 1무 3패",
                 "last5Detail": [
                   {
@@ -18795,7 +18553,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**레알 베티스** 8승 2무 2패(리그 4위), 2연승, **세비야** 5승 3무 4패(리그 6위), 1경기 연속 무승부. 최근 맞대결은 2026.03.01 레알 베티스 2-2 세비야였습니다."
+              "text": "**레알 베티스** 8승 2무 2패(리그 4위), 2연승, **세비야** 5승 3무 4패(리그 6위), 최근 5경기 2승 1무 2패. 최근 맞대결은 2026.03.01 레알 베티스 2-2 세비야였습니다."
             },
             {
               "kind": "watch",
@@ -18947,7 +18705,7 @@ window.CLUTCH_DATA = {
                     "value": "-2"
                   }
                 ],
-                "streak": "1경기 연속 무승부",
+                "streak": "최근 5경기 2승 1무 2패",
                 "last5": "2승 1무 2패",
                 "last5Detail": [
                   {
@@ -19106,7 +18864,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**셀타 비고** 2승 7무 3패(리그 11위), 1연승, **레알 마드리드** 10승 0무 2패(리그 2위), 5연승. 최근 맞대결은 2026.03.06 셀타 비고 1-2 레알 마드리드였습니다."
+              "text": "**셀타 비고** 2승 7무 3패(리그 11위), 최근 5경기 1승 2무 2패, **레알 마드리드** 10승 0무 2패(리그 2위), 5연승. 최근 맞대결은 2026.03.06 셀타 비고 1-2 레알 마드리드였습니다."
             },
             {
               "kind": "watch",
@@ -19164,7 +18922,7 @@ window.CLUTCH_DATA = {
                     "value": "0"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 1승 2무 2패",
                 "last5": "1승 2무 2패",
                 "last5Detail": [
                   {
@@ -19417,7 +19175,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**비야레알** 4승 3무 5패(리그 8위), 1연승, **바르셀로나** 11승 0무 1패(리그 1위), 3연승. 최근 맞대결은 2026.02.28 바르셀로나 4-1 비야레알였습니다."
+              "text": "**비야레알** 4승 3무 5패(리그 8위), 최근 5경기 3승 0무 2패, **바르셀로나** 11승 0무 1패(리그 1위), 3연승. 최근 맞대결은 2026.02.28 바르셀로나 4-1 비야레알였습니다."
             },
             {
               "kind": "watch",
@@ -19475,7 +19233,7 @@ window.CLUTCH_DATA = {
                     "value": "+2"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 3승 0무 2패",
                 "last5": "3승 0무 2패",
                 "last5Detail": [
                   {
@@ -19728,7 +19486,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**브라이턴** 7승 1무 2패(리그 2위), 3연승, **헐 시티** 2승 5무 3패(리그 13위), 1연패. 최근 맞대결은 2016.02.16 헐 시티 0-0 브라이턴였습니다."
+              "text": "**브라이턴** 7승 1무 2패(리그 2위), 3연승, **헐 시티** 2승 5무 3패(리그 13위), 5경기 무승. 최근 맞대결은 2016.02.16 헐 시티 0-0 브라이턴였습니다."
             },
             {
               "kind": "watch",
@@ -19880,7 +19638,7 @@ window.CLUTCH_DATA = {
                     "value": "0"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "5경기 무승",
                 "last5": "0승 3무 2패",
                 "last5Detail": [
                   {
@@ -20097,7 +19855,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.8점 · 야투 42.9%"
                   }
                 ],
-                "focus": "최근 4경기 Tyler Herro의 평균은 15.8점·야투 34.5%·3점 20.8%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Kasparas Jakucionis가 25점·5리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Tyler Herro의 평균은 15.8점·야투 34.5%·3점 20.8%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Kasparas Jakucionis가 25점·5리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명(팀 득점 12위)",
                 "injuryOut": 1,
                 "injuryPpg": 3.9,
@@ -20186,7 +19944,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 22.8점 · 야투 43.3%"
                   }
                 ],
-                "focus": "최근 5경기 Tyrese Maxey의 평균은 25.8점·야투 56.9%·3점 48.5%입니다. 결장 4명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Joel Embiid가 37점·5리바운드·1어시스트입니다.",
+                "focus": "최근 5경기 Tyrese Maxey의 평균은 25.8점·야투 56.9%·3점 48.5%입니다. 결장 4명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Joel Embiid가 37점·5리바운드·1어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.7,
@@ -20349,7 +20107,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 4경기 Deni Avdija의 평균은 28.2점·야투 58.2%·3점 48.0%입니다. 결장 5명의 시즌 평균 득점 합계는 48.7점입니다. 직전 경기에서는 Damian Lillard가 25점·3리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Deni Avdija의 평균은 28.2점·야투 58.2%·3점 48.0%입니다. 결장 5명의 시즌 평균 득점 합계는 48.7점입니다. 직전 경기에서는 Damian Lillard가 25점·3리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 48.7,
@@ -20465,7 +20223,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.2점 · 야투 42.1%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 28.4점·야투 45.8%·3점 40.5%입니다. 직전 경기에서는 Jalen Brunson가 31점·5리바운드·5어시스트입니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jalen Brunson의 평균은 28.4점·야투 45.8%·3점 40.5%입니다. 직전 경기에서는 Jalen Brunson가 31점·5리바운드·5어시스트를 기록했습니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               }
@@ -20601,7 +20359,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 11.6점 · 야투 42.6%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Garland의 평균은 21.6점·야투 46.6%·3점 37.5%입니다. 결장 4명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 23점·6리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Darius Garland의 평균은 21.6점·야투 46.6%·3점 37.5%입니다. 결장 4명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 23점·6리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuries": [
@@ -20705,8 +20463,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.4점 · 야투 38.1%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 23.0점·야투 47.6%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 5.2점입니다. 직전 경기에서는 Zaccharie Risacher가 18점·5리바운드·0어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 5경기 Cooper Flagg의 평균은 23.0점·야투 47.6%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 5.2점입니다. 직전 경기에서는 Zaccharie Risacher가 18점·5리바운드·0어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 5.2,
                 "injuries": [
@@ -20877,7 +20635,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.6점 · 야투 47.2%"
                   }
                 ],
-                "focus": "최근 3경기 Ty Jerome의 평균은 22.0점·야투 43.6%·3점 34.8%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트입니다.",
+                "focus": "최근 3경기 Ty Jerome의 평균은 22.0점·야투 43.6%·3점 34.8%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 49.4,
@@ -20991,7 +20749,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.8점 · 야투 38.2%"
                   }
                 ],
-                "focus": "결장 5명의 시즌 평균 득점 합계는 51.4점입니다. 직전 경기에서는 Ayo Dosunmu가 30점·4리바운드·5어시스트입니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
+                "focus": "결장 5명의 시즌 평균 득점 합계는 51.4점입니다. 직전 경기에서는 Ayo Dosunmu가 30점·4리바운드·5어시스트를 기록했습니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 51.4,
@@ -21162,7 +20920,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 46.5% · 3점 37.7% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 4경기 Zion Williamson의 평균은 22.8점·야투 51.7%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트입니다.",
+                "focus": "최근 4경기 Zion Williamson의 평균은 22.8점·야투 51.7%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명(팀 득점 3·5·9·13·15위)",
                 "injuryOut": 5,
                 "injuryPpg": 45.4,
@@ -21278,8 +21036,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.4점 · 야투 45.2%"
                   }
                 ],
-                "focus": "최근 5경기 Victor Wembanyama의 평균은 27.0점·야투 58.7%·3점 29.0%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 5경기 Victor Wembanyama의 평균은 27.0점·야투 58.7%·3점 29.0%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuries": [
                   {
@@ -21435,7 +21193,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.0점 · 야투 41.5%"
                   }
                 ],
-                "focus": "최근 5경기 Jayson Tatum의 평균은 24.4점·야투 41.2%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트입니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jayson Tatum의 평균은 24.4점·야투 41.2%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트를 기록했습니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               },
@@ -21512,8 +21270,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 3경기 17.7점 · 야투 45.7%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 43.4%·3점 35.6%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 26점·0리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 43.4%·3점 35.6%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 26점·0리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 2명",
                 "injuryOut": 2,
                 "injuries": [
                   {
@@ -21632,7 +21390,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**레알 소시에다드** 7승 1무 4패(리그 5위), 1연승, **라싱 산탄데르** 4승 2무 6패(리그 10위), 1연승. 최근 맞대결은 2014.01.30 라싱 산탄데르 0-0 레알 소시에다드였습니다."
+              "text": "**레알 소시에다드** 7승 1무 4패(리그 5위), 최근 5경기 3승 1무 1패, **라싱 산탄데르** 4승 2무 6패(리그 10위), 최근 5경기 3승 0무 2패. 최근 맞대결은 2014.01.30 라싱 산탄데르 0-0 레알 소시에다드였습니다."
             },
             {
               "kind": "watch",
@@ -21690,7 +21448,7 @@ window.CLUTCH_DATA = {
                     "value": "+1"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 3승 1무 1패",
                 "last5": "3승 1무 1패",
                 "last5Detail": [
                   {
@@ -21784,7 +21542,7 @@ window.CLUTCH_DATA = {
                     "value": "-13"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 3승 0무 2패",
                 "last5": "3승 0무 2패",
                 "last5Detail": [
                   {
@@ -21943,7 +21701,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**맨체스터 유나이티드** 1승 5무 4패(리그 18위), 1경기 연속 무승부, **리버풀** 5승 3무 2패(리그 4위), 1연승. 최근 맞대결은 2026.05.03 맨체스터 유나이티드 3-2 리버풀였습니다."
+              "text": "**맨체스터 유나이티드** 1승 5무 4패(리그 18위), 최근 5경기 1승 1무 3패, **리버풀** 5승 3무 2패(리그 4위), 최근 5경기 3승 0무 2패. 최근 맞대결은 2026.05.03 맨체스터 유나이티드 3-2 리버풀였습니다."
             },
             {
               "kind": "watch",
@@ -22001,7 +21759,7 @@ window.CLUTCH_DATA = {
                     "value": "-5"
                   }
                 ],
-                "streak": "1경기 연속 무승부",
+                "streak": "최근 5경기 1승 1무 3패",
                 "last5": "1승 1무 3패",
                 "last5Detail": [
                   {
@@ -22095,7 +21853,7 @@ window.CLUTCH_DATA = {
                     "value": "+4"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 3승 0무 2패",
                 "last5": "3승 0무 2패",
                 "last5Detail": [
                   {
@@ -22254,7 +22012,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**말라가** 0승 5무 7패(리그 20위), 2연패, **오사수나** 3승 3무 6패(리그 16위), 1경기 연속 무승부. 최근 맞대결은 2019.03.11 말라가 1-2 오사수나였습니다."
+              "text": "**말라가** 0승 5무 7패(리그 20위), 2연패, **오사수나** 3승 3무 6패(리그 16위), 최근 5경기 2승 1무 2패. 최근 맞대결은 2019.03.11 말라가 1-2 오사수나였습니다."
             },
             {
               "kind": "watch",
@@ -22406,7 +22164,7 @@ window.CLUTCH_DATA = {
                     "value": "-11"
                   }
                 ],
-                "streak": "1경기 연속 무승부",
+                "streak": "최근 5경기 2승 1무 2패",
                 "last5": "2승 1무 2패",
                 "last5Detail": [
                   {
@@ -22932,7 +22690,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 21.8점 · 야투 46.8%"
                   }
                 ],
-                "focus": "최근 5경기 Cade Cunningham의 평균은 28.6점·야투 48.5%·3점 29.6%입니다. 결장 5명의 시즌 평균 득점 합계는 44.6점입니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트입니다.",
+                "focus": "최근 5경기 Cade Cunningham의 평균은 28.6점·야투 48.5%·3점 29.6%입니다. 결장 5명의 시즌 평균 득점 합계는 44.6점입니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명(팀 득점 2·4·9·11·14위)",
                 "injuryOut": 5,
                 "injuryPpg": 44.6,
@@ -23048,7 +22806,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.8점 · 야투 41.5%"
                   }
                 ],
-                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 20.8점·야투 36.7%·3점 24.1%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 CJ McCollum가 20점·4리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 20.8점·야투 36.7%·3점 24.1%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 CJ McCollum가 20점·4리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 32.7,
@@ -23219,7 +22977,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 38.5% · 3점 33.3% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 32.8점·야투 51.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 34.9점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 37점·2리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 32.8점·야투 51.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 34.9점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 37점·2리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 34.9,
@@ -23335,7 +23093,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.8점 · 야투 49.2%"
                   }
                 ],
-                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 30.0점·야투 67.4%·3점 37.5%입니다. 직전 경기에서는 Giannis Antetokounmpo가 20점·13리바운드·6어시스트입니다. 이어서 Bam Adebayo, Davion Mitchell가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 30.0점·야투 67.4%·3점 37.5%입니다. 직전 경기에서는 Giannis Antetokounmpo가 20점·13리바운드·6어시스트를 기록했습니다. 이어서 Bam Adebayo, Davion Mitchell가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음 · 출전 불투명 3명",
                 "injuries": [
                   {
@@ -23492,7 +23250,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 21.2점 · 야투 47.5%"
                   }
                 ],
-                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Desmond Bane가 24점·8리바운드·5어시스트입니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
+                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Desmond Bane가 24점·8리바운드·5어시스트를 기록했습니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.5,
@@ -23599,8 +23357,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.0점 · 야투 48.4%"
                   }
                 ],
-                "focus": "최근 5경기 Anthony Davis의 평균은 26.4점·야투 54.5%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트입니다.",
-                "injurySummary": "결장 4명",
+                "focus": "최근 5경기 Anthony Davis의 평균은 26.4점·야투 54.5%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명 · 출전 불투명 1명",
                 "injuryOut": 4,
                 "injuryPpg": 7.2,
                 "injuries": [
@@ -23771,7 +23529,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.8점 · 야투 38.8%"
                   }
                 ],
-                "focus": "최근 5경기 Jamal Murray의 평균은 27.0점·야투 55.6%·3점 40.0%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 28점·15리바운드·7어시스트입니다.",
+                "focus": "최근 5경기 Jamal Murray의 평균은 27.0점·야투 55.6%·3점 40.0%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 28점·15리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -23856,8 +23614,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.8점 · 야투 50.9%"
                   }
                 ],
-                "focus": "최근 3경기 Norman Powell의 평균은 28.0점·야투 57.1%·3점 36.8%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 27점·2리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명(팀 득점 2·16위)",
+                "focus": "최근 3경기 Norman Powell의 평균은 28.0점·야투 57.1%·3점 36.8%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 27점·2리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 2·16위) · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuryPpg": 20.9,
                 "injuries": [
@@ -24016,8 +23774,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.4점 · 야투 38.1%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 23.0점·야투 47.6%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 5.2점입니다. 직전 경기에서는 Zaccharie Risacher가 18점·5리바운드·0어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 5경기 Cooper Flagg의 평균은 23.0점·야투 47.6%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 5.2점입니다. 직전 경기에서는 Zaccharie Risacher가 18점·5리바운드·0어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 5.2,
                 "injuries": [
@@ -24128,7 +23886,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 21.0점 · 야투 40.9%"
                   }
                 ],
-                "focus": "최근 4경기 Keyonte George의 평균은 20.8점·야투 40.0%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Keyonte George의 평균은 20.8점·야투 40.0%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 43.0,
@@ -24291,8 +24049,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.5점 · 야투 40.9%"
                   }
                 ],
-                "focus": "최근 5경기 Pascal Siakam의 평균은 26.0점·야투 51.8%·3점 37.9%입니다. 결장 3명의 시즌 평균 득점 합계는 24.8점입니다. 직전 경기에서는 Pascal Siakam가 31점·2리바운드·2어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 5경기 Pascal Siakam의 평균은 26.0점·야투 51.8%·3점 37.9%입니다. 결장 3명의 시즌 평균 득점 합계는 24.8점입니다. 직전 경기에서는 Pascal Siakam가 31점·2리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 24.8,
                 "injuries": [
@@ -24407,7 +24165,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.2점 · 야투 42.1%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 28.4점·야투 45.8%·3점 40.5%입니다. 직전 경기에서는 Jalen Brunson가 31점·5리바운드·5어시스트입니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jalen Brunson의 평균은 28.4점·야투 45.8%·3점 40.5%입니다. 직전 경기에서는 Jalen Brunson가 31점·5리바운드·5어시스트를 기록했습니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               }
@@ -24543,7 +24301,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.0점 · 야투 41.5%"
                   }
                 ],
-                "focus": "최근 5경기 Jayson Tatum의 평균은 24.4점·야투 41.2%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트입니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jayson Tatum의 평균은 24.4점·야투 41.2%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트를 기록했습니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               },
@@ -24621,8 +24379,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.0점 · 야투 45.8%"
                   }
                 ],
-                "focus": "최근 3경기 Stephen Curry의 평균은 23.0점·야투 62.5%·3점 52.6%입니다. 결장 3명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 3경기 Stephen Curry의 평균은 23.0점·야투 62.5%·3점 52.6%입니다. 결장 3명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 38.2,
                 "injuries": [
@@ -24730,7 +24488,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "리그 5·6위로 바로 옆 순위, 승점 차가 0점입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "리그 5·6위로 바로 옆 순위, 승점 차가 0점입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -24881,7 +24639,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "승점 차가 3점, 세트 승리 수 차가 4입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "승점 차가 3점, 세트 승리 수 차가 4입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -25054,7 +24812,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**엘체** 2승 4무 6패(리그 18위), 2연패, **레반테** 2승 5무 5패(리그 17위), 1연승. 최근 맞대결은 2026.01.23 레반테 3-2 엘체였습니다."
+              "text": "**엘체** 2승 4무 6패(리그 18위), 2연패, **레반테** 2승 5무 5패(리그 17위), 최근 5경기 2승 1무 2패. 최근 맞대결은 2026.01.23 레반테 3-2 엘체였습니다."
             },
             {
               "kind": "watch",
@@ -25206,7 +24964,7 @@ window.CLUTCH_DATA = {
                     "value": "-5"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 2승 1무 2패",
                 "last5": "2승 1무 2패",
                 "last5Detail": [
                   {
@@ -25365,7 +25123,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**에버턴** 4승 4무 2패(리그 6위), 3연승, **브렌트퍼드** 3승 5무 2패(리그 8위), 1연패. 최근 맞대결은 2026.04.11 브렌트퍼드 2-2 에버턴였습니다."
+              "text": "**에버턴** 4승 4무 2패(리그 6위), 3연승, **브렌트퍼드** 3승 5무 2패(리그 8위), 최근 5경기 1승 1무 3패. 최근 맞대결은 2026.04.11 브렌트퍼드 2-2 에버턴였습니다."
             },
             {
               "kind": "watch",
@@ -25517,7 +25275,7 @@ window.CLUTCH_DATA = {
                     "value": "+5"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 1승 1무 3패",
                 "last5": "1승 1무 3패",
                 "last5Detail": [
                   {
@@ -25733,7 +25491,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.6점 · 야투 47.2%"
                   }
                 ],
-                "focus": "최근 3경기 Ty Jerome의 평균은 22.0점·야투 43.6%·3점 34.8%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트입니다.",
+                "focus": "최근 3경기 Ty Jerome의 평균은 22.0점·야투 43.6%·3점 34.8%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 49.4,
@@ -25848,7 +25606,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 13.2점 · 야투 40.0%"
                   }
                 ],
-                "focus": "최근 3경기 Brandon Miller의 평균은 13.7점·야투 35.9%·3점 28.6%입니다. 결장 3명의 시즌 평균 득점 합계는 28.1점입니다. 직전 경기에서는 Brandon Miller가 28점·2리바운드·4어시스트입니다.",
+                "focus": "최근 3경기 Brandon Miller의 평균은 13.7점·야투 35.9%·3점 28.6%입니다. 결장 3명의 시즌 평균 득점 합계는 28.1점입니다. 직전 경기에서는 Brandon Miller가 28점·2리바운드·4어시스트를 기록했습니다.",
                 "injurySummary": "결장 3명(팀 득점 3·6·13위)",
                 "injuryOut": 3,
                 "injuryPpg": 28.1,
@@ -26006,7 +25764,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 4경기 Deni Avdija의 평균은 28.2점·야투 58.2%·3점 48.0%입니다. 결장 5명의 시즌 평균 득점 합계는 48.7점입니다. 직전 경기에서는 Damian Lillard가 25점·3리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Deni Avdija의 평균은 28.2점·야투 58.2%·3점 48.0%입니다. 결장 5명의 시즌 평균 득점 합계는 48.7점입니다. 직전 경기에서는 Damian Lillard가 25점·3리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 48.7,
@@ -26122,7 +25880,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 22.8점 · 야투 43.3%"
                   }
                 ],
-                "focus": "최근 5경기 Tyrese Maxey의 평균은 25.8점·야투 56.9%·3점 48.5%입니다. 결장 4명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Joel Embiid가 37점·5리바운드·1어시스트입니다.",
+                "focus": "최근 5경기 Tyrese Maxey의 평균은 25.8점·야투 56.9%·3점 48.5%입니다. 결장 4명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Joel Embiid가 37점·5리바운드·1어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.7,
@@ -26285,7 +26043,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 38.5% · 3점 33.3% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 32.8점·야투 51.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 34.9점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 37점·2리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 32.8점·야투 51.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 34.9점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 37점·2리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 34.9,
@@ -26397,8 +26155,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.5점 · 야투 40.9%"
                   }
                 ],
-                "focus": "최근 5경기 Pascal Siakam의 평균은 26.0점·야투 51.8%·3점 37.9%입니다. 결장 3명의 시즌 평균 득점 합계는 24.8점입니다. 직전 경기에서는 Pascal Siakam가 31점·2리바운드·2어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 5경기 Pascal Siakam의 평균은 26.0점·야투 51.8%·3점 37.9%입니다. 결장 3명의 시즌 평균 득점 합계는 24.8점입니다. 직전 경기에서는 Pascal Siakam가 31점·2리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 24.8,
                 "injuries": [
@@ -26571,7 +26329,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.8점 · 야투 42.9%"
                   }
                 ],
-                "focus": "최근 4경기 Tyler Herro의 평균은 15.8점·야투 34.5%·3점 20.8%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Kasparas Jakucionis가 25점·5리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Tyler Herro의 평균은 15.8점·야투 34.5%·3점 20.8%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Kasparas Jakucionis가 25점·5리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명(팀 득점 12위)",
                 "injuryOut": 1,
                 "injuryPpg": 3.9,
@@ -26658,8 +26416,8 @@ window.CLUTCH_DATA = {
                     "sub": "야투 32.4% · 3점 28.6% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 2경기 Scottie Barnes의 평균은 25.0점·야투 48.8%·3점 50.0%입니다. 결장 2명의 시즌 평균 득점 합계는 19.5점입니다. 직전 경기에서는 Ja'Kobe Walter가 25점·1리바운드·2어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 2경기 Scottie Barnes의 평균은 25.0점·야투 48.8%·3점 50.0%입니다. 결장 2명의 시즌 평균 득점 합계는 19.5점입니다. 직전 경기에서는 Ja'Kobe Walter가 25점·1리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuryPpg": 19.5,
                 "injuries": [
@@ -26817,7 +26575,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 16.8점 · 야투 52.0%"
                   }
                 ],
-                "focus": "최근 4경기 Michael Porter Jr.의 평균은 22.8점·야투 45.9%·3점 35.1%입니다. 직전 경기에서는 Julius Randle가 33점·6리바운드·1어시스트입니다. 이어서 Julius Randle, Nolan Traore가 뒤를 받칩니다.",
+                "focus": "최근 4경기 Michael Porter Jr.의 평균은 22.8점·야투 45.9%·3점 35.1%입니다. 직전 경기에서는 Julius Randle가 33점·6리바운드·1어시스트를 기록했습니다. 이어서 Julius Randle, Nolan Traore가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               },
@@ -26894,7 +26652,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.8점 · 야투 38.2%"
                   }
                 ],
-                "focus": "결장 5명의 시즌 평균 득점 합계는 51.4점입니다. 직전 경기에서는 Ayo Dosunmu가 30점·4리바운드·5어시스트입니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
+                "focus": "결장 5명의 시즌 평균 득점 합계는 51.4점입니다. 직전 경기에서는 Ayo Dosunmu가 30점·4리바운드·5어시스트를 기록했습니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 51.4,
@@ -27067,8 +26825,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 18.0점 · 야투 43.5%"
                   }
                 ],
-                "focus": "최근 4경기 Donovan Mitchell의 평균은 24.5점·야투 51.4%·3점 37.0%입니다. 결장 3명의 시즌 평균 득점 합계는 24.6점입니다. 직전 경기에서는 Donovan Mitchell가 39점·4리바운드·4어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 4경기 Donovan Mitchell의 평균은 24.5점·야투 51.4%·3점 37.0%입니다. 결장 3명의 시즌 평균 득점 합계는 24.6점입니다. 직전 경기에서는 Donovan Mitchell가 39점·4리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 24.6,
                 "injuries": [
@@ -27181,8 +26939,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.8점 · 야투 50.9%"
                   }
                 ],
-                "focus": "최근 3경기 Norman Powell의 평균은 28.0점·야투 57.1%·3점 36.8%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 27점·2리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명(팀 득점 2·16위)",
+                "focus": "최근 3경기 Norman Powell의 평균은 28.0점·야투 57.1%·3점 36.8%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 27점·2리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 2·16위) · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuryPpg": 20.9,
                 "injuries": [
@@ -27341,7 +27099,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.2점 · 야투 32.8%"
                   }
                 ],
-                "focus": "최근 5경기 Devin Booker의 평균은 23.2점·야투 46.8%·3점 35.7%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Devin Booker가 20점·4리바운드·8어시스트입니다.",
+                "focus": "최근 5경기 Devin Booker의 평균은 23.2점·야투 46.8%·3점 35.7%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Devin Booker가 20점·4리바운드·8어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -27425,7 +27183,7 @@ window.CLUTCH_DATA = {
                     "sub": "야투 46.5% · 3점 37.7% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 4경기 Zion Williamson의 평균은 22.8점·야투 51.7%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트입니다.",
+                "focus": "최근 4경기 Zion Williamson의 평균은 22.8점·야투 51.7%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명(팀 득점 3·5·9·13·15위)",
                 "injuryOut": 5,
                 "injuryPpg": 45.4,
@@ -27599,7 +27357,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 11.6점 · 야투 42.6%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Garland의 평균은 21.6점·야투 46.6%·3점 37.5%입니다. 결장 4명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 23점·6리바운드·2어시스트입니다.",
+                "focus": "최근 5경기 Darius Garland의 평균은 21.6점·야투 46.6%·3점 37.5%입니다. 결장 4명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 23점·6리바운드·2어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuries": [
@@ -27702,8 +27460,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 16.2점 · 야투 63.2%"
                   }
                 ],
-                "focus": "최근 5경기 Alperen Sengun의 평균은 24.8점·야투 63.5%·3점 45.5%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 23점·7리바운드·2어시스트입니다.",
-                "injurySummary": "결장 1명(팀 득점 11위)",
+                "focus": "최근 5경기 Alperen Sengun의 평균은 24.8점·야투 63.5%·3점 45.5%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 23점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 11위) · 출전 불투명 2명",
                 "injuryOut": 1,
                 "injuryPpg": 3.2,
                 "injuries": [
@@ -27859,7 +27617,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 21.0점 · 야투 40.9%"
                   }
                 ],
-                "focus": "최근 4경기 Keyonte George의 평균은 20.8점·야투 40.0%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트입니다.",
+                "focus": "최근 4경기 Keyonte George의 평균은 20.8점·야투 40.0%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 43.0점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 43.0,
@@ -27966,7 +27724,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 14.2점 · 야투 59.5%"
                   }
                 ],
-                "focus": "최근 4경기 Luka Doncic의 평균은 35.8점·야투 43.1%·3점 34.6%입니다. 결장 2명의 시즌 평균 득점 합계는 39.2점입니다. 직전 경기에서는 Quentin Grimes가 47점·6리바운드·3어시스트입니다.",
+                "focus": "최근 4경기 Luka Doncic의 평균은 35.8점·야투 43.1%·3점 34.6%입니다. 결장 2명의 시즌 평균 득점 합계는 39.2점입니다. 직전 경기에서는 Quentin Grimes가 47점·6리바운드·3어시스트를 기록했습니다.",
                 "injurySummary": "결장 2명(팀 득점 2·3위)",
                 "injuryOut": 2,
                 "injuryPpg": 39.2,
@@ -28119,8 +27877,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.4점 · 야투 45.2%"
                   }
                 ],
-                "focus": "최근 5경기 Victor Wembanyama의 평균은 27.0점·야투 58.7%·3점 29.0%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 5경기 Victor Wembanyama의 평균은 27.0점·야투 58.7%·3점 29.0%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 1명",
                 "injuryOut": 2,
                 "injuries": [
                   {
@@ -28217,8 +27975,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 3경기 17.7점 · 야투 45.7%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 43.4%·3점 35.6%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 26점·0리바운드·6어시스트입니다.",
-                "injurySummary": "결장 2명",
+                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 43.4%·3점 35.6%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 26점·0리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 2명",
                 "injuryOut": 2,
                 "injuries": [
                   {
@@ -28317,7 +28075,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "리그 1·2위로 바로 옆 순위, 승점 차가 1점입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "리그 1·2위로 바로 옆 순위, 승점 차가 1점입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -28468,7 +28226,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "리그 2·1위로 바로 옆 순위, 승점 차가 0점, 세트 승리 수 차가 1입니다. 이 경기 승리 승점(3점)이 순위표에 바로 반영되는 구간입니다."
+              "text": "리그 2·1위로 바로 옆 순위, 승점 차가 0점, 세트 승리 수 차가 1입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -28641,7 +28399,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**애스턴 빌라** 3승 0무 1패(리그 6위), 1경기 연속 무승부, **갈라타사라이** 2승 0무 2패(리그 18위), 5연승."
+              "text": "**애스턴 빌라** 3승 0무 1패(리그 6위), 최근 5경기 1승 2무 2패, **갈라타사라이** 2승 0무 2패(리그 18위), 5연승."
             },
             {
               "kind": "watch",
@@ -28699,7 +28457,7 @@ window.CLUTCH_DATA = {
                     "value": "+6"
                   }
                 ],
-                "streak": "1경기 연속 무승부",
+                "streak": "최근 5경기 1승 2무 2패",
                 "last5": "1승 2무 2패",
                 "last5Detail": [
                   {
@@ -28916,7 +28674,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**LASK 린츠** 2승 0무 2패(리그 16위), 3연승, **보되/글림트** 1승 1무 2패(리그 25위), 1연승."
+              "text": "**LASK 린츠** 2승 0무 2패(리그 16위), 3연승, **보되/글림트** 1승 1무 2패(리그 25위), 최근 5경기 2승 1무 2패."
             },
             {
               "kind": "watch",
@@ -29068,7 +28826,7 @@ window.CLUTCH_DATA = {
                     "value": "-5"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 2승 1무 2패",
                 "last5": "2승 1무 2패",
                 "last5Detail": [
                   {
@@ -29191,7 +28949,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**AEK 아테네** 1승 0무 3패(리그 29위), 1연승, **코모** 3승 0무 1패(리그 4위), 1연패."
+              "text": "**AEK 아테네** 1승 0무 3패(리그 29위), 최근 5경기 2승 0무 3패, **코모** 3승 0무 1패(리그 4위), 최근 5경기 4승 0무 1패."
             },
             {
               "kind": "watch",
@@ -29249,7 +29007,7 @@ window.CLUTCH_DATA = {
                     "value": "-6"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 2승 0무 3패",
                 "last5": "2승 0무 3패",
                 "last5Detail": [
                   {
@@ -29343,7 +29101,7 @@ window.CLUTCH_DATA = {
                     "value": "+13"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 4승 0무 1패",
                 "last5": "4승 0무 1패",
                 "last5Detail": [
                   {
@@ -30345,7 +30103,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**나폴리** 1승 0무 3패(리그 27위), 1경기 연속 무승부, **맨체스터 시티** 3승 0무 1패(리그 7위), 1연패. 최근 맞대결은 2025.09.18 맨체스터 시티 2-0 나폴리였습니다."
+              "text": "**나폴리** 1승 0무 3패(리그 27위), 최근 5경기 1승 2무 2패, **맨체스터 시티** 3승 0무 1패(리그 7위), 최근 5경기 2승 0무 3패. 최근 맞대결은 2025.09.18 맨체스터 시티 2-0 나폴리였습니다."
             },
             {
               "kind": "watch",
@@ -30403,7 +30161,7 @@ window.CLUTCH_DATA = {
                     "value": "-5"
                   }
                 ],
-                "streak": "1경기 연속 무승부",
+                "streak": "최근 5경기 1승 2무 2패",
                 "last5": "1승 2무 2패",
                 "last5Detail": [
                   {
@@ -30497,7 +30255,7 @@ window.CLUTCH_DATA = {
                     "value": "+5"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 2승 0무 3패",
                 "last5": "2승 0무 3패",
                 "last5Detail": [
                   {
@@ -30656,7 +30414,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**PSV 에인트호번** 1승 1무 2패(리그 24위), 1연승, **레알 마드리드** 4승 0무 0패(리그 2위), 5연승."
+              "text": "**PSV 에인트호번** 1승 1무 2패(리그 24위), 최근 5경기 3승 1무 1패, **레알 마드리드** 4승 0무 0패(리그 2위), 5연승."
             },
             {
               "kind": "watch",
@@ -30714,7 +30472,7 @@ window.CLUTCH_DATA = {
                     "value": "-1"
                   }
                 ],
-                "streak": "1연승",
+                "streak": "최근 5경기 3승 1무 1패",
                 "last5": "3승 1무 1패",
                 "last5Detail": [
                   {
@@ -30931,7 +30689,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**랑스** 1승 0무 3패(리그 33위), 3연패, **RB 라이프치히** 1승 0무 3패(리그 30위), 1연패."
+              "text": "**랑스** 1승 0무 3패(리그 33위), 3연패, **RB 라이프치히** 1승 0무 3패(리그 30위), 최근 5경기 3승 0무 2패."
             },
             {
               "kind": "watch",
@@ -31083,7 +30841,7 @@ window.CLUTCH_DATA = {
                     "value": "-6"
                   }
                 ],
-                "streak": "1연패",
+                "streak": "최근 5경기 3승 0무 2패",
                 "last5": "3승 0무 2패",
                 "last5Detail": [
                   {
@@ -31262,7 +31020,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 21.8점 · 야투 46.8%"
                   }
                 ],
-                "focus": "최근 5경기 Cade Cunningham의 평균은 28.6점·야투 48.5%·3점 29.6%입니다. 결장 5명의 시즌 평균 득점 합계는 44.6점입니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트입니다.",
+                "focus": "최근 5경기 Cade Cunningham의 평균은 28.6점·야투 48.5%·3점 29.6%입니다. 결장 5명의 시즌 평균 득점 합계는 44.6점입니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명(팀 득점 2·4·9·11·14위)",
                 "injuryOut": 5,
                 "injuryPpg": 44.6,
@@ -31377,7 +31135,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 21.2점 · 야투 47.5%"
                   }
                 ],
-                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Desmond Bane가 24점·8리바운드·5어시스트입니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
+                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Desmond Bane가 24점·8리바운드·5어시스트를 기록했습니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.5,
@@ -31541,7 +31299,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 15.0점 · 야투 41.5%"
                   }
                 ],
-                "focus": "최근 5경기 Jayson Tatum의 평균은 24.4점·야투 41.2%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트입니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
+                "focus": "최근 5경기 Jayson Tatum의 평균은 24.4점·야투 41.2%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트를 기록했습니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
                 "injurySummary": "결장 없음",
                 "injuries": []
               },
@@ -31620,8 +31378,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 16.0점 · 야투 48.4%"
                   }
                 ],
-                "focus": "최근 5경기 Anthony Davis의 평균은 26.4점·야투 54.5%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트입니다.",
-                "injurySummary": "결장 4명",
+                "focus": "최근 5경기 Anthony Davis의 평균은 26.4점·야투 54.5%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명 · 출전 불투명 1명",
                 "injuryOut": 4,
                 "injuryPpg": 7.2,
                 "injuries": [
@@ -31792,8 +31550,8 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.4점 · 야투 38.1%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 23.0점·야투 47.6%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 5.2점입니다. 직전 경기에서는 Zaccharie Risacher가 18점·5리바운드·0어시스트입니다.",
-                "injurySummary": "결장 3명",
+                "focus": "최근 5경기 Cooper Flagg의 평균은 23.0점·야투 47.6%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 5.2점입니다. 직전 경기에서는 Zaccharie Risacher가 18점·5리바운드·0어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
                 "injuryOut": 3,
                 "injuryPpg": 5.2,
                 "injuries": [
@@ -31906,7 +31664,7 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 9.8점 · 야투 38.8%"
                   }
                 ],
-                "focus": "최근 5경기 Jamal Murray의 평균은 27.0점·야투 55.6%·3점 40.0%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 28점·15리바운드·7어시스트입니다.",
+                "focus": "최근 5경기 Jamal Murray의 평균은 27.0점·야투 55.6%·3점 40.0%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 28점·15리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [

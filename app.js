@@ -501,7 +501,9 @@
   function oddsHTML(g) {
     var o = g.odds;
     if (!o) {
-      var why = "이 경기의 배당이 ESPN 응답에 아직 없습니다.";
+      var why = g.status === "final"
+        ? "경기가 끝나 ESPN이 배당을 내렸습니다."
+        : "이 경기의 배당이 ESPN 응답에 아직 없습니다.";
       if (g.sport === "volleyball") why = "KOVO 공식 데이터에는 배당 정보가 없습니다.";
       if (g.sport === "baseball") why = "야구는 비시즌이라 실제 경기가 없습니다.";
       return '<section class="obox none"><div class="o-head"><b>배당</b></div>' +
