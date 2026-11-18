@@ -83,7 +83,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-19T01:07:23+09:00",
+  updatedAt: "2026-11-19T01:09:20+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -101,6 +101,7 @@ window.CLUTCH_DATA = {
         /* NBA-AUTO 2026-11-16 START */
         {
           "id": "nba-ind-phi-20261116",
+          "espnId": "401909985",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -440,6 +441,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-lal-phx-20261116",
+          "espnId": "401909986",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -738,6 +740,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-cha-lac-20261116",
+          "espnId": "401909987",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -1061,6 +1064,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-sas-utah-20261116",
+          "espnId": "401909988",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -1383,6 +1387,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-dal-bos-20261116",
+          "espnId": "401909989",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -1693,6 +1698,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-nyk-tor-20261116",
+          "espnId": "401909990",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -1989,6 +1995,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-hou-was-20261116",
+          "espnId": "401909991",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -2321,6 +2328,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-atl-mil-20261116",
+          "espnId": "401909992",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -2643,6 +2651,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-okc-sac-20261116",
+          "espnId": "401909993",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -2990,6 +2999,7 @@ window.CLUTCH_DATA = {
         /* NBA-AUTO 2026-11-17 START */
         {
           "id": "nba-orl-bos-20261117",
+          "espnId": "401909994",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -3291,6 +3301,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-chi-cle-20261117",
+          "espnId": "401909995",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -3622,6 +3633,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-mem-was-20261117",
+          "espnId": "401909996",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -3969,6 +3981,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-phi-bkn-20261117",
+          "espnId": "401909997",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -4270,6 +4283,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-hou-mia-20261117",
+          "espnId": "401909998",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -4590,6 +4604,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-por-min-20261117",
+          "espnId": "401909999",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -4932,6 +4947,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-gsw-nop-20261117",
+          "espnId": "401910000",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -5280,6 +5296,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-phx-den-20261117",
+          "espnId": "401910001",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -5580,6 +5597,7 @@ window.CLUTCH_DATA = {
         /* NBA-AUTO 2026-11-18 START */
         {
           "id": "nba-nyk-tor-20261118",
+          "espnId": "401910002",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -5874,6 +5892,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-por-min-20261118",
+          "espnId": "401910003",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -6217,6 +6236,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-det-sas-20261118",
+          "espnId": "401910004",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -6550,6 +6570,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-utah-lac-20261118",
+          "espnId": "401910006",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -6879,6 +6900,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-cha-lal-20261118",
+          "espnId": "401910005",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -7511,6 +7533,7 @@ window.CLUTCH_DATA = {
         /* NBA-AUTO 2026-11-19 START */
         {
           "id": "nba-mem-cle-20261119",
+          "espnId": "401910007",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -7824,6 +7847,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-hou-ind-20261119",
+          "espnId": "401910008",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -8119,6 +8143,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-mil-mia-20261119",
+          "espnId": "401910009",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -8392,6 +8417,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-phi-orl-20261119",
+          "espnId": "401910010",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -8688,6 +8714,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-chi-bkn-20261119",
+          "espnId": "401910011",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -8951,6 +8978,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-was-tor-20261119",
+          "espnId": "401910012",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -9248,6 +9276,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-det-nop-20261119",
+          "espnId": "401910013",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -9560,6 +9589,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-atl-okc-20261119",
+          "espnId": "401910014",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -9871,6 +9901,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-gsw-dal-20261119",
+          "espnId": "401910016",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -10183,6 +10214,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-bos-den-20261119",
+          "espnId": "401910015",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -10430,6 +10462,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-utah-lal-20261119",
+          "espnId": "401910017",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -10713,6 +10746,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-phx-sac-20261119",
+          "espnId": "401910018",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -11301,6 +11335,7 @@ window.CLUTCH_DATA = {
         /* NBA-AUTO 2026-11-20 START */
         {
           "id": "nba-gsw-mem-20261120",
+          "espnId": "401910019",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -11589,6 +11624,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-por-mil-20261120",
+          "espnId": "401910020",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -11849,6 +11885,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-nyk-min-20261120",
+          "espnId": "401910021",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -12100,6 +12137,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-lac-sas-20261120",
+          "espnId": "401910022",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -12675,6 +12713,7 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-21 START */
         {
           "id": "soccer-esp-ath-20261121",
+          "espnId": "401882805",
           "sport": "soccer",
           "league": "LALIGA",
           "leagueFull": "라리가",
@@ -12988,6 +13027,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-ful-mnc-20261121",
+          "espnId": "401879233",
           "sport": "soccer",
           "league": "EPL",
           "leagueFull": "프리미어리그",
@@ -13301,6 +13341,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-dep-ala-20261121",
+          "espnId": "401882806",
           "sport": "soccer",
           "league": "LALIGA",
           "leagueFull": "라리가",
@@ -13617,6 +13658,7 @@ window.CLUTCH_DATA = {
         /* NBA-AUTO 2026-11-21 START */
         {
           "id": "nba-cha-atl-20261121",
+          "espnId": "401909305",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -13892,6 +13934,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-orl-bkn-20261121",
+          "espnId": "401909306",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -14134,6 +14177,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-ind-cle-20261121",
+          "espnId": "401909307",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -14419,6 +14463,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-tor-det-20261121",
+          "espnId": "401909308",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -14691,6 +14736,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-was-chi-20261121",
+          "espnId": "401909309",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -14965,6 +15011,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-nop-okc-20261121",
+          "espnId": "401909310",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -15250,6 +15297,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-phx-utah-20261121",
+          "espnId": "401909311",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -15500,6 +15548,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-hou-den-20261121",
+          "espnId": "401909312",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -15744,6 +15793,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-sac-lal-20261121",
+          "espnId": "401909313",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -16315,6 +16365,7 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-22 START */
         {
           "id": "soccer-cry-cov-20261122",
+          "espnId": "401879235",
           "sport": "soccer",
           "league": "EPL",
           "leagueFull": "프리미어리그",
@@ -16628,6 +16679,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-ips-tot-20261122",
+          "espnId": "401878754",
           "sport": "soccer",
           "league": "EPL",
           "leagueFull": "프리미어리그",
@@ -16941,6 +16993,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-lee-che-20261122",
+          "espnId": "401879236",
           "sport": "soccer",
           "league": "EPL",
           "leagueFull": "프리미어리그",
@@ -17254,6 +17307,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-nfo-bou-20261122",
+          "espnId": "401879238",
           "sport": "soccer",
           "league": "EPL",
           "leagueFull": "프리미어리그",
@@ -17567,6 +17621,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-sun-avl-20261122",
+          "espnId": "401878756",
           "sport": "soccer",
           "league": "EPL",
           "leagueFull": "프리미어리그",
@@ -17880,6 +17935,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-val-ray-20261122",
+          "espnId": "401882799",
           "sport": "soccer",
           "league": "LALIGA",
           "leagueFull": "라리가",
@@ -18193,6 +18249,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-ars-new-20261122",
+          "espnId": "401879232",
           "sport": "soccer",
           "league": "EPL",
           "leagueFull": "프리미어리그",
@@ -18506,6 +18563,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-bet-sev-20261122",
+          "espnId": "401882797",
           "sport": "soccer",
           "league": "LALIGA",
           "leagueFull": "라리가",
@@ -18819,6 +18877,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-cel-rma-20261122",
+          "espnId": "401882798",
           "sport": "soccer",
           "league": "LALIGA",
           "leagueFull": "라리가",
@@ -19132,6 +19191,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-vil-bar-20261122",
+          "espnId": "401882804",
           "sport": "soccer",
           "league": "LALIGA",
           "leagueFull": "라리가",
@@ -19445,6 +19505,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-bha-hul-20261122",
+          "espnId": "401879234",
           "sport": "soccer",
           "league": "EPL",
           "leagueFull": "프리미어리그",
@@ -19761,6 +19822,7 @@ window.CLUTCH_DATA = {
         /* NBA-AUTO 2026-11-22 START */
         {
           "id": "nba-mil-phi-20261122",
+          "espnId": "401910023",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -20016,6 +20078,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-por-nyk-20261122",
+          "espnId": "401910024",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -20266,6 +20329,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-lac-dal-20261122",
+          "espnId": "401910025",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -20542,6 +20606,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-mem-min-20261122",
+          "espnId": "401910026",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -20829,6 +20894,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-nop-sas-20261122",
+          "espnId": "401910027",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -21100,6 +21166,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-bos-sac-20261122",
+          "espnId": "401910028",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -21351,6 +21418,7 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-23 START */
         {
           "id": "soccer-rso-rac-20261123",
+          "espnId": "401882800",
           "sport": "soccer",
           "league": "LALIGA",
           "leagueFull": "라리가",
@@ -21664,6 +21732,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-man-liv-20261123",
+          "espnId": "401878755",
           "sport": "soccer",
           "league": "EPL",
           "leagueFull": "프리미어리그",
@@ -21977,6 +22046,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-mcf-osa-20261123",
+          "espnId": "401882801",
           "sport": "soccer",
           "league": "LALIGA",
           "leagueFull": "라리가",
@@ -22290,6 +22360,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-atm-get-20261123",
+          "espnId": "401882803",
           "sport": "soccer",
           "league": "LALIGA",
           "leagueFull": "라리가",
@@ -22606,6 +22677,7 @@ window.CLUTCH_DATA = {
         /* NBA-AUTO 2026-11-23 START */
         {
           "id": "nba-det-atl-20261123",
+          "espnId": "401910029",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -22894,6 +22966,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-okc-mia-20261123",
+          "espnId": "401910030",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -23166,6 +23239,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-orl-was-20261123",
+          "espnId": "401910031",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -23444,6 +23518,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-den-chi-20261123",
+          "espnId": "401910032",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -23689,6 +23764,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-dal-utah-20261123",
+          "espnId": "401910033",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -23967,6 +24043,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-ind-nyk-20261123",
+          "espnId": "401910034",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -24216,6 +24293,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-bos-gsw-20261123",
+          "espnId": "401910035",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -24781,6 +24859,7 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-24 START */
         {
           "id": "soccer-elc-lev-20261124",
+          "espnId": "401882802",
           "sport": "soccer",
           "league": "LALIGA",
           "leagueFull": "라리가",
@@ -25094,6 +25173,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-eve-bre-20261124",
+          "espnId": "401879237",
           "sport": "soccer",
           "league": "EPL",
           "leagueFull": "프리미어리그",
@@ -25410,6 +25490,7 @@ window.CLUTCH_DATA = {
         /* NBA-AUTO 2026-11-24 START */
         {
           "id": "nba-mem-cha-20261124",
+          "espnId": "401910036",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -25685,6 +25766,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-por-phi-20261124",
+          "espnId": "401910037",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -25964,6 +26046,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-okc-ind-20261124",
+          "espnId": "401910038",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -26247,6 +26330,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-mil-tor-20261124",
+          "espnId": "401910039",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -26493,6 +26577,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-bkn-min-20261124",
+          "espnId": "401910040",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -26744,6 +26829,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-cle-chi-20261124",
+          "espnId": "401910041",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -27018,6 +27104,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-phx-nop-20261124",
+          "espnId": "401910042",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -27276,6 +27363,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-lac-hou-20261124",
+          "espnId": "401910043",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -27538,6 +27626,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-utah-lal-20261124",
+          "espnId": "401910044",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -27796,6 +27885,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-sas-sac-20261124",
+          "espnId": "401910045",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -28372,6 +28462,7 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-25 START */
         {
           "id": "soccer-avl-gal-20261125",
+          "espnId": "401915300",
           "sport": "soccer",
           "league": "UCL",
           "leagueFull": "UEFA 챔피언스리그",
@@ -28649,6 +28740,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-las-bodo-20261125",
+          "espnId": "401915380",
           "sport": "soccer",
           "league": "UCL",
           "leagueFull": "UEFA 챔피언스리그",
@@ -28926,6 +29018,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-aek-como-20261125",
+          "espnId": "401915296",
           "sport": "soccer",
           "league": "UCL",
           "leagueFull": "UEFA 챔피언스리그",
@@ -29203,6 +29296,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-bet-slb-20261125",
+          "espnId": "401915297",
           "sport": "soccer",
           "league": "UCL",
           "leagueFull": "UEFA 챔피언스리그",
@@ -29480,6 +29574,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-dor-ars-20261125",
+          "espnId": "401915295",
           "sport": "soccer",
           "league": "UCL",
           "leagueFull": "UEFA 챔피언스리그",
@@ -29793,6 +29888,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-fcp-fey-20261125",
+          "espnId": "401915294",
           "sport": "soccer",
           "league": "UCL",
           "leagueFull": "UEFA 챔피언스리그",
@@ -30088,6 +30184,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-nap-mnc-20261125",
+          "espnId": "401915379",
           "sport": "soccer",
           "league": "UCL",
           "leagueFull": "UEFA 챔피언스리그",
@@ -30401,6 +30498,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-psv-rma-20261125",
+          "espnId": "401915298",
           "sport": "soccer",
           "league": "UCL",
           "leagueFull": "UEFA 챔피언스리그",
@@ -30678,6 +30776,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "soccer-rcl-rbl-20261125",
+          "espnId": "401915299",
           "sport": "soccer",
           "league": "UCL",
           "leagueFull": "UEFA 챔피언스리그",
@@ -30958,6 +31057,7 @@ window.CLUTCH_DATA = {
         /* NBA-AUTO 2026-11-25 START */
         {
           "id": "nba-det-orl-20261125",
+          "espnId": "401909314",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -31236,6 +31336,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-bos-was-20261125",
+          "espnId": "401909315",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
@@ -31487,6 +31588,7 @@ window.CLUTCH_DATA = {
         },
         {
           "id": "nba-dal-den-20261125",
+          "espnId": "401909316",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
