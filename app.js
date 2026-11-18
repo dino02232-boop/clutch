@@ -22,6 +22,9 @@
 
   /* ── DOM ───────────────────────────────────────────── */
   var elDates = document.getElementById("dates");
+  var elWeekTitle = document.getElementById("weekTitle");
+  var elWeekPrev = document.getElementById("weekPrev");
+  var elWeekNext = document.getElementById("weekNext");
   var elTabs = document.getElementById("tabs");
   var elList = document.getElementById("list");
   var elPanel = document.getElementById("panel");
@@ -172,8 +175,10 @@
     day: DAYS.filter(function (d) { return d.date >= today; })[0] ?
       DAYS.filter(function (d) { return d.date >= today; })[0].date : DAYS[DAYS.length - 1].date,
     sport: null,   // null = 홈(종목 선택)
-    openId: null   // 펼친 경기 id
+    openId: null,  // 펼친 경기 id
+    weekStart: null // 날짜 스트립에 보이는 주의 월요일(YYYY-MM-DD)
   };
+  state.weekStart = mondayOf(state.day);
 
   /* ── 텍스트 헬퍼 ───────────────────────────────────── */
   function esc(s) {
@@ -190,26 +195,68 @@
     return allowed.indexOf(tone) >= 0 ? tone : fallback;
   }
 
-  /* ── 날짜 버튼 ─────────────────────────────────────── */
-  function renderDates() {
-    elDates.innerHTML = DAYS.map(function (d) {
-      var on = d.date === state.day;
-      return '<button class="date-btn" type="button" data-date="' + esc(d.date) + '"' +
-        ' aria-pressed="' + on + '">' +
-        '<span class="d">' + shortDate(d.date) + "</span>" +
-        '<span class="w">' + esc(dayTag(d.date)) + "</span>" +
-        "</button>";
-    }).join("");
+  /* ── 주 단위 날짜 스트립 (월요일 시작 7칸) ───────────────
+     주차 규칙: 그 달 1일이 들어 있는 7일 묶음(1~7일)을 1주차로 센다.
+       예) 2026-11-01(일) → 11/1~11/7 = 1주차, 11/16~11/22 = 3주차, 11/23~11/29 = 4주차
+     스트립은 월요일부터 7칸이라, 셋째 주 칸은 11/16(월)~11/22(일) 입니다. */
+  var WEEKDAY_LABELS = ["월", "화", "수", "목", "금", "토", "일"];
+  var WEEK_ORDINAL = ["첫째", "둘째", "셋째", "넷째", "다섯째"];
 
-    Array.prototype.forEach.call(elDates.querySelectorAll(".date-btn"), function (btn) {
+  function mondayOf(dateStr) {
+    var wd = new Date(dateStr + "T00:00:00Z").getUTCDay();
+    var back = (wd + 6) % 7; // 월=0 … 일=6
+    return addDays(dateStr, -back);
+  }
+
+  function weekLabel(mondayStr) {
+    var mid = addDays(mondayStr, 3); // 목요일 기준으로 그 주의 달·주차를 정한다
+    var m = Number(mid.slice(5, 7));
+    var n = Math.floor((Number(mid.slice(8, 10)) - 1) / 7) + 1;
+    return m + "월 " + (WEEK_ORDINAL[n - 1] || n + "째") + " 주";
+  }
+
+  function renderWeek() {
+    var monday = state.weekStart || mondayOf(state.day);
+    if (elWeekTitle) elWeekTitle.textContent = weekLabel(monday);
+
+    var cells = [];
+    for (var i = 0; i < 7; i++) {
+      var ds = addDays(monday, i);
+      var on = ds === state.day;
+      var past = ds < todayStr();
+      cells.push('<button class="day-cell' + (on ? " on" : "") + (past ? " past" : "") + '" type="button"' +
+        ' data-date="' + ds + '" aria-pressed="' + on + '" aria-label="' + longDate(ds) + '">' +
+        '<span class="w">' + WEEKDAY_LABELS[i] + "</span>" +
+        '<span class="d">' + Number(ds.slice(8, 10)) + "</span>" +
+        "</button>");
+    }
+    elDates.innerHTML = cells.join("");
+
+    Array.prototype.forEach.call(elDates.querySelectorAll(".day-cell"), function (btn) {
       btn.addEventListener("click", function () {
         if (state.day === btn.dataset.date) return;
         state.day = btn.dataset.date;
+        state.weekStart = mondayOf(state.day);
         state.openId = null;
         writeHash(state.sport || "", true);
         render();
       });
     });
+  }
+
+  // 주 이동: 그 주에서 경기가 있는 첫 날(없으면 월요일)로 선택을 옮긴다.
+  function shiftWeek(delta) {
+    var monday = addDays(state.weekStart || mondayOf(state.day), delta * 7);
+    state.weekStart = monday;
+    var pick = null;
+    for (var i = 0; i < 7 && !pick; i++) {
+      var ds = addDays(monday, i);
+      if (gamesOf(ds).length) pick = ds;
+    }
+    state.day = pick || monday;
+    state.openId = null;
+    writeHash(state.sport || "", true);
+    render();
   }
 
   /* ── 종목 탭 ───────────────────────────────────────── */
@@ -281,6 +328,7 @@
       var e = gameEntry(r.openId);
       if (e) state.day = e.date;
     }
+    state.weekStart = mondayOf(state.day);
     render();
     if (state.openId) {
       var item = itemOf(state.openId);
@@ -299,8 +347,7 @@
 
   /* ── 경기 박스 내용 (펼쳤을 때만 DOM 에 들어간다) ─────── */
   // 박스 안 두 팀 한 줄: 원정/홈 · 팀명 · 전적 · 배지
-  function formRow(side, team) {
-    if (!team) return "";
+  function formRow(side, team) {    if (!team) return "";
     var badges = (team.badges || []).map(function (b) {
       return '<span class="badge ' + toneClass(b.tone, ["hot", "rank"], "") + '">' + esc(b.text) + "</span>";
     }).join("");
@@ -310,6 +357,82 @@
       (team.record ? '<span class="f-rec">' + esc(team.record) + "</span>" : "") +
       badges +
       "</li>";
+  }
+
+  function injRowsHTML(list, withTeam) {
+    return (list || []).map(function (i) {
+      return '<li>' + (withTeam ? '<span class="tt">' + esc(i.team || "") + "</span>" : "") +
+        '<span class="pl">' + esc(i.player) +
+        (i.note ? "<small>" + esc(i.note) + "</small>" : "") + "</span>" +
+        statusHTML(i.status) + "</li>";
+    }).join("");
+  }
+
+  // 팀별 정보 블록 하나: 제목(원정/홈 · 팀명 · 약어) + 전적 칸 + 수치 칸 + 그 팀 부상자
+  //  · 종목 공통: data 의 cells[] / nums[] 를 그대로 그린다(없는 줄은 생략).
+  //  · 농구(NBA)는 cells/nums 없이 record·venueRecord·last5·lastGame·ppg·rpg·tp 필드를 쓴다.
+  function teamBlockHTML(t) {
+    if (!t) return "";
+    var side = t.side === "home" ? "home" : "away";
+
+    var cellPairs = [];
+    if (Array.isArray(t.cells) && t.cells.length) {
+      cellPairs = t.cells.map(function (c) { return [c && c.label, c && c.value]; });
+    } else {
+      var venueRec = t.venueRecord ? String(t.venueRecord).replace(/^(홈|원정)\s*/, "") : null;
+      cellPairs = [
+        ["시즌 전적", t.record],
+        [side === "home" ? "홈 전적" : "원정 전적", venueRec],
+        ["최근 5경기", t.last5],
+        ["직전 경기", t.lastGame]
+      ];
+    }
+    var cells = cellPairs.filter(function (c) {
+      return c[1] != null && c[1] !== "";
+    }).map(function (c) {
+      return '<div class="tb-cell"><dt>' + esc(c[0]) + "</dt><dd>" + esc(c[1]) + "</dd></div>";
+    }).join("");
+
+    var numHTML;
+    if (Array.isArray(t.nums) && t.nums.length) {
+      numHTML = t.nums.filter(function (n) { return n && n.value != null && n.value !== ""; })
+        .map(function (n) {
+          return '<span class="num"><b>' + esc(n.value) + "</b><small>" + esc(n.label) + "</small></span>";
+        }).join("");
+    } else {
+      numHTML = [
+        ["평균 득점", t.ppg, "점"],
+        ["리바운드", t.rpg, ""],
+        ["3점 성공률", t.tp, "%"]
+      ].filter(function (n) { return n[1] != null && n[1] !== "" && isFinite(Number(n[1])); })
+        .map(function (n) {
+          var v = Number(n[1]);
+          return '<span class="num"><b>' + (Math.round(v * 10) / 10).toFixed(1) + n[2] +
+            "</b><small>" + esc(n[0]) + "</small></span>";
+        }).join("");
+    }
+
+    // injuries: 배열이면 명단(비었으면 "없음"), 아예 없으면 그 종목에 정보가 없는 것.
+    var hasInjData = Array.isArray(t.injuries);
+    var ins = hasInjData ? t.injuries : [];
+    var injHTML = !hasInjData
+      ? '<p class="tb-none">부상 정보 없음</p>'
+      : (ins.length
+        ? '<ul class="inj-list solo">' + injRowsHTML(ins, false) + "</ul>"
+        : '<p class="tb-none">부상 명단에 올라온 선수가 없습니다</p>');
+
+    return '<section class="tblock ' + side + '">' +
+      '<div class="tb-head">' +
+        '<span class="tb-side">' + (side === "home" ? "홈" : "원정") + "</span>" +
+        '<b class="tb-name">' + esc(t.name || t.abbr || "") + "</b>" +
+        (t.abbr ? '<span class="tb-abbr">' + esc(t.abbr) + "</span>" : "") +
+      "</div>" +
+      (cells ? '<dl class="tb-grid">' + cells + "</dl>" : "") +
+      (numHTML ? '<div class="tb-nums">' + numHTML + "</div>" : "") +
+      (hasInjData
+        ? '<h4 class="tb-sub">부상 명단' + (ins.length ? " <span class=\"cnt\">" + ins.length + "명</span>" : "") + "</h4>" + injHTML
+        : injHTML) +
+      "</section>";
   }
 
   function boxHTML(g) {
@@ -337,14 +460,16 @@
       }).join("") + "</dl>";
     }
 
-    if (injuries.length) {
-      body += '<h3 class="p-title">부상 리포트</h3><ul class="inj-list">' +
-        injuries.map(function (i) {
-          return '<li><span class="tt">' + esc(i.team || "") + "</span>" +
-            '<span class="pl">' + esc(i.player) +
-            (i.note ? "<small>" + esc(i.note) + "</small>" : "") + "</span>" +
-            statusHTML(i.status) + "</li>";
-        }).join("") + "</ul>";
+    // 팀별 정보: 원정팀 먼저, 홈팀 다음. details.teams 가 없는 카드(샘플)에서는 그리지 않는다.
+    var teams = Array.isArray(d.teams) ? d.teams.filter(Boolean) : [];
+    if (teams.length) {
+      var ordered = teams.slice().sort(function (a, b) {
+        var rank = function (t) { return t.side === "home" ? 1 : 0; };
+        return rank(a) - rank(b);
+      });
+      body += '<div class="team-blocks">' + ordered.map(teamBlockHTML).join("") + "</div>";
+    } else if (injuries.length) {
+      body += '<h3 class="p-title">부상 리포트</h3><ul class="inj-list">' + injRowsHTML(injuries, true) + "</ul>";
     }
 
     if (checks.length) {
@@ -473,6 +598,18 @@
     var meta = sport ? sportMeta(sport) : { id: null, name: "전체", icon: "🗓️" };
     var label = longDate(day);
 
+    if (day < todayStr()) {
+      var upcoming = DAYS.filter(function (d) {
+        return d.date >= todayStr() && gamesOf(d.date).length > 0;
+      })[0];
+      return {
+        ico: "🗓️",
+        title: label + "은 지난 날짜예요",
+        desc: "지난 날짜의 브리핑은 제공하지 않습니다. 오늘이나 그 이후 날짜를 골라 주세요.",
+        cta: upcoming ? { type: "day", id: upcoming.date, label: longDate(upcoming.date) + " 브리핑 보기" } : null
+      };
+    }
+
     if (!games.length) {
       var next = DAYS.filter(function (d) {
         return d.date > day && gamesOf(d.date).length > 0;
@@ -539,16 +676,30 @@
       : names.join(" · ");
   }
 
+  // 경기 카드의 출처: espn / thesportsdb = 실제, source 없음 = 샘플
+  function isReal(g) { return g && (g.source === "espn" || g.source === "thesportsdb"); }
+
+  function sourceBadge(gs) {
+    if (!gs.length) return "";
+    var real = gs.filter(isReal).length;
+    if (!real) return '<span class="tile-src sample">샘플</span>';
+    if (real === gs.length) return '<span class="tile-src real">실제</span>';
+    return '<span class="tile-src mixed">실제+샘플</span>';
+  }
+
   function tileHTML(s, gs) {
     var n = gs.length;
     var count = n ? n + "경기" : "경기 없음";
     var sub = leagueLine(gs);
+    var src = sourceBadge(gs);
+    var srcText = !n ? "" : (gs.filter(isReal).length === n ? " 실제 데이터" : (gs.filter(isReal).length ? " 실제와 샘플" : " 샘플 데이터"));
     return '<button class="tile' + (n ? "" : " none") + '" type="button" data-sport="' + esc(s.id) + '"' +
-      ' aria-label="' + esc(s.name) + " " + count + ", " + esc(sub) + '">' +
+      ' aria-label="' + esc(s.name) + " " + count + ", " + esc(sub) + esc(srcText) + '">' +
       '<span class="tile-ico" aria-hidden="true">' + esc(s.icon) + "</span>" +
       '<span class="tile-body">' +
         '<span class="tile-top">' +
           '<b class="tile-name">' + esc(s.name) + "</b>" +
+          src +
           '<span class="tile-cnt">' + count + "</span>" +
         "</span>" +
         '<span class="tile-sub">' + esc(sub) + "</span>" +
@@ -607,11 +758,18 @@
   // 샘플이 섞여 있으면 샘플이라고 밝힌다.
   function renderDataChip() {
     var scope = state.sport ? gamesIn(state.day, state.sport) : gamesOf(state.day);
-    var real = scope.filter(function (g) { return g.source === "espn"; }).length;
-    var label = real === 0 ? "샘플 데이터"
-      : (real === scope.length ? "ESPN 실제 데이터" : "ESPN + 샘플");
+    var real = scope.filter(isReal);
+    var sources = {};
+    real.forEach(function (g) { sources[g.source] = 1; });
+    var label;
+    if (!scope.length) label = "데이터 없음";
+    else if (!real.length) label = "샘플 데이터";
+    else if (real.length < scope.length) label = "실제 + 샘플";
+    else if (Object.keys(sources).length === 1) {
+      label = sources.espn ? "ESPN 실제 데이터" : "TheSportsDB 실제 데이터";
+    } else label = "실제 데이터";
     elDataChip.textContent = label;
-    elDataChip.classList.toggle("real", real > 0);
+    elDataChip.classList.toggle("real", real.length > 0);
   }
 
   /* ── 렌더 ──────────────────────────────────────────── */
@@ -621,7 +779,7 @@
     elBrandDate.textContent = state.day.replace(/-/g, ".") + " " + weekdayOf(state.day);
     renderDataChip();
 
-    renderDates();
+    renderWeek();
     renderTabs();
 
     // 패널의 이름표(접근성): 홈 = 종목 선택 영역, 목록 = 선택된 탭
@@ -669,6 +827,9 @@
       if (d) state.day = d.date;
     }
   })();
+
+  if (elWeekPrev) elWeekPrev.addEventListener("click", function () { shiftWeek(-1); });
+  if (elWeekNext) elWeekNext.addEventListener("click", function () { shiftWeek(1); });
 
   elEmptyCta.addEventListener("click", function () {
     var type = elEmptyCta.dataset.ctaType;

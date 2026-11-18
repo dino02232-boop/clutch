@@ -14,6 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<link rel="icon" type="image/png" sizes="512x512" href="icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta property="og:image" content="https://dino02232-boop.github.io/clutch/icon.png">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,7 +25,32 @@
   <header class="top">
     <div class="top-row">
       <a class="brand" href="#" id="homeLink" aria-label="CLUTCH — 종목 선택(홈)으로 이동">
-        <span class="logo" aria-hidden="true">C</span>
+        <svg class="mark" viewBox="0 0 34 34" role="img" aria-label="CLUTCH">
+          <title>CLUTCH</title>
+          <defs>
+            <linearGradient id="mkbg" x1="0" y1="0" x2="0.35" y2="1">
+              <stop offset="0" stop-color="#16223B"/><stop offset="1" stop-color="#0A1220"/>
+            </linearGradient>
+            <linearGradient id="mkc" x1="0.1" y1="1" x2="0.95" y2="0">
+              <stop offset="0" stop-color="#7DF5C0"/><stop offset="1" stop-color="#22C98A"/>
+            </linearGradient>
+          </defs>
+          <rect x=".5" y=".5" width="33" height="33" rx="10.5" fill="url(#mkbg)" stroke="rgba(255,255,255,.09)"/>
+          <circle cx="17" cy="17" r="9.1" fill="none" stroke="rgba(125,245,192,.10)" stroke-width=".7"/>
+          <path d="M18.74 8.07 A9.1 9.1 0 1 0 24.63 21.96" fill="none" stroke="url(#mkc)"
+                stroke-width="4.1" stroke-linecap="round"/>
+          <g fill="#7DF5C0">
+            <polygon points="21.1,6.0 22.7,5.6 22.4,7.1"/>
+            <polygon points="23.7,4.3 25.4,4.0 25.2,5.5"/>
+            <polygon points="26.9,5.9 28.2,6.0 27.6,7.2"/>
+            <polygon points="22.6,9.0 23.7,8.8 23.5,9.9"/>
+          </g>
+          <g stroke="#FFB43A" stroke-width=".85" stroke-linecap="round">
+            <path d="M25.5 3.4 L26.6 2.2"/>
+            <path d="M28.7 4.7 L29.7 4.3"/>
+            <path d="M22.2 4.4 L22.9 3.5"/>
+          </g>
+          <circle cx="24.4" cy="7.7" r=".6" fill="#FFB43A"/>
         <span class="brand-txt">
           <span class="brand-name">CLUTCH</span>
           <span class="brand-sub">오늘의 클러치 · 30초 브리핑</span>
@@ -34,7 +62,14 @@
       </div>
     </div>
 
-    <div class="dates" id="dates" role="group" aria-label="날짜 선택"></div>
+    <div class="week">
+      <div class="week-head">
+        <button type="button" class="wk-nav" id="weekPrev" aria-label="이전 주">‹</button>
+        <span class="wk-title" id="weekTitle">—</span>
+        <button type="button" class="wk-nav" id="weekNext" aria-label="다음 주">›</button>
+      </div>
+      <div class="dates" id="dates" role="group" aria-label="날짜 선택"></div>
+    </div>
 
     <div class="tabs" id="tabs" role="tablist" aria-label="종목 선택"></div>
   </header>
@@ -65,10 +100,27 @@
     </div>
 
     <footer class="foot">
-      <div class="foot-brand"><span class="logo" aria-hidden="true">C</span>CLUTCH</div>
+      <div class="foot-brand"><svg class="mark sm" viewBox="0 0 34 34" role="img" aria-label="CLUTCH">
+            <title>CLUTCH</title>
+            <defs>
+              <linearGradient id="mkbg2" x1="0" y1="0" x2="0.35" y2="1">
+                <stop offset="0" stop-color="#16223B"/><stop offset="1" stop-color="#0A1220"/>
+              </linearGradient>
+              <linearGradient id="mkc2" x1="0.1" y1="1" x2="0.95" y2="0">
+                <stop offset="0" stop-color="#7DF5C0"/><stop offset="1" stop-color="#22C98A"/>
+              </linearGradient>
+            </defs>
+            <rect x="1" y="1" width="32" height="32" rx="10" fill="url(#mkbg2)" stroke="rgba(255,255,255,.09)"/>
+            <path d="M18.74 8.07 A9.1 9.1 0 1 0 24.63 21.96" fill="none" stroke="url(#mkc2)"
+                  stroke-width="4.6" stroke-linecap="round"/>
+            <g fill="#7DF5C0">
+              <polygon points="23.4,4.6 25.4,4.2 25.2,6.1"/>
+              <polygon points="27.0,6.2 28.6,6.4 27.9,7.8"/>
+            </g>
+            <circle cx="25.0" cy="3.6" r=".9" fill="#FFB43A"/><span>CLUTCH</span></div>
       <p class="strong">두 팀의 상태를 같은 무게로 정리합니다. 승자 예측은 제공하지 않습니다.</p>
       <p>일정과 카드 내용은 <code>data.js</code> 파일에서 갱신합니다. 경기 시작 시각과 라인업은 현지 공식 발표로 다시 확인하세요.</p>
-      <p><b>NBA</b> 일정·전적·부상 명단은 ESPN 공개 데이터를 하루 한 번 받아 갱신하며, 표시된 기준 시각의 값입니다. <b>축구·야구·배구</b>는 형식을 보여주기 위한 <b>샘플 데이터</b>로 실제 일정과 다릅니다.</p>
+      <p><b>농구(NBA)</b>와 <b>축구</b>는 ESPN 공개 데이터, <b>배구</b>는 TheSportsDB 공개 데이터에서 일정·전적·순위를 받아 갱신하며 표시된 기준 시각의 값입니다. <b>야구(KBO)</b>는 비시즌이라 형식을 보여주기 위한 <b>샘플 데이터</b>로 실제 일정과 다릅니다.</p>
     </footer>
   </main>
 </div>
