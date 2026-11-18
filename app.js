@@ -368,13 +368,13 @@
     }).join("");
   }
 
-  // 팀별 정보 블록 하나: 제목(원정/홈 · 팀명 · 약어) + 전적 칸 + 수치 칸 + 그 팀 부상자
-  //  · 종목 공통: data 의 cells[] / nums[] 를 그대로 그린다(없는 줄은 생략).
-  //  · 농구(NBA)는 cells/nums 없이 record·venueRecord·last5·lastGame·ppg·rpg·tp 필드를 쓴다.
+  // 팀별 정보 블록 하나
+  //  · 제목: [원정] 팀명 · 약어 / 이어서 전적칸·수치칸·주요 선수·최근 5경기·부상·관전 포인트
   function teamBlockHTML(t) {
     if (!t) return "";
     var side = t.side === "home" ? "home" : "away";
 
+    // 전적 칸
     var cellPairs = [];
     if (Array.isArray(t.cells) && t.cells.length) {
       cellPairs = t.cells.map(function (c) { return [c && c.label, c && c.value]; });
@@ -393,6 +393,7 @@
       return '<div class="tb-cell"><dt>' + esc(c[0]) + "</dt><dd>" + esc(c[1]) + "</dd></div>";
     }).join("");
 
+    // 수치 칸
     var numHTML;
     if (Array.isArray(t.nums) && t.nums.length) {
       numHTML = t.nums.filter(function (n) { return n && n.value != null && n.value !== ""; })
@@ -412,26 +413,187 @@
         }).join("");
     }
 
-    // injuries: 배열이면 명단(비었으면 "없음"), 아예 없으면 그 종목에 정보가 없는 것.
-    var hasInjData = Array.isArray(t.injuries);
-    var ins = hasInjData ? t.injuries : [];
-    var injHTML = !hasInjData
-      ? '<p class="tb-none">부상 정보 없음</p>'
-      : (ins.length
-        ? '<ul class="inj-list solo">' + injRowsHTML(ins, false) + "</ul>"
-        : '<p class="tb-none">부상 명단에 올라온 선수가 없습니다</p>');
+    // 주요 선수 2~3명
+    var playersHTML = "";
+    if (Array.isArray(t.players) && t.players.length) {
+      playersHTML = '<h4 class="tb-sub">주요 선수</h4><ul class="pl-list">' +
+        t.players.slice(0, 3).map(function (p) {
+          return '<li>' +
+            '<span class="pl-top"><b>' + esc(p.name) + "</b>" +
+            (p.pos ? '<i class="pl-pos">' + esc(p.pos) + "</i>" : "") + "</span>" +
+            (p.stat ? '<span class="pl-stat">' + esc(p.stat) + "</span>" : "") +
+            (p.sub ? '<span class="pl-sub">' + esc(p.sub) + "</span>" : "") +
+            (p.recent ? '<span class="pl-recent">' + esc(p.recent) + "</span>" : "") +
+            (p.last ? '<span class="pl-last">' + esc(p.last) + "</span>" : "") +
+            "</li>";
+        }).join("") + "</ul>";
+    }
+
+    // 최근 5경기 상세
+    var l5HTML = "";
+    if (Array.isArray(t.last5Detail) && t.last5Detail.length) {
+      l5HTML = '<h4 class="tb-sub">최근 ' + t.last5Detail.length + "경기</h4>" +
+        '<ul class="l5-list">' + t.last5Detail.map(function (r) {
+          var cls = r.res === "승" || r.res === "W" ? "w" : (r.res === "패" || r.res === "L" ? "l" : "d");
+          return "<li>" +
+            '<span class="l5-date">' + esc((r.date || "").slice(5).replace("-", ".")) + "</span>" +
+            '<span class="l5-ha">' + esc(r.ha || "") + "</span>" +
+            '<span class="l5-opp">' + esc(r.opp || "") + "</span>" +
+            '<span class="l5-sc">' + esc(r.score || "") + "</span>" +
+            '<span class="l5-res ' + cls + '">' + esc(r.res || "") + "</span>" +
+            "</li>";
+        }).join("") + "</ul>";
+    }
+
+    // 부상 — 인원 요약 + 선수별 상세
+    var ins = Array.isArray(t.injuries) ? t.injuries : [];
+    var injHTML = "";
+    if (Array.isArray(t.injuries) || t.injuryNote) {
+      var head = t.injurySummary
+        ? '<b class="inj-sum">' + esc(t.injurySummary) + "</b>"
+        : "";
+      var body = ins.length
+        ? '<ul class="inj-list solo">' + ins.map(function (i) {
+            return "<li>" +
+              '<span class="pl">' + esc(i.player) +
+              (i.pos ? '<small class="pos">' + esc(i.pos) + "</small>" : "") +
+              (i.line ? "<small>" + esc(i.line) + "</small>" : "") + "</span>" +
+              statusHTML(i.status) + "</li>";
+          }).join("") + "</ul>"
+        : '<p class="tb-none">' + esc(t.injuryNote || (t.injurySummary === "결장 없음" ? "결장 명단에 올라온 선수가 없습니다" : "부상 정보 없음")) + "</p>";
+      injHTML = '<h4 class="tb-sub">부상 · 결장</h4>' + head + body;
+    }
+
+    var focusHTML = t.focus ? '<h4 class="tb-sub">관전 포인트</h4><p class="tb-focus">' + md(t.focus) + "</p>" : "";
 
     return '<section class="tblock ' + side + '">' +
       '<div class="tb-head">' +
         '<span class="tb-side">' + (side === "home" ? "홈" : "원정") + "</span>" +
         '<b class="tb-name">' + esc(t.name || t.abbr || "") + "</b>" +
         (t.abbr ? '<span class="tb-abbr">' + esc(t.abbr) + "</span>" : "") +
+        (t.streak ? '<span class="tb-streak">' + esc(t.streak) + "</span>" : "") +
       "</div>" +
       (cells ? '<dl class="tb-grid">' + cells + "</dl>" : "") +
       (numHTML ? '<div class="tb-nums">' + numHTML + "</div>" : "") +
-      (hasInjData
-        ? '<h4 class="tb-sub">부상 명단' + (ins.length ? " <span class=\"cnt\">" + ins.length + "명</span>" : "") + "</h4>" + injHTML
-        : injHTML) +
+      playersHTML +
+      l5HTML +
+      injHTML +
+      focusHTML +
+      "</section>";
+  }
+
+  // 배당 — 미국식(+/-)과 소수 배당을 함께. 값이 없으면 "배당 정보 없음".
+  function amText(v) {
+    if (v == null || !isFinite(Number(v))) return "—";
+    var n = Number(v);
+    return (n > 0 ? "+" : "") + n;
+  }
+  function decText(v) {
+    if (v == null || !isFinite(Number(v)) || Number(v) === 0) return "—";
+    var n = Number(v);
+    var d = n > 0 ? (n / 100 + 1) : (100 / Math.abs(n) + 1);
+    return d.toFixed(2);
+  }
+  function oddsRowHTML(label, ml) {
+    return '<li><span class="o-lab">' + esc(label) + "</span>" +
+      '<span class="o-val"><b>' + decText(ml) + "</b><i>" + amText(ml) + "</i></span></li>";
+  }
+  function oddsHTML(g) {
+    var o = g.odds;
+    if (!o) {
+      var why = "이 경기의 배당이 ESPN 응답에 아직 없습니다.";
+      if (g.sport === "volleyball") why = "KOVO 공식 데이터에는 배당 정보가 없습니다.";
+      if (g.sport === "baseball") why = "야구는 비시즌이라 실제 경기가 없습니다.";
+      return '<section class="obox none"><div class="o-head"><b>배당</b></div>' +
+        '<p class="o-none">배당 정보 없음 — ' + esc(why) + "</p></section>";
+    }
+    var ml = o.moneyline || {};
+    var rows = "";
+    if (ml.away != null || ml.home != null || ml.draw != null) {
+      rows += oddsRowHTML("원정 승" + (g.away ? " · " + g.away.abbr : ""), ml.away);
+      if (ml.draw != null) rows += oddsRowHTML("무승부", ml.draw);
+      rows += oddsRowHTML("홈 승" + (g.home ? " · " + g.home.abbr : ""), ml.home);
+    }
+    var lines = [];
+    if (o.spread && (o.spread.homeLine || o.spread.awayLine)) {
+      var sp = "핸디캡 홈 " + (o.spread.homeLine || "—") +
+        (o.spread.home != null ? " (" + amText(o.spread.home) + ")" : "") +
+        " · 원정 " + (o.spread.awayLine || "—") +
+        (o.spread.away != null ? " (" + amText(o.spread.away) + ")" : "");
+      lines.push(sp);
+    }
+    if (o.total && (o.total.line || o.total.over != null)) {
+      lines.push("총점 " + (o.total.line || "—") +
+        (o.total.over != null ? " · 오버 " + amText(o.total.over) : "") +
+        (o.total.under != null ? " / 언더 " + amText(o.total.under) : ""));
+    }
+    var imp = o.implied;
+    var impLine = "";
+    if (imp) {
+      var bits = [];
+      if (imp.away != null) bits.push("원정 " + imp.away + "%");
+      if (imp.draw != null) bits.push("무 " + imp.draw + "%");
+      if (imp.home != null) bits.push("홈 " + imp.home + "%");
+      impLine = '<p class="o-imp">내재 확률 ' + bits.join(" · ") + "</p>";
+    }
+    var at = o.at ? String(o.at).slice(5, 16).replace("T", " ") : "";
+    return '<section class="obox">' +
+      '<div class="o-head"><b>배당</b>' +
+        (o.provider ? '<span class="o-prov">' + esc(o.provider) + "</span>" : "") +
+        (at ? '<span class="o-at">' + esc(at) + " 기준</span>" : "") +
+      "</div>" +
+      (rows ? '<ul class="o-list">' + rows + "</ul>" : "") +
+      (lines.length ? '<p class="o-line">' + lines.map(esc).join("<br>") + "</p>" : "") +
+      impLine +
+      '<p class="o-note">해외 배당이며 국내 배트맨·프로토 배당과 다를 수 있습니다. 소수 배당은 미국식 배당을 환산한 값입니다.</p>' +
+      "</section>";
+  }
+
+  // 결과 — 끝난 경기만. 경기 전 분석은 위에 그대로 두고 결과만 덧붙인다.
+  function resultHTML(g) {
+    var r = g.result;
+    if (!r) {
+      return '<section class="rbox pre"><div class="r-head"><b>결과</b>' +
+        '<span class="r-state">경기 전</span></div>' +
+        '<p class="r-none">아직 시작하지 않은 경기입니다.</p></section>';
+    }
+    var state = r.state === "final" ? "종료" : "진행 중";
+    var top = Array.isArray(r.top) ? r.top : [];
+    var linesHTML = "";
+    if (r.lines && ((r.lines.away && r.lines.away.length) || (r.lines.home && r.lines.home.length))) {
+      var n = Math.max((r.lines.away || []).length, (r.lines.home || []).length);
+      var head = "", ar = "", hr = "";
+      for (var i = 0; i < n; i++) {
+        head += "<th>" + (i + 1) + "Q</th>";
+        ar += "<td>" + esc((r.lines.away || [])[i] || "-") + "</td>";
+        hr += "<td>" + esc((r.lines.home || [])[i] || "-") + "</td>";
+      }
+      linesHTML = '<table class="r-lines"><thead><tr><th></th>' + head + "<th>합</th></tr></thead><tbody>" +
+        '<tr><th>' + esc(g.away ? g.away.abbr : "원정") + "</th>" + ar + "<td>" + esc(String(r.awayScore != null ? r.awayScore : "-")) + "</td></tr>" +
+        '<tr><th>' + esc(g.home ? g.home.abbr : "홈") + "</th>" + hr + "<td>" + esc(String(r.homeScore != null ? r.homeScore : "-")) + "</td></tr>" +
+        "</tbody></table>";
+    }
+    var topHTML = top.length
+      ? '<ul class="r-top">' + top.map(function (p) {
+          var bits = [];
+          if (p.pts != null) bits.push(p.pts + "점");
+          if (p.reb != null) bits.push(p.reb + "리바운드");
+          if (p.ast != null) bits.push(p.ast + "어시스트");
+          return "<li><span class=\"r-team\">" + esc(p.team || "") + "</span>" +
+            "<b>" + esc(p.name || "") + "</b><span class=\"r-stat\">" + esc(bits.join(" · ")) + "</span></li>";
+        }).join("") + "</ul>"
+      : '<p class="r-none">주요 선수 기록을 받지 못했습니다.</p>';
+    var win = r.winner === "away" ? (g.away ? g.away.name : "원정") :
+      (r.winner === "home" ? (g.home ? g.home.name : "홈") : null);
+    return '<section class="rbox">' +
+      '<div class="r-head"><b>결과</b><span class="r-state ' + (r.state === "final" ? "final" : "live") + '">' +
+        esc(state) + (r.detail ? " · " + esc(r.detail) : "") + "</span>" +
+        (win ? '<span class="r-win">' + esc(win) + " 승</span>" : "") +
+      "</div>" +
+      '<p class="r-score"><b>' + esc(g.away ? g.away.abbr : "원정") + " " + esc(String(r.awayScore != null ? r.awayScore : "-")) + "</b>" +
+        ' <span class="r-vs">:</span> <b>' + esc(String(r.homeScore != null ? r.homeScore : "-")) + " " + esc(g.home ? g.home.abbr : "홈") + "</b></p>" +
+      linesHTML +
+      '<h4 class="tb-sub">주요 선수 기록</h4>' + topHTML +
       "</section>";
   }
 
@@ -446,7 +608,7 @@
 
     var body = '<div class="box-head">' +
       '<span class="ch-badge">클러치 상황</span>' +
-      '<span class="ch-sub">오늘의 경기 정보</span>' +
+      '<span class="ch-sub">경기 전 브리핑</span>' +
       (g.venue ? '<span class="ch-venue">' + esc(g.venue) + "</span>" : "") +
       "</div>" +
       '<ul class="form-list">' + formRow("away", g.away) + formRow("home", g.home) + "</ul>";
@@ -460,7 +622,7 @@
       }).join("") + "</dl>";
     }
 
-    // 팀별 정보: 원정팀 먼저, 홈팀 다음. details.teams 가 없는 카드(샘플)에서는 그리지 않는다.
+    // 팀별 정보: 원정 먼저, 홈 다음. 두 블록 사이는 넉넉히 띄운다.
     var teams = Array.isArray(d.teams) ? d.teams.filter(Boolean) : [];
     if (teams.length) {
       var ordered = teams.slice().sort(function (a, b) {
@@ -472,12 +634,26 @@
       body += '<h3 class="p-title">부상 리포트</h3><ul class="inj-list">' + injRowsHTML(injuries, true) + "</ul>";
     }
 
+    body += oddsHTML(g);
+
+    if (d.h2h && (d.h2h.summary || (d.h2h.games && d.h2h.games.length))) {
+      var hg = (d.h2h.games || []).slice(0, 5).map(function (m) {
+        return "<li><span class=\"h-date\">" + esc((m.date || "").replace(/-/g, ".")) + "</span>" +
+          "<span class=\"h-teams\">" + esc(m.home || "") + " " + esc(m.score || "") + " " + esc(m.away || "") + "</span></li>";
+      }).join("");
+      body += '<h3 class="p-title">맞대결</h3>' +
+        (d.h2h.summary ? '<p class="h-sum">' + esc(d.h2h.summary) + "</p>" : "") +
+        (hg ? '<ul class="h-list">' + hg + "</ul>" : "");
+    }
+
     if (checks.length) {
       body += '<h3 class="p-title">체크포인트</h3><ol class="checks">' +
         checks.map(function (c) { return "<li>" + md(c) + "</li>"; }).join("") + "</ol>";
     }
 
     if (d.note) body += '<p class="note">' + esc(d.note) + "</p>";
+
+    body += resultHTML(g);
 
     return '<div class="cbox-outer"><div class="cbox">' + body + "</div></div>";
   }
@@ -494,11 +670,24 @@
     var label = sm.name + " " + when + " " + p.hh + ":" + p.mm + ", 원정 " + away + " 대 홈 " + home +
       " — 클러치 상황 보기";
 
+    var res = g.result;
+    var scoreHTML = "";
+    if (res && (res.state === "final" || res.state === "live")) {
+      scoreHTML = '<span class="mscore ' + (res.state === "final" ? "final" : "live") + '">' +
+        '<b>' + esc(String(res.awayScore != null ? res.awayScore : "-")) + "</b>" +
+        '<i>:</i>' +
+        '<b>' + esc(String(res.homeScore != null ? res.homeScore : "-")) + "</b>" +
+        (res.state === "final" ? "" : '<em class="live-dot">진행</em>') +
+        "</span>";
+    }
+    var oddsChip = g.odds ? '<span class="mchip odds">배당</span>' : "";
+
     return '<li class="mrow-item" data-id="' + esc(g.id) + '">' +
       '<div class="mrow">' +
         '<span class="mrow-meta">' +
           '<span class="mwhen">' + esc(when) + " · <b>" + p.hh + ":" + p.mm + "</b></span>" +
           '<span class="mlg">' + esc(league) + "</span>" +
+          oddsChip +
         "</span>" +
         '<button class="cbtn" type="button" aria-expanded="false" aria-controls="box-' + esc(g.id) + '"' +
         ' aria-label="' + esc(label) + '" data-id="' + esc(g.id) + '">' +
@@ -508,6 +697,7 @@
         "</button>" +
         '<span class="mtms">' +
           '<span class="tm away">' + esc(away) + "</span>" +
+          scoreHTML +
           '<span class="vs" aria-hidden="true">vs</span>' +
           '<span class="tm home">' + esc(home) + "</span>" +
         "</span>" +
@@ -598,6 +788,24 @@
     var meta = sport ? sportMeta(sport) : { id: null, name: "전체", icon: "🗓️" };
     var label = longDate(day);
 
+    // 야구는 비시즌이라 실제 경기가 없다. 배구는 V리그 일정을 받은 날만 보여준다.
+    if (sport === "baseball") {
+      return {
+        ico: "⚾",
+        title: "비시즌 — 실제 경기 없음",
+        desc: "KBO 정규시즌·포스트시즌이 끝나 " + label + "에는 실제 경기가 없습니다. 시즌 일정이 나오면 실제 데이터로 채웁니다.",
+        cta: null
+      };
+    }
+    if (sport === "volleyball" && !GAMES.some(function (e) { return e.g.sport === "volleyball"; })) {
+      return {
+        ico: "🏐",
+        title: "V리그 일정 정보를 아직 못 가져왔습니다",
+        desc: "KOVO 공식 일정 연동이 아직 되지 않아 " + label + " 배구 경기를 채우지 못했습니다. 확인되는 대로 실제 일정으로 채웁니다.",
+        cta: null
+      };
+    }
+
     if (day < todayStr()) {
       var upcoming = DAYS.filter(function (d) {
         return d.date >= todayStr() && gamesOf(d.date).length > 0;
@@ -676,23 +884,24 @@
       : names.join(" · ");
   }
 
-  // 경기 카드의 출처: espn / thesportsdb = 실제, source 없음 = 샘플
-  function isReal(g) { return g && (g.source === "espn" || g.source === "thesportsdb"); }
+  // 경기 카드의 출처: espn / kovo = 실제 데이터
+  function isReal(g) { return g && (g.source === "espn" || g.source === "kovo" || g.source === "thesportsdb"); }
 
   function sourceBadge(gs) {
     if (!gs.length) return "";
-    var real = gs.filter(isReal).length;
-    if (!real) return '<span class="tile-src sample">샘플</span>';
-    if (real === gs.length) return '<span class="tile-src real">실제</span>';
-    return '<span class="tile-src mixed">실제+샘플</span>';
+    return '<span class="tile-src real">실제</span>';
   }
 
   function tileHTML(s, gs) {
     var n = gs.length;
     var count = n ? n + "경기" : "경기 없음";
     var sub = leagueLine(gs);
+    if (s.id === "baseball") { count = "비시즌"; sub = "실제 경기 없음"; }
+    else if (s.id === "volleyball" && !GAMES.some(function (e) { return e.g.sport === "volleyball"; })) {
+      sub = "V리그 일정 연동 전";
+    }
     var src = sourceBadge(gs);
-    var srcText = !n ? "" : (gs.filter(isReal).length === n ? " 실제 데이터" : (gs.filter(isReal).length ? " 실제와 샘플" : " 샘플 데이터"));
+    var srcText = !n ? "" : " 실제 데이터";
     return '<button class="tile' + (n ? "" : " none") + '" type="button" data-sport="' + esc(s.id) + '"' +
       ' aria-label="' + esc(s.name) + " " + count + ", " + esc(sub) + esc(srcText) + '">' +
       '<span class="tile-ico" aria-hidden="true">' + esc(s.icon) + "</span>" +
@@ -755,21 +964,18 @@
 
   /* ── 데이터 출처 칩 ────────────────────────────────── */
   // 지금 화면에 놓인 경기가 모두 ESPN 실제 데이터면 그렇게 표시하고,
-  // 샘플이 섞여 있으면 샘플이라고 밝힌다.
+  // 지금 화면에 놓인 경기의 출처를 표시한다.
   function renderDataChip() {
     var scope = state.sport ? gamesIn(state.day, state.sport) : gamesOf(state.day);
-    var real = scope.filter(isReal);
     var sources = {};
-    real.forEach(function (g) { sources[g.source] = 1; });
+    scope.forEach(function (g) { if (g.source) sources[g.source] = 1; });
     var label;
     if (!scope.length) label = "데이터 없음";
-    else if (!real.length) label = "샘플 데이터";
-    else if (real.length < scope.length) label = "실제 + 샘플";
     else if (Object.keys(sources).length === 1) {
-      label = sources.espn ? "ESPN 실제 데이터" : "TheSportsDB 실제 데이터";
+      label = sources.espn ? "ESPN 실제 데이터" : (sources.kovo ? "KOVO 실제 데이터" : "실제 데이터");
     } else label = "실제 데이터";
     elDataChip.textContent = label;
-    elDataChip.classList.toggle("real", real.length > 0);
+    elDataChip.classList.toggle("real", scope.length > 0);
   }
 
   /* ── 렌더 ──────────────────────────────────────────── */
@@ -860,7 +1066,7 @@
     var u = parts(DATA.updatedAt);
     elDataNote.textContent = "데이터 기준 " + Number(u.m) + "/" + Number(u.d) + " " + u.hh + ":" + u.mm;
   } else {
-    elDataNote.textContent = "샘플 브리핑";
+    elDataNote.textContent = "데이터 기준 —";
   }
 
   render();

@@ -909,3 +909,156 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
 }
+
+/* ══ 카드 확장: 팀 블록 · 배당 · 결과 ═════════════════ */
+/* 두 팀 블록은 확실히 나눠 보이게 (넉넉한 간격) */
+.team-blocks { display: flex; flex-direction: column; gap: 18px; margin: 14px 0 6px; }
+.team-blocks .tblock + .tblock { position: relative; }
+.team-blocks .tblock + .tblock::before {
+  content: "";
+  position: absolute;
+  left: 10px; right: 10px; top: -9px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,.14), rgba(255,255,255,.02));
+}
+.tblock { padding: 11px 11px 9px; }
+.tb-streak {
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: #04170F;
+  background: var(--accent);
+  border-radius: 5px;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+.tblock.away .tb-streak { background: rgba(127, 169, 255, .9); color: #06101F; }
+
+/* 주요 선수 */
+.pl-list { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.pl-list li {
+  min-width: 0;
+  padding: 7px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .028);
+  border: 1px solid rgba(255, 255, 255, .05);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.pl-list .pl-top { display: flex; align-items: center; gap: 5px; min-width: 0; }
+.pl-list .pl-top b { font-size: 12px; font-weight: 800; color: #EAF1FB; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pl-pos { font-style: normal; font-size: 8.5px; font-weight: 800; color: var(--text-3); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+.pl-stat { font-size: 11.5px; font-weight: 700; color: #D6E2F2; font-variant-numeric: tabular-nums; }
+.pl-sub { font-size: 10px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.pl-recent { font-size: 10px; color: var(--info, #9FBDFF); font-variant-numeric: tabular-nums; }
+.pl-last { font-size: 10px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+
+/* 최근 5경기 상세 */
+.l5-list { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; }
+.l5-list li {
+  display: grid;
+  grid-template-columns: 34px 30px minmax(0, 1fr) auto 16px;
+  align-items: center;
+  column-gap: 5px;
+  padding: 5px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, .055);
+  font-size: 10.5px;
+  min-width: 0;
+}
+.l5-list li:last-child { border-bottom: 0; }
+.l5-date { color: var(--text-3); font-variant-numeric: tabular-nums; }
+.l5-ha { color: var(--text-3); font-size: 9.5px; }
+.l5-opp { color: #CBD6E5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.l5-sc { color: #EAF1FB; font-weight: 700; font-variant-numeric: tabular-nums; }
+.l5-res { text-align: center; font-weight: 800; font-size: 10px; border-radius: 4px; }
+.l5-res.w { color: #7DF5C0; }
+.l5-res.l { color: #FF8B8B; }
+.l5-res.d { color: var(--text-3); }
+
+/* 부상 */
+.inj-sum { display: inline-block; font-size: 10.5px; font-weight: 800; color: var(--warn); margin: 0 0 3px; }
+.inj-list .pl small.pos { display: inline-block; font-size: 8.5px; color: var(--text-3); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; margin-left: 4px; vertical-align: 1px; }
+.tb-focus { margin: 2px 0 2px; font-size: 11.5px; line-height: 1.6; color: #CBD6E5; letter-spacing: -.01em; }
+.tb-focus b { color: #EAF1FB; }
+
+/* 배당 */
+.obox {
+  margin: 14px 0 4px;
+  padding: 10px 11px 9px;
+  border: 1px solid rgba(59, 227, 143, .18);
+  border-radius: 11px;
+  background: linear-gradient(180deg, rgba(59, 227, 143, .06), rgba(59, 227, 143, .015));
+}
+.obox.none { border-color: rgba(255, 255, 255, .1); background: rgba(255, 255, 255, .02); }
+.o-head { display: flex; align-items: center; gap: 7px; min-width: 0; }
+.o-head b { font-size: 10.5px; font-weight: 800; letter-spacing: .05em; color: var(--accent); }
+.obox.none .o-head b { color: var(--text-3); }
+.o-prov { font-size: 9.5px; font-weight: 800; color: #04170F; background: var(--accent); border-radius: 4px; padding: 1px 5px; }
+.o-at { font-size: 9.5px; color: var(--text-3); margin-left: auto; white-space: nowrap; }
+.o-list { list-style: none; margin: 7px 0 0; padding: 0; display: flex; flex-direction: column; gap: 1px; }
+.o-list li { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 0; border-bottom: 1px dashed rgba(255, 255, 255, .06); }
+.o-list li:last-child { border-bottom: 0; }
+.o-lab { font-size: 11px; color: #CBD6E5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.o-val { display: flex; align-items: baseline; gap: 6px; flex: 0 0 auto; }
+.o-val b { font-size: 13px; font-weight: 800; color: #7DF5C0; font-variant-numeric: tabular-nums; }
+.o-val i { font-style: normal; font-size: 10px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.o-line { margin: 6px 0 0; font-size: 10.5px; color: var(--text-2); line-height: 1.6; font-variant-numeric: tabular-nums; }
+.o-imp { margin: 4px 0 0; font-size: 10.5px; color: #9FBDFF; }
+.o-note { margin: 7px 0 0; font-size: 9.5px; color: var(--text-3); line-height: 1.55; }
+.o-none { margin: 4px 0 0; font-size: 10.5px; color: var(--text-3); line-height: 1.55; }
+
+/* 맞대결 */
+.h-sum { margin: 0 0 4px; font-size: 11px; color: var(--text-2); }
+.h-list { list-style: none; margin: 0 0 4px; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.h-list li { display: flex; gap: 8px; font-size: 10.5px; color: #CBD6E5; min-width: 0; }
+.h-date { color: var(--text-3); font-variant-numeric: tabular-nums; flex: 0 0 auto; }
+.h-teams { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* 결과 */
+.rbox {
+  margin: 14px 0 4px;
+  padding: 10px 11px 9px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, .022);
+}
+.rbox.pre { border-style: dashed; background: rgba(255, 255, 255, .012); }
+.r-head { display: flex; align-items: center; gap: 7px; }
+.r-head b { font-size: 10.5px; font-weight: 800; letter-spacing: .05em; color: var(--text-2); }
+.r-state { font-size: 9.5px; font-weight: 800; color: var(--text-3); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; }
+.r-state.final { color: #04170F; background: var(--accent); border-color: transparent; }
+.r-state.live { color: #FFC15E; border-color: rgba(255, 193, 94, .4); }
+.r-win { margin-left: auto; font-size: 10px; font-weight: 800; color: var(--accent); }
+.r-score { margin: 7px 0 6px; font-size: 13px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.r-score b { font-size: 17px; font-weight: 800; color: #EAF1FB; }
+.r-vs { margin: 0 3px; }
+.r-lines { width: 100%; border-collapse: collapse; margin: 4px 0 6px; font-size: 10.5px; font-variant-numeric: tabular-nums; }
+.r-lines th, .r-lines td { padding: 3px 2px; text-align: center; color: var(--text-2); }
+.r-lines thead th { color: var(--text-3); font-weight: 700; font-size: 9.5px; }
+.r-lines tbody th { text-align: left; font-weight: 800; color: #CBD6E5; }
+.r-lines td { color: #EAF1FB; }
+.r-top { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.r-top li { display: flex; align-items: baseline; gap: 6px; font-size: 10.5px; min-width: 0; }
+.r-team { flex: 0 0 auto; font-size: 8.5px; font-weight: 800; color: var(--text-3); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+.r-top b { color: #EAF1FB; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.r-stat { color: var(--text-3); font-variant-numeric: tabular-nums; flex: 0 0 auto; }
+.r-none { margin: 4px 0 0; font-size: 10.5px; color: var(--text-3); }
+
+/* 목록 행: 배당 칩·결과 스코어 */
+.mchip { font-size: 8.5px; font-weight: 800; letter-spacing: .04em; border-radius: 4px; padding: 1px 4px; white-space: nowrap; }
+.mchip.odds { color: #7DF5C0; border: 1px solid rgba(59, 227, 143, .3); background: rgba(59, 227, 143, .08); }
+.mscore { display: inline-flex; align-items: baseline; gap: 2px; margin: 0 6px; font-variant-numeric: tabular-nums; }
+.mscore b { font-size: 13px; font-weight: 800; color: #EAF1FB; }
+.mscore.i, .mscore i { font-style: normal; font-size: 10px; color: var(--text-3); }
+.mscore.final b { color: #EAF1FB; }
+.mscore.live b { color: #FFC15E; }
+.mscore .live-dot { font-style: normal; font-size: 8.5px; font-weight: 800; color: #FFC15E; margin-left: 3px; }
+
+@media (max-width: 380px) {
+  .l5-list li { grid-template-columns: 30px 26px minmax(0, 1fr) auto 14px; font-size: 10px; }
+  .o-lab { font-size: 10.5px; }
+  .r-score b { font-size: 15px; }
+}
