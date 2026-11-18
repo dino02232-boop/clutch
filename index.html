@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0F16">
+<meta name="color-scheme" content="dark">
+<title>CLUTCH — 오늘의 클러치, 30초 스포츠 브리핑</title>
+<meta name="description" content="축구·야구·농구·배구, 오늘 경기의 두 팀 상태와 변수를 30초로 정리합니다.">
+<meta property="og:title" content="CLUTCH — 오늘의 클러치">
+<meta property="og:description" content="두 팀의 상태를 같은 무게로. 승자 예측 없이 변수만 정리하는 30초 스포츠 브리핑.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="top-row">
+      <a class="brand" href="#" id="homeLink" aria-label="CLUTCH — 종목 선택(홈)으로 이동">
+        <span class="logo" aria-hidden="true">C</span>
+        <span class="brand-txt">
+          <span class="brand-name">CLUTCH</span>
+          <span class="brand-sub">오늘의 클러치 · 30초 브리핑</span>
+        </span>
+      </a>
+      <div class="brand-date">
+        <b id="brandDate">—</b>
+        KST 기준
+      </div>
+    </div>
+
+    <div class="dates" id="dates" role="group" aria-label="날짜 선택"></div>
+
+    <div class="tabs" id="tabs" role="tablist" aria-label="종목 선택"></div>
+  </header>
+
+  <main>
+    <div class="listhead">
+      <div class="lh-left">
+        <button type="button" class="back-chip" id="backHome" hidden>종목 선택</button>
+        <h1 id="listTitle"></h1>
+      </div>
+      <div class="src">
+        <span id="dataNote">데이터 기준 —</span><br>
+        <span class="sample-chip">샘플 데이터</span>
+      </div>
+    </div>
+
+    <p class="home-lead" id="homeLead" hidden></p>
+
+    <div id="panel" role="tabpanel">
+      <div id="list"></div>
+
+      <div class="empty" id="empty" hidden>
+        <span class="ico" id="emptyIco" aria-hidden="true">🗓️</span>
+        <h2 id="emptyTitle"></h2>
+        <p id="emptyDesc"></p>
+        <button type="button" id="emptyCta" hidden></button>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <div class="foot-brand"><span class="logo" aria-hidden="true">C</span>CLUTCH</div>
+      <p class="strong">두 팀의 상태를 같은 무게로 정리합니다. 승자 예측은 제공하지 않습니다.</p>
+      <p>카드 내용은 <code>data.js</code> 파일에서 갱신합니다. 경기 시작 시각과 라인업은 현지 공식 발표로 다시 확인하세요.</p>
+      <p>이 페이지의 경기·전적·부상 정보는 형식을 보여주기 위한 <b>샘플 데이터</b>이며 실제 일정과 다릅니다.</p>
+    </footer>
+  </main>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
