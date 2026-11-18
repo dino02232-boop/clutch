@@ -1732,6 +1732,7 @@ window.CLUTCH_DATA = {
     {
       date: "2026-11-20",
       games: [
+        /* NBA-AUTO 2026-11-20 START */
         {
           id: "nba-gsw-lal-1120",
           sport: "basketball",
@@ -1785,6 +1786,7 @@ window.CLUTCH_DATA = {
             note: "출전 여부는 경기 전까지 변동될 수 있습니다."
           }
         }
+        /* NBA-AUTO 2026-11-20 END */
       ]
     }
   ]
