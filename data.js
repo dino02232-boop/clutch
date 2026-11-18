@@ -5,11 +5,15 @@
    브라우저에서 index.html 을 그냥 열어도 동작하도록 JSON 대신
    전역 변수(window.CLUTCH_DATA)로 데이터를 넣습니다.
 
-   ⚠️ 아래 내용은 "샘플 데이터"입니다. 형식을 보여주기 위한 예시로,
+   ⚠️ 축구·야구·배구 카드는 "샘플 데이터"입니다. 형식을 보여주기 위한 예시로,
       실제 경기 일정·결과·부상 정보가 아닙니다.
       (11월은 KBO 정규시즌·포스트시즌이 끝난 시기라 야구 샘플의
        날짜는 실제 편성과 맞지 않습니다. 배구 V리그 카드 역시 실존
        구단명을 빌린 가상의 대진 예시입니다. 형식 확인용으로만 보세요.)
+
+   ✅ NBA 2026-11-19 카드는 ESPN 공개 API 에서 받은 실제 일정·전적·부상 명단입니다.
+      이 구간(NBA-AUTO 표식 사이)은 work/fetch_nba.py 가 자동으로 다시 채웁니다.
+      손으로 고치지 마세요:  python3 work/fetch_nba.py --date 2026-11-19 --write
 
    [스키마]
    version    : 데이터 형식 버전(숫자). 지금은 1.
@@ -24,6 +28,8 @@
    [경기 카드]
    id         : 고유 문자열 (영문/숫자/하이픈)
    sport      : sports[].id 중 하나
+   source     : (선택) "espn" 이면 ESPN 실제 데이터. 없으면 샘플.
+                화면 오른쪽 위 칩이 이 값으로 '샘플 데이터 / ESPN 실제 데이터'를 고릅니다.
    league     : 리그 표기 (예: "NBA", "UCL", "KBO")
    start      : 경기 시작 시각. ISO 8601 +09:00 (예: "2026-11-19T10:00:00+09:00")
    venue      : (선택) 경기장 이름
@@ -47,7 +53,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-19T06:30:00+09:00",
+  updatedAt: "2026-11-18T22:58:11+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -276,122 +282,1341 @@ window.CLUTCH_DATA = {
           }
         },
 
+        /* ── NBA 실제 데이터 · work/fetch_nba.py 가 생성/갱신 ── */
+        /* NBA-AUTO 2026-11-19 START */
         {
-          id: "nba-det-sas-1119",
-          sport: "basketball",
-          league: "NBA",
-          start: "2026-11-19T10:00:00+09:00",
-          venue: "프로스트 뱅크 센터",
-          away: {
-            name: "디트로이트 피스톤즈",
-            abbr: "DET",
-            record: "8승 4패",
-            badges: [{ text: "동부 3위", tone: "rank" }]
-          },
-          home: {
-            name: "샌안토니오 스퍼스",
-            abbr: "SAS",
-            record: "12승 2패",
-            badges: [
-              { text: "서부 1위", tone: "rank" },
-              { text: "12연승", tone: "hot" }
+          "id": "nba-hou-ind-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T09:00:00+09:00",
+          "venue": "Gainbridge Fieldhouse",
+          "away": {
+            "name": "휴스턴 로키츠",
+            "abbr": "HOU",
+            "record": "11승 4패",
+            "badges": [
+              {
+                "text": "원정 4승 3패",
+                "tone": ""
+              }
             ]
           },
-          tags: [
-            { text: "주전 결장", tone: "warn" },
-            { text: "골밑 공백", tone: "warn" },
-            { text: "연승 중", tone: "hot" }
-          ],
-          rows: [
+          "home": {
+            "name": "인디애나 페이서스",
+            "abbr": "IND",
+            "record": "5승 9패",
+            "badges": [
+              {
+                "text": "홈 2승 4패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
             {
-              kind: "flow",
-              label: "흐름",
-              text: "서부 1위 **12연승** 스퍼스 홈, 동부 3위 디트로이트가 원정으로 맞붙습니다."
+              "text": "결장 4명",
+              "tone": "warn"
             },
             {
-              kind: "inj",
-              label: "부상 변수",
-              text: "디트로이트 **듀렌·로빈슨·홀랜드 OUT**, 조는 출전 불투명. 스퍼스는 해리스 OUT, 팍스는 당일 체크."
-            },
-            {
-              kind: "watch",
-              label: "관전 포인트",
-              text: "주전 센터가 빠진 디트로이트 골밑(콜린스·폴 리드)이 **웸반야마(평균 28.6점)** 와 스퍼스 리바운드를 버틸 수 있을지."
+              "text": "평균 117.8점 · 112.1점",
+              "tone": "info"
             }
           ],
-          details: {
-            injuries: [
-              { team: "DET", player: "제일런 듀렌", note: "햄스트링", status: "OUT" },
-              { team: "DET", player: "던컨 로빈슨", note: "허벅지", status: "OUT" },
-              { team: "DET", player: "론 홀랜드", note: "무릎", status: "OUT" },
-              { team: "DET", player: "아이제이아 조", note: "출전 여부 미정", status: "DOUBTFUL" },
-              { team: "SAS", player: "토바이어스 해리스", note: "결장", status: "OUT" },
-              { team: "SAS", player: "디애런 팍스", note: "당일 체크", status: "DAY-TO-DAY" }
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**휴스턴 로키츠** 11승 4패(원정 4승 3패, 최근 5경기 4승 1패), **인디애나 페이서스** 5승 9패(홈 2승 4패, 최근 5경기 2승 3패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "휴스턴 로키츠 부상 명단 3명(결장 1명), 인디애나 페이서스 5명(결장 3명). 양 팀 합쳐 8명이 ESPN 부상 명단에 올라 있습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **117.8점 대 112.1점**, 평균 리바운드 45.7개 대 41.6개, 3점 성공률 37.1% 대 32.8%. 평균 득점 차 5.7점이 실제 경기 템포로 이어지는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "HOU",
+                "player": "Clint Capela",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "HOU",
+                "player": "Amen Thompson",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "HOU",
+                "player": "Julian Phillips",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "IND",
+                "player": "Tyrese Haliburton",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "IND",
+                "player": "Johnny Furphy",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "IND",
+                "player": "Ben Sheppard",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "IND",
+                "player": "T.J. McConnell",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "IND",
+                "player": "Andrew Nembhard",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              }
             ],
-            checkpoints: [
-              "**디트로이트 골밑** — 주전 센터 듀렌이 빠지면서 콜린스·폴 리드가 웸반야마(평균 28.6점) 수비와 림 프로텍션을 나눠 맡습니다. 파울 트러블이 곧 실점으로 이어질 수 있는 구조.",
-              "**스퍼스 볼 운반** — 12연승 흐름이지만 해리스가 OUT이고 팍스가 당일 체크입니다. 팍스가 뛰지 못하면 볼 운반·돌파 역할 분담이 달라집니다.",
-              "**리바운드 싸움** — 디트로이트가 수비 리바운드에서 밀리면 2차 공격 실점으로 격차가 벌어질 수 있습니다."
+            "checkpoints": [
+              "**전적** — 휴스턴 로키츠 11승 4패(원정 4승 3패) / 인디애나 페이서스 5승 9패(홈 2승 4패).",
+              "**최근 전적** — 휴스턴 로키츠 최근 5경기 4승 1패(직전 경기 110-128 패) / 인디애나 페이서스 최근 5경기 2승 3패(직전 경기 124-131 패).",
+              "**부상 명단** — 휴스턴 로키츠: Clint Capela, Amen Thompson, Julian Phillips / 인디애나 페이서스: Tyrese Haliburton, Johnny Furphy, Ben Sheppard, T.J. McConnell 외 1명."
             ],
-            note: "출전 여부는 경기 전까지 변동될 수 있습니다. 당일 발표 기준으로 다시 확인하세요."
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-
         {
-          id: "nba-cha-lal-1119",
-          sport: "basketball",
-          league: "NBA",
-          start: "2026-11-19T13:00:00+09:00",
-          venue: "크립토닷컴 아레나",
-          away: {
-            name: "샬럿 호네츠",
-            abbr: "CHA",
-            record: "4승 9패",
-            badges: []
+          "id": "nba-mem-cle-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T09:00:00+09:00",
+          "venue": "Rocket Arena",
+          "away": {
+            "name": "멤피스 그리즐리스",
+            "abbr": "MEM",
+            "record": "10승 4패",
+            "badges": [
+              {
+                "text": "원정 7승 0패",
+                "tone": "hot"
+              }
+            ]
           },
-          home: {
-            name: "LA 레이커스",
-            abbr: "LAL",
-            record: "12승 2패",
-            badges: [{ text: "8연승", tone: "hot" }]
+          "home": {
+            "name": "클리블랜드 캐벌리어스",
+            "abbr": "CLE",
+            "record": "8승 7패",
+            "badges": [
+              {
+                "text": "홈 6승 2패",
+                "tone": ""
+              }
+            ]
           },
-          tags: [
-            { text: "주전 2명 결장", tone: "warn" },
-            { text: "백투백 1일차", tone: "info" },
-            { text: "8연승", tone: "hot" }
-          ],
-          rows: [
+          "tags": [
             {
-              kind: "flow",
-              label: "흐름",
-              text: "**8연승** 레이커스 홈, 4승 9패 샬럿이 원정으로 들어옵니다."
+              "text": "결장 8명",
+              "tone": "warn"
             },
             {
-              kind: "inj",
-              label: "부상 변수",
-              text: "레이커스 **케슬러·리브스 동시 OUT**(케슬러는 시즌 첫 결장). 샬럿은 크누펠·슈뢰더 OUT."
-            },
-            {
-              kind: "watch",
-              label: "관전 포인트",
-              text: "높이가 낮아진 레이커스가 샬럿의 외곽 3점·리바운드 공세를 **돈치치와 대체 자원(그라임스·섹스턴 등)** 으로 얼마나 상쇄하느냐."
+              "text": "평균 121.7점 · 118.1점",
+              "tone": "info"
             }
           ],
-          details: {
-            injuries: [
-              { team: "LAL", player: "워커 케슬러", note: "다리 통증 · 시즌 첫 결장", status: "OUT" },
-              { team: "LAL", player: "오스틴 리브스", note: "발꿈치", status: "OUT" },
-              { team: "CHA", player: "콘 크누펠", note: "결장", status: "OUT" },
-              { team: "CHA", player: "데니스 슈뢰더", note: "결장", status: "OUT" }
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**멤피스 그리즐리스** 10승 4패(원정 7승 0패, 최근 5경기 4승 1패), **클리블랜드 캐벌리어스** 8승 7패(홈 6승 2패, 최근 5경기 3승 2패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "멤피스 그리즐리스 부상 명단 5명(결장 5명), 클리블랜드 캐벌리어스 5명(결장 3명). 양 팀 합쳐 10명이 ESPN 부상 명단에 올라 있습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **121.7점 대 118.1점**, 평균 리바운드 47.4개 대 45.9개, 3점 성공률 39.5% 대 36.7%. 3점 성공률 차 2.8%p가 외곽 승부에서 어떻게 드러나는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "MEM",
+                "player": "GG Jackson",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "MEM",
+                "player": "Isaiah Stewart",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "MEM",
+                "player": "Ty Jerome",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "MEM",
+                "player": "Scotty Pippen Jr.",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "MEM",
+                "player": "Richie Saunders",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "CLE",
+                "player": "Nae'Qwan Tomlin",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "CLE",
+                "player": "Sam Merrill",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "CLE",
+                "player": "Evan Mobley",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "CLE",
+                "player": "Jaylon Tyson",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "CLE",
+                "player": "Peyton Watson",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              }
             ],
-            checkpoints: [
-              "**레이커스 높이** — 케슬러가 빠지면 골밑 수비와 리바운드 부담이 분산됩니다. 샬럿이 공격 리바운드로 2차 공격을 얼마나 만들 수 있는지가 첫 변수.",
-              "**백투백 1일차** — 유타전에 이어 이 경기가 백투백 첫날입니다. 주전 2명이 빠진 만큼 로테이션과 출전 시간 관리가 결과에 영향을 줍니다.",
-              "**샬럿의 승부수** — 크누펠·슈뢰더 없이 외곽 3점과 리바운드로 승부해야 합니다. 돈치치가 공격에서 얼마를 짊어지고, 그라임스·섹스턴 등 대체 자원이 그 부담을 나눠 줄 수 있는지가 관건."
+            "checkpoints": [
+              "**전적** — 멤피스 그리즐리스 10승 4패(원정 7승 0패) / 클리블랜드 캐벌리어스 8승 7패(홈 6승 2패).",
+              "**최근 전적** — 멤피스 그리즐리스 최근 5경기 4승 1패(직전 경기 136-120 승) / 클리블랜드 캐벌리어스 최근 5경기 3승 2패(직전 경기 126-115 승).",
+              "**부상 명단** — 멤피스 그리즐리스: GG Jackson, Isaiah Stewart, Ty Jerome, Scotty Pippen Jr. 외 1명 / 클리블랜드 캐벌리어스: Nae'Qwan Tomlin, Sam Merrill, Evan Mobley, Jaylon Tyson 외 1명."
             ],
-            note: "출전 여부는 경기 전까지 변동될 수 있습니다. 당일 발표 기준으로 다시 확인하세요."
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
+        {
+          "id": "nba-mil-mia-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T09:00:00+09:00",
+          "venue": "Kaseya Center",
+          "away": {
+            "name": "밀워키 벅스",
+            "abbr": "MIL",
+            "record": "1승 13패",
+            "badges": [
+              {
+                "text": "원정 0승 6패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "마이애미 히트",
+            "abbr": "MIA",
+            "record": "8승 6패",
+            "badges": [
+              {
+                "text": "홈 4승 3패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 1명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 106.1점 · 119.4점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**밀워키 벅스** 1승 13패(원정 0승 6패, 최근 5경기 0승 5패), **마이애미 히트** 8승 6패(홈 4승 3패, 최근 5경기 5승 0패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "밀워키 벅스 부상 명단 1명(결장 1명), 마이애미 히트 3명(결장 0명). 양 팀 합쳐 4명이 ESPN 부상 명단에 올라 있습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **106.1점 대 119.4점**, 평균 리바운드 45.4개 대 42.6개, 3점 성공률 34.1% 대 34.3%. 평균 득점 차 13.3점이 실제 경기 템포로 이어지는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "MIL",
+                "player": "Ousmane Dieng",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "MIA",
+                "player": "Myron Gardner",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "MIA",
+                "player": "Nikola Jovic",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "MIA",
+                "player": "Bam Adebayo",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              }
+            ],
+            "checkpoints": [
+              "**전적** — 밀워키 벅스 1승 13패(원정 0승 6패) / 마이애미 히트 8승 6패(홈 4승 3패).",
+              "**최근 전적** — 밀워키 벅스 최근 5경기 0승 5패(직전 경기 106-113 패) / 마이애미 히트 최근 5경기 5승 0패(직전 경기 128-110 승).",
+              "**부상 명단** — 밀워키 벅스: Ousmane Dieng / 마이애미 히트: Myron Gardner, Nikola Jovic, Bam Adebayo."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-phi-orl-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T09:00:00+09:00",
+          "venue": "Kia Center",
+          "away": {
+            "name": "필라델피아 세븐티식서스",
+            "abbr": "PHI",
+            "record": "12승 3패",
+            "badges": [
+              {
+                "text": "원정 6승 1패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "올랜도 매직",
+            "abbr": "ORL",
+            "record": "6승 7패",
+            "badges": [
+              {
+                "text": "홈 1승 4패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 8명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 114.1점 · 108.8점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**필라델피아 세븐티식서스** 12승 3패(원정 6승 1패, 최근 5경기 4승 1패), **올랜도 매직** 6승 7패(홈 1승 4패, 최근 5경기 4승 1패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "필라델피아 세븐티식서스 부상 명단 4명(결장 4명), 올랜도 매직 4명(결장 4명). 양 팀 합쳐 8명이 ESPN 부상 명단에 올라 있습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **114.1점 대 108.8점**, 평균 리바운드 43.1개 대 43.2개, 3점 성공률 35.2% 대 34.0%. 평균 득점 차 5.3점이 실제 경기 템포로 이어지는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "PHI",
+                "player": "Dominick Barlow",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "PHI",
+                "player": "Jaylen Brown",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "PHI",
+                "player": "Adem Bona",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "PHI",
+                "player": "Ariel Hukporti",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "ORL",
+                "player": "Izaiyah Nelson",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "ORL",
+                "player": "Jonathan Isaac",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "ORL",
+                "player": "Noah Penda",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "ORL",
+                "player": "Paolo Banchero",
+                "note": "결장",
+                "status": "OUT"
+              }
+            ],
+            "checkpoints": [
+              "**전적** — 필라델피아 세븐티식서스 12승 3패(원정 6승 1패) / 올랜도 매직 6승 7패(홈 1승 4패).",
+              "**최근 전적** — 필라델피아 세븐티식서스 최근 5경기 4승 1패(직전 경기 135-123 승) / 올랜도 매직 최근 5경기 4승 1패(직전 경기 115-105 승).",
+              "**부상 명단** — 필라델피아 세븐티식서스: Dominick Barlow, Jaylen Brown, Adem Bona, Ariel Hukporti / 올랜도 매직: Izaiyah Nelson, Jonathan Isaac, Noah Penda, Paolo Banchero."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-chi-bkn-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T09:30:00+09:00",
+          "venue": "Barclays Center",
+          "away": {
+            "name": "시카고 불스",
+            "abbr": "CHI",
+            "record": "3승 10패",
+            "badges": [
+              {
+                "text": "원정 2승 6패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "브루클린 네츠",
+            "abbr": "BKN",
+            "record": "3승 10패",
+            "badges": [
+              {
+                "text": "홈 1승 4패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 2명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 114.6점 · 111.2점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**시카고 불스** 3승 10패(원정 2승 6패, 최근 5경기 2승 3패), **브루클린 네츠** 3승 10패(홈 1승 4패, 최근 5경기 1승 4패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "시카고 불스는 부상 명단 3명(결장 2명). 브루클린 네츠는 ESPN 부상 명단에 올라온 선수가 없습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **114.6점 대 111.2점**, 평균 리바운드 43.8개 대 42.2개, 3점 성공률 30.8% 대 36.2%. 3점 성공률 차 5.4%p가 외곽 승부에서 어떻게 드러나는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "CHI",
+                "player": "Tobe Awaka",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "CHI",
+                "player": "Caleb Wilson",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "CHI",
+                "player": "Patrick Williams",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              }
+            ],
+            "checkpoints": [
+              "**전적** — 시카고 불스 3승 10패(원정 2승 6패) / 브루클린 네츠 3승 10패(홈 1승 4패).",
+              "**최근 전적** — 시카고 불스 최근 5경기 2승 3패(직전 경기 115-126 패) / 브루클린 네츠 최근 5경기 1승 4패(직전 경기 123-135 패).",
+              "**부상 명단** — 시카고 불스: Tobe Awaka, Caleb Wilson, Patrick Williams / 브루클린 네츠: 없음."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-was-tor-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T09:30:00+09:00",
+          "venue": "Scotiabank Arena",
+          "away": {
+            "name": "워싱턴 위저즈",
+            "abbr": "WAS",
+            "record": "4승 11패",
+            "badges": [
+              {
+                "text": "원정 2승 6패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "토론토 랩터스",
+            "abbr": "TOR",
+            "record": "5승 9패",
+            "badges": [
+              {
+                "text": "홈 2승 5패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 6명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 111.3점 · 112.9점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**워싱턴 위저즈** 4승 11패(원정 2승 6패, 최근 5경기 0승 5패), **토론토 랩터스** 5승 9패(홈 2승 5패, 최근 5경기 0승 5패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "워싱턴 위저즈 부상 명단 5명(결장 4명), 토론토 랩터스 3명(결장 2명). 양 팀 합쳐 8명이 ESPN 부상 명단에 올라 있습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **111.3점 대 112.9점**, 평균 리바운드 41.7개 대 40.6개, 3점 성공률 31.5% 대 33.3%. 두 팀 시즌 지표가 비슷해 초반 흐름이 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "WAS",
+                "player": "Tristan Vukcevic",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "WAS",
+                "player": "Reece Beekman",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "WAS",
+                "player": "Justin Champagnie",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "WAS",
+                "player": "Jamir Watkins",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "WAS",
+                "player": "Felix Okpara",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "TOR",
+                "player": "Kawhi Leonard",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "TOR",
+                "player": "Nate Bittle",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "TOR",
+                "player": "Kevin McCullar Jr.",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              }
+            ],
+            "checkpoints": [
+              "**전적** — 워싱턴 위저즈 4승 11패(원정 2승 6패) / 토론토 랩터스 5승 9패(홈 2승 5패).",
+              "**최근 전적** — 워싱턴 위저즈 최근 5경기 0승 5패(직전 경기 120-136 패) / 토론토 랩터스 최근 5경기 0승 5패(직전 경기 102-111 패).",
+              "**부상 명단** — 워싱턴 위저즈: Tristan Vukcevic, Reece Beekman, Justin Champagnie, Jamir Watkins 외 1명 / 토론토 랩터스: Kawhi Leonard, Nate Bittle, Kevin McCullar Jr.."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-atl-okc-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T10:00:00+09:00",
+          "venue": "Paycom Center",
+          "away": {
+            "name": "애틀랜타 호크스",
+            "abbr": "ATL",
+            "record": "8승 6패",
+            "badges": [
+              {
+                "text": "원정 5승 3패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "오클라호마시티 썬더",
+            "abbr": "OKC",
+            "record": "9승 5패",
+            "badges": [
+              {
+                "text": "홈 5승 0패",
+                "tone": "hot"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 11명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 117.8점 · 112.1점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**애틀랜타 호크스** 8승 6패(원정 5승 3패, 최근 5경기 3승 2패), **오클라호마시티 썬더** 9승 5패(홈 5승 0패, 최근 5경기 2승 3패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "애틀랜타 호크스 부상 명단 6명(결장 6명), 오클라호마시티 썬더 5명(결장 5명). 양 팀 합쳐 11명이 ESPN 부상 명단에 올라 있습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **117.8점 대 112.1점**, 평균 리바운드 44.9개 대 46.1개, 3점 성공률 33.8% 대 34.2%. 평균 득점 차 5.7점이 실제 경기 템포로 이어지는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "ATL",
+                "player": "Jock Landale",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "ATL",
+                "player": "Kingston Flemings",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "ATL",
+                "player": "Asa Newell",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "ATL",
+                "player": "CJ McCollum",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "ATL",
+                "player": "Mouhamed Gueye",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "ATL",
+                "player": "Henri Veesaar",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "OKC",
+                "player": "Thomas Sorber",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "OKC",
+                "player": "Jaylin Williams",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "OKC",
+                "player": "Cason Wallace",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "OKC",
+                "player": "Chet Holmgren",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "OKC",
+                "player": "Jalen Williams",
+                "note": "결장",
+                "status": "OUT"
+              }
+            ],
+            "checkpoints": [
+              "**전적** — 애틀랜타 호크스 8승 6패(원정 5승 3패) / 오클라호마시티 썬더 9승 5패(홈 5승 0패).",
+              "**최근 전적** — 애틀랜타 호크스 최근 5경기 3승 2패(직전 경기 113-106 승) / 오클라호마시티 썬더 최근 5경기 2승 3패(직전 경기 125-103 승).",
+              "**부상 명단** — 애틀랜타 호크스: Jock Landale, Kingston Flemings, Asa Newell, CJ McCollum 외 2명 / 오클라호마시티 썬더: Thomas Sorber, Jaylin Williams, Cason Wallace, Chet Holmgren 외 1명."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-det-nop-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T10:00:00+09:00",
+          "venue": "Smoothie King Center",
+          "away": {
+            "name": "디트로이트 피스턴스",
+            "abbr": "DET",
+            "record": "9승 4패",
+            "badges": [
+              {
+                "text": "원정 6승 2패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "뉴올리언스 펠리컨스",
+            "abbr": "NOP",
+            "record": "5승 10패",
+            "badges": [
+              {
+                "text": "홈 4승 6패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 10명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 114.8점 · 115.8점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**디트로이트 피스턴스** 9승 4패(원정 6승 2패, 최근 5경기 3승 2패), **뉴올리언스 펠리컨스** 5승 10패(홈 4승 6패, 최근 5경기 1승 4패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "디트로이트 피스턴스 부상 명단 5명(결장 5명), 뉴올리언스 펠리컨스 5명(결장 5명). 양 팀 합쳐 10명이 ESPN 부상 명단에 올라 있습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **114.8점 대 115.8점**, 평균 리바운드 44.3개 대 42.1개, 3점 성공률 36.0% 대 33.3%. 3점 성공률 차 2.7%p가 외곽 승부에서 어떻게 드러나는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "DET",
+                "player": "Isaiah Joe",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "DET",
+                "player": "Duncan Robinson",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "DET",
+                "player": "Taurean Prince",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "DET",
+                "player": "Ronald Holland II",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "DET",
+                "player": "Jalen Duren",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "NOP",
+                "player": "Bennedict Mathurin",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "NOP",
+                "player": "Bryce McGowens",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "NOP",
+                "player": "Trendon Watford",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "NOP",
+                "player": "Trey Murphy III",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "NOP",
+                "player": "Dejounte Murray",
+                "note": "결장",
+                "status": "OUT"
+              }
+            ],
+            "checkpoints": [
+              "**전적** — 디트로이트 피스턴스 9승 4패(원정 6승 2패) / 뉴올리언스 펠리컨스 5승 10패(홈 4승 6패).",
+              "**최근 전적** — 디트로이트 피스턴스 최근 5경기 3승 2패(직전 경기 105-93 승) / 뉴올리언스 펠리컨스 최근 5경기 1승 4패(직전 경기 115-94 승).",
+              "**부상 명단** — 디트로이트 피스턴스: Isaiah Joe, Duncan Robinson, Taurean Prince, Ronald Holland II 외 1명 / 뉴올리언스 펠리컨스: Bennedict Mathurin, Bryce McGowens, Trendon Watford, Trey Murphy III 외 1명."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-gsw-dal-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T10:00:00+09:00",
+          "venue": "American Airlines Center",
+          "away": {
+            "name": "골든스테이트 워리어스",
+            "abbr": "GSW",
+            "record": "8승 6패",
+            "badges": [
+              {
+                "text": "원정 2승 5패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "댈러스 매버릭스",
+            "abbr": "DAL",
+            "record": "7승 7패",
+            "badges": [
+              {
+                "text": "홈 5승 2패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 8명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 115.1점 · 112.1점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**골든스테이트 워리어스** 8승 6패(원정 2승 5패, 최근 5경기 2승 3패), **댈러스 매버릭스** 7승 7패(홈 5승 2패, 최근 5경기 2승 3패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "골든스테이트 워리어스 부상 명단 7명(결장 5명), 댈러스 매버릭스 7명(결장 3명). 양 팀 합쳐 14명이 ESPN 부상 명단에 올라 있습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **115.1점 대 112.1점**, 평균 리바운드 44.9개 대 43.3개, 3점 성공률 38.2% 대 33.5%. 3점 성공률 차 4.7%p가 외곽 승부에서 어떻게 드러나는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "GSW",
+                "player": "Stephen Curry",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "GSW",
+                "player": "Brandon Williams",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "GSW",
+                "player": "Kristaps Porzingis",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "GSW",
+                "player": "Moses Moody",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "GSW",
+                "player": "Jimmy Butler III",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "GSW",
+                "player": "Draymond Green",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "GSW",
+                "player": "Al Horford",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "DAL",
+                "player": "Sergio de Larrea",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "DAL",
+                "player": "Dereck Lively II",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "DAL",
+                "player": "Tarik Biberovic",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "DAL",
+                "player": "Walter Clayton Jr.",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "DAL",
+                "player": "Tobi Lawal",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "DAL",
+                "player": "Max Christie",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "DAL",
+                "player": "Santi Aldama",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              }
+            ],
+            "checkpoints": [
+              "**전적** — 골든스테이트 워리어스 8승 6패(원정 2승 5패) / 댈러스 매버릭스 7승 7패(홈 5승 2패).",
+              "**최근 전적** — 골든스테이트 워리어스 최근 5경기 2승 3패(직전 경기 94-115 패) / 댈러스 매버릭스 최근 5경기 2승 3패(직전 경기 94-131 패).",
+              "**부상 명단** — 골든스테이트 워리어스: Stephen Curry, Brandon Williams, Kristaps Porzingis, Moses Moody 외 3명 / 댈러스 매버릭스: Sergio de Larrea, Dereck Lively II, Tarik Biberovic, Walter Clayton Jr. 외 3명."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-bos-den-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T11:30:00+09:00",
+          "venue": "Ball Arena",
+          "away": {
+            "name": "보스턴 셀틱스",
+            "abbr": "BOS",
+            "record": "11승 3패",
+            "badges": [
+              {
+                "text": "원정 5승 2패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "덴버 너기츠",
+            "abbr": "DEN",
+            "record": "7승 5패",
+            "badges": [
+              {
+                "text": "홈 2승 3패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 1명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 114.8점 · 113.8점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**보스턴 셀틱스** 11승 3패(원정 5승 2패, 최근 5경기 4승 1패), **덴버 너기츠** 7승 5패(홈 2승 3패, 최근 5경기 3승 2패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "덴버 너기츠는 부상 명단 1명(결장 1명). 보스턴 셀틱스는 ESPN 부상 명단에 올라온 선수가 없습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **114.8점 대 113.8점**, 평균 리바운드 44.9개 대 41.7개, 3점 성공률 38.2% 대 34.5%. 3점 성공률 차 3.7%p가 외곽 승부에서 어떻게 드러나는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "DEN",
+                "player": "Julian Strawther",
+                "note": "결장",
+                "status": "OUT"
+              }
+            ],
+            "checkpoints": [
+              "**전적** — 보스턴 셀틱스 11승 3패(원정 5승 2패) / 덴버 너기츠 7승 5패(홈 2승 3패).",
+              "**최근 전적** — 보스턴 셀틱스 최근 5경기 4승 1패(직전 경기 105-115 패) / 덴버 너기츠 최근 5경기 3승 2패(직전 경기 105-117 패).",
+              "**부상 명단** — 보스턴 셀틱스: 없음 / 덴버 너기츠: Julian Strawther."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-phx-sac-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T12:00:00+09:00",
+          "venue": "Golden 1 Center",
+          "away": {
+            "name": "피닉스 선즈",
+            "abbr": "PHX",
+            "record": "6승 7패",
+            "badges": [
+              {
+                "text": "원정 1승 3패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "새크라멘토 킹스",
+            "abbr": "SAC",
+            "record": "1승 12패",
+            "badges": [
+              {
+                "text": "홈 0승 8패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 3명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 113.0점 · 107.8점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**피닉스 선즈** 6승 7패(원정 1승 3패, 최근 5경기 3승 2패), **새크라멘토 킹스** 1승 12패(홈 0승 8패, 최근 5경기 0승 5패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "피닉스 선즈 부상 명단 1명(결장 1명), 새크라멘토 킹스 4명(결장 2명). 양 팀 합쳐 5명이 ESPN 부상 명단에 올라 있습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **113.0점 대 107.8점**, 평균 리바운드 40.1개 대 39.7개, 3점 성공률 36.6% 대 34.3%. 평균 득점 차 5.2점이 실제 경기 템포로 이어지는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "PHX",
+                "player": "Mark Williams",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "SAC",
+                "player": "Maxime Raynaud",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "SAC",
+                "player": "Ben Simmons",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "SAC",
+                "player": "De'Andre Hunter",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              },
+              {
+                "team": "SAC",
+                "player": "Precious Achiuwa",
+                "note": "당일 체크",
+                "status": "DAY-TO-DAY"
+              }
+            ],
+            "checkpoints": [
+              "**전적** — 피닉스 선즈 6승 7패(원정 1승 3패) / 새크라멘토 킹스 1승 12패(홈 0승 8패).",
+              "**최근 전적** — 피닉스 선즈 최근 5경기 3승 2패(직전 경기 117-105 승) / 새크라멘토 킹스 최근 5경기 0승 5패(직전 경기 103-125 패).",
+              "**부상 명단** — 피닉스 선즈: Mark Williams / 새크라멘토 킹스: Maxime Raynaud, Ben Simmons, De'Andre Hunter, Precious Achiuwa."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-uta-lal-20261119",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-19T12:00:00+09:00",
+          "venue": "crypto.com Arena",
+          "away": {
+            "name": "유타 재즈",
+            "abbr": "UTA",
+            "record": "2승 13패",
+            "badges": [
+              {
+                "text": "원정 1승 6패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "LA 레이커스",
+            "abbr": "LAL",
+            "record": "13승 2패",
+            "badges": [
+              {
+                "text": "홈 6승 1패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 6명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 108.7점 · 122.5점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**유타 재즈** 2승 13패(원정 1승 6패, 최근 5경기 1승 4패), **LA 레이커스** 13승 2패(홈 6승 1패, 최근 5경기 5승 0패)."
+            },
+            {
+              "kind": "inj",
+              "label": "부상 변수",
+              "text": "유타 재즈 부상 명단 4명(결장 4명), LA 레이커스 2명(결장 2명). 양 팀 합쳐 6명이 ESPN 부상 명단에 올라 있습니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 시즌 평균 득점 **108.7점 대 122.5점**, 평균 리바운드 44.3개 대 41.4개, 3점 성공률 35.1% 대 38.1%. 평균 득점 차 13.8점이 실제 경기 템포로 이어지는지가 관전 포인트입니다."
+            }
+          ],
+          "details": {
+            "injuries": [
+              {
+                "team": "UTA",
+                "player": "Jaxson Hayes",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "UTA",
+                "player": "Lauri Markkanen",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "UTA",
+                "player": "Jusuf Nurkic",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "UTA",
+                "player": "Jaren Jackson Jr.",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "LAL",
+                "player": "Walker Kessler",
+                "note": "결장",
+                "status": "OUT"
+              },
+              {
+                "team": "LAL",
+                "player": "Austin Reaves",
+                "note": "결장",
+                "status": "OUT"
+              }
+            ],
+            "checkpoints": [
+              "**전적** — 유타 재즈 2승 13패(원정 1승 6패) / LA 레이커스 13승 2패(홈 6승 1패).",
+              "**최근 전적** — 유타 재즈 최근 5경기 1승 4패(직전 경기 132-107 승) / LA 레이커스 최근 5경기 5승 0패(직전 경기 118-114 승).",
+              "**부상 명단** — 유타 재즈: Jaxson Hayes, Lauri Markkanen, Jusuf Nurkic, Jaren Jackson Jr. / LA 레이커스: Walker Kessler, Austin Reaves."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-18 22:58 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        }
+        /* NBA-AUTO 2026-11-19 END */,
 
         {
           id: "vleague-men-kal-hyundai-1119",
