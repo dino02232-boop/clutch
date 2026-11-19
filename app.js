@@ -843,10 +843,27 @@
 
   function gameTagsHTML(g) {
     var tags = Array.isArray(g.tags) ? g.tags.slice() : [];
-    // 총 결장 인원·평균 득점은 팀별 정보와 중복되므로 상단 요약 칩에서 제외한다.
+    var hasInjuryTotal = tags.some(function (tag) {
+      return /^(결장|부상)\s+\d+명$/.test(tag.text || "");
+    });
+    var teams = g.details && Array.isArray(g.details.teams) ? g.details.teams : [];
+    if (hasInjuryTotal && teams.length) {
+      var teamTags = [];
+      teams.forEach(function (team) {
+        var injuries = Array.isArray(team.injuries) ? team.injuries : [];
+        if (!injuries.length) return;
+        var outs = injuries.filter(function (injury) { return String(injury.status || "").toUpperCase() === "OUT"; }).length;
+        var label = outs ? "결장 " + outs + "명" : "부상 " + injuries.length + "명";
+        teamTags.push({ text: (team.abbr || team.name || "팀") + " " + label, tone: "warn" });
+      });
+      if (teamTags.length) {
+        tags = tags.filter(function (tag) { return !/^(결장|부상)\s+\d+명$/.test(tag.text || ""); }).concat(teamTags);
+      }
+    }
+    // 평균 득점 칩만 숨기고, 결장은 팀별 칩으로 구분해 보여 준다.
     tags = tags.filter(function (tag) {
       var text = String(tag.text || "");
-      return !/^(?:.*\s+)?(?:결장|부상)\s+\d+명$/.test(text) && !/^평균(?:\s|$)/.test(text);
+      return !/^평균(?:\s|$)/.test(text);
     });
     return tags.map(function (tag) {
       return '<span class="tag ' + toneClass(tag.tone, ["warn", "hot", "info"], "") + '">' + esc(tag.text) + "</span>";
