@@ -110,6 +110,8 @@ def sanity(src):
     days = re.findall(r'\n      date: "(\d{4}-\d{2}-\d{2})",', src)
     if not days:
         return "날짜 블록이 없습니다"
+    if re.search(r'(?m)^    \}\r?\n\r?\n(?=    /\* ── \d{4}-\d{2}-\d{2})', src):
+        return "날짜 블록 사이 쉼표가 없습니다"
     if not src.rstrip().endswith("};"):
         return "끝이 }; 로 닫히지 않았습니다"
     counts, broken = games_of(src)
@@ -231,7 +233,7 @@ def prune(src, keep_from, keep_to):
     if not kept:
         log("  ! 정리 후 남는 날짜가 없습니다 — 정리를 건너뜁니다")
         return src
-    new_body = "\n\n".join(kept)
+    new_body = ",\n\n".join(kept)
     if dropped:
         log("  · 범위 밖 날짜 블록 정리: %s" % ", ".join(dropped))
     return head + "  days: [\n\n" + new_body + "\n  ]" + tail
