@@ -1421,7 +1421,9 @@
     });
     return {
       at: Date.now(),
-      set: Number((p.game && p.game.setIng) || m.currentSet) || 0,
+      // 라벨은 요청한 세트(rset)를 따른다. 경기 상태의 setIng 는 세트가 바뀐 직후 먼저 올라가서
+      // 아직 이전 세트 기록을 받은 경우와 어긋난다.
+      set: Number(m.currentSet) || Number(p.game && p.game.setIng) || 0,
       homeCode: homeCode,
       plays: keep.slice(-40).reverse(),
       hs: home,
