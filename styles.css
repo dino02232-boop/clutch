@@ -518,6 +518,7 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   gap: 7px;
   min-width: 0;
 }
+.mtms .sport-ball { flex: 0 0 auto; font-size: 14px; line-height: 1; }
 .mtms .tm {
   font-size: 14.5px;
   font-weight: 800;
