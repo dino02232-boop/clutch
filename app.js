@@ -1234,10 +1234,12 @@
     sum: {},          // "path|id" → { at, data:{plays,box}, err }  (선수 기록·최근 플레이)
     sumBusy: {},      // 같은 키의 summary 요청이 진행 중인지
     kovoBusy: false,
-    kovoRetry: null
+    kovoRetry: null,
+    kovoRelay: {}   // KOVO 경기번호 → { at, set, plays:[], homeCode, err }  (배구 랠리 중계)
   };
 
   var KOVO_API = "https://user-api.kovo.co.kr";
+  var KOVO_RELAY_TTL = 20000;   // 랠리 중계 캐시(같은 세트면 20초 재사용)
 
   function espnPathOf(g) {
     if (!g || !g.espnId) return null;
@@ -1301,8 +1303,186 @@
     });
   }
 
+  // KOVO 랠리 중계(/stat/real-time)는 payload 가 배열이 아니라 객체라 따로 받는다.
+  function fetchKovoPayload(path) {
+    if (typeof fetch !== "function") return Promise.reject(new Error("fetch 없음"));
+    var ctl = typeof AbortController === "function" ? new AbortController() : null;
+    var t = window.setTimeout(function () { if (ctl) ctl.abort(); }, LIVE_TIMEOUT);
+    return fetch(KOVO_API + path, {
+      mode: "cors", cache: "no-store", signal: ctl ? ctl.signal : undefined,
+      headers: {
+        "X-Service-Name": "user",
+        "X-Site-Origin": location.origin,
+        "Accept-Language": "ko"
+      }
+    }).then(function (r) {
+      window.clearTimeout(t);
+      if (!r.ok) throw new Error("KOVO HTTP " + r.status);
+      return r.json();
+    }, function (e) {
+      window.clearTimeout(t);
+      throw e;
+    }).then(function (j) {
+      if (!j || !j.result || Number(j.result.status) !== 200 || !j.payload) {
+        throw new Error("KOVO 응답 형식 오류");
+      }
+      return j.payload;
+    });
+  }
+
+  // KOVO 랠리 중계 주소. rset(세트)을 넣으면 그 세트 기록만 온다.
+  // sort[] 파라미터를 넣으면 서버가 400 으로 거절하므로 넣지 않는다.
+  function kovoRelayPath(m) {
+    var q = [
+      "season=" + encodeURIComponent(String((m.season && m.season.value) || "")),
+      "round=" + encodeURIComponent(String(m.round == null ? 0 : m.round)),
+      "gnum=" + encodeURIComponent(String(m.number)),
+      "gcode=" + encodeURIComponent(String(m.match || "001")),
+      "hcode=" + encodeURIComponent(String(m.homeTeam.code)),
+      "acode=" + encodeURIComponent(String(m.awayTeam.code)),
+      "rset=" + encodeURIComponent(String(Number(m.currentSet) || 1)),
+      "page=0", "size=1000"
+    ];
+    return "/stat/real-time?" + q.join("&");
+  }
+
+  // KOVO 기록 코드 → 한국어 설명 (KOVO 공식 사이트 문자중계와 같은 표기)
+  var KOVO_ERR = {
+    er0: "기타범실", er1: "아웃", er2: "로테이션범실", er3: "아웃", er4: "포히트",
+    er5: "라인오버", er6: "네트터치", er7: "드리블", er8: "아웃오브포지션", er9: "스크린",
+    era: "기타범실", erb: "아웃", erc: "로테이션", erd: "네트걸림", ere: "포히트",
+    erf: "라인오버", erg: "네트터치", erh: "더블컨텍트", eri: "아웃오브포지션",
+    erj: "스크린", erk: "캐치볼", erl: "오버네트"
+  };
+  var KOVO_ACT = {
+    DF: "디그", RR: "리시브", SS: "세트",
+    VV: "서브", VS: "스파이크서브", AA: "오픈", AC: "퀵오픈", AT: "시간차",
+    AE: "이동", AQ: "속공", AW: "백어택", AZ: "백어택",
+    BB: "블로킹", BA: "블로킹어시스트", BT: "유효블로킹",
+    TO: "팀실패", OP: "팀",
+    CY: "벌칙", CR: "세트퇴장", CO: "교체", CI: "투입", CT: "타임", CW: "경고", CC: "경기퇴장"
+  };
+  var KOVO_SIMPLE = { CY: 1, CR: 1, CO: 1, CI: 1, CT: 1, CW: 1, CC: 1 };
+
+  function kovoRelayLabel(action, result, grade) {
+    var a = String(action || ""), r = String(result || ""), g = String(grade == null ? "" : grade);
+    if (a === "ST") return "세트 시작";
+    if (a === "ET") return "세트 종료";
+    var base = KOVO_ACT[a];
+    if (!base) return "";
+    if (KOVO_SIMPLE[a]) return base;              // 벌칙·교체·타임 등은 결과 표기를 붙이지 않는다
+    if (a === "TO" || a === "OP") {              // 팀 단위 득점·실점
+      if (r === "suc") return base + "득점";
+      if (KOVO_ERR[r]) return base + " " + KOVO_ERR[r];
+      if (r === "tot") return base + " 시도";
+      return base;
+    }
+    var out = base;
+    if (r === "tot") return out + " 시도";
+    if (KOVO_ERR[r]) return out + " " + KOVO_ERR[r];
+    if (r === "exc") return out + (a === "RR" ? " 정확" : (a === "SS" ? " 성공" : ""));
+    if (r === "fal") return out + " 실패";
+    if (r === "suc") out += " 성공";
+    else if (r === "blk") out += " 시도";
+    if (g === "1") return out + " 득점";
+    if (g === "2") return out + " 2득점";
+    return out;
+  }
+
+  // 랠리 기록을 화면용 목록으로. 점수가 난 랠리와 타임·교체 같은 사건만 남긴다.
+  function parseKovoRelay(p, m) {
+    var feed = (p && Array.isArray(p.feed)) ? p.feed : [];
+    var homeCode = String((m.homeTeam && m.homeTeam.code) || "");
+    var home = 0, away = 0, all = [];
+    feed.forEach(function (x) {
+      var grade = Number(x.rgrade) || 0;
+      var label = kovoRelayLabel(x.raction, x.raresult, x.rgrade);
+      if (!label) {
+        if (!grade) return;
+        label = grade === 2 ? "2득점" : "득점";
+      }
+      var mine = String(x.rtcode) === homeCode;
+      if (grade === 1 || grade === 2) {
+        if (mine) home += grade; else away += grade;
+      }
+      var who = (Number(x.rbnum) > 0 && x.rpname) ? (x.rbnum + ". " + x.rpname + " ") : "";
+      all.push({
+        text: who + label,
+        home: mine,
+        score: grade > 0,
+        hs: home,
+        as: away,
+        set: Number((p.game && p.game.setIng) || m.currentSet) || 0
+      });
+    });
+    // 점수 랠리 + 작전타임·교체·경고·세트 시작/종료만 화면에 남긴다
+    var keep = all.filter(function (x) {
+      return x.score || /타임|교체|투입|경고|벌칙|퇴장|세트 시작|세트 종료/.test(x.text);
+    });
+    return {
+      at: Date.now(),
+      set: Number((p.game && p.game.setIng) || m.currentSet) || 0,
+      homeCode: homeCode,
+      plays: keep.slice(-40).reverse(),
+      hs: home,
+      as: away,
+      err: null
+    };
+  }
+
+  // 진행 중 배구 경기의 현재 세트 랠리 중계를 받아 둔다(30초 주기 안에서 20초 캐시).
+  function loadKovoRelay(m, force) {
+    var num = String(m.number);
+    var cur = LIVE.kovoRelay[num] || null;
+    var set = Number(m.currentSet) || 0;
+    if (!force && cur && !cur.err && cur.set === set && Date.now() - cur.at < KOVO_RELAY_TTL) {
+      return Promise.resolve(cur);
+    }
+    if (cur && cur.busy) return Promise.resolve(cur);
+    var mark = cur || { at: 0, set: set, plays: [], hs: 0, as: 0, err: null };
+    mark.busy = true;
+    LIVE.kovoRelay[num] = mark;
+    return fetchKovoPayload(kovoRelayPath(m)).then(function (p) {
+      var next = parseKovoRelay(p, m);
+      LIVE.kovoRelay[num] = next;
+      return next;
+    }, function (e) {
+      LIVE.kovoRelay[num] = {
+        at: Date.now(), set: set, homeCode: mark.homeCode, plays: mark.plays || [],
+        hs: mark.hs || 0, as: mark.as || 0,
+        err: String((e && e.message) || e)
+      };
+      return LIVE.kovoRelay[num];
+    });
+  }
+
+  // 배구 카드의 '최근 랠리' 목록
+  function kovoRelayHTML(g) {
+    if (g.sport !== "volleyball") return "";
+    var num = g.result && g.result.kovoNumber;
+    var r = num ? LIVE.kovoRelay[String(num)] : null;
+    var head = '<h4 class="lb-sub">최근 랠리 <span class="lb-sub-note">' +
+      (r && r.set ? esc(r.set + "세트") + " · " : "") + "KOVO 문자중계</span></h4>";
+    if (!r) return head + '<p class="lb-none">랠리 중계를 불러오는 중…</p>';
+    var plays = r.plays || [];
+    if (!plays.length) {
+      return head + '<p class="lb-none">' +
+        (r.err ? "랠리 중계를 받지 못했습니다. 세트 스코어는 위에 표시됩니다." : "아직 표시할 랠리가 없습니다.") +
+        "</p>";
+    }
+    return head + '<ul class="lb-plays">' + plays.slice(0, 12).map(function (p) {
+      var sc = p.score ? (p.as + "-" + p.hs) : "";
+      var side = p.home ? (g.home && g.home.abbr ? g.home.abbr : "홈") : (g.away && g.away.abbr ? g.away.abbr : "원정");
+      return "<li" + (p.score ? ' class="sc"' : "") + ">" +
+        '<span class="bp-t">' + esc(side) + "</span>" +
+        '<span class="bp-x">' + esc(p.text) + "</span>" +
+        (sc ? '<span class="bp-s">' + esc(sc) + "</span>" : "") +
+        "</li>";
+    }).join("") + "</ul>";
+  }
+
   // KOVO 공식 일정 API의 세트 점수를 오늘 카드에 반영한다.
-  // 공개 데이터에 현재 세트의 랠리 점수와 문자 중계는 포함되지 않는다.
+  // 같은 응답의 랠리 중계(/stat/real-time)로 현재 세트의 랠리별 중계도 함께 받아 둔다.
   function pollKovoLive(manual) {
     if (LIVE.kovoBusy) return;
     var day = todayStr();
@@ -1312,13 +1492,14 @@
     if (!targets.length) return;
 
     LIVE.kovoBusy = true;
+    if (LIVE.kovoDay !== day) { LIVE.kovoDay = day; LIVE.kovoRelay = {}; }
     if (manual) setRefreshBusy(true);
     Promise.all([
       fetchKovoJSON("/mains/games/schedules"),
       fetchKovoJSON("/mains/games/schedules/ended")
     ]).then(function (groups) {
       var entries = (groups[0] || []).concat(groups[1] || []);
-      var byNumber = {};
+      var byNumber = {}, relayJobs = [];
       entries.forEach(function (m) {
         if (m && m.match === "001" && m.gameDate === day) byNumber[String(m.number)] = m;
       });
@@ -1343,10 +1524,13 @@
         };
         entry.g.status = isFinal ? "final" : "live";
         if (before !== JSON.stringify(entry.g.result)) LIVE.kovoChanged = true;
+        if (isLive) relayJobs.push(loadKovoRelay(m, !!manual));
       });
-      LIVE.lastOk = new Date();
-      LIVE.kovoErr = null;
-      paintLive();
+      return Promise.all(relayJobs).then(function () {
+        LIVE.lastOk = new Date();
+        LIVE.kovoErr = null;
+        paintLive();
+      });
     }).catch(function (e) {
       LIVE.kovoErr = String((e && e.message) || e);
       paintLive();
@@ -1934,7 +2118,9 @@
   function liveHeadHTML(g) {
     var r = g.result || {};
     var s = summaryEntry(g);
-    var upd = s && s.at ? hhmm(new Date(s.at)) : "";
+    var relay = (g.sport === "volleyball" && r.kovoNumber) ? LIVE.kovoRelay[String(r.kovoNumber)] : null;
+    var at = (s && s.at) ? s.at : (relay && relay.plays && relay.plays.length ? relay.at : 0);
+    var upd = at ? hhmm(new Date(at)) : "";
     return '<div class="lb-head">' +
       '<span class="lv"><span class="lv-dot" aria-hidden="true"></span>LIVE</span>' +
       '<b class="lb-phase">' + esc(r.detail || "진행 중") + "</b>" +
@@ -2039,7 +2225,7 @@
   function liveSectionHTML(g) {
     var r = g.result || {};
     var volleyballNote = g.sport === "volleyball"
-      ? '<p class="lb-none">현재 점수는 세트 스코어입니다. 랠리별 문자중계와 선수별 득점은 <a href="https://kovo.co.kr/games/v-leagues/schedules?season=023&amp;gender=all&amp;league=201" target="_blank" rel="noopener noreferrer">KOVO 공식 일정</a>에서 확인할 수 있습니다.</p>'
+      ? kovoRelayHTML(g)
       : "";
     return '<section class="lbox" aria-label="지금 경기 상황">' +
       liveHeadHTML(g) +
