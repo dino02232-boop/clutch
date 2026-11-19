@@ -841,14 +841,36 @@
       "</section>";
   }
 
+  function gameTagsHTML(g) {
+    var tags = Array.isArray(g.tags) ? g.tags.slice() : [];
+    var hasInjuryTotal = tags.some(function (tag) {
+      return /^(결장|부상)\s+\d+명$/.test(tag.text || "");
+    });
+    var teams = g.details && Array.isArray(g.details.teams) ? g.details.teams : [];
+    if (hasInjuryTotal && teams.length) {
+      var teamTags = [];
+      teams.forEach(function (team) {
+        var injuries = Array.isArray(team.injuries) ? team.injuries : [];
+        if (!injuries.length) return;
+        var outs = injuries.filter(function (injury) { return String(injury.status || "").toUpperCase() === "OUT"; }).length;
+        var label = outs ? "결장 " + outs + "명" : "부상 " + injuries.length + "명";
+        teamTags.push({ text: (team.abbr || team.name || "팀") + " " + label, tone: "warn" });
+      });
+      if (teamTags.length) {
+        tags = tags.filter(function (tag) { return !/^(결장|부상)\s+\d+명$/.test(tag.text || ""); }).concat(teamTags);
+      }
+    }
+    return tags.map(function (tag) {
+      return '<span class="tag ' + toneClass(tag.tone, ["warn", "hot", "info"], "") + '">' + esc(tag.text) + "</span>";
+    }).join("");
+  }
+
   function boxHTML(g) {
     var d = g.details || {};
     var injuries = Array.isArray(d.injuries) ? d.injuries : [];
     var checks = Array.isArray(d.checkpoints) ? d.checkpoints : [];
     var rows = Array.isArray(g.rows) ? g.rows : [];
-    var tags = (g.tags || []).map(function (t) {
-      return '<span class="tag ' + toneClass(t.tone, ["warn", "hot", "info"], "") + '">' + esc(t.text) + "</span>";
-    }).join("");
+    var tags = gameTagsHTML(g);
 
     var liveNow = g.result && g.result.state === "live";
     var finalNow = g.result && g.result.state === "final";
