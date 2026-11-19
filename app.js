@@ -2147,13 +2147,12 @@
   }
 
   function livePlaysHTML(g) {
+    if (g.sport !== "basketball") return "";   // 배구는 kovoRelayHTML 이 랠리 중계를 그린다
     var head = '<h4 class="lb-sub">최근 플레이</h4>';
     var s = summaryEntry(g);
     if (!s) return head + '<p class="lb-none">최근 플레이를 불러오는 중…</p>';
     var plays = (s.data && s.data.plays) || [];
     if (!plays.length) {
-      // 농구 외 종목은 플레이 로그가 없을 수 있다. 그때는 제목도 비우지 않는다.
-      if (g.sport !== "basketball") return "";
       return head + '<p class="lb-none">' +
         (s.err ? "최근 플레이를 받지 못했습니다." : "아직 표시할 플레이가 없습니다.") + "</p>";
     }
