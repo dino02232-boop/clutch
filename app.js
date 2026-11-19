@@ -311,6 +311,8 @@
     if (!same) writeHash(id, false);
     render();
     window.scrollTo(0, 0);
+    // 배구 탭을 열면 KOVO 세트 스코어를 바로 한 번 확인한다
+    if (id === "volleyball") pollKovoLive(false);
   }
 
   function goHome() {
@@ -1231,7 +1233,8 @@
     dated: {},        // "path|YYYYMMDD" → { at, events }
     sum: {},          // "path|id" → { at, data:{plays,box}, err }  (선수 기록·최근 플레이)
     sumBusy: {},      // 같은 키의 summary 요청이 진행 중인지
-    kovoBusy: false
+    kovoBusy: false,
+    kovoRetry: null
   };
 
   var KOVO_API = "https://user-api.kovo.co.kr";
@@ -1346,6 +1349,14 @@
       paintLive();
     }).catch(function (e) {
       LIVE.kovoErr = String((e && e.message) || e);
+      paintLive();
+      // 한 번 실패하면 5초 뒤에 스스로 한 번 더 시도한다(일시적 네트워크 오류 대비)
+      if (!LIVE.kovoRetry) {
+        LIVE.kovoRetry = window.setTimeout(function () {
+          LIVE.kovoRetry = null;
+          pollKovoLive(false);
+        }, 5000);
+      }
     }).then(function () {
       LIVE.kovoBusy = false;
       if (manual) setRefreshBusy(false);
@@ -2178,7 +2189,8 @@
     if (!elLiveBar) return;
     var n = liveNowCount();
     var cands = liveCandidates();
-    if (!cands.length && !n) { elLiveBar.hidden = true; return; }
+    var kovoFail = !!LIVE.kovoErr;
+    if (!cands.length && !n && !kovoFail) { elLiveBar.hidden = true; return; }
     elLiveBar.hidden = false;
     elLiveBar.classList.toggle("live", n > 0);
     var failed = !!LIVE.err && !LIVE.lastOk;
@@ -2186,7 +2198,8 @@
     if (elLiveText) {
       elLiveText.textContent = failed
         ? "실시간 정보를 못 받았습니다 · 정적 데이터 표시"
-        : (n ? "지금 " + n + "경기 진행 중" : "지금 진행 중인 경기 없음");
+        : (n ? "지금 " + n + "경기 진행 중"
+          : (kovoFail ? "KOVO 실시간 연결 실패 · 새로고침을 눌러 주세요" : "지금 진행 중인 경기 없음"));
     }
     if (elLiveTime) elLiveTime.textContent = LIVE.lastOk ? "확인 " + hhmm(LIVE.lastOk) : "";
   }
