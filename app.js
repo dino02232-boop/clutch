@@ -718,7 +718,7 @@
 
     var focusHTML = t.focus ? '<h4 class="tb-sub">관전 포인트</h4><p class="tb-focus">' + md(t.focus) + "</p>" : "";
 
-    return '<section class="tblock ' + side + '">' +
+    return '<section class="tblock ' + side + '" data-team-name="' + esc(t.name || "") + '">' +
       '<div class="tb-head">' +
         '<span class="tb-side">' + (side === "home" ? "홈" : "원정") + "</span>" +
         '<b class="tb-name">' + esc(t.name || t.abbr || "") + "</b>" +
@@ -1142,9 +1142,9 @@
         "</button>" +
         '<span class="mtms">' +
           '<span class="sport-ball" aria-hidden="true">' + esc(sm.icon) + "</span>" +
-          '<span class="tm away">' + esc(away) + "</span>" +
+          '<span class="tm away"><button class="team-link" type="button" data-team-focus="' + esc(away) + '" aria-label="' + esc(away + " 팀 현황 보기") + '"><span class="tm-name">' + esc(away) + '</span></button>' + favoriteButtonHTML(g.sport, away) + "</span>" +
           '<span class="mslot" data-slot="' + esc(g.id) + '">' + scoreSlotHTML(g) + "</span>" +
-          '<span class="tm home">' + esc(home) + "</span>" +
+          '<span class="tm home"><button class="team-link" type="button" data-team-focus="' + esc(home) + '" aria-label="' + esc(home + " 팀 현황 보기") + '"><span class="tm-name">' + esc(home) + '</span></button>' + favoriteButtonHTML(g.sport, home) + "</span>" +
         "</span>" +
       "</div>" +
       '<div class="cbox-wrap" id="box-' + esc(g.id) + '"></div>' +
@@ -1252,7 +1252,10 @@
 
   function bindRows() {
     Array.prototype.forEach.call(elList.querySelectorAll(".mrow-item"), function (item) {
-      item.querySelector(".mrow").addEventListener("click", function () { toggleItem(item); });
+      item.querySelector(".mrow").addEventListener("click", function (e) {
+        if (e.target.closest && e.target.closest(".fav-toggle, .team-link")) return;
+        toggleItem(item);
+      });
     });
   }
 
@@ -3034,6 +3037,30 @@
   if (elWeekNext) elWeekNext.addEventListener("click", function () { shiftWeek(1); });
 
   elList.addEventListener("click", function (e) {
+    var teamButton = e.target.closest ? e.target.closest(".team-link") : null;
+    if (teamButton && elList.contains(teamButton)) {
+      e.preventDefault();
+      e.stopPropagation();
+      var teamItem = teamButton.closest(".mrow-item");
+      if (!teamItem) return;
+      if (!teamItem.classList.contains("open")) toggleItem(teamItem);
+      var teamName = teamButton.dataset.teamFocus;
+      window.setTimeout(function () {
+        var blocks = teamItem.querySelectorAll(".tblock");
+        for (var i = 0; i < blocks.length; i++) {
+          if (blocks[i].dataset.teamName === teamName) {
+            var block = blocks[i];
+            block.scrollIntoView({ block: "nearest", behavior: "smooth" });
+            block.classList.add("team-focus");
+            window.setTimeout((function (target) {
+              return function () { target.classList.remove("team-focus"); };
+            })(block), 1400);
+            break;
+          }
+        }
+      }, 380);
+      return;
+    }
     var notifyButton = e.target.closest ? e.target.closest("[data-favorite-notify]") : null;
     if (notifyButton && elList.contains(notifyButton)) {
       e.preventDefault();

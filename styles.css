@@ -551,6 +551,9 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .mtms .sport-ball { flex: 0 0 auto; font-size: 14px; line-height: 1; }
 .mtms .tm {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
   font-size: 14.5px;
   font-weight: 800;
   letter-spacing: -.022em;
@@ -561,6 +564,14 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   min-width: 0;
   flex: 0 1 auto;
 }
+.mtms .tm-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.team-link {
+  appearance: none; min-width: 0; padding: 0; border: 0; background: transparent;
+  color: inherit; font: inherit; text-align: inherit; cursor: pointer;
+}
+.team-link:hover .tm-name { text-decoration: underline; text-underline-offset: 2px; }
+.team-link:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; border-radius: 3px; }
+.mtms .fav-toggle { width: 20px; height: 20px; margin: 0; border-radius: 6px; font-size: 12px; }
 .mtms .tm.away { color: #1F2937; }
 .mtms .vs {
   flex: 0 0 auto;
@@ -731,6 +742,7 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .fav-toggle.on { color: #B7791F; background: #FFFBEB; border-color: rgba(183, 121, 31, .32); }
 .fav-toggle:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; }
+.tblock.team-focus { border-radius: 10px; box-shadow: 0 0 0 2px rgba(14, 159, 110, .38); transition: box-shadow .2s ease; }
 .f-rec {
   font-size: 11px;
   font-weight: 600;
