@@ -158,9 +158,123 @@
   }
 
   var FAVORITES = readFavorites();
+  var NOTIFY_ENABLED_KEY = "clutch.favoriteNotifications.enabled.v1";
+  var NOTIFY_SEEN_KEY = "clutch.favoriteNotifications.seen.v1";
+  var NOTIFY_MESSAGE = "";
+  var NOTIFY_ENABLED_MEMORY = false;
+  var NOTIFY_SEEN_MEMORY = {};
 
   function isFavorite(sport, name) {
     return FAVORITES.some(function (item) { return item.sport === sport && item.name === name; });
+  }
+
+  function favoriteNotificationsEnabled() {
+    try { return window.localStorage.getItem(NOTIFY_ENABLED_KEY) === "1"; }
+    catch (e) { return NOTIFY_ENABLED_MEMORY; }
+  }
+
+  function favoriteNotificationControlHTML() {
+    var supported = "Notification" in window;
+    var permission = supported ? window.Notification.permission : "unsupported";
+    var enabled = supported && permission === "granted" && favoriteNotificationsEnabled();
+    var disabled = !supported || permission === "denied";
+    var label = !supported ? "알림 미지원" :
+      (permission === "denied" ? "설정 필요" : (enabled ? "알림 끄기" : "경기 알림 켜기"));
+    var defaultMessage = !supported ? "이 브라우저는 알림을 지원하지 않습니다." : (permission === "denied"
+      ? "브라우저의 사이트 설정에서 CLUTCH 알림을 허용해 주세요."
+      : "페이지를 열어 둔 동안 경기 시작·득점·종료를 알려 드립니다.");
+    var message = NOTIFY_MESSAGE || defaultMessage;
+    return '<div class="notify-control"><div class="notify-copy"><b>관심팀 경기 알림</b><small>' + esc(message) +
+      '</small></div><button class="notify-btn" type="button" data-favorite-notify' +
+      (disabled ? " disabled" : "") + ' aria-pressed="' + enabled + '">' + esc(label) + "</button></div>";
+  }
+
+  function setFavoriteNotifications(enabled) {
+    NOTIFY_ENABLED_MEMORY = !!enabled;
+    try { window.localStorage.setItem(NOTIFY_ENABLED_KEY, enabled ? "1" : "0"); }
+    catch (e) { /* 저장할 수 없어도 현재 페이지에서만 계속 동작 */ }
+  }
+
+  function favoriteNotificationSeen(gameId, eventKey) {
+    var seen = NOTIFY_SEEN_MEMORY;
+    try {
+      var stored = JSON.parse(window.localStorage.getItem(NOTIFY_SEEN_KEY) || "{}");
+      if (stored && typeof stored === "object" && !Array.isArray(stored)) seen = stored;
+    } catch (e) { /* 세션 안의 메모리 기록으로 중복을 막는다 */ }
+    if (seen[gameId] === eventKey) return true;
+    seen[gameId] = eventKey;
+    NOTIFY_SEEN_MEMORY = seen;
+    var ids = Object.keys(seen);
+    if (ids.length > 300) ids.slice(0, ids.length - 300).forEach(function (id) { delete seen[id]; });
+    try { window.localStorage.setItem(NOTIFY_SEEN_KEY, JSON.stringify(seen)); }
+    catch (e) { /* 세션 안의 메모리 기록을 유지 */ }
+    return false;
+  }
+
+  function sendFavoriteNotification(g, eventKey, title, body) {
+    if (!g || !(isFavorite(g.sport, g.away && g.away.name) || isFavorite(g.sport, g.home && g.home.name))) return;
+    if (!favoriteNotificationsEnabled() || !("Notification" in window) || window.Notification.permission !== "granted") return;
+    if (favoriteNotificationSeen(g.id, eventKey)) return;
+    try {
+      new window.Notification(title, { body: body, tag: "clutch-" + g.id + "-" + eventKey, icon: "icon.png" });
+    } catch (e) { /* 알림 차단은 실시간 점수 표시를 막지 않음 */ }
+  }
+
+  function notifyFavoriteGameChange(g, previous, next) {
+    if (!g || !next) return;
+    var sport = sportMeta(g.sport);
+    var score = String(next.awayScore == null ? "-" : next.awayScore) + " : " +
+      String(next.homeScore == null ? "-" : next.homeScore);
+    var prefix = sport.icon + " " + sport.name + " · ";
+    if (next.state === "final" && previous && previous.state !== "final") {
+      sendFavoriteNotification(g, "final", prefix + "경기 종료", score + " · " + (g.away && g.away.name || "원정") + " vs " + (g.home && g.home.name || "홈"));
+      return;
+    }
+    if (next.state === "live" && (!previous || previous.state !== "live")) {
+      if (!previous) {
+        var startMs = Date.parse(g.start);
+        if (!isFinite(startMs) || Math.abs(Date.now() - startMs) > 2 * 60 * 1000) return;
+      }
+      sendFavoriteNotification(g, "start", prefix + "경기 시작", score + " · " + (g.away && g.away.name || "원정") + " vs " + (g.home && g.home.name || "홈"));
+      return;
+    }
+    if (next.state !== "live" || !previous || g.sport === "volleyball") return;
+    var awayChanged = Number(next.awayScore) !== Number(previous.awayScore);
+    var homeChanged = Number(next.homeScore) !== Number(previous.homeScore);
+    if (!awayChanged && !homeChanged) return;
+    var scorer = awayChanged ? (g.away && g.away.name || "원정") : (g.home && g.home.name || "홈");
+    sendFavoriteNotification(g, "score-" + score, prefix + "득점", scorer + " 득점 · " + score);
+  }
+
+  function requestFavoriteNotifications() {
+    if (!("Notification" in window)) {
+      NOTIFY_MESSAGE = "이 브라우저는 알림을 지원하지 않습니다.";
+      if (state.favorites) renderFavorites();
+      return;
+    }
+    if (favoriteNotificationsEnabled()) {
+      setFavoriteNotifications(false);
+      NOTIFY_MESSAGE = "관심팀 경기 알림을 껐습니다.";
+      if (state.favorites) renderFavorites();
+      return;
+    }
+    if (window.Notification.permission === "denied") {
+      NOTIFY_MESSAGE = "브라우저 사이트 설정에서 알림을 허용한 뒤 다시 시도해 주세요.";
+      if (state.favorites) renderFavorites();
+      return;
+    }
+    window.Notification.requestPermission().then(function (permission) {
+      if (permission === "granted") {
+        setFavoriteNotifications(true);
+        NOTIFY_MESSAGE = "알림을 켰습니다. 페이지를 열어 둔 동안 관심팀 경기를 알려 드립니다.";
+      } else {
+        NOTIFY_MESSAGE = "알림 권한이 허용되지 않았습니다.";
+      }
+      if (state.favorites) renderFavorites();
+    }).catch(function () {
+      NOTIFY_MESSAGE = "알림 권한을 확인하지 못했습니다.";
+      if (state.favorites) renderFavorites();
+    });
   }
 
   function favoriteButtonHTML(sport, name) {
@@ -739,7 +853,22 @@
   }
 
   function postgameHTML(g) {
-    if (!g || !g.result || g.result.state !== "final" || g.sport !== "basketball") return "";
+    if (!g || !g.result || g.result.state !== "final") return "";
+    if (g.sport !== "basketball") {
+      if (g.result.awayScore == null || g.result.homeScore == null) return "";
+      var finalAway = Number(g.result.awayScore), finalHome = Number(g.result.homeScore);
+      if (!isFinite(finalAway) || !isFinite(finalHome)) return "";
+      var finalWinner = finalAway === finalHome ? null : (finalAway > finalHome ? g.away : g.home);
+      var unit = g.sport === "volleyball" ? "세트" : (g.sport === "soccer" ? "골" : "점");
+      var resultText = finalWinner
+        ? finalWinner.name + "가 " + Math.abs(finalAway - finalHome) + unit + " 차로 이겼습니다."
+        : "양 팀이 " + finalAway + "대 " + finalHome + "으로 비겼습니다.";
+      var playerNote = g.sport === "volleyball"
+        ? "KOVO 공개 결과에는 선수별 기록이 없어 개인 활약 평가는 표시하지 않습니다."
+        : "이 경기의 선수별 기록이 연결되지 않아 개인 활약 평가는 표시하지 않습니다.";
+      return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>결과 요약</span></div>' +
+        '<p class="pg-game-line">' + esc(resultText) + '</p><p class="postgame-note">' + esc(playerNote) + "</p></section>";
+    }
     var entry = summaryEntry(g);
     var boxes = entry && entry.data && Array.isArray(entry.data.box) ? entry.data.box : [];
     if (!boxes.length) {
@@ -1338,7 +1467,7 @@
     }
     if (!entries.length) {
       state.openId = null;
-      elList.innerHTML = "";
+      elList.innerHTML = favoriteNotificationControlHTML();
       showEmpty({
         ico: "🗓️",
         title: "오늘 이후 즐겨찾기 팀 경기가 없습니다",
@@ -1349,7 +1478,8 @@
     }
 
     elEmpty.hidden = true;
-    elList.innerHTML = '<p class="list-hint">즐겨찾기 팀 경기 · 진행 중인 경기가 먼저 표시됩니다.</p>' +
+    elList.innerHTML = favoriteNotificationControlHTML() +
+      '<p class="list-hint">즐겨찾기 팀 경기 · 진행 중인 경기가 먼저 표시됩니다.</p>' +
       '<ul class="rows">' + entries.map(function (entry) { return rowHTML(entry.g); }).join("") + "</ul>";
     bindRows();
 
@@ -1439,6 +1569,7 @@
   var ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports/";
   var LIVE_MS = 30000;          // 자동 갱신 간격
   var LIVE_TIMEOUT = 9000;      // 요청 하나의 제한 시간
+  var LIVE_STALE_MS = 60000;    // 마지막 성공 이후 1분 넘게 오류면 연결 지연을 표시
   var DATED_TTL = 5 * 60 * 1000;
   var LIVE_SUM_TTL = 12000;     // 펼친 박스의 선수 기록·최근 플레이 캐시
 
@@ -1670,6 +1801,23 @@
     };
   }
 
+  function notifyFavoriteVolleyballPoint(number, previous, next) {
+    if (!previous || !Array.isArray(previous.plays) || !previous.plays.length || !next) return;
+    var awayBefore = Number(previous.as) || 0, homeBefore = Number(previous.hs) || 0;
+    var awayNow = Number(next.as) || 0, homeNow = Number(next.hs) || 0;
+    if (awayBefore === awayNow && homeBefore === homeNow) return;
+    var entry = GAMES.filter(function (item) {
+      return item.g && item.g.sport === "volleyball" &&
+        String((item.g.result && item.g.result.kovoNumber) || item.g.id.replace("vball-kovo-", "")) === String(number);
+    })[0];
+    if (!entry) return;
+    var homeScored = homeNow > homeBefore;
+    var team = homeScored ? entry.g.home : entry.g.away;
+    var score = awayNow + "-" + homeNow;
+    sendFavoriteNotification(entry.g, "point-" + next.set + "-" + score,
+      "🏐 배구 득점", (team && team.name || (homeScored ? "홈팀" : "원정팀")) + " 득점 · " + next.set + "세트 " + score);
+  }
+
   // 진행 중 배구 경기의 현재 세트 랠리 중계를 받아 둔다(30초 주기 안에서 20초 캐시).
   function loadKovoRelay(m, force) {
     var num = String(m.number);
@@ -1684,6 +1832,7 @@
     LIVE.kovoRelay[num] = mark;
     return fetchKovoPayload(kovoRelayPath(m)).then(function (p) {
       var next = parseKovoRelay(p, m);
+      notifyFavoriteVolleyballPoint(num, cur, next);
       LIVE.kovoRelay[num] = next;
       return next;
     }, function (e) {
@@ -1756,7 +1905,8 @@
         if (!isFinal && !isLive) return;
         var away = Number(m.awayTeam.score), home = Number(m.homeTeam.score);
         if (!isFinite(away) || !isFinite(home)) return;
-        var before = JSON.stringify(entry.g.result || null);
+        var previousResult = entry.g.result || null;
+        var before = JSON.stringify(previousResult);
         entry.g.result = {
           state: isFinal ? "final" : "live",
           detail: isFinal ? "경기 종료" : (Number(m.currentSet) + "세트 진행 중 · 세트 스코어"),
@@ -1767,6 +1917,7 @@
           kovoNumber: number
         };
         entry.g.status = isFinal ? "final" : "live";
+        notifyFavoriteGameChange(entry.g, previousResult, entry.g.result);
         if (before !== JSON.stringify(entry.g.result)) LIVE.kovoChanged = true;
         if (isLive) relayJobs.push(loadKovoRelay(m, !!manual));
       });
@@ -2591,7 +2742,9 @@
       };
       g.status = "live";
     }
-    return before !== JSON.stringify(g.result);
+    var changed = before !== JSON.stringify(g.result);
+    if (changed) notifyFavoriteGameChange(g, prev, g.result);
+    return changed;
   }
 
   function setRefreshBusy(on) {
@@ -2623,11 +2776,11 @@
     if (!cands.length && !n && !kovoFail) { elLiveBar.hidden = true; return; }
     elLiveBar.hidden = false;
     elLiveBar.classList.toggle("live", n > 0);
-    var failed = !!LIVE.err && !LIVE.lastOk;
+    var failed = !!LIVE.err && (!LIVE.lastOk || Date.now() - LIVE.lastOk.getTime() > LIVE_STALE_MS);
     elLiveBar.classList.toggle("err", failed);
     if (elLiveText) {
       elLiveText.textContent = failed
-        ? "실시간 정보를 못 받았습니다 · 정적 데이터 표시"
+        ? (LIVE.lastOk ? "실시간 연결 지연 · 저장 데이터 표시" : "실시간 정보를 못 받았습니다 · 저장 데이터 표시")
         : (n ? "지금 " + n + "경기 진행 중"
           : (kovoFail ? "KOVO 실시간 연결 실패 · 새로고침을 눌러 주세요" : "지금 진행 중인 경기 없음"));
     }
@@ -2881,6 +3034,12 @@
   if (elWeekNext) elWeekNext.addEventListener("click", function () { shiftWeek(1); });
 
   elList.addEventListener("click", function (e) {
+    var notifyButton = e.target.closest ? e.target.closest("[data-favorite-notify]") : null;
+    if (notifyButton && elList.contains(notifyButton)) {
+      e.preventDefault();
+      requestFavoriteNotifications();
+      return;
+    }
     var button = e.target.closest ? e.target.closest(".fav-toggle") : null;
     if (!button || !elList.contains(button)) return;
     e.preventDefault();
@@ -2915,12 +3074,23 @@
   window.addEventListener("popstate", syncFromHash);
 
   /* ── 데이터 기준 시각 ──────────────────────────────── */
-  if (DATA.updatedAt) {
-    var u = parts(DATA.updatedAt);
-    elDataNote.textContent = "데이터 기준 " + Number(u.m) + "/" + Number(u.d) + " " + u.hh + ":" + u.mm;
-  } else {
-    elDataNote.textContent = "데이터 기준 —";
+  function paintDataFreshness() {
+    if (DATA.updatedAt) {
+      var u = parts(DATA.updatedAt);
+      var updatedMs = Date.parse(DATA.updatedAt);
+      var staleData = isFinite(updatedMs) && Date.now() - updatedMs > 36 * 60 * 60 * 1000;
+      elDataNote.textContent = "데이터 기준 " + Number(u.m) + "/" + Number(u.d) + " " + u.hh + ":" + u.mm +
+        (staleData ? " · 갱신 지연" : "");
+      elDataNote.classList.toggle("stale", staleData);
+      elDataNote.title = staleData ? "데이터가 36시간 이상 갱신되지 않았습니다." : "마지막 데이터 갱신 시각";
+    } else {
+      elDataNote.textContent = "데이터 기준 —";
+      elDataNote.classList.add("stale");
+      elDataNote.title = "데이터 갱신 시각을 확인할 수 없습니다.";
+    }
   }
+  paintDataFreshness();
+  window.setInterval(paintDataFreshness, 15 * 60 * 1000);
 
   render();
   startLive();

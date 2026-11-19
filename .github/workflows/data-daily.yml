@@ -31,5 +31,8 @@ jobs:
           CLUTCH_KEEP_PAST: "3"
         run: python3 tools/auto_update.py --mode daily
 
+      - name: 데이터 JavaScript 문법 검사
+        run: node --check data.js
+
       - name: 바뀐 경우에만 커밋·푸시
         run: bash tools/commit_data.sh daily
