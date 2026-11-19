@@ -605,6 +605,86 @@
       "</section>";
   }
 
+  function postgameHTML(g) {
+    if (!g || !g.result || g.result.state !== "final" || g.sport !== "basketball") return "";
+    var entry = summaryEntry(g);
+    var boxes = entry && entry.data && Array.isArray(entry.data.box) ? entry.data.box : [];
+    if (!boxes.length) {
+      return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b></div>' +
+        '<p class="postgame-note">' + (entry && entry.err ? "선수별 박스스코어를 불러오지 못했습니다." : "최종 선수 기록을 불러오는 중입니다.") + "</p></section>";
+    }
+
+    var candidates = [];
+    boxes.forEach(function (teamBox) {
+      var team = (g.details && Array.isArray(g.details.teams) ? g.details.teams : []).filter(function (t) {
+        return String(t.abbr || "").toUpperCase() === String(teamBox.abbr || "").toUpperCase();
+      })[0];
+      var expectedPlayers = team && Array.isArray(team.players) ? team.players : [];
+      (teamBox.rows || []).forEach(function (p) {
+        var normName = String(p.name || "").trim().toLowerCase();
+        var expected = expectedPlayers.filter(function (ep) {
+          return String(ep.name || "").trim().toLowerCase() === normName;
+        })[0];
+        if (!expected) return;
+        var ptsMatch = String(expected.stat || "").match(/(\d+(?:\.\d+)?)\s*(?:점|pts?|ppg)/i);
+        if (!ptsMatch) return;
+        var avg = Number(ptsMatch[1]);
+        var pts = toNum(p.pts);
+        if (!isFinite(avg) || pts < 0) return;
+        candidates.push({
+          name: p.name, team: teamBox.name || teamBox.abbr,
+          pts: pts, reb: p.reb, ast: p.ast, min: p.min,
+          avg: avg, delta: pts - avg
+        });
+      });
+    });
+
+    if (!candidates.length) {
+      return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b></div>' +
+        '<p class="postgame-note">선수 기록은 받았지만 시즌 평균과 비교할 주요 선수 데이터가 없습니다.</p></section>';
+    }
+    candidates.sort(function (a, b) { return b.delta - a.delta; });
+    var best = candidates[0], low = candidates[candidates.length - 1], picks = [];
+    if (best.delta >= 5) picks.push({ p: best, tone: "up", label: "기대 이상", note: "시즌 평균보다 " + best.delta.toFixed(1) + "점 높음" });
+    if (low.delta <= -5 && low.name !== best.name) picks.push({ p: low, tone: "down", label: "기대 이하", note: "시즌 평균보다 " + Math.abs(low.delta).toFixed(1) + "점 낮음" });
+    if (!picks.length) picks.push({ p: best, tone: "steady", label: "평균 수준", note: "시즌 평균 득점과 비슷함" });
+    var items = picks.map(function (item) {
+      var p = item.p;
+      return '<li class="pg-player"><div class="pg-line"><b>' + esc(p.name) + '</b><span class="pg-tag ' + item.tone + '">' + item.label + "</span></div>" +
+        '<span class="pg-team">' + esc(p.team) + " · " + esc(String(p.min)) + "분</span>" +
+        '<p><strong>' + esc(String(p.pts)) + '점</strong> · 시즌 평균 ' + esc(p.avg.toFixed(1)) + '점 · ' + esc(item.note) + "</p>" +
+        '<span class="pg-extra">리바운드 ' + esc(dash(p.reb)) + ' · 어시스트 ' + esc(dash(p.ast)) + "</span></li>";
+    }).join("");
+    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>득점과 시즌 평균 비교</span></div>' +
+      '<ul class="pg-list">' + items + '</ul><p class="postgame-note">기대 평가는 시즌 평균 득점과 이번 경기 득점을 비교한 자동 요약입니다.</p></section>';
+  }
+
+  function flowRowHTML(row) {
+    var text = String(row && row.text || "");
+    var pastAt = text.indexOf(". 직전 경기(");
+    var current = pastAt >= 0 ? text.slice(0, pastAt) : text;
+    var summaries = current.split(/, (?=\*\*)/);
+    var cards = summaries.map(function (part) {
+      var m = part.match(/^\*\*(.+?)\*\*\s*(.*)$/);
+      if (!m) return "";
+      return '<div class="flow-team"><b>' + esc(m[1]) + '</b><p>' + md(m[2]) + "</p></div>";
+    }).filter(Boolean).join("");
+    var last = [];
+    var re = /직전 경기\(([^)]+)\)\s+\*\*(.+?)\*\*는\s+([\s\S]*?)(?=\. 직전 경기\(|$)/g;
+    var match;
+    while ((match = re.exec(text)) !== null) {
+      var detail = match[3].replace(/\s*기록했습니다\.?\s*$/, "").trim();
+      last.push('<div class="flow-last"><span>' + esc(match[1]) + " · " + esc(match[2]) + '</span><p>' + md(detail) + "</p></div>");
+    }
+    if (!cards && !last.length) {
+      return '<div class="srow flow"><dt>' + esc(row.label || "흐름") + '</dt><dd>' + md(text) + "</dd></div>";
+    }
+    return '<section class="flow-card"><h3>팀 흐름</h3>' +
+      (cards ? '<div class="flow-teams">' + cards + "</div>" : "") +
+      (last.length ? '<div class="flow-recent"><h4>직전 경기</h4>' + last.join("") + "</div>" : "") +
+      "</section>";
+  }
+
   function boxHTML(g) {
     var d = g.details || {};
     var injuries = Array.isArray(d.injuries) ? d.injuries : [];
@@ -628,12 +708,14 @@
 
     if (tags) preview += '<div class="tags">' + tags + "</div>";
 
-    if (rows.length) {
-      preview += '<dl class="summary">' + rows.map(function (r) {
+    var extraRows = rows.filter(function (r) { return r.kind !== "flow"; });
+    if (extraRows.length) {
+      preview += '<dl class="summary">' + extraRows.map(function (r) {
         var kind = toneClass(r.kind, ["flow", "inj", "watch"], "");
         return '<div class="srow ' + kind + '"><dt>' + esc(r.label) + "</dt><dd>" + md(r.text) + "</dd></div>";
       }).join("") + "</dl>";
     }
+    rows.filter(function (r) { return r.kind === "flow"; }).forEach(function (r) { preview += flowRowHTML(r); });
 
     // 팀별 정보: 원정 먼저, 홈 다음. 두 블록 사이는 넉넉히 띄운다.
     var teams = Array.isArray(d.teams) ? d.teams.filter(Boolean) : [];
@@ -672,7 +754,7 @@
     if (liveNow) {
       body = liveSectionHTML(g) + '<details class="pregame"><summary>경기 전 브리핑</summary><div class="pregame-body">' + preview + "</div></details>";
     } else if (finalNow) {
-      body = resultHTML(g) + '<details class="pregame"><summary>경기 전 브리핑</summary><div class="pregame-body">' + preview + "</div></details>";
+      body = resultHTML(g) + postgameHTML(g) + '<details class="pregame"><summary>경기 전 브리핑</summary><div class="pregame-body">' + preview + "</div></details>";
     } else {
       body = preview;
     }
@@ -762,6 +844,7 @@
     wrap.innerHTML = boxHTML(entry.g);
     // 진행 중인 경기면 선수 기록·최근 플레이를 바로 받아 채운다
     if (entry.g.result && entry.g.result.state === "live") refreshLiveSummary(item, entry.g, false);
+    else if (entry.g.result && entry.g.result.state === "final" && entry.g.sport === "basketball") refreshPostgameSummary(item, entry.g, false);
     item.classList.add("open");
     btn.setAttribute("aria-expanded", "true");
     label.textContent = "접기";
@@ -1621,7 +1704,7 @@
           var min = s[idx.MIN];
           if (min == null || min === "" || min === "--" || toNum(min) <= 0) return;
           rows.push({
-            name: (a.athlete && (a.athlete.shortName || a.athlete.displayName)) || "",
+            name: (a.athlete && (a.athlete.displayName || a.athlete.fullName || a.athlete.shortName)) || "",
             min: min,
             pts: s[idx.PTS],
             reb: idx.REB != null ? s[idx.REB] : null,
@@ -1816,6 +1899,18 @@
     });
   }
 
+  function refreshPostgameSummary(item, g, force) {
+    loadLiveSummary(g, !!force, function () {
+      var it = itemOf(g.id);
+      if (!it || !it.classList.contains("open")) return;
+      var old = it.querySelector(".postgame");
+      if (!old) return;
+      var tpl = document.createElement("div");
+      tpl.innerHTML = postgameHTML(g);
+      if (tpl.firstChild) old.parentNode.replaceChild(tpl.firstChild, old);
+    });
+  }
+
   function indexEvents(j, sport, path) {
     var out = {};
     ((j && j.events) || []).forEach(function (ev) {
@@ -2002,6 +2097,12 @@
         }
         // 펼쳐 둔 진행 중 경기는 선수 기록·최근 플레이도 30초마다 새로 받는다
         if (oeLive) refreshLiveSummary(open, oe.g, true);
+        else if (oe.g.result && oe.g.result.state === "final" && oe.g.sport === "basketball") {
+          var postgameEntry = summaryEntry(oe.g);
+          if (!postgameEntry || (postgameEntry.err && Date.now() - postgameEntry.at > 60000)) {
+            refreshPostgameSummary(open, oe.g, false);
+          }
+        }
       }
     }
 
