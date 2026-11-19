@@ -820,6 +820,16 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .pg-facts { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
 .pg-facts span { padding: 4px 6px; border-radius: 6px; background: #F3F6F8; font-size: 10.5px; color: #374151; }
 .pg-highlight small { display: block; margin-top: 7px; font-size: 9.5px; color: var(--text-3); }
+.pg-roster-title { margin: 11px 0 6px; color: #374151; font-size: 11px; font-weight: 800; }
+.pg-team-roster { margin-top: 9px; padding: 9px; border: 1px solid rgba(17, 24, 39, .07); border-radius: 10px; background: #FFFFFF; }
+.pg-team-roster h4 { display: flex; align-items: center; gap: 6px; margin: 0 0 5px; min-width: 0; }
+.pg-team-roster h4 b { overflow: hidden; color: #374151; font-size: 10.5px; text-overflow: ellipsis; white-space: nowrap; }
+.pg-team-roster ul { list-style: none; margin: 0; padding: 0; }
+.pg-team-roster li { padding: 6px 0; border-top: 1px solid rgba(17, 24, 39, .06); }
+.pg-team-roster li > div { display: flex; align-items: baseline; justify-content: space-between; gap: 7px; }
+.pg-team-roster li > div b { min-width: 0; overflow: hidden; color: #111827; font-size: 10.5px; text-overflow: ellipsis; white-space: nowrap; }
+.pg-team-roster li > div span { flex: 0 0 auto; color: #4B5563; font-size: 9.5px; font-variant-numeric: tabular-nums; }
+.pg-team-roster li p { margin: 2px 0 0; color: var(--text-3); font-size: 9.5px; line-height: 1.45; }
 .postgame-note { margin: 8px 0 0; }
 
 .p-title {
@@ -1162,11 +1172,16 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .r-lines thead th { color: var(--text-3); font-weight: 700; font-size: 9.5px; }
 .r-lines tbody th { text-align: left; font-weight: 800; color: #374151; }
 .r-lines td { color: #111827; }
-.r-top { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.r-team-groups { display: grid; gap: 7px; margin-top: 5px; }
+.r-team-card { padding: 8px 9px; border: 1px solid rgba(17, 24, 39, .07); border-radius: 9px; background: #FFFFFF; }
+.r-team-card h5 { display: flex; align-items: center; gap: 6px; margin: 0 0 5px; min-width: 0; }
+.r-team-card h5 span, .pg-team-roster h4 span { flex: 0 0 auto; padding: 2px 5px; border-radius: 5px; background: rgba(14, 159, 110, .10); color: #087443; font-size: 9px; font-weight: 800; }
+.r-team-card h5 b { overflow: hidden; color: #374151; font-size: 10.5px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.r-top { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
 .r-top li { display: flex; align-items: baseline; gap: 6px; font-size: 10.5px; min-width: 0; }
 .r-team { flex: 0 0 auto; font-size: 8.5px; font-weight: 800; color: var(--text-3); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
 .r-top b { color: #111827; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.r-stat { color: var(--text-3); font-variant-numeric: tabular-nums; flex: 0 0 auto; }
+.r-stat { margin-left: auto; color: var(--text-3); font-variant-numeric: tabular-nums; text-align: right; }
 .r-none { margin: 4px 0 0; font-size: 10.5px; color: var(--text-3); }
 
 /* 목록 행: 배당 칩·결과 스코어 */
