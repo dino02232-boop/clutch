@@ -83,7 +83,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-19T01:13:55+09:00",
+  updatedAt: "2026-11-19T20:45:49+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -5594,6 +5594,617 @@ window.CLUTCH_DATA = {
     {
       date: "2026-11-18",
       games: [
+        /* VOLLEY-AUTO 2026-11-18 START */
+        {
+          "id": "vball-kovo-31",
+          "sport": "volleyball",
+          "league": "VLEAGUE",
+          "leagueFull": "V리그 남자부",
+          "source": "kovo",
+          "start": "2026-11-18T19:00:00+09:00",
+          "venue": "대전충무체육관",
+          "away": {
+            "name": "우리카드",
+            "abbr": "WOO",
+            "record": "3승 2패",
+            "badges": [
+              {
+                "text": "리그 4위",
+                "tone": "rank"
+              }
+            ],
+            "last5Detail": [
+              {
+                "date": "2026-11-15",
+                "opp": "현대캐피탈",
+                "ha": "홈",
+                "score": "0-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-11",
+                "opp": "대한항공",
+                "ha": "홈",
+                "score": "3-2",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-07",
+                "opp": "OK저축은행",
+                "ha": "원정",
+                "score": "3-1",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-03",
+                "opp": "한국전력",
+                "ha": "원정",
+                "score": "3-0",
+                "res": "승"
+              },
+              {
+                "date": "2026-10-24",
+                "opp": "대한항공",
+                "ha": "원정",
+                "score": "0-3",
+                "res": "패"
+              }
+            ],
+            "last5": "3승 2패",
+            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+          },
+          "home": {
+            "name": "삼성화재",
+            "abbr": "SAM",
+            "record": "3승 2패",
+            "badges": [
+              {
+                "text": "리그 3위",
+                "tone": "rank"
+              }
+            ],
+            "last5Detail": [
+              {
+                "date": "2026-11-14",
+                "opp": "대한항공",
+                "ha": "원정",
+                "score": "3-1",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-10",
+                "opp": "한국전력",
+                "ha": "홈",
+                "score": "1-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-05",
+                "opp": "현대캐피탈",
+                "ha": "홈",
+                "score": "1-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-01",
+                "opp": "KB손해보험",
+                "ha": "원정",
+                "score": "3-1",
+                "res": "승"
+              },
+              {
+                "date": "2026-10-22",
+                "opp": "OK저축은행",
+                "ha": "원정",
+                "score": "2-3",
+                "res": "패"
+              }
+            ],
+            "last5": "2승 3패",
+            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+          },
+          "tags": [
+            {
+              "text": "V리그 남자부 · 1라운드",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**우리카드** 3승 2패(리그 4위, 최근 흐름 2패), **삼성화재** 3승 2패(리그 3위, 최근 흐름 2승). V리그 남자부 1라운드 대전충무체육관에서 열립니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "리그 4·3위로 바로 옆 순위, 승점 차가 1점, 세트 승리 수 차가 2입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "name": "우리카드",
+                "abbr": "WOO",
+                "side": "away",
+                "record": "3승 2패",
+                "badges": [
+                  {
+                    "text": "리그 4위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "3승 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "4위"
+                  },
+                  {
+                    "label": "세트",
+                    "value": "9-9"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "2패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "승점",
+                    "value": 8.0
+                  },
+                  {
+                    "label": "득점",
+                    "value": 413
+                  },
+                  {
+                    "label": "실점",
+                    "value": 402
+                  }
+                ],
+                "last5Detail": [
+                  {
+                    "date": "2026-11-15",
+                    "opp": "현대캐피탈",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-11",
+                    "opp": "대한항공",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "OK저축은행",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-03",
+                    "opp": "한국전력",
+                    "ha": "원정",
+                    "score": "3-0",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "대한항공",
+                    "ha": "원정",
+                    "score": "0-3",
+                    "res": "패"
+                  }
+                ],
+                "last5": "3승 2패",
+                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+              },
+              {
+                "name": "삼성화재",
+                "abbr": "SAM",
+                "side": "home",
+                "record": "3승 2패",
+                "badges": [
+                  {
+                    "text": "리그 3위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "3승 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "3위"
+                  },
+                  {
+                    "label": "세트",
+                    "value": "11-8"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "2승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "승점",
+                    "value": 9.0
+                  },
+                  {
+                    "label": "득점",
+                    "value": 482
+                  },
+                  {
+                    "label": "실점",
+                    "value": 458
+                  }
+                ],
+                "last5Detail": [
+                  {
+                    "date": "2026-11-14",
+                    "opp": "대한항공",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-10",
+                    "opp": "한국전력",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "현대캐피탈",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "KB손해보험",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "OK저축은행",
+                    "ha": "원정",
+                    "score": "2-3",
+                    "res": "패"
+                  }
+                ],
+                "last5": "2승 3패",
+                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+              }
+            ],
+            "checkpoints": [
+              "**경기장** — 대전충무체육관에서 열립니다.",
+              "**순위표** — 우리카드 3승 2패·4위·승점 8, 삼성화재 3승 2패·3위·승점 9."
+            ],
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-19 20:38 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+          }
+        },
+        {
+          "id": "vball-kovo-32",
+          "sport": "volleyball",
+          "league": "VLEAGUE",
+          "leagueFull": "V리그 여자부",
+          "source": "kovo",
+          "start": "2026-11-18T19:00:00+09:00",
+          "venue": "숲 스타디움",
+          "away": {
+            "name": "현대건설",
+            "abbr": "HDC",
+            "record": "1승 4패",
+            "badges": [
+              {
+                "text": "리그 6위",
+                "tone": "rank"
+              }
+            ],
+            "last5Detail": [
+              {
+                "date": "2026-11-15",
+                "opp": "도로공사",
+                "ha": "홈",
+                "score": "0-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-11",
+                "opp": "GS칼텍스",
+                "ha": "홈",
+                "score": "0-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-07",
+                "opp": "정관장",
+                "ha": "원정",
+                "score": "1-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-03",
+                "opp": "IBK기업은행",
+                "ha": "원정",
+                "score": "0-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-10-16",
+                "opp": "GS칼텍스",
+                "ha": "홈",
+                "score": "0-3",
+                "res": "패"
+              }
+            ],
+            "last5": "0승 5패",
+            "streak": "5연패",
+            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+          },
+          "home": {
+            "name": "SOOP",
+            "abbr": "SOOP",
+            "record": "0승 5패",
+            "badges": [
+              {
+                "text": "리그 7위",
+                "tone": "rank"
+              }
+            ],
+            "last5Detail": [
+              {
+                "date": "2026-11-14",
+                "opp": "GS칼텍스",
+                "ha": "원정",
+                "score": "0-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-10",
+                "opp": "IBK기업은행",
+                "ha": "홈",
+                "score": "1-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-05",
+                "opp": "도로공사",
+                "ha": "홈",
+                "score": "1-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-01",
+                "opp": "흥국생명",
+                "ha": "원정",
+                "score": "0-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-10-15",
+                "opp": "흥국생명",
+                "ha": "홈",
+                "score": "0-3",
+                "res": "패"
+              }
+            ],
+            "last5": "0승 5패",
+            "streak": "5연패",
+            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+          },
+          "tags": [
+            {
+              "text": "V리그 여자부 · 1라운드",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**현대건설** 1승 4패(리그 6위, 최근 흐름 1승), **SOOP** 0승 5패(리그 7위, 최근 흐름 5패). V리그 여자부 1라운드 숲 스타디움에서 열립니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "리그 6·7위로 바로 옆 순위, 승점 차가 3점, 세트 승리 수 차가 1입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "name": "현대건설",
+                "abbr": "HDC",
+                "side": "away",
+                "record": "1승 4패",
+                "badges": [
+                  {
+                    "text": "리그 6위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "1승 4패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "6위"
+                  },
+                  {
+                    "label": "세트",
+                    "value": "4-13"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "1승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "승점",
+                    "value": 3.0
+                  },
+                  {
+                    "label": "득점",
+                    "value": 365
+                  },
+                  {
+                    "label": "실점",
+                    "value": 404
+                  }
+                ],
+                "last5Detail": [
+                  {
+                    "date": "2026-11-15",
+                    "opp": "도로공사",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-11",
+                    "opp": "GS칼텍스",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "정관장",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-03",
+                    "opp": "IBK기업은행",
+                    "ha": "원정",
+                    "score": "0-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-10-16",
+                    "opp": "GS칼텍스",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패"
+                  }
+                ],
+                "last5": "0승 5패",
+                "streak": "5연패",
+                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+              },
+              {
+                "name": "SOOP",
+                "abbr": "SOOP",
+                "side": "home",
+                "record": "0승 5패",
+                "badges": [
+                  {
+                    "text": "리그 7위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "0승 5패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "7위"
+                  },
+                  {
+                    "label": "세트",
+                    "value": "3-15"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "5패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "승점",
+                    "value": 0.0
+                  },
+                  {
+                    "label": "득점",
+                    "value": 370
+                  },
+                  {
+                    "label": "실점",
+                    "value": 438
+                  }
+                ],
+                "last5Detail": [
+                  {
+                    "date": "2026-11-14",
+                    "opp": "GS칼텍스",
+                    "ha": "원정",
+                    "score": "0-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-10",
+                    "opp": "IBK기업은행",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "도로공사",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "흥국생명",
+                    "ha": "원정",
+                    "score": "0-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "흥국생명",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패"
+                  }
+                ],
+                "last5": "0승 5패",
+                "streak": "5연패",
+                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+              }
+            ],
+            "checkpoints": [
+              "**경기장** — 숲 스타디움에서 열립니다.",
+              "**순위표** — 현대건설 1승 4패·6위·승점 3, SOOP 0승 5패·7위·승점 0."
+            ],
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-19 20:38 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+          }
+        }
+        /* VOLLEY-AUTO 2026-11-18 END */,
+
         /* NBA-AUTO 2026-11-18 START */
         {
           "id": "nba-nyk-tor-20261118",
@@ -7528,7 +8139,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 평택이충문화체육관에서 열립니다.",
               "**순위표** — 대한항공 1승 3패·5위·승점 4, KB손해보험 0승 4패·7위·승점 0."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-18 23:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-19 20:38 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -7834,21 +8445,21 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
               "**순위표** — GS칼텍스 3승 1패·3위·승점 9, 흥국생명 2승 2패·4위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-18 23:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-19 20:38 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-19 END */,
 
         /* ── NBA 실제 데이터 · work/fetch_nba.py 가 생성/갱신 ── */
         /* NBA-AUTO 2026-11-19 START */
-        {
+                {
           "id": "nba-mem-cle-20261119",
           "espnId": "401910007",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T09:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Rocket Arena",
           "odds": {
             "provider": "Draft Kings",
@@ -7913,6 +8524,77 @@ window.CLUTCH_DATA = {
               "text": "**멤피스 그리즐리스** 10승 4패(원정 7승 0패, 최근 5경기 4승 1패, 3연승), **클리블랜드 캐벌리어스** 8승 7패(홈 6승 2패, 최근 5경기 3승 2패, 2연승). 직전 경기(11.17) **멤피스 그리즐리스**는 워싱턴 위저즈에 136-120로 이겼고, Cameron Boozer 29점·7리바운드·7어시스트, Zach Edey 23점·10리바운드·1어시스트를 기록했습니다. 직전 경기(11.17) **클리블랜드 캐벌리어스**는 시카고 불스에 126-115로 이겼고, Donovan Mitchell 39점·4리바운드·4어시스트, Tyrese Proctor 17점·3리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 124,
+            "homeScore": 121,
+            "lines": {
+              "away": [
+                "30",
+                "41",
+                "29",
+                "24"
+              ],
+              "home": [
+                "37",
+                "35",
+                "27",
+                "22"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Donovan Mitchell",
+                "team": "CLE",
+                "min": "35",
+                "pts": 34,
+                "reb": "4",
+                "ast": "3"
+              },
+              {
+                "name": "Cam Spencer",
+                "team": "MEM",
+                "min": "29",
+                "pts": 26,
+                "reb": "1",
+                "ast": "7"
+              },
+              {
+                "name": "Cedric Coward",
+                "team": "MEM",
+                "min": "33",
+                "pts": 20,
+                "reb": "3",
+                "ast": "5"
+              },
+              {
+                "name": "Jarrett Allen",
+                "team": "CLE",
+                "min": "30",
+                "pts": 19,
+                "reb": "9",
+                "ast": "4"
+              },
+              {
+                "name": "Cameron Boozer",
+                "team": "MEM",
+                "min": "28",
+                "pts": 18,
+                "reb": "8",
+                "ast": "5"
+              },
+              {
+                "name": "Taylor Hendricks",
+                "team": "MEM",
+                "min": "21",
+                "pts": 18,
+                "reb": "6",
+                "ast": "2"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -8155,14 +8837,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-hou-ind-20261119",
           "espnId": "401910008",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T09:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Gainbridge Fieldhouse",
           "odds": {
             "provider": "Draft Kings",
@@ -8227,6 +8909,77 @@ window.CLUTCH_DATA = {
               "text": "**휴스턴 로키츠** 11승 4패(원정 4승 3패, 최근 5경기 4승 1패), **인디애나 페이서스** 5승 9패(홈 2승 4패, 최근 5경기 2승 3패). 직전 경기(11.17) **휴스턴 로키츠**는 마이애미 히트에 110-128로 졌고, Alperen Sengun 23점·7리바운드·2어시스트, Kevin Durant 22점·2리바운드·3어시스트를 기록했습니다. 직전 경기(11.15) **인디애나 페이서스**는 필라델피아 세븐티식서스에 124-131로 졌고, Pascal Siakam 31점·2리바운드·2어시스트, Kelly Oubre Jr. 16점·4리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 119,
+            "homeScore": 104,
+            "lines": {
+              "away": [
+                "39",
+                "23",
+                "31",
+                "26"
+              ],
+              "home": [
+                "28",
+                "18",
+                "30",
+                "28"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Pascal Siakam",
+                "team": "IND",
+                "min": "33",
+                "pts": 24,
+                "reb": "4",
+                "ast": "3"
+              },
+              {
+                "name": "Kevin Durant",
+                "team": "HOU",
+                "min": "32",
+                "pts": 21,
+                "reb": "2",
+                "ast": "3"
+              },
+              {
+                "name": "Reed Sheppard",
+                "team": "HOU",
+                "min": "25",
+                "pts": 20,
+                "reb": "4",
+                "ast": "2"
+              },
+              {
+                "name": "Jabari Smith Jr.",
+                "team": "HOU",
+                "min": "26",
+                "pts": 17,
+                "reb": "4",
+                "ast": "2"
+              },
+              {
+                "name": "Kelly Oubre Jr.",
+                "team": "IND",
+                "min": "23",
+                "pts": 17,
+                "reb": "4",
+                "ast": "0"
+              },
+              {
+                "name": "Fred VanVleet",
+                "team": "HOU",
+                "min": "27",
+                "pts": 15,
+                "reb": "2",
+                "ast": "6"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -8451,14 +9204,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-mil-mia-20261119",
           "espnId": "401910009",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T09:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Kaseya Center",
           "odds": {
             "provider": "Draft Kings",
@@ -8523,6 +9276,77 @@ window.CLUTCH_DATA = {
               "text": "**밀워키 벅스** 1승 13패(원정 0승 6패, 최근 5경기 0승 5패, 5연패), **마이애미 히트** 8승 6패(홈 4승 3패, 최근 5경기 5승 0패, 5연승). 직전 경기(11.16) **밀워키 벅스**는 애틀랜타 호크스에 106-113로 졌고, Kasparas Jakucionis 25점·5리바운드·5어시스트, Gary Trent Jr. 18점·2리바운드·1어시스트를 기록했습니다. 직전 경기(11.17) **마이애미 히트**는 휴스턴 로키츠에 128-110로 이겼고, Giannis Antetokounmpo 20점·13리바운드·6어시스트, Klay Thompson 17점·0리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 130,
+            "homeScore": 137,
+            "lines": {
+              "away": [
+                "23",
+                "25",
+                "38",
+                "44"
+              ],
+              "home": [
+                "34",
+                "40",
+                "38",
+                "25"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Giannis Antetokounmpo",
+                "team": "MIA",
+                "min": "32",
+                "pts": 27,
+                "reb": "14",
+                "ast": "9"
+              },
+              {
+                "name": "Kyle Kuzma",
+                "team": "MIL",
+                "min": "30",
+                "pts": 26,
+                "reb": "5",
+                "ast": "1"
+              },
+              {
+                "name": "Bam Adebayo",
+                "team": "MIA",
+                "min": "30",
+                "pts": 26,
+                "reb": "4",
+                "ast": "2"
+              },
+              {
+                "name": "Davion Mitchell",
+                "team": "MIA",
+                "min": "36",
+                "pts": 24,
+                "reb": "2",
+                "ast": "6"
+              },
+              {
+                "name": "Brayden Burries",
+                "team": "MIL",
+                "min": "25",
+                "pts": 20,
+                "reb": "7",
+                "ast": "1"
+              },
+              {
+                "name": "Kasparas Jakucionis",
+                "team": "MIL",
+                "min": "26",
+                "pts": 20,
+                "reb": "3",
+                "ast": "5"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -8725,14 +9549,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-phi-orl-20261119",
           "espnId": "401910010",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T09:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Kia Center",
           "odds": {
             "provider": "Draft Kings",
@@ -8797,6 +9621,77 @@ window.CLUTCH_DATA = {
               "text": "**필라델피아 세븐티식서스** 12승 3패(원정 6승 1패, 최근 5경기 4승 1패, 3연승), **올랜도 매직** 6승 7패(홈 1승 4패, 최근 5경기 4승 1패, 4연승). 직전 경기(11.17) **필라델피아 세븐티식서스**는 브루클린 네츠에 135-123로 이겼고, Joel Embiid 37점·5리바운드·1어시스트, Jaylen Brown 31점·13리바운드·4어시스트를 기록했습니다. 직전 경기(11.17) **올랜도 매직**은 보스턴 셀틱스에 115-105로 이겼고, Desmond Bane 24점·8리바운드·5어시스트, Franz Wagner 21점·8리바운드·9어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 121,
+            "homeScore": 116,
+            "lines": {
+              "away": [
+                "27",
+                "37",
+                "28",
+                "29"
+              ],
+              "home": [
+                "40",
+                "29",
+                "28",
+                "19"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Franz Wagner",
+                "team": "ORL",
+                "min": "36",
+                "pts": 27,
+                "reb": "8",
+                "ast": "11"
+              },
+              {
+                "name": "Joel Embiid",
+                "team": "PHI",
+                "min": "36",
+                "pts": 26,
+                "reb": "6",
+                "ast": "7"
+              },
+              {
+                "name": "VJ Edgecombe",
+                "team": "PHI",
+                "min": "43",
+                "pts": 24,
+                "reb": "8",
+                "ast": "6"
+              },
+              {
+                "name": "LeBron James",
+                "team": "PHI",
+                "min": "31",
+                "pts": 22,
+                "reb": "3",
+                "ast": "6"
+              },
+              {
+                "name": "Anfernee Simons",
+                "team": "PHI",
+                "min": "38",
+                "pts": 18,
+                "reb": "2",
+                "ast": "2"
+              },
+              {
+                "name": "Jalen Suggs",
+                "team": "ORL",
+                "min": "31",
+                "pts": 18,
+                "reb": "8",
+                "ast": "4"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -9022,14 +9917,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-chi-bkn-20261119",
           "espnId": "401910011",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T09:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Barclays Center",
           "odds": {
             "provider": "Draft Kings",
@@ -9094,6 +9989,77 @@ window.CLUTCH_DATA = {
               "text": "**시카고 불스** 3승 10패(원정 2승 6패, 최근 5경기 2승 3패), **브루클린 네츠** 3승 10패(홈 1승 4패, 최근 5경기 1승 4패, 2연패). 직전 경기(11.17) **시카고 불스**는 클리블랜드 캐벌리어스에 115-126로 졌고, Norman Powell 27점·2리바운드·6어시스트, Matas Buzelis 23점·3리바운드·0어시스트를 기록했습니다. 직전 경기(11.17) **브루클린 네츠**는 필라델피아 세븐티식서스에 123-135로 졌고, Julius Randle 33점·6리바운드·1어시스트, Michael Porter Jr. 25점·6리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 137,
+            "homeScore": 107,
+            "lines": {
+              "away": [
+                "37",
+                "39",
+                "35",
+                "26"
+              ],
+              "home": [
+                "21",
+                "30",
+                "26",
+                "30"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Matas Buzelis",
+                "team": "CHI",
+                "min": "30",
+                "pts": 25,
+                "reb": "5",
+                "ast": "4"
+              },
+              {
+                "name": "Egor Demin",
+                "team": "BKN",
+                "min": "31",
+                "pts": 22,
+                "reb": "4",
+                "ast": "4"
+              },
+              {
+                "name": "Josh Giddey",
+                "team": "CHI",
+                "min": "28",
+                "pts": 18,
+                "reb": "14",
+                "ast": "9"
+              },
+              {
+                "name": "Norman Powell",
+                "team": "CHI",
+                "min": "26",
+                "pts": 17,
+                "reb": "2",
+                "ast": "5"
+              },
+              {
+                "name": "Julius Randle",
+                "team": "BKN",
+                "min": "27",
+                "pts": 17,
+                "reb": "0",
+                "ast": "4"
+              },
+              {
+                "name": "Mikel Brown Jr.",
+                "team": "BKN",
+                "min": "27",
+                "pts": 15,
+                "reb": "1",
+                "ast": "4"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -9286,14 +10252,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-was-tor-20261119",
           "espnId": "401910012",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T09:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Scotiabank Arena",
           "odds": {
             "provider": "Draft Kings",
@@ -9358,6 +10324,77 @@ window.CLUTCH_DATA = {
               "text": "**워싱턴 위저즈** 4승 11패(원정 2승 6패, 최근 5경기 0승 5패, 5연패), **토론토 랩터스** 5승 9패(홈 2승 5패, 최근 5경기 0승 5패, 5연패). 직전 경기(11.17) **워싱턴 위저즈**는 워싱턴 위저즈에 136-120로 이겼고, Cameron Boozer 29점·7리바운드·7어시스트, Zach Edey 23점·10리바운드·1어시스트를 기록했습니다. 직전 경기(11.18) **토론토 랩터스**는 뉴욕 닉스에 102-111로 졌고, Ja'Kobe Walter 25점·1리바운드·2어시스트, RJ Barrett 22점·5리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 103,
+            "homeScore": 99,
+            "lines": {
+              "away": [
+                "29",
+                "20",
+                "29",
+                "25"
+              ],
+              "home": [
+                "23",
+                "24",
+                "32",
+                "20"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Anthony Davis",
+                "team": "WSH",
+                "min": "34",
+                "pts": 25,
+                "reb": "14",
+                "ast": "2"
+              },
+              {
+                "name": "Immanuel Quickley",
+                "team": "TOR",
+                "min": "34",
+                "pts": 24,
+                "reb": "3",
+                "ast": "5"
+              },
+              {
+                "name": "AJ Dybantsa",
+                "team": "WSH",
+                "min": "38",
+                "pts": 23,
+                "reb": "12",
+                "ast": "2"
+              },
+              {
+                "name": "Kyshawn George",
+                "team": "WSH",
+                "min": "40",
+                "pts": 20,
+                "reb": "2",
+                "ast": "4"
+              },
+              {
+                "name": "Jamison Battle",
+                "team": "TOR",
+                "min": "33",
+                "pts": 19,
+                "reb": "5",
+                "ast": "0"
+              },
+              {
+                "name": "Ja'Kobe Walter",
+                "team": "TOR",
+                "min": "38",
+                "pts": 18,
+                "reb": "7",
+                "ast": "6"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -9584,14 +10621,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-det-nop-20261119",
           "espnId": "401910013",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Smoothie King Center",
           "odds": {
             "provider": "Draft Kings",
@@ -9656,6 +10693,77 @@ window.CLUTCH_DATA = {
               "text": "**디트로이트 피스턴스** 9승 4패(원정 6승 2패, 최근 5경기 3승 2패), **뉴올리언스 펠리컨스** 5승 10패(홈 4승 6패, 최근 5경기 1승 4패). 직전 경기(11.18) **디트로이트 피스턴스**는 샌안토니오 스퍼스에 105-93로 이겼고, Cade Cunningham 27점·5리바운드·6어시스트, Daniss Jenkins 25점·5리바운드·5어시스트를 기록했습니다. 직전 경기(11.17) **뉴올리언스 펠리컨스**는 뉴올리언스 펠리컨스에 94-115로 졌고, Yaxel Lendeborg 28점·8리바운드·3어시스트, Brandin Podziemski 15점·6리바운드·3어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 122,
+            "homeScore": 109,
+            "lines": {
+              "away": [
+                "31",
+                "36",
+                "25",
+                "30"
+              ],
+              "home": [
+                "31",
+                "29",
+                "26",
+                "23"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Zion Williamson",
+                "team": "NO",
+                "min": "32",
+                "pts": 24,
+                "reb": "7",
+                "ast": "1"
+              },
+              {
+                "name": "Jordan Poole",
+                "team": "NO",
+                "min": "30",
+                "pts": 22,
+                "reb": "1",
+                "ast": "5"
+              },
+              {
+                "name": "John Collins",
+                "team": "DET",
+                "min": "30",
+                "pts": 20,
+                "reb": "7",
+                "ast": "2"
+              },
+              {
+                "name": "Javonte Green",
+                "team": "DET",
+                "min": "35",
+                "pts": 18,
+                "reb": "7",
+                "ast": "0"
+              },
+              {
+                "name": "Daniss Jenkins",
+                "team": "DET",
+                "min": "36",
+                "pts": 17,
+                "reb": "4",
+                "ast": "9"
+              },
+              {
+                "name": "Paul Reed",
+                "team": "DET",
+                "min": "20",
+                "pts": 17,
+                "reb": "7",
+                "ast": "1"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -9897,14 +11005,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-atl-okc-20261119",
           "espnId": "401910014",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Paycom Center",
           "odds": {
             "provider": "Draft Kings",
@@ -9969,6 +11077,77 @@ window.CLUTCH_DATA = {
               "text": "**애틀랜타 호크스** 8승 6패(원정 5승 3패, 최근 5경기 3승 2패), **오클라호마시티 썬더** 9승 5패(홈 5승 0패, 최근 5경기 2승 3패). 직전 경기(11.16) **애틀랜타 호크스**는 밀워키 벅스에 113-106로 이겼고, CJ McCollum 20점·4리바운드·2어시스트, Nickeil Alexander-Walker 20점·5리바운드·4어시스트를 기록했습니다. 직전 경기(11.16) **오클라호마시티 썬더**는 새크라멘토 킹스에 125-103로 이겼고, Shai Gilgeous-Alexander 37점·2리바운드·2어시스트, Aday Mara 16점·13리바운드·3어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 117,
+            "homeScore": 112,
+            "lines": {
+              "away": [
+                "31",
+                "33",
+                "19",
+                "34"
+              ],
+              "home": [
+                "29",
+                "22",
+                "32",
+                "29"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Shai Gilgeous-Alexander",
+                "team": "OKC",
+                "min": "36",
+                "pts": 34,
+                "reb": "5",
+                "ast": "3"
+              },
+              {
+                "name": "Onyeka Okongwu",
+                "team": "ATL",
+                "min": "36",
+                "pts": 28,
+                "reb": "9",
+                "ast": "2"
+              },
+              {
+                "name": "Nickeil Alexander-Walker",
+                "team": "ATL",
+                "min": "32",
+                "pts": 19,
+                "reb": "4",
+                "ast": "7"
+              },
+              {
+                "name": "Jared McCain",
+                "team": "OKC",
+                "min": "33",
+                "pts": 18,
+                "reb": "3",
+                "ast": "1"
+              },
+              {
+                "name": "Jalen Johnson",
+                "team": "ATL",
+                "min": "34",
+                "pts": 16,
+                "reb": "12",
+                "ast": "11"
+              },
+              {
+                "name": "Luguentz Dort",
+                "team": "ATL",
+                "min": "31",
+                "pts": 16,
+                "reb": "3",
+                "ast": "0"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -10209,14 +11388,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-gsw-dal-20261119",
           "espnId": "401910016",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "American Airlines Center",
           "odds": {
             "provider": "Draft Kings",
@@ -10281,6 +11460,77 @@ window.CLUTCH_DATA = {
               "text": "**골든스테이트 워리어스** 8승 6패(원정 2승 5패, 최근 5경기 2승 3패, 3연패), **댈러스 매버릭스** 7승 7패(홈 5승 2패, 최근 5경기 2승 3패, 3연패). 직전 경기(11.17) **골든스테이트 워리어스**는 뉴올리언스 펠리컨스에 94-115로 졌고, Yaxel Lendeborg 28점·8리바운드·3어시스트, Brandin Podziemski 15점·6리바운드·3어시스트를 기록했습니다. 직전 경기(11.15) **댈러스 매버릭스**는 보스턴 셀틱스에 94-131로 졌고, Zaccharie Risacher 18점·5리바운드·0어시스트, Cooper Flagg 17점·3리바운드·4어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 94,
+            "homeScore": 116,
+            "lines": {
+              "away": [
+                "25",
+                "24",
+                "23",
+                "22"
+              ],
+              "home": [
+                "35",
+                "27",
+                "30",
+                "24"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Cooper Flagg",
+                "team": "DAL",
+                "min": "34",
+                "pts": 33,
+                "reb": "5",
+                "ast": "9"
+              },
+              {
+                "name": "P.J. Washington",
+                "team": "DAL",
+                "min": "25",
+                "pts": 21,
+                "reb": "5",
+                "ast": "2"
+              },
+              {
+                "name": "Will Richard",
+                "team": "GS",
+                "min": "27",
+                "pts": 20,
+                "reb": "0",
+                "ast": "3"
+              },
+              {
+                "name": "Kyrie Irving",
+                "team": "DAL",
+                "min": "29",
+                "pts": 17,
+                "reb": "6",
+                "ast": "5"
+              },
+              {
+                "name": "Yaxel Lendeborg",
+                "team": "GS",
+                "min": "30",
+                "pts": 13,
+                "reb": "5",
+                "ast": "4"
+              },
+              {
+                "name": "Naji Marshall",
+                "team": "DAL",
+                "min": "27",
+                "pts": 12,
+                "reb": "5",
+                "ast": "2"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -10522,14 +11772,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-bos-den-20261119",
           "espnId": "401910015",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T11:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Ball Arena",
           "odds": {
             "provider": "Draft Kings",
@@ -10594,6 +11844,77 @@ window.CLUTCH_DATA = {
               "text": "**보스턴 셀틱스** 11승 3패(원정 5승 2패, 최근 5경기 4승 1패), **덴버 너기츠** 7승 5패(홈 2승 3패, 최근 5경기 3승 2패). 직전 경기(11.17) **보스턴 셀틱스**는 올랜도 매직에 105-115로 졌고, Jayson Tatum 24점·12리바운드·4어시스트, Paul George 22점·8리바운드·3어시스트를 기록했습니다. 직전 경기(11.17) **덴버 너기츠**는 피닉스 선즈에 105-117로 졌고, Nikola Jokic 28점·15리바운드·7어시스트, Jamal Murray 28점·4리바운드·4어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 101,
+            "homeScore": 105,
+            "lines": {
+              "away": [
+                "30",
+                "31",
+                "19",
+                "21"
+              ],
+              "home": [
+                "24",
+                "25",
+                "31",
+                "25"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Jayson Tatum",
+                "team": "BOS",
+                "min": "37",
+                "pts": 24,
+                "reb": "8",
+                "ast": "3"
+              },
+              {
+                "name": "Nikola Jokic",
+                "team": "DEN",
+                "min": "39",
+                "pts": 24,
+                "reb": "8",
+                "ast": "9"
+              },
+              {
+                "name": "Jamal Murray",
+                "team": "DEN",
+                "min": "38",
+                "pts": 21,
+                "reb": "7",
+                "ast": "2"
+              },
+              {
+                "name": "DeMar DeRozan",
+                "team": "DEN",
+                "min": "25",
+                "pts": 18,
+                "reb": "2",
+                "ast": "2"
+              },
+              {
+                "name": "Neemias Queta",
+                "team": "BOS",
+                "min": "27",
+                "pts": 17,
+                "reb": "10",
+                "ast": "3"
+              },
+              {
+                "name": "Payton Pritchard",
+                "team": "BOS",
+                "min": "30",
+                "pts": 15,
+                "reb": "1",
+                "ast": "2"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -10770,14 +12091,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-utah-lal-20261119",
           "espnId": "401910017",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T12:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "crypto.com Arena",
           "odds": {
             "provider": "Draft Kings",
@@ -10842,6 +12163,77 @@ window.CLUTCH_DATA = {
               "text": "**유타 재즈** 2승 13패(원정 1승 6패, 최근 5경기 1승 4패), **LA 레이커스** 13승 2패(홈 6승 1패, 최근 5경기 5승 0패, 5연승). 직전 경기(11.18) **유타 재즈**는 LA 클리퍼스에 132-107로 이겼고, Brice Sensabaugh 40점·11리바운드·5어시스트, Keyonte George 30점·2리바운드·11어시스트를 기록했습니다. 직전 경기(11.18) **LA 레이커스**는 샬럿 호네츠에 118-114로 이겼고, Quentin Grimes 47점·6리바운드·3어시스트, Luka Doncic 36점·6리바운드·7어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 109,
+            "homeScore": 97,
+            "lines": {
+              "away": [
+                "29",
+                "27",
+                "22",
+                "31"
+              ],
+              "home": [
+                "34",
+                "20",
+                "22",
+                "21"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Keyonte George",
+                "team": "UTAH",
+                "min": "39",
+                "pts": 30,
+                "reb": "1",
+                "ast": "10"
+              },
+              {
+                "name": "Luka Doncic",
+                "team": "LAL",
+                "min": "37",
+                "pts": 29,
+                "reb": "5",
+                "ast": "7"
+              },
+              {
+                "name": "Quentin Grimes",
+                "team": "LAL",
+                "min": "35",
+                "pts": 20,
+                "reb": "7",
+                "ast": "4"
+              },
+              {
+                "name": "Ace Bailey",
+                "team": "UTAH",
+                "min": "27",
+                "pts": 19,
+                "reb": "8",
+                "ast": "3"
+              },
+              {
+                "name": "Svi Mykhailiuk",
+                "team": "UTAH",
+                "min": "34",
+                "pts": 15,
+                "reb": "3",
+                "ast": "5"
+              },
+              {
+                "name": "Collin Sexton",
+                "team": "LAL",
+                "min": "20",
+                "pts": 12,
+                "reb": "0",
+                "ast": "1"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -11054,14 +12446,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-18 23:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-phx-sac-20261119",
           "espnId": "401910018",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-19T12:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Golden 1 Center",
           "odds": {
             "provider": "Draft Kings",
@@ -11126,6 +12518,77 @@ window.CLUTCH_DATA = {
               "text": "**피닉스 선즈** 6승 7패(원정 1승 3패, 최근 5경기 3승 2패), **새크라멘토 킹스** 1승 12패(홈 0승 8패, 최근 5경기 0승 5패, 5연패). 직전 경기(11.17) **피닉스 선즈**는 덴버 너기츠에 117-105로 이겼고, Devin Booker 20점·4리바운드·8어시스트, Miles Bridges 16점·8리바운드·2어시스트를 기록했습니다. 직전 경기(11.16) **새크라멘토 킹스**는 오클라호마시티 썬더에 103-125로 졌고, Darius Acuff Jr. 26점·0리바운드·6어시스트, Malik Monk 14점·1리바운드·10어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 128,
+            "homeScore": 107,
+            "lines": {
+              "away": [
+                "36",
+                "29",
+                "34",
+                "29"
+              ],
+              "home": [
+                "31",
+                "29",
+                "24",
+                "23"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Darius Acuff Jr.",
+                "team": "SAC",
+                "min": "35",
+                "pts": 36,
+                "reb": "4",
+                "ast": "6"
+              },
+              {
+                "name": "Dillon Brooks",
+                "team": "PHX",
+                "min": "31",
+                "pts": 29,
+                "reb": "3",
+                "ast": "5"
+              },
+              {
+                "name": "Devin Booker",
+                "team": "PHX",
+                "min": "33",
+                "pts": 29,
+                "reb": "2",
+                "ast": "6"
+              },
+              {
+                "name": "Jalen Green",
+                "team": "PHX",
+                "min": "30",
+                "pts": 18,
+                "reb": "7",
+                "ast": "7"
+              },
+              {
+                "name": "Zach LaVine",
+                "team": "SAC",
+                "min": "32",
+                "pts": 18,
+                "reb": "5",
+                "ast": "2"
+              },
+              {
+                "name": "Miles Bridges",
+                "team": "PHX",
+                "min": "29",
+                "pts": 13,
+                "reb": "6",
+                "ast": "5"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
