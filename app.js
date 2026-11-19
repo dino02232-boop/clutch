@@ -1466,8 +1466,11 @@
     if (!r) return head + '<p class="lb-none">랠리 중계를 불러오는 중…</p>';
     var plays = r.plays || [];
     if (!plays.length) {
+      var kovoLink = '<a href="https://kovo.co.kr/games/v-leagues/schedules?season=023&amp;gender=all&amp;league=201" target="_blank" rel="noopener noreferrer">KOVO 공식 일정</a>';
       return head + '<p class="lb-none">' +
-        (r.err ? "랠리 중계를 받지 못했습니다. 세트 스코어는 위에 표시됩니다." : "아직 표시할 랠리가 없습니다.") +
+        (r.err
+          ? "랠리 중계를 받지 못했습니다. 세트 스코어는 위에 표시됩니다. 자세한 중계는 " + kovoLink + "에서 확인할 수 있습니다."
+          : "아직 표시할 랠리가 없습니다.") +
         "</p>";
     }
     return head + '<ul class="lb-plays">' + plays.slice(0, 12).map(function (p) {
