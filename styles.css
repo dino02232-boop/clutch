@@ -1145,3 +1145,80 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   .livebar { font-size: 10px; }
   .livebar .lb-txt { max-width: 116px; }
 }
+
+/* ══ 진행 중 경기: 펼친 박스 맨 위 '지금 상황' ══════════════
+   스코어·쿼터·최근 플레이·선수 기록을 먼저 보여 주고,
+   경기 전 프리뷰는 구분선(.pregame) 아래로 내린다. */
+.lbox {
+  margin: 0 0 2px;
+  padding: 11px 11px 5px;
+  border: 1px solid rgba(255, 193, 94, .30);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 193, 94, .085) 0%, rgba(255, 193, 94, .015) 100%),
+    rgba(8, 12, 18, .55);
+}
+.lb-head { display: flex; align-items: center; gap: 7px; margin: 0 0 7px; }
+.lb-phase {
+  font-size: 11.5px; font-weight: 800; color: #FFC15E;
+  font-variant-numeric: tabular-nums; letter-spacing: -.01em;
+}
+.lb-upd { margin-left: auto; font-size: 9.5px; color: var(--text-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.lb-score { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; padding: 1px 0 7px; }
+.lb-side { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1 1 0; }
+.lb-side.home { align-items: flex-end; text-align: right; }
+.lb-abbr { font-size: 9.5px; font-weight: 800; letter-spacing: .06em; color: var(--text-3); }
+.lb-pts {
+  font-size: 29px; line-height: 1.05; font-weight: 800; color: #EAF1FB;
+  font-variant-numeric: tabular-nums; letter-spacing: -.03em;
+}
+.lb-side.lead .lb-pts { color: #FFD79A; }
+.lb-nm { font-size: 10px; color: var(--text-2); max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lb-col { flex: 0 0 auto; font-size: 15px; color: var(--text-3); padding-top: 20px; }
+
+.lb-sub {
+  display: flex; align-items: center; gap: 6px;
+  margin: 11px 0 5px; font-size: 10px; font-weight: 800;
+  letter-spacing: .03em; color: var(--text-2);
+}
+.lb-sub::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+.lb-sub-note { font-size: 9px; font-weight: 600; color: var(--text-3); letter-spacing: 0; }
+.lb-none { margin: 3px 0 8px; font-size: 10.5px; color: var(--text-3); line-height: 1.55; }
+
+.lb-plays { list-style: none; margin: 0 0 2px; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+.lb-plays li { display: flex; align-items: baseline; gap: 7px; font-size: 10.5px; line-height: 1.45; color: #C4D0E0; min-width: 0; }
+.bp-t { flex: 0 0 44px; font-size: 9px; font-weight: 800; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.bp-x { flex: 1 1 auto; min-width: 0; }
+.bp-s { flex: 0 0 auto; font-size: 9.5px; font-weight: 700; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.lb-plays li.sc .bp-x { color: #EAF1FB; font-weight: 600; }
+.lb-plays li.sc .bp-s { color: #7DF5C0; }
+
+.lb-team-box { margin: 0 0 3px; }
+.lb-team-h { display: flex; align-items: center; gap: 6px; margin: 0 0 3px; font-size: 11px; min-width: 0; }
+.lb-team-h b { color: #EAF1FB; font-weight: 800; letter-spacing: -.01em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lbt-side {
+  flex: 0 0 auto; font-size: 8.5px; font-weight: 800; border-radius: 4px; padding: 1px 4px;
+  color: var(--text-3); border: 1px solid var(--line);
+}
+.lbt-side.home { color: #04170F; background: var(--accent); border-color: transparent; }
+.lbt-abbr { margin-left: auto; flex: 0 0 auto; font-size: 9px; font-weight: 800; color: var(--text-3); letter-spacing: .05em; }
+
+.lb-tbl { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 10.5px; font-variant-numeric: tabular-nums; }
+.lb-tbl th, .lb-tbl td { padding: 4px 2px; text-align: right; }
+.lb-tbl thead th { font-size: 9px; font-weight: 700; color: var(--text-3); padding-bottom: 3px; border-bottom: 1px solid var(--line); }
+.lb-tbl tbody th { font-weight: 600; color: #DCE6F4; }
+.lb-tbl tbody tr + tr th, .lb-tbl tbody tr + tr td { border-top: 1px solid rgba(255, 255, 255, .05); }
+.lb-tbl .c-nm { width: 40%; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lb-tbl td { color: #EAF1FB; }
+.lb-tbl .c-min { color: var(--text-2); }
+.lb-tbl .c-pts { font-weight: 800; color: #FFD79A; }
+
+/* 경기 전 프리뷰는 구분선 아래로 */
+.pregame { margin-top: 12px; padding-top: 3px; border-top: 1px dashed rgba(255, 255, 255, .13); }
+.pregame .box-head { margin-top: 7px; }
+
+@media (max-width: 380px) {
+  .lb-pts { font-size: 25px; }
+  .lb-tbl { font-size: 10px; }
+  .lb-plays li { font-size: 10px; }
+}
