@@ -615,11 +615,13 @@
     }).join("");
 
     var liveNow = g.result && g.result.state === "live";
+    var finalNow = g.result && g.result.state === "final";
 
     // 경기 전 프리뷰(팀 상태·배당·맞대결·체크포인트)
     var preview = '<div class="box-head">' +
-      '<span class="ch-badge">' + (liveNow ? "경기 전 브리핑" : "클러치 상황") + "</span>" +
-      '<span class="ch-sub">' + (liveNow ? "배당 · 팀 비교 · 부상자" : "경기 전 브리핑") + "</span>" +
+      '<span class="ch-badge">경기 전 브리핑</span>' +
+      '<span class="ch-sub">' + (liveNow ? "경기 전 기준 정보 · 팀 비교 · 결장" :
+        (finalNow ? "경기 당시 팀 정보 · 부상자 · 체크포인트" : "팀 비교 · 부상자 · 체크포인트")) + "</span>" +
       (g.venue ? '<span class="ch-venue">' + esc(g.venue) + "</span>" : "") +
       "</div>" +
       '<ul class="form-list">' + formRow("away", g.away) + formRow("home", g.home) + "</ul>";
@@ -664,13 +666,15 @@
 
     if (d.note) preview += '<p class="note">' + esc(d.note) + "</p>";
 
-    // 진행 중인 경기: 맨 위에 지금 상황(스코어·쿼터·최근 플레이·선수 기록),
-    // 경기 전 프리뷰는 구분선 아래로 내린다. 끝난 경기는 지금처럼 결과를 맨 아래에.
+    // 경기 전에는 프리뷰만 보여준다. 진행 중에는 라이브 상황을 위에 두고,
+    // 종료 후에는 결과를 위로 올린 뒤 경기 전 프리뷰를 아래에 보존한다.
     var body;
     if (liveNow) {
-      body = liveSectionHTML(g) + '<div class="pregame">' + preview + "</div>";
+      body = liveSectionHTML(g) + '<details class="pregame"><summary>경기 전 브리핑</summary><div class="pregame-body">' + preview + "</div></details>";
+    } else if (finalNow) {
+      body = resultHTML(g) + '<details class="pregame"><summary>경기 전 브리핑</summary><div class="pregame-body">' + preview + "</div></details>";
     } else {
-      body = preview + resultHTML(g);
+      body = preview;
     }
 
     return '<div class="cbox-outer"><div class="cbox">' + body + "</div></div>";
