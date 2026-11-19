@@ -144,6 +144,6 @@
 /* 임시 폴백 테스트: 랠리 중계 요청만 실패시킨다 */
 (function(){var f=window.fetch;window.fetch=function(u,o){if(String(u).indexOf("/stat/real-time")>=0)return Promise.reject(new TypeError("test failure"));return f.apply(this,arguments);};})();
 </script>
-<script src="app.js?v=20261119-2115"></script>
+<script src="app.js?v=20261119-2120"></script>
 </body>
 </html>
