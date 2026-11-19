@@ -572,7 +572,12 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .team-link:hover .tm-name { text-decoration: underline; text-underline-offset: 2px; }
 .team-link:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; border-radius: 3px; }
-.mtms .fav-toggle { width: 18px; height: 18px; margin: 0; border-radius: 5px; font-size: 11px; }
+.mtms .fav-toggle {
+  width: 20px; height: 20px; margin: 0; border: 0; border-radius: 50%;
+  background: transparent; font-size: 15px; color: #9CA3AF;
+}
+.mtms .fav-toggle:hover { background: rgba(183, 121, 31, .10); color: #B7791F; }
+.mtms .fav-toggle.on { background: transparent; color: #D49A26; }
 .mtms .tm.away { color: #1F2937; }
 .mtms .mslot { min-width: 38px; text-align: center; }
 .mtms .vs {
