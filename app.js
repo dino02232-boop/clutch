@@ -23,6 +23,7 @@
   /* ── DOM ───────────────────────────────────────────── */
   var elDates = document.getElementById("dates");
   var elWeekTitle = document.getElementById("weekTitle");
+  var elWeek = document.querySelector(".week");
   var elWeekPrev = document.getElementById("weekPrev");
   var elWeekNext = document.getElementById("weekNext");
   var elTabs = document.getElementById("tabs");
@@ -138,6 +139,66 @@
     return SPORTS.some(function (s) { return s.id === id; });
   }
 
+  var FAVORITES_KEY = "clutch.favTeams.v1";
+
+  function readFavorites() {
+    try {
+      var raw = window.localStorage.getItem(FAVORITES_KEY);
+      var parsed = raw ? JSON.parse(raw) : [];
+      if (!Array.isArray(parsed)) return [];
+      return parsed.filter(function (item, index) {
+        if (!item || !isSport(item.sport) || typeof item.name !== "string" || !item.name.trim()) return false;
+        return parsed.findIndex(function (other) {
+          return other && other.sport === item.sport && other.name === item.name;
+        }) === index;
+      }).map(function (item) { return { sport: item.sport, name: item.name.trim() }; });
+    } catch (e) {
+      return [];
+    }
+  }
+
+  var FAVORITES = readFavorites();
+
+  function isFavorite(sport, name) {
+    return FAVORITES.some(function (item) { return item.sport === sport && item.name === name; });
+  }
+
+  function favoriteButtonHTML(sport, name) {
+    var on = isFavorite(sport, name);
+    var action = on ? "해제" : "추가";
+    return '<button class="fav-toggle' + (on ? " on" : "") + '" type="button"' +
+      ' data-fav-sport="' + esc(sport) + '" data-fav-team="' + esc(name) + '"' +
+      ' aria-pressed="' + on + '" aria-label="' + esc(name + " 즐겨찾기 " + action) + '" title="즐겨찾기 ' + action + '">' +
+      '<span aria-hidden="true">' + (on ? "★" : "☆") + "</span></button>";
+  }
+
+  function saveFavorites() {
+    try {
+      window.localStorage.setItem(FAVORITES_KEY, JSON.stringify(FAVORITES));
+    } catch (e) { /* 저장을 사용할 수 없는 환경에서도 현재 화면 조작은 유지 */ }
+  }
+
+  function toggleFavorite(sport, name) {
+    if (isFavorite(sport, name)) {
+      FAVORITES = FAVORITES.filter(function (item) { return !(item.sport === sport && item.name === name); });
+    } else {
+      FAVORITES.push({ sport: sport, name: name });
+    }
+    saveFavorites();
+    renderTabs();
+    if (state.favorites) renderFavorites();
+    else {
+      Array.prototype.forEach.call(elList.querySelectorAll(".fav-toggle"), function (button) {
+        var on = isFavorite(button.dataset.favSport, button.dataset.favTeam);
+        button.classList.toggle("on", on);
+        button.setAttribute("aria-pressed", String(on));
+        button.setAttribute("aria-label", button.dataset.favTeam + " 즐겨찾기 " + (on ? "해제" : "추가"));
+        button.title = "즐겨찾기 " + (on ? "해제" : "추가");
+        if (button.firstElementChild) button.firstElementChild.textContent = on ? "★" : "☆";
+      });
+    }
+  }
+
   /* ── 주소(해시) ↔ 화면 ───────────────────────────────── */
   // #             → 홈
   // #soccer       → 축구 일정 목록
@@ -146,19 +207,24 @@
     var raw = (location.hash || "").replace(/^#/, "").split("?")[0];
     if (!raw) return { sport: null, openId: null };
     var seg = raw.split("/");
+    if (seg[0] === "favorites") {
+      var favoriteOpenId = seg[1] ? decodeURIComponent(seg[1]) : null;
+      if (favoriteOpenId && !gameEntry(favoriteOpenId)) favoriteOpenId = null;
+      return { sport: null, openId: favoriteOpenId, favorites: true };
+    }
     var sport = seg[0];
     if (!isSport(sport)) return { sport: null, openId: null };
     var openId = seg[1] ? decodeURIComponent(seg[1]) : null;
     if (openId && !gameEntry(openId)) openId = null;
-    return { sport: sport, openId: openId };
+    return { sport: sport, openId: openId, favorites: false };
   }
 
   function routeKey(r) {
-    return (r.sport || "") + "|" + (r.openId || "");
+    return (r.favorites ? "favorites" : (r.sport || "")) + "|" + (r.openId || "");
   }
 
   function stateRoute() {
-    return { sport: state.sport, openId: state.openId };
+    return { sport: state.sport, openId: state.openId, favorites: state.favorites };
   }
 
   // file:// 에서 history API 가 막히는 브라우저가 있어 실패하면 해시만 바꾼다.
@@ -180,6 +246,7 @@
     day: DAYS.filter(function (d) { return d.date >= today; })[0] ?
       DAYS.filter(function (d) { return d.date >= today; })[0].date : DAYS[DAYS.length - 1].date,
     sport: null,   // null = 홈(종목 선택)
+    favorites: false,
     openId: null,  // 펼친 경기 id
     weekStart: null // 날짜 스트립에 보이는 주의 월요일(YYYY-MM-DD)
   };
@@ -267,7 +334,8 @@
   /* ── 종목 탭 ───────────────────────────────────────── */
   function renderTabs() {
     var games = gamesOf(state.day);
-    var home = state.sport === null;
+    var home = state.sport === null && !state.favorites;
+    var favoriteCount = FAVORITES.length;
 
     // 홈은 종목을 고르는 화면이라 종목 탭 줄은 숨긴다(같은 선택지를 두 번 보여주지 않도록).
     elTabs.hidden = home;
@@ -282,10 +350,19 @@
         '<span class="em" aria-hidden="true">' + esc(s.icon) + "</span>" + esc(s.name) +
         (n > 0 ? '<span class="cnt">' + n + "</span>" : "") +
         "</button>";
-    }).join("");
+    }).join("") +
+      '<button class="tab" type="button" role="tab" id="tab-favorites" data-favorites="true"' +
+      ' aria-selected="' + !!state.favorites + '" aria-controls="panel"' +
+      ' aria-label="즐겨찾기 ' + favoriteCount + '개 팀" tabindex="' + (state.favorites ? "0" : (home ? "0" : "-1")) + '">' +
+      '<span class="em" aria-hidden="true">★</span>즐겨찾기' +
+      (favoriteCount ? '<span class="cnt">' + favoriteCount + "</span>" : "") +
+      "</button>";
 
     Array.prototype.forEach.call(elTabs.querySelectorAll(".tab"), function (tab) {
-      tab.addEventListener("click", function () { selectSport(tab.dataset.sport); });
+      tab.addEventListener("click", function () {
+        if (tab.dataset.favorites) selectFavorites();
+        else selectSport(tab.dataset.sport);
+      });
       tab.addEventListener("keydown", function (e) {
         var tabs = Array.prototype.slice.call(elTabs.querySelectorAll(".tab"));
         var i = tabs.indexOf(tab);
@@ -296,7 +373,8 @@
         else if (e.key === "End") next = tabs[tabs.length - 1];
         if (!next) return;
         e.preventDefault();
-        selectSport(next.dataset.sport);
+        if (next.dataset.favorites) selectFavorites();
+        else selectSport(next.dataset.sport);
         elTabs.querySelector('.tab[aria-selected="true"]').focus();
       });
     });
@@ -305,8 +383,9 @@
   /* ── 화면 이동 ─────────────────────────────────────── */
   function selectSport(id) {
     if (!isSport(id)) return;
-    var same = state.sport === id && !state.openId;
+    var same = state.sport === id && !state.openId && !state.favorites;
     state.sport = id;
+    state.favorites = false;
     state.openId = null;
     if (!same) writeHash(id, false);
     render();
@@ -315,9 +394,20 @@
     if (id === "volleyball") pollKovoLive(false);
   }
 
-  function goHome() {
-    var same = state.sport === null;
+  function selectFavorites() {
+    var same = state.favorites && !state.openId;
     state.sport = null;
+    state.favorites = true;
+    state.openId = null;
+    if (!same) writeHash("favorites", false);
+    render();
+    window.scrollTo(0, 0);
+  }
+
+  function goHome() {
+    var same = state.sport === null && !state.favorites;
+    state.sport = null;
+    state.favorites = false;
     state.openId = null;
     if (!same) writeHash("", false);
     render();
@@ -330,6 +420,7 @@
     if (routeKey(r) === routeKey(stateRoute())) return;
 
     state.sport = r.sport;
+    state.favorites = !!r.favorites;
     state.openId = r.openId;
     if (r.openId) {
       var e = gameEntry(r.openId);
@@ -354,13 +445,15 @@
 
   /* ── 경기 박스 내용 (펼쳤을 때만 DOM 에 들어간다) ─────── */
   // 박스 안 두 팀 한 줄: 원정/홈 · 팀명 · 전적 · 배지
-  function formRow(side, team) {    if (!team) return "";
+  function formRow(side, team, g) {
+    if (!team) return "";
     var badges = (team.badges || []).map(function (b) {
       return '<span class="badge ' + toneClass(b.tone, ["hot", "rank"], "") + '">' + esc(b.text) + "</span>";
     }).join("");
     return "<li>" +
       '<span class="f-side ' + side + '">' + (side === "home" ? "홈" : "원정") + "</span>" +
       '<span class="f-name">' + esc(team.name) + "</span>" +
+      (g ? favoriteButtonHTML(g.sport, team.name) : "") +
       (team.record ? '<span class="f-rec">' + esc(team.record) + "</span>" : "") +
       badges +
       "</li>";
@@ -377,8 +470,8 @@
 
   // 팀별 정보 블록 하나
   //  · 제목: [원정] 팀명 · 약어 / 이어서 전적칸·수치칸·주요 선수·최근 5경기·부상·관전 포인트
-  function teamBlockHTML(t) {
-    if (!t) return "";
+  function teamBlockHTML(t, g) {
+    if (!t || !g) return "";
     var side = t.side === "home" ? "home" : "away";
 
     // 전적 칸
@@ -767,7 +860,7 @@
         (finalNow ? "경기 당시 팀 정보 · 부상자 · 체크포인트" : "팀 비교 · 부상자 · 체크포인트")) + "</span>" +
       (g.venue ? '<span class="ch-venue">' + esc(g.venue) + "</span>" : "") +
       "</div>" +
-      '<ul class="form-list">' + formRow("away", g.away) + formRow("home", g.home) + "</ul>";
+      '<ul class="form-list">' + formRow("away", g.away, g) + formRow("home", g.home, g) + "</ul>";
 
     if (tags) preview += '<div class="tags">' + tags + "</div>";
 
@@ -787,7 +880,7 @@
         var rank = function (t) { return t.side === "home" ? 1 : 0; };
         return rank(a) - rank(b);
       });
-      preview += '<div class="team-blocks">' + ordered.map(teamBlockHTML).join("") + "</div>";
+      preview += '<div class="team-blocks">' + ordered.map(function (team) { return teamBlockHTML(team, g); }).join("") + "</div>";
     } else if (injuries.length) {
       preview += '<h3 class="p-title">부상 리포트</h3><ul class="inj-list">' + injRowsHTML(injuries, true) + "</ul>";
     }
@@ -954,11 +1047,11 @@
     if (willOpen) {
       openItem(item);
       state.openId = id;
-      writeHash(state.sport + "/" + id, true);
+      writeHash((state.favorites ? "favorites" : state.sport) + "/" + id, true);
     } else {
       closeItem(item);
       state.openId = null;
-      writeHash(state.sport || "", true);
+      writeHash(state.favorites ? "favorites" : (state.sport || ""), true);
     }
   }
 
@@ -1149,11 +1242,65 @@
     }
   }
 
+  function favoriteGames() {
+    var today = todayStr();
+    return GAMES.filter(function (entry) {
+      if (entry.date < today) return false;
+      var g = entry.g;
+      if (!g || !g.sport) return false;
+      return isFavorite(g.sport, g.away && g.away.name) || isFavorite(g.sport, g.home && g.home.name);
+    }).sort(function (a, b) {
+      var aLive = a.g.result && a.g.result.state === "live";
+      var bLive = b.g.result && b.g.result.state === "live";
+      if (aLive !== bLive) return aLive ? -1 : 1;
+      return new Date(a.g.start) - new Date(b.g.start);
+    });
+  }
+
+  function renderFavorites() {
+    var entries = favoriteGames();
+    if (!FAVORITES.length) {
+      state.openId = null;
+      elList.innerHTML = "";
+      showEmpty({
+        ico: "★",
+        title: "아직 즐겨찾기한 팀이 없습니다",
+        desc: "경기 카드를 열고 팀 이름 옆 별을 눌러 추가하세요.",
+        cta: null
+      });
+      return;
+    }
+    if (!entries.length) {
+      state.openId = null;
+      elList.innerHTML = "";
+      showEmpty({
+        ico: "🗓️",
+        title: "오늘 이후 즐겨찾기 팀 경기가 없습니다",
+        desc: "새 일정이 등록되면 이 화면에 표시됩니다.",
+        cta: null
+      });
+      return;
+    }
+
+    elEmpty.hidden = true;
+    elList.innerHTML = '<p class="list-hint">즐겨찾기 팀 경기 · 진행 중인 경기가 먼저 표시됩니다.</p>' +
+      '<ul class="rows">' + entries.map(function (entry) { return rowHTML(entry.g); }).join("") + "</ul>";
+    bindRows();
+
+    if (state.openId) {
+      var item = itemOf(state.openId);
+      if (item) openItem(item);
+      else state.openId = null;
+    }
+  }
+
   /* ── 데이터 출처 칩 ────────────────────────────────── */
   // 지금 화면에 놓인 경기가 모두 ESPN 실제 데이터면 그렇게 표시하고,
   // 지금 화면에 놓인 경기의 출처를 표시한다.
   function renderDataChip() {
-    var scope = state.sport ? gamesIn(state.day, state.sport) : gamesOf(state.day);
+    var scope = state.favorites
+      ? favoriteGames().map(function (entry) { return entry.g; })
+      : (state.sport ? gamesIn(state.day, state.sport) : gamesOf(state.day));
     var sources = {};
     scope.forEach(function (g) { if (g.source) sources[g.source] = 1; });
     var label;
@@ -1167,7 +1314,10 @@
 
   /* ── 렌더 ──────────────────────────────────────────── */
   function render() {
-    var isHome = state.sport === null;
+    var isFavorites = !!state.favorites;
+    var isHome = state.sport === null && !isFavorites;
+
+    if (elWeek) elWeek.hidden = isFavorites;
 
     elBrandDate.textContent = state.day.replace(/-/g, ".") + " " + weekdayOf(state.day);
     renderDataChip();
@@ -1191,6 +1341,11 @@
       elBack.hidden = true;
       elTitle.innerHTML = "<em>" + longDate(state.day) + "</em> 종목 선택";
       renderHome();
+    } else if (isFavorites) {
+      elBack.hidden = false;
+      elTitle.textContent = "즐겨찾기";
+      elHomeLead.hidden = true;
+      renderFavorites();
     } else {
       elBack.hidden = false;
       elTitle.innerHTML = "<em>" + longDate(state.day) + "</em> " + esc(sportMeta(state.sport).name) +
@@ -2424,6 +2579,15 @@
       }
     });
 
+    // 즐겨찾기 화면에서는 경기 상태가 바뀌면 LIVE 경기를 맨 위로 이동한다.
+    if (state.favorites) {
+      var rows = elList.querySelector(".rows");
+      if (rows) favoriteGames().forEach(function (entry) {
+        var item = itemOf(entry.g.id);
+        if (item && item.parentNode === rows) rows.appendChild(item);
+      });
+    }
+
     // 펼쳐 둔 박스만 다시 그린다(높이는 auto 라 애니메이션에 영향 없음)
     var open = elList.querySelector(".mrow-item.open");
     if (open) {
@@ -2594,6 +2758,15 @@
   // 해시로 바로 들어온 경우 그 화면부터 (없으면 홈)
   (function initFromHash() {
     var r = parseRoute();
+    if (r.favorites) {
+      state.favorites = true;
+      state.openId = r.openId;
+      if (r.openId) {
+        var favoriteEntry = gameEntry(r.openId);
+        if (favoriteEntry) state.day = favoriteEntry.date;
+      }
+      return;
+    }
     if (!r.sport) return;
     state.sport = r.sport;
     if (r.openId) {
@@ -2613,6 +2786,16 @@
 
   if (elWeekPrev) elWeekPrev.addEventListener("click", function () { shiftWeek(-1); });
   if (elWeekNext) elWeekNext.addEventListener("click", function () { shiftWeek(1); });
+
+  elList.addEventListener("click", function (e) {
+    var button = e.target.closest ? e.target.closest(".fav-toggle") : null;
+    if (!button || !elList.contains(button)) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var openId = state.openId;
+    toggleFavorite(button.dataset.favSport, button.dataset.favTeam);
+    if (state.favorites && openId && !itemOf(openId)) writeHash("favorites", true);
+  });
 
   elEmptyCta.addEventListener("click", function () {
     var type = elEmptyCta.dataset.ctaType;
