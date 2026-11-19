@@ -1546,6 +1546,16 @@
   };
   var KOVO_SIMPLE = { CY: 1, CR: 1, CO: 1, CI: 1, CT: 1, CW: 1, CC: 1 };
 
+  function livePlayMarkerHTML(sport, play) {
+    var isError = !!play.error;
+    var isScore = !!(play.scoring || play.score);
+    var icon = isError ? "💀" : (isScore ? (sport === "basketball" ? "🏀" : (sport === "volleyball" ? "🏐" : "")) : "");
+    if (!icon) return "";
+    var label = isError ? (sport === "volleyball" ? "배구 범실" : "농구 턴오버") :
+      (sport === "volleyball" ? "배구 득점" : "농구 득점");
+    return '<span class="bp-mark" role="img" aria-label="' + label + '">' + icon + "</span>";
+  }
+
   function kovoRelayLabel(action, result, grade) {
     var a = String(action || ""), r = String(result || ""), g = String(grade == null ? "" : grade);
     if (a === "ST") return "세트 시작";
@@ -1592,6 +1602,7 @@
         text: who + label,
         home: mine,
         score: grade > 0,
+        error: !!KOVO_ERR[String(x.raresult || "").toLowerCase()] || /실패|범실/.test(label),
         hs: home,
         as: away,
         set: Number((p.game && p.game.setIng) || m.currentSet) || 0
@@ -1663,7 +1674,7 @@
       var side = p.home ? (g.home && g.home.abbr ? g.home.abbr : "홈") : (g.away && g.away.abbr ? g.away.abbr : "원정");
       return "<li" + (p.score ? ' class="sc"' : "") + ">" +
         '<span class="bp-t">' + esc(side) + "</span>" +
-        '<span class="bp-x">' + esc(p.text) + "</span>" +
+        '<span class="bp-x">' + livePlayMarkerHTML("volleyball", p) + esc(p.text) + "</span>" +
         (sc ? '<span class="bp-s">' + esc(sc) + "</span>" : "") +
         "</li>";
     }).join("") + "</ul>";
@@ -2211,7 +2222,8 @@
         text: ko.text,
         away: p && p.awayScore != null ? p.awayScore : null,
         home: p && p.homeScore != null ? p.homeScore : null,
-        scoring: !!(p && p.scoringPlay)
+        scoring: !!(p && p.scoringPlay),
+        error: ko.rule === "turnover" || ko.rule === "violation"
       };
     }).filter(function (p) { return !!p.text; });
 
@@ -2348,7 +2360,7 @@
       var sc = (p.away != null && p.home != null) ? (p.away + "-" + p.home) : "";
       return "<li" + (p.scoring ? ' class="sc"' : "") + ">" +
         '<span class="bp-t">' + esc(p.label) + "</span>" +
-        '<span class="bp-x">' + esc(p.text) + "</span>" +
+        '<span class="bp-x">' + livePlayMarkerHTML("basketball", p) + esc(p.text) + "</span>" +
         (sc ? '<span class="bp-s">' + esc(sc) + "</span>" : "") +
         "</li>";
     }).join("") + "</ul>";
