@@ -1450,8 +1450,9 @@
       return next;
     }, function (e) {
       LIVE.kovoRelay[num] = {
-        at: Date.now(), set: set, homeCode: mark.homeCode, plays: mark.plays || [],
-        hs: mark.hs || 0, as: mark.as || 0,
+        at: Date.now(), set: set, homeCode: mark.homeCode,
+        plays: mark.set === set ? (mark.plays || []) : [],
+        hs: mark.set === set ? (mark.hs || 0) : 0, as: mark.set === set ? (mark.as || 0) : 0,
         err: String((e && e.message) || e)
       };
       return LIVE.kovoRelay[num];
