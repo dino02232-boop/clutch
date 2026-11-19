@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><title>relay probe</title></head>
+<body>
+<pre id="out">loading…</pre>
+<script>
+var out = document.getElementById("out");
+function log(){ out.textContent += Array.prototype.slice.call(arguments).join(" ") + "\n"; }
+function clip(s, n){ s = String(s); return s.length > n ? s.slice(0, n) + " …(" + s.length + " chars)" : s; }
+function tryFetch(label, url){
+  return fetch(url, {mode:"cors", cache:"no-store", headers:{accept:"application/json"}})
+    .then(function(r){
+      log("== " + label + " " + url);
+      log("status", r.status, "type", r.type, "cors", r.headers.get("content-type"));
+      return r.text().then(function(t){
+        log("len", t.length);
+        try {
+          var j = JSON.parse(t);
+          log("top keys", JSON.stringify(Object.keys(j)));
+          if (j.result) log("result keys", JSON.stringify(Object.keys(j.result)));
+          var vr = j.result && j.result.volleyballRelay;
+          if (vr) {
+            log("volleyballRelay keys", JSON.stringify(Object.keys(vr)));
+            var trd = vr.textRelayData;
+            if (trd) {
+              log("textRelayData keys", JSON.stringify(Object.keys(trd)));
+              log("lineup", JSON.stringify(trd.lineup));
+              var tr = trd.textRelays;
+              log("textRelays len", tr && tr.length);
+              if (tr && tr.length) {
+                log("first3", JSON.stringify(tr.slice(0, 3)));
+                log("last8", JSON.stringify(tr.slice(-8)));
+              }
+            }
+          }
+          log("head", clip(t, 600));
+        } catch(e) { log("PARSE FAIL", e.message, clip(t, 400)); }
+      });
+    }, function(e){ log("== " + label + " FAIL", String(e && e.name), String(e && e.message)); });
+}
+var GID = "20261119023M33";
+var BASE = "https://api-gw.sports.naver.com";
+var chain = Promise.resolve();
+[
+  ["relay", BASE + "/schedule/games/" + GID + "/relay"],
+  ["relay set1", BASE + "/schedule/games/" + GID + "/relay?set=1"],
+  ["relay set3", BASE + "/schedule/games/" + GID + "/relay?set=3"],
+  ["game", BASE + "/schedule/games/" + GID],
+  ["polling", BASE + "/schedule/games/" + GID + "/game-polling"],
+  ["sched", BASE + "/schedule/games?fields=all&fromDate=2026-11-19&toDate=2026-11-19&size=100&excludeUpperCategoryId=event"],
+  ["datajs", "./data.js"]
+].forEach(function(pair){
+  chain = chain.then(function(){ return tryFetch(pair[0], pair[1]); });
+});
+chain.then(function(){ log("DONE", new Date().toISOString(), location.origin); out.textContent += "\n"; });
+</script>
+</body>
+</html>
