@@ -544,9 +544,10 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 
 .mtms {
   grid-area: teams;
-  display: flex;
-  align-items: baseline;
-  gap: 7px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 5px;
   min-width: 0;
 }
 .mtms .sport-ball { flex: 0 0 auto; font-size: 14px; line-height: 1; }
@@ -554,7 +555,7 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: 14.5px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: -.022em;
   color: var(--text);
@@ -562,17 +563,18 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
-  flex: 0 1 auto;
+  width: 100%;
 }
-.mtms .tm-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.mtms .tm-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .team-link {
   appearance: none; min-width: 0; padding: 0; border: 0; background: transparent;
-  color: inherit; font: inherit; text-align: inherit; cursor: pointer;
+  color: inherit; font: inherit; text-align: inherit; cursor: pointer; flex: 1 1 auto;
 }
 .team-link:hover .tm-name { text-decoration: underline; text-underline-offset: 2px; }
 .team-link:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; border-radius: 3px; }
-.mtms .fav-toggle { width: 20px; height: 20px; margin: 0; border-radius: 6px; font-size: 12px; }
+.mtms .fav-toggle { width: 18px; height: 18px; margin: 0; border-radius: 5px; font-size: 11px; }
 .mtms .tm.away { color: #1F2937; }
+.mtms .mslot { min-width: 38px; text-align: center; }
 .mtms .vs {
   flex: 0 0 auto;
   font-size: 10px;
