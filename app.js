@@ -579,7 +579,7 @@
     var top = Array.isArray(r.top) ? r.top : [];
     var linesHTML = linesTableHTML(g, r);
     var topNone = r.state === "live"
-      ? "실시간 주요 선수 기록은 경기 종료 후 반영됩니다."
+      ? (g.sport === "volleyball" ? "공개 실시간 데이터에는 선수별 득점이 포함되지 않습니다." : "실시간 주요 선수 기록은 경기 종료 후 반영됩니다.")
       : "주요 선수 기록을 받지 못했습니다.";
     var topHTML = top.length
       ? '<ul class="r-top">' + top.map(function (p) {
@@ -614,6 +614,18 @@
         '<p class="postgame-note">' + (entry && entry.err ? "선수별 박스스코어를 불러오지 못했습니다." : "최종 선수 기록을 불러오는 중입니다.") + "</p></section>";
     }
 
+    function expectedValue(text, unit) {
+      var re = new RegExp("(\\d+(?:\\.\\d+)?)\\s*" + unit, "i");
+      var m = String(text || "").match(re);
+      return m ? Number(m[1]) : null;
+    }
+    function shotInfo(value) {
+      var m = String(value || "").match(/^(\d+)\s*[-/]\s*(\d+)$/);
+      if (!m || Number(m[2]) === 0) return "";
+      return m[1] + "/" + m[2] + " (" + (Number(m[1]) / Number(m[2]) * 100).toFixed(0) + "%)";
+    }
+    function addFact(list, text) { if (text && list.length < 3) list.push(text); }
+
     var candidates = [];
     boxes.forEach(function (teamBox) {
       var team = (g.details && Array.isArray(g.details.teams) ? g.details.teams : []).filter(function (t) {
@@ -626,15 +638,19 @@
           return String(ep.name || "").trim().toLowerCase() === normName;
         })[0];
         if (!expected) return;
-        var ptsMatch = String(expected.stat || "").match(/(\d+(?:\.\d+)?)\s*(?:점|pts?|ppg)/i);
-        if (!ptsMatch) return;
-        var avg = Number(ptsMatch[1]);
+        var avg = expectedValue(expected.stat, "점");
         var pts = toNum(p.pts);
-        if (!isFinite(avg) || pts < 0) return;
+        if (avg == null || pts < 0) return;
         candidates.push({
           name: p.name, team: teamBox.name || teamBox.abbr,
-          pts: pts, reb: p.reb, ast: p.ast, min: p.min,
-          avg: avg, delta: pts - avg
+          pts: pts, reb: toNum(p.reb), ast: toNum(p.ast), min: toNum(p.min),
+          fg: p.fg, three: p.three, ft: p.ft, turnovers: toNum(p.turnovers),
+          avg: avg, avgReb: expectedValue(expected.stat, "리바운드"),
+          avgAst: expectedValue(expected.stat, "어시스트"),
+          delta: pts - avg, fgPct: (function () {
+            var m = String(p.fg || "").match(/^(\d+)\s*[-/]\s*(\d+)$/);
+            return m && Number(m[2]) ? Number(m[1]) / Number(m[2]) : null;
+          })()
         });
       });
     });
@@ -643,20 +659,65 @@
       return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b></div>' +
         '<p class="postgame-note">선수 기록은 받았지만 시즌 평균과 비교할 주요 선수 데이터가 없습니다.</p></section>';
     }
-    candidates.sort(function (a, b) { return b.delta - a.delta; });
-    var best = candidates[0], low = candidates[candidates.length - 1], picks = [];
-    if (best.delta >= 5) picks.push({ p: best, tone: "up", label: "기대 이상", note: "시즌 평균보다 " + best.delta.toFixed(1) + "점 높음" });
-    if (low.delta <= -5 && low.name !== best.name) picks.push({ p: low, tone: "down", label: "기대 이하", note: "시즌 평균보다 " + Math.abs(low.delta).toFixed(1) + "점 낮음" });
-    if (!picks.length) picks.push({ p: best, tone: "steady", label: "평균 수준", note: "시즌 평균 득점과 비슷함" });
-    var items = picks.map(function (item) {
-      var p = item.p;
-      return '<li class="pg-player"><div class="pg-line"><b>' + esc(p.name) + '</b><span class="pg-tag ' + item.tone + '">' + item.label + "</span></div>" +
-        '<span class="pg-team">' + esc(p.team) + " · " + esc(String(p.min)) + "분</span>" +
-        '<p><strong>' + esc(String(p.pts)) + '점</strong> · 시즌 평균 ' + esc(p.avg.toFixed(1)) + '점 · ' + esc(item.note) + "</p>" +
-        '<span class="pg-extra">리바운드 ' + esc(dash(p.reb)) + ' · 어시스트 ' + esc(dash(p.ast)) + "</span></li>";
-    }).join("");
-    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>득점과 시즌 평균 비교</span></div>' +
-      '<ul class="pg-list">' + items + '</ul><p class="postgame-note">기대 평가는 시즌 평균 득점과 이번 경기 득점을 비교한 자동 요약입니다.</p></section>';
+    candidates.forEach(function (p) {
+      p.rebDelta = p.avgReb == null || p.reb < 0 ? null : p.reb - p.avgReb;
+      p.astDelta = p.avgAst == null || p.ast < 0 ? null : p.ast - p.avgAst;
+    });
+    var carry = candidates.slice().sort(function (a, b) {
+      return (b.pts + Math.max(0, b.delta) * .35) - (a.pts + Math.max(0, a.delta) * .35);
+    })[0];
+    var low = candidates.filter(function (p) {
+      return p.name !== carry.name && (p.delta <= -5 || (p.min >= 15 && p.fgPct != null && p.fgPct < .35) || (p.min >= 15 && p.turnovers >= 4));
+    }).sort(function (a, b) {
+      var scoreA = Math.min(0, a.delta) - (a.fgPct != null && a.fgPct < .35 ? 3 : 0) - Math.max(0, a.turnovers - 3);
+      var scoreB = Math.min(0, b.delta) - (b.fgPct != null && b.fgPct < .35 ? 3 : 0) - Math.max(0, b.turnovers - 3);
+      return scoreA - scoreB;
+    })[0] || null;
+
+    function factsFor(p, under) {
+      var facts = [];
+      if (p.delta >= 5) addFact(facts, p.pts + "점, 시즌 평균보다 +" + p.delta.toFixed(1) + "점");
+      else if (p.delta <= -5) addFact(facts, p.pts + "점, 시즌 평균보다 " + p.delta.toFixed(1) + "점");
+      else addFact(facts, p.pts + "점, 시즌 평균 " + p.avg.toFixed(1) + "점");
+      var fg = shotInfo(p.fg), three = shotInfo(p.three), ft = shotInfo(p.ft);
+      if (fg) addFact(facts, "야투 " + fg);
+      if (under && p.turnovers >= 3) addFact(facts, "턴오버 " + p.turnovers + "개");
+      if (!under && three && p.three && Number(String(p.three).split(/[-/]/)[0]) >= 3) addFact(facts, "3점슛 " + three);
+      if (!under && p.astDelta != null && p.astDelta >= 2) addFact(facts, "어시스트 " + p.ast + "개 (평균보다 +" + p.astDelta.toFixed(1) + ")");
+      else if (!under && p.rebDelta != null && p.rebDelta >= 3) addFact(facts, "리바운드 " + p.reb + "개 (평균보다 +" + p.rebDelta.toFixed(1) + ")");
+      if (under && facts.length < 2 && ft) addFact(facts, "자유투 " + ft);
+      return facts;
+    }
+    function highlightHTML(p, type, title) {
+      if (!p) return '<article class="pg-highlight quiet"><b>' + title + '</b><p>주요 선수 중 뚜렷하게 기대를 밑돈 기록은 없었습니다.</p></article>';
+      var under = type === "down";
+      var note = under
+        ? (p.delta <= -5 ? "득점이 시즌 평균보다 낮았습니다." : (p.fgPct != null && p.fgPct < .35 ? "야투 효율이 낮았습니다." : "턴오버가 많았습니다."))
+        : (p.delta >= 5 ? "평균을 웃도는 득점으로" : "주요 선수 중 가장 많은 득점으로");
+      return '<article class="pg-highlight ' + type + '"><div class="pg-line"><b>' + title + '</b><span class="pg-tag ' + type + '">' + esc(p.team) + '</span></div>' +
+        '<strong class="pg-name">' + esc(p.name) + '</strong><p>' + esc(under ? note : note + ' 팀 공격을 이끌었습니다.') + '</p>' +
+        '<div class="pg-facts">' + factsFor(p, under).map(function (x) { return '<span>' + esc(x) + '</span>'; }).join("") + '</div>' +
+        '<small>' + esc(String(p.min)) + '분 출전</small></article>';
+    }
+
+    var r = g.result, gap = Math.abs(toNum(r.awayScore) - toNum(r.homeScore));
+    var winner = toNum(r.awayScore) > toNum(r.homeScore) ? g.away.name : g.home.name;
+    var gameLine = winner + "이 " + gap + "점 차로 이겼습니다.";
+    var lineScores = r.lines || null;
+    if (lineScores && lineScores.away && lineScores.home) {
+      var maxQ = -1, maxDiff = -1, qLeader = "";
+      for (var qi = 0; qi < Math.min(lineScores.away.length, lineScores.home.length); qi++) {
+        var qa = Number(lineScores.away[qi]), qh = Number(lineScores.home[qi]);
+        if (!isFinite(qa) || !isFinite(qh)) continue;
+        var qdiff = Math.abs(qa - qh);
+        if (qdiff > maxDiff) { maxDiff = qdiff; maxQ = qi + 1; qLeader = qa > qh ? g.away.abbr : g.home.abbr; }
+      }
+      if (maxQ > 0) gameLine += " 가장 큰 쿼터 점수 차는 " + maxQ + "Q " + qLeader + "의 " + maxDiff + "점입니다.";
+    }
+    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>선수 활약 요약</span></div>' +
+      '<p class="pg-game-line">' + esc(gameLine) + '</p><div class="pg-highlights">' +
+      highlightHTML(carry, "up", "캐리한 선수") + highlightHTML(low, "down", "아쉬웠던 선수") +
+      '</div><p class="postgame-note">선수 평가는 시즌 평균 득점과 경기 기록, 야투 효율·턴오버를 바탕으로 한 자동 요약입니다.</p></section>';
   }
 
   function flowRowHTML(row) {
@@ -1169,8 +1230,11 @@
     err: null,
     dated: {},        // "path|YYYYMMDD" → { at, events }
     sum: {},          // "path|id" → { at, data:{plays,box}, err }  (선수 기록·최근 플레이)
-    sumBusy: {}       // 같은 키의 summary 요청이 진행 중인지
+    sumBusy: {},      // 같은 키의 summary 요청이 진행 중인지
+    kovoBusy: false
   };
+
+  var KOVO_API = "https://user-api.kovo.co.kr";
 
   function espnPathOf(g) {
     if (!g || !g.espnId) return null;
@@ -1206,6 +1270,86 @@
         if (!r.ok) throw new Error("HTTP " + r.status);
         return r.json();
       }, function (e) { window.clearTimeout(t); throw e; });
+  }
+
+  function fetchKovoJSON(path) {
+    if (typeof fetch !== "function") return Promise.reject(new Error("fetch 없음"));
+    var ctl = typeof AbortController === "function" ? new AbortController() : null;
+    var t = window.setTimeout(function () { if (ctl) ctl.abort(); }, LIVE_TIMEOUT);
+    return fetch(KOVO_API + path, {
+      mode: "cors", cache: "no-store", signal: ctl ? ctl.signal : undefined,
+      headers: {
+        "X-Service-Name": "user",
+        "X-Site-Origin": location.origin,
+        "Accept-Language": "ko"
+      }
+    }).then(function (r) {
+      window.clearTimeout(t);
+      if (!r.ok) throw new Error("KOVO HTTP " + r.status);
+      return r.json();
+    }, function (e) {
+      window.clearTimeout(t);
+      throw e;
+    }).then(function (j) {
+      if (!j || !j.result || Number(j.result.status) !== 200 || !Array.isArray(j.payload)) {
+        throw new Error("KOVO 응답 형식 오류");
+      }
+      return j.payload;
+    });
+  }
+
+  // KOVO 공식 일정 API의 세트 점수를 오늘 카드에 반영한다.
+  // 공개 데이터에 현재 세트의 랠리 점수와 문자 중계는 포함되지 않는다.
+  function pollKovoLive(manual) {
+    if (LIVE.kovoBusy) return;
+    var day = todayStr();
+    var targets = GAMES.filter(function (e) {
+      return e.date === day && e.g && e.g.sport === "volleyball" && /^vball-kovo-\d+$/.test(e.g.id || "");
+    });
+    if (!targets.length) return;
+
+    LIVE.kovoBusy = true;
+    if (manual) setRefreshBusy(true);
+    Promise.all([
+      fetchKovoJSON("/mains/games/schedules"),
+      fetchKovoJSON("/mains/games/schedules/ended")
+    ]).then(function (groups) {
+      var entries = (groups[0] || []).concat(groups[1] || []);
+      var byNumber = {};
+      entries.forEach(function (m) {
+        if (m && m.match === "001" && m.gameDate === day) byNumber[String(m.number)] = m;
+      });
+      targets.forEach(function (entry) {
+        var number = String(entry.g.id).replace("vball-kovo-", "");
+        var m = byNumber[number];
+        if (!m || !m.homeTeam || !m.awayTeam) return;
+        var isFinal = !!m.endTime;
+        var isLive = !isFinal && Number(m.currentSet) > 0;
+        if (!isFinal && !isLive) return;
+        var away = Number(m.awayTeam.score), home = Number(m.homeTeam.score);
+        if (!isFinite(away) || !isFinite(home)) return;
+        var before = JSON.stringify(entry.g.result || null);
+        entry.g.result = {
+          state: isFinal ? "final" : "live",
+          detail: isFinal ? "경기 종료" : (Number(m.currentSet) + "세트 진행 중 · 세트 스코어"),
+          awayScore: away,
+          homeScore: home,
+          winner: isFinal ? (away > home ? "away" : "home") : null,
+          top: null,
+          kovoNumber: number
+        };
+        entry.g.status = isFinal ? "final" : "live";
+        if (before !== JSON.stringify(entry.g.result)) LIVE.kovoChanged = true;
+      });
+      LIVE.lastOk = new Date();
+      LIVE.kovoErr = null;
+      paintLive();
+    }).catch(function (e) {
+      LIVE.kovoErr = String((e && e.message) || e);
+    }).then(function () {
+      LIVE.kovoBusy = false;
+      if (manual) setRefreshBusy(false);
+    });
   }
 
   // ESPN 경기 하나 → 화면에 쓸 값
@@ -1708,7 +1852,13 @@
             min: min,
             pts: s[idx.PTS],
             reb: idx.REB != null ? s[idx.REB] : null,
-            ast: idx.AST != null ? s[idx.AST] : null
+            ast: idx.AST != null ? s[idx.AST] : null,
+            fg: idx.FG != null ? s[idx.FG] : null,
+            three: idx["3PT"] != null ? s[idx["3PT"]] : (idx["3P"] != null ? s[idx["3P"]] : null),
+            ft: idx.FT != null ? s[idx.FT] : null,
+            turnovers: idx.TO != null ? s[idx.TO] : null,
+            stl: idx.STL != null ? s[idx.STL] : null,
+            blk: idx.BLK != null ? s[idx.BLK] : null
           });
         });
         out.box.push({
@@ -1877,9 +2027,13 @@
   // 박스 맨 위에 붙는 실시간 상황 한 덩이
   function liveSectionHTML(g) {
     var r = g.result || {};
+    var volleyballNote = g.sport === "volleyball"
+      ? '<p class="lb-none">현재 점수는 세트 스코어입니다. 랠리별 문자중계와 선수별 득점은 <a href="https://kovo.co.kr/games/v-leagues/schedules?season=023&amp;gender=all&amp;league=201" target="_blank" rel="noopener noreferrer">KOVO 공식 일정</a>에서 확인할 수 있습니다.</p>'
+      : "";
     return '<section class="lbox" aria-label="지금 경기 상황">' +
       liveHeadHTML(g) +
       liveScoreHTML(g) +
+      volleyballNote +
       linesTableHTML(g, r) +
       livePlaysHTML(g) +
       liveRosterHTML(g) +
@@ -2131,7 +2285,21 @@
     return false;
   }
 
-  function pollLive(manual) {    if (LIVE.busy) return;
+  function anyKovoWindow() {
+    var now = Date.now(), day = todayStr();
+    for (var i = 0; i < GAMES.length; i++) {
+      var e = GAMES[i];
+      if (!e.g || e.g.sport !== "volleyball" || e.date !== day) continue;
+      if (e.g.result && e.g.result.state === "live") return true;
+      var t = new Date(e.g.start).getTime();
+      if (isFinite(t) && now >= t - 10 * 60 * 1000 && now <= t + 4 * 60 * 60 * 1000) return true;
+    }
+    return false;
+  }
+
+  function pollLive(manual) {
+    pollKovoLive(manual);
+    if (LIVE.busy) return;
     var cands = liveCandidates();
     if (!cands.length) { LIVE.err = null; paintLive(); return; }
     if (manual) LIVE.dated = {};
@@ -2203,7 +2371,7 @@
     LIVE.timer = window.setInterval(function () {
       if (document.hidden) return;        // 백그라운드 탭에서는 요청하지 않음
       // 경기 시간대가 아니면 두 분에 한 번만 확인한다(데이터 사용 절약)
-      if (!anyLiveWindow()) {
+      if (!anyLiveWindow() && !anyKovoWindow()) {
         LIVE.idle = (LIVE.idle || 0) + 1;
         if (LIVE.idle % 4 !== 0) return;
       } else {
