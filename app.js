@@ -1255,6 +1255,333 @@
     return s === "" || s === "--" ? "-" : s;
   }
 
+  /* ── 최근 플레이 한국어 표기 ───────────────────────────────
+     ESPN summary 의 plays[].text 는 영어 중계 문장이다. 그대로 두면 읽기
+     어려워서, 선수·팀 이름은 원문 그대로 두고 동작·상황 부분만 한국어
+     중계 표현으로 바꾼다.
+     예) "Luka Doncic makes driving layup (Austin Reaves assists)"
+         → "Luka Doncic, 돌파 레이업 성공 (Austin Reaves 어시스트)"
+     표에 없는 표현은 koLoose() 에서 단어별로 바꿔 본다. */
+
+  var KO_TEAM = {
+    hawks: "호크스", celtics: "셀틱스", nets: "네츠", hornets: "호넷츠", bulls: "불스",
+    cavaliers: "캐벌리어스", cavs: "캐벌리어스", mavericks: "매버릭스", mavs: "매버릭스",
+    nuggets: "너기츠", pistons: "피스톤스", warriors: "워리어스", rockets: "로키츠",
+    pacers: "페이서스", clippers: "클리퍼스", lakers: "레이커스", grizzlies: "그리즐리스",
+    heat: "히트", bucks: "벅스", timberwolves: "팀버울브스", pelicans: "펠리컨스",
+    knicks: "닉스", thunder: "선더", magic: "매직", "76ers": "식서스", sixers: "식서스",
+    suns: "선즈", blazers: "블레이저스", kings: "킹스", spurs: "스퍼스", raptors: "랩터스",
+    jazz: "재즈", wizards: "위저즈"
+  };
+
+  /* 슛 종류 (ESPN 표기 → 한국 중계 표현). 거리(foot)는 떼고 동작만 살린다. */
+  var KO_SHOT = {
+    "two point shot": "2점슛",
+    "three point shot": "3점슛",
+    "three point jumper": "3점슛",
+    "three pointer": "3점슛",
+    "three point pullup jump shot": "3점 풀업 점퍼",
+    "three point step back jumpshot": "3점 스텝백 점퍼",
+    "jumper": "점프슛",
+    "jump shot": "점프슛",
+    "jumpshot": "점프슛",
+    "pullup jump shot": "풀업 점퍼",
+    "pullup jumpshot": "풀업 점퍼",
+    "running pullup jump shot": "러닝 풀업 점퍼",
+    "step back jumpshot": "스텝백 점퍼",
+    "step back jump shot": "스텝백 점퍼",
+    "fade away jump shot": "페이드어웨이 점퍼",
+    "fadeaway jump shot": "페이드어웨이 점퍼",
+    "turnaround jump shot": "턴어라운드 점퍼",
+    "running jump shot": "러닝 점프슛",
+    "floating jump shot": "플로터",
+    "driving floating jump shot": "돌파 플로터",
+    "layup": "레이업",
+    "driving layup": "돌파 레이업",
+    "running layup": "러닝 레이업",
+    "reverse layup": "리버스 레이업",
+    "finger roll layup": "핑거롤 레이업",
+    "dunk": "덩크",
+    "driving dunk": "돌파 덩크",
+    "running dunk": "러닝 덩크",
+    "alley oop dunk": "앨리웁 덩크",
+    "alley oop layup": "앨리웁 레이업",
+    "reverse dunk": "리버스 덩크",
+    "tip in dunk": "팁인 덩크",
+    "tip shot": "팁인 슛",
+    "hook shot": "훅슛",
+    "jump bank shot": "뱅크슛",
+    "bank shot": "뱅크슛",
+    "heave jump shot": "하프라인 슛",
+    "technical free throw": "테크니컬 자유투",
+    "free throw": "자유투"
+  };
+
+  /* 파울 종류 */
+  var KO_FOUL = {
+    "shooting foul": "슈팅 파울",
+    "personal foul": "개인 파울",
+    "personal take foul": "테이크 파울",
+    "transition take foul": "트랜지션 테이크 파울",
+    "loose ball foul": "루즈볼 파울",
+    "offensive foul": "공격자 파울",
+    "offensive charge": "공격자 파울 (차징)",
+    "technical foul": "테크니컬 파울",
+    "technical": "테크니컬 파울",
+    "flagrant foul type 1": "플래그런트 파울 1",
+    "flagrant foul type 2": "플래그런트 파울 2",
+    "away from play foul": "오프더볼 파울",
+    "flopping technical foul": "플로핑 테크니컬 파울",
+    "hanging techfoul": "림 행 테크니컬 파울",
+    "delay techfoul": "지연 테크니컬 파울",
+    "defensive 3-seconds (technical foul)": "수비 3초 바이얼레이션 (테크니컬)",
+    "double personal foul": "더블 개인 파울",
+    "double technical foul": "더블 테크니컬 파울"
+  };
+
+  /* 턴오버·바이얼레이션 종류 */
+  var KO_TURN = {
+    "traveling": "트래블링",
+    "back court": "백코트 바이얼레이션",
+    "double dribble": "더블 드리블",
+    "discontinue dribble": "드리블 중단",
+    "palming": "캐링 더 볼",
+    "inbound": "인바운드 실책",
+    "steps out of bounds": "스텝 아웃오브바운즈",
+    "out of bounds bad pass": "패스 미스 아웃오브바운즈",
+    "out of bounds lost ball": "볼 소실 아웃오브바운즈",
+    "bad pass": "패스 미스",
+    "lost ball": "볼 소실",
+    "offensive goaltending": "공격 골텐딩",
+    "defensive goaltending": "수비 골텐딩",
+    "kicked ball": "킥볼 바이얼레이션",
+    "3 second": "3초 바이얼레이션",
+    "8 second": "8초 바이얼레이션",
+    "shot clock": "샷클락 바이얼레이션",
+    "lane": "레인 바이얼레이션",
+    "delay of game": "지연 경기",
+    "offensive foul": "공격자 파울 (턴오버)"
+  };
+
+  var KO_SHOT_WORDS = [
+    ["alley oop", "앨리웁"], ["finger roll", "핑거롤"], ["step back", "스텝백"],
+    ["fade away", "페이드어웨이"], ["fadeaway", "페이드어웨이"], ["turnaround", "턴어라운드"],
+    ["jump bank", "뱅크"], ["pullup", "풀업"], ["pull up", "풀업"], ["driving", "돌파"],
+    ["running", "러닝"], ["reverse", "리버스"], ["floating", "플로터"], ["tip in", "팁인"],
+    ["tip", "팁"], ["heave", "하프라인"], ["hook", "훅"], ["three point", "3점"],
+    ["three pointer", "3점"], ["two point", "2점"], ["jumpshot", "점프슛"],
+    ["jump shot", "점프슛"], ["jumper", "점퍼"], ["layup", "레이업"], ["dunk", "덩크"],
+    ["free throw", "자유투"], ["shot", "슛"]
+  ];
+
+  /* 문장 안의 여러 칸 공백·줄바꿈을 한 칸으로 */
+  function koSquash(s) {
+    var t = String(s == null ? "" : s).split("\n").join(" ").split("\t").join(" ");
+    while (t.indexOf("  ") >= 0) t = t.split("  ").join(" ");
+    return t.trim();
+  }
+
+  /* 표의 표현을 정규식에 넣기 전에 괄호만 막아 준다 */
+  function koEscKey(s) {
+    return String(s).split("(").join("[(]").split(")").join("[)]");
+  }
+
+  /* 팀 이름 → 한국어 (모르는 팀은 원문 유지) */
+  function koTeam(s) {
+    var t = koSquash(s);
+    var k = t.toLowerCase();
+    if (KO_TEAM[k]) return KO_TEAM[k];
+    var w = k.split(" ");
+    for (var i = w.length - 1; i >= 0; i--) if (KO_TEAM[w[i]]) return KO_TEAM[w[i]];
+    return t;
+  }
+
+  /* 슛 표현 → 한국어. 자유투는 "1/2" 같은 시도 표기를 살린다. */
+  function koShot(phrase) {
+    var s = koSquash(phrase).toLowerCase();
+    s = s.replace(/^[0-9]+-foot /, "");
+    var m = s.match(/^free throw( flagrant)? ([0-9]) of ([0-9])$/);
+    if (m) {
+      var pre = m[1] ? "플래그런트 자유투" : "자유투";
+      return (m[2] === "1" && m[3] === "1") ? pre : pre + " " + m[2] + "/" + m[3];
+    }
+    if (KO_SHOT[s]) return KO_SHOT[s];
+    var t = " " + s + " ";
+    for (var i = 0; i < KO_SHOT_WORDS.length; i++) {
+      t = t.split(" " + KO_SHOT_WORDS[i][0] + " ").join(" " + KO_SHOT_WORDS[i][1] + " ");
+    }
+    t = t.replace(/[0-9]+-foot/g, " ");
+    return koSquash(t);
+  }
+
+  /* 파울·턴오버 표에 있는 표현을 문장 끝에서 찾아 이름과 분리한다 */
+  function koByTable(t, table, rule, allowSuffix) {
+    var keys = Object.keys(table).sort(function (a, b) { return b.length - a.length; });
+    for (var i = 0; i < keys.length; i++) {
+      var suffix = allowSuffix ? "(?: (turnover|violation))?$" : "$";
+      var m = t.match(new RegExp("^(.+?) " + koEscKey(keys[i]) + suffix, "i"));
+      if (m) return { rule: rule, text: m[1] + ", " + table[keys[i]] };
+    }
+    return null;
+  }
+
+  /* 표에 없는 문장: 아는 낱말만 바꿔 본다(마지막 안전망) */
+  function koLoose(t) {
+    var s = " " + koSquash(t).toLowerCase() + " ";
+    s = s.replace(/[0-9]+-foot/g, " ");
+    var pairs = [["bad pass", "패스 미스"], ["lost ball", "볼 소실"], ["jump shot", "점프슛"],
+      ["jumpshot", "점프슛"], ["jumper", "점퍼"], ["layup", "레이업"], ["dunk", "덩크"],
+      ["three point", "3점"], ["two point", "2점"], ["free throw", "자유투"],
+      ["rebound", "리바운드"], ["assists", "어시스트"], ["steals", "스틸"], ["steal", "스틸"],
+      ["blocks", "블록"], ["makes", "성공"], ["misses", "실패"], ["turnover", "턴오버"],
+      ["foul", "파울"], ["timeout", "타임아웃"], ["violation", "바이얼레이션"],
+      ["driving", "돌파"], ["running", "러닝"], ["step back", "스텝백"], ["pullup", "풀업"]];
+    for (var i = 0; i < pairs.length; i++) {
+      s = s.split(" " + pairs[i][0] + " ").join(" " + pairs[i][1] + " ");
+    }
+    return koSquash(s);
+  }
+
+  /* ESPN 영어 중계 문장 → { rule, text } */
+  function koTranslate(raw) {
+    var t = koSquash(raw);
+    if (!t) return { rule: "empty", text: "" };
+    var m, hit;
+
+    /* 쿼터·연장·경기 구간 */
+    m = t.match(/^(start|end) of the ([0-9])(?:st|nd|rd|th) quarter$/i);
+    if (m) return { rule: "period", text: m[2] + "쿼터 " + (/^start$/i.test(m[1]) ? "시작" : "종료") };
+    m = t.match(/^(start|end) of the ([0-9])(?:st|nd|rd|th) overtime$/i);
+    if (m) return { rule: "period", text: m[2] + "차 연장 " + (/^start$/i.test(m[1]) ? "시작" : "종료") };
+    if (/^start of (?:the )?overtime$/i.test(t)) return { rule: "period", text: "연장전 시작" };
+    if (/^end of (?:the )?regulation$/i.test(t)) return { rule: "period", text: "정규시간 종료" };
+    if (/^end of (?:the )?game$/i.test(t)) return { rule: "period", text: "경기 종료" };
+    if (/^halftime$/i.test(t)) return { rule: "period", text: "하프타임" };
+
+    /* 팀 단위 챌린지 요청 */
+    m = t.match(/^(.+?) coach'?s challenge$/i);
+    if (m) return { rule: "review", text: koTeam(m[1]) + ", 코치 챌린지" };
+
+    /* 비디오 판독·코치 챌린지
+       (00:25.4) [Celtics] COACH'S CHALLENGE (CALL OVERTURNED) [Celtics] retain their timeout
+       시간은 행 앞 라벨에 있으니 문장에서는 뗀다. */
+    var rv = t.replace(/^[(][0-9:.]+[)] /, "");
+    var rvU = rv.toUpperCase();
+    var isReview = rvU.indexOf("COACH'S CHALLENGE") >= 0 || rvU.indexOf("REF-INITIATED REVIEW") >= 0;
+    if (isReview) {
+      var teamKo = "";
+      if (rv.charAt(0) === "[") {
+        var rb = rv.indexOf("]");
+        if (rb > 0) teamKo = koTeam(rv.substring(1, rb));
+      }
+      var verdict = /REPLAY ?CENTER/i.test(rv) ? "리플레이 센터 판독"
+        : /OVERTURNED/i.test(rv) ? "판정 번복" : "판정 유지";
+      var tail = /retain their timeout/i.test(rv) ? " · 타임아웃 유지"
+        : /charged with a timeout/i.test(rv) ? " · 타임아웃 차감" : "";
+      return {
+        rule: "review",
+        text: (teamKo ? "[" + teamKo + "] " : "") +
+          (rvU.indexOf("COACH'S CHALLENGE") >= 0 ? "코치 챌린지" : "비디오 판독") + " — " + verdict + tail
+      };
+    }
+
+    /* 점프볼 */
+    m = t.match(/^(.+?) vs[.] (.+?) [(]([^)]+) gains possession[)]$/i);
+    if (m) return { rule: "jumpball", text: "점프볼 " + m[1] + " · " + m[2] + " → " + m[3] + " 볼" };
+
+    /* 선수 교체 */
+    m = t.match(/^(.+?) enters the game for (.+)$/i);
+    if (m) return { rule: "sub", text: m[1] + " 투입 · " + m[2] + " 아웃" };
+
+    /* 블록 */
+    m = t.match(/^(.+?) blocks (.+?) *['’]s (.+)$/i);
+    if (m) return { rule: "block", text: m[1] + ", " + m[2] + "의 " + koShot(m[3]) + " 블록" };
+    m = t.match(/^(.+?) blocks (.+)$/i);
+    if (m) return { rule: "block", text: m[1] + ", " + koShot(m[2]) + " 블록" };
+
+    /* 슛 성공·실패 (+ 어시스트) */
+    m = t.match(/^(.+?) (makes|misses) (.+?)(?: [(]([^)]+) assists?[)])?$/i);
+    if (m) {
+      var ast = m[4] ? " (" + m[4] + " 어시스트)" : "";
+      return { rule: "shot", text: m[1] + ", " + koShot(m[3]) + (/^makes$/i.test(m[2]) ? " 성공" : " 실패") + ast };
+    }
+
+    /* 리바운드 (선수·팀) */
+    m = t.match(/^(.+?) (offensive|defensive) (team )?rebound$/i);
+    if (m) {
+      return {
+        rule: "rebound",
+        text: (m[3] ? koTeam(m[1]) : m[1]) + ", " + (m[3] ? "팀 " : "") +
+          (/^offensive$/i.test(m[2]) ? "공격" : "수비") + " 리바운드"
+      };
+    }
+
+    /* 타임아웃 */
+    m = t.match(/^(.+?) (full|short|official|20-second) timeout$/i);
+    if (m) {
+      var kind = m[2].toLowerCase();
+      return {
+        rule: "timeout",
+        text: koTeam(m[1]) + ", " +
+          (kind === "full" ? "작전 타임" : (kind === "official" ? "공식 타임아웃" : "20초 타임아웃"))
+      };
+    }
+
+    /* 턴오버: 패스 미스·볼 소실 (+ 스틸, 아웃오브바운즈) */
+    m = t.match(/^(.+?) (bad pass|lost ball) turnover(?: [(]([^)]+) steals?[)])?$/i);
+    if (m) {
+      var oob = / out of bounds$/i.test(m[1]);
+      var who = oob ? m[1].replace(/ out of bounds$/i, "") : m[1];
+      return {
+        rule: "turnover",
+        text: who + ", " + (/^bad/i.test(m[2]) ? "패스 미스" : "볼 소실") + (oob ? " 아웃오브바운즈" : "") +
+          (m[3] ? " (" + m[3] + " 스틸)" : "")
+      };
+    }
+
+    /* 파울 유도 표기: A loose ball foul (B draws the foul) */
+    m = t.match(/^(.+?) [(]([^)]+) draws the foul[)]$/i);
+    if (m) {
+      var fk = Object.keys(KO_FOUL).sort(function (a, b) { return b.length - a.length; });
+      for (var fi = 0; fi < fk.length; fi++) {
+        var suf = " " + fk[fi];
+        if (m[1].toLowerCase().slice(-suf.length) === suf) {
+          return {
+            rule: "foul",
+            text: m[1].slice(0, m[1].length - suf.length) + ", " + KO_FOUL[fk[fi]] + " (" + m[2] + " 파울 유도)"
+          };
+        }
+      }
+    }
+
+    /* 더블 테크니컬: A and B */
+    m = t.match(/^double technical foul: (.+) and (.+)$/i);
+    if (m) return { rule: "foul", text: "더블 테크니컬 파울: " + m[1] + " · " + m[2] };
+
+    /* 파울·턴오버 종류 표 */
+    hit = koByTable(t, KO_FOUL, "foul", false) || koByTable(t, KO_TURN, "turnover", true);
+    if (hit) return hit;
+
+    /* 이름 없는 바이얼레이션·테크니컬 */
+    if (/^shot clock turnover$/i.test(t)) return { rule: "violation", text: "샷클락 바이얼레이션" };
+    if (/^delay of game violation$/i.test(t)) return { rule: "violation", text: "지연 경기" };
+    if (/^5 second violation$/i.test(t)) return { rule: "violation", text: "5초 바이얼레이션" };
+    if (/^8 second turnover$/i.test(t)) return { rule: "violation", text: "8초 바이얼레이션" };
+    if (/^lane violation$/i.test(t)) return { rule: "violation", text: "레인 바이얼레이션" };
+    if (/^delay techfoul$/i.test(t)) return { rule: "foul", text: "지연 테크니컬 파울" };
+    if (/^hanging techfoul$/i.test(t)) return { rule: "foul", text: "림 행 테크니컬 파울" };
+
+    /* 퇴장 */
+    m = t.match(/^(.+?) ejected$/i);
+    if (m) return { rule: "eject", text: m[1] + ", 퇴장" };
+
+    /* 표에 없는 표현: 낱말별 치환. 하나도 못 바꿨으면 원문을 그대로 둔다. */
+    var loose = koLoose(t);
+    return { rule: "loose", text: /[가-힣]/.test(loose) ? loose : t };
+  }
+
+  function koPlay(raw) { return koTranslate(raw).text; }
+
   // ESPN summary 응답 → 최근 플레이 5개 + 팀별 출전 선수 기록
   function parseLiveSummary(j) {
     var out = { plays: [], box: [] };
@@ -1263,9 +1590,11 @@
     out.plays = plays.slice(-5).reverse().map(function (p) {
       var per = p && p.period && p.period.number ? p.period.number + "Q" : "";
       var clk = (p && p.clock && p.clock.displayValue) || "";
+      var ko = koTranslate(String((p && (p.text || p.shortDescription)) || ""));
       return {
-        label: [per, clk].filter(Boolean).join(" "),
-        text: String((p && (p.text || p.shortDescription)) || "").replace(/\s+/g, " ").trim(),
+        // '2쿼터 종료'처럼 문장 자체가 시점을 말하는 줄은 앞 시간 칸을 비운다
+        label: ko.rule === "period" ? "" : [per, clk].filter(Boolean).join(" "),
+        text: ko.text,
         away: p && p.awayScore != null ? p.awayScore : null,
         home: p && p.homeScore != null ? p.homeScore : null,
         scoring: !!(p && p.scoringPlay)
