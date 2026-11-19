@@ -1,0 +1,35 @@
+name: CLUTCH data.js — 날짜 블록 일일 갱신
+
+# 매일 05:30 KST (= 20:30 UTC 전날) 오늘~+6일 경기 카드(일정·전적·배당·프리뷰)를 새로 만들고,
+# 오래된 날짜 블록을 정리합니다. 사이트가 비지 않게 하는 본체입니다.
+on:
+  schedule:
+    - cron: "30 20 * * *"   # UTC 20:30 = KST 05:30 (다음 날)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clutch-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 날짜 블록 재생성 (NBA·축구·배구)
+        env:
+          CLUTCH_CACHE_DIR: ${{ runner.temp }}/clutch-cache
+          CLUTCH_RETRIES: "3"
+          CLUTCH_DAYS_AHEAD: "6"
+          CLUTCH_KEEP_PAST: "3"
+        run: python3 tools/auto_update.py --mode daily
+
+      - name: 바뀐 경우에만 커밋·푸시
+        run: bash tools/commit_data.sh daily

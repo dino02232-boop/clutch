@@ -1,0 +1,33 @@
+name: CLUTCH data.js — 경기 결과 자동 갱신
+
+# 30분마다(UTC·KST 모두 30분 간격이라 시차 영향 없음) 이미 시작한 경기의 결과·상태를 ESPN에서
+# 다시 받아 data.js 에 반영합니다. 바뀐 내용이 있을 때만 커밋·푸시합니다.
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: clutch-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 결과 갱신 (data.js)
+        env:
+          CLUTCH_CACHE_DIR: ${{ runner.temp }}/clutch-cache
+          CLUTCH_RETRIES: "3"
+        run: python3 tools/auto_update.py --mode results
+
+      - name: 바뀐 경우에만 커밋·푸시
+        run: bash tools/commit_data.sh results
