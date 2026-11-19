@@ -201,6 +201,8 @@
 
   /* ── 주소(해시) ↔ 화면 ───────────────────────────────── */
   // #             → 홈
+  // #all          → 선택 날짜의 전체 종목 경기 목록
+  // #all/<id>     → 전체 목록 + 그 경기 박스 펼침
   // #soccer       → 축구 일정 목록
   // #soccer/<id>  → 축구 일정 목록 + 그 경기 박스 펼침
   function parseRoute() {
@@ -212,6 +214,11 @@
       if (favoriteOpenId && !gameEntry(favoriteOpenId)) favoriteOpenId = null;
       return { sport: null, openId: favoriteOpenId, favorites: true };
     }
+    if (seg[0] === "all") {
+      var allOpenId = seg[1] ? decodeURIComponent(seg[1]) : null;
+      if (allOpenId && !gameEntry(allOpenId)) allOpenId = null;
+      return { sport: null, openId: allOpenId, favorites: false, allSports: true };
+    }
     var sport = seg[0];
     if (!isSport(sport)) return { sport: null, openId: null };
     var openId = seg[1] ? decodeURIComponent(seg[1]) : null;
@@ -220,11 +227,15 @@
   }
 
   function routeKey(r) {
-    return (r.favorites ? "favorites" : (r.sport || "")) + "|" + (r.openId || "");
+    return (r.favorites ? "favorites" : (r.allSports ? "all" : (r.sport || ""))) + "|" + (r.openId || "");
   }
 
   function stateRoute() {
-    return { sport: state.sport, openId: state.openId, favorites: state.favorites };
+    return { sport: state.sport, openId: state.openId, favorites: state.favorites, allSports: state.allSports };
+  }
+
+  function stateRoutePrefix() {
+    return state.favorites ? "favorites" : (state.allSports ? "all" : (state.sport || ""));
   }
 
   // file:// 에서 history API 가 막히는 브라우저가 있어 실패하면 해시만 바꾼다.
@@ -245,8 +256,9 @@
     // 기본 날짜: 오늘 브리핑이 있으면 오늘, 없으면 가장 가까운(첫) 브리핑 날짜
     day: DAYS.filter(function (d) { return d.date >= today; })[0] ?
       DAYS.filter(function (d) { return d.date >= today; })[0].date : DAYS[DAYS.length - 1].date,
-    sport: null,   // null = 홈(종목 선택)
+    sport: null,   // 종목 미선택 상태에서 홈 또는 전체 경기 목록을 표시
     favorites: false,
+    allSports: false,
     openId: null,  // 펼친 경기 id
     weekStart: null // 날짜 스트립에 보이는 주의 월요일(YYYY-MM-DD)
   };
@@ -306,11 +318,14 @@
 
     Array.prototype.forEach.call(elDates.querySelectorAll(".day-cell"), function (btn) {
       btn.addEventListener("click", function () {
-        if (state.day === btn.dataset.date) return;
+        if (state.day === btn.dataset.date && state.allSports && !state.favorites) return;
         state.day = btn.dataset.date;
         state.weekStart = mondayOf(state.day);
+        state.sport = null;
+        state.favorites = false;
+        state.allSports = true;
         state.openId = null;
-        writeHash(state.sport || "", true);
+        writeHash("all", true);
         render();
       });
     });
@@ -327,20 +342,26 @@
     }
     state.day = pick || monday;
     state.openId = null;
-    writeHash(state.sport || "", true);
+    writeHash(stateRoutePrefix(), true);
     render();
   }
 
   /* ── 종목 탭 ───────────────────────────────────────── */
   function renderTabs() {
     var games = gamesOf(state.day);
-    var home = state.sport === null && !state.favorites;
+    var home = state.sport === null && !state.favorites && !state.allSports;
     var favoriteCount = FAVORITES.length;
 
     // 홈은 종목을 고르는 화면이라 종목 탭 줄은 숨긴다(같은 선택지를 두 번 보여주지 않도록).
     elTabs.hidden = home;
 
-    elTabs.innerHTML = SPORTS.map(function (s) {
+    elTabs.innerHTML = '<button class="tab" type="button" role="tab" id="tab-all" data-all="true"' +
+      ' aria-selected="' + !!state.allSports + '" aria-controls="panel"' +
+      ' aria-label="전체 ' + games.length + '경기" tabindex="' + (state.allSports ? "0" : (home ? "0" : "-1")) + '">' +
+      '<span class="em" aria-hidden="true">🗓️</span>전체' +
+      (games.length ? '<span class="cnt">' + games.length + "</span>" : "") +
+      "</button>" +
+      SPORTS.map(function (s) {
       var n = games.filter(function (g) { return g.sport === s.id; }).length;
       var on = s.id === state.sport;
       return '<button class="tab" type="button" role="tab" id="tab-' + esc(s.id) + '"' +
@@ -360,7 +381,8 @@
 
     Array.prototype.forEach.call(elTabs.querySelectorAll(".tab"), function (tab) {
       tab.addEventListener("click", function () {
-        if (tab.dataset.favorites) selectFavorites();
+        if (tab.dataset.all) selectAll();
+        else if (tab.dataset.favorites) selectFavorites();
         else selectSport(tab.dataset.sport);
       });
       tab.addEventListener("keydown", function (e) {
@@ -373,7 +395,8 @@
         else if (e.key === "End") next = tabs[tabs.length - 1];
         if (!next) return;
         e.preventDefault();
-        if (next.dataset.favorites) selectFavorites();
+        if (next.dataset.all) selectAll();
+        else if (next.dataset.favorites) selectFavorites();
         else selectSport(next.dataset.sport);
         elTabs.querySelector('.tab[aria-selected="true"]').focus();
       });
@@ -383,9 +406,10 @@
   /* ── 화면 이동 ─────────────────────────────────────── */
   function selectSport(id) {
     if (!isSport(id)) return;
-    var same = state.sport === id && !state.openId && !state.favorites;
+    var same = state.sport === id && !state.openId && !state.favorites && !state.allSports;
     state.sport = id;
     state.favorites = false;
+    state.allSports = false;
     state.openId = null;
     if (!same) writeHash(id, false);
     render();
@@ -394,10 +418,22 @@
     if (id === "volleyball") pollKovoLive(false);
   }
 
+  function selectAll() {
+    var same = state.allSports && !state.openId;
+    state.sport = null;
+    state.favorites = false;
+    state.allSports = true;
+    state.openId = null;
+    if (!same) writeHash("all", false);
+    render();
+    window.scrollTo(0, 0);
+  }
+
   function selectFavorites() {
     var same = state.favorites && !state.openId;
     state.sport = null;
     state.favorites = true;
+    state.allSports = false;
     state.openId = null;
     if (!same) writeHash("favorites", false);
     render();
@@ -405,9 +441,10 @@
   }
 
   function goHome() {
-    var same = state.sport === null && !state.favorites;
+    var same = state.sport === null && !state.favorites && !state.allSports;
     state.sport = null;
     state.favorites = false;
+    state.allSports = false;
     state.openId = null;
     if (!same) writeHash("", false);
     render();
@@ -421,6 +458,7 @@
 
     state.sport = r.sport;
     state.favorites = !!r.favorites;
+    state.allSports = !!r.allSports;
     state.openId = r.openId;
     if (r.openId) {
       var e = gameEntry(r.openId);
@@ -1074,11 +1112,11 @@
     if (willOpen) {
       openItem(item);
       state.openId = id;
-      writeHash((state.favorites ? "favorites" : state.sport) + "/" + id, true);
+      writeHash(stateRoutePrefix() + "/" + id, true);
     } else {
       closeItem(item);
       state.openId = null;
-      writeHash(state.favorites ? "favorites" : (state.sport || ""), true);
+      writeHash(stateRoutePrefix(), true);
     }
   }
 
@@ -1249,11 +1287,11 @@
 
   /* ── 일정 목록 화면 ─────────────────────────────────── */
   function renderSchedule() {
-    var games = gamesIn(state.day, state.sport);
+    var games = state.allSports ? gamesOf(state.day) : gamesIn(state.day, state.sport);
 
     if (!games.length) {
       elList.innerHTML = "";
-      showEmpty(emptyState(state.day, state.sport));
+      showEmpty(emptyState(state.day, state.allSports ? null : state.sport));
       return;
     }
 
@@ -1342,7 +1380,8 @@
   /* ── 렌더 ──────────────────────────────────────────── */
   function render() {
     var isFavorites = !!state.favorites;
-    var isHome = state.sport === null && !isFavorites;
+    var isAll = !!state.allSports;
+    var isHome = state.sport === null && !isFavorites && !isAll;
 
     if (elWeek) elWeek.hidden = isFavorites;
 
@@ -1373,6 +1412,11 @@
       elTitle.textContent = "즐겨찾기";
       elHomeLead.hidden = true;
       renderFavorites();
+    } else if (isAll) {
+      elBack.hidden = false;
+      elTitle.innerHTML = "<em>" + longDate(state.day) + "</em> 전체 · " + gamesOf(state.day).length + "경기";
+      elHomeLead.hidden = true;
+      renderSchedule();
     } else {
       elBack.hidden = false;
       elTitle.innerHTML = "<em>" + longDate(state.day) + "</em> " + esc(sportMeta(state.sport).name) +
@@ -2806,6 +2850,15 @@
       }
       return;
     }
+    if (r.allSports) {
+      state.allSports = true;
+      state.openId = r.openId;
+      if (r.openId) {
+        var allEntry = gameEntry(r.openId);
+        if (allEntry) state.day = allEntry.date;
+      }
+      return;
+    }
     if (!r.sport) return;
     state.sport = r.sport;
     if (r.openId) {
@@ -2843,7 +2896,7 @@
     if (type === "day") {
       state.day = id;
       state.openId = null;
-      writeHash(state.sport || "", true);
+      writeHash(stateRoutePrefix(), true);
       render();
     } else if (type === "sport") {
       selectSport(id);
