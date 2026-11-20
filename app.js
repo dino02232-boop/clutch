@@ -934,13 +934,21 @@
     var carry = carryPool.slice().sort(function (a, b) {
       return (b.pts + Math.max(0, b.delta) * .35) - (a.pts + Math.max(0, a.delta) * .35);
     })[0];
-    var low = candidates.filter(function (p) {
-      return p.name !== carry.name && (p.delta <= -5 || (p.min >= 15 && p.fgPct != null && p.fgPct < .35) || (p.min >= 15 && p.turnovers >= 4));
-    }).sort(function (a, b) {
+    function underperformed(p) {
+      return p.delta <= -5 || (p.min >= 15 && p.fgPct != null && p.fgPct < .35) || (p.min >= 15 && p.turnovers >= 4);
+    }
+    function lowRank(a, b) {
       var scoreA = Math.min(0, a.delta) - (a.fgPct != null && a.fgPct < .35 ? 3 : 0) - Math.max(0, a.turnovers - 3);
       var scoreB = Math.min(0, b.delta) - (b.fgPct != null && b.fgPct < .35 ? 3 : 0) - Math.max(0, b.turnovers - 3);
       return scoreA - scoreB;
-    })[0] || null;
+    }
+    var lowPool = candidates.filter(function (p) {
+      return p.name !== carry.name && !p.win && underperformed(p);
+    });
+    if (!lowPool.length) {
+      lowPool = candidates.filter(function (p) { return p.name !== carry.name && underperformed(p); });
+    }
+    var low = lowPool.sort(lowRank)[0] || null;
 
     function factsFor(p, under) {
       var facts = [];
