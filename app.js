@@ -839,7 +839,8 @@
     return '<section class="tblock ' + side + '" data-team-name="' + esc(t.name || "") + '">' +
       '<div class="tb-head">' +
         '<span class="tb-side">' + (side === "home" ? "홈" : "원정") + "</span>" +
-        '<b class="tb-name">' + esc(t.name || t.abbr || "") + "</b>" +
+        '<a class="tb-name" href="team.html?team=' + encodeURIComponent(t.name || t.abbr || "") + '" title="' + esc((t.name || t.abbr || "") + " 팀 페이지") + '" style="color:inherit;text-decoration:none">' + esc(t.name || t.abbr || "") + "</a>" +
+        '<span aria-hidden="true" style="flex:0 0 auto;color:#9CA3AF;font-weight:800;font-size:12px;line-height:1;margin-top:-1px">›</span>' +
         (t.abbr ? '<span class="tb-abbr">' + esc(t.abbr) + "</span>" : "") +
         (t.streak ? '<span class="tb-streak">' + esc(t.streak) + "</span>" : "") +
       "</div>" +
