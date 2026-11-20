@@ -220,7 +220,8 @@
   .st-tbl-team .c-pct { width: 36px; }
   .st-tbl-team.is-nba .c-gd { width: 34px; }
   .st-lb .c-rk { width: 22px; }
-  .st-lb .c-rec { width: 64px; }
+  /* '13.9리바운드' 가 …로 잘리지 않게 */
+  .st-lb .c-rec { width: 74px; }
   .tlogo { flex-basis: 16px; width: 16px; height: 16px; }
   .pl-row .pl-face { flex-basis: 24px; }
 }
