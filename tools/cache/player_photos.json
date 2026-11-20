@@ -1,0 +1,1787 @@
+{
+ "players": {
+  "adam daghim": {
+   "name": "Adam Daghim",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/FC_Salzburg_vs._Atletico_Madrid_%282025-01-29_UEFA_Championsleague%29_43_%28cropped%29.jpg/250px-FC_Salzburg_vs._Atletico_Madrid_%282025-01-29_UEFA_Championsleague%29_43_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Adam Daghim",
+   "espnId": "338854",
+   "checked": "2026-11-20T23:23:22+09:00"
+  },
+  "aden mccarthy": {
+   "name": "Aden McCarthy",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aden_McCarthy_in_October_2026%2C_as_a_player_of_Sabah_04.jpg?width=200",
+   "src": "wikidata",
+   "conf": "club",
+   "title": "Aden McCarthy",
+   "espnId": "332563",
+   "checked": "2026-11-20T23:32:13+09:00"
+  },
+  "adil aouchiche": {
+   "name": "Adil Aouchiche",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/2019-07-17_SG_Dynamo_Dresden_vs._Paris_Saint-Germain_by_Sandro_Halank%E2%80%93157_%28cropped%29.jpg/250px-2019-07-17_SG_Dynamo_Dresden_vs._Paris_Saint-Germain_by_Sandro_Halank%E2%80%93157_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Adil Aouchiche",
+   "espnId": "290166",
+   "checked": "2026-11-20T23:25:45+09:00"
+  },
+  "adrien rabiot": {
+   "name": "Adrien Rabiot",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Adrien_Rabiot_France_v_Senegal_16_June_2026-253.jpg/250px-Adrien_Rabiot_France_v_Senegal_16_June_2026-253.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Adrien Rabiot",
+   "espnId": "176203",
+   "checked": "2026-11-20T23:28:55+09:00"
+  },
+  "adrián niño": {
+   "name": "Adrián Niño",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/v6e47u1784904389.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Adrián Niño",
+   "espnId": "373542",
+   "checked": "2026-11-20T23:29:05+09:00"
+  },
+  "albert grønbaek": {
+   "name": "Albert Grønbaek",
+   "photo": null,
+   "src": "none",
+   "conf": "",
+   "title": null,
+   "espnId": "297750",
+   "checked": "2026-11-20T23:28:51+09:00"
+  },
+  "alberto moleiro": {
+   "name": "Alberto Moleiro",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/j64kp01701093262.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Alberto Moleiro",
+   "espnId": "307390",
+   "checked": "2026-11-20T23:28:37+09:00"
+  },
+  "alexander isak": {
+   "name": "Alexander Isak",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg/250px-Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Alexander Isak",
+   "espnId": "235662",
+   "checked": "2026-11-20T23:28:51+09:00"
+  },
+  "alexey batrakov": {
+   "name": "Alexey Batrakov",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Aleksey_Batrakov.jpg/250px-Aleksey_Batrakov.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Aleksey Batrakov",
+   "espnId": "355113",
+   "checked": "2026-11-20T23:30:53+09:00"
+  },
+  "alexis mac allister": {
+   "name": "Alexis Mac Allister",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Alexis_Mac_Allister_Argentina_v_Spain_19_July_2026-162_%28cropped%29.jpg/250px-Alexis_Mac_Allister_Argentina_v_Spain_19_July_2026-162_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Alexis Mac Allister",
+   "espnId": "249299",
+   "checked": "2026-11-20T23:32:35+09:00"
+  },
+  "andy diouf": {
+   "name": "Andy Diouf",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Andy_Diouf_ASSE_RCL_2425.jpg/250px-Andy_Diouf_ASSE_RCL_2425.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Andy Diouf",
+   "espnId": "319167",
+   "checked": "2026-11-20T23:34:03+09:00"
+  },
+  "angelo stiller": {
+   "name": "Angelo Stiller",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Angelo_Stiller_Ecuador_v_Germany_25_June_2026-233_%28cropped%29.jpg/250px-Angelo_Stiller_Ecuador_v_Germany_25_June_2026-233_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Angelo Stiller",
+   "espnId": "290232",
+   "checked": "2026-11-20T23:25:49+09:00"
+  },
+  "ante budimir": {
+   "name": "Ante Budimir",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg/250px-Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Ante Budimir",
+   "espnId": "207288",
+   "checked": "2026-11-20T23:29:01+09:00"
+  },
+  "antoine hainaut": {
+   "name": "Antoine Hainaut",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/yg9jf41718882463.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Antoine Hainaut",
+   "espnId": "346916",
+   "checked": "2026-11-20T23:26:25+09:00"
+  },
+  "antonio nusa": {
+   "name": "Antonio Nusa",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Antonio_Nusa_Morocco_v_Norway_7_June_2026-110_%28cropped%29.jpg/250px-Antonio_Nusa_Morocco_v_Norway_7_June_2026-110_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Antonio Nusa",
+   "espnId": "319368",
+   "checked": "2026-11-20T23:23:02+09:00"
+  },
+  "antonio raimondo": {
+   "name": "Antonio Raimondo",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/9ph2tj1678801932.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Antonio Raimondo",
+   "espnId": "319265",
+   "checked": "2026-11-20T23:28:58+09:00"
+  },
+  "antony": {
+   "name": "Antony",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/281558.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "281558",
+   "checked": "2026-11-20T23:31:55+09:00"
+  },
+  "archie brown": {
+   "name": "Archie Brown",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Archie_Brown_3_Fenerbah%C3%A7e_20260805_%289%29_%28cropped%29.JPG/250px-Archie_Brown_3_Fenerbah%C3%A7e_20260805_%289%29_%28cropped%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Archie Brown (footballer)",
+   "espnId": "320982",
+   "checked": "2026-11-20T23:32:29+09:00"
+  },
+  "arda güler": {
+   "name": "Arda Güler",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Arda_G%C3%BCler_2025_%28cropped%29.jpg/250px-Arda_G%C3%BCler_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Arda Güler",
+   "espnId": "310452",
+   "checked": "2026-11-20T23:26:16+09:00"
+  },
+  "armando obispo": {
+   "name": "Armando Obispo",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/245918.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "245918",
+   "checked": "2026-11-20T23:32:09+09:00"
+  },
+  "ayoze pérez": {
+   "name": "Ayoze Pérez",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Ayoze_Perez_20150710.jpg/250px-Ayoze_Perez_20150710.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Ayoze Pérez",
+   "espnId": "192133",
+   "checked": "2026-11-20T23:32:22+09:00"
+  },
+  "brahim díaz": {
+   "name": "Brahim Díaz",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Brahim_Diaz_Morocco_v_Norway_7_June_2026-36_%28cropped_3-4%29.jpg/250px-Brahim_Diaz_Morocco_v_Norway_7_June_2026-36_%28cropped_3-4%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Brahim Díaz",
+   "espnId": "246532",
+   "checked": "2026-11-20T23:32:07+09:00"
+  },
+  "brandon thomas-asante": {
+   "name": "Brandon Thomas-Asante",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Brandon_Thomas-Asante_England_v_Ghana_23_June_2026-109.jpg/250px-Brandon_Thomas-Asante_England_v_Ghana_23_June_2026-109.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Brandon Thomas-Asante",
+   "espnId": "240495",
+   "checked": "2026-11-20T23:23:50+09:00"
+  },
+  "bremer": {
+   "name": "Bremer",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/icn9je1716707438.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": null,
+   "espnId": "258307",
+   "checked": "2026-11-20T23:26:21+09:00"
+  },
+  "bryan mbeumo": {
+   "name": "Bryan Mbeumo",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bryan_Mbeumo_00-02-31.18.png/250px-Bryan_Mbeumo_00-02-31.18.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Bryan Mbeumo",
+   "espnId": "271170",
+   "checked": "2026-11-20T23:28:53+09:00"
+  },
+  "carlos augusto": {
+   "name": "Carlos Augusto",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_15.jpg/250px-FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_15.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Carlos Augusto (footballer)",
+   "espnId": "271769",
+   "checked": "2026-11-20T23:34:31+09:00"
+  },
+  "carlos soler": {
+   "name": "Carlos Soler",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Carlos_Soler_2020_%28cropped%29.png/250px-Carlos_Soler_2020_%28cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Carlos Soler",
+   "espnId": "235072",
+   "checked": "2026-11-20T23:28:30+09:00"
+  },
+  "charles de ketelaere": {
+   "name": "Charles De Ketelaere",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Charles_De_Ketelaere_USMNT_v_Belgium_Mar_28_2026-76_%28cropped%29.jpg/250px-Charles_De_Ketelaere_USMNT_v_Belgium_Mar_28_2026-76_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Charles De Ketelaere",
+   "espnId": "296319",
+   "checked": "2026-11-20T23:29:08+09:00"
+  },
+  "cher ndour": {
+   "name": "Cher Ndour",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Cher_Ndour.jpg/250px-Cher_Ndour.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Cher Ndour",
+   "espnId": "360061",
+   "checked": "2026-11-20T23:29:19+09:00"
+  },
+  "christopher nkunku": {
+   "name": "Christopher Nkunku",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3321_by_Stepro_%28cropped%29.jpg/250px-2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3321_by_Stepro_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Christopher Nkunku",
+   "espnId": "222176",
+   "checked": "2026-11-20T23:23:01+09:00"
+  },
+  "ché adams": {
+   "name": "Ché Adams",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Che_Adams_Scotland_v_Bolivia_6_June_2026-37_%28cropped%29.jpg/250px-Che_Adams_Scotland_v_Bolivia_6_June_2026-37_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Ché Adams",
+   "espnId": "213725",
+   "checked": "2026-11-20T23:26:11+09:00"
+  },
+  "cole palmer": {
+   "name": "Cole Palmer",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cole_Palmer_2025_FIFA_Club_World_Cup_Final.jpg/250px-Cole_Palmer_2025_FIFA_Club_World_Cup_Final.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Cole Palmer",
+   "espnId": "296395",
+   "checked": "2026-11-20T23:23:56+09:00"
+  },
+  "cucho hernández": {
+   "name": "Cucho Hernández",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/336809.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "336809",
+   "checked": "2026-11-20T23:25:44+09:00"
+  },
+  "daichi kamada": {
+   "name": "Daichi Kamada",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/2022128173756_2022-05-08_Fussball_Eintracht_Frankfurt_vs_Borussia_M%C3%B6nchengladbach_-_Sven_-_1D_X_MK_II_-_0725_-_AK8I7460_%28Daichi_Kamada_cropped%29.jpg/250px-2022128173756_2022-05-08_Fussball_Eintracht_Frankfurt_vs_Borussia_M%C3%B6nchengladbach_-_Sven_-_1D_X_MK_II_-_0725_-_AK8I7460_%28Daichi_Kamada_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Daichi Kamada",
+   "espnId": "219362",
+   "checked": "2026-11-20T23:23:52+09:00"
+  },
+  "daniel maldini": {
+   "name": "Daniel Maldini",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/afbju41602959964.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Daniel Maldini",
+   "espnId": "290545",
+   "checked": "2026-11-20T23:22:46+09:00"
+  },
+  "danijel sturm": {
+   "name": "Danijel Sturm",
+   "photo": null,
+   "src": "none",
+   "conf": "club",
+   "title": "Danijel Šturm",
+   "espnId": "322169",
+   "checked": "2026-11-20T23:32:16+09:00"
+  },
+  "danilo veiga": {
+   "name": "Danilo Veiga",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/giruah1759694055.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Danilo Veiga",
+   "espnId": "344844",
+   "checked": "2026-11-20T23:22:57+09:00"
+  },
+  "davide frattesi": {
+   "name": "Davide Frattesi",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_14_%28cropped%29.jpg/250px-FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_14_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Davide Frattesi",
+   "espnId": "250850",
+   "checked": "2026-11-20T23:22:50+09:00"
+  },
+  "davinson sánchez": {
+   "name": "Davinson Sánchez",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/D%C3%A1vinson_S%C3%A1nchez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg/250px-D%C3%A1vinson_S%C3%A1nchez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Davinson Sánchez",
+   "espnId": "197105",
+   "checked": "2026-11-20T23:30:54+09:00"
+  },
+  "declan rice": {
+   "name": "Declan Rice",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Declan_Rice_England_v_Ghana_23_June_2026-150.jpg/250px-Declan_Rice_England_v_Ghana_23_June_2026-150.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Declan Rice",
+   "espnId": "238262",
+   "checked": "2026-11-20T23:25:18+09:00"
+  },
+  "deniz undav": {
+   "name": "Deniz Undav",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Deniz_Undav_Ecuador_v_Germany_25_June_2026-203_%28cropped%29.jpg/250px-Deniz_Undav_Ecuador_v_Germany_25_June_2026-203_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Deniz Undav",
+   "espnId": "273300",
+   "checked": "2026-11-20T23:33:28+09:00"
+  },
+  "dominic calvert-lewin": {
+   "name": "Dominic Calvert-Lewin",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Dominic_Calvert-Lewin_13092025_%285%29.jpg/250px-Dominic_Calvert-Lewin_13092025_%285%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Dominic Calvert-Lewin",
+   "espnId": "197717",
+   "checked": "2026-11-20T23:23:57+09:00"
+  },
+  "donyell malen": {
+   "name": "Donyell Malen",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/259481.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "259481",
+   "checked": "2026-11-20T23:25:14+09:00"
+  },
+  "eberechi eze": {
+   "name": "Eberechi Eze",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Eberechi_Eze_England_v_Ghana_23_June_2026-039.jpg/250px-Eberechi_Eze_England_v_Ghana_23_June_2026-039.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Eberechi Eze",
+   "espnId": "251400",
+   "checked": "2026-11-20T23:31:56+09:00"
+  },
+  "emmanuel dennis ayaosi": {
+   "name": "Emmanuel Dennis Ayaosi",
+   "photo": null,
+   "src": "none",
+   "conf": "",
+   "title": null,
+   "espnId": "3098601",
+   "checked": "2026-11-20T23:32:19+09:00"
+  },
+  "enzo le fée": {
+   "name": "Enzo Le Fée",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Enzo_Le_F%C3%A9e_SAFC_August_2025.jpg/250px-Enzo_Le_F%C3%A9e_SAFC_August_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Enzo Le Fée",
+   "espnId": "288340",
+   "checked": "2026-11-20T23:24:05+09:00"
+  },
+  "erling haaland": {
+   "name": "Erling Haaland",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg/250px-Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Erling Haaland",
+   "espnId": "253989",
+   "checked": "2026-11-20T23:22:36+09:00"
+  },
+  "ermedin demirovic": {
+   "name": "Ermedin Demirovic",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/ahykd01778543129.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Ermedin Demirović",
+   "espnId": "269136",
+   "checked": "2026-11-20T23:25:48+09:00"
+  },
+  "evanilson": {
+   "name": "Evanilson",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Evanilson_29122024_%281%29.jpg/250px-Evanilson_29122024_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Evanilson (footballer, born 1999)",
+   "espnId": "102368",
+   "checked": "2026-11-20T23:24:01+09:00"
+  },
+  "fabian rieder": {
+   "name": "Fabian Rieder",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/xcrzvk1629964112.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Fabian Rieder",
+   "espnId": "308908",
+   "checked": "2026-11-20T23:28:48+09:00"
+  },
+  "fabián ruiz": {
+   "name": "Fabián Ruiz",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Fabian_Ruiz_Argentina_v_Spain_19_July_2026-315_%28cropped%29.jpg/250px-Fabian_Ruiz_Argentina_v_Spain_19_July_2026-315_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Fabián Ruiz",
+   "espnId": "214596",
+   "checked": "2026-11-20T23:33:04+09:00"
+  },
+  "federico bernardeschi": {
+   "name": "Federico Bernardeschi",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/180956.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "180956",
+   "checked": "2026-11-20T23:28:00+09:00"
+  },
+  "felix nmecha": {
+   "name": "Felix Nmecha",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Felix_Nmecha_Ecuador_v_Germany_25_June_2026-150.jpg/250px-Felix_Nmecha_Ecuador_v_Germany_25_June_2026-150.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Felix Nmecha",
+   "espnId": "281122",
+   "checked": "2026-11-20T23:22:58+09:00"
+  },
+  "fer niño": {
+   "name": "Fer Niño",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/eju2mp1609280660.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Fer Niño",
+   "espnId": "301684",
+   "checked": "2026-11-20T23:31:35+09:00"
+  },
+  "ferran jutglà": {
+   "name": "Ferran Jutglà",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Ferran_Jutgl%C3%A0_-_UE_Sant_Andreu.jpg/250px-Ferran_Jutgl%C3%A0_-_UE_Sant_Andreu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Ferran Jutglà",
+   "espnId": "279904",
+   "checked": "2026-11-20T23:26:16+09:00"
+  },
+  "florian thauvin": {
+   "name": "Florian Thauvin",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/FRA-ARG_%286%29.jpg/250px-FRA-ARG_%286%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Florian Thauvin",
+   "espnId": "156898",
+   "checked": "2026-11-20T23:32:12+09:00"
+  },
+  "florian wirtz": {
+   "name": "Florian Wirtz",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg/250px-Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Florian Wirtz",
+   "espnId": "303748",
+   "checked": "2026-11-20T23:28:52+09:00"
+  },
+  "franco mastantuono": {
+   "name": "Franco Mastantuono",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Franco_Mastantuono_in_2025_%28cropped%29.jpg/250px-Franco_Mastantuono_in_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Franco Mastantuono",
+   "espnId": "376473",
+   "checked": "2026-11-20T23:29:18+09:00"
+  },
+  "fredrik sjøvold": {
+   "name": "Fredrik Sjøvold",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/2567d91762291432.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Fredrik Sjøvold",
+   "espnId": "333755",
+   "checked": "2026-11-20T23:31:42+09:00"
+  },
+  "fábio silva": {
+   "name": "Fábio Silva",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Fabio_Silva_%28cropped%29.jpg/250px-Fabio_Silva_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Fábio Silva (footballer, born 2002)",
+   "espnId": "291629",
+   "checked": "2026-11-20T23:31:59+09:00"
+  },
+  "gabri veiga": {
+   "name": "Gabri Veiga",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/0dt8kc1699132653.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Gabri Veiga",
+   "espnId": "307381",
+   "checked": "2026-11-20T23:32:03+09:00"
+  },
+  "georges mikautadze": {
+   "name": "Georges Mikautadze",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Mikautadze_asse_ol_2425.png/250px-Mikautadze_asse_ol_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Georges Mikautadze",
+   "espnId": "300002",
+   "checked": "2026-11-20T23:26:27+09:00"
+  },
+  "giorgi kvernadze": {
+   "name": "Giorgi Kvernadze",
+   "photo": null,
+   "src": "none",
+   "conf": "club",
+   "title": "Giorgi Kvernadze",
+   "espnId": "360714",
+   "checked": "2026-11-20T23:29:00+09:00"
+  },
+  "giovanni fabbian": {
+   "name": "Giovanni Fabbian",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Giovanni_Fabbian_25072026_%282%29.jpg/250px-Giovanni_Fabbian_25072026_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Giovanni Fabbian",
+   "espnId": "323118",
+   "checked": "2026-11-20T23:25:14+09:00"
+  },
+  "gjivai zechiël": {
+   "name": "Gjivai Zechiël",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/365021.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "365021",
+   "checked": "2026-11-20T23:32:00+09:00"
+  },
+  "gleiker mendoza": {
+   "name": "Gleiker Mendoza",
+   "photo": null,
+   "src": "none",
+   "conf": "club",
+   "title": "Gleiker Mendoza",
+   "espnId": "382379",
+   "checked": "2026-11-20T23:32:25+09:00"
+  },
+  "gustavo varela": {
+   "name": "Gustavo Varela",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Gustavo_Varela%2C_Monza_vs._Sassuolo_2026-09-18_%28cropped%29.jpg/250px-Gustavo_Varela%2C_Monza_vs._Sassuolo_2026-09-18_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Gustavo Varela (footballer, born 2005)",
+   "espnId": "384482",
+   "checked": "2026-11-20T23:29:15+09:00"
+  },
+  "harry kane": {
+   "name": "Harry Kane",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Harry_Kane_England_v_Ghana_23_June_2026-024_%28cropped%29.jpg/250px-Harry_Kane_England_v_Ghana_23_June_2026-024_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Harry Kane",
+   "espnId": "142200",
+   "checked": "2026-11-20T23:21:24+09:00"
+  },
+  "harvey barnes": {
+   "name": "Harvey Barnes",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Harvey_Barnes_and_Rodrigo_Muniz_24052026_%281%29.jpg/250px-Harvey_Barnes_and_Rodrigo_Muniz_24052026_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Harvey Barnes",
+   "espnId": "243386",
+   "checked": "2026-11-20T23:25:16+09:00"
+  },
+  "hassane kamara": {
+   "name": "Hassane Kamara",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Lens_-_Nice_%2823-01-2021%29_51.jpg/250px-Lens_-_Nice_%2823-01-2021%29_51.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Hassane Kamara",
+   "espnId": "193919",
+   "checked": "2026-11-20T23:28:03+09:00"
+  },
+  "hugo álvarez": {
+   "name": "Hugo Álvarez",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/6fz2p11723537408.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Hugo Álvarez (footballer, born 2003)",
+   "espnId": "188391",
+   "checked": "2026-11-20T23:26:19+09:00"
+  },
+  "hákon haraldsson": {
+   "name": "Hákon Haraldsson",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/RC_Lens_-_Lille_OSC_%2808-10-2023%29_17_%28cropped%29.jpg/250px-RC_Lens_-_Lille_OSC_%2808-10-2023%29_17_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Hákon Haraldsson",
+   "espnId": "318779",
+   "checked": "2026-11-20T23:33:03+09:00"
+  },
+  "igor thiago": {
+   "name": "Igor Thiago",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Igor_Thiago_Brazil_V_Morocco_13_June_2026-120_%28cropped%29.jpg/250px-Igor_Thiago_Brazil_V_Morocco_13_June_2026-120_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Igor Thiago",
+   "espnId": "301894",
+   "checked": "2026-11-20T23:30:30+09:00"
+  },
+  "iliman ndiaye": {
+   "name": "Iliman Ndiaye",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Iliman_Ndiaye_France_v_Senegal_16_June_2026-243.jpg/250px-Iliman_Ndiaye_France_v_Senegal_16_June_2026-243.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Iliman Ndiaye",
+   "espnId": "268641",
+   "checked": "2026-11-20T23:32:05+09:00"
+  },
+  "isaac romero": {
+   "name": "Isaac Romero",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/izld8j1706258001.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Isaac Romero",
+   "espnId": "365821",
+   "checked": "2026-11-20T23:25:40+09:00"
+  },
+  "isaque": {
+   "name": "Isaque",
+   "photo": null,
+   "src": "none",
+   "conf": "footballer",
+   "title": "Isaque",
+   "espnId": "382970",
+   "checked": "2026-11-20T23:32:28+09:00"
+  },
+  "isco": {
+   "name": "Isco",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Isco_2018.jpg/250px-Isco_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Isco",
+   "espnId": "143564",
+   "checked": "2026-11-20T23:31:55+09:00"
+  },
+  "ivan lepinjica": {
+   "name": "Ivan Lepinjica",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ivan_Lepinjica_in_October_2026%2C_as_a_player_of_Sabah_02.jpg?width=200",
+   "src": "wikidata",
+   "conf": "club",
+   "title": "Ivan Lepinjica",
+   "espnId": "260848",
+   "checked": "2026-11-20T23:32:14+09:00"
+  },
+  "iñigo vicente": {
+   "name": "Iñigo Vicente",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/9/9d/I%C3%B1igo_Vicente.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Iñigo Vicente",
+   "espnId": "284699",
+   "checked": "2026-11-20T23:28:29+09:00"
+  },
+  "jack rudoni": {
+   "name": "Jack Rudoni",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Jack_Rudoni.png/250px-Jack_Rudoni.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Jack Rudoni",
+   "espnId": "286967",
+   "checked": "2026-11-20T23:23:49+09:00"
+  },
+  "james tarkowski": {
+   "name": "James Tarkowski",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/James_Tarkowski_%28Oct_2017%29.jpg/250px-James_Tarkowski_%28Oct_2017%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "James Tarkowski",
+   "espnId": "155226",
+   "checked": "2026-11-20T23:30:52+09:00"
+  },
+  "jan paul van hecke": {
+   "name": "Jan Paul van Hecke",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/282583.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "282583",
+   "checked": "2026-11-20T23:23:52+09:00"
+  },
+  "janik haberer": {
+   "name": "Janik Haberer",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/20161011_U21_AUT_GER_9305.jpg/250px-20161011_U21_AUT_GER_9305.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Janik Haberer",
+   "espnId": "170604",
+   "checked": "2026-11-20T23:23:00+09:00"
+  },
+  "javi hernandez": {
+   "name": "Javi Hernandez",
+   "photo": null,
+   "src": "none",
+   "conf": "",
+   "title": null,
+   "espnId": "367946",
+   "checked": "2026-11-20T23:22:35+09:00"
+  },
+  "javier guerra": {
+   "name": "Javier Guerra",
+   "photo": null,
+   "src": "none",
+   "conf": "",
+   "title": null,
+   "espnId": "16340",
+   "checked": "2026-11-20T23:26:05+09:00"
+  },
+  "joaquin seys": {
+   "name": "Joaquin Seys",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Joaquin_Seys_Belgium_v_USA_6_July_2026-033.jpg/250px-Joaquin_Seys_Belgium_v_USA_6_July_2026-033.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Joaquin Seys",
+   "espnId": "363068",
+   "checked": "2026-11-20T23:32:33+09:00"
+  },
+  "jobe bellingham": {
+   "name": "Jobe Bellingham",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Jobe_Bellingham_Jan_2022.png/250px-Jobe_Bellingham_Jan_2022.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Jobe Bellingham",
+   "espnId": "324820",
+   "checked": "2026-11-20T23:22:59+09:00"
+  },
+  "joe scally": {
+   "name": "Joe Scally",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/272135.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "272135",
+   "checked": "2026-11-20T23:22:57+09:00"
+  },
+  "john mcginn": {
+   "name": "John McGinn",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/John_McGinn_Scotland_v_Bolivia_6_June_2026-2.jpg/250px-John_McGinn_Scotland_v_Bolivia_6_June_2026-2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "John McGinn",
+   "espnId": "162843",
+   "checked": "2026-11-20T23:24:04+09:00"
+  },
+  "jon ander olasagasti": {
+   "name": "Jon Ander Olasagasti",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/7bef8z1762461773.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Jon Ander Olasagasti",
+   "espnId": "317784",
+   "checked": "2026-11-20T23:31:32+09:00"
+  },
+  "josh king": {
+   "name": "Josh King",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Josh_King_01112025_%281%29.jpg/250px-Josh_King_01112025_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Josh King (footballer, born 2007)",
+   "espnId": "409541",
+   "checked": "2026-11-20T23:22:38+09:00"
+  },
+  "josip juranovic": {
+   "name": "Josip Juranovic",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Josip_Juranovic_2022.jpg/250px-Josip_Juranovic_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Josip Juranović",
+   "espnId": "222567",
+   "checked": "2026-11-20T23:23:00+09:00"
+  },
+  "josko gvardiol": {
+   "name": "Josko Gvardiol",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Josko_Gvardiol_Croatia_v_Portugal_2_July_2026-262.jpg/250px-Josko_Gvardiol_Croatia_v_Portugal_2_July_2026-262.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Joško Gvardiol",
+   "espnId": "299910",
+   "checked": "2026-11-20T23:22:36+09:00"
+  },
+  "josé antonio morente": {
+   "name": "José Antonio Morente",
+   "photo": null,
+   "src": "none",
+   "conf": "",
+   "title": null,
+   "espnId": "259916",
+   "checked": "2026-11-20T23:31:37+09:00"
+  },
+  "juan miranda": {
+   "name": "Juan Miranda",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Juan_Miranda_031019.jpg/250px-Juan_Miranda_031019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Juan Miranda (footballer)",
+   "espnId": "261616",
+   "checked": "2026-11-20T23:28:01+09:00"
+  },
+  "julio enciso": {
+   "name": "Julio Enciso",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Julio_Enciso_France_v_Paraguay_4_July_2026-039.jpg/250px-Julio_Enciso_France_v_Paraguay_4_July_2026-039.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Julio Enciso (footballer, born 2004)",
+   "espnId": "20975",
+   "checked": "2026-11-20T23:23:55+09:00"
+  },
+  "julián álvarez": {
+   "name": "Julián Álvarez",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Julian_Alvarez_Argentina_v_Spain_19_July_2026-052_%28cropped%29.jpg/250px-Julian_Alvarez_Argentina_v_Spain_19_July_2026-052_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Julián Alvarez",
+   "espnId": "277206",
+   "checked": "2026-11-20T23:33:30+09:00"
+  },
+  "junior adamu": {
+   "name": "Junior Adamu",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/FC_RB_Salzburg_gegen_FK_Austria_Wien_%282022-04-24%29_40.jpg/250px-FC_RB_Salzburg_gegen_FK_Austria_Wien_%282022-04-24%29_40.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Junior Adamu",
+   "espnId": "305957",
+   "checked": "2026-11-20T23:25:46+09:00"
+  },
+  "jurgen ekkelenkamp": {
+   "name": "Jurgen Ekkelenkamp",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/270817.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "270817",
+   "checked": "2026-11-20T23:28:02+09:00"
+  },
+  "kasper jørgensen": {
+   "name": "Kasper Jørgensen",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_RB_Salzburg_gegen_LASK_%282026-05-10_Bundesliga_%29_20.jpg?width=200",
+   "src": "wikidata",
+   "conf": "club",
+   "title": "Kasper Jørgensen (footballer)",
+   "espnId": "286853",
+   "checked": "2026-11-20T23:31:47+09:00"
+  },
+  "kevin de bruyne": {
+   "name": "Kevin De Bruyne",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg/250px-Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Kevin De Bruyne",
+   "espnId": "134947",
+   "checked": "2026-11-20T23:26:08+09:00"
+  },
+  "kevin schade": {
+   "name": "Kevin Schade",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Kevin_Schade_02082025_%281%29.jpg/250px-Kevin_Schade_02082025_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Kevin Schade",
+   "espnId": "310958",
+   "checked": "2026-11-20T23:30:29+09:00"
+  },
+  "kodai sano": {
+   "name": "Kodai Sano",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kodai_Sano.JPG?width=200",
+   "src": "wikidata",
+   "conf": "club",
+   "title": "Kodai Sano (footballer)",
+   "espnId": "341715",
+   "checked": "2026-11-20T23:32:09+09:00"
+  },
+  "kostas tsimikas": {
+   "name": "Kostas Tsimikas",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/2022-07-21_Fu%C3%9Fball%2C_M%C3%A4nner%2CFreundschaftsspiel%2C_RB_Leipzig_-_FC_Liverpool_1DX_2184_by_Stepro.jpg/250px-2022-07-21_Fu%C3%9Fball%2C_M%C3%A4nner%2CFreundschaftsspiel%2C_RB_Leipzig_-_FC_Liverpool_1DX_2184_by_Stepro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Kostas Tsimikas",
+   "espnId": "226177",
+   "checked": "2026-11-20T23:32:36+09:00"
+  },
+  "kylian mbappé": {
+   "name": "Kylian Mbappé",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg/250px-Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Kylian Mbappé",
+   "espnId": "231388",
+   "checked": "2026-11-20T23:26:15+09:00"
+  },
+  "lamine yamal": {
+   "name": "Lamine Yamal",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Lamine_Yamal_France_v_Spain_7.24.26-142.jpg/250px-Lamine_Yamal_France_v_Spain_7.24.26-142.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Lamine Yamal",
+   "espnId": "362150",
+   "checked": "2026-11-20T23:26:26+09:00"
+  },
+  "laurin curda": {
+   "name": "Laurin Curda",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/t020fi1773415009.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Laurin Curda",
+   "espnId": "364593",
+   "checked": "2026-11-20T23:23:16+09:00"
+  },
+  "leif davis": {
+   "name": "Leif Davis",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Davis_220826.jpg/250px-Davis_220826.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Leif Davis",
+   "espnId": "283086",
+   "checked": "2026-11-20T23:23:53+09:00"
+  },
+  "liam delap": {
+   "name": "Liam Delap",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Liam_Delap_in_2025.jpg/250px-Liam_Delap_in_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Liam Delap",
+   "espnId": "307114",
+   "checked": "2026-11-20T23:24:02+09:00"
+  },
+  "linton maina": {
+   "name": "Linton Maina",
+   "photo": null,
+   "src": "none",
+   "conf": "footballer",
+   "title": "Linton Maina",
+   "espnId": "231173",
+   "checked": "2026-11-20T23:26:00+09:00"
+  },
+  "lorenzo colombo": {
+   "name": "Lorenzo Colombo",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/8vq3vj1602959747.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Lorenzo Colombo",
+   "espnId": "297220",
+   "checked": "2026-11-20T23:28:45+09:00"
+  },
+  "lucas boyé": {
+   "name": "Lucas Boyé",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas_boye_celtic_aek.jpg?width=200",
+   "src": "wikidata",
+   "conf": "club",
+   "title": "Lucas Boyé",
+   "espnId": "207236",
+   "checked": "2026-11-20T23:22:39+09:00"
+  },
+  "luciano valente": {
+   "name": "Luciano Valente",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/319296.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "319296",
+   "checked": "2026-11-20T23:32:00+09:00"
+  },
+  "luis suárez": {
+   "name": "Luis Suárez",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Luis_Javier_Su%C3%A1rez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg/250px-Luis_Javier_Su%C3%A1rez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Luis Suárez (Colombian footballer)",
+   "espnId": "272722",
+   "checked": "2026-11-20T23:32:38+09:00"
+  },
+  "luka sucic": {
+   "name": "Luka Sucic",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Luka_Sucic_Croatia_v_Portugal_2_July_2026-062.jpg/250px-Luka_Sucic_Croatia_v_Portugal_2_July_2026-062.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Luka Sučić",
+   "espnId": "306263",
+   "checked": "2026-11-20T23:28:30+09:00"
+  },
+  "lukas petkov": {
+   "name": "Lukas Petkov",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Lukas_Petkov.jpg/250px-Lukas_Petkov.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Lukas Petkov",
+   "espnId": "310692",
+   "checked": "2026-11-20T23:23:06+09:00"
+  },
+  "maghnes akliouche": {
+   "name": "Maghnes Akliouche",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Maghnes_Akliouche_France_v_Senegal_16_June_2026-512.jpg/250px-Maghnes_Akliouche_France_v_Senegal_16_June_2026-512.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Maghnes Akliouche",
+   "espnId": "329690",
+   "checked": "2026-11-20T23:33:05+09:00"
+  },
+  "marco grüll": {
+   "name": "Marco Grüll",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Austria_national_under-21_football_team_-_Teamcamp_October_2019_%2831%29.jpg/250px-Austria_national_under-21_football_team_-_Teamcamp_October_2019_%2831%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Marco Grüll",
+   "espnId": "305853",
+   "checked": "2026-11-20T23:28:32+09:00"
+  },
+  "marcos llorente": {
+   "name": "Marcos Llorente",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Marcos_Llorente_France_v_Spain_7.24.26-020.jpg/250px-Marcos_Llorente_France_v_Spain_7.24.26-020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Marcos Llorente",
+   "espnId": "206474",
+   "checked": "2026-11-20T23:33:29+09:00"
+  },
+  "marcus tavernier": {
+   "name": "Marcus Tavernier",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Marcus_Tavernier_2022.jpg/250px-Marcus_Tavernier_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Marcus Tavernier",
+   "espnId": "243364",
+   "checked": "2026-11-20T23:23:59+09:00"
+  },
+  "marcus thuram": {
+   "name": "Marcus Thuram",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Marcus_Thuram_France_v_Senegal_16_June_2026-261_%28cropped%29.jpg/250px-Marcus_Thuram_France_v_Senegal_16_June_2026-261_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Marcus Thuram",
+   "espnId": "217331",
+   "checked": "2026-11-20T23:34:04+09:00"
+  },
+  "mariano díaz": {
+   "name": "Mariano Díaz",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Mariano_D%C3%ADaz%2C_Real_Madrid%2C_2022.jpg/250px-Mariano_D%C3%ADaz%2C_Real_Madrid%2C_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Mariano Díaz",
+   "espnId": "198832",
+   "checked": "2026-11-20T23:22:40+09:00"
+  },
+  "mario soriano carreno": {
+   "name": "Mario Soriano Carreno",
+   "photo": null,
+   "src": "none",
+   "conf": "",
+   "title": null,
+   "espnId": "297353",
+   "checked": "2026-11-20T23:22:43+09:00"
+  },
+  "martin ødegaard": {
+   "name": "Martin Ødegaard",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Martin_Odegaard_France_v_Norway_26_June_26-014.jpg/250px-Martin_Odegaard_France_v_Norway_26_June_26-014.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Martin Ødegaard",
+   "espnId": "203669",
+   "checked": "2026-11-20T23:25:17+09:00"
+  },
+  "martín satriano": {
+   "name": "Martín Satriano",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/i3a6p31678570988.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Martín Satriano",
+   "espnId": "284854",
+   "checked": "2026-11-20T23:29:13+09:00"
+  },
+  "matheus cunha": {
+   "name": "Matheus Cunha",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg/250px-Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Matheus Cunha",
+   "espnId": "259902",
+   "checked": "2026-11-20T23:28:54+09:00"
+  },
+  "matteo politano": {
+   "name": "Matteo Politano",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/4pr9591702565157.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Matteo Politano",
+   "espnId": "188306",
+   "checked": "2026-11-20T23:26:10+09:00"
+  },
+  "matthias ginter": {
+   "name": "Matthias Ginter",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Matthias_Ginter_2019.jpg/250px-Matthias_Ginter_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Matthias Ginter",
+   "espnId": "170209",
+   "checked": "2026-11-20T23:23:07+09:00"
+  },
+  "mattia zaccagni": {
+   "name": "Mattia Zaccagni",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Mattia_Zaccagni_2021.jpg/250px-Mattia_Zaccagni_2021.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Mattia Zaccagni",
+   "espnId": "204669",
+   "checked": "2026-11-20T23:22:51+09:00"
+  },
+  "maurice krattenmacher": {
+   "name": "Maurice Krattenmacher",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/1hwp401773088087.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Maurice Krattenmacher",
+   "espnId": "358496",
+   "checked": "2026-11-20T23:23:05+09:00"
+  },
+  "michael gregoritsch": {
+   "name": "Michael Gregoritsch",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Michael_Gregoritsch_U21_Austria_vs._Albania_2014-03-05_01.jpg/250px-Michael_Gregoritsch_U21_Austria_vs._Albania_2014-03-05_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Michael Gregoritsch",
+   "espnId": "146804",
+   "checked": "2026-11-20T23:28:03+09:00"
+  },
+  "michael olise": {
+   "name": "Michael Olise",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Michael_Olise_France_v_Senegal_16_June_2026-307_%28cropped%29.jpg/250px-Michael_Olise_France_v_Senegal_16_June_2026-307_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Michael Olise",
+   "espnId": "286831",
+   "checked": "2026-11-20T23:21:24+09:00"
+  },
+  "michel adopo": {
+   "name": "Michel Adopo",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/MichelAdopo.png/250px-MichelAdopo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Michel Ndary Adopo",
+   "espnId": "272745",
+   "checked": "2026-11-20T23:22:47+09:00"
+  },
+  "miguel gutiérrez": {
+   "name": "Miguel Gutiérrez",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/n8z1tk1684604627.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Miguel Gutiérrez (footballer, born 2001)",
+   "espnId": "290044",
+   "checked": "2026-11-20T23:23:10+09:00"
+  },
+  "milutin osmajic": {
+   "name": "Milutin Osmajic",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/06cfkz1629539351.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Milutin Osmajić",
+   "espnId": "275444",
+   "checked": "2026-11-20T23:28:42+09:00"
+  },
+  "miro muheim": {
+   "name": "Miro Muheim",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/2025-05-16_Hamburger_SV_Miro_Muheim_%28cropped%29.jpg/250px-2025-05-16_Hamburger_SV_Miro_Muheim_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Miro Muheim",
+   "espnId": "243626",
+   "checked": "2026-11-20T23:28:49+09:00"
+  },
+  "mohamed belloumi": {
+   "name": "Mohamed Belloumi",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Mohamed_Belloumi_2026.jpg/250px-Mohamed_Belloumi_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Mohamed Belloumi",
+   "espnId": "320417",
+   "checked": "2026-11-20T23:26:50+09:00"
+  },
+  "mohammed kudus": {
+   "name": "Mohammed Kudus",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/266599.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "266599",
+   "checked": "2026-11-20T23:23:52+09:00"
+  },
+  "moi gómez": {
+   "name": "Moi Gómez",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Moi_G%C3%B3mez.jpg/250px-Moi_G%C3%B3mez.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Moi Gómez",
+   "espnId": "169089",
+   "checked": "2026-11-20T23:29:02+09:00"
+  },
+  "morgan gibbs-white": {
+   "name": "Morgan Gibbs-White",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Morgan_Gibbs-White_-_Nottingham_Forest_-_2025.jpg/250px-Morgan_Gibbs-White_-_Nottingham_Forest_-_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Morgan Gibbs-White",
+   "espnId": "243396",
+   "checked": "2026-11-20T23:24:02+09:00"
+  },
+  "morgan rogers": {
+   "name": "Morgan Rogers",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Morgan_Rogers_England_v_Panama_27_June_26-144_%28cropped%29.jpg/250px-Morgan_Rogers_England_v_Panama_27_June_26-144_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Morgan Rogers",
+   "espnId": "265653",
+   "checked": "2026-11-20T23:23:56+09:00"
+  },
+  "nemanja matic": {
+   "name": "Nemanja Matic",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Nemanja_Mati%C4%87_2018_%28cropped%29.jpg/250px-Nemanja_Mati%C4%87_2018_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Nemanja Matić",
+   "espnId": "135743",
+   "checked": "2026-11-20T23:27:15+09:00"
+  },
+  "niclas füllkrug": {
+   "name": "Niclas Füllkrug",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/NiclasF%C3%BCllkrug_%28cropped%29.jpg/250px-NiclasF%C3%BCllkrug_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Niclas Füllkrug",
+   "espnId": "170257",
+   "checked": "2026-11-20T23:28:31+09:00"
+  },
+  "nico paz": {
+   "name": "Nico Paz",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Nico_Paz_Argentina_v_Spain_19_July_2026-057.jpg/250px-Nico_Paz_Argentina_v_Spain_19_July_2026-057.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Nico Paz",
+   "espnId": "337970",
+   "checked": "2026-11-20T23:22:44+09:00"
+  },
+  "nicolas jackson": {
+   "name": "Nicolas Jackson",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg/250px-Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Nicolas Jackson",
+   "espnId": "308524",
+   "checked": "2026-11-20T23:24:03+09:00"
+  },
+  "nicolo tresoldi": {
+   "name": "Nicolo Tresoldi",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/72bt1k1767633848.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Nicolò Tresoldi",
+   "espnId": "335201",
+   "checked": "2026-11-20T23:32:32+09:00"
+  },
+  "nicolò barella": {
+   "name": "Nicolò Barella",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Nicol%C3%B2_Barella_in_2021_%28cropped_2%29.jpg/250px-Nicol%C3%B2_Barella_in_2021_%28cropped_2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Nicolò Barella",
+   "espnId": "204441",
+   "checked": "2026-11-20T23:34:05+09:00"
+  },
+  "nikola krstovic": {
+   "name": "Nikola Krstovic",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Nikola_Krstovi%C4%87_%28cropped%29.jpg/250px-Nikola_Krstovi%C4%87_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Nikola Krstović",
+   "espnId": "258158",
+   "checked": "2026-11-20T23:29:07+09:00"
+  },
+  "oliver mcburnie": {
+   "name": "Oliver McBurnie",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Oli_McBurnie_17102026_%283%29.jpg/250px-Oli_McBurnie_17102026_%283%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Oli McBurnie",
+   "espnId": "193010",
+   "checked": "2026-11-20T23:26:51+09:00"
+  },
+  "pablo martínez": {
+   "name": "Pablo Martínez",
+   "photo": null,
+   "src": "none",
+   "conf": "club",
+   "title": "Pablo Martínez (Spanish footballer)",
+   "espnId": "271151",
+   "checked": "2026-11-20T23:29:07+09:00"
+  },
+  "pascal gross": {
+   "name": "Pascal Gross",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Pascal_Gross_Ecuador_v_Germany_25_June_2026-065.jpg/250px-Pascal_Gross_Ecuador_v_Germany_25_June_2026-065.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Pascal Groß",
+   "espnId": "132659",
+   "checked": "2026-11-20T23:26:52+09:00"
+  },
+  "patrik schick": {
+   "name": "Patrik Schick",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/2020-03-10_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League_Achtelfinale%2C_RB_Leipzig_-_Tottenham_Hotspur_1DX_3672_by_Stepro.jpg/250px-2020-03-10_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League_Achtelfinale%2C_RB_Leipzig_-_Tottenham_Hotspur_1DX_3672_by_Stepro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Patrik Schick",
+   "espnId": "212330",
+   "checked": "2026-11-20T23:23:08+09:00"
+  },
+  "pau torres": {
+   "name": "Pau Torres",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Pau_Torres_April_2026_%28cropped%29.jpg/250px-Pau_Torres_April_2026_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Pau Torres",
+   "espnId": "251100",
+   "checked": "2026-11-20T23:30:55+09:00"
+  },
+  "paulo dybala": {
+   "name": "Paulo Dybala",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%AE%D0%B2%D0%B5%D0%BD%D1%82%D1%83%D1%81%C2%BB_0-2._20_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F_2020_%D0%B3%D0%BE%D0%B4%D0%B0_%E2%80%94_1153905_%28cropped%29.jpg/250px-%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%AE%D0%B2%D0%B5%D0%BD%D1%82%D1%83%D1%81%C2%BB_0-2._20_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F_2020_%D0%B3%D0%BE%D0%B4%D0%B0_%E2%80%94_1153905_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Paulo Dybala",
+   "espnId": "164839",
+   "checked": "2026-11-20T23:25:15+09:00"
+  },
+  "pepê": {
+   "name": "Pepê",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Pep%C3%AA_-_Porto_-_2023.png/250px-Pep%C3%AA_-_Porto_-_2023.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Pepê (footballer, born 1997)",
+   "espnId": "256909",
+   "checked": "2026-11-20T23:32:05+09:00"
+  },
+  "phillip tietz": {
+   "name": "Phillip Tietz",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/PhillipTietz.jpg/250px-PhillipTietz.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Phillip Tietz",
+   "espnId": "234376",
+   "checked": "2026-11-20T23:28:26+09:00"
+  },
+  "pierre-emerick aubameyang": {
+   "name": "Pierre-Emerick Aubameyang",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/1_Pierre-Emerick_Aubameyang_%28cropped%29.jpg/250px-1_Pierre-Emerick_Aubameyang_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Pierre-Emerick Aubameyang",
+   "espnId": "122260",
+   "checked": "2026-11-20T23:22:41+09:00"
+  },
+  "rafik belghali": {
+   "name": "Rafik Belghali",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/vfqhwg1759162273.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Rafik Belghali",
+   "espnId": "364590",
+   "checked": "2026-11-20T23:26:14+09:00"
+  },
+  "randal kolo muani": {
+   "name": "Randal Kolo Muani",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Randal_Kolo_Muani_2020.jpg/250px-Randal_Kolo_Muani_2020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Randal Kolo Muani",
+   "espnId": "252971",
+   "checked": "2026-11-20T23:26:22+09:00"
+  },
+  "raphinha": {
+   "name": "Raphinha",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg/250px-Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Raphinha",
+   "espnId": "231050",
+   "checked": "2026-11-20T23:26:25+09:00"
+  },
+  "ricardo mangas": {
+   "name": "Ricardo Mangas",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/gf05v71630491320.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Ricardo Mangas",
+   "espnId": "259871",
+   "checked": "2026-11-20T23:29:18+09:00"
+  },
+  "ridle baku": {
+   "name": "Ridle Baku",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Ridle_Baku_2020-09-20_Fu%C3%9Fball%2C_M%C3%A4nner%2C_1._Bundesliga%2C_RB_Leipzig_-_1._FSV_Mainz_05_1DX_1394_by_Stepro_%28cropped%29.jpg/250px-Ridle_Baku_2020-09-20_Fu%C3%9Fball%2C_M%C3%A4nner%2C_1._Bundesliga%2C_RB_Leipzig_-_1._FSV_Mainz_05_1DX_1394_by_Stepro_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Ridle Baku",
+   "espnId": "258963",
+   "checked": "2026-11-20T23:32:10+09:00"
+  },
+  "roberto fernández": {
+   "name": "Roberto Fernández",
+   "photo": null,
+   "src": "none",
+   "conf": "",
+   "title": null,
+   "espnId": "318773",
+   "checked": "2026-11-20T23:22:33+09:00"
+  },
+  "robin koch": {
+   "name": "Robin Koch",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/b7eapb1578087942.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Robin Koch",
+   "espnId": "208285",
+   "checked": "2026-11-20T23:23:21+09:00"
+  },
+  "rodrigo riquelme": {
+   "name": "Rodrigo Riquelme",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Rodrigo_Riquelme_2020.png/250px-Rodrigo_Riquelme_2020.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Rodrigo Riquelme (footballer, born 2000)",
+   "espnId": "70224",
+   "checked": "2026-11-20T23:25:44+09:00"
+  },
+  "roger brugué": {
+   "name": "Roger Brugué",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/pefufm1762459765.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Roger Brugué",
+   "espnId": "267591",
+   "checked": "2026-11-20T23:29:22+09:00"
+  },
+  "ruben aguilar": {
+   "name": "Ruben Aguilar",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Aguilar_rcl_asse_2425.png/250px-Aguilar_rcl_asse_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Ruben Aguilar",
+   "espnId": "181946",
+   "checked": "2026-11-20T23:32:11+09:00"
+  },
+  "said el mala": {
+   "name": "Said El Mala",
+   "photo": null,
+   "src": "none",
+   "conf": "footballer",
+   "title": "Said El Mala",
+   "espnId": "380795",
+   "checked": "2026-11-20T23:23:27+09:00"
+  },
+  "santiago mouriño": {
+   "name": "Santiago Mouriño",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/78w0nk1723488335.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Santiago Mouriño",
+   "espnId": "318098",
+   "checked": "2026-11-20T23:32:22+09:00"
+  },
+  "scott mctominay": {
+   "name": "Scott McTominay",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Scott_McTominay_Scotland_v_Bolivia_6_June_2026-41.jpg/250px-Scott_McTominay_Scotland_v_Bolivia_6_June_2026-41.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Scott McTominay",
+   "espnId": "255850",
+   "checked": "2026-11-20T23:32:06+09:00"
+  },
+  "sergio camello": {
+   "name": "Sergio Camello",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/l97zh31679052300.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Sergio Camello",
+   "espnId": "276652",
+   "checked": "2026-11-20T23:26:03+09:00"
+  },
+  "serhou guirassy": {
+   "name": "Serhou Guirassy",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Serhou_Guirassy_2024_%28cropped%29.jpg/250px-Serhou_Guirassy_2024_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Serhou Guirassy",
+   "espnId": "186381",
+   "checked": "2026-11-20T23:31:58+09:00"
+  },
+  "sheraldo becker": {
+   "name": "Sheraldo Becker",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Sheraldo_Becker_%282018%29.jpg/250px-Sheraldo_Becker_%282018%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Sheraldo Becker",
+   "espnId": "195027",
+   "checked": "2026-11-20T23:28:27+09:00"
+  },
+  "silas andersen": {
+   "name": "Silas Andersen",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/xi7s6k1723060043.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Silas Andersen",
+   "espnId": "355408",
+   "checked": "2026-11-20T23:32:40+09:00"
+  },
+  "simone lontani": {
+   "name": "Simone Lontani",
+   "photo": null,
+   "src": "none",
+   "conf": "club",
+   "title": "Simone Lontani",
+   "espnId": "413818",
+   "checked": "2026-11-20T23:26:07+09:00"
+  },
+  "sondre brunstad fet": {
+   "name": "Sondre Brunstad Fet",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/k7gia51610706351.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Sondre Brunstad Fet",
+   "espnId": "208353",
+   "checked": "2026-11-20T23:31:45+09:00"
+  },
+  "soriba diaoune": {
+   "name": "Soriba Diaoune",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/36mcj71792578234.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Soriba Diaoune",
+   "espnId": "400352",
+   "checked": "2026-11-20T23:35:12+09:00"
+  },
+  "stavros pilios": {
+   "name": "Stavros Pilios",
+   "photo": null,
+   "src": "none",
+   "conf": "club",
+   "title": "Stavros Pilios",
+   "espnId": "285427",
+   "checked": "2026-11-20T23:31:51+09:00"
+  },
+  "stefano marino": {
+   "name": "Stefano Marino",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/njg91f1773415068.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Stefano Marino",
+   "espnId": "332543",
+   "checked": "2026-11-20T23:23:13+09:00"
+  },
+  "suleiman camara": {
+   "name": "Suleiman Camara",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/prw53a1784895830.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Suleiman Camara",
+   "espnId": "310419",
+   "checked": "2026-11-20T23:31:54+09:00"
+  },
+  "tarik muharemovic": {
+   "name": "Tarik Muharemovic",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Internazionale_Milano_v_US_Sassuolo_Calcio%2C_21_September_2025_-_08_%28Tarik_Muharemovi%C4%87%29.jpg?width=200",
+   "src": "wikidata",
+   "conf": "club",
+   "title": "Tarik Muharemović",
+   "espnId": "318390",
+   "checked": "2026-11-20T23:23:58+09:00"
+  },
+  "tasos douvikas": {
+   "name": "Tasos Douvikas",
+   "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/262071.png",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "262071",
+   "checked": "2026-11-20T23:22:43+09:00"
+  },
+  "thierno barry": {
+   "name": "Thierno Barry",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/el24x91727900526.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Thierno Barry (footballer, born 2002)",
+   "espnId": "301166",
+   "checked": "2026-11-20T23:31:39+09:00"
+  },
+  "tiago gabriel": {
+   "name": "Tiago Gabriel",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/ulir0v1759691693.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Tiago Gabriel",
+   "espnId": "379865",
+   "checked": "2026-11-20T23:22:54+09:00"
+  },
+  "tigran barseghyan": {
+   "name": "Tigran Barseghyan",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Tigran_Barseghyan_YantsImages_-_Asatur_Yesayants_637_%28cropped%29.jpg/250px-Tigran_Barseghyan_YantsImages_-_Asatur_Yesayants_637_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Tigran Barseghyan",
+   "espnId": "235045",
+   "checked": "2026-11-20T23:31:54+09:00"
+  },
+  "tyrick mitchell": {
+   "name": "Tyrick Mitchell",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Tyrick_Mitchell%2C_Manchester_United_v_Crystal_Palace%2C_5_December_2021_%28cropped%29.jpg/250px-Tyrick_Mitchell%2C_Manchester_United_v_Crystal_Palace%2C_5_December_2021_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Tyrick Mitchell",
+   "espnId": "300853",
+   "checked": "2026-11-20T23:23:51+09:00"
+  },
+  "umar sadiq": {
+   "name": "Umar Sadiq",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/SD_Negreira_-_Real_Sociedad%2C_Copa_do_Rei_2025-26_06_-_Umar_Sadiq.jpg/250px-SD_Negreira_-_Real_Sociedad%2C_Copa_do_Rei_2025-26_06_-_Umar_Sadiq.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Umar Sadiq",
+   "espnId": "211770",
+   "checked": "2026-11-20T23:24:29+09:00"
+  },
+  "unai lópez": {
+   "name": "Unai López",
+   "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Unai_Lopez_en_2026.jpg?width=200",
+   "src": "wikidata",
+   "conf": "club",
+   "title": "Unai López",
+   "espnId": "203711",
+   "checked": "2026-11-20T23:24:28+09:00"
+  },
+  "vasilije adzic": {
+   "name": "Vasilije Adzic",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/wnsadd1750331314.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Vasilije Adžić",
+   "espnId": "344917",
+   "checked": "2026-11-20T23:28:39+09:00"
+  },
+  "viktor gyökeres": {
+   "name": "Viktor Gyökeres",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Viktor_Gyokeres_France_v_Sweden_6.30.26-123_%28cropped%29.jpg/250px-Viktor_Gyokeres_France_v_Sweden_6.30.26-123_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Viktor Gyökeres",
+   "espnId": "258906",
+   "checked": "2026-11-20T23:31:57+09:00"
+  },
+  "yassir zabiri": {
+   "name": "Yassir Zabiri",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Yassir_Zabiri_%28cropped%29.jpg/250px-Yassir_Zabiri_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Yassir Zabiri",
+   "espnId": "390389",
+   "checked": "2026-11-20T23:28:28+09:00"
+  },
+  "younes ebnoutalib": {
+   "name": "Younes Ebnoutalib",
+   "photo": null,
+   "src": "none",
+   "conf": "club",
+   "title": "Younes Ebnoutalib",
+   "espnId": "359793",
+   "checked": "2026-11-20T23:23:19+09:00"
+  },
+  "youssouf fofana": {
+   "name": "Youssouf Fofana",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Youssouf_Fofana_%28footballer%2C_born_1999%29_%28cropped%29.jpg/250px-Youssouf_Fofana_%28footballer%2C_born_1999%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Youssouf Fofana (footballer, born 1999)",
+   "espnId": "277307",
+   "checked": "2026-11-20T23:25:42+09:00"
+  },
+  "yuito suzuki": {
+   "name": "Yuito Suzuki",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Suzuki_%282023%29.png/250px-Suzuki_%282023%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Yuito Suzuki",
+   "espnId": "303031",
+   "checked": "2026-11-20T23:23:06+09:00"
+  },
+  "yvan dibango": {
+   "name": "Yvan Dibango",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/%D0%A3%D0%9F%D0%9B._%C2%AB%D0%9A%D1%80%D0%B8%D0%B2%D0%B1%D0%B0%D1%81%C2%BB_%E2%80%94_%C2%AB%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D0%B8%C2%BB_%E2%80%94_2-0_%E2%80%94_2994_%28cropped%29.jpg/250px-%D0%A3%D0%9F%D0%9B._%C2%AB%D0%9A%D1%80%D0%B8%D0%B2%D0%B1%D0%B0%D1%81%C2%BB_%E2%80%94_%C2%AB%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D0%B8%C2%BB_%E2%80%94_2-0_%E2%80%94_2994_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Yvan Dibango",
+   "espnId": "365165",
+   "checked": "2026-11-20T23:31:48+09:00"
+  },
+  "zlatko tripic": {
+   "name": "Zlatko Tripic",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Zlatko_Tripi%C4%87_10_Viking_FK_UECL_20250813_%285%29.jpg/250px-Zlatko_Tripi%C4%87_10_Viking_FK_UECL_20250813_%285%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Zlatko Tripić",
+   "espnId": "164279",
+   "checked": "2026-11-20T23:33:31+09:00"
+  },
+  "álex baena": {
+   "name": "Álex Baena",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Alex_Baena_France_v_Spain_7.24.26-024.jpg/250px-Alex_Baena_France_v_Spain_7.24.26-024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Álex Baena",
+   "espnId": "297373",
+   "checked": "2026-11-20T23:29:13+09:00"
+  },
+  "álex berenguer": {
+   "name": "Álex Berenguer",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/ranylg1723532557.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Álex Berenguer",
+   "espnId": "209579",
+   "checked": "2026-11-20T23:22:31+09:00"
+  }
+ },
+ "updatedAt": "2026-11-20T23:36:00+09:00"
+}

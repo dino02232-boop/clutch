@@ -31,6 +31,7 @@ from datetime import datetime, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetch_nba import CACHE, KST, get_json, kst_date, weekday_ko  # 공용 유틸
 from odds_common import cache_at, implied, odds_of  # 배당(odds) 추출
+from photo_sources import load_cache as load_photo_cache, resolve as photo_resolve, save_cache as save_photo_cache
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -44,6 +45,16 @@ SUMM = "https://site.api.espn.com/apis/site/v2/sports/soccer/%s/summary?event=%s
 # ESPN 선수 얼굴 사진 CDN. 축구 응답에는 headshot 필드가 없어 id 로 경로를 만든다.
 # 일부 선수만 이미지가 있고 나머지는 404 → 화면에서 이니셜로 대체한다.
 HEADSHOT = "https://a.espncdn.com/i/headshots/soccer/players/full/%s.png"
+
+# 선수 사진 캐시는 한 번만 읽고, 생성이 끝날 때 한 번만 쓴다.
+_PHOTO_CACHE = None
+
+
+def _photo_cache():
+    global _PHOTO_CACHE
+    if _PHOTO_CACHE is None:
+        _PHOTO_CACHE = load_photo_cache()
+    return _PHOTO_CACHE
 
 # 리그 코드 → (짧은 표기, 한글 리그명)
 LEAGUES = {
@@ -367,6 +378,7 @@ def season_leaders(summary, team_id):
     for blk in summary.get("leaders") or []:
         if str((blk.get("team") or {}).get("id")) != str(team_id):
             continue
+        team_en = (blk.get("team") or {}).get("displayName") or ""
         groups = {g.get("name"): g for g in blk.get("leaders") or []}
         out, seen = [], {}
         for gname, label in (("goalsLeaders", "득점"), ("assistsLeaders", "도움")):
@@ -399,7 +411,12 @@ def season_leaders(summary, team_id):
             item = {"name": name}
             if aid:
                 item["id"] = aid
-                item["photo"] = HEADSHOT % aid
+            # 사진: ESPN 이 살아 있으면 그것, 아니면 위키백과/위키데이터/TheSportsDB.
+            # 확인된 얼굴만 넣고, 못 찾으면 photo 키를 빼서 화면이 이니셜로 대체하게 둔다.
+            ph = photo_resolve(name, espn_photo=(HEADSHOT % aid) if aid else "",
+                               club=team_en, cache=_photo_cache())
+            if ph.get("photo"):
+                item["photo"] = ph["photo"]
             item["stats"] = [text]
             seen[key] = item
             out.append(item)
@@ -819,6 +836,8 @@ def main():
     print("data.js 저장 완료 (축구 %d경기, 기준 %s KST)%s" % (
         sum(len(v) for v in by_day.values()), now.strftime("%Y-%m-%d %H:%M"),
         (", 날짜 블록 추가: " + ", ".join(added)) if added else ""))
+    if _PHOTO_CACHE is not None:
+        save_photo_cache(_PHOTO_CACHE)
 
 
 if __name__ == "__main__":

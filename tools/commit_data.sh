@@ -19,6 +19,8 @@ msg() {
 
 commit_if_changed() {
   git add data.js
+  # 선수 사진 캐시도 함께 남겨 다음 갱신에서 같은 조회를 반복하지 않게 한다(없으면 무시).
+  git add tools/cache/player_photos.json 2>/dev/null || true
   if git diff --cached --quiet -- data.js; then
     echo "data.js 변경 없음 — 커밋하지 않습니다."
     return 1

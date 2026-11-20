@@ -25,15 +25,27 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from photo_sources import load_cache as load_photo_cache, resolve as photo_resolve, save_cache as save_photo_cache  # noqa: E402
+
 ROOT = os.path.dirname(HERE)
 DATA_JS = os.environ.get("CLUTCH_DATA_JS") or os.path.join(ROOT, "data.js")
 RETRIES = int(os.environ.get("CLUTCH_RETRIES") or 3)
 NBA_HEADSHOT = "https://a.espncdn.com/i/headshots/nba/players/full/%s.png"
 
 
-def _headshot(ath):
-    """박스스코어 선수 객체 → ESPN 얼굴 사진 URL(headshot 우선, 없으면 id 로 CDN 경로)."""
+def _headshot(ath, sport="basketball", club="", cache=None):
+    """박스스코어 선수 객체 → 얼굴 사진 URL.
+
+    농구는 ESPN headshot(없으면 CDN 경로), 축구는 ESPN 축구 CDN 이 대부분 404 라
+    photo_sources 로 위키백과/위키데이터/TheSportsDB 까지 확인해 쓴다.
+    """
     a = (ath or {}).get("athlete") or {}
+    if sport == "soccer":
+        name = a.get("displayName") or a.get("fullName") or ""
+        if not name:
+            return ""
+        return photo_resolve(name, club=club, cache=cache).get("photo") or ""
     href = (a.get("headshot") or {}).get("href")
     if href:
         return href
@@ -179,8 +191,10 @@ def main():
         res["winner"] = "away" if a_sc > h_sc else ("home" if h_sc > a_sc else None)
         # 주요 선수 기록
         tops = []
+        photo_cache = load_photo_cache() if g["sport"] == "soccer" else None
         for team in ((d.get("boxscore") or {}).get("players") or []):
             abbr = ((team.get("team") or {}).get("abbreviation")) or ""
+            team_name = ((team.get("team") or {}).get("displayName")) or ""
             for stt in team.get("statistics") or []:
                 labels = stt.get("labels") or []
                 for ath in stt.get("athletes") or []:
@@ -191,11 +205,14 @@ def main():
                         pts = 0
                     if pts <= 0:
                         continue
+                    photo = _headshot(ath, g["sport"], team_name, photo_cache)
                     tops.append({"name": ((ath.get("athlete") or {}).get("displayName") or ""),
                                  "team": abbr, "min": stats.get("MIN"), "pts": pts,
                                  "reb": stats.get("REB"), "ast": stats.get("AST"),
-                                 **({"photo": _headshot(ath)} if _headshot(ath) else {})})
+                                 **({"photo": photo} if photo else {})})
         tops.sort(key=lambda x: x["pts"], reverse=True)
+        if photo_cache is not None:
+            save_photo_cache(photo_cache)
         if tops:
             res["top"] = tops[:6]
         # details 앞에 결과를 넣는다(키 순서 유지)
