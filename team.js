@@ -276,7 +276,9 @@
   if (league) sub.push('<span class="tp-chip plain">' + esc(league) + "</span>");
   if (abbr) sub.push('<span class="tp-chip plain">' + esc(abbr) + "</span>");
   badges.forEach(function (b) {
-    if (b && b.text) sub.push('<span class="' + chipClass(b.tone) + '">' + esc(b.text) + "</span>");
+    if (!b || !b.text) return;
+    if (/^(홈|원정)\s*\d/.test(String(b.text))) return;  // 홈/원정 전적은 아래 전적 카드에 있다
+    sub.push('<span class="' + chipClass(b.tone) + '">' + esc(b.text) + "</span>");
   });
   html.push('<p class="tp-sub">' + sub.join("") + "</p>");
 
@@ -361,7 +363,7 @@
         '<span class="l5-res ' + (r.res === "승" ? "w" : (r.res === "패" ? "l" : "d")) + '">' + esc(r.res || "") + "</span>" +
         "</li>";
     }).join("");
-    html.push('<section class="tp-sec"><h2 class="tp-h">최근 ' + l5detail.length + "경기</h2>" +
+    html.push('<section class="tp-sec"><h2 class="tp-h">최근 ' + l5detail.length + "경기 결과</h2>" +
       '<div class="tp-card"><ul class="l5-list">' + li + "</ul></div></section>");
   }
 
