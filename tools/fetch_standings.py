@@ -408,7 +408,7 @@ def main():
             t = soccer_team_board(key, code)
             l = soccer_leaders(code)
             leagues.append({
-                "key": key, "sport": "soccer", "name": name,
+                "key": key, "sport": "soccer", "name": name, "source": "ESPN",
                 "full": full, "season": l.get("season") or t.get("season"),
                 "groups": t["groups"], "leaders": l["boards"],
             })
@@ -423,7 +423,7 @@ def main():
         t = nba_team_boards()
         l = nba_leaders()
         leagues.append({
-            "key": "NBA", "sport": "basketball", "name": "NBA",
+            "key": "NBA", "sport": "basketball", "name": "NBA", "source": "ESPN",
             "full": "National Basketball Association",
             "season": l.get("season") or t.get("season"),
             "groups": t["groups"], "leaders": l["boards"],
@@ -439,7 +439,7 @@ def main():
     try:
         t = voleague_boards()
         leagues.append({
-            "key": "VLEAGUE", "sport": "volleyball", "name": "V리그",
+            "key": "VLEAGUE", "sport": "volleyball", "name": "V리그", "source": "KOVO",
             "full": t["full"], "season": t["season"],
             "groups": t["groups"], "leaders": [],
         })

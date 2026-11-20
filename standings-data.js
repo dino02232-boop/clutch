@@ -4,16 +4,17 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-20T23:30:07+09:00
+   생성 시각(기준): 2026-11-20T23:40:56+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-20T23:30:07+09:00",
+  "updated": "2026-11-20T23:40:56+09:00",
   "source": "ESPN",
   "leagues": [
     {
       "key": "EPL",
       "sport": "soccer",
       "name": "프리미어리그",
+      "source": "ESPN",
       "full": "English Premier League",
       "season": "2026-27",
       "groups": [
@@ -818,6 +819,7 @@ window.CLUTCH_STANDINGS = {
       "key": "LALIGA",
       "sport": "soccer",
       "name": "라리가",
+      "source": "ESPN",
       "full": "Spanish LALIGA",
       "season": "2026-27",
       "groups": [
@@ -1634,6 +1636,7 @@ window.CLUTCH_STANDINGS = {
       "key": "BUNDES",
       "sport": "soccer",
       "name": "분데스리가",
+      "source": "ESPN",
       "full": "German Bundesliga",
       "season": "2026-27",
       "groups": [
@@ -2416,6 +2419,7 @@ window.CLUTCH_STANDINGS = {
       "key": "SERIEA",
       "sport": "soccer",
       "name": "세리에 A",
+      "source": "ESPN",
       "full": "Italian Serie A",
       "season": "2026-27",
       "groups": [
@@ -3228,6 +3232,7 @@ window.CLUTCH_STANDINGS = {
       "key": "UCL",
       "sport": "soccer",
       "name": "UCL",
+      "source": "ESPN",
       "full": "UEFA Champions League",
       "season": "2026-27",
       "groups": [
@@ -4384,6 +4389,7 @@ window.CLUTCH_STANDINGS = {
       "key": "NBA",
       "sport": "basketball",
       "name": "NBA",
+      "source": "ESPN",
       "full": "National Basketball Association",
       "season": "2026-27",
       "groups": [
@@ -5539,6 +5545,7 @@ window.CLUTCH_STANDINGS = {
       "key": "VLEAGUE",
       "sport": "volleyball",
       "name": "V리그",
+      "source": "KOVO",
       "full": "KOVO V-League",
       "season": "2026-27",
       "groups": [

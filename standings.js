@@ -230,7 +230,7 @@
     titleEl.innerHTML = "<em>" + esc(lg.name) + "</em> " + (state.mode === "team" ? "팀 순위" : "개인 순위");
     seasonEl.textContent = lg.season || "—";
     updatedEl.textContent = "데이터 기준 " + fmtUpdated(DATA.updated);
-    chipEl.textContent = (DATA.source || "ESPN") + " 실제 값";
+    chipEl.textContent = (lg.source || DATA.source || "ESPN") + " 실제 값";
 
     renderTabs(lg);
     renderModes(lg);
