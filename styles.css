@@ -1486,3 +1486,21 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .more[open] > summary::after { content: "접기"; }
 .more-body { padding-bottom: 3px; }
 .more-body .team-blocks { margin-top: 9px; }
+
+/* ── 헤더의 리그 순위 링크 (standings.html) ──────────────
+   날짜 칸 아래 한 줄. 새 페이지에서도 같은 초록 톤을 쓴다. */
+.rank-link {
+  display: block;
+  margin-top: 3px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(14, 159, 110, .3);
+  padding-bottom: 1px;
+  width: max-content;
+  margin-left: auto;
+}
+.rank-link:hover { color: #096142; border-bottom-color: rgba(14, 159, 110, .6); }
+.rank-link:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; border-radius: 3px; }
