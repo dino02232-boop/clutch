@@ -30,6 +30,7 @@ from datetime import datetime, timedelta, timezone
 KST = timezone(timedelta(hours=9))
 SB = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates={d}"
 SUM = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event={e}"
+NBA_HEADSHOT = "https://a.espncdn.com/i/headshots/nba/players/full/%s.png"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -428,6 +429,9 @@ def team_block(abbr_disp, name, side, competitor, summary, ps=None, by_team=None
         if not p:
             continue
         item = {"name": p.get("name") or "", "_aid": aid}
+        if aid:  # 얼굴 사진 — ESPN CDN 경로(선수 id). 없으면 화면에서 이니셜로 대체한다.
+            item["id"] = aid
+            item["photo"] = NBA_HEADSHOT % aid
         if p.get("pos"):
             item["pos"] = p["pos"]
         line = plmod.line_of(p, with_fg=False)

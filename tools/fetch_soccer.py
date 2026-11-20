@@ -13,6 +13,8 @@ data.js 의 SOCCER-AUTO 구간을 날짜별로 다시 채웁니다.
       경기·킥오프(UTC)·경기장·양 팀 전적(승-무-패)·최근 폼(form)·오버언더(odds[].overUnder)
   · standings   site.api.espn.com/apis/v2/sports/soccer/{league}/standings
       팀별 순위(rank)·경기 수·득점(pointsFor)·실점(pointsAgainst)·득실차
+  · summary     site.api.espn.com/apis/site/v2/sports/soccer/{league}/summary?event={id}
+      최근 5경기·맞대결 + leaders(팀별 시즌 득점·도움 1위 선수) → details.keyPlayers
 
 ESPN 축구 응답에는 신뢰할 만한 부상·결장 명단이 없습니다. 그래서 축구 카드는
 부상 정보를 만들지 않고 "부상 정보 없음"으로 표시합니다(지어내지 않음).
@@ -39,6 +41,9 @@ SB = "https://site.api.espn.com/apis/site/v2/sports/soccer/%s/scoreboard?dates=%
 ST = "https://site.api.espn.com/apis/v2/sports/soccer/%s/standings"
 SBSCHED = "https://site.api.espn.com/apis/site/v2/sports/soccer/%s/teams/%s/schedule"
 SUMM = "https://site.api.espn.com/apis/site/v2/sports/soccer/%s/summary?event=%s"
+# ESPN 선수 얼굴 사진 CDN. 축구 응답에는 headshot 필드가 없어 id 로 경로를 만든다.
+# 일부 선수만 이미지가 있고 나머지는 404 → 화면에서 이니셜로 대체한다.
+HEADSHOT = "https://a.espncdn.com/i/headshots/soccer/players/full/%s.png"
 
 # 리그 코드 → (짧은 표기, 한글 리그명)
 LEAGUES = {
@@ -351,6 +356,57 @@ def team_results(league, team_id, refresh=False):
     return out
 
 
+def season_leaders(summary, team_id):
+    """summary 의 leaders 에서 그 팀의 시즌 득점 1위·도움 1위 선수.
+
+    응답 예) leaders[].leaders[].{name: goalsLeaders|assistsLeaders,
+                                   leaders: [{athlete:{id,displayName}, statistics:[...]}]}
+    한 선수가 득점·도움 1위를 모두 하면 한 줄로 합쳐 stats 에 둘 다 적는다.
+    값이 0인 항목(아직 득점 없음)은 표시하지 않는다.
+    """
+    for blk in summary.get("leaders") or []:
+        if str((blk.get("team") or {}).get("id")) != str(team_id):
+            continue
+        groups = {g.get("name"): g for g in blk.get("leaders") or []}
+        out, seen = [], {}
+        for gname, label in (("goalsLeaders", "득점"), ("assistsLeaders", "도움")):
+            rows = (groups.get(gname) or {}).get("leaders") or []
+            if not rows:
+                continue
+            top = rows[0]
+            ath = top.get("athlete") or {}
+            name = ath.get("displayName") or ath.get("fullName") or ""
+            val = None
+            for s in top.get("statistics") or []:
+                if s.get("name") in ("totalGoals", "goalAssists"):
+                    try:
+                        val = int(float(s.get("value")))
+                    except (TypeError, ValueError):
+                        val = None
+                    break
+            if val is None:  # 통계 배열이 비어 있는 응답 대비 → 'Goals: 6' 표기에서 읽는다
+                m = re.search(r"(?:Goals|Assists):\s*(\d+)", str(top.get("displayValue") or ""))
+                if m:
+                    val = int(m.group(1))
+            if not name or not val:
+                continue
+            aid = str(ath.get("id") or "")
+            key = aid or name
+            text = "%s %d" % (label, val)
+            if key in seen:
+                seen[key]["stats"].append(text)
+                continue
+            item = {"name": name}
+            if aid:
+                item["id"] = aid
+                item["photo"] = HEADSHOT % aid
+            item["stats"] = [text]
+            seen[key] = item
+            out.append(item)
+        return out
+    return []
+
+
 def h2h_block(summary):
     """ESPN summary 의 head-to-head 시리즈 → {summary, games[]}."""
     for ser in summary.get("seasonseries") or []:
@@ -561,11 +617,19 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
 
     kick = datetime.fromisoformat(start_iso.replace("Z", "+00:00")).astimezone(KST)
     gid = "soccer-%s-%s-%s" % (away["abbr"].lower(), home["abbr"].lower(), day.replace("-", ""))
-    det = {
-        "teams": [away, home],
-        "checkpoints": checks,
-        "note": "일정·전적·순위는 ESPN %s 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다." % updated_at.strftime("%Y-%m-%d %H:%M"),
-    }
+    # 핵심 선수 — 팀별 시즌 득점·도움 1위. 데이터가 없으면 아예 넣지 않는다.
+    key_players = []
+    for side_key, team_obj in (("home", home), ("away", away)):
+        tid = str(((sides[side_key].get("team") or {}).get("id")) or "")
+        plist = season_leaders(summary, tid) if tid else []
+        if plist:
+            key_players.append({"side": side_key, "team": team_obj["name"], "players": plist})
+
+    det = {"teams": [away, home]}
+    if key_players:  # 홈 팀 먼저
+        det["keyPlayers"] = key_players
+    det["checkpoints"] = checks
+    det["note"] = "일정·전적·순위는 ESPN %s 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다." % updated_at.strftime("%Y-%m-%d %H:%M")
     if h2h:
         det["h2h"] = h2h
     game = {
