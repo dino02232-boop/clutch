@@ -10,6 +10,10 @@ ESPN scoreboard 응답의 competitions[0].odds[0] 에는 배당사(provider) 한
   moneyline : 미국식 배당(+164, -197). 무승부는 축구에만 있습니다.
   spread    : 홈/원정 핸디캡 줄과 그 배당
   total     : 총점 줄과 오버/언더 배당
+
+ESPN 은 배당사에 따라 다른 스키마를 줍니다. DraftKings 는 moneyline/pointSpread/total
+구조이고, Bet365 는 awayTeamOdds/homeTeamOdds/drawOdds 에 소수 배당(decimal)을 value 로
+줍니다. 그 경우에는 value 를 미국식으로 환산해 머니라인으로 옮깁니다.
 """
 
 import json
@@ -46,6 +50,23 @@ def _line(v):
     return s
 
 
+def _am_from_decimal(v):
+    """소수 배당 → 미국식 배당. 4.5 → +350, 1.667 → -150, 4.2 → +320.
+
+    소수 2.00 이상은 (dec-1)*100, 2.00 미만은 -100/(dec-1) 을 반올림합니다.
+    1.00 이하(값이 될 수 없는 배당)는 None.
+    """
+    try:
+        d = float(v)
+    except (TypeError, ValueError):
+        return None
+    if d <= 1.0:
+        return None
+    if d >= 2.0:
+        return int(round((d - 1) * 100))
+    return -int(round(100.0 / (d - 1)))
+
+
 def _side(sec, key):
     """{close:{odds,line}, open:{...}} 에서 close 우선, 없으면 open."""
     if not isinstance(sec, dict):
@@ -79,6 +100,11 @@ def odds_of(comp, at_iso=None):
     draw_ml = _num(_side(ml.get("draw"), "odds")[0])
     if draw_ml is None:
         draw_ml = _num((o.get("drawOdds") or {}).get("moneyLine"))
+    if all(v is None for v in (away_ml, draw_ml, home_ml)):
+        # Bet365 스키마 — awayTeamOdds/homeTeamOdds/drawOdds 의 value 는 소수 배당
+        away_ml = _am_from_decimal((o.get("awayTeamOdds") or {}).get("value"))
+        home_ml = _am_from_decimal((o.get("homeTeamOdds") or {}).get("value"))
+        draw_ml = _am_from_decimal((o.get("drawOdds") or {}).get("value"))
     if any(v is not None for v in (away_ml, draw_ml, home_ml)):
         out["moneyline"] = {"away": away_ml, "draw": draw_ml, "home": home_ml}
 
