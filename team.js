@@ -474,8 +474,8 @@
     }
     var ih = injuries.map(function (i) {
       return "<li>" +
-        '<span class="pl">' + esc(i.player || "") +
-        (i.pos ? '<small class="pos">' + esc(i.pos) + "</small>" : "") +
+        '<span class="pl"><span class="tp-inj-nm">' + esc(i.player || "") +
+        (i.pos ? '<span class="pl-pos">' + esc(i.pos) + "</span>" : "") + "</span>" +
         (i.line ? "<small>" + esc(i.line) + "</small>" : "") +
         "</span>" + statusChip(i.status) + "</li>";
     }).join("");
