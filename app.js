@@ -1122,7 +1122,7 @@
         (finalNow ? "경기 당시 팀 정보 · 부상자 · 체크포인트" : "팀 비교 · 부상자 · 체크포인트")) + "</span>" +
       (g.venue ? '<span class="ch-venue">' + esc(g.venue) + "</span>" : "") +
       "</div>" +
-      '<ul class="form-list">' + formRow("away", g.away, g) + formRow("home", g.home, g) + "</ul>";
+      '<ul class="form-list">' + formRow("home", g.home, g) + formRow("away", g.away, g) + "</ul>";
 
     if (tags) preview += '<div class="tags">' + tags + "</div>";
 
@@ -1138,8 +1138,9 @@
     // 팀별 정보: 원정 먼저, 홈 다음. 두 블록 사이는 넉넉히 띄운다.
     var teams = Array.isArray(d.teams) ? d.teams.filter(Boolean) : [];
     if (teams.length) {
+      // 홈 팀 블록을 먼저 보여 준다.
       var ordered = teams.slice().sort(function (a, b) {
-        var rank = function (t) { return t.side === "home" ? 1 : 0; };
+        var rank = function (t) { return t.side === "home" ? 0 : 1; };
         return rank(a) - rank(b);
       });
       preview += '<div class="team-blocks">' + ordered.map(function (team) { return teamBlockHTML(team, g); }).join("") + "</div>";
