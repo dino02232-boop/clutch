@@ -17,6 +17,7 @@
 
   var NAMESPACE = "clutch-dino02232-boop";
   var ENDPOINT = "https://abacus.jasoncameron.dev/hit/" + NAMESPACE + "/";
+  var ATTEMPTS = 3;          /* 카운터 서버가 느리거나 잠깐 실패하면 다시 시도 */
 
   /* 한국 시간(UTC+9, 서머타임 없음) 기준 YYYY-MM-DD */
   function kstDay() {
@@ -27,24 +28,24 @@
   function send(key) {
     return fetch(ENDPOINT + key, {
       method: "GET",
-      mode: "no-cors",
+      mode: "cors",
       cache: "no-store",
       credentials: "omit",
       keepalive: true,
       referrerPolicy: "no-referrer"
+    }).then(function (res) {
+      if (!res.ok) throw new Error("counter " + res.status);
+      return true;
     });
   }
 
-  /* 응답을 읽을 필요가 없으니 no-cors 로 보냅니다(CORS 오류 콘솔 출력 없음).
-     연결 자체가 실패했을 때만 한 번 더 시도합니다(중복 집계 없음). */
-  function ping(key) {
-    try {
-      send(key).catch(function () {
-        setTimeout(function () {
-          try { send(key).catch(function () {}); } catch (e) {}
-        }, 4000);
-      });
-    } catch (e) { /* 집계 실패는 사이트 동작에 영향 없음 */ }
+  /* 응답이 2xx 로 오면 끝. 실패는 조용히 삼키고 한 번씩만 더 시도합니다. */
+  function ping(key, attempt) {
+    attempt = attempt || 1;
+    send(key).catch(function () {
+      if (attempt >= ATTEMPTS) return;
+      setTimeout(function () { ping(key, attempt + 1); }, attempt * 2500);
+    });
   }
 
   /* 같은 탭 세션에서 같은 날 두 번 세지 않기 */
