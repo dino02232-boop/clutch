@@ -2,12 +2,12 @@
    CLUTCH — visits.js
    익명 방문 수 집계. 계정·쿠키·개인정보를 쓰지 않습니다.
 
-   · 공개 카운터 abacus.jasoncameron.dev 에 하루 한 번씩 숫자를 올립니다.
-     - day-YYYY-MM-DD : 그 날짜(한국 시간)의 방문 수
-     - total          : 전체 누적 방문 수
-   · 읽는 법(터미널):
-       curl https://abacus.jasoncameron.dev/get/clutch-dino02232-boop/day-2026-11-20
-       curl https://abacus.jasoncameron.dev/get/clutch-dino02232-boop/total
+   · 공개 카운터 countapi.mileshilliard.com 에 하루 한 번씩 숫자를 올립니다.
+       clutch_dino02232_site_day_YYYY-MM-DD  — 그 날짜(한국 시간)의 방문 수
+       clutch_dino02232_site_total            — 전체 누적 방문 수
+   · 읽는 법(터미널, 숫자를 올리지 않고 읽기만 함):
+       curl https://countapi.mileshilliard.com/api/v1/get/clutch_dino02232_site_day_2026-11-20
+       curl https://countapi.mileshilliard.com/api/v1/get/clutch_dino02232_site_total
    · 집계에 실패하면 조용히 넘어갑니다. 화면 그리기와 무관하게,
      페이지 로드가 끝난 뒤에 보냅니다.
    · 같은 탭에서 새로고침해도 하루 한 번만 셉니다(sessionStorage, 기기 안에서만).
@@ -15,9 +15,9 @@
 (function () {
   "use strict";
 
-  var NAMESPACE = "clutch-dino02232-boop";
-  var ENDPOINT = "https://abacus.jasoncameron.dev/hit/" + NAMESPACE + "/";
-  var ATTEMPTS = 3;          /* 카운터 서버가 느리거나 잠깐 실패하면 다시 시도 */
+  var ENDPOINT = "https://countapi.mileshilliard.com/api/v1/hit/";
+  var PREFIX = "clutch_dino02232_site_";
+  var ATTEMPTS = 3;          /* 카운터 서버가 잠깐 실패하면 다시 시도 */
 
   /* 한국 시간(UTC+9, 서머타임 없음) 기준 YYYY-MM-DD */
   function kstDay() {
@@ -26,7 +26,7 @@
   }
 
   function send(key) {
-    return fetch(ENDPOINT + key, {
+    return fetch(ENDPOINT + PREFIX + key, {
       method: "GET",
       mode: "cors",
       cache: "no-store",
@@ -44,7 +44,7 @@
     attempt = attempt || 1;
     send(key).catch(function () {
       if (attempt >= ATTEMPTS) return;
-      setTimeout(function () { ping(key, attempt + 1); }, attempt * 2500);
+      setTimeout(function () { ping(key, attempt + 1); }, attempt * 1500);
     });
   }
 
@@ -64,19 +64,19 @@
     if (document.prerendering) return;         /* 미리 렌더된 페이지는 세지 않음 */
     var day = kstDay();
     if (!firstInSession(day)) return;
-    ping("day-" + day);
-    setTimeout(function () { ping("total"); }, 800);
+    ping("day_" + day);
+    ping("total");
   }
 
   function schedule() {
     /* 렌더·스크립트 작업이 끝난 뒤로 미룹니다 */
     setTimeout(function () {
       if (typeof requestIdleCallback === "function") {
-        requestIdleCallback(count, { timeout: 4000 });
+        requestIdleCallback(count, { timeout: 3000 });
       } else {
         count();
       }
-    }, 1200);
+    }, 900);
   }
 
   if (document.readyState === "complete") schedule();
