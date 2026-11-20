@@ -648,7 +648,8 @@
     return "<li>" +
       '<span class="f-side ' + side + '">' + (side === "home" ? "홈" : "원정") + "</span>" +
       (g ? favoriteButtonHTML(g.sport, team.name) : "") +
-      '<span class="f-name">' + esc(team.name) + "</span>" +
+      '<a class="f-name" href="team.html?team=' + encodeURIComponent(team.name) + '" title="' + esc(team.name + " 팀 페이지") + '" style="color:inherit;text-decoration:none">' + esc(team.name) + "</a>" +
+      '<span aria-hidden="true" style="flex:0 0 auto;color:#9CA3AF;font-weight:800;font-size:11px;line-height:1">›</span>' +
       (team.record ? '<span class="f-rec">' + esc(team.record) + "</span>" : "") +
       streakChip(team) +
       badges +
