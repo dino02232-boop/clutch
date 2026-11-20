@@ -1631,7 +1631,7 @@
     EPL: "eng.1", PREMIERLEAGUE: "eng.1",
     LALIGA: "esp.1", LIGA: "esp.1",
     UCL: "uefa.champions", CHAMPIONSLEAGUE: "uefa.champions",
-    BUNDESLIGA: "ger.1", SERIEA: "ita.1", LIGUE1: "fra.1",
+    BUNDES: "ger.1", BUNDESLIGA: "ger.1", SERIEA: "ita.1", LIGUE1: "fra.1",
     UEL: "uefa.europa", EUROPALEAGUE: "uefa.europa"
   };
 
