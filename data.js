@@ -265,12 +265,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Paolo Banchero",
+                    "id": "4432573",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432573.png",
                     "pos": "F",
                     "stat": "24.5점 · 6.5리바운드 · 7.5어시스트",
                     "sub": "야투 69.6% · 3점 50.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Franz Wagner",
+                    "id": "4566434",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.8리바운드 · 8.3어시스트",
                     "sub": "야투 46.4% · 3점 25.8% · 팀 내 2옵션",
@@ -279,6 +283,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Desmond Bane",
+                    "id": "4066320",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
                     "pos": "G",
                     "stat": "18.8점 · 4.4리바운드 · 2.7어시스트",
                     "sub": "야투 42.0% · 3점 40.7% · 팀 내 3옵션",
@@ -367,6 +373,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jayson Tatum",
+                    "id": "4065648",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
                     "pos": "F",
                     "stat": "26.5점 · 6.5리바운드 · 7.1어시스트",
                     "sub": "야투 42.5% · 3점 33.0% · 팀 내 1옵션",
@@ -375,6 +383,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Paul George",
+                    "id": "4251",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png",
                     "pos": "F",
                     "stat": "20.8점 · 5.6리바운드 · 3.9어시스트",
                     "sub": "야투 47.9% · 3점 44.3% · 팀 내 2옵션",
@@ -383,6 +393,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Payton Pritchard",
+                    "id": "4066354",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
                     "stat": "13.6점 · 3.2리바운드 · 3.9어시스트",
                     "sub": "야투 41.6% · 3점 36.3% · 팀 내 3옵션",
@@ -567,6 +579,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Norman Powell",
+                    "id": "2595516",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
                     "pos": "G",
                     "stat": "21.6점 · 2.9리바운드 · 2.2어시스트",
                     "sub": "야투 45.9% · 3점 32.4% · 팀 내 1옵션",
@@ -575,6 +589,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Caleb Wilson",
+                    "id": "5095151",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5095151.png",
                     "pos": "F",
                     "stat": "18.9점 · 6.2리바운드 · 1.9어시스트",
                     "sub": "야투 42.0% · 3점 32.4% · 팀 내 2옵션",
@@ -582,6 +598,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Matas Buzelis",
+                    "id": "4711294",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                     "pos": "F",
                     "stat": "14.4점 · 4.7리바운드 · 1.8어시스트",
                     "sub": "야투 45.0% · 3점 35.3% · 팀 내 3옵션",
@@ -665,6 +683,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Donovan Mitchell",
+                    "id": "3908809",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
                     "pos": "G",
                     "stat": "24.1점 · 4.9리바운드 · 5.5어시스트",
                     "sub": "야투 49.6% · 3점 38.2% · 팀 내 1옵션",
@@ -672,6 +692,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Evan Mobley",
+                    "id": "4432158",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432158.png",
                     "pos": "C",
                     "stat": "16.9점 · 7.3리바운드 · 3.6어시스트",
                     "sub": "야투 55.5% · 3점 47.9% · 팀 내 2옵션",
@@ -679,6 +701,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "James Harden",
+                    "id": "3992",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3992.png",
                     "pos": "G",
                     "stat": "16.4점 · 4.6리바운드 · 6.1어시스트",
                     "sub": "야투 38.5% · 3점 37.1% · 팀 내 3옵션",
@@ -899,6 +923,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Ty Jerome",
+                    "id": "4065733",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
                     "pos": "G",
                     "stat": "25.4점 · 3.4리바운드 · 5.3어시스트",
                     "sub": "야투 48.5% · 3점 35.9% · 팀 내 1옵션",
@@ -906,6 +932,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cameron Boozer",
+                    "id": "5041935",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
                     "pos": "F",
                     "stat": "16.5점 · 9.5리바운드 · 5.4어시스트",
                     "sub": "야투 39.3% · 3점 32.2% · 팀 내 2옵션",
@@ -914,6 +942,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cedric Coward",
+                    "id": "4903027",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                     "pos": "F",
                     "stat": "14.1점 · 8.8리바운드 · 3.3어시스트",
                     "sub": "야투 47.1% · 3점 43.9% · 팀 내 3옵션",
@@ -1011,6 +1041,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Davis",
+                    "id": "6583",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
                     "pos": "F",
                     "stat": "24.5점 · 9.8리바운드 · 2.1어시스트",
                     "sub": "야투 51.7% · 3점 31.0% · 팀 내 1옵션",
@@ -1019,6 +1051,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Trae Young",
+                    "id": "4277905",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
                     "pos": "G",
                     "stat": "17.9점 · 2.9리바운드 · 8.9어시스트",
                     "sub": "야투 37.8% · 3점 30.6% · 팀 내 2옵션",
@@ -1027,6 +1061,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyshawn George",
+                    "id": "5174563",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
                     "pos": "F",
                     "stat": "17.7점 · 4.4리바운드 · 4.5어시스트",
                     "sub": "야투 49.0% · 3점 42.2% · 팀 내 3옵션",
@@ -1247,6 +1283,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Tyrese Maxey",
+                    "id": "4431678",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
                     "pos": "G",
                     "stat": "26.5점 · 3.3리바운드 · 5.8어시스트",
                     "sub": "야투 50.0% · 3점 38.0% · 팀 내 1옵션",
@@ -1255,6 +1293,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jaylen Brown",
+                    "id": "3917376",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3917376.png",
                     "pos": "G",
                     "stat": "22.6점 · 6.6리바운드 · 3.6어시스트",
                     "sub": "야투 49.4% · 3점 38.6% · 팀 내 2옵션",
@@ -1263,6 +1303,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Joel Embiid",
+                    "id": "3059318",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
                     "pos": "C",
                     "stat": "19.5점 · 8.5리바운드 · 3.5어시스트",
                     "sub": "야투 40.0% · 3점 15.0% · 팀 내 3옵션",
@@ -1350,6 +1392,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Michael Porter Jr.",
+                    "id": "4278104",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278104.png",
                     "pos": "F",
                     "stat": "21.8점 · 7.4리바운드 · 1.3어시스트",
                     "sub": "야투 46.2% · 3점 37.6% · 팀 내 1옵션",
@@ -1357,6 +1401,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Julius Randle",
+                    "id": "3064514",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
                     "pos": "F",
                     "stat": "20.9점 · 6.2리바운드 · 4.7어시스트",
                     "sub": "야투 46.7% · 3점 33.9% · 팀 내 2옵션",
@@ -1365,6 +1411,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Nolan Traore",
+                    "id": "5279130",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5279130.png",
                     "pos": "G",
                     "stat": "13.6점 · 1.8리바운드 · 2.7어시스트",
                     "sub": "야투 50.8% · 3점 42.6% · 팀 내 3옵션",
@@ -1549,6 +1597,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Alperen Sengun",
+                    "id": "4871144",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png",
                     "pos": "C",
                     "stat": "22.8점 · 9.3리바운드 · 7.2어시스트",
                     "sub": "야투 55.8% · 3점 48.1% · 팀 내 1옵션",
@@ -1557,6 +1607,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kevin Durant",
+                    "id": "3202",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
                     "pos": "F",
                     "stat": "21.3점 · 5.5리바운드 · 3.8어시스트",
                     "sub": "야투 48.5% · 3점 37.3% · 팀 내 2옵션",
@@ -1565,6 +1617,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Amen Thompson",
+                    "id": "4684740",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684740.png",
                     "pos": "G",
                     "stat": "15.8점 · 7.0리바운드 · 3.4어시스트",
                     "sub": "야투 53.5% · 3점 35.7% · 팀 내 3옵션",
@@ -1648,6 +1702,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Giannis Antetokounmpo",
+                    "id": "3032977",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032977.png",
                     "pos": "F",
                     "stat": "28.3점 · 12.5리바운드 · 5.2어시스트",
                     "sub": "야투 60.1% · 3점 25.0% · 팀 내 1옵션",
@@ -1656,6 +1712,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Bam Adebayo",
+                    "id": "4066261",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png",
                     "pos": "C",
                     "stat": "18.4점 · 8.0리바운드 · 3.2어시스트",
                     "sub": "야투 52.9% · 3점 22.0% · 팀 내 2옵션",
@@ -1664,6 +1722,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Davion Mitchell",
+                    "id": "4278053",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
                     "pos": "G",
                     "stat": "16.7점 · 2.4리바운드 · 9.2어시스트",
                     "sub": "야투 49.7% · 3점 40.0% · 팀 내 3옵션",
@@ -1869,6 +1929,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Deni Avdija",
+                    "id": "4683021",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.2리바운드 · 6.1어시스트",
                     "sub": "야투 50.7% · 3점 38.6% · 팀 내 1옵션",
@@ -1876,6 +1938,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Damian Lillard",
+                    "id": "6606",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                     "pos": "G",
                     "stat": "20.1점 · 3.0리바운드 · 4.4어시스트",
                     "sub": "야투 39.6% · 3점 35.2% · 팀 내 2옵션",
@@ -1884,6 +1948,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ja Morant",
+                    "id": "4279888",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4279888.png",
                     "pos": "G",
                     "stat": "15.8점 · 2.5리바운드 · 5.5어시스트",
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
@@ -1978,12 +2044,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Edwards",
+                    "id": "4594268",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4594268.png",
                     "pos": "G",
                     "stat": "33.2점 · 4.8리바운드 · 3.5어시스트",
                     "sub": "야투 48.1% · 3점 40.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Ayo Dosunmu",
+                    "id": "4397002",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png",
                     "pos": "G",
                     "stat": "18.6점 · 4.6리바운드 · 3.5어시스트",
                     "sub": "야투 52.2% · 3점 46.4% · 팀 내 2옵션",
@@ -1992,6 +2062,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "LaMelo Ball",
+                    "id": "4432816",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
                     "pos": "G",
                     "stat": "17.7점 · 4.1리바운드 · 5.5어시스트",
                     "sub": "야투 41.8% · 3점 36.6% · 팀 내 3옵션",
@@ -2213,6 +2285,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Stephen Curry",
+                    "id": "3975",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3975.png",
                     "pos": "G",
                     "stat": "27.8점 · 3.7리바운드 · 3.9어시스트",
                     "sub": "야투 50.0% · 3점 45.7% · 팀 내 1옵션",
@@ -2220,6 +2294,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Yaxel Lendeborg",
+                    "id": "5175737",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
                     "pos": "F",
                     "stat": "20.8점 · 7.4리바운드 · 3.4어시스트",
                     "sub": "야투 47.6% · 3점 39.2% · 팀 내 2옵션",
@@ -2228,6 +2304,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Brandin Podziemski",
+                    "id": "4709138",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
                     "pos": "G",
                     "stat": "16.3점 · 5.0리바운드 · 3.8어시스트",
                     "sub": "야투 45.6% · 3점 40.0% · 팀 내 3옵션",
@@ -2325,6 +2403,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Zion Williamson",
+                    "id": "4395628",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png",
                     "pos": "F",
                     "stat": "21.5점 · 5.3리바운드 · 2.6어시스트",
                     "sub": "야투 59.2% · 3점 46.2% · 팀 내 1옵션",
@@ -2333,6 +2413,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Saddiq Bey",
+                    "id": "4397136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
                     "pos": "F",
                     "stat": "16.9점 · 4.2리바운드 · 2.3어시스트",
                     "sub": "야투 45.9% · 3점 40.2% · 팀 내 2옵션",
@@ -2341,6 +2423,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Trey Murphy III",
+                    "id": "4397688",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397688.png",
                     "pos": "F",
                     "stat": "15.6점 · 4.8리바운드 · 3.6어시스트",
                     "sub": "야투 46.5% · 3점 37.7% · 팀 내 3옵션",
@@ -2561,6 +2645,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Devin Booker",
+                    "id": "3136193",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png",
                     "pos": "G",
                     "stat": "24.5점 · 2.8리바운드 · 5.4어시스트",
                     "sub": "야투 47.3% · 3점 34.2% · 팀 내 1옵션",
@@ -2569,6 +2655,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Miles Bridges",
+                    "id": "4066383",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png",
                     "pos": "F",
                     "stat": "14.7점 · 7.0리바운드 · 3.0어시스트",
                     "sub": "야투 45.6% · 3점 31.1% · 팀 내 2옵션",
@@ -2577,6 +2665,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Dillon Brooks",
+                    "id": "3155526",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155526.png",
                     "pos": "F",
                     "stat": "13.8점 · 3.7리바운드 · 2.1어시스트",
                     "sub": "야투 42.9% · 3점 43.1% · 팀 내 3옵션",
@@ -2645,6 +2735,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jamal Murray",
+                    "id": "3936299",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
                     "pos": "G",
                     "stat": "26.1점 · 5.1리바운드 · 6.0어시스트",
                     "sub": "야투 51.0% · 3점 47.1% · 팀 내 1옵션",
@@ -2653,6 +2745,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Nikola Jokic",
+                    "id": "3112335",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
                     "pos": "C",
                     "stat": "24.1점 · 10.9리바운드 · 8.9어시스트",
                     "sub": "야투 51.6% · 3점 26.0% · 팀 내 2옵션",
@@ -2661,6 +2755,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Christian Braun",
+                    "id": "4431767",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png",
                     "pos": "G",
                     "stat": "12.6점 · 4.2리바운드 · 2.3어시스트",
                     "sub": "야투 48.3% · 3점 35.2% · 팀 내 3옵션",
@@ -3472,6 +3568,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jalen Brunson",
+                    "id": "3934672",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
                     "stat": "27.0점 · 2.9리바운드 · 5.9어시스트",
                     "sub": "야투 43.5% · 3점 38.1% · 팀 내 1옵션",
@@ -3480,6 +3578,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Karl-Anthony Towns",
+                    "id": "3136195",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
                     "pos": "C",
                     "stat": "21.2점 · 14.1리바운드 · 3.9어시스트",
                     "sub": "야투 54.5% · 3점 40.0% · 팀 내 2옵션",
@@ -3488,6 +3588,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "OG Anunoby",
+                    "id": "3934719",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934719.png",
                     "pos": "F",
                     "stat": "16.4점 · 5.3리바운드 · 2.0어시스트",
                     "sub": "야투 39.4% · 3점 32.2% · 팀 내 3옵션",
@@ -3548,6 +3650,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Scottie Barnes",
+                    "id": "4433134",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433134.png",
                     "pos": "F",
                     "stat": "23.8점 · 7.4리바운드 · 4.7어시스트",
                     "sub": "야투 47.7% · 3점 25.0% · 팀 내 1옵션",
@@ -3556,6 +3660,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "RJ Barrett",
+                    "id": "4395625",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395625.png",
                     "pos": "F",
                     "stat": "20.9점 · 6.4리바운드 · 4.3어시스트",
                     "sub": "야투 47.3% · 3점 28.4% · 팀 내 2옵션",
@@ -3564,6 +3670,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kawhi Leonard",
+                    "id": "6450",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6450.png",
                     "pos": "F",
                     "stat": "19.5점 · 7.5리바운드 · 1.5어시스트",
                     "sub": "야투 32.4% · 3점 28.6% · 팀 내 3옵션"
@@ -3767,6 +3875,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Deni Avdija",
+                    "id": "4683021",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.2리바운드 · 6.1어시스트",
                     "sub": "야투 50.7% · 3점 38.6% · 팀 내 1옵션",
@@ -3775,6 +3885,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Damian Lillard",
+                    "id": "6606",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                     "pos": "G",
                     "stat": "20.1점 · 3.0리바운드 · 4.4어시스트",
                     "sub": "야투 39.6% · 3점 35.2% · 팀 내 2옵션",
@@ -3783,6 +3895,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ja Morant",
+                    "id": "4279888",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4279888.png",
                     "pos": "G",
                     "stat": "15.8점 · 2.5리바운드 · 5.5어시스트",
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
@@ -3877,12 +3991,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Edwards",
+                    "id": "4594268",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4594268.png",
                     "pos": "G",
                     "stat": "33.2점 · 4.8리바운드 · 3.5어시스트",
                     "sub": "야투 48.1% · 3점 40.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Ayo Dosunmu",
+                    "id": "4397002",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png",
                     "pos": "G",
                     "stat": "18.6점 · 4.6리바운드 · 3.5어시스트",
                     "sub": "야투 52.2% · 3점 46.4% · 팀 내 2옵션",
@@ -3891,6 +4009,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "LaMelo Ball",
+                    "id": "4432816",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
                     "pos": "G",
                     "stat": "17.7점 · 4.1리바운드 · 5.5어시스트",
                     "sub": "야투 41.8% · 3점 36.6% · 팀 내 3옵션",
@@ -4111,6 +4231,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Cade Cunningham",
+                    "id": "4432166",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
                     "pos": "G",
                     "stat": "25.8점 · 5.2리바운드 · 7.8어시스트",
                     "sub": "야투 47.7% · 3점 31.7% · 팀 내 1옵션",
@@ -4119,6 +4241,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Duncan Robinson",
+                    "id": "3157465",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3157465.png",
                     "pos": "F",
                     "stat": "17.4점 · 1.8리바운드 · 2.1어시스트",
                     "sub": "야투 45.0% · 3점 43.1% · 팀 내 2옵션",
@@ -4127,6 +4251,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Daniss Jenkins",
+                    "id": "5107199",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
                     "pos": "G",
                     "stat": "14.1점 · 3.7리바운드 · 4.4어시스트",
                     "sub": "야투 45.3% · 3점 42.4% · 팀 내 3옵션",
@@ -4225,6 +4351,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Victor Wembanyama",
+                    "id": "5104157",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
                     "pos": "F",
                     "stat": "28.4점 · 12.0리바운드 · 3.3어시스트",
                     "sub": "야투 53.0% · 3점 30.1% · 팀 내 1옵션",
@@ -4233,6 +4361,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Dylan Harper",
+                    "id": "5037871",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5037871.png",
                     "pos": "G",
                     "stat": "18.4점 · 5.4리바운드 · 4.5어시스트",
                     "sub": "야투 50.5% · 3점 31.5% · 팀 내 2옵션",
@@ -4241,6 +4371,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Stephon Castle",
+                    "id": "4845367",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png",
                     "pos": "G",
                     "stat": "15.3점 · 5.2리바운드 · 5.5어시스트",
                     "sub": "야투 42.0% · 3점 34.1% · 팀 내 3옵션",
@@ -4446,6 +4578,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Keyonte George",
+                    "id": "4433627",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
                     "pos": "G",
                     "stat": "21.0점 · 4.3리바운드 · 6.9어시스트",
                     "sub": "야투 43.4% · 3점 33.0% · 팀 내 1옵션",
@@ -4454,12 +4588,16 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Lauri Markkanen",
+                    "id": "4066336",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066336.png",
                     "pos": "F",
                     "stat": "18.0점 · 6.8리바운드 · 2.0어시스트",
                     "sub": "야투 38.9% · 3점 39.7% · 팀 내 2옵션"
                   },
                   {
                     "name": "Darryn Peterson",
+                    "id": "5041955",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png",
                     "pos": "G",
                     "stat": "16.9점 · 4.3리바운드 · 3.7어시스트",
                     "sub": "야투 40.0% · 3점 36.2% · 팀 내 3옵션",
@@ -4550,6 +4688,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Darius Garland",
+                    "id": "4396907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
                     "pos": "G",
                     "stat": "21.2점 · 2.4리바운드 · 6.9어시스트",
                     "sub": "야투 46.5% · 3점 36.8% · 팀 내 1옵션",
@@ -4558,6 +4698,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Brook Lopez",
+                    "id": "3448",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png",
                     "pos": "C",
                     "stat": "14.8점 · 5.4리바운드 · 1.8어시스트",
                     "sub": "야투 53.6% · 3점 41.2% · 팀 내 2옵션",
@@ -4566,6 +4708,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Rui Hachimura",
+                    "id": "4066648",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066648.png",
                     "pos": "F",
                     "stat": "13.3점 · 5.9리바운드 · 1.5어시스트",
                     "sub": "야투 39.2% · 3점 37.1% · 팀 내 3옵션",
@@ -4778,6 +4922,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Brandon Miller",
+                    "id": "4433287",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433287.png",
                     "pos": "F",
                     "stat": "19.9점 · 4.5리바운드 · 2.5어시스트",
                     "sub": "야투 35.9% · 3점 27.0% · 팀 내 1옵션",
@@ -4786,6 +4932,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Naz Reid",
+                    "id": "4396971",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396971.png",
                     "pos": "C",
                     "stat": "17.6점 · 8.4리바운드 · 2.4어시스트",
                     "sub": "야투 40.3% · 3점 35.0% · 팀 내 2옵션",
@@ -4794,6 +4942,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Grayson Allen",
+                    "id": "3135045",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3135045.png",
                     "pos": "G",
                     "stat": "14.9점 · 3.1리바운드 · 3.3어시스트",
                     "sub": "야투 44.8% · 3점 45.8% · 팀 내 3옵션",
@@ -4878,6 +5028,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Luka Doncic",
+                    "id": "3945274",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
                     "pos": "G",
                     "stat": "38.8점 · 7.2리바운드 · 7.7어시스트",
                     "sub": "야투 47.6% · 3점 39.8% · 팀 내 1옵션",
@@ -4886,6 +5038,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Austin Reaves",
+                    "id": "4066457",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066457.png",
                     "pos": "G",
                     "stat": "24.7점 · 3.3리바운드 · 4.7어시스트",
                     "sub": "야투 51.3% · 3점 40.9% · 팀 내 2옵션",
@@ -4893,6 +5047,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Walker Kessler",
+                    "id": "4433136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433136.png",
                     "pos": "C",
                     "stat": "14.5점 · 10.9리바운드 · 1.9어시스트",
                     "sub": "야투 68.0% · 3점 0.0% · 팀 내 3옵션",
@@ -5719,6 +5875,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Ty Jerome",
+                    "id": "4065733",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
                     "pos": "G",
                     "stat": "25.4점 · 3.4리바운드 · 5.3어시스트",
                     "sub": "야투 48.5% · 3점 35.9% · 팀 내 1옵션",
@@ -5726,6 +5884,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cameron Boozer",
+                    "id": "5041935",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
                     "pos": "F",
                     "stat": "16.6점 · 9.4리바운드 · 5.3어시스트",
                     "sub": "야투 40.0% · 3점 32.2% · 팀 내 2옵션",
@@ -5734,6 +5894,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cedric Coward",
+                    "id": "4903027",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                     "pos": "F",
                     "stat": "14.5점 · 8.4리바운드 · 3.4어시스트",
                     "sub": "야투 47.7% · 3점 45.2% · 팀 내 3옵션",
@@ -5831,6 +5993,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Donovan Mitchell",
+                    "id": "3908809",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
                     "pos": "G",
                     "stat": "24.8점 · 4.8리바운드 · 5.3어시스트",
                     "sub": "야투 49.8% · 3점 36.9% · 팀 내 1옵션",
@@ -5839,6 +6003,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Evan Mobley",
+                    "id": "4432158",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432158.png",
                     "pos": "C",
                     "stat": "16.9점 · 7.3리바운드 · 3.6어시스트",
                     "sub": "야투 55.5% · 3점 47.9% · 팀 내 2옵션",
@@ -5846,6 +6012,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "James Harden",
+                    "id": "3992",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3992.png",
                     "pos": "G",
                     "stat": "16.2점 · 4.7리바운드 · 6.3어시스트",
                     "sub": "야투 38.5% · 3점 37.5% · 팀 내 3옵션",
@@ -6059,6 +6227,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Alperen Sengun",
+                    "id": "4871144",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png",
                     "pos": "C",
                     "stat": "21.6점 · 9.1리바운드 · 6.8어시스트",
                     "sub": "야투 54.5% · 3점 50.0% · 팀 내 1옵션",
@@ -6067,6 +6237,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kevin Durant",
+                    "id": "3202",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
                     "pos": "F",
                     "stat": "21.3점 · 5.2리바운드 · 3.8어시스트",
                     "sub": "야투 49.8% · 3점 40.6% · 팀 내 2옵션",
@@ -6075,6 +6247,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Amen Thompson",
+                    "id": "4684740",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684740.png",
                     "pos": "G",
                     "stat": "15.7점 · 7.1리바운드 · 3.3어시스트",
                     "sub": "야투 53.6% · 3점 33.3% · 팀 내 3옵션",
@@ -6150,6 +6324,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Pascal Siakam",
+                    "id": "3149673",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
                     "pos": "F",
                     "stat": "23.1점 · 6.1리바운드 · 3.9어시스트",
                     "sub": "야투 52.0% · 3점 35.9% · 팀 내 1옵션",
@@ -6158,12 +6334,16 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Tyrese Haliburton",
+                    "id": "4396993",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396993.png",
                     "pos": "G",
                     "stat": "21.8점 · 4.5리바운드 · 9.5어시스트",
                     "sub": "야투 51.6% · 3점 37.0% · 팀 내 2옵션"
                   },
                   {
                     "name": "Andrew Nembhard",
+                    "id": "4395712",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
                     "pos": "G",
                     "stat": "16.6점 · 2.3리바운드 · 7.6어시스트",
                     "sub": "야투 44.6% · 3점 40.3% · 팀 내 3옵션",
@@ -6384,6 +6564,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Tyler Herro",
+                    "id": "4395725",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
                     "pos": "G",
                     "stat": "19.4점 · 4.0리바운드 · 4.2어시스트",
                     "sub": "야투 42.4% · 3점 34.3% · 팀 내 1옵션",
@@ -6392,6 +6574,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jaime Jaquez Jr.",
+                    "id": "4432848",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png",
                     "pos": "F",
                     "stat": "15.4점 · 5.4리바운드 · 3.1어시스트",
                     "sub": "야투 47.1% · 3점 43.3% · 팀 내 2옵션",
@@ -6400,6 +6584,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyle Kuzma",
+                    "id": "3134907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
                     "pos": "F",
                     "stat": "12.3점 · 5.3리바운드 · 2.4어시스트",
                     "sub": "야투 46.2% · 3점 32.9% · 팀 내 3옵션",
@@ -6477,6 +6663,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Giannis Antetokounmpo",
+                    "id": "3032977",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032977.png",
                     "pos": "F",
                     "stat": "28.2점 · 12.6리바운드 · 5.5어시스트",
                     "sub": "야투 60.2% · 3점 24.2% · 팀 내 1옵션",
@@ -6485,6 +6673,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Bam Adebayo",
+                    "id": "4066261",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png",
                     "pos": "C",
                     "stat": "18.9점 · 7.7리바운드 · 3.1어시스트",
                     "sub": "야투 52.4% · 3점 24.5% · 팀 내 2옵션",
@@ -6493,6 +6683,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Davion Mitchell",
+                    "id": "4278053",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
                     "pos": "G",
                     "stat": "17.2점 · 2.4리바운드 · 9.0어시스트",
                     "sub": "야투 51.1% · 3점 43.7% · 팀 내 3옵션",
@@ -6687,6 +6879,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Tyrese Maxey",
+                    "id": "4431678",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
                     "pos": "G",
                     "stat": "26.5점 · 3.3리바운드 · 5.8어시스트",
                     "sub": "야투 50.0% · 3점 38.0% · 팀 내 1옵션",
@@ -6695,6 +6889,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jaylen Brown",
+                    "id": "3917376",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3917376.png",
                     "pos": "G",
                     "stat": "22.6점 · 6.6리바운드 · 3.6어시스트",
                     "sub": "야투 49.4% · 3점 38.6% · 팀 내 2옵션",
@@ -6703,6 +6899,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Joel Embiid",
+                    "id": "3059318",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
                     "pos": "C",
                     "stat": "20.0점 · 8.3리바운드 · 3.8어시스트",
                     "sub": "야투 39.9% · 3점 14.6% · 팀 내 3옵션",
@@ -6800,12 +6998,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Paolo Banchero",
+                    "id": "4432573",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432573.png",
                     "pos": "F",
                     "stat": "24.5점 · 6.5리바운드 · 7.5어시스트",
                     "sub": "야투 69.6% · 3점 50.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Franz Wagner",
+                    "id": "4566434",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
                     "pos": "F",
                     "stat": "24.4점 · 6.9리바운드 · 8.5어시스트",
                     "sub": "야투 47.0% · 3점 25.0% · 팀 내 2옵션",
@@ -6814,6 +7016,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Desmond Bane",
+                    "id": "4066320",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
                     "pos": "G",
                     "stat": "18.5점 · 4.3리바운드 · 2.7어시스트",
                     "sub": "야투 42.6% · 3점 41.7% · 팀 내 3옵션",
@@ -7025,6 +7229,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Norman Powell",
+                    "id": "2595516",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
                     "pos": "G",
                     "stat": "21.2점 · 2.8리바운드 · 2.4어시스트",
                     "sub": "야투 45.1% · 3점 34.9% · 팀 내 1옵션",
@@ -7033,6 +7239,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Caleb Wilson",
+                    "id": "5095151",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5095151.png",
                     "pos": "F",
                     "stat": "18.9점 · 6.2리바운드 · 1.9어시스트",
                     "sub": "야투 42.0% · 3점 32.4% · 팀 내 2옵션",
@@ -7040,6 +7248,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Matas Buzelis",
+                    "id": "4711294",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                     "pos": "F",
                     "stat": "15.1점 · 4.7리바운드 · 2.0어시스트",
                     "sub": "야투 46.2% · 3점 37.7% · 팀 내 3옵션",
@@ -7117,6 +7327,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Julius Randle",
+                    "id": "3064514",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
                     "pos": "F",
                     "stat": "20.6점 · 5.8리바운드 · 4.6어시스트",
                     "sub": "야투 46.8% · 3점 35.9% · 팀 내 1옵션",
@@ -7125,6 +7337,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Michael Porter Jr.",
+                    "id": "4278104",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278104.png",
                     "pos": "F",
                     "stat": "20.5점 · 7.1리바운드 · 1.3어시스트",
                     "sub": "야투 45.0% · 3점 36.8% · 팀 내 2옵션",
@@ -7133,6 +7347,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Nolan Traore",
+                    "id": "5279130",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5279130.png",
                     "pos": "G",
                     "stat": "13.5점 · 1.8리바운드 · 2.8어시스트",
                     "sub": "야투 51.9% · 3점 42.0% · 팀 내 3옵션",
@@ -7317,6 +7533,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Davis",
+                    "id": "6583",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
                     "pos": "F",
                     "stat": "24.6점 · 10.1리바운드 · 2.1어시스트",
                     "sub": "야투 52.0% · 3점 34.4% · 팀 내 1옵션",
@@ -7325,6 +7543,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyshawn George",
+                    "id": "5174563",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
                     "pos": "F",
                     "stat": "17.8점 · 4.2리바운드 · 4.4어시스트",
                     "sub": "야투 48.6% · 3점 42.4% · 팀 내 2옵션",
@@ -7333,6 +7553,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Trae Young",
+                    "id": "4277905",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
                     "pos": "G",
                     "stat": "17.5점 · 2.8리바운드 · 8.9어시스트",
                     "sub": "야투 37.1% · 3점 30.4% · 팀 내 3옵션",
@@ -7429,6 +7651,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Scottie Barnes",
+                    "id": "4433134",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433134.png",
                     "pos": "F",
                     "stat": "23.8점 · 7.4리바운드 · 4.7어시스트",
                     "sub": "야투 47.7% · 3점 25.0% · 팀 내 1옵션",
@@ -7437,6 +7661,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "RJ Barrett",
+                    "id": "4395625",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395625.png",
                     "pos": "F",
                     "stat": "20.9점 · 6.4리바운드 · 4.3어시스트",
                     "sub": "야투 47.3% · 3점 28.4% · 팀 내 2옵션",
@@ -7445,6 +7671,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kawhi Leonard",
+                    "id": "6450",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6450.png",
                     "pos": "F",
                     "stat": "19.5점 · 7.5리바운드 · 1.5어시스트",
                     "sub": "야투 32.4% · 3점 28.6% · 팀 내 3옵션"
@@ -7663,6 +7891,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Cade Cunningham",
+                    "id": "4432166",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
                     "pos": "G",
                     "stat": "25.8점 · 5.2리바운드 · 7.8어시스트",
                     "sub": "야투 47.7% · 3점 31.7% · 팀 내 1옵션",
@@ -7671,6 +7901,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Duncan Robinson",
+                    "id": "3157465",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3157465.png",
                     "pos": "F",
                     "stat": "17.4점 · 1.8리바운드 · 2.1어시스트",
                     "sub": "야투 45.0% · 3점 43.1% · 팀 내 2옵션",
@@ -7678,6 +7910,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Daniss Jenkins",
+                    "id": "5107199",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
                     "pos": "G",
                     "stat": "14.3점 · 3.7리바운드 · 4.7어시스트",
                     "sub": "야투 45.2% · 3점 43.7% · 팀 내 3옵션",
@@ -7775,6 +8009,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Zion Williamson",
+                    "id": "4395628",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png",
                     "pos": "F",
                     "stat": "21.7점 · 5.4리바운드 · 2.5어시스트",
                     "sub": "야투 59.6% · 3점 46.2% · 팀 내 1옵션",
@@ -7783,6 +8019,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Saddiq Bey",
+                    "id": "4397136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
                     "pos": "F",
                     "stat": "16.5점 · 4.4리바운드 · 2.6어시스트",
                     "sub": "야투 44.4% · 3점 39.4% · 팀 내 2옵션",
@@ -7791,6 +8029,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jeremiah Fears",
+                    "id": "5144091",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5144091.png",
                     "pos": "G",
                     "stat": "15.6점 · 4.9리바운드 · 5.4어시스트",
                     "sub": "야투 44.7% · 3점 28.1% · 팀 내 3옵션",
@@ -8012,6 +8252,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Nickeil Alexander-Walker",
+                    "id": "4278039",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png",
                     "pos": "G",
                     "stat": "21.2점 · 3.6리바운드 · 3.0어시스트",
                     "sub": "야투 41.7% · 3점 34.9% · 팀 내 1옵션",
@@ -8020,6 +8262,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jalen Johnson",
+                    "id": "4701230",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png",
                     "pos": "F",
                     "stat": "19.2점 · 9.2리바운드 · 7.6어시스트",
                     "sub": "야투 43.2% · 3점 18.0% · 팀 내 2옵션",
@@ -8028,6 +8272,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Onyeka Okongwu",
+                    "id": "4431680",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431680.png",
                     "pos": "F",
                     "stat": "15.0점 · 8.2리바운드 · 2.5어시스트",
                     "sub": "야투 50.0% · 3점 33.7% · 팀 내 3옵션",
@@ -8124,6 +8370,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Shai Gilgeous-Alexander",
+                    "id": "4278073",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278073.png",
                     "pos": "G",
                     "stat": "31.1점 · 4.1리바운드 · 4.3어시스트",
                     "sub": "야투 47.6% · 3점 35.8% · 팀 내 1옵션",
@@ -8132,6 +8380,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ajay Mitchell",
+                    "id": "4900671",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
                     "pos": "G",
                     "stat": "17.7점 · 3.8리바운드 · 3.6어시스트",
                     "sub": "야투 51.1% · 3점 25.0% · 팀 내 2옵션",
@@ -8140,6 +8390,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jared McCain",
+                    "id": "4683778",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
                     "pos": "G",
                     "stat": "13.7점 · 3.4리바운드 · 1.8어시스트",
                     "sub": "야투 40.8% · 3점 34.3% · 팀 내 3옵션",
@@ -8361,6 +8613,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Stephen Curry",
+                    "id": "3975",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3975.png",
                     "pos": "G",
                     "stat": "27.8점 · 3.7리바운드 · 3.9어시스트",
                     "sub": "야투 50.0% · 3점 45.7% · 팀 내 1옵션",
@@ -8368,6 +8622,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Yaxel Lendeborg",
+                    "id": "5175737",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
                     "pos": "F",
                     "stat": "20.3점 · 7.3리바운드 · 3.5어시스트",
                     "sub": "야투 46.4% · 3점 37.8% · 팀 내 2옵션",
@@ -8376,6 +8632,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Brandin Podziemski",
+                    "id": "4709138",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
                     "pos": "G",
                     "stat": "15.8점 · 4.8리바운드 · 3.8어시스트",
                     "sub": "야투 45.0% · 3점 37.8% · 팀 내 3옵션",
@@ -8472,6 +8730,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Cooper Flagg",
+                    "id": "5041939",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.6리바운드 · 6.4어시스트",
                     "sub": "야투 48.5% · 3점 29.9% · 팀 내 1옵션",
@@ -8480,6 +8740,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyrie Irving",
+                    "id": "6442",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                     "pos": "G",
                     "stat": "22.2점 · 3.7리바운드 · 4.4어시스트",
                     "sub": "야투 47.3% · 3점 38.5% · 팀 내 2옵션",
@@ -8488,6 +8750,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "P.J. Washington",
+                    "id": "4278078",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278078.png",
                     "pos": "F",
                     "stat": "14.0점 · 6.7리바운드 · 1.3어시스트",
                     "sub": "야투 42.1% · 3점 36.2% · 팀 내 3옵션",
@@ -8700,6 +8964,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jayson Tatum",
+                    "id": "4065648",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
                     "pos": "F",
                     "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
                     "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
@@ -8708,6 +8974,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Paul George",
+                    "id": "4251",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png",
                     "pos": "F",
                     "stat": "19.9점 · 5.5리바운드 · 3.7어시스트",
                     "sub": "야투 46.5% · 3점 42.3% · 팀 내 2옵션",
@@ -8716,6 +8984,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Payton Pritchard",
+                    "id": "4066354",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
                     "stat": "13.7점 · 3.1리바운드 · 3.8어시스트",
                     "sub": "야투 42.4% · 3점 37.1% · 팀 내 3옵션",
@@ -8775,6 +9045,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jamal Murray",
+                    "id": "3936299",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
                     "pos": "G",
                     "stat": "25.7점 · 5.2리바운드 · 5.7어시스트",
                     "sub": "야투 50.7% · 3점 46.2% · 팀 내 1옵션",
@@ -8783,6 +9055,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Nikola Jokic",
+                    "id": "3112335",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
                     "pos": "C",
                     "stat": "24.1점 · 10.7리바운드 · 8.9어시스트",
                     "sub": "야투 51.7% · 3점 28.1% · 팀 내 2옵션",
@@ -8791,6 +9065,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Christian Braun",
+                    "id": "4431767",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png",
                     "pos": "G",
                     "stat": "12.8점 · 4.3리바운드 · 2.4어시스트",
                     "sub": "야투 47.1% · 3점 31.7% · 팀 내 3옵션",
@@ -8982,6 +9258,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Keyonte George",
+                    "id": "4433627",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
                     "pos": "G",
                     "stat": "21.6점 · 4.1리바운드 · 7.1어시스트",
                     "sub": "야투 44.1% · 3점 34.7% · 팀 내 1옵션",
@@ -8990,12 +9268,16 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Lauri Markkanen",
+                    "id": "4066336",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066336.png",
                     "pos": "F",
                     "stat": "18.0점 · 6.8리바운드 · 2.0어시스트",
                     "sub": "야투 38.9% · 3점 39.7% · 팀 내 2옵션"
                   },
                   {
                     "name": "Darryn Peterson",
+                    "id": "5041955",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png",
                     "pos": "G",
                     "stat": "16.5점 · 4.1리바운드 · 3.6어시스트",
                     "sub": "야투 40.4% · 3점 36.1% · 팀 내 3옵션",
@@ -9079,6 +9361,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Luka Doncic",
+                    "id": "3945274",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
                     "pos": "G",
                     "stat": "38.1점 · 7.0리바운드 · 7.6어시스트",
                     "sub": "야투 46.6% · 3점 38.3% · 팀 내 1옵션",
@@ -9087,6 +9371,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Austin Reaves",
+                    "id": "4066457",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066457.png",
                     "pos": "G",
                     "stat": "24.7점 · 3.3리바운드 · 4.7어시스트",
                     "sub": "야투 51.3% · 3점 40.9% · 팀 내 2옵션",
@@ -9094,6 +9380,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Walker Kessler",
+                    "id": "4433136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433136.png",
                     "pos": "C",
                     "stat": "14.2점 · 10.9리바운드 · 1.8어시스트",
                     "sub": "야투 66.7% · 3점 0.0% · 팀 내 3옵션",
@@ -9286,6 +9574,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Devin Booker",
+                    "id": "3136193",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png",
                     "pos": "G",
                     "stat": "24.8점 · 2.7리바운드 · 5.4어시스트",
                     "sub": "야투 48.0% · 3점 34.2% · 팀 내 1옵션",
@@ -9294,6 +9584,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Dillon Brooks",
+                    "id": "3155526",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155526.png",
                     "pos": "F",
                     "stat": "14.9점 · 3.6리바운드 · 2.3어시스트",
                     "sub": "야투 45.4% · 3점 44.8% · 팀 내 2옵션",
@@ -9302,6 +9594,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Miles Bridges",
+                    "id": "4066383",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png",
                     "pos": "F",
                     "stat": "14.6점 · 6.9리바운드 · 3.1어시스트",
                     "sub": "야투 47.0% · 3점 31.6% · 팀 내 3옵션",
@@ -9370,6 +9664,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Darius Acuff Jr.",
+                    "id": "5142620",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
                     "pos": "G",
                     "stat": "26.2점 · 3.6리바운드 · 7.0어시스트",
                     "sub": "야투 41.6% · 3점 34.3% · 팀 내 1옵션",
@@ -9378,6 +9674,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Zach LaVine",
+                    "id": "3064440",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
                     "pos": "G",
                     "stat": "21.2점 · 3.4리바운드 · 2.8어시스트",
                     "sub": "야투 51.1% · 3점 38.7% · 팀 내 2옵션",
@@ -9385,6 +9683,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Domantas Sabonis",
+                    "id": "3155942",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
                     "pos": "F",
                     "stat": "13.7점 · 13.2리바운드 · 5.8어시스트",
                     "sub": "야투 63.4% · 3점 27.3% · 팀 내 3옵션",
@@ -10236,6 +10536,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Stephen Curry",
+                    "id": "3975",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3975.png",
                     "pos": "G",
                     "stat": "27.8점 · 3.7리바운드 · 3.9어시스트",
                     "sub": "야투 50.0% · 3점 45.7% · 팀 내 1옵션",
@@ -10243,6 +10545,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Yaxel Lendeborg",
+                    "id": "5175737",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
                     "pos": "F",
                     "stat": "20.3점 · 7.3리바운드 · 3.5어시스트",
                     "sub": "야투 46.4% · 3점 37.8% · 팀 내 2옵션",
@@ -10251,6 +10555,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Brandin Podziemski",
+                    "id": "4709138",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
                     "pos": "G",
                     "stat": "15.8점 · 4.8리바운드 · 3.8어시스트",
                     "sub": "야투 45.0% · 3점 37.8% · 팀 내 3옵션",
@@ -10351,6 +10657,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Ty Jerome",
+                    "id": "4065733",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
                     "pos": "G",
                     "stat": "25.4점 · 3.4리바운드 · 5.3어시스트",
                     "sub": "야투 48.5% · 3점 35.9% · 팀 내 1옵션",
@@ -10358,6 +10666,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cameron Boozer",
+                    "id": "5041935",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
                     "pos": "F",
                     "stat": "16.6점 · 9.4리바운드 · 5.3어시스트",
                     "sub": "야투 40.0% · 3점 32.2% · 팀 내 2옵션",
@@ -10366,6 +10676,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cedric Coward",
+                    "id": "4903027",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                     "pos": "F",
                     "stat": "14.5점 · 8.4리바운드 · 3.4어시스트",
                     "sub": "야투 47.7% · 3점 45.2% · 팀 내 3옵션",
@@ -10622,6 +10934,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Deni Avdija",
+                    "id": "4683021",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.2리바운드 · 6.1어시스트",
                     "sub": "야투 50.7% · 3점 38.6% · 팀 내 1옵션",
@@ -10629,6 +10943,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Damian Lillard",
+                    "id": "6606",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                     "pos": "G",
                     "stat": "20.1점 · 3.0리바운드 · 4.4어시스트",
                     "sub": "야투 39.6% · 3점 35.2% · 팀 내 2옵션",
@@ -10637,6 +10953,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ja Morant",
+                    "id": "4279888",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4279888.png",
                     "pos": "G",
                     "stat": "15.8점 · 2.5리바운드 · 5.5어시스트",
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
@@ -10736,6 +11054,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Tyler Herro",
+                    "id": "4395725",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
                     "pos": "G",
                     "stat": "19.4점 · 4.0리바운드 · 4.2어시스트",
                     "sub": "야투 42.4% · 3점 34.3% · 팀 내 1옵션",
@@ -10744,6 +11064,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jaime Jaquez Jr.",
+                    "id": "4432848",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png",
                     "pos": "F",
                     "stat": "15.4점 · 5.4리바운드 · 3.1어시스트",
                     "sub": "야투 47.1% · 3점 43.3% · 팀 내 2옵션",
@@ -10752,6 +11074,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyle Kuzma",
+                    "id": "3134907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
                     "pos": "F",
                     "stat": "12.3점 · 5.3리바운드 · 2.4어시스트",
                     "sub": "야투 46.2% · 3점 32.9% · 팀 내 3옵션",
@@ -10994,6 +11318,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jalen Brunson",
+                    "id": "3934672",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
                     "stat": "27.0점 · 2.9리바운드 · 5.9어시스트",
                     "sub": "야투 43.5% · 3점 38.1% · 팀 내 1옵션",
@@ -11002,6 +11328,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Karl-Anthony Towns",
+                    "id": "3136195",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
                     "pos": "C",
                     "stat": "21.2점 · 14.1리바운드 · 3.9어시스트",
                     "sub": "야투 54.5% · 3점 40.0% · 팀 내 2옵션",
@@ -11010,6 +11338,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "OG Anunoby",
+                    "id": "3934719",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934719.png",
                     "pos": "F",
                     "stat": "16.4점 · 5.3리바운드 · 2.0어시스트",
                     "sub": "야투 39.4% · 3점 32.2% · 팀 내 3옵션",
@@ -11073,12 +11403,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Edwards",
+                    "id": "4594268",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4594268.png",
                     "pos": "G",
                     "stat": "33.2점 · 4.8리바운드 · 3.5어시스트",
                     "sub": "야투 48.1% · 3점 40.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Ayo Dosunmu",
+                    "id": "4397002",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png",
                     "pos": "G",
                     "stat": "18.6점 · 4.6리바운드 · 3.5어시스트",
                     "sub": "야투 52.2% · 3점 46.4% · 팀 내 2옵션",
@@ -11087,6 +11421,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "LaMelo Ball",
+                    "id": "4432816",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
                     "pos": "G",
                     "stat": "17.7점 · 4.1리바운드 · 5.5어시스트",
                     "sub": "야투 41.8% · 3점 36.6% · 팀 내 3옵션",
@@ -11334,6 +11670,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Darius Garland",
+                    "id": "4396907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
                     "pos": "G",
                     "stat": "21.2점 · 2.4리바운드 · 6.9어시스트",
                     "sub": "야투 46.5% · 3점 36.8% · 팀 내 1옵션",
@@ -11342,6 +11680,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Brook Lopez",
+                    "id": "3448",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png",
                     "pos": "C",
                     "stat": "14.8점 · 5.4리바운드 · 1.8어시스트",
                     "sub": "야투 53.6% · 3점 41.2% · 팀 내 2옵션",
@@ -11350,6 +11690,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Rui Hachimura",
+                    "id": "4066648",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066648.png",
                     "pos": "F",
                     "stat": "13.3점 · 5.9리바운드 · 1.5어시스트",
                     "sub": "야투 39.2% · 3점 37.1% · 팀 내 3옵션",
@@ -11432,6 +11774,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Victor Wembanyama",
+                    "id": "5104157",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
                     "pos": "F",
                     "stat": "28.4점 · 12.0리바운드 · 3.3어시스트",
                     "sub": "야투 53.0% · 3점 30.1% · 팀 내 1옵션",
@@ -11440,6 +11784,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Dylan Harper",
+                    "id": "5037871",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5037871.png",
                     "pos": "G",
                     "stat": "18.4점 · 5.4리바운드 · 4.5어시스트",
                     "sub": "야투 50.5% · 3점 31.5% · 팀 내 2옵션",
@@ -11448,6 +11794,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Stephon Castle",
+                    "id": "4845367",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png",
                     "pos": "G",
                     "stat": "15.3점 · 5.2리바운드 · 5.5어시스트",
                     "sub": "야투 42.0% · 3점 34.1% · 팀 내 3옵션",
@@ -12384,6 +12732,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "바이에른 뮌헨",
+                "players": [
+                  {
+                    "name": "Michael Olise",
+                    "id": "286831",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/286831.png",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Harry Kane",
+                    "id": "142200",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/142200.png",
+                    "stats": [
+                      "도움 8"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "쾰른",
+                "players": [
+                  {
+                    "name": "Said El Mala",
+                    "id": "380795",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/380795.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Linton Maina",
+                    "id": "231173",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/231173.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**바이에른 뮌헨** — 리그 1위, 승점 21, 득실 +20.",
               "**쾰른** — 리그 15위, 승점 9, 득실 -4."
@@ -12695,6 +13089,45 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 홈 3승 2무 1패입니다. 경기당 평균 1.4골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 오사수나 1-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "아틀레틱 빌바오",
+                "players": [
+                  {
+                    "name": "Álex Berenguer",
+                    "id": "209579",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/209579.png",
+                    "stats": [
+                      "득점 4",
+                      "도움 4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "에스파뇰",
+                "players": [
+                  {
+                    "name": "Roberto Fernández",
+                    "id": "318773",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/318773.png",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Javi Hernandez",
+                    "id": "367946",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/367946.png",
+                    "stats": [
+                      "도움 6"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -13010,6 +13443,45 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "맨체스터 시티",
+                "players": [
+                  {
+                    "name": "Erling Haaland",
+                    "id": "253989",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/253989.png",
+                    "stats": [
+                      "득점 9"
+                    ]
+                  },
+                  {
+                    "name": "Josko Gvardiol",
+                    "id": "299910",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/299910.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "풀럼",
+                "players": [
+                  {
+                    "name": "Josh King",
+                    "id": "409541",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/409541.png",
+                    "stats": [
+                      "득점 2",
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**맨체스터 시티** — 리그 3위, 승점 21, 득실 +8.",
               "**풀럼** — 리그 15위, 승점 10, 득실 -2."
@@ -13321,6 +13793,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 1승 2무 2패입니다. 홈 3승 1무 2패입니다. 경기당 평균 1.2골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.10 원정 Anaitasuna 6-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "알라베스",
+                "players": [
+                  {
+                    "name": "Lucas Boyé",
+                    "id": "207236",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/207236.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Mariano Díaz",
+                    "id": "198832",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/198832.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "데포르티보",
+                "players": [
+                  {
+                    "name": "Pierre-Emerick Aubameyang",
+                    "id": "122260",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/122260.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Mario Soriano Carreno",
+                    "id": "297353",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/297353.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -13636,6 +14154,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "코모",
+                "players": [
+                  {
+                    "name": "Tasos Douvikas",
+                    "id": "262071",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/262071.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Nico Paz",
+                    "id": "337970",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/337970.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "칼리아리",
+                "players": [
+                  {
+                    "name": "Daniel Maldini",
+                    "id": "290545",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/290545.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Michel Adopo",
+                    "id": "272745",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/272745.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**코모** — 리그 5위, 승점 23, 득실 +8.",
               "**칼리아리** — 리그 9위, 승점 16, 득실 -5."
@@ -13947,6 +14511,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 4승 1무 0패입니다. 홈 4승 1무 0패입니다. 경기당 평균 2.3골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 나폴리 1-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "라치오",
+                "players": [
+                  {
+                    "name": "Davide Frattesi",
+                    "id": "250850",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/250850.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Mattia Zaccagni",
+                    "id": "204669",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/204669.png",
+                    "stats": [
+                      "도움 5"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "레체",
+                "players": [
+                  {
+                    "name": "Tiago Gabriel",
+                    "id": "379865",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/379865.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Danilo Veiga",
+                    "id": "344844",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/344844.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -14262,6 +14872,45 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "묀헨글라트바흐",
+                "players": [
+                  {
+                    "name": "Joe Scally",
+                    "id": "272135",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/272135.png",
+                    "stats": [
+                      "득점 3",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "도르트문트",
+                "players": [
+                  {
+                    "name": "Felix Nmecha",
+                    "id": "281122",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/281122.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Jobe Bellingham",
+                    "id": "324820",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/324820.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**묀헨글라트바흐** — 리그 18위, 승점 4, 득실 -13.",
               "**도르트문트** — 리그 2위, 승점 21, 득실 +9."
@@ -14573,6 +15222,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 0승 2무 3패입니다. 홈 1승 3무 1패입니다. 경기당 평균 0.8골을 넣고 2.3골을 실점했습니다. 직전 경기 기록은 2026.11.12 원정 VfL Wolfsburg 2-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "우니온 베를린",
+                "players": [
+                  {
+                    "name": "Janik Haberer",
+                    "id": "170604",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/170604.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Josip Juranovic",
+                    "id": "222567",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/222567.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "RB 라이프치히",
+                "players": [
+                  {
+                    "name": "Christopher Nkunku",
+                    "id": "222176",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/222176.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Antonio Nusa",
+                    "id": "319368",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/319368.png",
+                    "stats": [
+                      "도움 7"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -14888,6 +15583,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "엘버스베르크",
+                "players": [
+                  {
+                    "name": "Maurice Krattenmacher",
+                    "id": "358496",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/358496.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Lukas Petkov",
+                    "id": "310692",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/310692.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "프라이부르크",
+                "players": [
+                  {
+                    "name": "Yuito Suzuki",
+                    "id": "303031",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/303031.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Matthias Ginter",
+                    "id": "170209",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/170209.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**엘버스베르크** — 리그 7위, 승점 13, 득실 -1.",
               "**프라이부르크** — 리그 3위, 승점 19, 득실 +10."
@@ -15175,6 +15916,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 2승 0무 3패입니다. 홈 3승 0무 1패입니다. 경기당 평균 2.2골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 쾰른 2-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "바이어 레버쿠젠",
+                "players": [
+                  {
+                    "name": "Patrik Schick",
+                    "id": "212330",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/212330.png",
+                    "stats": [
+                      "득점 8"
+                    ]
+                  },
+                  {
+                    "name": "Miguel Gutiérrez",
+                    "id": "290044",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/290044.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "파더보른",
+                "players": [
+                  {
+                    "name": "Stefano Marino",
+                    "id": "332543",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/332543.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Laurin Curda",
+                    "id": "364593",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/364593.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -15490,6 +16277,45 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "아인트라흐트 프랑크푸르트",
+                "players": [
+                  {
+                    "name": "Younes Ebnoutalib",
+                    "id": "359793",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/359793.png",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Robin Koch",
+                    "id": "208285",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/208285.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "호펜하임",
+                "players": [
+                  {
+                    "name": "Adam Daghim",
+                    "id": "338854",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/338854.png",
+                    "stats": [
+                      "득점 2",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**아인트라흐트 프랑크푸르트** — 리그 10위, 승점 12, 득실 -5.",
               "**호펜하임** — 리그 9위, 승점 12, 득실 -1."
@@ -15637,6 +16463,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Brandon Miller",
+                    "id": "4433287",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433287.png",
                     "pos": "F",
                     "stat": "19.9점 · 4.5리바운드 · 2.5어시스트",
                     "sub": "야투 35.9% · 3점 27.0% · 팀 내 1옵션",
@@ -15645,6 +16473,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Naz Reid",
+                    "id": "4396971",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396971.png",
                     "pos": "C",
                     "stat": "17.6점 · 8.4리바운드 · 2.4어시스트",
                     "sub": "야투 40.3% · 3점 35.0% · 팀 내 2옵션",
@@ -15653,6 +16483,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Grayson Allen",
+                    "id": "3135045",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3135045.png",
                     "pos": "G",
                     "stat": "14.9점 · 3.1리바운드 · 3.3어시스트",
                     "sub": "야투 44.8% · 3점 45.8% · 팀 내 3옵션",
@@ -15739,6 +16571,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Nickeil Alexander-Walker",
+                    "id": "4278039",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png",
                     "pos": "G",
                     "stat": "21.2점 · 3.6리바운드 · 3.0어시스트",
                     "sub": "야투 41.7% · 3점 34.9% · 팀 내 1옵션",
@@ -15747,6 +16581,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jalen Johnson",
+                    "id": "4701230",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png",
                     "pos": "F",
                     "stat": "19.2점 · 9.2리바운드 · 7.6어시스트",
                     "sub": "야투 43.2% · 3점 18.0% · 팀 내 2옵션",
@@ -15755,6 +16591,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Onyeka Okongwu",
+                    "id": "4431680",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431680.png",
                     "pos": "F",
                     "stat": "15.0점 · 8.2리바운드 · 2.5어시스트",
                     "sub": "야투 50.0% · 3점 33.7% · 팀 내 3옵션",
@@ -15913,12 +16751,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Paolo Banchero",
+                    "id": "4432573",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432573.png",
                     "pos": "F",
                     "stat": "24.5점 · 6.5리바운드 · 7.5어시스트",
                     "sub": "야투 69.6% · 3점 50.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Franz Wagner",
+                    "id": "4566434",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
                     "pos": "F",
                     "stat": "24.4점 · 6.9리바운드 · 8.5어시스트",
                     "sub": "야투 47.0% · 3점 25.0% · 팀 내 2옵션",
@@ -15927,6 +16769,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Desmond Bane",
+                    "id": "4066320",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
                     "pos": "G",
                     "stat": "18.5점 · 4.3리바운드 · 2.7어시스트",
                     "sub": "야투 42.6% · 3점 41.7% · 팀 내 3옵션",
@@ -16018,6 +16862,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Julius Randle",
+                    "id": "3064514",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
                     "pos": "F",
                     "stat": "20.6점 · 5.8리바운드 · 4.6어시스트",
                     "sub": "야투 46.8% · 3점 35.9% · 팀 내 1옵션",
@@ -16026,6 +16872,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Michael Porter Jr.",
+                    "id": "4278104",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278104.png",
                     "pos": "F",
                     "stat": "20.5점 · 7.1리바운드 · 1.3어시스트",
                     "sub": "야투 45.0% · 3점 36.8% · 팀 내 2옵션",
@@ -16034,6 +16882,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Nolan Traore",
+                    "id": "5279130",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5279130.png",
                     "pos": "G",
                     "stat": "13.5점 · 1.8리바운드 · 2.8어시스트",
                     "sub": "야투 51.9% · 3점 42.0% · 팀 내 3옵션",
@@ -16163,6 +17013,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Pascal Siakam",
+                    "id": "3149673",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
                     "pos": "F",
                     "stat": "23.1점 · 6.1리바운드 · 3.9어시스트",
                     "sub": "야투 52.0% · 3점 35.9% · 팀 내 1옵션",
@@ -16171,12 +17023,16 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Tyrese Haliburton",
+                    "id": "4396993",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396993.png",
                     "pos": "G",
                     "stat": "21.8점 · 4.5리바운드 · 9.5어시스트",
                     "sub": "야투 51.6% · 3점 37.0% · 팀 내 2옵션"
                   },
                   {
                     "name": "Andrew Nembhard",
+                    "id": "4395712",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
                     "pos": "G",
                     "stat": "16.6점 · 2.3리바운드 · 7.6어시스트",
                     "sub": "야투 44.6% · 3점 40.3% · 팀 내 3옵션",
@@ -16275,6 +17131,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Donovan Mitchell",
+                    "id": "3908809",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
                     "pos": "G",
                     "stat": "24.8점 · 4.8리바운드 · 5.3어시스트",
                     "sub": "야투 49.8% · 3점 36.9% · 팀 내 1옵션",
@@ -16283,6 +17141,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Evan Mobley",
+                    "id": "4432158",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432158.png",
                     "pos": "C",
                     "stat": "16.9점 · 7.3리바운드 · 3.6어시스트",
                     "sub": "야투 55.5% · 3점 47.9% · 팀 내 2옵션",
@@ -16290,6 +17150,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "James Harden",
+                    "id": "3992",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3992.png",
                     "pos": "G",
                     "stat": "16.2점 · 4.7리바운드 · 6.3어시스트",
                     "sub": "야투 38.5% · 3점 37.5% · 팀 내 3옵션",
@@ -16442,6 +17304,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Scottie Barnes",
+                    "id": "4433134",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433134.png",
                     "pos": "F",
                     "stat": "23.8점 · 7.4리바운드 · 4.7어시스트",
                     "sub": "야투 47.7% · 3점 25.0% · 팀 내 1옵션",
@@ -16449,6 +17313,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "RJ Barrett",
+                    "id": "4395625",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395625.png",
                     "pos": "F",
                     "stat": "20.9점 · 6.4리바운드 · 4.3어시스트",
                     "sub": "야투 47.3% · 3점 28.4% · 팀 내 2옵션",
@@ -16456,6 +17322,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kawhi Leonard",
+                    "id": "6450",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6450.png",
                     "pos": "F",
                     "stat": "19.5점 · 7.5리바운드 · 1.5어시스트",
                     "sub": "야투 32.4% · 3점 28.6% · 팀 내 3옵션"
@@ -16554,6 +17422,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Cade Cunningham",
+                    "id": "4432166",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
                     "pos": "G",
                     "stat": "25.8점 · 5.2리바운드 · 7.8어시스트",
                     "sub": "야투 47.7% · 3점 31.7% · 팀 내 1옵션",
@@ -16561,6 +17431,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Duncan Robinson",
+                    "id": "3157465",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3157465.png",
                     "pos": "F",
                     "stat": "17.4점 · 1.8리바운드 · 2.1어시스트",
                     "sub": "야투 45.0% · 3점 43.1% · 팀 내 2옵션",
@@ -16568,6 +17440,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Daniss Jenkins",
+                    "id": "5107199",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
                     "pos": "G",
                     "stat": "14.3점 · 3.7리바운드 · 4.7어시스트",
                     "sub": "야투 45.2% · 3점 43.7% · 팀 내 3옵션",
@@ -16726,6 +17600,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Davis",
+                    "id": "6583",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
                     "pos": "F",
                     "stat": "24.6점 · 10.1리바운드 · 2.1어시스트",
                     "sub": "야투 52.0% · 3점 34.4% · 팀 내 1옵션",
@@ -16734,6 +17610,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyshawn George",
+                    "id": "5174563",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
                     "pos": "F",
                     "stat": "17.8점 · 4.2리바운드 · 4.4어시스트",
                     "sub": "야투 48.6% · 3점 42.4% · 팀 내 2옵션",
@@ -16742,6 +17620,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Trae Young",
+                    "id": "4277905",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
                     "pos": "G",
                     "stat": "17.5점 · 2.8리바운드 · 8.9어시스트",
                     "sub": "야투 37.1% · 3점 30.4% · 팀 내 3옵션",
@@ -16840,6 +17720,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Norman Powell",
+                    "id": "2595516",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
                     "pos": "G",
                     "stat": "21.2점 · 2.8리바운드 · 2.4어시스트",
                     "sub": "야투 45.1% · 3점 34.9% · 팀 내 1옵션",
@@ -16848,6 +17730,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Caleb Wilson",
+                    "id": "5095151",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5095151.png",
                     "pos": "F",
                     "stat": "18.9점 · 6.2리바운드 · 1.9어시스트",
                     "sub": "야투 42.0% · 3점 32.4% · 팀 내 2옵션",
@@ -16855,6 +17739,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Matas Buzelis",
+                    "id": "4711294",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                     "pos": "F",
                     "stat": "15.1점 · 4.7리바운드 · 2.0어시스트",
                     "sub": "야투 46.2% · 3점 37.7% · 팀 내 3옵션",
@@ -16993,6 +17879,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Zion Williamson",
+                    "id": "4395628",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png",
                     "pos": "F",
                     "stat": "21.7점 · 5.4리바운드 · 2.5어시스트",
                     "sub": "야투 59.6% · 3점 46.2% · 팀 내 1옵션",
@@ -17001,6 +17889,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Saddiq Bey",
+                    "id": "4397136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
                     "pos": "F",
                     "stat": "16.5점 · 4.4리바운드 · 2.6어시스트",
                     "sub": "야투 44.4% · 3점 39.4% · 팀 내 2옵션",
@@ -17009,6 +17899,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jeremiah Fears",
+                    "id": "5144091",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5144091.png",
                     "pos": "G",
                     "stat": "15.6점 · 4.9리바운드 · 5.4어시스트",
                     "sub": "야투 44.7% · 3점 28.1% · 팀 내 3옵션",
@@ -17109,6 +18001,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Shai Gilgeous-Alexander",
+                    "id": "4278073",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278073.png",
                     "pos": "G",
                     "stat": "31.1점 · 4.1리바운드 · 4.3어시스트",
                     "sub": "야투 47.6% · 3점 35.8% · 팀 내 1옵션",
@@ -17117,6 +18011,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ajay Mitchell",
+                    "id": "4900671",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
                     "pos": "G",
                     "stat": "17.7점 · 3.8리바운드 · 3.6어시스트",
                     "sub": "야투 51.1% · 3점 25.0% · 팀 내 2옵션",
@@ -17125,6 +18021,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jared McCain",
+                    "id": "4683778",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
                     "pos": "G",
                     "stat": "13.7점 · 3.4리바운드 · 1.8어시스트",
                     "sub": "야투 40.8% · 3점 34.3% · 팀 내 3옵션",
@@ -17284,6 +18182,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Devin Booker",
+                    "id": "3136193",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png",
                     "pos": "G",
                     "stat": "24.8점 · 2.7리바운드 · 5.4어시스트",
                     "sub": "야투 48.0% · 3점 34.2% · 팀 내 1옵션",
@@ -17292,6 +18192,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Dillon Brooks",
+                    "id": "3155526",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155526.png",
                     "pos": "F",
                     "stat": "14.9점 · 3.6리바운드 · 2.3어시스트",
                     "sub": "야투 45.4% · 3점 44.8% · 팀 내 2옵션",
@@ -17300,6 +18202,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Miles Bridges",
+                    "id": "4066383",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png",
                     "pos": "F",
                     "stat": "14.6점 · 6.9리바운드 · 3.1어시스트",
                     "sub": "야투 47.0% · 3점 31.6% · 팀 내 3옵션",
@@ -17371,6 +18275,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Keyonte George",
+                    "id": "4433627",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
                     "pos": "G",
                     "stat": "21.6점 · 4.1리바운드 · 7.1어시스트",
                     "sub": "야투 44.1% · 3점 34.7% · 팀 내 1옵션",
@@ -17379,12 +18285,16 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Lauri Markkanen",
+                    "id": "4066336",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066336.png",
                     "pos": "F",
                     "stat": "18.0점 · 6.8리바운드 · 2.0어시스트",
                     "sub": "야투 38.9% · 3점 39.7% · 팀 내 2옵션"
                   },
                   {
                     "name": "Darryn Peterson",
+                    "id": "5041955",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png",
                     "pos": "G",
                     "stat": "16.5점 · 4.1리바운드 · 3.6어시스트",
                     "sub": "야투 40.4% · 3점 36.1% · 팀 내 3옵션",
@@ -17529,6 +18439,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Alperen Sengun",
+                    "id": "4871144",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png",
                     "pos": "C",
                     "stat": "21.6점 · 9.1리바운드 · 6.8어시스트",
                     "sub": "야투 54.5% · 3점 50.0% · 팀 내 1옵션",
@@ -17537,6 +18449,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kevin Durant",
+                    "id": "3202",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
                     "pos": "F",
                     "stat": "21.3점 · 5.2리바운드 · 3.8어시스트",
                     "sub": "야투 49.8% · 3점 40.6% · 팀 내 2옵션",
@@ -17545,6 +18459,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Amen Thompson",
+                    "id": "4684740",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684740.png",
                     "pos": "G",
                     "stat": "15.7점 · 7.1리바운드 · 3.3어시스트",
                     "sub": "야투 53.6% · 3점 33.3% · 팀 내 3옵션",
@@ -17624,6 +18540,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jamal Murray",
+                    "id": "3936299",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
                     "pos": "G",
                     "stat": "25.7점 · 5.2리바운드 · 5.7어시스트",
                     "sub": "야투 50.7% · 3점 46.2% · 팀 내 1옵션",
@@ -17632,6 +18550,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Nikola Jokic",
+                    "id": "3112335",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
                     "pos": "C",
                     "stat": "24.1점 · 10.7리바운드 · 8.9어시스트",
                     "sub": "야투 51.7% · 3점 28.1% · 팀 내 2옵션",
@@ -17640,6 +18560,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Christian Braun",
+                    "id": "4431767",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png",
                     "pos": "G",
                     "stat": "12.8점 · 4.3리바운드 · 2.4어시스트",
                     "sub": "야투 47.1% · 3점 31.7% · 팀 내 3옵션",
@@ -17770,6 +18692,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Darius Acuff Jr.",
+                    "id": "5142620",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
                     "pos": "G",
                     "stat": "26.2점 · 3.6리바운드 · 7.0어시스트",
                     "sub": "야투 41.6% · 3점 34.3% · 팀 내 1옵션",
@@ -17778,6 +18702,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Zach LaVine",
+                    "id": "3064440",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
                     "pos": "G",
                     "stat": "21.2점 · 3.4리바운드 · 2.8어시스트",
                     "sub": "야투 51.1% · 3점 38.7% · 팀 내 2옵션",
@@ -17786,6 +18712,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Domantas Sabonis",
+                    "id": "3155942",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
                     "pos": "F",
                     "stat": "13.7점 · 13.2리바운드 · 5.8어시스트",
                     "sub": "야투 63.4% · 3점 27.3% · 팀 내 3옵션",
@@ -17862,6 +18790,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Luka Doncic",
+                    "id": "3945274",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
                     "pos": "G",
                     "stat": "38.1점 · 7.0리바운드 · 7.6어시스트",
                     "sub": "야투 46.6% · 3점 38.3% · 팀 내 1옵션",
@@ -17870,6 +18800,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Austin Reaves",
+                    "id": "4066457",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066457.png",
                     "pos": "G",
                     "stat": "24.7점 · 3.3리바운드 · 4.7어시스트",
                     "sub": "야투 51.3% · 3점 40.9% · 팀 내 2옵션",
@@ -17877,6 +18809,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Walker Kessler",
+                    "id": "4433136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433136.png",
                     "pos": "C",
                     "stat": "14.2점 · 10.9리바운드 · 1.8어시스트",
                     "sub": "야투 66.7% · 3점 0.0% · 팀 내 3옵션",
@@ -18800,6 +19734,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "코번트리 시티",
+                "players": [
+                  {
+                    "name": "Jack Rudoni",
+                    "id": "286967",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/286967.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Brandon Thomas-Asante",
+                    "id": "240495",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/240495.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "크리스털 팰리스",
+                "players": [
+                  {
+                    "name": "Tyrick Mitchell",
+                    "id": "300853",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/300853.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Daichi Kamada",
+                    "id": "219362",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/219362.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**코번트리 시티** — 리그 17위, 승점 9, 득실 -9.",
               "**크리스털 팰리스** — 리그 20위, 승점 7, 득실 -14."
@@ -19111,6 +20091,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 홈 2승 1무 2패입니다. 경기당 평균 1.0골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 리즈 유나이티드 1-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "토트넘 홋스퍼",
+                "players": [
+                  {
+                    "name": "Jan Paul van Hecke",
+                    "id": "282583",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/282583.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Mohammed Kudus",
+                    "id": "266599",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/266599.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "입스위치 타운",
+                "players": [
+                  {
+                    "name": "Leif Davis",
+                    "id": "283086",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/283086.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Julio Enciso",
+                    "id": "20975",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/20975.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -19426,6 +20452,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "첼시",
+                "players": [
+                  {
+                    "name": "Morgan Rogers",
+                    "id": "265653",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/265653.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Cole Palmer",
+                    "id": "296395",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/296395.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "리즈 유나이티드",
+                "players": [
+                  {
+                    "name": "Dominic Calvert-Lewin",
+                    "id": "197717",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/197717.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Tarik Muharemovic",
+                    "id": "318390",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/318390.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**첼시** — 리그 5위, 승점 16, 득실 +3.",
               "**리즈 유나이티드** — 리그 9위, 승점 14, 득실 +2."
@@ -19737,6 +20809,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 2승 2무 1패입니다. 경기당 평균 1.6골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 입스위치 타운 2-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "본머스",
+                "players": [
+                  {
+                    "name": "Marcus Tavernier",
+                    "id": "243364",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/243364.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Evanilson",
+                    "id": "102368",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/102368.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "노팅엄 포리스트",
+                "players": [
+                  {
+                    "name": "Liam Delap",
+                    "id": "307114",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/307114.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Morgan Gibbs-White",
+                    "id": "243396",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/243396.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -20052,6 +21170,45 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "애스턴 빌라",
+                "players": [
+                  {
+                    "name": "Nicolas Jackson",
+                    "id": "308524",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/308524.png",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "John McGinn",
+                    "id": "162843",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/162843.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "선덜랜드",
+                "players": [
+                  {
+                    "name": "Enzo Le Fée",
+                    "id": "288340",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/288340.png",
+                    "stats": [
+                      "득점 3",
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**애스턴 빌라** — 리그 10위, 승점 13, 득실 -3.",
               "**선덜랜드** — 리그 19위, 승점 8, 득실 -9."
@@ -20363,6 +21520,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 3승 1무 1패입니다. 경기당 평균 1.4골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 레알 소시에다드 1-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "라요 바예카노",
+                "players": [
+                  {
+                    "name": "Sergio Camello",
+                    "id": "276652",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/276652.png",
+                    "stats": [
+                      "득점 7"
+                    ]
+                  },
+                  {
+                    "name": "Unai López",
+                    "id": "203711",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/203711.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "발렌시아",
+                "players": [
+                  {
+                    "name": "Umar Sadiq",
+                    "id": "211770",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/211770.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Javier Guerra",
+                    "id": "16340",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/16340.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -20678,6 +21881,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "파르마",
+                "players": [
+                  {
+                    "name": "Simone Lontani",
+                    "id": "413818",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/413818.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Giovanni Fabbian",
+                    "id": "323118",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/323118.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "AS 로마",
+                "players": [
+                  {
+                    "name": "Donyell Malen",
+                    "id": "259481",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/259481.png",
+                    "stats": [
+                      "득점 8"
+                    ]
+                  },
+                  {
+                    "name": "Paulo Dybala",
+                    "id": "164839",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/164839.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**파르마** — 리그 16위, 승점 8, 득실 -8.",
               "**AS 로마** — 리그 3위, 승점 27, 득실 +21."
@@ -20989,6 +22238,45 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 홈 1승 2무 2패입니다. 경기당 평균 1.3골을 넣고 1.6골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 풀럼 1-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "뉴캐슬 유나이티드",
+                "players": [
+                  {
+                    "name": "Harvey Barnes",
+                    "id": "243386",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/243386.png",
+                    "stats": [
+                      "득점 2",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "아스널",
+                "players": [
+                  {
+                    "name": "Martin Ødegaard",
+                    "id": "203669",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/203669.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Declan Rice",
+                    "id": "238262",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/238262.png",
+                    "stats": [
+                      "도움 5"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -21304,6 +22592,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "세비야",
+                "players": [
+                  {
+                    "name": "Isaac Romero",
+                    "id": "365821",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/365821.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Youssouf Fofana",
+                    "id": "277307",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/277307.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "레알 베티스",
+                "players": [
+                  {
+                    "name": "Rodrigo Riquelme",
+                    "id": "70224",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/70224.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Cucho Hernández",
+                    "id": "336809",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/336809.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**세비야** — 리그 6위, 승점 18, 득실 -2.",
               "**레알 베티스** — 리그 4위, 승점 26, 득실 +5."
@@ -21615,6 +22949,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 3연패입니다. 최근 5경기 0승 1무 4패입니다. 홈 0승 2무 2패입니다. 경기당 평균 0.6골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 호펜하임 2-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "샬케 04",
+                "players": [
+                  {
+                    "name": "Adil Aouchiche",
+                    "id": "290166",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/290166.png",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Junior Adamu",
+                    "id": "305957",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/305957.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "슈투트가르트",
+                "players": [
+                  {
+                    "name": "Ermedin Demirovic",
+                    "id": "269136",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/269136.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Angelo Stiller",
+                    "id": "290232",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/290232.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -21930,6 +23310,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "나폴리",
+                "players": [
+                  {
+                    "name": "Kevin De Bruyne",
+                    "id": "134947",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/134947.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Matteo Politano",
+                    "id": "188306",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/188306.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "토리노",
+                "players": [
+                  {
+                    "name": "Ché Adams",
+                    "id": "213725",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/213725.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Rafik Belghali",
+                    "id": "364590",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/364590.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**나폴리** — 리그 10위, 승점 15, 득실 +4.",
               "**토리노** — 리그 11위, 승점 14, 득실 -2."
@@ -22241,6 +23667,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 5승 0무 0패입니다. 경기당 평균 2.6골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 발렌시아 3-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "레알 마드리드",
+                "players": [
+                  {
+                    "name": "Kylian Mbappé",
+                    "id": "231388",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/231388.png",
+                    "stats": [
+                      "득점 13"
+                    ]
+                  },
+                  {
+                    "name": "Arda Güler",
+                    "id": "310452",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/310452.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "셀타 비고",
+                "players": [
+                  {
+                    "name": "Ferran Jutglà",
+                    "id": "279904",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/279904.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Hugo Álvarez",
+                    "id": "188391",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/188391.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -22556,6 +24028,45 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "유벤투스",
+                "players": [
+                  {
+                    "name": "Bremer",
+                    "id": "258307",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/258307.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Randal Kolo Muani",
+                    "id": "252971",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/252971.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "베네치아",
+                "players": [
+                  {
+                    "name": "Antoine Hainaut",
+                    "id": "346916",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/346916.png",
+                    "stats": [
+                      "득점 2",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**유벤투스** — 리그 7위, 승점 18, 득실 +3.",
               "**베네치아** — 리그 19위, 승점 6, 득실 -13."
@@ -22861,6 +24372,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 3승 0무 2패입니다. 홈 5승 0무 1패입니다. 경기당 평균 4.0골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 아틀레티코 마드리드 2-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "바르셀로나",
+                "players": [
+                  {
+                    "name": "Raphinha",
+                    "id": "231050",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/231050.png",
+                    "stats": [
+                      "득점 15"
+                    ]
+                  },
+                  {
+                    "name": "Lamine Yamal",
+                    "id": "362150",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/362150.png",
+                    "stats": [
+                      "도움 8"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "비야레알",
+                "players": [
+                  {
+                    "name": "Georges Mikautadze",
+                    "id": "300002",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/300002.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Alberto Moleiro",
+                    "id": "307390",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/307390.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -23176,6 +24733,45 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "헐 시티",
+                "players": [
+                  {
+                    "name": "Mohamed Belloumi",
+                    "id": "320417",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/320417.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Oliver McBurnie",
+                    "id": "193010",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/193010.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "브라이턴",
+                "players": [
+                  {
+                    "name": "Pascal Gross",
+                    "id": "132659",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/132659.png",
+                    "stats": [
+                      "득점 4",
+                      "도움 4"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**헐 시티** — 리그 13위, 승점 11, 득실 0.",
               "**브라이턴** — 리그 2위, 승점 22, 득실 +19."
@@ -23487,6 +25083,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 5연패입니다. 최근 5경기 0승 0무 5패입니다. 홈 2승 1무 2패입니다. 경기당 평균 1.5골을 넣고 2.6골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 AS 로마 3-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "사수올로",
+                "players": [
+                  {
+                    "name": "Vasilije Adzic",
+                    "id": "344917",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/344917.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Nemanja Matic",
+                    "id": "135743",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/135743.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "제노아",
+                "players": [
+                  {
+                    "name": "Milutin Osmajic",
+                    "id": "275444",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/275444.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Lorenzo Colombo",
+                    "id": "297220",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/297220.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -23802,6 +25444,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "볼로냐",
+                "players": [
+                  {
+                    "name": "Federico Bernardeschi",
+                    "id": "180956",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/180956.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Juan Miranda",
+                    "id": "261616",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/261616.png",
+                    "stats": [
+                      "도움 5"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "우디네세",
+                "players": [
+                  {
+                    "name": "Jurgen Ekkelenkamp",
+                    "id": "270817",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/270817.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Hassane Kamara",
+                    "id": "193919",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/193919.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**볼로냐** — 리그 8위, 승점 17, 득실 +2.",
               "**우디네세** — 리그 20위, 승점 5, 득실 -13."
@@ -24115,6 +25803,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "아우크스부르크",
+                "players": [
+                  {
+                    "name": "Michael Gregoritsch",
+                    "id": "146804",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/146804.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Fabian Rieder",
+                    "id": "308908",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/308908.png",
+                    "stats": [
+                      "도움 5"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "마인츠",
+                "players": [
+                  {
+                    "name": "Phillip Tietz",
+                    "id": "234376",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/234376.png",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Sheraldo Becker",
+                    "id": "195027",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/195027.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**아우크스부르크** — 리그 14위, 승점 9, 득실 0.",
               "**마인츠** — 리그 12위, 승점 10, 득실 -1."
@@ -24262,6 +25996,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Tyler Herro",
+                    "id": "4395725",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
                     "pos": "G",
                     "stat": "19.4점 · 4.0리바운드 · 4.2어시스트",
                     "sub": "야투 42.4% · 3점 34.3% · 팀 내 1옵션",
@@ -24270,6 +26006,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jaime Jaquez Jr.",
+                    "id": "4432848",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png",
                     "pos": "F",
                     "stat": "15.4점 · 5.4리바운드 · 3.1어시스트",
                     "sub": "야투 47.1% · 3점 43.3% · 팀 내 2옵션",
@@ -24278,6 +26016,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyle Kuzma",
+                    "id": "3134907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
                     "pos": "F",
                     "stat": "12.3점 · 5.3리바운드 · 2.4어시스트",
                     "sub": "야투 46.2% · 3점 32.9% · 팀 내 3옵션",
@@ -24365,6 +26105,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Tyrese Maxey",
+                    "id": "4431678",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
                     "pos": "G",
                     "stat": "26.5점 · 3.3리바운드 · 5.8어시스트",
                     "sub": "야투 50.0% · 3점 38.0% · 팀 내 1옵션",
@@ -24372,6 +26114,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jaylen Brown",
+                    "id": "3917376",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3917376.png",
                     "pos": "G",
                     "stat": "22.6점 · 6.6리바운드 · 3.6어시스트",
                     "sub": "야투 49.4% · 3점 38.6% · 팀 내 2옵션",
@@ -24379,6 +26123,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Joel Embiid",
+                    "id": "3059318",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
                     "pos": "C",
                     "stat": "20.0점 · 8.3리바운드 · 3.8어시스트",
                     "sub": "야투 39.9% · 3점 14.6% · 팀 내 3옵션",
@@ -24538,6 +26284,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Deni Avdija",
+                    "id": "4683021",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.2리바운드 · 6.1어시스트",
                     "sub": "야투 50.7% · 3점 38.6% · 팀 내 1옵션",
@@ -24545,6 +26293,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Damian Lillard",
+                    "id": "6606",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                     "pos": "G",
                     "stat": "20.1점 · 3.0리바운드 · 4.4어시스트",
                     "sub": "야투 39.6% · 3점 35.2% · 팀 내 2옵션",
@@ -24553,6 +26303,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ja Morant",
+                    "id": "4279888",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4279888.png",
                     "pos": "G",
                     "stat": "15.8점 · 2.5리바운드 · 5.5어시스트",
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
@@ -24652,6 +26404,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jalen Brunson",
+                    "id": "3934672",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
                     "stat": "27.0점 · 2.9리바운드 · 5.9어시스트",
                     "sub": "야투 43.5% · 3점 38.1% · 팀 내 1옵션",
@@ -24660,6 +26414,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Karl-Anthony Towns",
+                    "id": "3136195",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
                     "pos": "C",
                     "stat": "21.2점 · 14.1리바운드 · 3.9어시스트",
                     "sub": "야투 54.5% · 3점 40.0% · 팀 내 2옵션",
@@ -24668,6 +26424,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "OG Anunoby",
+                    "id": "3934719",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934719.png",
                     "pos": "F",
                     "stat": "16.4점 · 5.3리바운드 · 2.0어시스트",
                     "sub": "야투 39.4% · 3점 32.2% · 팀 내 3옵션",
@@ -24789,6 +26547,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Darius Garland",
+                    "id": "4396907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
                     "pos": "G",
                     "stat": "21.2점 · 2.4리바운드 · 6.9어시스트",
                     "sub": "야투 46.5% · 3점 36.8% · 팀 내 1옵션",
@@ -24797,6 +26557,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Brook Lopez",
+                    "id": "3448",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png",
                     "pos": "C",
                     "stat": "14.8점 · 5.4리바운드 · 1.8어시스트",
                     "sub": "야투 53.6% · 3점 41.2% · 팀 내 2옵션",
@@ -24805,6 +26567,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Rui Hachimura",
+                    "id": "4066648",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066648.png",
                     "pos": "F",
                     "stat": "13.3점 · 5.9리바운드 · 1.5어시스트",
                     "sub": "야투 39.2% · 3점 37.1% · 팀 내 3옵션",
@@ -24887,6 +26651,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Cooper Flagg",
+                    "id": "5041939",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.6리바운드 · 6.4어시스트",
                     "sub": "야투 48.5% · 3점 29.9% · 팀 내 1옵션",
@@ -24895,6 +26661,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyrie Irving",
+                    "id": "6442",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                     "pos": "G",
                     "stat": "22.2점 · 3.7리바운드 · 4.4어시스트",
                     "sub": "야투 47.3% · 3점 38.5% · 팀 내 2옵션",
@@ -24903,6 +26671,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "P.J. Washington",
+                    "id": "4278078",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278078.png",
                     "pos": "F",
                     "stat": "14.0점 · 6.7리바운드 · 1.3어시스트",
                     "sub": "야투 42.1% · 3점 36.2% · 팀 내 3옵션",
@@ -25054,6 +26824,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Ty Jerome",
+                    "id": "4065733",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
                     "pos": "G",
                     "stat": "25.4점 · 3.4리바운드 · 5.3어시스트",
                     "sub": "야투 48.5% · 3점 35.9% · 팀 내 1옵션",
@@ -25061,6 +26833,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cameron Boozer",
+                    "id": "5041935",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
                     "pos": "F",
                     "stat": "16.6점 · 9.4리바운드 · 5.3어시스트",
                     "sub": "야투 40.0% · 3점 32.2% · 팀 내 2옵션",
@@ -25069,6 +26843,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cedric Coward",
+                    "id": "4903027",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                     "pos": "F",
                     "stat": "14.5점 · 8.4리바운드 · 3.4어시스트",
                     "sub": "야투 47.7% · 3점 45.2% · 팀 내 3옵션",
@@ -25170,12 +26946,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Edwards",
+                    "id": "4594268",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4594268.png",
                     "pos": "G",
                     "stat": "33.2점 · 4.8리바운드 · 3.5어시스트",
                     "sub": "야투 48.1% · 3점 40.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Ayo Dosunmu",
+                    "id": "4397002",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png",
                     "pos": "G",
                     "stat": "18.6점 · 4.6리바운드 · 3.5어시스트",
                     "sub": "야투 52.2% · 3점 46.4% · 팀 내 2옵션",
@@ -25184,6 +26964,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "LaMelo Ball",
+                    "id": "4432816",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
                     "pos": "G",
                     "stat": "17.7점 · 4.1리바운드 · 5.5어시스트",
                     "sub": "야투 41.8% · 3점 36.6% · 팀 내 3옵션",
@@ -25335,6 +27117,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Zion Williamson",
+                    "id": "4395628",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png",
                     "pos": "F",
                     "stat": "21.7점 · 5.4리바운드 · 2.5어시스트",
                     "sub": "야투 59.6% · 3점 46.2% · 팀 내 1옵션",
@@ -25343,6 +27127,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Saddiq Bey",
+                    "id": "4397136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
                     "pos": "F",
                     "stat": "16.5점 · 4.4리바운드 · 2.6어시스트",
                     "sub": "야투 44.4% · 3점 39.4% · 팀 내 2옵션",
@@ -25351,6 +27137,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jeremiah Fears",
+                    "id": "5144091",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5144091.png",
                     "pos": "G",
                     "stat": "15.6점 · 4.9리바운드 · 5.4어시스트",
                     "sub": "야투 44.7% · 3점 28.1% · 팀 내 3옵션",
@@ -25451,6 +27239,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Victor Wembanyama",
+                    "id": "5104157",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
                     "pos": "F",
                     "stat": "28.4점 · 12.0리바운드 · 3.3어시스트",
                     "sub": "야투 53.0% · 3점 30.1% · 팀 내 1옵션",
@@ -25459,6 +27249,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Dylan Harper",
+                    "id": "5037871",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5037871.png",
                     "pos": "G",
                     "stat": "18.4점 · 5.4리바운드 · 4.5어시스트",
                     "sub": "야투 50.5% · 3점 31.5% · 팀 내 2옵션",
@@ -25467,6 +27259,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Stephon Castle",
+                    "id": "4845367",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png",
                     "pos": "G",
                     "stat": "15.3점 · 5.2리바운드 · 5.5어시스트",
                     "sub": "야투 42.0% · 3점 34.1% · 팀 내 3옵션",
@@ -25611,6 +27405,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jayson Tatum",
+                    "id": "4065648",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
                     "pos": "F",
                     "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
                     "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
@@ -25619,6 +27415,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Paul George",
+                    "id": "4251",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png",
                     "pos": "F",
                     "stat": "19.9점 · 5.5리바운드 · 3.7어시스트",
                     "sub": "야투 46.5% · 3점 42.3% · 팀 내 2옵션",
@@ -25627,6 +27425,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Payton Pritchard",
+                    "id": "4066354",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
                     "stat": "13.7점 · 3.1리바운드 · 3.8어시스트",
                     "sub": "야투 42.4% · 3점 37.1% · 팀 내 3옵션",
@@ -25690,6 +27490,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Darius Acuff Jr.",
+                    "id": "5142620",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
                     "pos": "G",
                     "stat": "26.2점 · 3.6리바운드 · 7.0어시스트",
                     "sub": "야투 41.6% · 3점 34.3% · 팀 내 1옵션",
@@ -25698,6 +27500,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Zach LaVine",
+                    "id": "3064440",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
                     "pos": "G",
                     "stat": "21.2점 · 3.4리바운드 · 2.8어시스트",
                     "sub": "야투 51.1% · 3점 38.7% · 팀 내 2옵션",
@@ -25706,6 +27510,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Domantas Sabonis",
+                    "id": "3155942",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
                     "pos": "F",
                     "stat": "13.7점 · 13.2리바운드 · 5.8어시스트",
                     "sub": "야투 63.4% · 3점 27.3% · 팀 내 3옵션",
@@ -26021,6 +27827,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "라싱 산탄데르",
+                "players": [
+                  {
+                    "name": "Yassir Zabiri",
+                    "id": "390389",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/390389.png",
+                    "stats": [
+                      "득점 9"
+                    ]
+                  },
+                  {
+                    "name": "Iñigo Vicente",
+                    "id": "284699",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/284699.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "레알 소시에다드",
+                "players": [
+                  {
+                    "name": "Luka Sucic",
+                    "id": "306263",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/306263.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Carlos Soler",
+                    "id": "235072",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/235072.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**라싱 산탄데르** — 리그 10위, 승점 14, 득실 -13.",
               "**레알 소시에다드** — 리그 5위, 승점 22, 득실 +1."
@@ -26317,6 +28169,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 3승 1무 0패입니다. 경기당 평균 1.9골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 슈투트가르트 1-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "베르더 브레멘",
+                "players": [
+                  {
+                    "name": "Niclas Füllkrug",
+                    "id": "170257",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/170257.png",
+                    "stats": [
+                      "득점 9"
+                    ]
+                  },
+                  {
+                    "name": "Marco Grüll",
+                    "id": "305853",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/305853.png",
+                    "stats": [
+                      "도움 6"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "함부르크",
+                "players": [
+                  {
+                    "name": "Miro Muheim",
+                    "id": "243626",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/243626.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Albert Grønbaek",
+                    "id": "297750",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/297750.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -26632,6 +28530,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "리버풀",
+                "players": [
+                  {
+                    "name": "Alexander Isak",
+                    "id": "235662",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/235662.png",
+                    "stats": [
+                      "득점 7"
+                    ]
+                  },
+                  {
+                    "name": "Florian Wirtz",
+                    "id": "303748",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/303748.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "맨체스터 유나이티드",
+                "players": [
+                  {
+                    "name": "Bryan Mbeumo",
+                    "id": "271170",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/271170.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Matheus Cunha",
+                    "id": "259902",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/259902.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**리버풀** — 리그 4위, 승점 18, 득실 +4.",
               "**맨체스터 유나이티드** — 리그 18위, 승점 8, 득실 -5."
@@ -26943,6 +28887,45 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 홈 4승 0무 1패입니다. 경기당 평균 2.1골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 제노아 2-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "AC 밀란",
+                "players": [
+                  {
+                    "name": "Adrien Rabiot",
+                    "id": "176203",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/176203.png",
+                    "stats": [
+                      "득점 5",
+                      "도움 4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "프로시노네",
+                "players": [
+                  {
+                    "name": "Antonio Raimondo",
+                    "id": "319265",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/319265.png",
+                    "stats": [
+                      "득점 8"
+                    ]
+                  },
+                  {
+                    "name": "Giorgi Kvernadze",
+                    "id": "360714",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/360714.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -27258,6 +29241,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "오사수나",
+                "players": [
+                  {
+                    "name": "Ante Budimir",
+                    "id": "207288",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/207288.png",
+                    "stats": [
+                      "득점 8"
+                    ]
+                  },
+                  {
+                    "name": "Moi Gómez",
+                    "id": "169089",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/169089.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "말라가",
+                "players": [
+                  {
+                    "name": "Adrián Niño",
+                    "id": "373542",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/373542.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Pablo Martínez",
+                    "id": "271151",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/271151.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**오사수나** — 리그 16위, 승점 12, 득실 -11.",
               "**말라가** — 리그 20위, 승점 5, 득실 -14."
@@ -27569,6 +29598,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 1승 3무 1패입니다. 홈 3승 1무 2패입니다. 경기당 평균 1.5골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 몬차 1-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "아탈란타",
+                "players": [
+                  {
+                    "name": "Nikola Krstovic",
+                    "id": "258158",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/258158.png",
+                    "stats": [
+                      "득점 7"
+                    ]
+                  },
+                  {
+                    "name": "Charles De Ketelaere",
+                    "id": "296319",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/296319.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "인터 밀란",
+                "players": [
+                  {
+                    "name": "Marcus Thuram",
+                    "id": "217331",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/217331.png",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Andy Diouf",
+                    "id": "319167",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/319167.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -27884,6 +29959,38 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "헤타페",
+                "players": [
+                  {
+                    "name": "Martín Satriano",
+                    "id": "284854",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/284854.png",
+                    "stats": [
+                      "득점 3",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "아틀레티코 마드리드",
+                "players": [
+                  {
+                    "name": "Álex Baena",
+                    "id": "297373",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/297373.png",
+                    "stats": [
+                      "득점 5",
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**헤타페** — 리그 15위, 승점 12, 득실 -10.",
               "**아틀레티코 마드리드** — 리그 3위, 승점 28, 득실 +13."
@@ -28031,6 +30138,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Cade Cunningham",
+                    "id": "4432166",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
                     "pos": "G",
                     "stat": "25.8점 · 5.2리바운드 · 7.8어시스트",
                     "sub": "야투 47.7% · 3점 31.7% · 팀 내 1옵션",
@@ -28038,6 +30147,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Duncan Robinson",
+                    "id": "3157465",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3157465.png",
                     "pos": "F",
                     "stat": "17.4점 · 1.8리바운드 · 2.1어시스트",
                     "sub": "야투 45.0% · 3점 43.1% · 팀 내 2옵션",
@@ -28045,6 +30156,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Daniss Jenkins",
+                    "id": "5107199",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
                     "pos": "G",
                     "stat": "14.3점 · 3.7리바운드 · 4.7어시스트",
                     "sub": "야투 45.2% · 3점 43.7% · 팀 내 3옵션",
@@ -28145,6 +30258,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Nickeil Alexander-Walker",
+                    "id": "4278039",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png",
                     "pos": "G",
                     "stat": "21.2점 · 3.6리바운드 · 3.0어시스트",
                     "sub": "야투 41.7% · 3점 34.9% · 팀 내 1옵션",
@@ -28153,6 +30268,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jalen Johnson",
+                    "id": "4701230",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png",
                     "pos": "F",
                     "stat": "19.2점 · 9.2리바운드 · 7.6어시스트",
                     "sub": "야투 43.2% · 3점 18.0% · 팀 내 2옵션",
@@ -28161,6 +30278,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Onyeka Okongwu",
+                    "id": "4431680",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431680.png",
                     "pos": "F",
                     "stat": "15.0점 · 8.2리바운드 · 2.5어시스트",
                     "sub": "야투 50.0% · 3점 33.7% · 팀 내 3옵션",
@@ -28319,6 +30438,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Shai Gilgeous-Alexander",
+                    "id": "4278073",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278073.png",
                     "pos": "G",
                     "stat": "31.1점 · 4.1리바운드 · 4.3어시스트",
                     "sub": "야투 47.6% · 3점 35.8% · 팀 내 1옵션",
@@ -28327,6 +30448,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ajay Mitchell",
+                    "id": "4900671",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
                     "pos": "G",
                     "stat": "17.7점 · 3.8리바운드 · 3.6어시스트",
                     "sub": "야투 51.1% · 3점 25.0% · 팀 내 2옵션",
@@ -28335,6 +30458,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jared McCain",
+                    "id": "4683778",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
                     "pos": "G",
                     "stat": "13.7점 · 3.4리바운드 · 1.8어시스트",
                     "sub": "야투 40.8% · 3점 34.3% · 팀 내 3옵션",
@@ -28435,6 +30560,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Giannis Antetokounmpo",
+                    "id": "3032977",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032977.png",
                     "pos": "F",
                     "stat": "28.2점 · 12.6리바운드 · 5.5어시스트",
                     "sub": "야투 60.2% · 3점 24.2% · 팀 내 1옵션",
@@ -28443,6 +30570,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Bam Adebayo",
+                    "id": "4066261",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png",
                     "pos": "C",
                     "stat": "18.9점 · 7.7리바운드 · 3.1어시스트",
                     "sub": "야투 52.4% · 3점 24.5% · 팀 내 2옵션",
@@ -28451,6 +30580,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Davion Mitchell",
+                    "id": "4278053",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
                     "pos": "G",
                     "stat": "17.2점 · 2.4리바운드 · 9.0어시스트",
                     "sub": "야투 51.1% · 3점 43.7% · 팀 내 3옵션",
@@ -28580,12 +30711,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Paolo Banchero",
+                    "id": "4432573",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432573.png",
                     "pos": "F",
                     "stat": "24.5점 · 6.5리바운드 · 7.5어시스트",
                     "sub": "야투 69.6% · 3점 50.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Franz Wagner",
+                    "id": "4566434",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
                     "pos": "F",
                     "stat": "24.4점 · 6.9리바운드 · 8.5어시스트",
                     "sub": "야투 47.0% · 3점 25.0% · 팀 내 2옵션",
@@ -28594,6 +30729,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Desmond Bane",
+                    "id": "4066320",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
                     "pos": "G",
                     "stat": "18.5점 · 4.3리바운드 · 2.7어시스트",
                     "sub": "야투 42.6% · 3점 41.7% · 팀 내 3옵션",
@@ -28684,6 +30821,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Davis",
+                    "id": "6583",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
                     "pos": "F",
                     "stat": "24.6점 · 10.1리바운드 · 2.1어시스트",
                     "sub": "야투 52.0% · 3점 34.4% · 팀 내 1옵션",
@@ -28692,6 +30831,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyshawn George",
+                    "id": "5174563",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
                     "pos": "F",
                     "stat": "17.8점 · 4.2리바운드 · 4.4어시스트",
                     "sub": "야투 48.6% · 3점 42.4% · 팀 내 2옵션",
@@ -28700,6 +30841,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Trae Young",
+                    "id": "4277905",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
                     "pos": "G",
                     "stat": "17.5점 · 2.8리바운드 · 8.9어시스트",
                     "sub": "야투 37.1% · 3점 30.4% · 팀 내 3옵션",
@@ -28857,6 +31000,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jamal Murray",
+                    "id": "3936299",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
                     "pos": "G",
                     "stat": "25.7점 · 5.2리바운드 · 5.7어시스트",
                     "sub": "야투 50.7% · 3점 46.2% · 팀 내 1옵션",
@@ -28865,6 +31010,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Nikola Jokic",
+                    "id": "3112335",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
                     "pos": "C",
                     "stat": "24.1점 · 10.7리바운드 · 8.9어시스트",
                     "sub": "야투 51.7% · 3점 28.1% · 팀 내 2옵션",
@@ -28873,6 +31020,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Christian Braun",
+                    "id": "4431767",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png",
                     "pos": "G",
                     "stat": "12.8점 · 4.3리바운드 · 2.4어시스트",
                     "sub": "야투 47.1% · 3점 31.7% · 팀 내 3옵션",
@@ -28943,6 +31092,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Norman Powell",
+                    "id": "2595516",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
                     "pos": "G",
                     "stat": "21.2점 · 2.8리바운드 · 2.4어시스트",
                     "sub": "야투 45.1% · 3점 34.9% · 팀 내 1옵션",
@@ -28951,6 +31102,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Caleb Wilson",
+                    "id": "5095151",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5095151.png",
                     "pos": "F",
                     "stat": "18.9점 · 6.2리바운드 · 1.9어시스트",
                     "sub": "야투 42.0% · 3점 32.4% · 팀 내 2옵션",
@@ -28958,6 +31111,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Matas Buzelis",
+                    "id": "4711294",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                     "pos": "F",
                     "stat": "15.1점 · 4.7리바운드 · 2.0어시스트",
                     "sub": "야투 46.2% · 3점 37.7% · 팀 내 3옵션",
@@ -29096,6 +31251,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Cooper Flagg",
+                    "id": "5041939",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.6리바운드 · 6.4어시스트",
                     "sub": "야투 48.5% · 3점 29.9% · 팀 내 1옵션",
@@ -29104,6 +31261,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyrie Irving",
+                    "id": "6442",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                     "pos": "G",
                     "stat": "22.2점 · 3.7리바운드 · 4.4어시스트",
                     "sub": "야투 47.3% · 3점 38.5% · 팀 내 2옵션",
@@ -29112,6 +31271,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "P.J. Washington",
+                    "id": "4278078",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278078.png",
                     "pos": "F",
                     "stat": "14.0점 · 6.7리바운드 · 1.3어시스트",
                     "sub": "야투 42.1% · 3점 36.2% · 팀 내 3옵션",
@@ -29204,6 +31365,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Keyonte George",
+                    "id": "4433627",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
                     "pos": "G",
                     "stat": "21.6점 · 4.1리바운드 · 7.1어시스트",
                     "sub": "야투 44.1% · 3점 34.7% · 팀 내 1옵션",
@@ -29212,12 +31375,16 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Lauri Markkanen",
+                    "id": "4066336",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066336.png",
                     "pos": "F",
                     "stat": "18.0점 · 6.8리바운드 · 2.0어시스트",
                     "sub": "야투 38.9% · 3점 39.7% · 팀 내 2옵션"
                   },
                   {
                     "name": "Darryn Peterson",
+                    "id": "5041955",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png",
                     "pos": "G",
                     "stat": "16.5점 · 4.1리바운드 · 3.6어시스트",
                     "sub": "야투 40.4% · 3점 36.1% · 팀 내 3옵션",
@@ -29363,6 +31530,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Pascal Siakam",
+                    "id": "3149673",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
                     "pos": "F",
                     "stat": "23.1점 · 6.1리바운드 · 3.9어시스트",
                     "sub": "야투 52.0% · 3점 35.9% · 팀 내 1옵션",
@@ -29371,12 +31540,16 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Tyrese Haliburton",
+                    "id": "4396993",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396993.png",
                     "pos": "G",
                     "stat": "21.8점 · 4.5리바운드 · 9.5어시스트",
                     "sub": "야투 51.6% · 3점 37.0% · 팀 내 2옵션"
                   },
                   {
                     "name": "Andrew Nembhard",
+                    "id": "4395712",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
                     "pos": "G",
                     "stat": "16.6점 · 2.3리바운드 · 7.6어시스트",
                     "sub": "야투 44.6% · 3점 40.3% · 팀 내 3옵션",
@@ -29476,6 +31649,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jalen Brunson",
+                    "id": "3934672",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
                     "stat": "27.0점 · 2.9리바운드 · 5.9어시스트",
                     "sub": "야투 43.5% · 3점 38.1% · 팀 내 1옵션",
@@ -29484,6 +31659,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Karl-Anthony Towns",
+                    "id": "3136195",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
                     "pos": "C",
                     "stat": "21.2점 · 14.1리바운드 · 3.9어시스트",
                     "sub": "야투 54.5% · 3점 40.0% · 팀 내 2옵션",
@@ -29492,6 +31669,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "OG Anunoby",
+                    "id": "3934719",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934719.png",
                     "pos": "F",
                     "stat": "16.4점 · 5.3리바운드 · 2.0어시스트",
                     "sub": "야투 39.4% · 3점 32.2% · 팀 내 3옵션",
@@ -29614,6 +31793,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jayson Tatum",
+                    "id": "4065648",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
                     "pos": "F",
                     "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
                     "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
@@ -29622,6 +31803,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Paul George",
+                    "id": "4251",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png",
                     "pos": "F",
                     "stat": "19.9점 · 5.5리바운드 · 3.7어시스트",
                     "sub": "야투 46.5% · 3점 42.3% · 팀 내 2옵션",
@@ -29630,6 +31813,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Payton Pritchard",
+                    "id": "4066354",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
                     "stat": "13.7점 · 3.1리바운드 · 3.8어시스트",
                     "sub": "야투 42.4% · 3점 37.1% · 팀 내 3옵션",
@@ -29693,6 +31878,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Stephen Curry",
+                    "id": "3975",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3975.png",
                     "pos": "G",
                     "stat": "27.8점 · 3.7리바운드 · 3.9어시스트",
                     "sub": "야투 50.0% · 3점 45.7% · 팀 내 1옵션",
@@ -29700,6 +31887,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Yaxel Lendeborg",
+                    "id": "5175737",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
                     "pos": "F",
                     "stat": "20.3점 · 7.3리바운드 · 3.5어시스트",
                     "sub": "야투 46.4% · 3점 37.8% · 팀 내 2옵션",
@@ -29708,6 +31897,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Brandin Podziemski",
+                    "id": "4709138",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
                     "pos": "G",
                     "stat": "15.8점 · 4.8리바운드 · 3.8어시스트",
                     "sub": "야투 45.0% · 3점 37.8% · 팀 내 3옵션",
@@ -30654,6 +32845,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "몬차",
+                "players": [
+                  {
+                    "name": "Gustavo Varela",
+                    "id": "384482",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/384482.png",
+                    "stats": [
+                      "득점 9"
+                    ]
+                  },
+                  {
+                    "name": "Ricardo Mangas",
+                    "id": "259871",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/259871.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "피오렌티나",
+                "players": [
+                  {
+                    "name": "Franco Mastantuono",
+                    "id": "376473",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/376473.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Cher Ndour",
+                    "id": "360061",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/360061.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**몬차** — 리그 18위, 승점 7, 득실 -8.",
               "**피오렌티나** — 리그 15위, 승점 9, 득실 -8."
@@ -30965,6 +33202,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 2승 1무 2패입니다. 경기당 평균 1.3골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.12 원정 CD Tarancon 2-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "레반테",
+                "players": [
+                  {
+                    "name": "Roger Brugué",
+                    "id": "267591",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/267591.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Jon Ander Olasagasti",
+                    "id": "317784",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/317784.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "엘체",
+                "players": [
+                  {
+                    "name": "Fer Niño",
+                    "id": "301684",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/301684.png",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "José Antonio Morente",
+                    "id": "259916",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/259916.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -31280,6 +33563,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "브렌트퍼드",
+                "players": [
+                  {
+                    "name": "Kevin Schade",
+                    "id": "310958",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/310958.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Igor Thiago",
+                    "id": "301894",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/301894.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "에버턴",
+                "players": [
+                  {
+                    "name": "Thierno Barry",
+                    "id": "301166",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/301166.png",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "James Tarkowski",
+                    "id": "155226",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/155226.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**브렌트퍼드** — 리그 8위, 승점 14, 득실 +5.",
               "**에버턴** — 리그 6위, 승점 16, 득실 +2."
@@ -31427,6 +33756,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Ty Jerome",
+                    "id": "4065733",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
                     "pos": "G",
                     "stat": "25.4점 · 3.4리바운드 · 5.3어시스트",
                     "sub": "야투 48.5% · 3점 35.9% · 팀 내 1옵션",
@@ -31434,6 +33765,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cameron Boozer",
+                    "id": "5041935",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
                     "pos": "F",
                     "stat": "16.6점 · 9.4리바운드 · 5.3어시스트",
                     "sub": "야투 40.0% · 3점 32.2% · 팀 내 2옵션",
@@ -31442,6 +33775,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cedric Coward",
+                    "id": "4903027",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                     "pos": "F",
                     "stat": "14.5점 · 8.4리바운드 · 3.4어시스트",
                     "sub": "야투 47.7% · 3점 45.2% · 팀 내 3옵션",
@@ -31543,6 +33878,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Brandon Miller",
+                    "id": "4433287",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433287.png",
                     "pos": "F",
                     "stat": "19.9점 · 4.5리바운드 · 2.5어시스트",
                     "sub": "야투 35.9% · 3점 27.0% · 팀 내 1옵션",
@@ -31551,6 +33888,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Naz Reid",
+                    "id": "4396971",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396971.png",
                     "pos": "C",
                     "stat": "17.6점 · 8.4리바운드 · 2.4어시스트",
                     "sub": "야투 40.3% · 3점 35.0% · 팀 내 2옵션",
@@ -31559,6 +33898,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Grayson Allen",
+                    "id": "3135045",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3135045.png",
                     "pos": "G",
                     "stat": "14.9점 · 3.1리바운드 · 3.3어시스트",
                     "sub": "야투 44.8% · 3점 45.8% · 팀 내 3옵션",
@@ -31704,6 +34045,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Deni Avdija",
+                    "id": "4683021",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.2리바운드 · 6.1어시스트",
                     "sub": "야투 50.7% · 3점 38.6% · 팀 내 1옵션",
@@ -31711,6 +34054,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Damian Lillard",
+                    "id": "6606",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                     "pos": "G",
                     "stat": "20.1점 · 3.0리바운드 · 4.4어시스트",
                     "sub": "야투 39.6% · 3점 35.2% · 팀 내 2옵션",
@@ -31719,6 +34064,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ja Morant",
+                    "id": "4279888",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4279888.png",
                     "pos": "G",
                     "stat": "15.8점 · 2.5리바운드 · 5.5어시스트",
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
@@ -31818,6 +34165,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Tyrese Maxey",
+                    "id": "4431678",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
                     "pos": "G",
                     "stat": "26.5점 · 3.3리바운드 · 5.8어시스트",
                     "sub": "야투 50.0% · 3점 38.0% · 팀 내 1옵션",
@@ -31825,6 +34174,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jaylen Brown",
+                    "id": "3917376",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3917376.png",
                     "pos": "G",
                     "stat": "22.6점 · 6.6리바운드 · 3.6어시스트",
                     "sub": "야투 49.4% · 3점 38.6% · 팀 내 2옵션",
@@ -31832,6 +34183,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Joel Embiid",
+                    "id": "3059318",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
                     "pos": "C",
                     "stat": "20.0점 · 8.3리바운드 · 3.8어시스트",
                     "sub": "야투 39.9% · 3점 14.6% · 팀 내 3옵션",
@@ -31990,6 +34343,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Shai Gilgeous-Alexander",
+                    "id": "4278073",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278073.png",
                     "pos": "G",
                     "stat": "31.1점 · 4.1리바운드 · 4.3어시스트",
                     "sub": "야투 47.6% · 3점 35.8% · 팀 내 1옵션",
@@ -31998,6 +34353,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ajay Mitchell",
+                    "id": "4900671",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
                     "pos": "G",
                     "stat": "17.7점 · 3.8리바운드 · 3.6어시스트",
                     "sub": "야투 51.1% · 3점 25.0% · 팀 내 2옵션",
@@ -32006,6 +34363,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jared McCain",
+                    "id": "4683778",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
                     "pos": "G",
                     "stat": "13.7점 · 3.4리바운드 · 1.8어시스트",
                     "sub": "야투 40.8% · 3점 34.3% · 팀 내 3옵션",
@@ -32106,6 +34465,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Pascal Siakam",
+                    "id": "3149673",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
                     "pos": "F",
                     "stat": "23.1점 · 6.1리바운드 · 3.9어시스트",
                     "sub": "야투 52.0% · 3점 35.9% · 팀 내 1옵션",
@@ -32114,12 +34475,16 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Tyrese Haliburton",
+                    "id": "4396993",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396993.png",
                     "pos": "G",
                     "stat": "21.8점 · 4.5리바운드 · 9.5어시스트",
                     "sub": "야투 51.6% · 3점 37.0% · 팀 내 2옵션"
                   },
                   {
                     "name": "Andrew Nembhard",
+                    "id": "4395712",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
                     "pos": "G",
                     "stat": "16.6점 · 2.3리바운드 · 7.6어시스트",
                     "sub": "야투 44.6% · 3점 40.3% · 팀 내 3옵션",
@@ -32278,6 +34643,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Tyler Herro",
+                    "id": "4395725",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
                     "pos": "G",
                     "stat": "19.4점 · 4.0리바운드 · 4.2어시스트",
                     "sub": "야투 42.4% · 3점 34.3% · 팀 내 1옵션",
@@ -32286,6 +34653,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jaime Jaquez Jr.",
+                    "id": "4432848",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png",
                     "pos": "F",
                     "stat": "15.4점 · 5.4리바운드 · 3.1어시스트",
                     "sub": "야투 47.1% · 3점 43.3% · 팀 내 2옵션",
@@ -32294,6 +34663,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyle Kuzma",
+                    "id": "3134907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
                     "pos": "F",
                     "stat": "12.3점 · 5.3리바운드 · 2.4어시스트",
                     "sub": "야투 46.2% · 3점 32.9% · 팀 내 3옵션",
@@ -32381,6 +34752,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Scottie Barnes",
+                    "id": "4433134",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433134.png",
                     "pos": "F",
                     "stat": "23.8점 · 7.4리바운드 · 4.7어시스트",
                     "sub": "야투 47.7% · 3점 25.0% · 팀 내 1옵션",
@@ -32388,6 +34761,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "RJ Barrett",
+                    "id": "4395625",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395625.png",
                     "pos": "F",
                     "stat": "20.9점 · 6.4리바운드 · 4.3어시스트",
                     "sub": "야투 47.3% · 3점 28.4% · 팀 내 2옵션",
@@ -32395,6 +34770,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kawhi Leonard",
+                    "id": "6450",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6450.png",
                     "pos": "F",
                     "stat": "19.5점 · 7.5리바운드 · 1.5어시스트",
                     "sub": "야투 32.4% · 3점 28.6% · 팀 내 3옵션"
@@ -32552,6 +34929,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Julius Randle",
+                    "id": "3064514",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
                     "pos": "F",
                     "stat": "20.6점 · 5.8리바운드 · 4.6어시스트",
                     "sub": "야투 46.8% · 3점 35.9% · 팀 내 1옵션",
@@ -32560,6 +34939,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Michael Porter Jr.",
+                    "id": "4278104",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278104.png",
                     "pos": "F",
                     "stat": "20.5점 · 7.1리바운드 · 1.3어시스트",
                     "sub": "야투 45.0% · 3점 36.8% · 팀 내 2옵션",
@@ -32568,6 +34949,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Nolan Traore",
+                    "id": "5279130",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5279130.png",
                     "pos": "G",
                     "stat": "13.5점 · 1.8리바운드 · 2.8어시스트",
                     "sub": "야투 51.9% · 3점 42.0% · 팀 내 3옵션",
@@ -32638,12 +35021,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Edwards",
+                    "id": "4594268",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4594268.png",
                     "pos": "G",
                     "stat": "33.2점 · 4.8리바운드 · 3.5어시스트",
                     "sub": "야투 48.1% · 3점 40.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Ayo Dosunmu",
+                    "id": "4397002",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png",
                     "pos": "G",
                     "stat": "18.6점 · 4.6리바운드 · 3.5어시스트",
                     "sub": "야투 52.2% · 3점 46.4% · 팀 내 2옵션",
@@ -32652,6 +35039,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "LaMelo Ball",
+                    "id": "4432816",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
                     "pos": "G",
                     "stat": "17.7점 · 4.1리바운드 · 5.5어시스트",
                     "sub": "야투 41.8% · 3점 36.6% · 팀 내 3옵션",
@@ -32803,6 +35192,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Donovan Mitchell",
+                    "id": "3908809",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
                     "pos": "G",
                     "stat": "24.8점 · 4.8리바운드 · 5.3어시스트",
                     "sub": "야투 49.8% · 3점 36.9% · 팀 내 1옵션",
@@ -32811,6 +35202,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Evan Mobley",
+                    "id": "4432158",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432158.png",
                     "pos": "C",
                     "stat": "16.9점 · 7.3리바운드 · 3.6어시스트",
                     "sub": "야투 55.5% · 3점 47.9% · 팀 내 2옵션",
@@ -32818,6 +35211,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "James Harden",
+                    "id": "3992",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3992.png",
                     "pos": "G",
                     "stat": "16.2점 · 4.7리바운드 · 6.3어시스트",
                     "sub": "야투 38.5% · 3점 37.5% · 팀 내 3옵션",
@@ -32910,6 +35305,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Norman Powell",
+                    "id": "2595516",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
                     "pos": "G",
                     "stat": "21.2점 · 2.8리바운드 · 2.4어시스트",
                     "sub": "야투 45.1% · 3점 34.9% · 팀 내 1옵션",
@@ -32918,6 +35315,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Caleb Wilson",
+                    "id": "5095151",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5095151.png",
                     "pos": "F",
                     "stat": "18.9점 · 6.2리바운드 · 1.9어시스트",
                     "sub": "야투 42.0% · 3점 32.4% · 팀 내 2옵션",
@@ -32925,6 +35324,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Matas Buzelis",
+                    "id": "4711294",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                     "pos": "F",
                     "stat": "15.1점 · 4.7리바운드 · 2.0어시스트",
                     "sub": "야투 46.2% · 3점 37.7% · 팀 내 3옵션",
@@ -33064,6 +35465,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Devin Booker",
+                    "id": "3136193",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png",
                     "pos": "G",
                     "stat": "24.8점 · 2.7리바운드 · 5.4어시스트",
                     "sub": "야투 48.0% · 3점 34.2% · 팀 내 1옵션",
@@ -33072,6 +35475,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Dillon Brooks",
+                    "id": "3155526",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155526.png",
                     "pos": "F",
                     "stat": "14.9점 · 3.6리바운드 · 2.3어시스트",
                     "sub": "야투 45.4% · 3점 44.8% · 팀 내 2옵션",
@@ -33080,6 +35485,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Miles Bridges",
+                    "id": "4066383",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png",
                     "pos": "F",
                     "stat": "14.6점 · 6.9리바운드 · 3.1어시스트",
                     "sub": "야투 47.0% · 3점 31.6% · 팀 내 3옵션",
@@ -33150,6 +35557,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Zion Williamson",
+                    "id": "4395628",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png",
                     "pos": "F",
                     "stat": "21.7점 · 5.4리바운드 · 2.5어시스트",
                     "sub": "야투 59.6% · 3점 46.2% · 팀 내 1옵션",
@@ -33158,6 +35567,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Saddiq Bey",
+                    "id": "4397136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
                     "pos": "F",
                     "stat": "16.5점 · 4.4리바운드 · 2.6어시스트",
                     "sub": "야투 44.4% · 3점 39.4% · 팀 내 2옵션",
@@ -33166,6 +35577,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jeremiah Fears",
+                    "id": "5144091",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5144091.png",
                     "pos": "G",
                     "stat": "15.6점 · 4.9리바운드 · 5.4어시스트",
                     "sub": "야투 44.7% · 3점 28.1% · 팀 내 3옵션",
@@ -33325,6 +35738,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Darius Garland",
+                    "id": "4396907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
                     "pos": "G",
                     "stat": "21.2점 · 2.4리바운드 · 6.9어시스트",
                     "sub": "야투 46.5% · 3점 36.8% · 팀 내 1옵션",
@@ -33333,6 +35748,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Brook Lopez",
+                    "id": "3448",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png",
                     "pos": "C",
                     "stat": "14.8점 · 5.4리바운드 · 1.8어시스트",
                     "sub": "야투 53.6% · 3점 41.2% · 팀 내 2옵션",
@@ -33341,6 +35758,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Rui Hachimura",
+                    "id": "4066648",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066648.png",
                     "pos": "F",
                     "stat": "13.3점 · 5.9리바운드 · 1.5어시스트",
                     "sub": "야투 39.2% · 3점 37.1% · 팀 내 3옵션",
@@ -33423,6 +35842,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Alperen Sengun",
+                    "id": "4871144",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png",
                     "pos": "C",
                     "stat": "21.6점 · 9.1리바운드 · 6.8어시스트",
                     "sub": "야투 54.5% · 3점 50.0% · 팀 내 1옵션",
@@ -33431,6 +35852,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kevin Durant",
+                    "id": "3202",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
                     "pos": "F",
                     "stat": "21.3점 · 5.2리바운드 · 3.8어시스트",
                     "sub": "야투 49.8% · 3점 40.6% · 팀 내 2옵션",
@@ -33439,6 +35862,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Amen Thompson",
+                    "id": "4684740",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684740.png",
                     "pos": "G",
                     "stat": "15.7점 · 7.1리바운드 · 3.3어시스트",
                     "sub": "야투 53.6% · 3점 33.3% · 팀 내 3옵션",
@@ -33578,6 +36003,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Keyonte George",
+                    "id": "4433627",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
                     "pos": "G",
                     "stat": "21.6점 · 4.1리바운드 · 7.1어시스트",
                     "sub": "야투 44.1% · 3점 34.7% · 팀 내 1옵션",
@@ -33586,12 +36013,16 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Lauri Markkanen",
+                    "id": "4066336",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066336.png",
                     "pos": "F",
                     "stat": "18.0점 · 6.8리바운드 · 2.0어시스트",
                     "sub": "야투 38.9% · 3점 39.7% · 팀 내 2옵션"
                   },
                   {
                     "name": "Darryn Peterson",
+                    "id": "5041955",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png",
                     "pos": "G",
                     "stat": "16.5점 · 4.1리바운드 · 3.6어시스트",
                     "sub": "야투 40.4% · 3점 36.1% · 팀 내 3옵션",
@@ -33677,6 +36108,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Luka Doncic",
+                    "id": "3945274",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
                     "pos": "G",
                     "stat": "38.1점 · 7.0리바운드 · 7.6어시스트",
                     "sub": "야투 46.6% · 3점 38.3% · 팀 내 1옵션",
@@ -33685,6 +36118,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Austin Reaves",
+                    "id": "4066457",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066457.png",
                     "pos": "G",
                     "stat": "24.7점 · 3.3리바운드 · 4.7어시스트",
                     "sub": "야투 51.3% · 3점 40.9% · 팀 내 2옵션",
@@ -33692,6 +36127,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Walker Kessler",
+                    "id": "4433136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433136.png",
                     "pos": "C",
                     "stat": "14.2점 · 10.9리바운드 · 1.8어시스트",
                     "sub": "야투 66.7% · 3점 0.0% · 팀 내 3옵션",
@@ -33823,6 +36260,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Victor Wembanyama",
+                    "id": "5104157",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
                     "pos": "F",
                     "stat": "28.4점 · 12.0리바운드 · 3.3어시스트",
                     "sub": "야투 53.0% · 3점 30.1% · 팀 내 1옵션",
@@ -33831,6 +36270,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Dylan Harper",
+                    "id": "5037871",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5037871.png",
                     "pos": "G",
                     "stat": "18.4점 · 5.4리바운드 · 4.5어시스트",
                     "sub": "야투 50.5% · 3점 31.5% · 팀 내 2옵션",
@@ -33839,6 +36280,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Stephon Castle",
+                    "id": "4845367",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png",
                     "pos": "G",
                     "stat": "15.3점 · 5.2리바운드 · 5.5어시스트",
                     "sub": "야투 42.0% · 3점 34.1% · 팀 내 3옵션",
@@ -33924,6 +36367,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Darius Acuff Jr.",
+                    "id": "5142620",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
                     "pos": "G",
                     "stat": "26.2점 · 3.6리바운드 · 7.0어시스트",
                     "sub": "야투 41.6% · 3점 34.3% · 팀 내 1옵션",
@@ -33932,6 +36377,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Zach LaVine",
+                    "id": "3064440",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
                     "pos": "G",
                     "stat": "21.2점 · 3.4리바운드 · 2.8어시스트",
                     "sub": "야투 51.1% · 3점 38.7% · 팀 내 2옵션",
@@ -33940,6 +36387,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Domantas Sabonis",
+                    "id": "3155942",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
                     "pos": "F",
                     "stat": "13.7점 · 13.2리바운드 · 5.8어시스트",
                     "sub": "야투 63.4% · 3점 27.3% · 팀 내 3옵션",
@@ -34861,6 +37310,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "갈라타사라이",
+                "players": [
+                  {
+                    "name": "Alexey Batrakov",
+                    "id": "355113",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/355113.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Davinson Sánchez",
+                    "id": "197105",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/197105.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "애스턴 빌라",
+                "players": [
+                  {
+                    "name": "Nicolas Jackson",
+                    "id": "308524",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/308524.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Pau Torres",
+                    "id": "251100",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/251100.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**갈라타사라이** — 리그 18위, 승점 6, 득실 -1.",
               "**애스턴 빌라** — 리그 6위, 승점 9, 득실 +6."
@@ -35137,6 +37632,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 1승 1무 0패입니다. 경기당 평균 1.0골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 Tromso 2-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "보되/글림트",
+                "players": [
+                  {
+                    "name": "Fredrik Sjøvold",
+                    "id": "333755",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/333755.png",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Sondre Brunstad Fet",
+                    "id": "208353",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/208353.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "LASK 린츠",
+                "players": [
+                  {
+                    "name": "Kasper Jørgensen",
+                    "id": "286853",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/286853.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Yvan Dibango",
+                    "id": "365165",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/365165.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -35417,6 +37958,45 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "코모",
+                "players": [
+                  {
+                    "name": "Tasos Douvikas",
+                    "id": "262071",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/262071.png",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Nico Paz",
+                    "id": "337970",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/337970.png",
+                    "stats": [
+                      "도움 5"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "AEK 아테네",
+                "players": [
+                  {
+                    "name": "Stavros Pilios",
+                    "id": "285427",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/285427.png",
+                    "stats": [
+                      "득점 2",
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**코모** — 리그 4위, 승점 9, 득실 +13.",
               "**AEK 아테네** — 리그 29위, 승점 3, 득실 -6."
@@ -35695,6 +38275,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "슬로반 브라티슬라바",
+                "players": [
+                  {
+                    "name": "Suleiman Camara",
+                    "id": "310419",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/310419.png",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Tigran Barseghyan",
+                    "id": "235045",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/235045.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "레알 베티스",
+                "players": [
+                  {
+                    "name": "Isco",
+                    "id": "143564",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/143564.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Antony",
+                    "id": "281558",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/281558.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**슬로반 브라티슬라바** — 리그 36위, 승점 0, 득실 -16.",
               "**레알 베티스** — 리그 11위, 승점 9, 득실 +2."
@@ -35971,6 +38597,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 4승 0무 1패입니다. 홈 1승 0무 0패입니다. 경기당 평균 2.0골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 헐 시티 1-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "아스널",
+                "players": [
+                  {
+                    "name": "Eberechi Eze",
+                    "id": "251400",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/251400.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Viktor Gyökeres",
+                    "id": "258906",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/258906.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "도르트문트",
+                "players": [
+                  {
+                    "name": "Serhou Guirassy",
+                    "id": "186381",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/186381.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Fábio Silva",
+                    "id": "291629",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/291629.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -36286,6 +38958,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "페예노르트",
+                "players": [
+                  {
+                    "name": "Gjivai Zechiël",
+                    "id": "365021",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/365021.png",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Luciano Valente",
+                    "id": "319296",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/319296.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "FC 포르투",
+                "players": [
+                  {
+                    "name": "Gabri Veiga",
+                    "id": "307381",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/307381.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Pepê",
+                    "id": "256909",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/256909.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**페예노르트** — 리그 32위, 승점 3, 득실 -7.",
               "**FC 포르투** — 리그 26위, 승점 3, 득실 -1."
@@ -36579,6 +39297,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 2승 0무 3패입니다. 홈 1승 0무 1패입니다. 경기당 평균 3.0골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 노팅엄 포리스트 3-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "맨체스터 시티",
+                "players": [
+                  {
+                    "name": "Erling Haaland",
+                    "id": "253989",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/253989.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Iliman Ndiaye",
+                    "id": "268641",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/268641.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "나폴리",
+                "players": [
+                  {
+                    "name": "Scott McTominay",
+                    "id": "255850",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/255850.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Kevin De Bruyne",
+                    "id": "134947",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/134947.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -36894,6 +39658,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "레알 마드리드",
+                "players": [
+                  {
+                    "name": "Kylian Mbappé",
+                    "id": "231388",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/231388.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Brahim Díaz",
+                    "id": "246532",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/246532.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "PSV 에인트호번",
+                "players": [
+                  {
+                    "name": "Kodai Sano",
+                    "id": "341715",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/341715.png",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Armando Obispo",
+                    "id": "245918",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/245918.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**레알 마드리드** — 리그 2위, 승점 12, 득실 +6.",
               "**PSV 에인트호번** — 리그 24위, 승점 4, 득실 -1."
@@ -37172,6 +39982,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "RB 라이프치히",
+                "players": [
+                  {
+                    "name": "Ridle Baku",
+                    "id": "258963",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/258963.png",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Christopher Nkunku",
+                    "id": "222176",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/222176.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "랑스",
+                "players": [
+                  {
+                    "name": "Ruben Aguilar",
+                    "id": "181946",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/181946.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Florian Thauvin",
+                    "id": "156898",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/156898.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**RB 라이프치히** — 리그 30위, 승점 3, 득실 -6.",
               "**랑스** — 리그 33위, 승점 3, 득실 -12."
@@ -37284,6 +40140,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Cade Cunningham",
+                    "id": "4432166",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
                     "pos": "G",
                     "stat": "25.8점 · 5.2리바운드 · 7.8어시스트",
                     "sub": "야투 47.7% · 3점 31.7% · 팀 내 1옵션",
@@ -37291,6 +40149,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Duncan Robinson",
+                    "id": "3157465",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3157465.png",
                     "pos": "F",
                     "stat": "17.4점 · 1.8리바운드 · 2.1어시스트",
                     "sub": "야투 45.0% · 3점 43.1% · 팀 내 2옵션",
@@ -37298,6 +40158,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Daniss Jenkins",
+                    "id": "5107199",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
                     "pos": "G",
                     "stat": "14.3점 · 3.7리바운드 · 4.7어시스트",
                     "sub": "야투 45.2% · 3점 43.7% · 팀 내 3옵션",
@@ -37397,12 +40259,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Paolo Banchero",
+                    "id": "4432573",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432573.png",
                     "pos": "F",
                     "stat": "24.5점 · 6.5리바운드 · 7.5어시스트",
                     "sub": "야투 69.6% · 3점 50.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Franz Wagner",
+                    "id": "4566434",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
                     "pos": "F",
                     "stat": "24.4점 · 6.9리바운드 · 8.5어시스트",
                     "sub": "야투 47.0% · 3점 25.0% · 팀 내 2옵션",
@@ -37411,6 +40277,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Desmond Bane",
+                    "id": "4066320",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
                     "pos": "G",
                     "stat": "18.5점 · 4.3리바운드 · 2.7어시스트",
                     "sub": "야투 42.6% · 3점 41.7% · 팀 내 3옵션",
@@ -37561,6 +40429,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jayson Tatum",
+                    "id": "4065648",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
                     "pos": "F",
                     "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
                     "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
@@ -37569,6 +40439,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Paul George",
+                    "id": "4251",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png",
                     "pos": "F",
                     "stat": "19.9점 · 5.5리바운드 · 3.7어시스트",
                     "sub": "야투 46.5% · 3점 42.3% · 팀 내 2옵션",
@@ -37577,6 +40449,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Payton Pritchard",
+                    "id": "4066354",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
                     "stat": "13.7점 · 3.1리바운드 · 3.8어시스트",
                     "sub": "야투 42.4% · 3점 37.1% · 팀 내 3옵션",
@@ -37639,6 +40513,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Davis",
+                    "id": "6583",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
                     "pos": "F",
                     "stat": "24.6점 · 10.1리바운드 · 2.1어시스트",
                     "sub": "야투 52.0% · 3점 34.4% · 팀 내 1옵션",
@@ -37647,6 +40523,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyshawn George",
+                    "id": "5174563",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
                     "pos": "F",
                     "stat": "17.8점 · 4.2리바운드 · 4.4어시스트",
                     "sub": "야투 48.6% · 3점 42.4% · 팀 내 2옵션",
@@ -37655,6 +40533,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Trae Young",
+                    "id": "4277905",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
                     "pos": "G",
                     "stat": "17.5점 · 2.8리바운드 · 8.9어시스트",
                     "sub": "야투 37.1% · 3점 30.4% · 팀 내 3옵션",
@@ -37812,6 +40692,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Cooper Flagg",
+                    "id": "5041939",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.6리바운드 · 6.4어시스트",
                     "sub": "야투 48.5% · 3점 29.9% · 팀 내 1옵션",
@@ -37820,6 +40702,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyrie Irving",
+                    "id": "6442",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                     "pos": "G",
                     "stat": "22.2점 · 3.7리바운드 · 4.4어시스트",
                     "sub": "야투 47.3% · 3점 38.5% · 팀 내 2옵션",
@@ -37828,6 +40712,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "P.J. Washington",
+                    "id": "4278078",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278078.png",
                     "pos": "F",
                     "stat": "14.0점 · 6.7리바운드 · 1.3어시스트",
                     "sub": "야투 42.1% · 3점 36.2% · 팀 내 3옵션",
@@ -37919,6 +40805,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jamal Murray",
+                    "id": "3936299",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
                     "pos": "G",
                     "stat": "25.7점 · 5.2리바운드 · 5.7어시스트",
                     "sub": "야투 50.7% · 3점 46.2% · 팀 내 1옵션",
@@ -37927,6 +40815,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Nikola Jokic",
+                    "id": "3112335",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
                     "pos": "C",
                     "stat": "24.1점 · 10.7리바운드 · 8.9어시스트",
                     "sub": "야투 51.7% · 3점 28.1% · 팀 내 2옵션",
@@ -37935,6 +40825,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Christian Braun",
+                    "id": "4431767",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png",
                     "pos": "G",
                     "stat": "12.8점 · 4.3리바운드 · 2.4어시스트",
                     "sub": "야투 47.1% · 3점 31.7% · 팀 내 3옵션",
@@ -38850,6 +41742,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "Sabah FK",
+                "players": [
+                  {
+                    "name": "Aden McCarthy",
+                    "id": "332563",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/332563.png",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Ivan Lepinjica",
+                    "id": "260848",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/260848.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "바르셀로나",
+                "players": [
+                  {
+                    "name": "Raphinha",
+                    "id": "231050",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/231050.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Lamine Yamal",
+                    "id": "362150",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/362150.png",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**Sabah FK** — 리그 31위, 승점 3, 득실 -6.",
               "**바르셀로나** — 리그 5위, 승점 9, 득실 +8."
@@ -39126,6 +42064,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 5경기 무승입니다. 최근 5경기 0승 1무 4패입니다. 홈 0승 0무 2패입니다. 경기당 평균 1.2골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.04 홈 아스널 2-1입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "Slavia Prague",
+                "players": [
+                  {
+                    "name": "Danijel Sturm",
+                    "id": "322169",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/322169.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Emmanuel Dennis Ayaosi",
+                    "id": "3098601",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/3098601.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "비야레알",
+                "players": [
+                  {
+                    "name": "Santiago Mouriño",
+                    "id": "318098",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/318098.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Ayoze Pérez",
+                    "id": "192133",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/192133.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -39421,6 +42405,45 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.03 홈 Sporting CP 1-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "Shakhtar Donetsk",
+                "players": [
+                  {
+                    "name": "Gleiker Mendoza",
+                    "id": "382379",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/382379.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Isaque",
+                    "id": "382970",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/382970.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "Fenerbahce",
+                "players": [
+                  {
+                    "name": "Archie Brown",
+                    "id": "320982",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/320982.png",
+                    "stats": [
+                      "득점 2",
+                      "도움 1"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -39724,6 +42747,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "Club Brugge",
+                "players": [
+                  {
+                    "name": "Nicolo Tresoldi",
+                    "id": "335201",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/335201.png",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Joaquin Seys",
+                    "id": "363068",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/363068.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "리버풀",
+                "players": [
+                  {
+                    "name": "Alexis Mac Allister",
+                    "id": "249299",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/249299.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Kostas Tsimikas",
+                    "id": "226177",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/226177.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**Club Brugge** — 리그 9위, 승점 9, 득실 +4.",
               "**리버풀** — 리그 8위, 승점 9, 득실 +4."
@@ -40000,6 +43069,52 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 3승 0무 2패입니다. 홈 1승 0무 1패입니다. 경기당 평균 2.0골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 Moreirense 1-0입니다. 부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.",
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "Sporting CP",
+                "players": [
+                  {
+                    "name": "Luis Suárez",
+                    "id": "272722",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/272722.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Silas Andersen",
+                    "id": "355408",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/355408.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "맨체스터 유나이티드",
+                "players": [
+                  {
+                    "name": "Matheus Cunha",
+                    "id": "259902",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/259902.png",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Bryan Mbeumo",
+                    "id": "271170",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/271170.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -40297,6 +43412,45 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "Lille",
+                "players": [
+                  {
+                    "name": "Soriba Diaoune",
+                    "id": "400352",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/400352.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Hákon Haraldsson",
+                    "id": "318779",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/318779.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "바이에른 뮌헨",
+                "players": [
+                  {
+                    "name": "Harry Kane",
+                    "id": "142200",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/142200.png",
+                    "stats": [
+                      "득점 4",
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**Lille** — 리그 35위, 승점 1, 득실 -6.",
               "**바이에른 뮌헨** — 리그 13위, 승점 8, 득실 +7."
@@ -40592,6 +43746,45 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "Paris Saint-Germain",
+                "players": [
+                  {
+                    "name": "Fabián Ruiz",
+                    "id": "214596",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/214596.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Maghnes Akliouche",
+                    "id": "329690",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/329690.png",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "AS 로마",
+                "players": [
+                  {
+                    "name": "Donyell Malen",
+                    "id": "259481",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/259481.png",
+                    "stats": [
+                      "득점 4",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**Paris Saint-Germain** — 리그 1위, 승점 12, 득실 +15.",
               "**AS 로마** — 리그 20위, 승점 4, 득실 +2."
@@ -40881,6 +44074,52 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "인터 밀란",
+                "players": [
+                  {
+                    "name": "Carlos Augusto",
+                    "id": "271769",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/271769.png",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Nicolò Barella",
+                    "id": "204441",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/204441.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "슈투트가르트",
+                "players": [
+                  {
+                    "name": "Ermedin Demirovic",
+                    "id": "269136",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/269136.png",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Deniz Undav",
+                    "id": "273300",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/273300.png",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**인터 밀란** — 리그 15위, 승점 6, 득실 +2.",
               "**슈투트가르트** — 리그 14위, 승점 7, 득실 +3."
@@ -41159,6 +44398,45 @@ window.CLUTCH_DATA = {
                 "injuryNote": "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
               }
             ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "아틀레티코 마드리드",
+                "players": [
+                  {
+                    "name": "Marcos Llorente",
+                    "id": "206474",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/206474.png",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Julián Álvarez",
+                    "id": "277206",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/277206.png",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "Viking FK",
+                "players": [
+                  {
+                    "name": "Zlatko Tripic",
+                    "id": "164279",
+                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/164279.png",
+                    "stats": [
+                      "득점 2",
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
             "checkpoints": [
               "**아틀레티코 마드리드** — 리그 23위, 승점 4, 득실 -1.",
               "**Viking FK** — 리그 22위, 승점 4, 득실 -1."
@@ -41271,6 +44549,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Giannis Antetokounmpo",
+                    "id": "3032977",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032977.png",
                     "pos": "F",
                     "stat": "28.2점 · 12.6리바운드 · 5.5어시스트",
                     "sub": "야투 60.2% · 3점 24.2% · 팀 내 1옵션",
@@ -41279,6 +44559,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Bam Adebayo",
+                    "id": "4066261",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png",
                     "pos": "C",
                     "stat": "18.9점 · 7.7리바운드 · 3.1어시스트",
                     "sub": "야투 52.4% · 3점 24.5% · 팀 내 2옵션",
@@ -41287,6 +44569,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Davion Mitchell",
+                    "id": "4278053",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
                     "pos": "G",
                     "stat": "17.2점 · 2.4리바운드 · 9.0어시스트",
                     "sub": "야투 51.1% · 3점 43.7% · 팀 내 3옵션",
@@ -41358,6 +44642,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Tyrese Maxey",
+                    "id": "4431678",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
                     "pos": "G",
                     "stat": "26.5점 · 3.3리바운드 · 5.8어시스트",
                     "sub": "야투 50.0% · 3점 38.0% · 팀 내 1옵션",
@@ -41365,6 +44651,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jaylen Brown",
+                    "id": "3917376",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3917376.png",
                     "pos": "G",
                     "stat": "22.6점 · 6.6리바운드 · 3.6어시스트",
                     "sub": "야투 49.4% · 3점 38.6% · 팀 내 2옵션",
@@ -41372,6 +44660,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Joel Embiid",
+                    "id": "3059318",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
                     "pos": "C",
                     "stat": "20.0점 · 8.3리바운드 · 3.8어시스트",
                     "sub": "야투 39.9% · 3점 14.6% · 팀 내 3옵션",
@@ -41530,6 +44820,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Norman Powell",
+                    "id": "2595516",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
                     "pos": "G",
                     "stat": "21.2점 · 2.8리바운드 · 2.4어시스트",
                     "sub": "야투 45.1% · 3점 34.9% · 팀 내 1옵션",
@@ -41538,6 +44830,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Caleb Wilson",
+                    "id": "5095151",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5095151.png",
                     "pos": "F",
                     "stat": "18.9점 · 6.2리바운드 · 1.9어시스트",
                     "sub": "야투 42.0% · 3점 32.4% · 팀 내 2옵션",
@@ -41545,6 +44839,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Matas Buzelis",
+                    "id": "4711294",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                     "pos": "F",
                     "stat": "15.1점 · 4.7리바운드 · 2.0어시스트",
                     "sub": "야투 46.2% · 3점 37.7% · 팀 내 3옵션",
@@ -41625,6 +44921,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Brandon Miller",
+                    "id": "4433287",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433287.png",
                     "pos": "F",
                     "stat": "19.9점 · 4.5리바운드 · 2.5어시스트",
                     "sub": "야투 35.9% · 3점 27.0% · 팀 내 1옵션",
@@ -41633,6 +44931,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Naz Reid",
+                    "id": "4396971",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396971.png",
                     "pos": "C",
                     "stat": "17.6점 · 8.4리바운드 · 2.4어시스트",
                     "sub": "야투 40.3% · 3점 35.0% · 팀 내 2옵션",
@@ -41641,6 +44941,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Grayson Allen",
+                    "id": "3135045",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3135045.png",
                     "pos": "G",
                     "stat": "14.9점 · 3.1리바운드 · 3.3어시스트",
                     "sub": "야투 44.8% · 3점 45.8% · 팀 내 3옵션",
@@ -41785,6 +45087,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Donovan Mitchell",
+                    "id": "3908809",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
                     "pos": "G",
                     "stat": "24.8점 · 4.8리바운드 · 5.3어시스트",
                     "sub": "야투 49.8% · 3점 36.9% · 팀 내 1옵션",
@@ -41793,6 +45097,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Evan Mobley",
+                    "id": "4432158",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432158.png",
                     "pos": "C",
                     "stat": "16.9점 · 7.3리바운드 · 3.6어시스트",
                     "sub": "야투 55.5% · 3점 47.9% · 팀 내 2옵션",
@@ -41800,6 +45106,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "James Harden",
+                    "id": "3992",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3992.png",
                     "pos": "G",
                     "stat": "16.2점 · 4.7리바운드 · 6.3어시스트",
                     "sub": "야투 38.5% · 3점 37.5% · 팀 내 3옵션",
@@ -41893,6 +45201,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jalen Brunson",
+                    "id": "3934672",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
                     "stat": "27.0점 · 2.9리바운드 · 5.9어시스트",
                     "sub": "야투 43.5% · 3점 38.1% · 팀 내 1옵션",
@@ -41901,6 +45211,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Karl-Anthony Towns",
+                    "id": "3136195",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
                     "pos": "C",
                     "stat": "21.2점 · 14.1리바운드 · 3.9어시스트",
                     "sub": "야투 54.5% · 3점 40.0% · 팀 내 2옵션",
@@ -41909,6 +45221,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "OG Anunoby",
+                    "id": "3934719",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934719.png",
                     "pos": "F",
                     "stat": "16.4점 · 5.3리바운드 · 2.0어시스트",
                     "sub": "야투 39.4% · 3점 32.2% · 팀 내 3옵션",
@@ -42031,12 +45345,16 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Anthony Edwards",
+                    "id": "4594268",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4594268.png",
                     "pos": "G",
                     "stat": "33.2점 · 4.8리바운드 · 3.5어시스트",
                     "sub": "야투 48.1% · 3점 40.0% · 팀 내 1옵션"
                   },
                   {
                     "name": "Ayo Dosunmu",
+                    "id": "4397002",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png",
                     "pos": "G",
                     "stat": "18.6점 · 4.6리바운드 · 3.5어시스트",
                     "sub": "야투 52.2% · 3점 46.4% · 팀 내 2옵션",
@@ -42045,6 +45363,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "LaMelo Ball",
+                    "id": "4432816",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
                     "pos": "G",
                     "stat": "17.7점 · 4.1리바운드 · 5.5어시스트",
                     "sub": "야투 41.8% · 3점 36.6% · 팀 내 3옵션",
@@ -42137,6 +45457,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Shai Gilgeous-Alexander",
+                    "id": "4278073",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278073.png",
                     "pos": "G",
                     "stat": "31.1점 · 4.1리바운드 · 4.3어시스트",
                     "sub": "야투 47.6% · 3점 35.8% · 팀 내 1옵션",
@@ -42145,6 +45467,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ajay Mitchell",
+                    "id": "4900671",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
                     "pos": "G",
                     "stat": "17.7점 · 3.8리바운드 · 3.6어시스트",
                     "sub": "야투 51.1% · 3점 25.0% · 팀 내 2옵션",
@@ -42153,6 +45477,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jared McCain",
+                    "id": "4683778",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
                     "pos": "G",
                     "stat": "13.7점 · 3.4리바운드 · 1.8어시스트",
                     "sub": "야투 40.8% · 3점 34.3% · 팀 내 3옵션",
@@ -42311,6 +45637,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Darius Garland",
+                    "id": "4396907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
                     "pos": "G",
                     "stat": "21.2점 · 2.4리바운드 · 6.9어시스트",
                     "sub": "야투 46.5% · 3점 36.8% · 팀 내 1옵션",
@@ -42319,6 +45647,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Brook Lopez",
+                    "id": "3448",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png",
                     "pos": "C",
                     "stat": "14.8점 · 5.4리바운드 · 1.8어시스트",
                     "sub": "야투 53.6% · 3점 41.2% · 팀 내 2옵션",
@@ -42327,6 +45657,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Rui Hachimura",
+                    "id": "4066648",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066648.png",
                     "pos": "F",
                     "stat": "13.3점 · 5.9리바운드 · 1.5어시스트",
                     "sub": "야투 39.2% · 3점 37.1% · 팀 내 3옵션",
@@ -42410,6 +45742,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Ty Jerome",
+                    "id": "4065733",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
                     "pos": "G",
                     "stat": "25.4점 · 3.4리바운드 · 5.3어시스트",
                     "sub": "야투 48.5% · 3점 35.9% · 팀 내 1옵션",
@@ -42417,6 +45751,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cameron Boozer",
+                    "id": "5041935",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
                     "pos": "F",
                     "stat": "16.6점 · 9.4리바운드 · 5.3어시스트",
                     "sub": "야투 40.0% · 3점 32.2% · 팀 내 2옵션",
@@ -42425,6 +45761,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Cedric Coward",
+                    "id": "4903027",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                     "pos": "F",
                     "stat": "14.5점 · 8.4리바운드 · 3.4어시스트",
                     "sub": "야투 47.7% · 3점 45.2% · 팀 내 3옵션",
@@ -42585,6 +45923,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Julius Randle",
+                    "id": "3064514",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
                     "pos": "F",
                     "stat": "20.6점 · 5.8리바운드 · 4.6어시스트",
                     "sub": "야투 46.8% · 3점 35.9% · 팀 내 1옵션",
@@ -42593,6 +45933,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Michael Porter Jr.",
+                    "id": "4278104",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278104.png",
                     "pos": "F",
                     "stat": "20.5점 · 7.1리바운드 · 1.3어시스트",
                     "sub": "야투 45.0% · 3점 36.8% · 팀 내 2옵션",
@@ -42601,6 +45943,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Nolan Traore",
+                    "id": "5279130",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5279130.png",
                     "pos": "G",
                     "stat": "13.5점 · 1.8리바운드 · 2.8어시스트",
                     "sub": "야투 51.9% · 3점 42.0% · 팀 내 3옵션",
@@ -42671,6 +46015,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Tyler Herro",
+                    "id": "4395725",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
                     "pos": "G",
                     "stat": "19.4점 · 4.0리바운드 · 4.2어시스트",
                     "sub": "야투 42.4% · 3점 34.3% · 팀 내 1옵션",
@@ -42679,6 +46025,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Jaime Jaquez Jr.",
+                    "id": "4432848",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png",
                     "pos": "F",
                     "stat": "15.4점 · 5.4리바운드 · 3.1어시스트",
                     "sub": "야투 47.1% · 3점 43.3% · 팀 내 2옵션",
@@ -42687,6 +46035,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kyle Kuzma",
+                    "id": "3134907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
                     "pos": "F",
                     "stat": "12.3점 · 5.3리바운드 · 2.4어시스트",
                     "sub": "야투 46.2% · 3점 32.9% · 팀 내 3옵션",
@@ -42833,6 +46183,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Devin Booker",
+                    "id": "3136193",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png",
                     "pos": "G",
                     "stat": "24.8점 · 2.7리바운드 · 5.4어시스트",
                     "sub": "야투 48.0% · 3점 34.2% · 팀 내 1옵션",
@@ -42841,6 +46193,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Dillon Brooks",
+                    "id": "3155526",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155526.png",
                     "pos": "F",
                     "stat": "14.9점 · 3.6리바운드 · 2.3어시스트",
                     "sub": "야투 45.4% · 3점 44.8% · 팀 내 2옵션",
@@ -42849,6 +46203,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Miles Bridges",
+                    "id": "4066383",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png",
                     "pos": "F",
                     "stat": "14.6점 · 6.9리바운드 · 3.1어시스트",
                     "sub": "야투 47.0% · 3점 31.6% · 팀 내 3옵션",
@@ -42919,6 +46275,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Alperen Sengun",
+                    "id": "4871144",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png",
                     "pos": "C",
                     "stat": "21.6점 · 9.1리바운드 · 6.8어시스트",
                     "sub": "야투 54.5% · 3점 50.0% · 팀 내 1옵션",
@@ -42927,6 +46285,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Kevin Durant",
+                    "id": "3202",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
                     "pos": "F",
                     "stat": "21.3점 · 5.2리바운드 · 3.8어시스트",
                     "sub": "야투 49.8% · 3점 40.6% · 팀 내 2옵션",
@@ -42935,6 +46295,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Amen Thompson",
+                    "id": "4684740",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684740.png",
                     "pos": "G",
                     "stat": "15.7점 · 7.1리바운드 · 3.3어시스트",
                     "sub": "야투 53.6% · 3점 33.3% · 팀 내 3옵션",
@@ -43074,6 +46436,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Darius Acuff Jr.",
+                    "id": "5142620",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
                     "pos": "G",
                     "stat": "26.2점 · 3.6리바운드 · 7.0어시스트",
                     "sub": "야투 41.6% · 3점 34.3% · 팀 내 1옵션",
@@ -43082,6 +46446,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Zach LaVine",
+                    "id": "3064440",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
                     "pos": "G",
                     "stat": "21.2점 · 3.4리바운드 · 2.8어시스트",
                     "sub": "야투 51.1% · 3점 38.7% · 팀 내 2옵션",
@@ -43090,6 +46456,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Domantas Sabonis",
+                    "id": "3155942",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
                     "pos": "F",
                     "stat": "13.7점 · 13.2리바운드 · 5.8어시스트",
                     "sub": "야투 63.4% · 3점 27.3% · 팀 내 3옵션",
@@ -43167,6 +46535,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Stephen Curry",
+                    "id": "3975",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3975.png",
                     "pos": "G",
                     "stat": "27.8점 · 3.7리바운드 · 3.9어시스트",
                     "sub": "야투 50.0% · 3점 45.7% · 팀 내 1옵션",
@@ -43174,6 +46544,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Yaxel Lendeborg",
+                    "id": "5175737",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
                     "pos": "F",
                     "stat": "20.3점 · 7.3리바운드 · 3.5어시스트",
                     "sub": "야투 46.4% · 3점 37.8% · 팀 내 2옵션",
@@ -43182,6 +46554,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Brandin Podziemski",
+                    "id": "4709138",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
                     "pos": "G",
                     "stat": "15.8점 · 4.8리바운드 · 3.8어시스트",
                     "sub": "야투 45.0% · 3점 37.8% · 팀 내 3옵션",
@@ -43340,6 +46714,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Victor Wembanyama",
+                    "id": "5104157",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
                     "pos": "F",
                     "stat": "28.4점 · 12.0리바운드 · 3.3어시스트",
                     "sub": "야투 53.0% · 3점 30.1% · 팀 내 1옵션",
@@ -43348,6 +46724,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Dylan Harper",
+                    "id": "5037871",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5037871.png",
                     "pos": "G",
                     "stat": "18.4점 · 5.4리바운드 · 4.5어시스트",
                     "sub": "야투 50.5% · 3점 31.5% · 팀 내 2옵션",
@@ -43356,6 +46734,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Stephon Castle",
+                    "id": "4845367",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png",
                     "pos": "G",
                     "stat": "15.3점 · 5.2리바운드 · 5.5어시스트",
                     "sub": "야투 42.0% · 3점 34.1% · 팀 내 3옵션",
@@ -43441,6 +46821,8 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Deni Avdija",
+                    "id": "4683021",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
                     "pos": "F",
                     "stat": "24.2점 · 6.2리바운드 · 6.1어시스트",
                     "sub": "야투 50.7% · 3점 38.6% · 팀 내 1옵션",
@@ -43448,6 +46830,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Damian Lillard",
+                    "id": "6606",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                     "pos": "G",
                     "stat": "20.1점 · 3.0리바운드 · 4.4어시스트",
                     "sub": "야투 39.6% · 3점 35.2% · 팀 내 2옵션",
@@ -43456,6 +46840,8 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ja Morant",
+                    "id": "4279888",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4279888.png",
                     "pos": "G",
                     "stat": "15.8점 · 2.5리바운드 · 5.5어시스트",
                     "sub": "야투 54.2% · 3점 42.9% · 팀 내 3옵션"
