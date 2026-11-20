@@ -852,6 +852,38 @@
       "</section>";
   }
 
+  /* ── 경기 후 브리핑 'SNS 반응' ────────────────────────────
+     reactions.js 의 window.CLUTCH_REACTIONS["<경기 id>|<선수 이름>"] 를 읽는다.
+     반응이 없으면 빈 문자열을 돌려주고 카드 레이아웃은 그대로 둔다. */
+  function snsReactionOf(gameId, playerName) {
+    var all = window.CLUTCH_REACTIONS;
+    if (!all || !gameId || !playerName) return null;
+    var r = all[String(gameId) + "|" + String(playerName).trim()];
+    if (!r || !r.text) return null;
+    if (!/^https?:\/\//i.test(String(r.url || ""))) return null;
+    return r;
+  }
+
+  function snsReactionHTML(gameId, playerName) {
+    var r = snsReactionOf(gameId, playerName);
+    if (!r) return "";
+    var when = "";
+    var t = Date.parse(r.at);
+    if (isFinite(t)) {
+      try {
+        when = new Date(t).toLocaleDateString("ko-KR", { month: "long", day: "numeric", timeZone: "Asia/Seoul" });
+      } catch (e) { when = ""; }
+    }
+    var who = r.handle ? "@" + esc(r.handle) : "";
+    if (r.author) who += (who ? " · " : "") + esc(r.author);
+    if (when) who += " · " + esc(when);
+    return '<div class="pg-sns">' +
+      '<b class="pg-sns-label">SNS 반응</b>' +
+      '<p class="pg-sns-text">\u201C' + esc(r.text) + '\u201D</p>' +
+      '<a class="pg-sns-src" href="' + esc(r.url) + '" target="_blank" rel="noopener">' + who +
+        '<span class="pg-sns-ext" aria-hidden="true">↗</span></a></div>';
+  }
+
   function postgameHTML(g) {
     if (!g || !g.result || g.result.state !== "final") return "";
     if (g.sport !== "basketball") {
@@ -973,7 +1005,7 @@
       return '<article class="pg-highlight ' + type + '"><div class="pg-line"><b>' + title + '</b><span class="pg-tag ' + type + '">' + esc(p.team) + '</span></div>' +
         '<strong class="pg-name">' + esc(p.name) + '</strong><p>' + esc(under ? note : note + ' 팀 공격을 이끌었습니다.') + '</p>' +
         '<div class="pg-facts">' + factsFor(p, under).map(function (x) { return '<span>' + esc(x) + '</span>'; }).join("") + '</div>' +
-        '<small>' + esc(String(p.min)) + '분 출전</small></article>';
+        '<small>' + esc(String(p.min)) + '분 출전</small>' + snsReactionHTML(g.id, p.name) + '</article>';
     }
 
     var r = g.result, gap = Math.abs(toNum(r.awayScore) - toNum(r.homeScore));
