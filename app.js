@@ -613,8 +613,31 @@
       (g ? favoriteButtonHTML(g.sport, team.name) : "") +
       '<span class="f-name">' + esc(team.name) + "</span>" +
       (team.record ? '<span class="f-rec">' + esc(team.record) + "</span>" : "") +
+      streakChip(team) +
       badges +
       "</li>";
+  }
+
+  // 최근 결과의 연속 기록 (연승·연패). last5Detail[0] 이 가장 최근 경기다.
+  function streakOf(t) {
+    var d = (t && Array.isArray(t.last5Detail)) ? t.last5Detail : [];
+    if (!d.length) return null;
+    var r0 = String(d[0].res || "").trim();
+    if (r0 !== "승" && r0 !== "패" && r0 !== "무") return null;
+    var n = 0;
+    for (var i = 0; i < d.length; i++) {
+      if (String(d[i].res || "").trim() !== r0) break;
+      n++;
+    }
+    var cls = r0 === "승" ? "win" : (r0 === "패" ? "loss" : "draw");
+    var text = r0 === "무" ? n + "무" : n + "연" + r0;
+    return { text: text, cls: cls };
+  }
+
+  function streakChip(t) {
+    var st = streakOf(t);
+    if (!st) return "";
+    return '<span class="streak ' + st.cls + '">' + esc(st.text) + "</span>";
   }
 
   function injRowsHTML(list, withTeam) {
@@ -648,7 +671,8 @@
     var cells = cellPairs.filter(function (c) {
       return c[1] != null && c[1] !== "";
     }).map(function (c) {
-      return '<div class="tb-cell"><dt>' + esc(c[0]) + "</dt><dd>" + esc(c[1]) + "</dd></div>";
+      var chip = /최근/.test(String(c[0])) ? streakChip(t) : "";
+      return '<div class="tb-cell"><dt>' + esc(c[0]) + "</dt><dd>" + esc(c[1]) + chip + "</dd></div>";
     }).join("");
 
     // 수치 칸

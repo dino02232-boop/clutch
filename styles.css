@@ -1120,6 +1120,14 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .l5-res.w { color: #0B7A54; }
 .l5-res.l { color: #DC2626; }
 .l5-res.d { color: #111827; }
+.streak {
+  display: inline-block; margin-left: 5px; padding: 1px 5px;
+  border-radius: 4px; font-size: 9.5px; font-weight: 800; line-height: 1.5;
+  border: 1px solid transparent; vertical-align: middle;
+}
+.streak.win { color: #0B7A54; border-color: rgba(11,122,84,.35); background: rgba(11,122,84,.08); }
+.streak.loss { color: #DC2626; border-color: rgba(220,38,38,.35); background: rgba(220,38,38,.08); }
+.streak.draw { color: #111827; border-color: rgba(17,24,39,.22); background: rgba(17,24,39,.06); }
 
 /* 부상 */
 .inj-sum { display: inline-block; font-size: 10.5px; font-weight: 800; color: var(--warn); margin: 0 0 3px; }
