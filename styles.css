@@ -1461,3 +1461,28 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   font-size: 10.5px; font-weight: 700; color: var(--text-3);
   letter-spacing: .02em;
 }
+
+/* 첫 화면 주요 선수 한 줄 */
+.lu-teams { display: grid; gap: 6px; margin-top: 6px; }
+.lu-team { padding: 8px 9px; border-radius: 9px; background: #F7F9FC; }
+.lu-side { display: inline-block; padding: 1px 5px; margin-right: 5px; border-radius: 4px; font-size: 9px; font-weight: 800; }
+.lu-side.home { color: #0B7A54; background: rgba(11,122,84,.10); }
+.lu-side.away { color: #2563EB; background: rgba(37,99,235,.10); }
+.lu-tname { font-size: 11.5px; font-weight: 800; color: #111827; }
+.lu-list { display: flex; flex-wrap: wrap; gap: 5px 10px; margin: 6px 0 0; padding: 0; list-style: none; }
+.lu-list li { display: inline-flex; align-items: center; gap: 4px; min-width: 0; }
+.lu-pname { font-size: 11px; font-weight: 700; color: #1F2937; }
+.lu-stat { font-size: 10px; font-weight: 800; color: var(--text-3); }
+
+/* 접어 두는 아래쪽 */
+.more { display: block; margin-top: 12px; border-top: 1px solid var(--line); }
+.more > summary {
+  display: flex; align-items: center; gap: 6px; cursor: pointer;
+  margin: 0; padding: 10px 2px 2px; list-style: none;
+  font-size: 11px; font-weight: 800; color: var(--text-2);
+}
+.more > summary::-webkit-details-marker { display: none; }
+.more > summary::after { content: "펼치기"; margin-left: auto; color: var(--accent); font-size: 11px; font-weight: 700; }
+.more[open] > summary::after { content: "접기"; }
+.more-body { padding-bottom: 3px; }
+.more-body .team-blocks { margin-top: 9px; }

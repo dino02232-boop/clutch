@@ -1259,6 +1259,32 @@
     return '<h3 class="p-title">핵심 선수</h3><div class="kp-teams">' + body + "</div>";
   }
 
+  // 처음 화면에 남길 '주요 선수' 한 줄 — 팀별 2~3명, 얼굴·이름·기록.
+  function lineupHTML(g, d) {
+    var teams = Array.isArray(d.teams) ? d.teams.filter(Boolean) : [];
+    if (!teams.length) return "";
+    var ordered = teams.slice().sort(function (a, b) {
+      var rank = function (t) { return t.side === "home" ? 0 : 1; };
+      return rank(a) - rank(b);
+    });
+    var blocks = ordered.map(function (t) {
+      var ps = (Array.isArray(t.players) && t.players.length) ? t.players : keyPlayersFor(g, t);
+      ps = (ps || []).slice(0, 3);
+      if (!ps.length) return "";
+      var side = t.side === "away" ? "away" : "home";
+      var list = ps.map(function (p) {
+        return '<li>' + faceHTML(p.name, p.photo) +
+          '<b class="lu-pname">' + esc(p.name || "") + "</b>" +
+          (p.stat ? '<span class="lu-stat">' + esc(p.stat) + "</span>" : "") + "</li>";
+      }).join("");
+      return '<div class="lu-team"><span class="lu-side ' + side + '">' +
+        (side === "home" ? "홈" : "원정") + '</span><b class="lu-tname">' + esc(t.name || "") + "</b>" +
+        '<ul class="lu-list">' + list + "</ul></div>";
+    }).filter(Boolean);
+    if (!blocks.length) return "";
+    return '<h4 class="tb-sub">주요 선수</h4><div class="lu-teams">' + blocks.join("") + "</div>";
+  }
+
   function boxHTML(g) {
     var d = g.details || {};
     var injuries = Array.isArray(d.injuries) ? d.injuries : [];
@@ -1290,6 +1316,11 @@
     rows.filter(function (r) { return r.kind === "flow"; }).forEach(function (r) { preview += flowRowHTML(r, g); });
 
     // 축구 핵심 선수는 각 팀 블록 안 '주요 선수'로 들어간다.
+    // 접히지 않는 위쪽에는 팀별 주요 선수만 한 줄로 보여 준다.
+    preview += lineupHTML(g, d);
+
+    // 접어 두는 아래쪽: 팀 블록·맞대결·체크포인트
+    var more = "";
 
     // 팀별 정보: 원정 먼저, 홈 다음. 두 블록 사이는 넉넉히 띄운다.
     var teams = Array.isArray(d.teams) ? d.teams.filter(Boolean) : [];
@@ -1299,9 +1330,9 @@
         var rank = function (t) { return t.side === "home" ? 0 : 1; };
         return rank(a) - rank(b);
       });
-      preview += '<div class="team-blocks">' + ordered.map(function (team) { return teamBlockHTML(team, g); }).join("") + "</div>";
+      more += '<div class="team-blocks">' + ordered.map(function (team) { return teamBlockHTML(team, g); }).join("") + "</div>";
     } else if (injuries.length) {
-      preview += '<h3 class="p-title">부상 리포트</h3><ul class="inj-list">' + injRowsHTML(injuries, true) + "</ul>";
+      more += '<h3 class="p-title">부상 리포트</h3><ul class="inj-list">' + injRowsHTML(injuries, true) + "</ul>";
     }
 
     preview += oddsHTML(g);
@@ -1311,17 +1342,17 @@
         return "<li><span class=\"h-date\">" + esc((m.date || "").replace(/-/g, ".")) + "</span>" +
           "<span class=\"h-teams\">" + esc(m.home || "") + " " + esc(m.score || "") + " " + esc(m.away || "") + "</span></li>";
       }).join("");
-      preview += '<h3 class="p-title">맞대결</h3>' +
+      more += '<h3 class="p-title">맞대결</h3>' +
         (d.h2h.summary ? '<p class="h-sum">' + esc(d.h2h.summary) + "</p>" : "") +
         (hg ? '<ul class="h-list">' + hg + "</ul>" : "");
     }
 
     if (checks.length) {
-      preview += '<h3 class="p-title">체크포인트</h3><ol class="checks">' +
+      more += '<h3 class="p-title">체크포인트</h3><ol class="checks">' +
         checks.map(function (c) { return "<li>" + md(c) + "</li>"; }).join("") + "</ol>";
     }
 
-    if (d.note) preview += '<p class="note">' + esc(d.note) + "</p>";
+    if (d.note) more += '<p class="note">' + esc(d.note) + "</p>";
 
     // 경기 전에는 프리뷰만 보여준다. 진행 중에는 라이브 상황을 위에 두고,
     // 종료 후에는 결과를 위로 올린 뒤 경기 전 프리뷰를 아래에 보존한다.
@@ -1331,7 +1362,7 @@
     } else if (finalNow) {
       body = resultHTML(g) + postgameHTML(g) + '<details class="pregame"><summary>경기 전 브리핑</summary><div class="pregame-body">' + preview + "</div></details>";
     } else {
-      body = preview;
+      body = preview + (more ? '<details class="more"><summary>팀 정보 · 부상 · 맞대결 더 보기</summary><div class="more-body">' + more + "</div></details>" : "");
     }
 
     return '<div class="cbox-outer"><div class="cbox">' + body + "</div></div>";
