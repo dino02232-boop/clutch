@@ -24,18 +24,26 @@
     return t.toISOString().slice(0, 10);
   }
 
-  /* 응답을 읽을 필요가 없으니 no-cors 로 보냅니다(CORS 오류 콘솔 출력 없음). */
+  function send(key) {
+    return fetch(ENDPOINT + key, {
+      method: "GET",
+      mode: "no-cors",
+      cache: "no-store",
+      credentials: "omit",
+      keepalive: true,
+      referrerPolicy: "no-referrer"
+    });
+  }
+
+  /* 응답을 읽을 필요가 없으니 no-cors 로 보냅니다(CORS 오류 콘솔 출력 없음).
+     연결 자체가 실패했을 때만 한 번 더 시도합니다(중복 집계 없음). */
   function ping(key) {
     try {
-      var p = fetch(ENDPOINT + key, {
-        method: "GET",
-        mode: "no-cors",
-        cache: "no-store",
-        credentials: "omit",
-        keepalive: true,
-        referrerPolicy: "no-referrer"
+      send(key).catch(function () {
+        setTimeout(function () {
+          try { send(key).catch(function () {}); } catch (e) {}
+        }, 4000);
       });
-      if (p && typeof p.catch === "function") p.catch(function () {});
     } catch (e) { /* 집계 실패는 사이트 동작에 영향 없음 */ }
   }
 
@@ -56,7 +64,7 @@
     var day = kstDay();
     if (!firstInSession(day)) return;
     ping("day-" + day);
-    ping("total");
+    setTimeout(function () { ping("total"); }, 800);
   }
 
   function schedule() {
