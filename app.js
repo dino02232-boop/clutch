@@ -889,6 +889,9 @@
     function addFact(list, text) { if (text && list.length < 3) list.push(text); }
 
     var candidates = [];
+    var awayScoreNum = toNum(g.result.awayScore), homeScoreNum = toNum(g.result.homeScore);
+    var winAbbr = awayScoreNum > homeScoreNum ? g.away.abbr
+      : (homeScoreNum > awayScoreNum ? g.home.abbr : null);
     boxes.forEach(function (teamBox) {
       var team = (g.details && Array.isArray(g.details.teams) ? g.details.teams : []).filter(function (t) {
         return String(t.abbr || "").toUpperCase() === String(teamBox.abbr || "").toUpperCase();
@@ -908,6 +911,7 @@
           pts: pts, reb: toNum(p.reb), ast: toNum(p.ast), min: toNum(p.min),
           fg: p.fg, three: p.three, ft: p.ft, turnovers: toNum(p.turnovers),
           avg: avg, avgReb: expectedValue(expected.stat, "리바운드"),
+          win: !!(winAbbr && String(teamBox.abbr || "").toUpperCase() === String(winAbbr).toUpperCase()),
           avgAst: expectedValue(expected.stat, "어시스트"),
           delta: pts - avg, fgPct: (function () {
             var m = String(p.fg || "").match(/^(\d+)\s*[-/]\s*(\d+)$/);
@@ -925,7 +929,9 @@
       p.rebDelta = p.avgReb == null || p.reb < 0 ? null : p.reb - p.avgReb;
       p.astDelta = p.avgAst == null || p.ast < 0 ? null : p.ast - p.avgAst;
     });
-    var carry = candidates.slice().sort(function (a, b) {
+    var carryPool = candidates.filter(function (p) { return p.win; });
+    if (!carryPool.length) carryPool = candidates;
+    var carry = carryPool.slice().sort(function (a, b) {
       return (b.pts + Math.max(0, b.delta) * .35) - (a.pts + Math.max(0, a.delta) * .35);
     })[0];
     var low = candidates.filter(function (p) {
