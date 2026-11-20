@@ -1050,23 +1050,39 @@
       '</div><p class="postgame-note">선수 평가는 시즌 평균 득점과 경기 기록, 야투 효율·턴오버를 바탕으로 한 자동 요약입니다.</p></section>';
   }
 
-  function flowRowHTML(row) {
+  function flowRowHTML(row, g) {
     var text = String(row && row.text || "");
     var pastAt = text.indexOf(". 직전 경기(");
     var current = pastAt >= 0 ? text.slice(0, pastAt) : text;
+    // 팀 흐름도 홈 팀을 먼저 보여 준다.
+    var homeName = g && g.home ? String(g.home.name || "") : "";
+    var awayName = g && g.away ? String(g.away.name || "") : "";
+    var sideRank = function (name) {
+      var n = String(name || "");
+      if (!n) return 2;
+      if (homeName && (homeName.indexOf(n) >= 0 || n.indexOf(homeName) >= 0)) return 0;
+      if (awayName && (awayName.indexOf(n) >= 0 || n.indexOf(awayName) >= 0)) return 1;
+      return 2;
+    };
     var summaries = current.split(/, (?=\*\*)/);
     var cards = summaries.map(function (part) {
       var m = part.match(/^\*\*(.+?)\*\*\s*(.*)$/);
-      if (!m) return "";
-      return '<div class="flow-team"><b>' + esc(m[1]) + '</b><p>' + md(m[2]) + "</p></div>";
-    }).filter(Boolean).join("");
+      if (!m) return null;
+      return { name: m[1], body: m[2] };
+    }).filter(Boolean).sort(function (a, b) {
+      return sideRank(a.name) - sideRank(b.name);
+    }).map(function (item) {
+      return '<div class="flow-team"><b>' + esc(item.name) + '</b><p>' + md(item.body) + "</p></div>";
+    }).join("");
     var last = [];
     var re = /직전 경기\(([^)]+)\)\s+\*\*(.+?)\*\*는\s+([\s\S]*?)(?=\. 직전 경기\(|$)/g;
     var match;
     while ((match = re.exec(text)) !== null) {
       var detail = match[3].replace(/\s*기록했습니다\.?\s*$/, "").trim();
-      last.push('<div class="flow-last"><span>' + esc(match[1]) + " · " + esc(match[2]) + '</span><p>' + md(detail) + "</p></div>");
+      last.push({ name: match[2], html: '<div class="flow-last"><span>' + esc(match[1]) + " · " + esc(match[2]) + '</span><p>' + md(detail) + "</p></div>" });
     }
+    last.sort(function (a, b) { return sideRank(a.name) - sideRank(b.name); });
+    last = last.map(function (item) { return item.html; });
     if (!cards && !last.length) {
       return '<div class="srow flow"><dt>' + esc(row.label || "흐름") + '</dt><dd>' + md(text) + "</dd></div>";
     }
@@ -1133,7 +1149,7 @@
         return '<div class="srow ' + kind + '"><dt>' + esc(r.label) + "</dt><dd>" + md(r.text) + "</dd></div>";
       }).join("") + "</dl>";
     }
-    rows.filter(function (r) { return r.kind === "flow"; }).forEach(function (r) { preview += flowRowHTML(r); });
+    rows.filter(function (r) { return r.kind === "flow"; }).forEach(function (r) { preview += flowRowHTML(r, g); });
 
     // 팀별 정보: 원정 먼저, 홈 다음. 두 블록 사이는 넉넉히 띄운다.
     var teams = Array.isArray(d.teams) ? d.teams.filter(Boolean) : [];
