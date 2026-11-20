@@ -83,7 +83,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-20T11:47:21+09:00",
+  updatedAt: "2026-11-20T12:43:55+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -5240,7 +5240,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 평택이충문화체육관에서 열립니다.",
               "**순위표** — 대한항공 2승 3패·5위·승점 7, KB손해보험 0승 5패·7위·승점 0."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-20 11:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-20 12:43 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -5546,7 +5546,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
               "**순위표** — GS칼텍스 4승 1패·1위·승점 12, 흥국생명 2승 3패·4위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-20 11:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-20 12:43 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-19 END */,
@@ -9729,7 +9729,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 천안유관순체육관에서 열립니다.",
               "**순위표** — 한국전력 4승 1패·2위·승점 11, 현대캐피탈 4승 1패·1위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-20 11:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-20 12:43 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -10033,20 +10033,20 @@ window.CLUTCH_DATA = {
               "**경기장** — 김천실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행 4승 1패·2위·승점 12, 도로공사 4승 1패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-20 11:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-20 12:43 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-20 END */,
 
         /* NBA-AUTO 2026-11-20 START */
-        {
+                {
           "id": "nba-gsw-mem-20261120",
           "espnId": "401910019",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-20T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "FedExForum",
           "odds": {
             "provider": "Draft Kings",
@@ -10111,6 +10111,77 @@ window.CLUTCH_DATA = {
               "text": "**골든스테이트 워리어스** 8승 7패(원정 2승 6패, 최근 5경기 1승 4패, 4연패), **멤피스 그리즐리스** 11승 4패(홈 3승 4패, 최근 5경기 4승 1패, 4연승). 직전 경기(11.19) **골든스테이트 워리어스**는 댈러스 매버릭스에 94-116로 졌고, Will Richard 20점·0리바운드·3어시스트, Yaxel Lendeborg 13점·5리바운드·4어시스트를 기록했습니다. 직전 경기(11.19) **멤피스 그리즐리스**는 클리블랜드 캐벌리어스에 124-121로 이겼고, Cam Spencer 26점·1리바운드·7어시스트, Cedric Coward 20점·3리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 98,
+            "homeScore": 126,
+            "lines": {
+              "away": [
+                "24",
+                "23",
+                "26",
+                "25"
+              ],
+              "home": [
+                "31",
+                "24",
+                "37",
+                "34"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Jaylen Wells",
+                "team": "MEM",
+                "min": "24",
+                "pts": 22,
+                "reb": "7",
+                "ast": "0"
+              },
+              {
+                "name": "Cedric Coward",
+                "team": "MEM",
+                "min": "25",
+                "pts": 19,
+                "reb": "4",
+                "ast": "4"
+              },
+              {
+                "name": "Charles Bassey",
+                "team": "GS",
+                "min": "25",
+                "pts": 16,
+                "reb": "13",
+                "ast": "1"
+              },
+              {
+                "name": "Cameron Boozer",
+                "team": "MEM",
+                "min": "27",
+                "pts": 16,
+                "reb": "6",
+                "ast": "5"
+              },
+              {
+                "name": "Olivier-Maxence Prosper",
+                "team": "MEM",
+                "min": "24",
+                "pts": 16,
+                "reb": "5",
+                "ast": "1"
+              },
+              {
+                "name": "Brandin Podziemski",
+                "team": "GS",
+                "min": "32",
+                "pts": 15,
+                "reb": "3",
+                "ast": "2"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -10354,14 +10425,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-20 06:17 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-por-mil-20261120",
           "espnId": "401910020",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-20T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Fiserv Forum",
           "odds": {
             "provider": "Draft Kings",
@@ -10426,6 +10497,77 @@ window.CLUTCH_DATA = {
               "text": "**포틀랜드 트레일블레이저스** 9승 5패(원정 6승 3패, 최근 5경기 3승 2패, 2연패), **밀워키 벅스** 1승 14패(홈 1승 7패, 최근 5경기 0승 5패, 5연패). 직전 경기(11.18) **포틀랜드 트레일블레이저스**는 미네소타 팀버울브스에 105-106로 졌고, Damian Lillard 25점·3리바운드·5어시스트, Jrue Holiday 23점·5리바운드·6어시스트를 기록했습니다. 직전 경기(11.19) **밀워키 벅스**는 마이애미 히트에 130-137로 졌고, Kyle Kuzma 26점·5리바운드·1어시스트, Brayden Burries 20점·7리바운드·1어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 124,
+            "homeScore": 114,
+            "lines": {
+              "away": [
+                "24",
+                "36",
+                "36",
+                "28"
+              ],
+              "home": [
+                "21",
+                "37",
+                "34",
+                "22"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Damian Lillard",
+                "team": "POR",
+                "min": "35",
+                "pts": 33,
+                "reb": "6",
+                "ast": "0"
+              },
+              {
+                "name": "Scoot Henderson",
+                "team": "POR",
+                "min": "35",
+                "pts": 27,
+                "reb": "7",
+                "ast": "3"
+              },
+              {
+                "name": "Jrue Holiday",
+                "team": "POR",
+                "min": "31",
+                "pts": 22,
+                "reb": "2",
+                "ast": "7"
+              },
+              {
+                "name": "Tyler Herro",
+                "team": "MIL",
+                "min": "31",
+                "pts": 19,
+                "reb": "4",
+                "ast": "3"
+              },
+              {
+                "name": "Toumani Camara",
+                "team": "POR",
+                "min": "37",
+                "pts": 18,
+                "reb": "6",
+                "ast": "4"
+              },
+              {
+                "name": "Nate Ament",
+                "team": "MIL",
+                "min": "35",
+                "pts": 18,
+                "reb": "9",
+                "ast": "0"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -10655,14 +10797,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-20 06:17 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-nyk-min-20261120",
           "espnId": "401910021",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-20T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Target Center",
           "odds": {
             "provider": "Draft Kings",
@@ -10727,6 +10869,77 @@ window.CLUTCH_DATA = {
               "text": "**뉴욕 닉스** 8승 6패(원정 4승 3패, 최근 5경기 3승 2패, 2연승), **미네소타 팀버울브스** 11승 4패(홈 7승 2패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.18) **뉴욕 닉스**는 토론토 랩터스에 111-102로 이겼고, Jalen Brunson 31점·5리바운드·5어시스트, Mikal Bridges 17점·5리바운드·1어시스트를 기록했습니다. 직전 경기(11.18) **미네소타 팀버울브스**는 포틀랜드 트레일블레이저스에 106-105로 이겼고, Ayo Dosunmu 30점·4리바운드·5어시스트, Jaden McDaniels 22점·5리바운드·4어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 102,
+            "homeScore": 99,
+            "lines": {
+              "away": [
+                "33",
+                "32",
+                "25",
+                "12"
+              ],
+              "home": [
+                "26",
+                "24",
+                "28",
+                "21"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Jonathan Kuminga",
+                "team": "MIN",
+                "min": "35",
+                "pts": 23,
+                "reb": "3",
+                "ast": "3"
+              },
+              {
+                "name": "Karl-Anthony Towns",
+                "team": "NY",
+                "min": "33",
+                "pts": 22,
+                "reb": "12",
+                "ast": "4"
+              },
+              {
+                "name": "Jalen Brunson",
+                "team": "NY",
+                "min": "35",
+                "pts": 21,
+                "reb": "2",
+                "ast": "7"
+              },
+              {
+                "name": "Jaden McDaniels",
+                "team": "MIN",
+                "min": "39",
+                "pts": 17,
+                "reb": "3",
+                "ast": "1"
+              },
+              {
+                "name": "OG Anunoby",
+                "team": "NY",
+                "min": "36",
+                "pts": 15,
+                "reb": "7",
+                "ast": "2"
+              },
+              {
+                "name": "LaMelo Ball",
+                "team": "MIN",
+                "min": "35",
+                "pts": 15,
+                "reb": "8",
+                "ast": "8"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -10925,14 +11138,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-20 06:17 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-lac-sas-20261120",
           "espnId": "401910022",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-20T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Frost Bank Center",
           "odds": {
             "provider": "Draft Kings",
@@ -10997,6 +11210,77 @@ window.CLUTCH_DATA = {
               "text": "**LA 클리퍼스** 4승 9패(원정 0승 5패, 최근 5경기 3승 2패), **샌안토니오 스퍼스** 12승 3패(홈 5승 3패, 최근 5경기 4승 1패). 직전 경기(11.18) **LA 클리퍼스**는 유타 재즈에 107-132로 졌고, Brook Lopez 23점·6리바운드·2어시스트, Rui Hachimura 20점·5리바운드·1어시스트를 기록했습니다. 직전 경기(11.18) **샌안토니오 스퍼스**는 샌안토니오 스퍼스에 105-93로 이겼고, Cade Cunningham 27점·5리바운드·6어시스트, Daniss Jenkins 25점·5리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 112,
+            "homeScore": 124,
+            "lines": {
+              "away": [
+                "21",
+                "33",
+                "34",
+                "24"
+              ],
+              "home": [
+                "24",
+                "33",
+                "35",
+                "32"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Victor Wembanyama",
+                "team": "SA",
+                "min": "33",
+                "pts": 32,
+                "reb": "11",
+                "ast": "3"
+              },
+              {
+                "name": "Brook Lopez",
+                "team": "LAC",
+                "min": "27",
+                "pts": 23,
+                "reb": "3",
+                "ast": "4"
+              },
+              {
+                "name": "Darius Garland",
+                "team": "LAC",
+                "min": "35",
+                "pts": 23,
+                "reb": "0",
+                "ast": "5"
+              },
+              {
+                "name": "Stephon Castle",
+                "team": "SA",
+                "min": "33",
+                "pts": 21,
+                "reb": "6",
+                "ast": "12"
+              },
+              {
+                "name": "Julian Champagnie",
+                "team": "SA",
+                "min": "29",
+                "pts": 20,
+                "reb": "4",
+                "ast": "1"
+              },
+              {
+                "name": "Max Strus",
+                "team": "LAC",
+                "min": "32",
+                "pts": 18,
+                "reb": "5",
+                "ast": "4"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
