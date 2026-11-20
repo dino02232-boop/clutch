@@ -165,6 +165,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Desmond Bane",
+                "id": "4066320",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
                 "team": "ORL",
                 "min": "39",
                 "pts": 24,
@@ -173,6 +175,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jayson Tatum",
+                "id": "4065648",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
                 "team": "BOS",
                 "min": "36",
                 "pts": 24,
@@ -181,6 +185,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Paul George",
+                "id": "4251",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png",
                 "team": "BOS",
                 "min": "36",
                 "pts": 22,
@@ -189,6 +195,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Franz Wagner",
+                "id": "4566434",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
                 "team": "ORL",
                 "min": "38",
                 "pts": 21,
@@ -197,6 +205,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Payton Pritchard",
+                "id": "4066354",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                 "team": "BOS",
                 "min": "32",
                 "pts": 21,
@@ -205,6 +215,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Anthony Black",
+                "id": "4712849",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4712849.png",
                 "team": "ORL",
                 "min": "33",
                 "pts": 20,
@@ -479,6 +491,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Donovan Mitchell",
+                "id": "3908809",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
                 "team": "CLE",
                 "min": "36",
                 "pts": 39,
@@ -487,6 +501,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Norman Powell",
+                "id": "2595516",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
                 "team": "CHI",
                 "min": "33",
                 "pts": 27,
@@ -495,6 +511,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Matas Buzelis",
+                "id": "4711294",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                 "team": "CHI",
                 "min": "31",
                 "pts": 23,
@@ -503,6 +521,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jalen Smith",
+                "id": "4397189",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397189.png",
                 "team": "CHI",
                 "min": "28",
                 "pts": 17,
@@ -511,6 +531,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Tyrese Proctor",
+                "id": "5023693",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5023693.png",
                 "team": "CLE",
                 "min": "29",
                 "pts": 17,
@@ -519,6 +541,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Tre Jones",
+                "id": "4395626",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395626.png",
                 "team": "CHI",
                 "min": "23",
                 "pts": 16,
@@ -823,6 +847,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Cameron Boozer",
+                "id": "5041935",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
                 "team": "MEM",
                 "min": "29",
                 "pts": 29,
@@ -831,6 +857,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Zach Edey",
+                "id": "4600663",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4600663.png",
                 "team": "MEM",
                 "min": "21",
                 "pts": 23,
@@ -839,6 +867,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Anthony Davis",
+                "id": "6583",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
                 "team": "WSH",
                 "min": "35",
                 "pts": 23,
@@ -847,6 +877,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "AJ Dybantsa",
+                "id": "5142718",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142718.png",
                 "team": "WSH",
                 "min": "32",
                 "pts": 21,
@@ -855,6 +887,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Cedric Coward",
+                "id": "4903027",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                 "team": "MEM",
                 "min": "27",
                 "pts": 18,
@@ -863,6 +897,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Kyshawn George",
+                "id": "5174563",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
                 "team": "WSH",
                 "min": "38",
                 "pts": 18,
@@ -1183,6 +1219,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Joel Embiid",
+                "id": "3059318",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
                 "team": "PHI",
                 "min": "32",
                 "pts": 37,
@@ -1191,6 +1229,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Julius Randle",
+                "id": "3064514",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
                 "team": "BKN",
                 "min": "34",
                 "pts": 33,
@@ -1199,6 +1239,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jaylen Brown",
+                "id": "3917376",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3917376.png",
                 "team": "PHI",
                 "min": "33",
                 "pts": 31,
@@ -1207,6 +1249,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Michael Porter Jr.",
+                "id": "4278104",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278104.png",
                 "team": "BKN",
                 "min": "40",
                 "pts": 25,
@@ -1215,6 +1259,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Tyrese Maxey",
+                "id": "4431678",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
                 "team": "PHI",
                 "min": "35",
                 "pts": 24,
@@ -1223,6 +1269,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Nolan Traore",
+                "id": "5279130",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5279130.png",
                 "team": "BKN",
                 "min": "30",
                 "pts": 23,
@@ -1497,6 +1545,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Alperen Sengun",
+                "id": "4871144",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png",
                 "team": "HOU",
                 "min": "30",
                 "pts": 23,
@@ -1505,6 +1555,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Kevin Durant",
+                "id": "3202",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
                 "team": "HOU",
                 "min": "29",
                 "pts": 22,
@@ -1513,6 +1565,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Giannis Antetokounmpo",
+                "id": "3032977",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032977.png",
                 "team": "MIA",
                 "min": "29",
                 "pts": 20,
@@ -1521,6 +1575,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Klay Thompson",
+                "id": "6475",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6475.png",
                 "team": "MIA",
                 "min": "22",
                 "pts": 17,
@@ -1529,6 +1585,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Andrew Wiggins",
+                "id": "3059319",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059319.png",
                 "team": "MIA",
                 "min": "34",
                 "pts": 17,
@@ -1537,6 +1595,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Davion Mitchell",
+                "id": "4278053",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
                 "team": "MIA",
                 "min": "33",
                 "pts": 16,
@@ -1830,6 +1890,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Terrence Shannon Jr.",
+                "id": "4432847",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432847.png",
                 "team": "MIN",
                 "min": "35",
                 "pts": 34,
@@ -1838,6 +1900,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Deni Avdija",
+                "id": "4683021",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
                 "team": "POR",
                 "min": "30",
                 "pts": 27,
@@ -1846,6 +1910,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Rudy Gobert",
+                "id": "3032976",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032976.png",
                 "team": "MIN",
                 "min": "32",
                 "pts": 18,
@@ -1854,6 +1920,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jaden McDaniels",
+                "id": "4431671",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431671.png",
                 "team": "MIN",
                 "min": "31",
                 "pts": 13,
@@ -1862,6 +1930,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jonathan Kuminga",
+                "id": "4433247",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433247.png",
                 "team": "MIN",
                 "min": "29",
                 "pts": 13,
@@ -1870,6 +1940,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Donovan Clingan",
+                "id": "5105565",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5105565.png",
                 "team": "POR",
                 "min": "22",
                 "pts": 10,
@@ -2185,6 +2257,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Yaxel Lendeborg",
+                "id": "5175737",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
                 "team": "GS",
                 "min": "33",
                 "pts": 28,
@@ -2193,6 +2267,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Saddiq Bey",
+                "id": "4397136",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
                 "team": "NO",
                 "min": "33",
                 "pts": 23,
@@ -2201,6 +2277,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jeremiah Fears",
+                "id": "5144091",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5144091.png",
                 "team": "NO",
                 "min": "29",
                 "pts": 19,
@@ -2209,6 +2287,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Derik Queen",
+                "id": "4869780",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4869780.png",
                 "team": "NO",
                 "min": "21",
                 "pts": 17,
@@ -2217,6 +2297,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Zion Williamson",
+                "id": "4395628",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png",
                 "team": "NO",
                 "min": "25",
                 "pts": 16,
@@ -2225,6 +2307,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Brandin Podziemski",
+                "id": "4709138",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
                 "team": "GS",
                 "min": "30",
                 "pts": 15,
@@ -2546,6 +2630,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Nikola Jokic",
+                "id": "3112335",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
                 "team": "DEN",
                 "min": "38",
                 "pts": 28,
@@ -2554,6 +2640,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jamal Murray",
+                "id": "3936299",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
                 "team": "DEN",
                 "min": "35",
                 "pts": 28,
@@ -2562,6 +2650,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Devin Booker",
+                "id": "3136193",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png",
                 "team": "PHX",
                 "min": "37",
                 "pts": 20,
@@ -2570,6 +2660,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Miles Bridges",
+                "id": "4066383",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png",
                 "team": "PHX",
                 "min": "29",
                 "pts": 16,
@@ -2578,6 +2670,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jalen Green",
+                "id": "4437244",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4437244.png",
                 "team": "PHX",
                 "min": "27",
                 "pts": 16,
@@ -2586,6 +2680,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Dillon Brooks",
+                "id": "3155526",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155526.png",
                 "team": "PHX",
                 "min": "27",
                 "pts": 15,
@@ -3469,6 +3565,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Jalen Brunson",
+                "id": "3934672",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                 "team": "NY",
                 "min": "34",
                 "pts": 31,
@@ -3477,6 +3575,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Ja'Kobe Walter",
+                "id": "4684272",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684272.png",
                 "team": "TOR",
                 "min": "33",
                 "pts": 25,
@@ -3485,6 +3585,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "RJ Barrett",
+                "id": "4395625",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395625.png",
                 "team": "TOR",
                 "min": "39",
                 "pts": 22,
@@ -3493,6 +3595,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Scottie Barnes",
+                "id": "4433134",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433134.png",
                 "team": "TOR",
                 "min": "34",
                 "pts": 20,
@@ -3501,6 +3605,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Mikal Bridges",
+                "id": "3147657",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3147657.png",
                 "team": "NY",
                 "min": "30",
                 "pts": 17,
@@ -3509,6 +3615,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "OG Anunoby",
+                "id": "3934719",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934719.png",
                 "team": "NY",
                 "min": "36",
                 "pts": 16,
@@ -3776,6 +3884,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Ayo Dosunmu",
+                "id": "4397002",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png",
                 "team": "MIN",
                 "min": "39",
                 "pts": 30,
@@ -3784,6 +3894,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Damian Lillard",
+                "id": "6606",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                 "team": "POR",
                 "min": "31",
                 "pts": 25,
@@ -3792,6 +3904,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jrue Holiday",
+                "id": "3995",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3995.png",
                 "team": "POR",
                 "min": "31",
                 "pts": 23,
@@ -3800,6 +3914,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jaden McDaniels",
+                "id": "4431671",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431671.png",
                 "team": "MIN",
                 "min": "37",
                 "pts": 22,
@@ -3808,6 +3924,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "LaMelo Ball",
+                "id": "4432816",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
                 "team": "MIN",
                 "min": "31",
                 "pts": 18,
@@ -3816,6 +3934,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Bones Hyland",
+                "id": "4592492",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4592492.png",
                 "team": "MIN",
                 "min": "17",
                 "pts": 13,
@@ -4132,6 +4252,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Cade Cunningham",
+                "id": "4432166",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
                 "team": "DET",
                 "min": "38",
                 "pts": 27,
@@ -4140,6 +4262,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Daniss Jenkins",
+                "id": "5107199",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
                 "team": "DET",
                 "min": "38",
                 "pts": 25,
@@ -4148,6 +4272,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Victor Wembanyama",
+                "id": "5104157",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
                 "team": "SA",
                 "min": "34",
                 "pts": 25,
@@ -4156,6 +4282,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Dylan Harper",
+                "id": "5037871",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5037871.png",
                 "team": "SA",
                 "min": "35",
                 "pts": 20,
@@ -4164,6 +4292,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Ausar Thompson",
+                "id": "4684742",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684742.png",
                 "team": "DET",
                 "min": "29",
                 "pts": 14,
@@ -4172,6 +4302,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Julian Champagnie",
+                "id": "4592479",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4592479.png",
                 "team": "SA",
                 "min": "30",
                 "pts": 14,
@@ -4478,6 +4610,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Brice Sensabaugh",
+                "id": "5105839",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5105839.png",
                 "team": "UTAH",
                 "min": "35",
                 "pts": 40,
@@ -4486,6 +4620,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Keyonte George",
+                "id": "4433627",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
                 "team": "UTAH",
                 "min": "35",
                 "pts": 30,
@@ -4494,6 +4630,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Brook Lopez",
+                "id": "3448",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png",
                 "team": "LAC",
                 "min": "23",
                 "pts": 23,
@@ -4502,6 +4640,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Rui Hachimura",
+                "id": "4066648",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066648.png",
                 "team": "LAC",
                 "min": "27",
                 "pts": 20,
@@ -4510,6 +4650,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Darius Garland",
+                "id": "4396907",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
                 "team": "LAC",
                 "min": "30",
                 "pts": 20,
@@ -4518,6 +4660,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Mo Bamba",
+                "id": "4277919",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277919.png",
                 "team": "UTAH",
                 "min": "31",
                 "pts": 15,
@@ -4822,6 +4966,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Quentin Grimes",
+                "id": "4397014",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397014.png",
                 "team": "LAL",
                 "min": "42",
                 "pts": 47,
@@ -4830,6 +4976,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Luka Doncic",
+                "id": "3945274",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
                 "team": "LAL",
                 "min": "42",
                 "pts": 36,
@@ -4838,6 +4986,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Brandon Miller",
+                "id": "4433287",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433287.png",
                 "team": "CHA",
                 "min": "32",
                 "pts": 28,
@@ -4846,6 +4996,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Naz Reid",
+                "id": "4396971",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396971.png",
                 "team": "CHA",
                 "min": "42",
                 "pts": 23,
@@ -4854,6 +5006,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Coby White",
+                "id": "4395651",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395651.png",
                 "team": "CHA",
                 "min": "26",
                 "pts": 19,
@@ -4862,6 +5016,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Royce O'Neale",
+                "id": "2583632",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2583632.png",
                 "team": "CHA",
                 "min": "34",
                 "pts": 13,
@@ -5775,6 +5931,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Donovan Mitchell",
+                "id": "3908809",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
                 "team": "CLE",
                 "min": "35",
                 "pts": 34,
@@ -5783,6 +5941,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Cam Spencer",
+                "id": "4433083",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433083.png",
                 "team": "MEM",
                 "min": "29",
                 "pts": 26,
@@ -5791,6 +5951,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Cedric Coward",
+                "id": "4903027",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                 "team": "MEM",
                 "min": "33",
                 "pts": 20,
@@ -5799,6 +5961,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jarrett Allen",
+                "id": "4066328",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066328.png",
                 "team": "CLE",
                 "min": "30",
                 "pts": 19,
@@ -5807,6 +5971,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Cameron Boozer",
+                "id": "5041935",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
                 "team": "MEM",
                 "min": "28",
                 "pts": 18,
@@ -5815,6 +5981,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Taylor Hendricks",
+                "id": "4684806",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684806.png",
                 "team": "MEM",
                 "min": "21",
                 "pts": 18,
@@ -6128,6 +6296,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Pascal Siakam",
+                "id": "3149673",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
                 "team": "IND",
                 "min": "33",
                 "pts": 24,
@@ -6136,6 +6306,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Kevin Durant",
+                "id": "3202",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
                 "team": "HOU",
                 "min": "32",
                 "pts": 21,
@@ -6144,6 +6316,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Reed Sheppard",
+                "id": "4711272",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711272.png",
                 "team": "HOU",
                 "min": "25",
                 "pts": 20,
@@ -6152,6 +6326,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jabari Smith Jr.",
+                "id": "4432639",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432639.png",
                 "team": "HOU",
                 "min": "26",
                 "pts": 17,
@@ -6160,6 +6336,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Kelly Oubre Jr.",
+                "id": "3133603",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3133603.png",
                 "team": "IND",
                 "min": "23",
                 "pts": 17,
@@ -6168,6 +6346,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Fred VanVleet",
+                "id": "2991230",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2991230.png",
                 "team": "HOU",
                 "min": "27",
                 "pts": 15,
@@ -6464,6 +6644,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Giannis Antetokounmpo",
+                "id": "3032977",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032977.png",
                 "team": "MIA",
                 "min": "32",
                 "pts": 27,
@@ -6472,6 +6654,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Kyle Kuzma",
+                "id": "3134907",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
                 "team": "MIL",
                 "min": "30",
                 "pts": 26,
@@ -6480,6 +6664,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Bam Adebayo",
+                "id": "4066261",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png",
                 "team": "MIA",
                 "min": "30",
                 "pts": 26,
@@ -6488,6 +6674,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Davion Mitchell",
+                "id": "4278053",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
                 "team": "MIA",
                 "min": "36",
                 "pts": 24,
@@ -6496,6 +6684,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Brayden Burries",
+                "id": "5082206",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5082206.png",
                 "team": "MIL",
                 "min": "25",
                 "pts": 20,
@@ -6504,6 +6694,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Kasparas Jakucionis",
+                "id": "5214640",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5214640.png",
                 "team": "MIL",
                 "min": "26",
                 "pts": 20,
@@ -6779,6 +6971,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Franz Wagner",
+                "id": "4566434",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
                 "team": "ORL",
                 "min": "36",
                 "pts": 27,
@@ -6787,6 +6981,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Joel Embiid",
+                "id": "3059318",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
                 "team": "PHI",
                 "min": "36",
                 "pts": 26,
@@ -6795,6 +6991,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "VJ Edgecombe",
+                "id": "5124612",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5124612.png",
                 "team": "PHI",
                 "min": "43",
                 "pts": 24,
@@ -6803,6 +7001,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "LeBron James",
+                "id": "1966",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png",
                 "team": "PHI",
                 "min": "31",
                 "pts": 22,
@@ -6811,6 +7011,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Anfernee Simons",
+                "id": "4351851",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4351851.png",
                 "team": "PHI",
                 "min": "38",
                 "pts": 18,
@@ -6819,6 +7021,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jalen Suggs",
+                "id": "4432165",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432165.png",
                 "team": "ORL",
                 "min": "31",
                 "pts": 18,
@@ -7130,6 +7334,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Matas Buzelis",
+                "id": "4711294",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                 "team": "CHI",
                 "min": "30",
                 "pts": 25,
@@ -7138,6 +7344,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Egor Demin",
+                "id": "5175643",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175643.png",
                 "team": "BKN",
                 "min": "31",
                 "pts": 22,
@@ -7146,6 +7354,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Josh Giddey",
+                "id": "4871145",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871145.png",
                 "team": "CHI",
                 "min": "28",
                 "pts": 18,
@@ -7154,6 +7364,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Norman Powell",
+                "id": "2595516",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
                 "team": "CHI",
                 "min": "26",
                 "pts": 17,
@@ -7162,6 +7374,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Julius Randle",
+                "id": "3064514",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
                 "team": "BKN",
                 "min": "27",
                 "pts": 17,
@@ -7170,6 +7384,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Mikel Brown Jr.",
+                "id": "5101761",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5101761.png",
                 "team": "BKN",
                 "min": "27",
                 "pts": 15,
@@ -7433,6 +7649,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Anthony Davis",
+                "id": "6583",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
                 "team": "WSH",
                 "min": "34",
                 "pts": 25,
@@ -7441,6 +7659,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Immanuel Quickley",
+                "id": "4395724",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395724.png",
                 "team": "TOR",
                 "min": "34",
                 "pts": 24,
@@ -7449,6 +7669,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "AJ Dybantsa",
+                "id": "5142718",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142718.png",
                 "team": "WSH",
                 "min": "38",
                 "pts": 23,
@@ -7457,6 +7679,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Kyshawn George",
+                "id": "5174563",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
                 "team": "WSH",
                 "min": "40",
                 "pts": 20,
@@ -7465,6 +7689,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jamison Battle",
+                "id": "4431893",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431893.png",
                 "team": "TOR",
                 "min": "33",
                 "pts": 19,
@@ -7473,6 +7699,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Ja'Kobe Walter",
+                "id": "4684272",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684272.png",
                 "team": "TOR",
                 "min": "38",
                 "pts": 18,
@@ -7792,6 +8020,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Zion Williamson",
+                "id": "4395628",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png",
                 "team": "NO",
                 "min": "32",
                 "pts": 24,
@@ -7800,6 +8030,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jordan Poole",
+                "id": "4277956",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277956.png",
                 "team": "NO",
                 "min": "30",
                 "pts": 22,
@@ -7808,6 +8040,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "John Collins",
+                "id": "3908845",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908845.png",
                 "team": "DET",
                 "min": "30",
                 "pts": 20,
@@ -7816,6 +8050,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Javonte Green",
+                "id": "2596112",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2596112.png",
                 "team": "DET",
                 "min": "35",
                 "pts": 18,
@@ -7824,6 +8060,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Daniss Jenkins",
+                "id": "5107199",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
                 "team": "DET",
                 "min": "36",
                 "pts": 17,
@@ -7832,6 +8070,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Paul Reed",
+                "id": "4278562",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278562.png",
                 "team": "DET",
                 "min": "20",
                 "pts": 17,
@@ -8153,6 +8393,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Shai Gilgeous-Alexander",
+                "id": "4278073",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278073.png",
                 "team": "OKC",
                 "min": "36",
                 "pts": 34,
@@ -8161,6 +8403,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Onyeka Okongwu",
+                "id": "4431680",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431680.png",
                 "team": "ATL",
                 "min": "36",
                 "pts": 28,
@@ -8169,6 +8413,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Nickeil Alexander-Walker",
+                "id": "4278039",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png",
                 "team": "ATL",
                 "min": "32",
                 "pts": 19,
@@ -8177,6 +8423,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jared McCain",
+                "id": "4683778",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
                 "team": "OKC",
                 "min": "33",
                 "pts": 18,
@@ -8185,6 +8433,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jalen Johnson",
+                "id": "4701230",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png",
                 "team": "ATL",
                 "min": "34",
                 "pts": 16,
@@ -8193,6 +8443,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Luguentz Dort",
+                "id": "4397020",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397020.png",
                 "team": "ATL",
                 "min": "31",
                 "pts": 16,
@@ -8513,6 +8765,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Cooper Flagg",
+                "id": "5041939",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                 "team": "DAL",
                 "min": "34",
                 "pts": 33,
@@ -8521,6 +8775,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "P.J. Washington",
+                "id": "4278078",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278078.png",
                 "team": "DAL",
                 "min": "25",
                 "pts": 21,
@@ -8529,6 +8785,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Will Richard",
+                "id": "4897262",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4897262.png",
                 "team": "GS",
                 "min": "27",
                 "pts": 20,
@@ -8537,6 +8795,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Kyrie Irving",
+                "id": "6442",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                 "team": "DAL",
                 "min": "29",
                 "pts": 17,
@@ -8545,6 +8805,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Yaxel Lendeborg",
+                "id": "5175737",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
                 "team": "GS",
                 "min": "30",
                 "pts": 13,
@@ -8553,6 +8815,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Naji Marshall",
+                "id": "4278594",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278594.png",
                 "team": "DAL",
                 "min": "27",
                 "pts": 12,
@@ -8865,6 +9129,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Jayson Tatum",
+                "id": "4065648",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
                 "team": "BOS",
                 "min": "37",
                 "pts": 24,
@@ -8873,6 +9139,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Nikola Jokic",
+                "id": "3112335",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
                 "team": "DEN",
                 "min": "39",
                 "pts": 24,
@@ -8881,6 +9149,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jamal Murray",
+                "id": "3936299",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
                 "team": "DEN",
                 "min": "38",
                 "pts": 21,
@@ -8889,6 +9159,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "DeMar DeRozan",
+                "id": "3978",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3978.png",
                 "team": "DEN",
                 "min": "25",
                 "pts": 18,
@@ -8897,6 +9169,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Neemias Queta",
+                "id": "4397424",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397424.png",
                 "team": "BOS",
                 "min": "27",
                 "pts": 17,
@@ -8905,6 +9179,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Payton Pritchard",
+                "id": "4066354",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                 "team": "BOS",
                 "min": "30",
                 "pts": 15,
@@ -9159,6 +9435,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Keyonte George",
+                "id": "4433627",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
                 "team": "UTAH",
                 "min": "39",
                 "pts": 30,
@@ -9167,6 +9445,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Luka Doncic",
+                "id": "3945274",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
                 "team": "LAL",
                 "min": "37",
                 "pts": 29,
@@ -9175,6 +9455,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Quentin Grimes",
+                "id": "4397014",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397014.png",
                 "team": "LAL",
                 "min": "35",
                 "pts": 20,
@@ -9183,6 +9465,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Ace Bailey",
+                "id": "4873138",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4873138.png",
                 "team": "UTAH",
                 "min": "27",
                 "pts": 19,
@@ -9191,6 +9475,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Svi Mykhailiuk",
+                "id": "3133602",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3133602.png",
                 "team": "UTAH",
                 "min": "34",
                 "pts": 15,
@@ -9199,6 +9485,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Collin Sexton",
+                "id": "4277811",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277811.png",
                 "team": "LAL",
                 "min": "20",
                 "pts": 12,
@@ -9475,6 +9763,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Darius Acuff Jr.",
+                "id": "5142620",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
                 "team": "SAC",
                 "min": "35",
                 "pts": 36,
@@ -9483,6 +9773,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Dillon Brooks",
+                "id": "3155526",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155526.png",
                 "team": "PHX",
                 "min": "31",
                 "pts": 29,
@@ -9491,6 +9783,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Devin Booker",
+                "id": "3136193",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png",
                 "team": "PHX",
                 "min": "33",
                 "pts": 29,
@@ -9499,6 +9793,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jalen Green",
+                "id": "4437244",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4437244.png",
                 "team": "PHX",
                 "min": "30",
                 "pts": 18,
@@ -9507,6 +9803,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Zach LaVine",
+                "id": "3064440",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
                 "team": "SAC",
                 "min": "32",
                 "pts": 18,
@@ -9515,6 +9813,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Miles Bridges",
+                "id": "4066383",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png",
                 "team": "PHX",
                 "min": "29",
                 "pts": 13,
@@ -10434,6 +10734,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Jaylen Wells",
+                "id": "5112087",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5112087.png",
                 "team": "MEM",
                 "min": "24",
                 "pts": 22,
@@ -10442,6 +10744,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Cedric Coward",
+                "id": "4903027",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                 "team": "MEM",
                 "min": "25",
                 "pts": 19,
@@ -10450,6 +10754,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Charles Bassey",
+                "id": "4397886",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397886.png",
                 "team": "GS",
                 "min": "25",
                 "pts": 16,
@@ -10458,6 +10764,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Cameron Boozer",
+                "id": "5041935",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
                 "team": "MEM",
                 "min": "27",
                 "pts": 16,
@@ -10466,6 +10774,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Olivier-Maxence Prosper",
+                "id": "4595400",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4595400.png",
                 "team": "MEM",
                 "min": "24",
                 "pts": 16,
@@ -10474,6 +10784,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Brandin Podziemski",
+                "id": "4709138",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
                 "team": "GS",
                 "min": "32",
                 "pts": 15,
@@ -10832,6 +11144,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Damian Lillard",
+                "id": "6606",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                 "team": "POR",
                 "min": "35",
                 "pts": 33,
@@ -10840,6 +11154,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Scoot Henderson",
+                "id": "4683678",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683678.png",
                 "team": "POR",
                 "min": "35",
                 "pts": 27,
@@ -10848,6 +11164,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jrue Holiday",
+                "id": "3995",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3995.png",
                 "team": "POR",
                 "min": "31",
                 "pts": 22,
@@ -10856,6 +11174,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Tyler Herro",
+                "id": "4395725",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
                 "team": "MIL",
                 "min": "31",
                 "pts": 19,
@@ -10864,6 +11184,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Toumani Camara",
+                "id": "4431736",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431736.png",
                 "team": "POR",
                 "min": "37",
                 "pts": 18,
@@ -10872,6 +11194,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Nate Ament",
+                "id": "5164559",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5164559.png",
                 "team": "MIL",
                 "min": "35",
                 "pts": 18,
@@ -11216,6 +11540,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Jonathan Kuminga",
+                "id": "4433247",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433247.png",
                 "team": "MIN",
                 "min": "35",
                 "pts": 23,
@@ -11224,6 +11550,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Karl-Anthony Towns",
+                "id": "3136195",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
                 "team": "NY",
                 "min": "33",
                 "pts": 22,
@@ -11232,6 +11560,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jalen Brunson",
+                "id": "3934672",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                 "team": "NY",
                 "min": "35",
                 "pts": 21,
@@ -11240,6 +11570,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Jaden McDaniels",
+                "id": "4431671",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431671.png",
                 "team": "MIN",
                 "min": "39",
                 "pts": 17,
@@ -11248,6 +11580,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "OG Anunoby",
+                "id": "3934719",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934719.png",
                 "team": "NY",
                 "min": "36",
                 "pts": 15,
@@ -11256,6 +11590,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "LaMelo Ball",
+                "id": "4432816",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
                 "team": "MIN",
                 "min": "35",
                 "pts": 15,
@@ -11569,6 +11905,8 @@ window.CLUTCH_DATA = {
             "top": [
               {
                 "name": "Victor Wembanyama",
+                "id": "5104157",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
                 "team": "SA",
                 "min": "33",
                 "pts": 32,
@@ -11577,6 +11915,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Brook Lopez",
+                "id": "3448",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png",
                 "team": "LAC",
                 "min": "27",
                 "pts": 23,
@@ -11585,6 +11925,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Darius Garland",
+                "id": "4396907",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
                 "team": "LAC",
                 "min": "35",
                 "pts": 23,
@@ -11593,6 +11935,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Stephon Castle",
+                "id": "4845367",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png",
                 "team": "SA",
                 "min": "33",
                 "pts": 21,
@@ -11601,6 +11945,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Julian Champagnie",
+                "id": "4592479",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4592479.png",
                 "team": "SA",
                 "min": "29",
                 "pts": 20,
@@ -11609,6 +11955,8 @@ window.CLUTCH_DATA = {
               },
               {
                 "name": "Max Strus",
+                "id": "4065778",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065778.png",
                 "team": "LAC",
                 "min": "32",
                 "pts": 18,

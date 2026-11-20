@@ -28,6 +28,16 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DATA_JS = os.environ.get("CLUTCH_DATA_JS") or os.path.join(ROOT, "data.js")
 RETRIES = int(os.environ.get("CLUTCH_RETRIES") or 3)
+NBA_HEADSHOT = "https://a.espncdn.com/i/headshots/nba/players/full/%s.png"
+
+
+def _headshot(ath):
+    """박스스코어 선수 객체 → ESPN 얼굴 사진 URL(headshot 우선, 없으면 id 로 CDN 경로)."""
+    a = (ath or {}).get("athlete") or {}
+    href = (a.get("headshot") or {}).get("href")
+    if href:
+        return href
+    return NBA_HEADSHOT % a["id"] if a.get("id") else ""
 KST = timezone(timedelta(hours=9))
 
 SUM = {
@@ -183,7 +193,8 @@ def main():
                         continue
                     tops.append({"name": ((ath.get("athlete") or {}).get("displayName") or ""),
                                  "team": abbr, "min": stats.get("MIN"), "pts": pts,
-                                 "reb": stats.get("REB"), "ast": stats.get("AST")})
+                                 "reb": stats.get("REB"), "ast": stats.get("AST"),
+                                 **({"photo": _headshot(ath)} if _headshot(ath) else {})})
         tops.sort(key=lambda x: x["pts"], reverse=True)
         if tops:
             res["top"] = tops[:6]
