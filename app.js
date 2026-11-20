@@ -928,10 +928,21 @@
     var awayScoreNum = toNum(g.result.awayScore), homeScoreNum = toNum(g.result.homeScore);
     var winAbbr = awayScoreNum > homeScoreNum ? g.away.abbr
       : (homeScoreNum > awayScoreNum ? g.home.abbr : null);
-    boxes.forEach(function (teamBox) {
-      var team = (g.details && Array.isArray(g.details.teams) ? g.details.teams : []).filter(function (t) {
-        return String(t.abbr || "").toUpperCase() === String(teamBox.abbr || "").toUpperCase();
-      })[0];
+    // ESPN 약어가 우리 표기와 다른 팀이 있다(뉴욕 NY, 골든스테이트 GS 등). 약어가 안 맞으면 원정·홈 순서로 찾는다.
+    var ABBR_ALIAS = { NY: "NYK", GS: "GSW", SA: "SAS", NO: "NOP", WSH: "WAS", PHO: "PHX", UTAH: "UTA" };
+    function resolveTeam(teamBox, idx) {
+      var list = (g.details && Array.isArray(g.details.teams) ? g.details.teams : []);
+      var a = String((teamBox && teamBox.abbr) || "").toUpperCase();
+      if (ABBR_ALIAS[a]) a = ABBR_ALIAS[a];
+      var byAbbr = list.filter(function (t) { return String(t.abbr || "").toUpperCase() === a; })[0];
+      if (byAbbr) return byAbbr;
+      var side = idx === 0 ? g.away : (idx === 1 ? g.home : null);
+      var sideAbbr = String((side && side.abbr) || "").toUpperCase();
+      if (!sideAbbr) return null;
+      return list.filter(function (t) { return String(t.abbr || "").toUpperCase() === sideAbbr; })[0] || null;
+    }
+    boxes.forEach(function (teamBox, boxIdx) {
+      var team = resolveTeam(teamBox, boxIdx);
       var expectedPlayers = team && Array.isArray(team.players) ? team.players : [];
       (teamBox.rows || []).forEach(function (p) {
         var normName = String(p.name || "").trim().toLowerCase();
@@ -965,8 +976,8 @@
       p.rebDelta = p.avgReb == null || p.reb < 0 ? null : p.reb - p.avgReb;
       p.astDelta = p.avgAst == null || p.ast < 0 ? null : p.ast - p.avgAst;
     });
+    // 캐리한 선수는 이긴 팀에서만 뽑는다. 이긴 팀 기록이 없으면 진 팀 선수로 대신 채우지 않는다.
     var carryPool = candidates.filter(function (p) { return p.win; });
-    if (!carryPool.length) carryPool = candidates;
     var carry = carryPool.slice().sort(function (a, b) {
       return (b.pts + Math.max(0, b.delta) * .35) - (a.pts + Math.max(0, a.delta) * .35);
     })[0];
@@ -1001,7 +1012,8 @@
       return facts;
     }
     function highlightHTML(p, type, title) {
-      if (!p) return '<article class="pg-highlight quiet"><b>' + title + '</b><p>주요 선수 중 뚜렷하게 기대를 밑돈 기록은 없었습니다.</p></article>';
+      if (!p) return '<article class="pg-highlight quiet"><b>' + title + '</b><p>' +
+        (type === "down" ? '주요 선수 중 뚜렷하게 기대를 밑돈 기록은 없었습니다.' : '이긴 팀 선수 기록을 확인하지 못했습니다.') + '</p></article>';
       var under = type === "down";
       var note = under
         ? (p.delta <= -5 ? "득점이 시즌 평균보다 낮았습니다." : (p.fgPct != null && p.fgPct < .35 ? "야투 효율이 낮았습니다." : "턴오버가 많았습니다."))
