@@ -101,7 +101,7 @@
   function teamTable(group, lg) {
     var rows = group.rows || [];
     var soccer = lg.sport === "soccer";
-    var h = ['<table class="st-table st-team" aria-label="' +
+    var h = ['<table class="st-table st-tbl-team" aria-label="' +
       esc((group.name ? group.name + " " : "") + lg.name + " 팀 순위") + '">'];
     h.push("<colgroup><col class=\"c-rk\"><col><col class=\"c-gp\">" +
       (soccer

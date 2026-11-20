@@ -188,15 +188,16 @@
   display: inline-block;
 }
 
-/* 열 폭 — 숫자 열은 px 로 고정, 팀/선수 열이 남는 폭을 가져간다 */
-.st-team .c-rk { width: 26px; }
-.st-team .c-gp { width: 26px; }
-.st-team .c-w,
-.st-team .c-d,
-.st-team .c-l { width: 21px; }
-.st-team .c-gd { width: 32px; }
-.st-team .c-pt { width: 31px; }
-.st-team .c-pct { width: 38px; }
+/* 열 폭 — 숫자 열은 px 로 고정, 팀/선수 열이 남는 폭을 가져간다
+   (표 클래스는 st-tbl-team: .st-team 은 팀 칸 flex 라 이름을 나눴다) */
+.st-tbl-team .c-rk { width: 26px; }
+.st-tbl-team .c-gp { width: 26px; }
+.st-tbl-team .c-w,
+.st-tbl-team .c-d,
+.st-tbl-team .c-l { width: 21px; }
+.st-tbl-team .c-gd { width: 32px; }
+.st-tbl-team .c-pt { width: 31px; }
+.st-tbl-team .c-pct { width: 38px; }
 .st-lb .c-rk { width: 24px; }
 .st-lb .c-rec { width: 72px; }
 
@@ -206,14 +207,14 @@
   .st-table td { font-size: 11.5px; padding: 7px 1px; }
   .st-table td.rk { width: 22px; font-size: 11px; }
   .st-team b { font-size: 11.5px; }
-  .st-team .c-rk { width: 22px; }
-  .st-team .c-gp { width: 24px; }
-  .st-team .c-w,
-  .st-team .c-d,
-  .st-team .c-l { width: 19px; }
-  .st-team .c-gd { width: 28px; }
-  .st-team .c-pt { width: 28px; }
-  .st-team .c-pct { width: 34px; }
+  .st-tbl-team .c-rk { width: 22px; }
+  .st-tbl-team .c-gp { width: 24px; }
+  .st-tbl-team .c-w,
+  .st-tbl-team .c-d,
+  .st-tbl-team .c-l { width: 19px; }
+  .st-tbl-team .c-gd { width: 28px; }
+  .st-tbl-team .c-pt { width: 28px; }
+  .st-tbl-team .c-pct { width: 34px; }
   .st-lb .c-rk { width: 22px; }
   .st-lb .c-rec { width: 64px; }
   .tlogo { flex-basis: 16px; width: 16px; height: 16px; }
