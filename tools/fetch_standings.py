@@ -33,6 +33,7 @@ sys.path.insert(0, HERE)
 
 from fetch_soccer import TEAM_KO as SOCCER_KO  # noqa: E402  (data.js 와 같은 한글 팀명)
 from fetch_nba import TEAM_KO as NBA_KO        # noqa: E402
+from fetch_volley import TEAMS as VOLLEY_TEAMS  # noqa: E402  (KOVO 팀 코드 → (약어, 한글명))
 
 OUT = os.path.join(ROOT, "standings-data.js")
 KST = timezone(timedelta(hours=9))
@@ -46,6 +47,7 @@ NBA_BYATHLETE = ("https://site.web.api.espn.com/apis/common/v3/sports/basketball
                  "?region=us&lang=en&contentorigin=espn&isqualified=true&page=1&limit=20&sort=%s")
 HEADSHOT_SOCCER = "https://a.espncdn.com/i/headshots/soccer/players/full/%s.png"
 HEADSHOT_NBA = "https://a.espncdn.com/i/headshots/nba/players/full/%s.png"
+KOVO_RANK = "https://user-api.kovo.co.kr/stat/league/team-rank?seasonCode=%s&leagueCode=201"
 
 # 탭 순서 그대로. (key, ESPN 리그 코드, 화면 이름, 영문 이름)
 SOCCER_LEAGUES = [
@@ -323,6 +325,61 @@ def nba_leaders():
     return {"season": season, "boards": boards}
 
 
+# ── 배구 (KOVO) ────────────────────────────────────────────────────
+def voleague_boards():
+    """KOVO 팀 순위 — 한 응답에 남자부(spart 1)·여자부(spart 2)가 같이 온다.
+    시즌 코드는 2005년=001 처럼 3자리이고, 해가 바뀌어도 이전 시즌 코드가 남아 있어
+    후보 두 개를 받아 '가장 최근 경기를 치른 시즌'을 고른다."""
+    year = datetime.now(KST).year
+    best = None
+    for code in ("%03d" % (year - 2004), "%03d" % (year - 2003)):
+        try:
+            d = get_json(KOVO_RANK % code)
+        except Exception:
+            continue
+        rows = d.get("payload") or []
+        if not rows:
+            continue
+        last = max(str(r.get("udate") or "") for r in rows)
+        if best is None or last > best[0]:
+            best = (last, code, rows)
+    if not best or not best[2]:
+        raise ValueError("KOVO 팀 순위 응답이 비었습니다")
+
+    _, code, rows = best
+    groups = []
+    for spart, name in (("1", "남자부"), ("2", "여자부")):
+        g = []
+        for r in rows:
+            if str(r.get("spart")) != spart:
+                continue
+            tcode = str(r.get("tcode") or "")
+            abbr, ko = VOLLEY_TEAMS.get(tcode, (tcode, r.get("tsname") or tcode))
+            win, lost = r.get("win"), r.get("lost")
+            swin, slost = r.get("swin"), r.get("slost")
+            winp = r.get("winp")
+            g.append({
+                "rank": r.get("rank"),
+                "team": ko.strip(),
+                "abbr": abbr,
+                "logo": r.get("emblemUrl") or None,
+                "played": (win or 0) + (lost or 0) if (win is not None or lost is not None) else None,
+                "win": win, "draw": None, "loss": lost, "diff": None,
+                # KOVO 의 winp 는 승률이 아니라 승점이다(예: 5승1패 → 14점).
+                "points": int(winp) if isinstance(winp, (int, float)) else None,
+                "pct": None,
+                "gb": None,
+                "sets": ("%d-%d" % (swin or 0, slost or 0)) if (swin is not None or slost is not None) else None,
+                "zone": None,
+            })
+        g.sort(key=lambda x: (x["rank"] is None, x["rank"] or 0))
+        groups.append({"name": name, "rows": g})
+    if not any(x["rows"] for x in groups):
+        raise ValueError("KOVO 팀 순위에 남자부·여자부 행이 없습니다")
+    return {"groups": groups, "season": "%s-%s" % (year, str(year + 1)[2:]),
+            "full": "KOVO V-League"}
+
+
 # ── 출력 ────────────────────────────────────────────────────────────
 def dump(data):
     head = (
@@ -378,6 +435,20 @@ def main():
     except Exception as e:
         errors.append("NBA: %s" % e)
         print("  ! %-7s 실패 — %s" % ("NBA", e))
+
+    try:
+        t = voleague_boards()
+        leagues.append({
+            "key": "VLEAGUE", "sport": "volleyball", "name": "V리그",
+            "full": t["full"], "season": t["season"],
+            "groups": t["groups"], "leaders": [],
+        })
+        print("  · %-7s 팀 %2d행(%s)" % (
+            "VLEAGUE", sum(len(g["rows"]) for g in t["groups"]),
+            ", ".join("%s %d" % (g["name"], len(g["rows"])) for g in t["groups"])))
+    except Exception as e:
+        errors.append("VLEAGUE: %s" % e)
+        print("  ! %-7s 실패 — %s" % ("VLEAGUE", e))
 
     if errors:
         print("실패한 리그가 있어 %s 를 덮어쓰지 않았습니다." % os.path.basename(OUT))

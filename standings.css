@@ -31,6 +31,7 @@
 }
 .st-seg button[aria-selected="true"] { background: #111827; color: #FFFFFF; }
 .st-seg button:active { transform: scale(.97); }
+.st-seg button[disabled] { color: rgba(17, 24, 39, .32); cursor: default; }
 .st-seg button:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; }
 
 /* 순위표 블록 */
@@ -199,6 +200,7 @@
 .st-tbl-team .c-pt { width: 31px; }
 /* NBA 득실은 +157·-207 처럼 네 자리라 조금 더 넓게 (넘치면 …로 잘린다) */
 .st-tbl-team .c-pct { width: 42px; }
+.st-tbl-team .c-set { width: 44px; }
 .st-tbl-team .c-gd.nba,
 .st-tbl-team.is-nba .c-gd { width: 38px; }
 .st-lb .c-rk { width: 24px; }
@@ -218,6 +220,7 @@
   .st-tbl-team .c-gd { width: 28px; }
   .st-tbl-team .c-pt { width: 28px; }
   .st-tbl-team .c-pct { width: 36px; }
+  .st-tbl-team .c-set { width: 40px; }
   .st-tbl-team.is-nba .c-gd { width: 34px; }
   .st-lb .c-rk { width: 22px; }
   /* '13.9리바운드' 가 …로 잘리지 않게 */

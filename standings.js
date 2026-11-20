@@ -101,18 +101,22 @@
   function teamTable(group, lg) {
     var rows = group.rows || [];
     var soccer = lg.sport === "soccer";
+    var volley = lg.sport === "volleyball";
     var h = ['<table class="st-table st-tbl-team' + (soccer ? "" : " is-nba") + '" aria-label="' +
       esc((group.name ? group.name + " " : "") + lg.name + " 팀 순위") + '">'];
     h.push("<colgroup><col class=\"c-rk\"><col><col class=\"c-gp\">" +
       (soccer
         ? '<col class="c-w"><col class="c-d"><col class="c-l"><col class="c-gd"><col class="c-pt">'
-        : '<col class="c-w"><col class="c-l"><col class="c-gd"><col class="c-pct">') +
+        : volley
+          ? '<col class="c-w"><col class="c-l"><col class="c-pt"><col class="c-set">'
+          : '<col class="c-w"><col class="c-l"><col class="c-gd"><col class="c-pct">') +
       "</colgroup>");
     h.push("<thead><tr>" +
       '<th class="rk" scope="col">순위</th>' +
       '<th class="l" scope="col">팀</th>' +
       '<th scope="col">경기</th><th scope="col">승</th>' +
       (soccer ? '<th scope="col">무</th><th scope="col">패</th><th scope="col">득실</th><th scope="col">승점</th>'
+              : volley ? '<th scope="col">패</th><th scope="col">승점</th><th scope="col">세트</th>'
               : '<th scope="col">패</th><th scope="col">득실</th><th scope="col">승률</th>') +
       "</tr></thead><tbody>");
 
@@ -131,9 +135,13 @@
             '<td class="num">' + num(r.loss) + "</td>" +
             '<td class="num">' + signed(r.diff) + "</td>" +
             '<td class="num pt">' + num(r.points) + "</td>"
-          : '<td class="num">' + num(r.loss) + "</td>" +
-            '<td class="num">' + signed(r.diff) + "</td>" +
-            '<td class="num">' + dash(r.pct) + "</td>") +
+          : volley
+            ? '<td class="num">' + num(r.loss) + "</td>" +
+              '<td class="num pt">' + num(r.points) + "</td>" +
+              '<td class="num">' + dash(r.sets) + "</td>"
+            : '<td class="num">' + num(r.loss) + "</td>" +
+              '<td class="num">' + signed(r.diff) + "</td>" +
+              '<td class="num">' + dash(r.pct) + "</td>") +
         "</tr>");
     }
     h.push("</tbody></table>");
@@ -194,10 +202,16 @@
     }).join("");
   }
 
-  function renderModes() {
+  function renderModes(lg) {
+    var hasLeaders = (lg.leaders || []).length > 0;
     var btns = modeEl.querySelectorAll("button");
     for (var i = 0; i < btns.length; i++) {
+      var isPlayer = btns[i].getAttribute("data-mode") === "player";
       btns[i].setAttribute("aria-selected", btns[i].getAttribute("data-mode") === state.mode ? "true" : "false");
+      // 개인 순위 자료가 없는 리그(V리그)는 단추를 잠근다
+      btns[i].disabled = isPlayer && !hasLeaders;
+      if (isPlayer && !hasLeaders) btns[i].title = "이 리그는 개인 순위 자료가 없습니다";
+      else btns[i].removeAttribute("title");
     }
   }
 
@@ -211,6 +225,7 @@
   function render() {
     var lg = leagueOf(state.key);
     state.key = lg.key;
+    if (state.mode === "player" && !(lg.leaders || []).length) state.mode = "team";
 
     titleEl.innerHTML = "<em>" + esc(lg.name) + "</em> " + (state.mode === "team" ? "팀 순위" : "개인 순위");
     seasonEl.textContent = lg.season || "—";
@@ -218,7 +233,7 @@
     chipEl.textContent = (DATA.source || "ESPN") + " 실제 값";
 
     renderTabs(lg);
-    renderModes();
+    renderModes(lg);
     scrollSelectedIntoView();
 
     var html = "";
