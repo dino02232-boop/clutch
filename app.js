@@ -704,6 +704,37 @@
 
   // 팀별 정보 블록 하나
   //  · 제목: [원정] 팀명 · 약어 / 이어서 전적칸·수치칸·주요 선수·최근 5경기·부상·관전 포인트
+  // 축구 핵심 선수(details.keyPlayers)를 팀 블록의 주요 선수로 옮긴다. 같은 선수의 골·도움은 한 줄로 합친다.
+  function statKo(s) {
+    var t = String(s || "").trim();
+    var m = t.match(/^득점\s*(\d+)$/);
+    if (m) return m[1] + "골";
+    m = t.match(/^도움\s*(\d+)$/);
+    if (m) return m[1] + "도움";
+    return t;
+  }
+
+  function keyPlayersFor(g, t) {
+    var d = (g && g.details) || {};
+    var groups = Array.isArray(d.keyPlayers) ? d.keyPlayers.filter(Boolean) : [];
+    if (!groups.length) return [];
+    var g2 = groups.filter(function (k) { return k.side === t.side; })[0] ||
+      groups.filter(function (k) { return k.team && t.name && k.team === t.name; })[0];
+    if (!g2 || !Array.isArray(g2.players)) return [];
+    var byName = {}, order = [];
+    g2.players.forEach(function (p) {
+      var nm = String((p && p.name) || "").trim();
+      if (!nm) return;
+      var st = Array.isArray(p.stats) ? p.stats : (p.stat ? [p.stat] : []);
+      if (!byName[nm]) { byName[nm] = { name: nm, photo: p.photo, stats: [] }; order.push(nm); }
+      st.forEach(function (x) { if (byName[nm].stats.indexOf(x) < 0) byName[nm].stats.push(x); });
+    });
+    return order.map(function (nm) {
+      var p = byName[nm];
+      return { name: p.name, photo: p.photo, stat: p.stats.map(statKo).join(" · ") };
+    });
+  }
+
   function teamBlockHTML(t, g) {
     if (!t || !g) return "";
     var side = t.side === "home" ? "home" : "away";
@@ -752,9 +783,10 @@
 
     // 주요 선수 2~3명
     var playersHTML = "";
-    if (Array.isArray(t.players) && t.players.length) {
+    var tPlayers = (Array.isArray(t.players) && t.players.length) ? t.players : keyPlayersFor(g, t);
+    if (tPlayers.length) {
       playersHTML = '<h4 class="tb-sub">주요 선수</h4><ul class="pl-list">' +
-        t.players.slice(0, 3).map(function (p) {
+        tPlayers.slice(0, 3).map(function (p) {
           return '<li>' +
             '<span class="pl-top">' + faceHTML(p.name, p.photo) +
             '<b>' + esc(p.name) + "</b>" +
@@ -1257,8 +1289,7 @@
     }
     rows.filter(function (r) { return r.kind === "flow"; }).forEach(function (r) { preview += flowRowHTML(r, g); });
 
-    // 축구 핵심 선수 — 프리뷰 위쪽(팀 블록 앞)에 둔다.
-    preview += keyPlayersHTML(d);
+    // 축구 핵심 선수는 각 팀 블록 안 '주요 선수'로 들어간다.
 
     // 팀별 정보: 원정 먼저, 홈 다음. 두 블록 사이는 넉넉히 띄운다.
     var teams = Array.isArray(d.teams) ? d.teams.filter(Boolean) : [];
