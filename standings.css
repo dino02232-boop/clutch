@@ -197,7 +197,10 @@
 .st-tbl-team .c-l { width: 21px; }
 .st-tbl-team .c-gd { width: 32px; }
 .st-tbl-team .c-pt { width: 31px; }
-.st-tbl-team .c-pct { width: 38px; }
+/* NBA 득실은 +157·-207 처럼 네 자리라 조금 더 넓게 (넘치면 …로 잘린다) */
+.st-tbl-team .c-pct { width: 42px; }
+.st-tbl-team .c-gd.nba,
+.st-tbl-team.is-nba .c-gd { width: 38px; }
 .st-lb .c-rk { width: 24px; }
 .st-lb .c-rec { width: 72px; }
 
@@ -214,7 +217,8 @@
   .st-tbl-team .c-l { width: 19px; }
   .st-tbl-team .c-gd { width: 28px; }
   .st-tbl-team .c-pt { width: 28px; }
-  .st-tbl-team .c-pct { width: 34px; }
+  .st-tbl-team .c-pct { width: 36px; }
+  .st-tbl-team.is-nba .c-gd { width: 34px; }
   .st-lb .c-rk { width: 22px; }
   .st-lb .c-rec { width: 64px; }
   .tlogo { flex-basis: 16px; width: 16px; height: 16px; }
