@@ -604,8 +604,8 @@
     }).join("");
     return "<li>" +
       '<span class="f-side ' + side + '">' + (side === "home" ? "홈" : "원정") + "</span>" +
-      '<span class="f-name">' + esc(team.name) + "</span>" +
       (g ? favoriteButtonHTML(g.sport, team.name) : "") +
+      '<span class="f-name">' + esc(team.name) + "</span>" +
       (team.record ? '<span class="f-rec">' + esc(team.record) + "</span>" : "") +
       badges +
       "</li>";
@@ -1142,9 +1142,9 @@
         "</button>" +
         '<span class="mtms">' +
           '<span class="sport-ball" aria-hidden="true">' + esc(sm.icon) + "</span>" +
-          '<span class="tm away"><button class="team-link" type="button" data-team-focus="' + esc(away) + '" aria-label="' + esc(away + " 팀 현황 보기") + '"><span class="tm-name">' + esc(away) + '</span></button>' + favoriteButtonHTML(g.sport, away) + "</span>" +
+          '<span class="tm away">' + favoriteButtonHTML(g.sport, away) + '<button class="team-link" type="button" data-team-focus="' + esc(away) + '" aria-label="' + esc(away + " 팀 현황 보기") + '"><span class="tm-name">' + esc(away) + "</span></button></span>" +
           '<span class="mslot" data-slot="' + esc(g.id) + '">' + scoreSlotHTML(g) + "</span>" +
-          '<span class="tm home"><button class="team-link" type="button" data-team-focus="' + esc(home) + '" aria-label="' + esc(home + " 팀 현황 보기") + '"><span class="tm-name">' + esc(home) + '</span></button>' + favoriteButtonHTML(g.sport, home) + "</span>" +
+          '<span class="tm home">' + favoriteButtonHTML(g.sport, home) + '<button class="team-link" type="button" data-team-focus="' + esc(home) + '" aria-label="' + esc(home + " 팀 현황 보기") + '"><span class="tm-name">' + esc(home) + "</span></button></span>" +
         "</span>" +
       "</div>" +
       '<div class="cbox-wrap" id="box-' + esc(g.id) + '"></div>' +
