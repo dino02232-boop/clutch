@@ -718,12 +718,20 @@
 
     var focusHTML = t.focus ? '<h4 class="tb-sub">관전 포인트</h4><p class="tb-focus">' + md(t.focus) + "</p>" : "";
 
+    // 팀 이름 옆에 그 팀 승리 배당을 소수 배당으로 짧게 붙인다(값이 있을 때만).
+    var ml = (g.odds && g.odds.moneyline) || {};
+    var teamOdds = side === "home" ? ml.home : ml.away;
+    var oddsChip = (teamOdds != null && isFinite(Number(teamOdds)))
+      ? '<span class="tb-odds">배당 ' + decText(teamOdds) + "</span>"
+      : "";
+
     return '<section class="tblock ' + side + '" data-team-name="' + esc(t.name || "") + '">' +
       '<div class="tb-head">' +
         '<span class="tb-side">' + (side === "home" ? "홈" : "원정") + "</span>" +
         '<b class="tb-name">' + esc(t.name || t.abbr || "") + "</b>" +
         (t.abbr ? '<span class="tb-abbr">' + esc(t.abbr) + "</span>" : "") +
         (t.streak ? '<span class="tb-streak">' + esc(t.streak) + "</span>" : "") +
+        oddsChip +
       "</div>" +
       (cells ? '<dl class="tb-grid">' + cells + "</dl>" : "") +
       (numHTML ? '<div class="tb-nums">' + numHTML + "</div>" : "") +
@@ -734,7 +742,7 @@
       "</section>";
   }
 
-  // 배당 — 미국식(+/-)과 소수 배당을 함께. 값이 없으면 "배당 정보 없음".
+  // 배당 — 소수 배당(1.67배)만 보여 준다. 미국식 표기는 빼서 읽기 쉽게.
   function amText(v) {
     if (v == null || !isFinite(Number(v))) return "—";
     var n = Number(v);
@@ -748,7 +756,7 @@
   }
   function oddsRowHTML(label, ml) {
     return '<li><span class="o-lab">' + esc(label) + "</span>" +
-      '<span class="o-val"><b>' + decText(ml) + "</b><i>" + amText(ml) + "</i></span></li>";
+      '<span class="o-val"><b>' + decText(ml) + "배</b></span></li>";
   }
   function oddsHTML(g) {
     var o = g.odds;
@@ -764,22 +772,22 @@
     var ml = o.moneyline || {};
     var rows = "";
     if (ml.away != null || ml.home != null || ml.draw != null) {
-      rows += oddsRowHTML("원정 승" + (g.away ? " · " + g.away.abbr : ""), ml.away);
+      rows += oddsRowHTML((g.away && g.away.name ? g.away.name : "원정") + " 승", ml.away);
       if (ml.draw != null) rows += oddsRowHTML("무승부", ml.draw);
-      rows += oddsRowHTML("홈 승" + (g.home ? " · " + g.home.abbr : ""), ml.home);
+      rows += oddsRowHTML((g.home && g.home.name ? g.home.name : "홈") + " 승", ml.home);
     }
     var lines = [];
     if (o.spread && (o.spread.homeLine || o.spread.awayLine)) {
       var sp = "핸디캡 홈 " + (o.spread.homeLine || "—") +
-        (o.spread.home != null ? " (" + amText(o.spread.home) + ")" : "") +
+        (o.spread.home != null ? " " + decText(o.spread.home) + "배" : "") +
         " · 원정 " + (o.spread.awayLine || "—") +
-        (o.spread.away != null ? " (" + amText(o.spread.away) + ")" : "");
+        (o.spread.away != null ? " " + decText(o.spread.away) + "배" : "");
       lines.push(sp);
     }
     if (o.total && (o.total.line || o.total.over != null)) {
       lines.push("총점 " + (o.total.line || "—") +
-        (o.total.over != null ? " · 오버 " + amText(o.total.over) : "") +
-        (o.total.under != null ? " / 언더 " + amText(o.total.under) : ""));
+        (o.total.over != null ? " · 오버 " + decText(o.total.over) + "배" : "") +
+        (o.total.under != null ? " · 언더 " + decText(o.total.under) + "배" : ""));
     }
     var imp = o.implied;
     var impLine = "";
@@ -798,8 +806,7 @@
       "</div>" +
       (rows ? '<ul class="o-list">' + rows + "</ul>" : "") +
       (lines.length ? lines.map(function (l) { return '<p class="o-line">' + esc(l) + "</p>"; }).join("") : "") +
-      impLine +
-      '<p class="o-note">해외 배당이며 국내 배트맨·프로토 배당과 다를 수 있습니다. 소수 배당은 미국식 배당을 환산한 값입니다.</p>' +
+      '<p class="o-note">소수 배당이에요. 1만원을 걸면 그 배당만큼 돌려받습니다(1.67배 → 1만 6,700원). 해외 배당이라 국내 배트맨·프로토와 다를 수 있어요.</p>' +
       "</section>";
   }
 
