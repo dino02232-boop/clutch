@@ -602,6 +602,12 @@
     var badges = (team.badges || []).map(function (b) {
       return '<span class="badge ' + toneClass(b.tone, ["hot", "rank"], "") + '">' + esc(b.text) + "</span>";
     }).join("");
+    // 그 팀 승리 배당을 리그 순위 배지 옆에 붙인다.
+    var ml2 = (g && g.odds && g.odds.moneyline) || {};
+    var tOdds = side === "home" ? ml2.home : ml2.away;
+    if (tOdds != null && isFinite(Number(tOdds))) {
+      badges += '<span class="badge odds">배당 ' + decText(tOdds) + "</span>";
+    }
     return "<li>" +
       '<span class="f-side ' + side + '">' + (side === "home" ? "홈" : "원정") + "</span>" +
       (g ? favoriteButtonHTML(g.sport, team.name) : "") +
@@ -718,20 +724,12 @@
 
     var focusHTML = t.focus ? '<h4 class="tb-sub">관전 포인트</h4><p class="tb-focus">' + md(t.focus) + "</p>" : "";
 
-    // 팀 이름 옆에 그 팀 승리 배당을 소수 배당으로 짧게 붙인다(값이 있을 때만).
-    var ml = (g.odds && g.odds.moneyline) || {};
-    var teamOdds = side === "home" ? ml.home : ml.away;
-    var oddsChip = (teamOdds != null && isFinite(Number(teamOdds)))
-      ? '<span class="tb-odds">배당 ' + decText(teamOdds) + "</span>"
-      : "";
-
     return '<section class="tblock ' + side + '" data-team-name="' + esc(t.name || "") + '">' +
       '<div class="tb-head">' +
         '<span class="tb-side">' + (side === "home" ? "홈" : "원정") + "</span>" +
         '<b class="tb-name">' + esc(t.name || t.abbr || "") + "</b>" +
         (t.abbr ? '<span class="tb-abbr">' + esc(t.abbr) + "</span>" : "") +
         (t.streak ? '<span class="tb-streak">' + esc(t.streak) + "</span>" : "") +
-        oddsChip +
       "</div>" +
       (cells ? '<dl class="tb-grid">' + cells + "</dl>" : "") +
       (numHTML ? '<div class="tb-nums">' + numHTML + "</div>" : "") +
@@ -1201,8 +1199,7 @@
         '<span class="mrow-meta">' +
           '<span class="mwhen">' + esc(when) + " · <b>" + p.hh + ":" + p.mm + "</b></span>" +
           '<span class="mlg">' + esc(league) + "</span>" +
-          oddsChip +
-          '<span class="mpill" data-pill="' + esc(g.id) + '">' + livePillHTML(g) + "</span>" +
+            '<span class="mpill" data-pill="' + esc(g.id) + '">' + livePillHTML(g) + "</span>" +
         "</span>" +
         '<button class="cbtn" type="button" aria-expanded="false" aria-controls="box-' + esc(g.id) + '"' +
         ' aria-label="' + esc(label) + '" data-id="' + esc(g.id) + '">' +
