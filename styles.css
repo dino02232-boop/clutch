@@ -922,6 +922,12 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   white-space: nowrap;
 }
 
+.tb-cell.recent dd { white-space: normal; overflow: visible; text-overflow: clip; }
+.fs { font-weight: 800; margin-left: 2px; }
+.fs:first-child { margin-left: 0; }
+.fs.win { color: #0B7A54; }
+.fs.loss { color: #DC2626; }
+.fs.draw { color: #111827; }
 .tb-nums { display: flex; gap: 5px; margin: 8px 0 0; }
 .tb-nums .num {
   flex: 1 1 0;
@@ -1091,13 +1097,80 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   flex-direction: column;
   gap: 1px;
 }
-.pl-list .pl-top { display: flex; align-items: center; gap: 5px; min-width: 0; }
+.pl-list .pl-top { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .pl-list .pl-top b { font-size: 12px; font-weight: 800; color: #111827; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .pl-pos { font-style: normal; font-size: 8.5px; font-weight: 800; color: var(--text-3); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
 .pl-stat { font-size: 11.5px; font-weight: 700; color: #374151; font-variant-numeric: tabular-nums; }
 .pl-sub { font-size: 10px; color: var(--text-3); font-variant-numeric: tabular-nums; }
 .pl-recent { font-size: 10px; color: var(--info, #1D4ED8); font-variant-numeric: tabular-nums; }
 .pl-last { font-size: 10px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+
+/* 선수 얼굴 사진 — 이니셜 원을 깔고 그 위에 사진을 얹는다.
+   사진이 없거나 404 면 img 만 지워져 이니셜이 남는다(고정 크기라 레이아웃 불변). */
+.pl-face {
+  position: relative;
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 24, 39, .07);
+  color: var(--text-3);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: .01em;
+  line-height: 1;
+  user-select: none;
+  vertical-align: middle;
+}
+.pl-face.sm { flex-basis: 22px; width: 22px; height: 22px; font-size: 9px; }
+.pl-face .pl-ini { display: block; }
+.pl-face img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 축구 핵심 선수 — 팀별 시즌 득점·도움 1위 */
+.kp-teams { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+.kp-team {
+  padding: 7px 9px;
+  border-radius: 10px;
+  background: rgba(17, 24, 39, .028);
+  border: 1px solid rgba(17, 24, 39, .05);
+}
+.kp-head { display: flex; align-items: center; gap: 5px; margin-bottom: 3px; min-width: 0; }
+.kp-head b { font-size: 11.5px; font-weight: 800; color: #111827; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kp-side { font-size: 8.5px; font-weight: 800; letter-spacing: .02em; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
+.kp-side.home { color: var(--accent); background: var(--accent-dim); }
+.kp-side.away { color: var(--text-3); background: rgba(17, 24, 39, .06); }
+.kp-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.kp-list li { display: flex; align-items: center; gap: 6px; min-width: 0; padding: 1px 0; }
+.kp-stat {
+  flex: 0 0 auto;
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-radius: 5px;
+  padding: 2px 5px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.kp-name { font-size: 11.5px; font-weight: 700; color: #111827; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* 결과·경기 후 브리핑 선수 줄의 사진 정렬 */
+.r-top .pl-face { align-self: center; margin-right: 2px; }
+.pg-name { display: flex; align-items: center; gap: 6px; }
+.lb-tbl .c-nm .nm-wrap { display: flex; align-items: center; gap: 5px; min-width: 0; }
+.lb-tbl .c-nm .nm-wrap b { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* 최근 5경기 상세 */
 .l5-list { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; }

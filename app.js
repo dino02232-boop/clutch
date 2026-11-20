@@ -393,6 +393,43 @@
     return allowed.indexOf(tone) >= 0 ? tone : fallback;
   }
 
+  /* ── 선수 얼굴 사진 ───────────────────────────────────
+     ESPN CDN 의 선수 사진은 선수마다 있을 수도 없을 수도 있다(축구는 대부분 없음).
+     그래서 이니셜 원을 깔아 두고 그 위에 사진을 얹는다. 사진이 404 면 브라우저
+     onerror 로 <img> 만 지워져 이니셜이 그대로 남고, 크기는 고정이라 레이아웃이 흔들리지 않는다. */
+  function initialsOf(name) {
+    var s = String(name || "").trim();
+    if (!s) return "?";
+    if (/[\uac00-\ud7a3]/.test(s)) return s.slice(0, 1);  // 한글 이름은 첫 글자
+    var parts = s.replace(/[^A-Za-z0-9 .'-]/g, "").split(/\s+/).filter(Boolean);
+    if (!parts.length) return "?";
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0].slice(0, 1) + parts[parts.length - 1].slice(0, 1)).toUpperCase();
+  }
+
+  function faceHTML(name, photo, small) {
+    var src = typeof photo === "string" && /^https:\/\//i.test(photo) ? photo : "";
+    return '<span class="pl-face' + (small ? " sm" : "") + '" aria-hidden="true">' +
+      '<span class="pl-ini">' + esc(initialsOf(name)) + "</span>" +
+      (src ? '<img src="' + esc(src) + '" alt="" loading="lazy" referrerpolicy="no-referrer"' +
+        ' onerror="this.remove()">' : "") +
+      "</span>";
+  }
+
+  // 데이터에 사진이 없을 때: 팀 블록의 주요 선수 목록에서 이름으로 찾아 쓴다.
+  function photoOf(g, name) {
+    var teams = g && g.details && Array.isArray(g.details.teams) ? g.details.teams : [];
+    var want = String(name || "").trim().toLowerCase();
+    if (!want) return "";
+    for (var i = 0; i < teams.length; i++) {
+      var list = Array.isArray(teams[i].players) ? teams[i].players : [];
+      for (var j = 0; j < list.length; j++) {
+        if (String(list[j].name || "").trim().toLowerCase() === want) return list[j].photo || "";
+      }
+    }
+    return "";
+  }
+
   /* ── 주 단위 날짜 스트립 (월요일 시작 7칸) ───────────────
      주차 규칙: 그 달 1일이 들어 있는 7일 묶음(1~7일)을 1주차로 센다.
        예) 2026-11-01(일) → 11/1~11/7 = 1주차, 11/16~11/22 = 3주차, 11/23~11/29 = 4주차
@@ -634,6 +671,22 @@
     return { text: text, cls: cls };
   }
 
+  // 최근 흐름 값(예: "무-승-패-패-패")을 색 입힌 글자로.
+  function formSeqHTML(t, raw) {
+    var res = [];
+    if (t && Array.isArray(t.last5Detail) && t.last5Detail.length) {
+      res = t.last5Detail.slice(0, 5).map(function (r) { return String(r.res || "").trim(); });
+    } else {
+      res = String(raw || "").split(/[-·\s]+/);
+    }
+    res = res.filter(function (r) { return r === "승" || r === "패" || r === "무"; });
+    if (!res.length) return esc(raw || "");
+    return res.map(function (r) {
+      var cls = r === "승" ? "win" : (r === "패" ? "loss" : "draw");
+      return '<span class="fs ' + cls + '">' + esc(r) + "</span>";
+    }).join("");
+  }
+
   function streakChip(t) {
     var st = streakOf(t);
     if (!st) return "";
@@ -671,8 +724,10 @@
     var cells = cellPairs.filter(function (c) {
       return c[1] != null && c[1] !== "";
     }).map(function (c) {
-      var chip = /최근/.test(String(c[0])) ? streakChip(t) : "";
-      return '<div class="tb-cell"><dt>' + esc(c[0]) + "</dt><dd>" + esc(c[1]) + chip + "</dd></div>";
+      var isRecent = /최근/.test(String(c[0]));
+      var chip = isRecent ? streakChip(t) : "";
+      var dd = isRecent ? formSeqHTML(t, c[1]) : esc(c[1]);
+      return '<div class="tb-cell' + (isRecent ? " recent" : "") + '"><dt>' + esc(c[0]) + "</dt><dd>" + dd + chip + "</dd></div>";
     }).join("");
 
     // 수치 칸
@@ -701,7 +756,8 @@
       playersHTML = '<h4 class="tb-sub">주요 선수</h4><ul class="pl-list">' +
         t.players.slice(0, 3).map(function (p) {
           return '<li>' +
-            '<span class="pl-top"><b>' + esc(p.name) + "</b>" +
+            '<span class="pl-top">' + faceHTML(p.name, p.photo) +
+            '<b>' + esc(p.name) + "</b>" +
             (p.pos ? '<i class="pl-pos">' + esc(p.pos) + "</i>" : "") + "</span>" +
             (p.stat ? '<span class="pl-stat">' + esc(p.stat) + "</span>" : "") +
             (p.sub ? '<span class="pl-sub">' + esc(p.sub) + "</span>" : "") +
@@ -865,6 +921,7 @@
           if (p.reb != null) bits.push(p.reb + "리바운드");
           if (p.ast != null) bits.push(p.ast + "어시스트");
           return "<li><span class=\"r-team\">" + esc(p.team || "") + "</span>" +
+            faceHTML(p.name, p.photo || photoOf(g, p.name), true) +
             "<b>" + esc(p.name || "") + "</b><span class=\"r-stat\">" + esc(bits.join(" · ")) + "</span></li>";
         }).join("") + "</ul>"
       : '<p class="r-none">' + esc(topNone) + "</p>";
@@ -984,7 +1041,7 @@
         var pts = toNum(p.pts);
         if (avg == null || pts < 0) return;
         candidates.push({
-          name: p.name, team: teamBox.name || teamBox.abbr,
+          name: p.name, photo: p.photo || photoOf(g, p.name), team: teamBox.name || teamBox.abbr,
           pts: pts, reb: toNum(p.reb), ast: toNum(p.ast), min: toNum(p.min),
           fg: p.fg, three: p.three, ft: p.ft, turnovers: toNum(p.turnovers),
           avg: avg, avgReb: expectedValue(expected.stat, "리바운드"),
@@ -1049,7 +1106,7 @@
         ? (p.delta <= -5 ? "득점이 시즌 평균보다 낮았습니다." : (p.fgPct != null && p.fgPct < .35 ? "야투 효율이 낮았습니다." : "턴오버가 많았습니다."))
         : (p.delta >= 5 ? "평균을 웃도는 득점으로" : "주요 선수 중 가장 많은 득점으로");
       return '<article class="pg-highlight ' + type + '"><div class="pg-line"><b>' + title + '</b><span class="pg-tag ' + type + '">' + esc(p.team) + '</span></div>' +
-        '<strong class="pg-name">' + esc(p.name) + '</strong><p>' + esc(under ? note : note + ' 팀 공격을 이끌었습니다.') + '</p>' +
+        '<strong class="pg-name">' + faceHTML(p.name, p.photo) + esc(p.name) + '</strong><p>' + esc(under ? note : note + ' 팀 공격을 이끌었습니다.') + '</p>' +
         '<div class="pg-facts">' + factsFor(p, under).map(function (x) { return '<span>' + esc(x) + '</span>'; }).join("") + '</div>' +
         '<small>' + esc(String(p.min)) + '분 출전</small>' + snsReactionHTML(g.id, p.name) + '</article>';
     }
@@ -1145,6 +1202,31 @@
     }).join("");
   }
 
+  // 핵심 선수(축구) — details.keyPlayers. 홈 팀을 먼저, 데이터가 없으면 블록 자체를 그리지 않는다.
+  function keyPlayersHTML(d) {
+    var groups = d && Array.isArray(d.keyPlayers) ? d.keyPlayers.filter(function (k) {
+      return k && Array.isArray(k.players) && k.players.length;
+    }) : [];
+    if (!groups.length) return "";
+    var ordered = groups.slice().sort(function (a, b) {
+      var rank = function (t) { return t.side === "home" ? 0 : 1; };
+      return rank(a) - rank(b);
+    });
+    var body = ordered.map(function (k) {
+      var side = k.side === "home" ? "home" : "away";
+      return '<div class="kp-team">' +
+        '<div class="kp-head"><span class="kp-side ' + side + '">' +
+          (side === "home" ? "홈" : "원정") + "</span><b>" + esc(k.team || "") + "</b></div>" +
+        '<ul class="kp-list">' + k.players.map(function (p) {
+          var stats = Array.isArray(p.stats) ? p.stats : (p.stat ? [p.stat] : []);
+          return "<li>" + faceHTML(p.name, p.photo) +
+            (stats.length ? '<span class="kp-stat">' + esc(stats.join(" · ")) + "</span>" : "") +
+            '<b class="kp-name">' + esc(p.name || "") + "</b></li>";
+        }).join("") + "</ul></div>";
+    }).join("");
+    return '<h3 class="p-title">핵심 선수</h3><div class="kp-teams">' + body + "</div>";
+  }
+
   function boxHTML(g) {
     var d = g.details || {};
     var injuries = Array.isArray(d.injuries) ? d.injuries : [];
@@ -1174,6 +1256,9 @@
       }).join("") + "</dl>";
     }
     rows.filter(function (r) { return r.kind === "flow"; }).forEach(function (r) { preview += flowRowHTML(r, g); });
+
+    // 축구 핵심 선수 — 프리뷰 위쪽(팀 블록 앞)에 둔다.
+    preview += keyPlayersHTML(d);
 
     // 팀별 정보: 원정 먼저, 홈 다음. 두 블록 사이는 넉넉히 띄운다.
     var teams = Array.isArray(d.teams) ? d.teams.filter(Boolean) : [];
@@ -2110,7 +2195,7 @@
         if (!l || !l.athlete) return;
         var nm = l.athlete.displayName || l.athlete.fullName;
         if (!nm) return;
-        if (!mine[nm]) { mine[nm] = { name: nm, team: abbr }; order.push(nm); }
+        if (!mine[nm]) { mine[nm] = { name: nm, team: abbr, photo: (l.athlete.headshot && l.athlete.headshot.href) || "" }; order.push(nm); }
         var v = l.value != null ? l.value : Number(l.displayValue);
         if (!isFinite(v)) return;
         if (grp.name === "points") mine[nm].pts = v;
@@ -2551,6 +2636,7 @@
           if (min == null || min === "" || min === "--" || toNum(min) <= 0) return;
           rows.push({
             name: (a.athlete && (a.athlete.displayName || a.athlete.fullName || a.athlete.shortName)) || "",
+            photo: (a.athlete && a.athlete.headshot && a.athlete.headshot.href) || "",
             min: min,
             pts: s[idx.PTS],
             reb: idx.REB != null ? s[idx.REB] : null,
@@ -2696,7 +2782,8 @@
         '<th scope="col">어시</th>' +
       "</tr></thead><tbody>" +
       rows.map(function (p) {
-        return '<tr><th scope="row" class="c-nm">' + esc(p.name) + "</th>" +
+        return '<tr><th scope="row" class="c-nm"><span class="nm-wrap">' +
+          faceHTML(p.name, p.photo, true) + "<b>" + esc(p.name) + "</b></span></th>" +
           '<td class="c-min">' + esc(dash(p.min)) + "</td>" +
           '<td class="c-pts">' + esc(dash(p.pts)) + "</td>" +
           "<td>" + esc(dash(p.reb)) + "</td>" +
