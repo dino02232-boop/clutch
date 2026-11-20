@@ -772,9 +772,10 @@
     var ml = o.moneyline || {};
     var rows = "";
     if (ml.away != null || ml.home != null || ml.draw != null) {
-      rows += oddsRowHTML((g.away && g.away.name ? g.away.name : "원정") + " 승", ml.away);
-      if (ml.draw != null) rows += oddsRowHTML("무승부", ml.draw);
+      // 홈을 먼저, 그다음 무승부, 원정 순.
       rows += oddsRowHTML((g.home && g.home.name ? g.home.name : "홈") + " 승", ml.home);
+      if (ml.draw != null) rows += oddsRowHTML("무승부", ml.draw);
+      rows += oddsRowHTML((g.away && g.away.name ? g.away.name : "원정") + " 승", ml.away);
     }
     var lines = [];
     if (o.spread && (o.spread.homeLine || o.spread.awayLine)) {
@@ -2676,7 +2677,7 @@
     var ordered = teams.slice().sort(function (a, b) {
       var rank = function (t) {
         var ab = String(t.abbr || "").toUpperCase();
-        return ab === awayAbbr ? 0 : (ab === homeAbbr ? 1 : 2);
+        return ab === homeAbbr ? 0 : (ab === awayAbbr ? 1 : 2);
       };
       return rank(a) - rank(b);
     });
