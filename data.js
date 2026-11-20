@@ -17,6 +17,9 @@
       · 축구        : ESPN 공개 API (UCL·EPL·라리가·분데스리가·세리에A, 일정·전적·순위·최근 5경기·맞대결·배당)
                      구간 표식 SOCCER-AUTO / 생성기 tools/fetch_soccer.py
                      ESPN 축구 응답에는 부상·결장 명단이 없어 "부상 정보 없음"으로 표시합니다.
+                     선수 얼굴 사진은 ESPN 축구 CDN 커버리지가 낮아 tools/photo_sources.py 가
+                     위키백과 → 위키데이터 → TheSportsDB 순으로 확인해 채웁니다.
+                     확인 못 한 선수는 photo 키가 없고 화면에서 이니셜 원으로 표시됩니다.
       · 배구        : KOVO(한국배구연맹) 공식 API — V리그 남자부·여자부 일정·순위·승점
                      구간 표식 VOLLEY-AUTO / 생성기 tools/fetch_volley.py
                      해외 배구 리그는 넣지 않았고, 배당 정보는 이 소스에 없습니다.
@@ -12809,7 +12812,7 @@ window.CLUTCH_DATA = {
         /* VOLLEY-AUTO 2026-11-21 END */,
 
         /* SOCCER-AUTO 2026-11-21 START */
-                {
+                        {
           "id": "soccer-koe-mun-20261121",
           "espnId": "401884736",
           "sport": "soccer",
@@ -13088,7 +13091,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Michael Olise",
                     "id": "286831",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Michael_Olise_France_v_Senegal_16_June_2026-307_%28cropped%29.jpg/250px-Michael_Olise_France_v_Senegal_16_June_2026-307_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Michael_Olise_France_v_Senegal_16_June_2026-307_%28cropped%29.jpg/120px-Michael_Olise_France_v_Senegal_16_June_2026-307_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 6"
                     ]
@@ -13096,7 +13099,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Harry Kane",
                     "id": "142200",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Harry_Kane_England_v_Ghana_23_June_2026-024_%28cropped%29.jpg/250px-Harry_Kane_England_v_Ghana_23_June_2026-024_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Harry_Kane_England_v_Ghana_23_June_2026-024_%28cropped%29.jpg/120px-Harry_Kane_England_v_Ghana_23_June_2026-024_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 8"
                     ]
@@ -13516,7 +13519,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-ful-mnc-20261121",
           "espnId": "401879233",
           "sport": "soccer",
@@ -13795,7 +13798,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Erling Haaland",
                     "id": "253989",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg/250px-Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg/120px-Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 9"
                     ]
@@ -13803,7 +13806,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Josko Gvardiol",
                     "id": "299910",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Josko_Gvardiol_Croatia_v_Portugal_2_July_2026-262.jpg/250px-Josko_Gvardiol_Croatia_v_Portugal_2_July_2026-262.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Josko_Gvardiol_Croatia_v_Portugal_2_July_2026-262.jpg/120px-Josko_Gvardiol_Croatia_v_Portugal_2_July_2026-262.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -13817,7 +13820,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Josh King",
                     "id": "409541",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Josh_King_01112025_%281%29.jpg/250px-Josh_King_01112025_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Josh_King_01112025_%281%29.jpg/120px-Josh_King_01112025_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2",
                       "도움 1"
@@ -13868,7 +13871,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-dep-ala-20261121",
           "espnId": "401882806",
           "sport": "soccer",
@@ -14147,7 +14150,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Lucas Boyé",
                     "id": "207236",
-                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas_boye_celtic_aek.jpg?width=200",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas_boye_celtic_aek.jpg?width=120",
                     "stats": [
                       "득점 5"
                     ]
@@ -14155,7 +14158,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Mariano Díaz",
                     "id": "198832",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Mariano_D%C3%ADaz%2C_Real_Madrid%2C_2022.jpg/250px-Mariano_D%C3%ADaz%2C_Real_Madrid%2C_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Mariano_D%C3%ADaz%2C_Real_Madrid%2C_2022.jpg/120px-Mariano_D%C3%ADaz%2C_Real_Madrid%2C_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 4"
                     ]
@@ -14169,7 +14172,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Pierre-Emerick Aubameyang",
                     "id": "122260",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/1_Pierre-Emerick_Aubameyang_%28cropped%29.jpg/250px-1_Pierre-Emerick_Aubameyang_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/1_Pierre-Emerick_Aubameyang_%28cropped%29.jpg/120px-1_Pierre-Emerick_Aubameyang_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 5"
                     ]
@@ -14226,7 +14229,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                                {
           "id": "soccer-cag-como-20261121",
           "espnId": "401875056",
           "sport": "soccer",
@@ -14505,7 +14508,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Tasos Douvikas",
                     "id": "262071",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/262071.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F262071.png&w=120&h=120&scale=crop",
                     "stats": [
                       "득점 5"
                     ]
@@ -14513,7 +14516,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Nico Paz",
                     "id": "337970",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Nico_Paz_Argentina_v_Spain_19_July_2026-057.jpg/250px-Nico_Paz_Argentina_v_Spain_19_July_2026-057.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Nico_Paz_Argentina_v_Spain_19_July_2026-057.jpg/120px-Nico_Paz_Argentina_v_Spain_19_July_2026-057.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -14535,7 +14538,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Michel Adopo",
                     "id": "272745",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/MichelAdopo.png/250px-MichelAdopo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/MichelAdopo.png/120px-MichelAdopo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -14585,7 +14588,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-lec-laz-20261121",
           "espnId": "401874981",
           "sport": "soccer",
@@ -14864,7 +14867,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Davide Frattesi",
                     "id": "250850",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_14_%28cropped%29.jpg/250px-FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_14_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_14_%28cropped%29.jpg/120px-FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_14_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -14872,7 +14875,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Mattia Zaccagni",
                     "id": "204669",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Mattia_Zaccagni_2021.jpg/250px-Mattia_Zaccagni_2021.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Mattia_Zaccagni_2021.jpg/120px-Mattia_Zaccagni_2021.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 5"
                     ]
@@ -14944,7 +14947,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                                {
           "id": "soccer-dor-bmg-20261121",
           "espnId": "401884731",
           "sport": "soccer",
@@ -15223,7 +15226,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Joe Scally",
                     "id": "272135",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/272135.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F272135.png&w=120&h=120&scale=crop",
                     "stats": [
                       "득점 3",
                       "도움 2"
@@ -15238,7 +15241,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Felix Nmecha",
                     "id": "281122",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Felix_Nmecha_Ecuador_v_Germany_25_June_2026-150.jpg/250px-Felix_Nmecha_Ecuador_v_Germany_25_June_2026-150.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Felix_Nmecha_Ecuador_v_Germany_25_June_2026-150.jpg/120px-Felix_Nmecha_Ecuador_v_Germany_25_June_2026-150.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -15246,7 +15249,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Jobe Bellingham",
                     "id": "324820",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Jobe_Bellingham_Jan_2022.png/250px-Jobe_Bellingham_Jan_2022.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Jobe_Bellingham_Jan_2022.png/120px-Jobe_Bellingham_Jan_2022.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -15296,7 +15299,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-rbl-fcu-20261121",
           "espnId": "401884732",
           "sport": "soccer",
@@ -15575,7 +15578,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Janik Haberer",
                     "id": "170604",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/20161011_U21_AUT_GER_9305.jpg/250px-20161011_U21_AUT_GER_9305.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/20161011_U21_AUT_GER_9305.jpg/120px-20161011_U21_AUT_GER_9305.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2"
                     ]
@@ -15583,7 +15586,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Josip Juranovic",
                     "id": "222567",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Josip_Juranovic_2022.jpg/250px-Josip_Juranovic_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Josip_Juranovic_2022.jpg/120px-Josip_Juranovic_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -15597,7 +15600,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Christopher Nkunku",
                     "id": "222176",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3321_by_Stepro_%28cropped%29.jpg/250px-2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3321_by_Stepro_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3321_by_Stepro_%28cropped%29.jpg/120px-2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3321_by_Stepro_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 5"
                     ]
@@ -15605,7 +15608,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Antonio Nusa",
                     "id": "319368",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Antonio_Nusa_Morocco_v_Norway_7_June_2026-110_%28cropped%29.jpg/250px-Antonio_Nusa_Morocco_v_Norway_7_June_2026-110_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Antonio_Nusa_Morocco_v_Norway_7_June_2026-110_%28cropped%29.jpg/120px-Antonio_Nusa_Morocco_v_Norway_7_June_2026-110_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 7"
                     ]
@@ -15655,7 +15658,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-scf-elv-20261121",
           "espnId": "401884728",
           "sport": "soccer",
@@ -15942,7 +15945,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Lukas Petkov",
                     "id": "310692",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Lukas_Petkov.jpg/250px-Lukas_Petkov.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Lukas_Petkov.jpg/120px-Lukas_Petkov.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -15956,7 +15959,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Yuito Suzuki",
                     "id": "303031",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Suzuki_%282023%29.png/250px-Suzuki_%282023%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Suzuki_%282023%29.png/120px-Suzuki_%282023%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 5"
                     ]
@@ -15964,7 +15967,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Matthias Ginter",
                     "id": "170209",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Matthias_Ginter_2019.jpg/250px-Matthias_Ginter_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Matthias_Ginter_2019.jpg/120px-Matthias_Ginter_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -15990,7 +15993,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-scp-b04-20261121",
           "espnId": "401884735",
           "sport": "soccer",
@@ -16269,7 +16272,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Patrik Schick",
                     "id": "212330",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/2020-03-10_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League_Achtelfinale%2C_RB_Leipzig_-_Tottenham_Hotspur_1DX_3672_by_Stepro.jpg/250px-2020-03-10_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League_Achtelfinale%2C_RB_Leipzig_-_Tottenham_Hotspur_1DX_3672_by_Stepro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/2020-03-10_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League_Achtelfinale%2C_RB_Leipzig_-_Tottenham_Hotspur_1DX_3672_by_Stepro.jpg/120px-2020-03-10_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League_Achtelfinale%2C_RB_Leipzig_-_Tottenham_Hotspur_1DX_3672_by_Stepro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 8"
                     ]
@@ -16349,7 +16352,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-tsg-sge-20261121",
           "espnId": "401884734",
           "sport": "soccer",
@@ -16649,7 +16652,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Adam Daghim",
                     "id": "338854",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/FC_Salzburg_vs._Atletico_Madrid_%282025-01-29_UEFA_Championsleague%29_43_%28cropped%29.jpg/250px-FC_Salzburg_vs._Atletico_Madrid_%282025-01-29_UEFA_Championsleague%29_43_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/FC_Salzburg_vs._Atletico_Madrid_%282025-01-29_UEFA_Championsleague%29_43_%28cropped%29.jpg/120px-FC_Salzburg_vs._Atletico_Madrid_%282025-01-29_UEFA_Championsleague%29_43_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2",
                       "도움 2"
@@ -19805,7 +19808,7 @@ window.CLUTCH_DATA = {
         /* VOLLEY-AUTO 2026-11-22 END */,
 
         /* SOCCER-AUTO 2026-11-22 START */
-                {
+                        {
           "id": "soccer-cry-cov-20261122",
           "espnId": "401879235",
           "sport": "soccer",
@@ -20084,7 +20087,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Jack Rudoni",
                     "id": "286967",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Jack_Rudoni.png/250px-Jack_Rudoni.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Jack_Rudoni.png/120px-Jack_Rudoni.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -20092,7 +20095,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Brandon Thomas-Asante",
                     "id": "240495",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Brandon_Thomas-Asante_England_v_Ghana_23_June_2026-109.jpg/250px-Brandon_Thomas-Asante_England_v_Ghana_23_June_2026-109.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Brandon_Thomas-Asante_England_v_Ghana_23_June_2026-109.jpg/120px-Brandon_Thomas-Asante_England_v_Ghana_23_June_2026-109.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -20106,7 +20109,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Tyrick Mitchell",
                     "id": "300853",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Tyrick_Mitchell%2C_Manchester_United_v_Crystal_Palace%2C_5_December_2021_%28cropped%29.jpg/250px-Tyrick_Mitchell%2C_Manchester_United_v_Crystal_Palace%2C_5_December_2021_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Tyrick_Mitchell%2C_Manchester_United_v_Crystal_Palace%2C_5_December_2021_%28cropped%29.jpg/120px-Tyrick_Mitchell%2C_Manchester_United_v_Crystal_Palace%2C_5_December_2021_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2"
                     ]
@@ -20114,7 +20117,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Daichi Kamada",
                     "id": "219362",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/2022128173756_2022-05-08_Fussball_Eintracht_Frankfurt_vs_Borussia_M%C3%B6nchengladbach_-_Sven_-_1D_X_MK_II_-_0725_-_AK8I7460_%28Daichi_Kamada_cropped%29.jpg/250px-2022128173756_2022-05-08_Fussball_Eintracht_Frankfurt_vs_Borussia_M%C3%B6nchengladbach_-_Sven_-_1D_X_MK_II_-_0725_-_AK8I7460_%28Daichi_Kamada_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/2022128173756_2022-05-08_Fussball_Eintracht_Frankfurt_vs_Borussia_M%C3%B6nchengladbach_-_Sven_-_1D_X_MK_II_-_0725_-_AK8I7460_%28Daichi_Kamada_cropped%29.jpg/120px-2022128173756_2022-05-08_Fussball_Eintracht_Frankfurt_vs_Borussia_M%C3%B6nchengladbach_-_Sven_-_1D_X_MK_II_-_0725_-_AK8I7460_%28Daichi_Kamada_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -20164,7 +20167,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                                {
           "id": "soccer-ips-tot-20261122",
           "espnId": "401878754",
           "sport": "soccer",
@@ -20443,7 +20446,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Jan Paul van Hecke",
                     "id": "282583",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/282583.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F282583.png&w=120&h=120&scale=crop",
                     "stats": [
                       "득점 2"
                     ]
@@ -20451,7 +20454,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Mohammed Kudus",
                     "id": "266599",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/266599.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F266599.png&w=120&h=120&scale=crop",
                     "stats": [
                       "도움 3"
                     ]
@@ -20465,7 +20468,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Leif Davis",
                     "id": "283086",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Davis_220826.jpg/250px-Davis_220826.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Davis_220826.jpg/120px-Davis_220826.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2"
                     ]
@@ -20473,7 +20476,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Julio Enciso",
                     "id": "20975",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Julio_Enciso_France_v_Paraguay_4_July_2026-039.jpg/250px-Julio_Enciso_France_v_Paraguay_4_July_2026-039.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Julio_Enciso_France_v_Paraguay_4_July_2026-039.jpg/120px-Julio_Enciso_France_v_Paraguay_4_July_2026-039.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -20523,7 +20526,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-lee-che-20261122",
           "espnId": "401879236",
           "sport": "soccer",
@@ -20802,7 +20805,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Morgan Rogers",
                     "id": "265653",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Morgan_Rogers_England_v_Panama_27_June_26-144_%28cropped%29.jpg/250px-Morgan_Rogers_England_v_Panama_27_June_26-144_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Morgan_Rogers_England_v_Panama_27_June_26-144_%28cropped%29.jpg/120px-Morgan_Rogers_England_v_Panama_27_June_26-144_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 5"
                     ]
@@ -20810,7 +20813,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Cole Palmer",
                     "id": "296395",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cole_Palmer_2025_FIFA_Club_World_Cup_Final.jpg/250px-Cole_Palmer_2025_FIFA_Club_World_Cup_Final.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cole_Palmer_2025_FIFA_Club_World_Cup_Final.jpg/120px-Cole_Palmer_2025_FIFA_Club_World_Cup_Final.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -20824,7 +20827,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Dominic Calvert-Lewin",
                     "id": "197717",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Dominic_Calvert-Lewin_13092025_%285%29.jpg/250px-Dominic_Calvert-Lewin_13092025_%285%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Dominic_Calvert-Lewin_13092025_%285%29.jpg/120px-Dominic_Calvert-Lewin_13092025_%285%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -20832,7 +20835,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Tarik Muharemovic",
                     "id": "318390",
-                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Internazionale_Milano_v_US_Sassuolo_Calcio%2C_21_September_2025_-_08_%28Tarik_Muharemovi%C4%87%29.jpg?width=200",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Internazionale_Milano_v_US_Sassuolo_Calcio%2C_21_September_2025_-_08_%28Tarik_Muharemovi%C4%87%29.jpg?width=120",
                     "stats": [
                       "도움 2"
                     ]
@@ -20882,7 +20885,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-nfo-bou-20261122",
           "espnId": "401879238",
           "sport": "soccer",
@@ -21161,7 +21164,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Marcus Tavernier",
                     "id": "243364",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Marcus_Tavernier_2022.jpg/250px-Marcus_Tavernier_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Marcus_Tavernier_2022.jpg/120px-Marcus_Tavernier_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 5"
                     ]
@@ -21169,7 +21172,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Evanilson",
                     "id": "102368",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Evanilson_29122024_%281%29.jpg/250px-Evanilson_29122024_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Evanilson_29122024_%281%29.jpg/120px-Evanilson_29122024_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 4"
                     ]
@@ -21183,7 +21186,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Liam Delap",
                     "id": "307114",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Liam_Delap_in_2025.jpg/250px-Liam_Delap_in_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Liam_Delap_in_2025.jpg/120px-Liam_Delap_in_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -21191,7 +21194,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Morgan Gibbs-White",
                     "id": "243396",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Morgan_Gibbs-White_-_Nottingham_Forest_-_2025.jpg/250px-Morgan_Gibbs-White_-_Nottingham_Forest_-_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Morgan_Gibbs-White_-_Nottingham_Forest_-_2025.jpg/120px-Morgan_Gibbs-White_-_Nottingham_Forest_-_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -21241,7 +21244,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-sun-avl-20261122",
           "espnId": "401878756",
           "sport": "soccer",
@@ -21520,7 +21523,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Nicolas Jackson",
                     "id": "308524",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg/250px-Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg/120px-Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 6"
                     ]
@@ -21528,7 +21531,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "John McGinn",
                     "id": "162843",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/John_McGinn_Scotland_v_Bolivia_6_June_2026-2.jpg/250px-John_McGinn_Scotland_v_Bolivia_6_June_2026-2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/John_McGinn_Scotland_v_Bolivia_6_June_2026-2.jpg/120px-John_McGinn_Scotland_v_Bolivia_6_June_2026-2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 4"
                     ]
@@ -21542,7 +21545,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Enzo Le Fée",
                     "id": "288340",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Enzo_Le_F%C3%A9e_SAFC_August_2025.jpg/250px-Enzo_Le_F%C3%A9e_SAFC_August_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Enzo_Le_F%C3%A9e_SAFC_August_2025.jpg/120px-Enzo_Le_F%C3%A9e_SAFC_August_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3",
                       "도움 1"
@@ -21593,7 +21596,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-val-ray-20261122",
           "espnId": "401882799",
           "sport": "soccer",
@@ -21880,7 +21883,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Unai López",
                     "id": "203711",
-                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Unai_Lopez_en_2026.jpg?width=200",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Unai_Lopez_en_2026.jpg?width=120",
                     "stats": [
                       "도움 3"
                     ]
@@ -21894,7 +21897,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Umar Sadiq",
                     "id": "211770",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/SD_Negreira_-_Real_Sociedad%2C_Copa_do_Rei_2025-26_06_-_Umar_Sadiq.jpg/250px-SD_Negreira_-_Real_Sociedad%2C_Copa_do_Rei_2025-26_06_-_Umar_Sadiq.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/SD_Negreira_-_Real_Sociedad%2C_Copa_do_Rei_2025-26_06_-_Umar_Sadiq.jpg/120px-SD_Negreira_-_Real_Sociedad%2C_Copa_do_Rei_2025-26_06_-_Umar_Sadiq.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2"
                     ]
@@ -21951,7 +21954,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                                {
           "id": "soccer-roma-par-20261122",
           "espnId": "401874967",
           "sport": "soccer",
@@ -22237,7 +22240,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Giovanni Fabbian",
                     "id": "323118",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Giovanni_Fabbian_25072026_%282%29.jpg/250px-Giovanni_Fabbian_25072026_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Giovanni_Fabbian_25072026_%282%29.jpg/120px-Giovanni_Fabbian_25072026_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -22251,7 +22254,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Donyell Malen",
                     "id": "259481",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/259481.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F259481.png&w=120&h=120&scale=crop",
                     "stats": [
                       "득점 8"
                     ]
@@ -22259,7 +22262,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Paulo Dybala",
                     "id": "164839",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%AE%D0%B2%D0%B5%D0%BD%D1%82%D1%83%D1%81%C2%BB_0-2._20_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F_2020_%D0%B3%D0%BE%D0%B4%D0%B0_%E2%80%94_1153905_%28cropped%29.jpg/250px-%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%AE%D0%B2%D0%B5%D0%BD%D1%82%D1%83%D1%81%C2%BB_0-2._20_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F_2020_%D0%B3%D0%BE%D0%B4%D0%B0_%E2%80%94_1153905_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%AE%D0%B2%D0%B5%D0%BD%D1%82%D1%83%D1%81%C2%BB_0-2._20_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F_2020_%D0%B3%D0%BE%D0%B4%D0%B0_%E2%80%94_1153905_%28cropped%29.jpg/120px-%D0%9C%D0%B0%D1%82%D1%87_%C2%AB%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%BE%C2%BB_-_%C2%AB%D0%AE%D0%B2%D0%B5%D0%BD%D1%82%D1%83%D1%81%C2%BB_0-2._20_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F_2020_%D0%B3%D0%BE%D0%B4%D0%B0_%E2%80%94_1153905_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 4"
                     ]
@@ -22309,7 +22312,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-ars-new-20261122",
           "espnId": "401879232",
           "sport": "soccer",
@@ -22588,7 +22591,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Harvey Barnes",
                     "id": "243386",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Harvey_Barnes_and_Rodrigo_Muniz_24052026_%281%29.jpg/250px-Harvey_Barnes_and_Rodrigo_Muniz_24052026_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Harvey_Barnes_and_Rodrigo_Muniz_24052026_%281%29.jpg/120px-Harvey_Barnes_and_Rodrigo_Muniz_24052026_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2",
                       "도움 2"
@@ -22603,7 +22606,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Martin Ødegaard",
                     "id": "203669",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Martin_Odegaard_France_v_Norway_26_June_26-014.jpg/250px-Martin_Odegaard_France_v_Norway_26_June_26-014.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Martin_Odegaard_France_v_Norway_26_June_26-014.jpg/120px-Martin_Odegaard_France_v_Norway_26_June_26-014.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -22611,7 +22614,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Declan Rice",
                     "id": "238262",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Declan_Rice_England_v_Ghana_23_June_2026-150.jpg/250px-Declan_Rice_England_v_Ghana_23_June_2026-150.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Declan_Rice_England_v_Ghana_23_June_2026-150.jpg/120px-Declan_Rice_England_v_Ghana_23_June_2026-150.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 5"
                     ]
@@ -22661,7 +22664,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                                {
           "id": "soccer-bet-sev-20261122",
           "espnId": "401882797",
           "sport": "soccer",
@@ -22948,7 +22951,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Youssouf Fofana",
                     "id": "277307",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Youssouf_Fofana_%28footballer%2C_born_1999%29_%28cropped%29.jpg/250px-Youssouf_Fofana_%28footballer%2C_born_1999%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Youssouf_Fofana_%28footballer%2C_born_1999%29_%28cropped%29.jpg/120px-Youssouf_Fofana_%28footballer%2C_born_1999%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -22962,7 +22965,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Rodrigo Riquelme",
                     "id": "70224",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Rodrigo_Riquelme_2020.png/250px-Rodrigo_Riquelme_2020.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Rodrigo_Riquelme_2020.png/120px-Rodrigo_Riquelme_2020.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -22970,7 +22973,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Cucho Hernández",
                     "id": "336809",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/336809.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F336809.png&w=120&h=120&scale=crop",
                     "stats": [
                       "도움 2"
                     ]
@@ -23020,7 +23023,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-vfb-s04-20261122",
           "espnId": "401884729",
           "sport": "soccer",
@@ -23299,7 +23302,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Adil Aouchiche",
                     "id": "290166",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/2019-07-17_SG_Dynamo_Dresden_vs._Paris_Saint-Germain_by_Sandro_Halank%E2%80%93157_%28cropped%29.jpg/250px-2019-07-17_SG_Dynamo_Dresden_vs._Paris_Saint-Germain_by_Sandro_Halank%E2%80%93157_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/2019-07-17_SG_Dynamo_Dresden_vs._Paris_Saint-Germain_by_Sandro_Halank%E2%80%93157_%28cropped%29.jpg/120px-2019-07-17_SG_Dynamo_Dresden_vs._Paris_Saint-Germain_by_Sandro_Halank%E2%80%93157_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 1"
                     ]
@@ -23307,7 +23310,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Junior Adamu",
                     "id": "305957",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/FC_RB_Salzburg_gegen_FK_Austria_Wien_%282022-04-24%29_40.jpg/250px-FC_RB_Salzburg_gegen_FK_Austria_Wien_%282022-04-24%29_40.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/FC_RB_Salzburg_gegen_FK_Austria_Wien_%282022-04-24%29_40.jpg/120px-FC_RB_Salzburg_gegen_FK_Austria_Wien_%282022-04-24%29_40.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -23329,7 +23332,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Angelo Stiller",
                     "id": "290232",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Angelo_Stiller_Ecuador_v_Germany_25_June_2026-233_%28cropped%29.jpg/250px-Angelo_Stiller_Ecuador_v_Germany_25_June_2026-233_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Angelo_Stiller_Ecuador_v_Germany_25_June_2026-233_%28cropped%29.jpg/120px-Angelo_Stiller_Ecuador_v_Germany_25_June_2026-233_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -23379,7 +23382,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-tor-nap-20261122",
           "espnId": "401875067",
           "sport": "soccer",
@@ -23658,7 +23661,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Kevin De Bruyne",
                     "id": "134947",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg/250px-Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg/120px-Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -23680,7 +23683,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Ché Adams",
                     "id": "213725",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Che_Adams_Scotland_v_Bolivia_6_June_2026-37_%28cropped%29.jpg/250px-Che_Adams_Scotland_v_Bolivia_6_June_2026-37_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Che_Adams_Scotland_v_Bolivia_6_June_2026-37_%28cropped%29.jpg/120px-Che_Adams_Scotland_v_Bolivia_6_June_2026-37_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -23738,7 +23741,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-cel-rma-20261122",
           "espnId": "401882798",
           "sport": "soccer",
@@ -24017,7 +24020,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Kylian Mbappé",
                     "id": "231388",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg/250px-Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg/120px-Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 13"
                     ]
@@ -24025,7 +24028,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Arda Güler",
                     "id": "310452",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Arda_G%C3%BCler_2025_%28cropped%29.jpg/250px-Arda_G%C3%BCler_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Arda_G%C3%BCler_2025_%28cropped%29.jpg/120px-Arda_G%C3%BCler_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 4"
                     ]
@@ -24039,7 +24042,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Ferran Jutglà",
                     "id": "279904",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Ferran_Jutgl%C3%A0_-_UE_Sant_Andreu.jpg/250px-Ferran_Jutgl%C3%A0_-_UE_Sant_Andreu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Ferran_Jutgl%C3%A0_-_UE_Sant_Andreu.jpg/120px-Ferran_Jutgl%C3%A0_-_UE_Sant_Andreu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2"
                     ]
@@ -24097,7 +24100,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-ven-juv-20261122",
           "espnId": "401875008",
           "sport": "soccer",
@@ -24384,7 +24387,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Randal Kolo Muani",
                     "id": "252971",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Randal_Kolo_Muani_2020.jpg/250px-Randal_Kolo_Muani_2020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Randal_Kolo_Muani_2020.jpg/120px-Randal_Kolo_Muani_2020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -24443,7 +24446,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-vil-bar-20261122",
           "espnId": "401882804",
           "sport": "soccer",
@@ -24722,7 +24725,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Raphinha",
                     "id": "231050",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg/250px-Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg/120px-Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 15"
                     ]
@@ -24730,7 +24733,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Lamine Yamal",
                     "id": "362150",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Lamine_Yamal_France_v_Spain_7.24.26-142.jpg/250px-Lamine_Yamal_France_v_Spain_7.24.26-142.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Lamine_Yamal_France_v_Spain_7.24.26-142.jpg/120px-Lamine_Yamal_France_v_Spain_7.24.26-142.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 8"
                     ]
@@ -24744,7 +24747,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Georges Mikautadze",
                     "id": "300002",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Mikautadze_asse_ol_2425.png/250px-Mikautadze_asse_ol_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Mikautadze_asse_ol_2425.png/120px-Mikautadze_asse_ol_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -24802,7 +24805,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-bha-hul-20261122",
           "espnId": "401879234",
           "sport": "soccer",
@@ -25081,7 +25084,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Mohamed Belloumi",
                     "id": "320417",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Mohamed_Belloumi_2026.jpg/250px-Mohamed_Belloumi_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Mohamed_Belloumi_2026.jpg/120px-Mohamed_Belloumi_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -25089,7 +25092,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Oliver McBurnie",
                     "id": "193010",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Oli_McBurnie_17102026_%283%29.jpg/250px-Oli_McBurnie_17102026_%283%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Oli_McBurnie_17102026_%283%29.jpg/120px-Oli_McBurnie_17102026_%283%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -25103,7 +25106,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Pascal Gross",
                     "id": "132659",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Pascal_Gross_Ecuador_v_Germany_25_June_2026-065.jpg/250px-Pascal_Gross_Ecuador_v_Germany_25_June_2026-065.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Pascal_Gross_Ecuador_v_Germany_25_June_2026-065.jpg/120px-Pascal_Gross_Ecuador_v_Germany_25_June_2026-065.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4",
                       "도움 4"
@@ -25154,7 +25157,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-gen-sas-20261122",
           "espnId": "401874960",
           "sport": "soccer",
@@ -25441,7 +25444,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Nemanja Matic",
                     "id": "135743",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Nemanja_Mati%C4%87_2018_%28cropped%29.jpg/250px-Nemanja_Mati%C4%87_2018_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Nemanja_Mati%C4%87_2018_%28cropped%29.jpg/120px-Nemanja_Mati%C4%87_2018_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -25513,7 +25516,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                                {
           "id": "soccer-udi-bol-20261122",
           "espnId": "401875047",
           "sport": "soccer",
@@ -25792,7 +25795,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Federico Bernardeschi",
                     "id": "180956",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/180956.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F180956.png&w=120&h=120&scale=crop",
                     "stats": [
                       "득점 3"
                     ]
@@ -25800,7 +25803,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Juan Miranda",
                     "id": "261616",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Juan_Miranda_031019.jpg/250px-Juan_Miranda_031019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Juan_Miranda_031019.jpg/120px-Juan_Miranda_031019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 5"
                     ]
@@ -25814,7 +25817,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Jurgen Ekkelenkamp",
                     "id": "270817",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/270817.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F270817.png&w=120&h=120&scale=crop",
                     "stats": [
                       "득점 3"
                     ]
@@ -25822,7 +25825,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Hassane Kamara",
                     "id": "193919",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Lens_-_Nice_%2823-01-2021%29_51.jpg/250px-Lens_-_Nice_%2823-01-2021%29_51.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Lens_-_Nice_%2823-01-2021%29_51.jpg/120px-Lens_-_Nice_%2823-01-2021%29_51.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -25872,7 +25875,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-m05-fca-20261122",
           "espnId": "401884733",
           "sport": "soccer",
@@ -26151,7 +26154,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Michael Gregoritsch",
                     "id": "146804",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Michael_Gregoritsch_U21_Austria_vs._Albania_2014-03-05_01.jpg/250px-Michael_Gregoritsch_U21_Austria_vs._Albania_2014-03-05_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Michael_Gregoritsch_U21_Austria_vs._Albania_2014-03-05_01.jpg/120px-Michael_Gregoritsch_U21_Austria_vs._Albania_2014-03-05_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 5"
                     ]
@@ -26173,7 +26176,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Phillip Tietz",
                     "id": "234376",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/PhillipTietz.jpg/250px-PhillipTietz.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/PhillipTietz.jpg/120px-PhillipTietz.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 6"
                     ]
@@ -26181,7 +26184,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Sheraldo Becker",
                     "id": "195027",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Sheraldo_Becker_%282018%29.jpg/250px-Sheraldo_Becker_%282018%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Sheraldo_Becker_%282018%29.jpg/120px-Sheraldo_Becker_%282018%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 4"
                     ]
@@ -27896,7 +27899,7 @@ window.CLUTCH_DATA = {
       games: [
 
         /* SOCCER-AUTO 2026-11-23 START */
-                {
+                        {
           "id": "soccer-rso-rac-20261123",
           "espnId": "401882800",
           "sport": "soccer",
@@ -28175,7 +28178,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Yassir Zabiri",
                     "id": "390389",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Yassir_Zabiri_%28cropped%29.jpg/250px-Yassir_Zabiri_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Yassir_Zabiri_%28cropped%29.jpg/120px-Yassir_Zabiri_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 9"
                     ]
@@ -28197,7 +28200,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Luka Sucic",
                     "id": "306263",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Luka_Sucic_Croatia_v_Portugal_2_July_2026-062.jpg/250px-Luka_Sucic_Croatia_v_Portugal_2_July_2026-062.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Luka_Sucic_Croatia_v_Portugal_2_July_2026-062.jpg/120px-Luka_Sucic_Croatia_v_Portugal_2_July_2026-062.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -28205,7 +28208,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Carlos Soler",
                     "id": "235072",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Carlos_Soler_2020_%28cropped%29.png/250px-Carlos_Soler_2020_%28cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Carlos_Soler_2020_%28cropped%29.png/120px-Carlos_Soler_2020_%28cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -28255,7 +28258,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-hsv-svw-20261123",
           "espnId": "401884730",
           "sport": "soccer",
@@ -28519,7 +28522,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Niclas Füllkrug",
                     "id": "170257",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/NiclasF%C3%BCllkrug_%28cropped%29.jpg/250px-NiclasF%C3%BCllkrug_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/NiclasF%C3%BCllkrug_%28cropped%29.jpg/120px-NiclasF%C3%BCllkrug_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 9"
                     ]
@@ -28527,7 +28530,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Marco Grüll",
                     "id": "305853",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Austria_national_under-21_football_team_-_Teamcamp_October_2019_%2831%29.jpg/250px-Austria_national_under-21_football_team_-_Teamcamp_October_2019_%2831%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Austria_national_under-21_football_team_-_Teamcamp_October_2019_%2831%29.jpg/120px-Austria_national_under-21_football_team_-_Teamcamp_October_2019_%2831%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 6"
                     ]
@@ -28541,7 +28544,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Miro Muheim",
                     "id": "243626",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/2025-05-16_Hamburger_SV_Miro_Muheim_%28cropped%29.jpg/250px-2025-05-16_Hamburger_SV_Miro_Muheim_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/2025-05-16_Hamburger_SV_Miro_Muheim_%28cropped%29.jpg/120px-2025-05-16_Hamburger_SV_Miro_Muheim_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -28598,7 +28601,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-man-liv-20261123",
           "espnId": "401878755",
           "sport": "soccer",
@@ -28877,7 +28880,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Alexander Isak",
                     "id": "235662",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg/250px-Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg/120px-Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 7"
                     ]
@@ -28885,7 +28888,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Florian Wirtz",
                     "id": "303748",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg/250px-Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg/120px-Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -28899,7 +28902,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Bryan Mbeumo",
                     "id": "271170",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bryan_Mbeumo_00-02-31.18.png/250px-Bryan_Mbeumo_00-02-31.18.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bryan_Mbeumo_00-02-31.18.png/120px-Bryan_Mbeumo_00-02-31.18.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -28907,7 +28910,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Matheus Cunha",
                     "id": "259902",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg/250px-Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg/120px-Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -28957,7 +28960,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-fro-mil-20261123",
           "espnId": "401874989",
           "sport": "soccer",
@@ -29236,7 +29239,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Adrien Rabiot",
                     "id": "176203",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Adrien_Rabiot_France_v_Senegal_16_June_2026-253.jpg/250px-Adrien_Rabiot_France_v_Senegal_16_June_2026-253.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Adrien_Rabiot_France_v_Senegal_16_June_2026-253.jpg/120px-Adrien_Rabiot_France_v_Senegal_16_June_2026-253.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 5",
                       "도움 4"
@@ -29308,7 +29311,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-mcf-osa-20261123",
           "espnId": "401882801",
           "sport": "soccer",
@@ -29587,7 +29590,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Ante Budimir",
                     "id": "207288",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg/250px-Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg/120px-Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 8"
                     ]
@@ -29595,7 +29598,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Moi Gómez",
                     "id": "169089",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Moi_G%C3%B3mez.jpg/250px-Moi_G%C3%B3mez.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Moi_G%C3%B3mez.jpg/120px-Moi_G%C3%B3mez.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -29666,7 +29669,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-int-ata-20261123",
           "espnId": "401875001",
           "sport": "soccer",
@@ -29945,7 +29948,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Nikola Krstovic",
                     "id": "258158",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Nikola_Krstovi%C4%87_%28cropped%29.jpg/250px-Nikola_Krstovi%C4%87_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Nikola_Krstovi%C4%87_%28cropped%29.jpg/120px-Nikola_Krstovi%C4%87_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 7"
                     ]
@@ -29953,7 +29956,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Charles De Ketelaere",
                     "id": "296319",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Charles_De_Ketelaere_USMNT_v_Belgium_Mar_28_2026-76_%28cropped%29.jpg/250px-Charles_De_Ketelaere_USMNT_v_Belgium_Mar_28_2026-76_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Charles_De_Ketelaere_USMNT_v_Belgium_Mar_28_2026-76_%28cropped%29.jpg/120px-Charles_De_Ketelaere_USMNT_v_Belgium_Mar_28_2026-76_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -29967,7 +29970,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Marcus Thuram",
                     "id": "217331",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Marcus_Thuram_France_v_Senegal_16_June_2026-261_%28cropped%29.jpg/250px-Marcus_Thuram_France_v_Senegal_16_June_2026-261_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Marcus_Thuram_France_v_Senegal_16_June_2026-261_%28cropped%29.jpg/120px-Marcus_Thuram_France_v_Senegal_16_June_2026-261_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 6"
                     ]
@@ -29975,7 +29978,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Andy Diouf",
                     "id": "319167",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Andy_Diouf_ASSE_RCL_2425.jpg/250px-Andy_Diouf_ASSE_RCL_2425.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Andy_Diouf_ASSE_RCL_2425.jpg/120px-Andy_Diouf_ASSE_RCL_2425.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 4"
                     ]
@@ -30025,7 +30028,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-atm-get-20261123",
           "espnId": "401882803",
           "sport": "soccer",
@@ -30319,7 +30322,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Álex Baena",
                     "id": "297373",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Alex_Baena_France_v_Spain_7.24.26-024.jpg/250px-Alex_Baena_France_v_Spain_7.24.26-024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Alex_Baena_France_v_Spain_7.24.26-024.jpg/120px-Alex_Baena_France_v_Spain_7.24.26-024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 5",
                       "도움 3"
@@ -32911,7 +32914,7 @@ window.CLUTCH_DATA = {
         /* VOLLEY-AUTO 2026-11-24 END */,
 
         /* SOCCER-AUTO 2026-11-24 START */
-                {
+                        {
           "id": "soccer-fio-mon-20261124",
           "espnId": "401875009",
           "sport": "soccer",
@@ -33190,7 +33193,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Gustavo Varela",
                     "id": "384482",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Gustavo_Varela%2C_Monza_vs._Sassuolo_2026-09-18_%28cropped%29.jpg/250px-Gustavo_Varela%2C_Monza_vs._Sassuolo_2026-09-18_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Gustavo_Varela%2C_Monza_vs._Sassuolo_2026-09-18_%28cropped%29.jpg/120px-Gustavo_Varela%2C_Monza_vs._Sassuolo_2026-09-18_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 9"
                     ]
@@ -33212,7 +33215,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Franco Mastantuono",
                     "id": "376473",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Franco_Mastantuono_in_2025_%28cropped%29.jpg/250px-Franco_Mastantuono_in_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Franco_Mastantuono_in_2025_%28cropped%29.jpg/120px-Franco_Mastantuono_in_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -33220,7 +33223,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Cher Ndour",
                     "id": "360061",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Cher_Ndour.jpg/250px-Cher_Ndour.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Cher_Ndour.jpg/120px-Cher_Ndour.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -33628,7 +33631,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-eve-bre-20261124",
           "espnId": "401879237",
           "sport": "soccer",
@@ -33907,7 +33910,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Kevin Schade",
                     "id": "310958",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Kevin_Schade_02082025_%281%29.jpg/250px-Kevin_Schade_02082025_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Kevin_Schade_02082025_%281%29.jpg/120px-Kevin_Schade_02082025_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -33915,7 +33918,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Igor Thiago",
                     "id": "301894",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Igor_Thiago_Brazil_V_Morocco_13_June_2026-120_%28cropped%29.jpg/250px-Igor_Thiago_Brazil_V_Morocco_13_June_2026-120_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Igor_Thiago_Brazil_V_Morocco_13_June_2026-120_%28cropped%29.jpg/120px-Igor_Thiago_Brazil_V_Morocco_13_June_2026-120_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -33937,7 +33940,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "James Tarkowski",
                     "id": "155226",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/James_Tarkowski_%28Oct_2017%29.jpg/250px-James_Tarkowski_%28Oct_2017%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/James_Tarkowski_%28Oct_2017%29.jpg/120px-James_Tarkowski_%28Oct_2017%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -37375,7 +37378,7 @@ window.CLUTCH_DATA = {
         /* VOLLEY-AUTO 2026-11-25 END */,
 
         /* SOCCER-AUTO 2026-11-25 START */
-                {
+                        {
           "id": "soccer-avl-gal-20261125",
           "espnId": "401915300",
           "sport": "soccer",
@@ -37654,7 +37657,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Alexey Batrakov",
                     "id": "355113",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Aleksey_Batrakov.jpg/250px-Aleksey_Batrakov.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Aleksey_Batrakov.jpg/120px-Aleksey_Batrakov.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -37662,7 +37665,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Davinson Sánchez",
                     "id": "197105",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/D%C3%A1vinson_S%C3%A1nchez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg/250px-D%C3%A1vinson_S%C3%A1nchez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/D%C3%A1vinson_S%C3%A1nchez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg/120px-D%C3%A1vinson_S%C3%A1nchez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -37676,7 +37679,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Nicolas Jackson",
                     "id": "308524",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg/250px-Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg/120px-Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -37684,7 +37687,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Pau Torres",
                     "id": "251100",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Pau_Torres_April_2026_%28cropped%29.jpg/250px-Pau_Torres_April_2026_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Pau_Torres_April_2026_%28cropped%29.jpg/120px-Pau_Torres_April_2026_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -37699,7 +37702,7 @@ window.CLUTCH_DATA = {
             "note": "일정·전적·순위는 ESPN 2026-11-20 22:03 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다."
           }
         },
-                {
+                        {
           "id": "soccer-las-bodo-20261125",
           "espnId": "401915380",
           "sport": "soccer",
@@ -38000,7 +38003,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Kasper Jørgensen",
                     "id": "286853",
-                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_RB_Salzburg_gegen_LASK_%282026-05-10_Bundesliga_%29_20.jpg?width=200",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_RB_Salzburg_gegen_LASK_%282026-05-10_Bundesliga_%29_20.jpg?width=120",
                     "stats": [
                       "득점 2"
                     ]
@@ -38008,7 +38011,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Yvan Dibango",
                     "id": "365165",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/%D0%A3%D0%9F%D0%9B._%C2%AB%D0%9A%D1%80%D0%B8%D0%B2%D0%B1%D0%B0%D1%81%C2%BB_%E2%80%94_%C2%AB%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D0%B8%C2%BB_%E2%80%94_2-0_%E2%80%94_2994_%28cropped%29.jpg/250px-%D0%A3%D0%9F%D0%9B._%C2%AB%D0%9A%D1%80%D0%B8%D0%B2%D0%B1%D0%B0%D1%81%C2%BB_%E2%80%94_%C2%AB%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D0%B8%C2%BB_%E2%80%94_2-0_%E2%80%94_2994_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/%D0%A3%D0%9F%D0%9B._%C2%AB%D0%9A%D1%80%D0%B8%D0%B2%D0%B1%D0%B0%D1%81%C2%BB_%E2%80%94_%C2%AB%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D0%B8%C2%BB_%E2%80%94_2-0_%E2%80%94_2994_%28cropped%29.jpg/120px-%D0%A3%D0%9F%D0%9B._%C2%AB%D0%9A%D1%80%D0%B8%D0%B2%D0%B1%D0%B0%D1%81%C2%BB_%E2%80%94_%C2%AB%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D0%B8%C2%BB_%E2%80%94_2-0_%E2%80%94_2994_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -38023,7 +38026,7 @@ window.CLUTCH_DATA = {
             "note": "일정·전적·순위는 ESPN 2026-11-20 22:03 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다."
           }
         },
-                {
+                                {
           "id": "soccer-aek-como-20261125",
           "espnId": "401915296",
           "sport": "soccer",
@@ -38302,7 +38305,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Tasos Douvikas",
                     "id": "262071",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/262071.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F262071.png&w=120&h=120&scale=crop",
                     "stats": [
                       "득점 6"
                     ]
@@ -38310,7 +38313,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Nico Paz",
                     "id": "337970",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Nico_Paz_Argentina_v_Spain_19_July_2026-057.jpg/250px-Nico_Paz_Argentina_v_Spain_19_July_2026-057.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Nico_Paz_Argentina_v_Spain_19_July_2026-057.jpg/120px-Nico_Paz_Argentina_v_Spain_19_July_2026-057.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 5"
                     ]
@@ -38339,7 +38342,7 @@ window.CLUTCH_DATA = {
             "note": "일정·전적·순위는 ESPN 2026-11-20 22:03 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다."
           }
         },
-                {
+                                {
           "id": "soccer-bet-slb-20261125",
           "espnId": "401915297",
           "sport": "soccer",
@@ -38626,7 +38629,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Tigran Barseghyan",
                     "id": "235045",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Tigran_Barseghyan_YantsImages_-_Asatur_Yesayants_637_%28cropped%29.jpg/250px-Tigran_Barseghyan_YantsImages_-_Asatur_Yesayants_637_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Tigran_Barseghyan_YantsImages_-_Asatur_Yesayants_637_%28cropped%29.jpg/120px-Tigran_Barseghyan_YantsImages_-_Asatur_Yesayants_637_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -38640,7 +38643,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Isco",
                     "id": "143564",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Isco_2018.jpg/250px-Isco_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Isco_2018.jpg/120px-Isco_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2"
                     ]
@@ -38648,7 +38651,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Antony",
                     "id": "281558",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/281558.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F281558.png&w=120&h=120&scale=crop",
                     "stats": [
                       "도움 1"
                     ]
@@ -38663,7 +38666,7 @@ window.CLUTCH_DATA = {
             "note": "일정·전적·순위는 ESPN 2026-11-20 22:03 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다."
           }
         },
-                {
+                        {
           "id": "soccer-dor-ars-20261125",
           "espnId": "401915295",
           "sport": "soccer",
@@ -38942,7 +38945,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Eberechi Eze",
                     "id": "251400",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Eberechi_Eze_England_v_Ghana_23_June_2026-039.jpg/250px-Eberechi_Eze_England_v_Ghana_23_June_2026-039.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Eberechi_Eze_England_v_Ghana_23_June_2026-039.jpg/120px-Eberechi_Eze_England_v_Ghana_23_June_2026-039.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2"
                     ]
@@ -38950,7 +38953,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Viktor Gyökeres",
                     "id": "258906",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Viktor_Gyokeres_France_v_Sweden_6.30.26-123_%28cropped%29.jpg/250px-Viktor_Gyokeres_France_v_Sweden_6.30.26-123_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Viktor_Gyokeres_France_v_Sweden_6.30.26-123_%28cropped%29.jpg/120px-Viktor_Gyokeres_France_v_Sweden_6.30.26-123_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -38964,7 +38967,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Serhou Guirassy",
                     "id": "186381",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Serhou_Guirassy_2024_%28cropped%29.jpg/250px-Serhou_Guirassy_2024_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Serhou_Guirassy_2024_%28cropped%29.jpg/120px-Serhou_Guirassy_2024_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -38972,7 +38975,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Fábio Silva",
                     "id": "291629",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Fabio_Silva_%28cropped%29.jpg/250px-Fabio_Silva_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Fabio_Silva_%28cropped%29.jpg/120px-Fabio_Silva_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -39022,7 +39025,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                                {
           "id": "soccer-fcp-fey-20261125",
           "espnId": "401915294",
           "sport": "soccer",
@@ -39301,7 +39304,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Gjivai Zechiël",
                     "id": "365021",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/365021.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F365021.png&w=120&h=120&scale=crop",
                     "stats": [
                       "득점 1"
                     ]
@@ -39309,7 +39312,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Luciano Valente",
                     "id": "319296",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/319296.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F319296.png&w=120&h=120&scale=crop",
                     "stats": [
                       "도움 1"
                     ]
@@ -39331,7 +39334,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Pepê",
                     "id": "256909",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Pep%C3%AA_-_Porto_-_2023.png/250px-Pep%C3%AA_-_Porto_-_2023.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Pep%C3%AA_-_Porto_-_2023.png/120px-Pep%C3%AA_-_Porto_-_2023.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -39363,7 +39366,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-nap-mnc-20261125",
           "espnId": "401915379",
           "sport": "soccer",
@@ -39642,7 +39645,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Erling Haaland",
                     "id": "253989",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg/250px-Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg/120px-Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 5"
                     ]
@@ -39650,7 +39653,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Iliman Ndiaye",
                     "id": "268641",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Iliman_Ndiaye_France_v_Senegal_16_June_2026-243.jpg/250px-Iliman_Ndiaye_France_v_Senegal_16_June_2026-243.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Iliman_Ndiaye_France_v_Senegal_16_June_2026-243.jpg/120px-Iliman_Ndiaye_France_v_Senegal_16_June_2026-243.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -39664,7 +39667,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Scott McTominay",
                     "id": "255850",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Scott_McTominay_Scotland_v_Bolivia_6_June_2026-41.jpg/250px-Scott_McTominay_Scotland_v_Bolivia_6_June_2026-41.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Scott_McTominay_Scotland_v_Bolivia_6_June_2026-41.jpg/120px-Scott_McTominay_Scotland_v_Bolivia_6_June_2026-41.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -39672,7 +39675,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Kevin De Bruyne",
                     "id": "134947",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg/250px-Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg/120px-Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -39722,7 +39725,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                                {
           "id": "soccer-psv-rma-20261125",
           "espnId": "401915298",
           "sport": "soccer",
@@ -40001,7 +40004,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Kylian Mbappé",
                     "id": "231388",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg/250px-Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg/120px-Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -40009,7 +40012,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Brahim Díaz",
                     "id": "246532",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Brahim_Diaz_Morocco_v_Norway_7_June_2026-36_%28cropped_3-4%29.jpg/250px-Brahim_Diaz_Morocco_v_Norway_7_June_2026-36_%28cropped_3-4%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Brahim_Diaz_Morocco_v_Norway_7_June_2026-36_%28cropped_3-4%29.jpg/120px-Brahim_Diaz_Morocco_v_Norway_7_June_2026-36_%28cropped_3-4%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -40023,7 +40026,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Kodai Sano",
                     "id": "341715",
-                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kodai_Sano.JPG?width=200",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kodai_Sano.JPG?width=120",
                     "stats": [
                       "득점 1"
                     ]
@@ -40031,7 +40034,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Armando Obispo",
                     "id": "245918",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/245918.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F245918.png&w=120&h=120&scale=crop",
                     "stats": [
                       "도움 1"
                     ]
@@ -40046,7 +40049,7 @@ window.CLUTCH_DATA = {
             "note": "일정·전적·순위는 ESPN 2026-11-20 22:03 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다."
           }
         },
-                {
+                        {
           "id": "soccer-rcl-rbl-20261125",
           "espnId": "401915299",
           "sport": "soccer",
@@ -40325,7 +40328,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Ridle Baku",
                     "id": "258963",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Ridle_Baku_2020-09-20_Fu%C3%9Fball%2C_M%C3%A4nner%2C_1._Bundesliga%2C_RB_Leipzig_-_1._FSV_Mainz_05_1DX_1394_by_Stepro_%28cropped%29.jpg/250px-Ridle_Baku_2020-09-20_Fu%C3%9Fball%2C_M%C3%A4nner%2C_1._Bundesliga%2C_RB_Leipzig_-_1._FSV_Mainz_05_1DX_1394_by_Stepro_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Ridle_Baku_2020-09-20_Fu%C3%9Fball%2C_M%C3%A4nner%2C_1._Bundesliga%2C_RB_Leipzig_-_1._FSV_Mainz_05_1DX_1394_by_Stepro_%28cropped%29.jpg/120px-Ridle_Baku_2020-09-20_Fu%C3%9Fball%2C_M%C3%A4nner%2C_1._Bundesliga%2C_RB_Leipzig_-_1._FSV_Mainz_05_1DX_1394_by_Stepro_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 1"
                     ]
@@ -40333,7 +40336,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Christopher Nkunku",
                     "id": "222176",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3321_by_Stepro_%28cropped%29.jpg/250px-2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3321_by_Stepro_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3321_by_Stepro_%28cropped%29.jpg/120px-2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3321_by_Stepro_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -40347,7 +40350,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Ruben Aguilar",
                     "id": "181946",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Aguilar_rcl_asse_2425.png/250px-Aguilar_rcl_asse_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Aguilar_rcl_asse_2425.png/120px-Aguilar_rcl_asse_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2"
                     ]
@@ -40355,7 +40358,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Florian Thauvin",
                     "id": "156898",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/FRA-ARG_%286%29.jpg/250px-FRA-ARG_%286%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/FRA-ARG_%286%29.jpg/120px-FRA-ARG_%286%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -41806,7 +41809,7 @@ window.CLUTCH_DATA = {
         /* VOLLEY-AUTO 2026-11-26 END */,
 
         /* SOCCER-AUTO 2026-11-26 START */
-                {
+                        {
           "id": "soccer-bar-sab-20261126",
           "espnId": "401915378",
           "sport": "soccer",
@@ -42085,7 +42088,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Aden McCarthy",
                     "id": "332563",
-                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aden_McCarthy_in_October_2026%2C_as_a_player_of_Sabah_04.jpg?width=200",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aden_McCarthy_in_October_2026%2C_as_a_player_of_Sabah_04.jpg?width=120",
                     "stats": [
                       "득점 1"
                     ]
@@ -42093,7 +42096,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Ivan Lepinjica",
                     "id": "260848",
-                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ivan_Lepinjica_in_October_2026%2C_as_a_player_of_Sabah_02.jpg?width=200",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ivan_Lepinjica_in_October_2026%2C_as_a_player_of_Sabah_02.jpg?width=120",
                     "stats": [
                       "도움 1"
                     ]
@@ -42107,7 +42110,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Raphinha",
                     "id": "231050",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg/250px-Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg/120px-Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -42115,7 +42118,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Lamine Yamal",
                     "id": "362150",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Lamine_Yamal_France_v_Spain_7.24.26-142.jpg/250px-Lamine_Yamal_France_v_Spain_7.24.26-142.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Lamine_Yamal_France_v_Spain_7.24.26-142.jpg/120px-Lamine_Yamal_France_v_Spain_7.24.26-142.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 4"
                     ]
@@ -42130,7 +42133,7 @@ window.CLUTCH_DATA = {
             "note": "일정·전적·순위는 ESPN 2026-11-20 22:03 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다."
           }
         },
-                {
+                        {
           "id": "soccer-vil-slp-20261126",
           "espnId": "401915293",
           "sport": "soccer",
@@ -42437,7 +42440,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Ayoze Pérez",
                     "id": "192133",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Ayoze_Perez_20150710.jpg/250px-Ayoze_Perez_20150710.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Ayoze_Perez_20150710.jpg/120px-Ayoze_Perez_20150710.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -42469,7 +42472,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-fen-shk-20261126",
           "espnId": "401915375",
           "sport": "soccer",
@@ -42768,7 +42771,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Archie Brown",
                     "id": "320982",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Archie_Brown_3_Fenerbah%C3%A7e_20260805_%289%29_%28cropped%29.JPG/250px-Archie_Brown_3_Fenerbah%C3%A7e_20260805_%289%29_%28cropped%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Archie_Brown_3_Fenerbah%C3%A7e_20260805_%289%29_%28cropped%29.JPG/120px-Archie_Brown_3_Fenerbah%C3%A7e_20260805_%289%29_%28cropped%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2",
                       "도움 1"
@@ -42807,7 +42810,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-liv-bru-20261126",
           "espnId": "401915292",
           "sport": "soccer",
@@ -43094,7 +43097,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Joaquin Seys",
                     "id": "363068",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Joaquin_Seys_Belgium_v_USA_6_July_2026-033.jpg/250px-Joaquin_Seys_Belgium_v_USA_6_July_2026-033.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Joaquin_Seys_Belgium_v_USA_6_July_2026-033.jpg/120px-Joaquin_Seys_Belgium_v_USA_6_July_2026-033.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -43108,7 +43111,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Alexis Mac Allister",
                     "id": "249299",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Alexis_Mac_Allister_Argentina_v_Spain_19_July_2026-162_%28cropped%29.jpg/250px-Alexis_Mac_Allister_Argentina_v_Spain_19_July_2026-162_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Alexis_Mac_Allister_Argentina_v_Spain_19_July_2026-162_%28cropped%29.jpg/120px-Alexis_Mac_Allister_Argentina_v_Spain_19_July_2026-162_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -43116,7 +43119,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Kostas Tsimikas",
                     "id": "226177",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/2022-07-21_Fu%C3%9Fball%2C_M%C3%A4nner%2CFreundschaftsspiel%2C_RB_Leipzig_-_FC_Liverpool_1DX_2184_by_Stepro.jpg/250px-2022-07-21_Fu%C3%9Fball%2C_M%C3%A4nner%2CFreundschaftsspiel%2C_RB_Leipzig_-_FC_Liverpool_1DX_2184_by_Stepro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/2022-07-21_Fu%C3%9Fball%2C_M%C3%A4nner%2CFreundschaftsspiel%2C_RB_Leipzig_-_FC_Liverpool_1DX_2184_by_Stepro.jpg/120px-2022-07-21_Fu%C3%9Fball%2C_M%C3%A4nner%2CFreundschaftsspiel%2C_RB_Leipzig_-_FC_Liverpool_1DX_2184_by_Stepro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -43131,7 +43134,7 @@ window.CLUTCH_DATA = {
             "note": "일정·전적·순위는 ESPN 2026-11-20 22:03 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다."
           }
         },
-                {
+                        {
           "id": "soccer-man-scp-20261126",
           "espnId": "401915373",
           "sport": "soccer",
@@ -43410,7 +43413,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Luis Suárez",
                     "id": "272722",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Luis_Javier_Su%C3%A1rez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg/250px-Luis_Javier_Su%C3%A1rez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Luis_Javier_Su%C3%A1rez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg/120px-Luis_Javier_Su%C3%A1rez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -43432,7 +43435,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Matheus Cunha",
                     "id": "259902",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg/250px-Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg/120px-Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
                     ]
@@ -43440,7 +43443,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Bryan Mbeumo",
                     "id": "271170",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bryan_Mbeumo_00-02-31.18.png/250px-Bryan_Mbeumo_00-02-31.18.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bryan_Mbeumo_00-02-31.18.png/120px-Bryan_Mbeumo_00-02-31.18.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -43472,7 +43475,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-mun-lill-20261126",
           "espnId": "401915377",
           "sport": "soccer",
@@ -43759,7 +43762,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Hákon Haraldsson",
                     "id": "318779",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/RC_Lens_-_Lille_OSC_%2808-10-2023%29_17_%28cropped%29.jpg/250px-RC_Lens_-_Lille_OSC_%2808-10-2023%29_17_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/RC_Lens_-_Lille_OSC_%2808-10-2023%29_17_%28cropped%29.jpg/120px-RC_Lens_-_Lille_OSC_%2808-10-2023%29_17_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -43773,7 +43776,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Harry Kane",
                     "id": "142200",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Harry_Kane_England_v_Ghana_23_June_2026-024_%28cropped%29.jpg/250px-Harry_Kane_England_v_Ghana_23_June_2026-024_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Harry_Kane_England_v_Ghana_23_June_2026-024_%28cropped%29.jpg/120px-Harry_Kane_England_v_Ghana_23_June_2026-024_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4",
                       "도움 3"
@@ -43806,7 +43809,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                                {
           "id": "soccer-roma-psg-20261126",
           "espnId": "401915374",
           "sport": "soccer",
@@ -44085,7 +44088,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Fabián Ruiz",
                     "id": "214596",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Fabian_Ruiz_Argentina_v_Spain_19_July_2026-315_%28cropped%29.jpg/250px-Fabian_Ruiz_Argentina_v_Spain_19_July_2026-315_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Fabian_Ruiz_Argentina_v_Spain_19_July_2026-315_%28cropped%29.jpg/120px-Fabian_Ruiz_Argentina_v_Spain_19_July_2026-315_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
                     ]
@@ -44093,7 +44096,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Maghnes Akliouche",
                     "id": "329690",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Maghnes_Akliouche_France_v_Senegal_16_June_2026-512.jpg/250px-Maghnes_Akliouche_France_v_Senegal_16_June_2026-512.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Maghnes_Akliouche_France_v_Senegal_16_June_2026-512.jpg/120px-Maghnes_Akliouche_France_v_Senegal_16_June_2026-512.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
                     ]
@@ -44107,7 +44110,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Donyell Malen",
                     "id": "259481",
-                    "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/259481.png",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F259481.png&w=120&h=120&scale=crop",
                     "stats": [
                       "득점 4",
                       "도움 2"
@@ -44134,7 +44137,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-                {
+                        {
           "id": "soccer-vfb-int-20261126",
           "espnId": "401915376",
           "sport": "soccer",
@@ -44413,7 +44416,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Carlos Augusto",
                     "id": "271769",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_15.jpg/250px-FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_15.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_15.jpg/120px-FC_Salzburg_gegen_Inter_Mailand_%28UEFA_Championsleague_2023-11-08%29_15.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2"
                     ]
@@ -44421,7 +44424,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Nicolò Barella",
                     "id": "204441",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Nicol%C3%B2_Barella_in_2021_%28cropped_2%29.jpg/250px-Nicol%C3%B2_Barella_in_2021_%28cropped_2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Nicol%C3%B2_Barella_in_2021_%28cropped_2%29.jpg/120px-Nicol%C3%B2_Barella_in_2021_%28cropped_2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -44443,7 +44446,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Deniz Undav",
                     "id": "273300",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Deniz_Undav_Ecuador_v_Germany_25_June_2026-203_%28cropped%29.jpg/250px-Deniz_Undav_Ecuador_v_Germany_25_June_2026-203_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Deniz_Undav_Ecuador_v_Germany_25_June_2026-203_%28cropped%29.jpg/120px-Deniz_Undav_Ecuador_v_Germany_25_June_2026-203_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -44458,7 +44461,7 @@ window.CLUTCH_DATA = {
             "note": "일정·전적·순위는 ESPN 2026-11-20 22:03 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다."
           }
         },
-                {
+                        {
           "id": "soccer-vfk-atm-20261126",
           "espnId": "401915291",
           "sport": "soccer",
@@ -44737,7 +44740,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Marcos Llorente",
                     "id": "206474",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Marcos_Llorente_France_v_Spain_7.24.26-020.jpg/250px-Marcos_Llorente_France_v_Spain_7.24.26-020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Marcos_Llorente_France_v_Spain_7.24.26-020.jpg/120px-Marcos_Llorente_France_v_Spain_7.24.26-020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 1"
                     ]
@@ -44745,7 +44748,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Julián Álvarez",
                     "id": "277206",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Julian_Alvarez_Argentina_v_Spain_19_July_2026-052_%28cropped%29.jpg/250px-Julian_Alvarez_Argentina_v_Spain_19_July_2026-052_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Julian_Alvarez_Argentina_v_Spain_19_July_2026-052_%28cropped%29.jpg/120px-Julian_Alvarez_Argentina_v_Spain_19_July_2026-052_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
                     ]
@@ -44759,7 +44762,7 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Zlatko Tripic",
                     "id": "164279",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Zlatko_Tripi%C4%87_10_Viking_FK_UECL_20250813_%285%29.jpg/250px-Zlatko_Tripi%C4%87_10_Viking_FK_UECL_20250813_%285%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Zlatko_Tripi%C4%87_10_Viking_FK_UECL_20250813_%285%29.jpg/120px-Zlatko_Tripi%C4%87_10_Viking_FK_UECL_20250813_%285%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 2",
                       "도움 3"

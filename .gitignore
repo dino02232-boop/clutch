@@ -1,0 +1,8 @@
+# 파이썬 캐시·실행 흔적
+tools/__pycache__/
+__pycache__/
+
+# ESPN/KOVO 응답 임시 캐시(자동 갱신이 러너에서 다시 받습니다).
+# 선수 사진 캐시만은 커밋해서 다음 갱신이 재사용합니다.
+tools/cache/*
+!tools/cache/player_photos.json

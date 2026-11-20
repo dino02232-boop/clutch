@@ -145,6 +145,24 @@ def wiki_page(name, lang="en"):
     }
 
 
+def _small(url):
+    """썸네일을 화면 크기(22~26px 원)에 맞는 120px 로 줄인다 — 모바일 데이터를 아긴다."""
+    if not url:
+        return url
+    url = re.sub(r"/\d+px-", "/120px-", url)
+    url = re.sub(r"([?&]width=)\d+", r"\g<1>120", url)
+    return url
+
+
+def _espn_small(url):
+    """ESPN headshot 원본 PNG(200KB 안팍)를 combiner 로 120px 로 받는다."""
+    m = re.match(r"(https://a\.espncdn\.com)(/i/headshots/[^?]+)$", url or "")
+    if not m:
+        return url
+    return (m.group(1) + "/combiner/i?img=" + urllib.parse.quote(m.group(2), safe="")
+            + "&w=120&h=120&scale=crop")
+
+
 def wikidata_p18(qid):
     """Wikidata P18 파일명 → 위키미디어 썸네일 URL."""
     if not qid:
@@ -157,7 +175,7 @@ def wikidata_p18(qid):
     for c in (d.get("claims") or {}).get("P18") or []:
         val = (((c.get("mainsnak") or {}).get("datavalue") or {}).get("value"))
         if isinstance(val, str) and val:
-            return ("https://commons.wikimedia.org/wiki/Special:FilePath/%s?width=200"
+            return ("https://commons.wikimedia.org/wiki/Special:FilePath/%s?width=120"
                     % urllib.parse.quote(val.replace(" ", "_")))
     return ""
 
@@ -422,7 +440,7 @@ def resolve(name, espn_photo="", club="", cache=None, refresh=False, quiet=True)
     photo, src, conf, title = "", "none", "", ""
     # 1) ESPN 이 실제로 살아 있으면 그대로 쓴다.
     if espn_photo and image_ok(espn_photo):
-        photo, src, conf = espn_photo, "espn", "espn"
+        photo, src, conf = _espn_small(espn_photo), "espn", "espn"
     else:
         page = None
         for lang in LANGS:
@@ -434,7 +452,7 @@ def resolve(name, espn_photo="", club="", cache=None, refresh=False, quiet=True)
                 page = p
                 conf = c
                 if p.get("thumb"):
-                    photo, src, title = p["thumb"], "wikipedia", p["title"]
+                    photo, src, title = _small(p["thumb"]), "wikipedia", p["title"]
                     break
                 # 문서는 맞는데 대표 사진이 없으면 Wikidata P18 을 본다.
                 p18 = wikidata_p18(p.get("qid"))
@@ -449,7 +467,7 @@ def resolve(name, espn_photo="", club="", cache=None, refresh=False, quiet=True)
                 conf = "club"
                 title = p["title"]
                 if p.get("thumb"):
-                    photo, src = p["thumb"], "wikipedia"
+                    photo, src = _small(p["thumb"]), "wikipedia"
                 else:
                     p18 = wikidata_p18(p.get("qid"))
                     if p18:
