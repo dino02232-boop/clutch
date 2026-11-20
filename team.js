@@ -242,7 +242,13 @@
   })(prof.streak);
   var venueRecord = prof.venueRecord || "";
   var last5 = pick("last5") || "";
-  var l5detail = Array.isArray(pick("last5Detail")) ? pick("last5Detail") : [];
+  // 최근 5경기 목록에는 아직 열리지 않은 경기가 섮여 오는 소스가 있다(KOVO 는 예정 경기를 0-0 으로 넣는다).
+  // 데이터 기준일 뒤 날짜는 결과가 있을 수 없으므로 목록에서 빼고, 남은 경기로 흐름을 섬는다.
+  var l5all = Array.isArray(pick("last5Detail")) ? pick("last5Detail") : [];
+  var dataDay = String(DATA.updatedAt || "").slice(0, 10);
+  var l5detail = dataDay ? l5all.filter(function (r) {
+    return !r || !r.date || String(r.date) <= dataDay;
+  }) : l5all;
   var cells = Array.isArray(pick("cells")) ? pick("cells") : [];
   var nums = Array.isArray(pick("nums")) ? pick("nums") : [];
   var injuries = Array.isArray(pick("injuries")) ? pick("injuries") : [];
@@ -299,7 +305,7 @@
       body += '<div class="tp-rec"><span class="streak ' + resClass(streak.indexOf("패") >= 0 ? "패" : "승") + '">' + esc(streak) + "</span></div>";
     }
     if (formHTML || last5) {
-      body += '<div class="tp-formrow"><span class="tp-lb">최근 5경기</span>' +
+      body += '<div class="tp-formrow"><span class="tp-lb">최근 ' + (formRes.length || 5) + "경기</span>" +
         (formHTML ? '<span class="tp-form">' + formHTML + "</span>" : "") +
         (last5 ? '<span class="tp-l5">' + esc(last5) + "</span>" : "") +
         (formHTML ? '<span class="tp-hint">왼쪽이 최신</span>' : "") +
