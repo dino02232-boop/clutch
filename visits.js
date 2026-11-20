@@ -16,6 +16,7 @@
   "use strict";
 
   var ENDPOINT = "https://countapi.mileshilliard.com/api/v1/hit/";
+  var READ = "https://countapi.mileshilliard.com/api/v1/get/";
   var PREFIX = "clutch_dino02232_site_";
   var ATTEMPTS = 3;          /* 카운터 서버가 잠깐 실패하면 다시 시도 */
 
@@ -68,6 +69,44 @@
     ping("total");
   }
 
+  /* 읽기는 숫자를 올리지 않습니다. 실패하면 아무것도 그리지 않습니다. */
+  function read(key) {
+    return fetch(READ + PREFIX + key, { cache: "no-store", credentials: "omit", referrerPolicy: "no-referrer" })
+      .then(function (res) {
+        if (!res.ok) return null;
+        return res.json();
+      })
+      .then(function (j) {
+        if (!j || j.value == null) return null;
+        var n = Number(j.value);
+        return isFinite(n) ? n : null;
+      })
+      .catch(function () { return null; });
+  }
+
+  function paint(day, total) {
+    if (day == null && total == null) return;
+    var host = document.querySelector(".wrap") || document.body;
+    var el = document.getElementById("visit-stat");
+    if (!el) {
+      el = document.createElement("p");
+      el.id = "visit-stat";
+      el.className = "v-stat";
+      host.appendChild(el);
+    }
+    var parts = [];
+    if (day != null) parts.push("오늘 " + day + "명");
+    if (total != null) parts.push("전체 " + total + "명");
+    el.textContent = "방문 " + parts.join(" · ");
+  }
+
+  function showCounts() {
+    var day = kstDay();
+    Promise.all([read("day_" + day), read("total")]).then(function (v) {
+      paint(v[0], v[1]);
+    });
+  }
+
   function schedule() {
     /* 렌더·스크립트 작업이 끝난 뒤로 미룹니다 */
     setTimeout(function () {
@@ -76,6 +115,7 @@
       } else {
         count();
       }
+      setTimeout(showCounts, 600);
     }, 900);
   }
 
