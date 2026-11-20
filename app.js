@@ -877,9 +877,13 @@
     var who = r.handle ? "@" + esc(r.handle) : "";
     if (r.author) who += (who ? " · " : "") + esc(r.author);
     if (when) who += " · " + esc(when);
+    /* 원문은 그대로 두고, ko 가 있으면 그 아래에 한국어 한 줄을 작게 붙인다. */
+    var ko = typeof r.ko === "string" && r.ko.trim()
+      ? '<p class="pg-sns-ko">' + esc(r.ko.trim()) + "</p>"
+      : "";
     return '<div class="pg-sns">' +
       '<b class="pg-sns-label">SNS 반응</b>' +
-      '<p class="pg-sns-text">\u201C' + esc(r.text) + '\u201D</p>' +
+      '<p class="pg-sns-text">\u201C' + esc(r.text) + '\u201D</p>' + ko +
       '<a class="pg-sns-src" href="' + esc(r.url) + '" target="_blank" rel="noopener">' + who +
         '<span class="pg-sns-ext" aria-hidden="true">↗</span></a></div>';
   }

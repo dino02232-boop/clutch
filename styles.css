@@ -819,6 +819,7 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .pg-sns { margin-top: 8px; padding: 8px 9px; border: 1px solid rgba(17, 24, 39, .06); border-radius: 8px; background: #F6F8FB; }
 .pg-sns-label { display: block; font-size: 9.5px; font-weight: 800; letter-spacing: .04em; color: var(--text-3); }
 .pg-highlight .pg-sns-text { margin: 4px 0 0; font-size: 11.5px; line-height: 1.5; color: #111827; }
+.pg-highlight .pg-sns-ko { margin: 3px 0 0; padding-left: 7px; border-left: 2px solid rgba(17, 24, 39, .12); font-size: 11px; line-height: 1.5; color: var(--text-2); }
 .pg-sns-src { display: block; margin-top: 5px; font-size: 10px; color: var(--text-3); text-decoration: none; }
 .pg-sns-src:hover, .pg-sns-src:focus-visible { color: var(--accent); }
 .pg-sns-ext { margin-left: 4px; font-size: 9px; }
