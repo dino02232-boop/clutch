@@ -181,7 +181,7 @@
     var label = !supported ? "알림 미지원" :
       (permission === "denied" ? "설정 필요" : (enabled ? "알림 끄기" : "경기 알림 켜기"));
     var defaultMessage = !supported ? "이 브라우저는 알림을 지원하지 않습니다." : (permission === "denied"
-      ? "브라우저의 사이트 설정에서 CLUTCH 알림을 허용해 주세요."
+      ? "브라우저의 사이트 설정에서 VS 알림을 허용해 주세요."
       : "페이지를 열어 둔 동안 경기 시작·득점·종료를 알려 드립니다.");
     var message = NOTIFY_MESSAGE || defaultMessage;
     return '<div class="notify-control"><div class="notify-copy"><b>관심팀 경기 알림</b><small>' + esc(message) +
