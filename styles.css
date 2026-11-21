@@ -825,6 +825,38 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .pg-sns-ext { margin-left: 4px; font-size: 9px; }
 .postgame-note { margin: 8px 0 0; }
 
+/* 경기 후 브리핑 — 승패 원인 문단 · 더 보기 · 팀 지표 */
+.pg-why {
+  margin-top: 10px; padding: 9px 10px; border-radius: 9px;
+  background: rgba(11, 138, 96, .055);
+}
+.pg-why > b { display: block; font-size: 10.5px; font-weight: 800; color: #0B6B4A; }
+.pg-why > p { margin: 4px 0 0; font-size: 12px; line-height: 1.7; color: #1F2937; }
+.pg-more { margin-top: 10px; padding-top: 9px; border-top: 1px solid rgba(17, 24, 39, .08); }
+.pg-more > summary {
+  display: flex; align-items: center; gap: 5px;
+  cursor: pointer; list-style: none;
+  font-size: 10.5px; font-weight: 800; color: #0B6B4A;
+}
+.pg-more > summary::-webkit-details-marker { display: none; }
+.pg-more > summary::after { content: "▾"; font-size: 9px; opacity: .8; }
+.pg-more[open] > summary::after { content: "▴"; }
+.pg-more > p { margin: 7px 0 0; font-size: 11px; line-height: 1.7; color: #4B5563; }
+.pg-stat-grid {
+  display: grid; gap: 5px; margin-top: 8px; padding: 9px 10px;
+  border-radius: 9px; background: #F7F9FC;
+}
+.pg-stat-row {
+  display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 8px;
+  font-size: 10.5px; line-height: 1.5; color: #374151;
+}
+.pg-stat-row > i { font-style: normal; font-weight: 800; color: #111827; }
+.pg-stat-row > span { min-width: 0; overflow-wrap: anywhere; }
+.pg-facts .pg-pm.up { color: #0B7A52; background: #E7F7EF; font-weight: 800; }
+.pg-facts .pg-pm.down { color: #B42318; background: #FDECEC; font-weight: 800; }
+.pg-facts .pg-pm.zero { color: #4B5563; font-weight: 800; }
+.pg-highlight p { font-size: 11.5px; line-height: 1.65; }
+
 .p-title {
   display: flex;
   align-items: center;

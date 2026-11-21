@@ -1009,47 +1009,121 @@
         '<span class="pg-sns-ext" aria-hidden="true">↗</span></a></div>';
   }
 
+  /* ── 경기 후 브리핑 ──────────────────────────────────────────
+     기준은 "이 경기의 승패에 누가 가장 큰 영향을 줬나"다.
+     점수만 비교하는 문장("A가 B보다 몇 점 못 넣었다")은 쓰지 않는다.
+
+     쓰는 값
+       · 박스스코어(ESPN summary): 득점·리바운드·어시스트·스틸·블록·턴오버·
+         야투·3점·자유투·±(코트에 있는 동안 팀 득실 마진)·쿼터별 득점
+       · 시즌 평균(data.js 주요 선수): stat("38.8점 · 7.2리바운드"),
+         sub("야투 47.6% · 3점 39.8% · 팀 내 1옵션")
+
+     영향력(influence)
+       prod      = 득점 + 0.7×어시스트 + 0.3×리바운드 + 스틸 + 0.7×블록 - 턴오버
+                   (Hollinger Game Score 에서 이 화면이 받는 항목만 남긴 식)
+       gap       = prod - (평균 득점 + 0.7×평균 어시스트 + 0.3×평균 리바운드)
+                   → 시즌 평균으로 본 '제 몫' 대비 얼마나 했는지. 보조 근거.
+       rel       = ± - 팀 최종 마진
+                   → 그 선수가 코트에 있던 동안 팀이 팀 전체보다 얼마나 더 앞섰나
+       clutch    = 4쿼터 마지막 5분·연장에서 그 선수가 넣은 점수
+       influence = prod + 0.8×clamp(rel, -12, 12) + 1.2×clutch
+       cost      = max(0, -gap) + 0.8×max(0, -rel)   (진 팀 쪽 부정 영향)
+
+     · 이긴 팀 '캐리한 선수' = influence 최대(20분 이상 출전)
+     · 진 팀 '아쉬웠던 선수' = cost 최대(18분 이상, cost 5 미만이면 비워 둔다)
+     ±는 코트에 있던 동안의 팀 득실이라 같은 팀 안에서만 비교한다. */
+  function pgShot(v) {
+    var m = String(v == null ? "" : v).match(/^(\d+)\s*[-/]\s*(\d+)$/);
+    return m ? { m: Number(m[1]), a: Number(m[2]) } : null;
+  }
+  function pgShotText(s) {
+    return s ? s.m + "-" + s.a + "(" + Math.round(s.m / s.a * 100) + "%)" : "";
+  }
+  function pgPct(made, att) { return att > 0 ? Math.round(made / att * 100) : null; }
+  function pgAvg(text, unit) {
+    var m = String(text || "").match(new RegExp("(\\d+(?:\\.\\d+)?)\\s*" + unit));
+    return m ? Number(m[1]) : null;
+  }
+  function pgSubPct(sub, label) {
+    var m = String(sub || "").match(new RegExp(label + "\\s*(\\d+(?:\\.\\d+)?)\\s*%"));
+    return m ? Number(m[1]) : null;
+  }
+  function pgRole(sub) {
+    var m = String(sub || "").match(/팀 내\s*([0-9]+옵션)/);
+    return m ? m[1] : "";
+  }
+  function pgSigned(n) { return (n > 0 ? "+" : "") + n; }
+  // 점수(숫자) 뒤 조사. 끝자리 0·3·6·7·8(십·삼·육·칠·팔)만 받침이 있다.
+  function pgNumJosa(n, withFinal, withoutFinal) {
+    var d = String(Math.abs(Number(n) || 0)).slice(-1);
+    return /[03678]/.test(d) ? withFinal : withoutFinal;
+  }
+  function pgNumCopula(n) { return pgNumJosa(n, "이었습니다", "였습니다"); }
+  // 팀·선수 이름 뒤 조사(받침 유무). 예) 재즈 → 가 / 너기츠 → 가 / 썬더 → 가
+  function pgJosa(word, withFinal, withoutFinal) {
+    var s = String(word || "");
+    var c = s.charCodeAt(s.length - 1);
+    var has = c >= 0xAC00 && c <= 0xD7A3 && (c - 0xAC00) % 28 !== 0;
+    return s + (has ? withFinal : withoutFinal);
+  }
+
   function postgameHTML(g) {
     if (!g || !g.result || g.result.state !== "final") return "";
-    if (g.sport !== "basketball") {
-      if (g.result.awayScore == null || g.result.homeScore == null) return "";
-      var finalAway = Number(g.result.awayScore), finalHome = Number(g.result.homeScore);
-      if (!isFinite(finalAway) || !isFinite(finalHome)) return "";
-      var finalWinner = finalAway === finalHome ? null : (finalAway > finalHome ? g.away : g.home);
-      var unit = g.sport === "volleyball" ? "세트" : (g.sport === "soccer" ? "골" : "점");
-      var resultText = finalWinner
-        ? finalWinner.name + "가 " + Math.abs(finalAway - finalHome) + unit + " 차로 이겼습니다."
-        : "양 팀이 " + finalAway + "대 " + finalHome + "으로 비겼습니다.";
-      var playerNote = g.sport === "volleyball"
-        ? "KOVO 공개 결과에는 선수별 기록이 없어 개인 활약 평가는 표시하지 않습니다."
-        : "이 경기의 선수별 기록이 연결되지 않아 개인 활약 평가는 표시하지 않습니다.";
-      return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>결과 요약</span></div>' +
-        '<p class="pg-game-line">' + esc(resultText) + '</p><p class="postgame-note">' + esc(playerNote) + "</p></section>";
+    if (g.sport === "basketball") return pgBasketballHTML(g);
+    if (g.sport === "soccer") return pgSoccerHTML(g);
+    return pgPlainHTML(g);
+  }
+
+  // 농구·축구가 아닌 종목(배구 등): 결과와 세트 흐름만. 선수 기록이 없으면 개인 평가는 쓰지 않는다.
+  function pgPlainHTML(g) {
+    if (g.result.awayScore == null || g.result.homeScore == null) return "";
+    var finalAway = Number(g.result.awayScore), finalHome = Number(g.result.homeScore);
+    if (!isFinite(finalAway) || !isFinite(finalHome)) return "";
+    var unit = g.sport === "volleyball" ? "세트" : "점";
+    var line;
+    if (finalAway === finalHome) {
+      line = "양 팀이 " + finalAway + "대 " + finalHome + "으로 비겼습니다.";
+    } else {
+      var w = finalAway > finalHome ? g.away : g.home;
+      line = pgJosa(w.name, "이", "가") + " " + Math.abs(finalAway - finalHome) + unit + " 차로 이겼습니다.";
     }
+    var flow = "";
+    var ls = g.result.lines;
+    if (ls && ls.away && ls.home && ls.away.length) {
+      var parts = [];
+      for (var i = 0; i < Math.min(ls.away.length, ls.home.length); i++) {
+        parts.push((i + 1) + (g.sport === "volleyball" ? "세트 " : "Q ") + ls.away[i] + "-" + ls.home[i]);
+      }
+      if (parts.length) flow = " 세트 흐름은 " + parts.join(", ") + "입니다.";
+    }
+    var note = g.sport === "volleyball"
+      ? "KOVO 공개 결과에는 선수별 기록(공격·블로킹·서브)이 없어 개인 활약 평가는 표시하지 않습니다."
+      : "이 경기의 선수별 기록이 연결되지 않아 개인 활약 평가는 표시하지 않습니다.";
+    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>결과 요약</span></div>' +
+      '<p class="pg-game-line">' + esc(line + flow) + "</p>" +
+      '<p class="postgame-note">' + esc(note) + "</p></section>";
+  }
+
+  /* ── 농구: 흐름 + 승패 원인 + 영향력 1위/최악 + 팀 지표 ── */
+  function pgBasketballHTML(g) {
     var entry = summaryEntry(g);
     var boxes = entry && entry.data && Array.isArray(entry.data.box) ? entry.data.box : [];
     if (!boxes.length) {
       return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b></div>' +
-        '<p class="postgame-note">' + (entry && entry.err ? "선수별 박스스코어를 불러오지 못했습니다." : "최종 선수 기록을 불러오는 중입니다.") + "</p></section>";
+        '<p class="postgame-note">' +
+        (entry && entry.err ? "선수별 박스스코어를 불러오지 못했습니다." : "최종 선수 기록을 불러오는 중입니다.") +
+        "</p></section>";
     }
 
-    function expectedValue(text, unit) {
-      var re = new RegExp("(\\d+(?:\\.\\d+)?)\\s*" + unit, "i");
-      var m = String(text || "").match(re);
-      return m ? Number(m[1]) : null;
-    }
-    function shotInfo(value) {
-      var m = String(value || "").match(/^(\d+)\s*[-/]\s*(\d+)$/);
-      if (!m || Number(m[2]) === 0) return "";
-      return m[1] + "/" + m[2] + " (" + (Number(m[1]) / Number(m[2]) * 100).toFixed(0) + "%)";
-    }
-    function addFact(list, text) { if (text && list.length < 3) list.push(text); }
+    var r = g.result;
+    var awayPts = toNum(r.awayScore), homePts = toNum(r.homeScore);
+    var winSide = awayPts > homePts ? "away" : (homePts > awayPts ? "home" : null);
+    var margin = Math.abs(awayPts - homePts);
+    var winTeam = winSide ? g[winSide] : null;
+    var loseTeam = winSide ? g[winSide === "away" ? "home" : "away"] : null;
 
-    var candidates = [];
-    var awayScoreNum = toNum(g.result.awayScore), homeScoreNum = toNum(g.result.homeScore);
-    var winAbbr = awayScoreNum > homeScoreNum ? g.away.abbr
-      : (homeScoreNum > awayScoreNum ? g.home.abbr : null);
-    // ESPN 약어가 우리 표기와 다른 팀이 있다(뉴욕 NY, 골든스테이트 GS 등). 약어가 안 맞으면 원정·홈 순서로 찾는다.
+    // ESPN 약어가 우리 표기와 다른 팀이 있다(뉴욕 NY, 골든스테이트 GS 등). 약어가 안 맞으면 순서로 찾는다.
     var ABBR_ALIAS = { NY: "NYK", GS: "GSW", SA: "SAS", NO: "NOP", WSH: "WAS", PHO: "PHX", UTAH: "UTA" };
     function resolveTeam(teamBox, idx) {
       var list = (g.details && Array.isArray(g.details.teams) ? g.details.teams : []);
@@ -1062,107 +1136,558 @@
       if (!sideAbbr) return null;
       return list.filter(function (t) { return String(t.abbr || "").toUpperCase() === sideAbbr; })[0] || null;
     }
-    boxes.forEach(function (teamBox, boxIdx) {
-      var team = resolveTeam(teamBox, boxIdx);
-      var expectedPlayers = team && Array.isArray(team.players) ? team.players : [];
+
+    var sides = boxes.map(function (b, i) {
+      var t = resolveTeam(b, i);
+      return t && (t.side === "away" || t.side === "home") ? t.side : (i === 0 ? "away" : "home");
+    });
+    var boxOf = {};   // side → 그 팀 박스(팀 지표 포함)
+    boxes.forEach(function (b, i) { boxOf[sides[i]] = b; });
+
+    function statNum(side, key) {
+      var b = boxOf[side];
+      var v = b && b.stats ? b.stats[key] : null;
+      var n = Number(String(v == null ? "" : v).trim());
+      return isFinite(n) ? n : null;
+    }
+
+    /* ── 후보: 코트에 1분이라도 뛴 모든 선수(주요 선수 목록에 없는 선수도 포함) ── */
+    var cands = [];
+    boxes.forEach(function (teamBox, idx) {
+      var team = resolveTeam(teamBox, idx);
+      var season = team && Array.isArray(team.players) ? team.players : [];
+      var side = sides[idx];
+      var tm = winSide ? (side === winSide ? margin : -margin) : 0;
       (teamBox.rows || []).forEach(function (p) {
-        var normName = String(p.name || "").trim().toLowerCase();
-        var expected = expectedPlayers.filter(function (ep) {
-          return String(ep.name || "").trim().toLowerCase() === normName;
-        })[0];
-        if (!expected) return;
-        var avg = expectedValue(expected.stat, "점");
+        var min = toNum(p.min);
+        if (min < 1) return;
         var pts = toNum(p.pts);
-        if (avg == null || pts < 0) return;
-        candidates.push({
-          name: p.name, photo: p.photo || photoOf(g, p.name), team: teamBox.name || teamBox.abbr,
-          pts: pts, reb: toNum(p.reb), ast: toNum(p.ast), min: toNum(p.min),
-          fg: p.fg, three: p.three, ft: p.ft, turnovers: toNum(p.turnovers),
-          avg: avg, avgReb: expectedValue(expected.stat, "리바운드"),
-          win: !!(winAbbr && String(teamBox.abbr || "").toUpperCase() === String(winAbbr).toUpperCase()),
-          avgAst: expectedValue(expected.stat, "어시스트"),
-          delta: pts - avg, fgPct: (function () {
-            var m = String(p.fg || "").match(/^(\d+)\s*[-/]\s*(\d+)$/);
-            return m && Number(m[2]) ? Number(m[1]) / Number(m[2]) : null;
-          })()
+        if (pts < 0) return;
+        var nameKey = String(p.name || "").trim().toLowerCase();
+        var sp = null;
+        for (var i = 0; i < season.length; i++) {
+          if (String(season[i].name || "").trim().toLowerCase() === nameKey) { sp = season[i]; break; }
+        }
+        var fg = pgShot(p.fg), tp = pgShot(p.three), ft = pgShot(p.ft);
+        var reb = Math.max(0, toNum(p.reb)), ast = Math.max(0, toNum(p.ast));
+        var stl = Math.max(0, toNum(p.stl)), blk = Math.max(0, toNum(p.blk)), tov = Math.max(0, toNum(p.turnovers));
+        var pmText = String(p.pm == null ? "" : p.pm).trim();
+        var pm = /^[-+]?\d+$/.test(pmText) ? Number(pmText) : null;
+        var avgPts = sp ? pgAvg(sp.stat, "점") : null;
+        var avgReb = sp ? pgAvg(sp.stat, "리바운드") : null;
+        var avgAst = sp ? pgAvg(sp.stat, "어시스트") : null;
+        var avgFg = sp ? pgSubPct(sp.sub, "야투") : null;
+        var prod = pts + 0.7 * ast + 0.3 * reb + stl + 0.7 * blk - tov;
+        var expProd = avgPts == null ? null : avgPts + 0.7 * (avgAst || 0) + 0.3 * (avgReb || 0);
+        var clutch = (entry.data.clutch && entry.data.clutch[String(p.id)]) || 0;
+        var rel = pm == null ? null : pm - tm;
+        cands.push({
+          name: p.name, photo: p.photo || photoOf(g, p.name), id: String(p.id || ""),
+          team: teamBox.name || teamBox.abbr, side: side, teamMargin: tm,
+          isWin: !!winSide && side === winSide,
+          min: min, pts: pts, reb: reb, ast: ast, stl: stl, blk: blk, tov: tov,
+          fg: fg, tp: tp, ft: ft, fgPct: fg ? pgPct(fg.m, fg.a) : null,
+          pm: pm, clutch: clutch, rel: rel,
+          avgPts: avgPts, avgReb: avgReb, avgAst: avgAst, avgFg: avgFg,
+          role: sp ? pgRole(sp.sub) : "", seasonStat: sp ? sp.stat : "",
+          prod: prod, expProd: expProd, gap: expProd == null ? null : prod - expProd
         });
       });
     });
 
-    if (!candidates.length) {
+    if (!cands.length) {
       return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b></div>' +
-        '<p class="postgame-note">선수 기록은 받았지만 시즌 평균과 비교할 주요 선수 데이터가 없습니다.</p></section>';
-    }
-    candidates.forEach(function (p) {
-      p.rebDelta = p.avgReb == null || p.reb < 0 ? null : p.reb - p.avgReb;
-      p.astDelta = p.avgAst == null || p.ast < 0 ? null : p.ast - p.avgAst;
-    });
-    // 캐리한 선수는 이긴 팀에서만 뽑는다. 이긴 팀 기록이 없으면 진 팀 선수로 대신 채우지 않는다.
-    var carryPool = candidates.filter(function (p) { return p.win; });
-    var carry = carryPool.slice().sort(function (a, b) {
-      return (b.pts + Math.max(0, b.delta) * .35) - (a.pts + Math.max(0, a.delta) * .35);
-    })[0];
-    function underperformed(p) {
-      return p.delta <= -5 || (p.min >= 15 && p.fgPct != null && p.fgPct < .35) || (p.min >= 15 && p.turnovers >= 4);
-    }
-    function lowRank(a, b) {
-      var scoreA = Math.min(0, a.delta) - (a.fgPct != null && a.fgPct < .35 ? 3 : 0) - Math.max(0, a.turnovers - 3);
-      var scoreB = Math.min(0, b.delta) - (b.fgPct != null && b.fgPct < .35 ? 3 : 0) - Math.max(0, b.turnovers - 3);
-      return scoreA - scoreB;
-    }
-    var lowPool = candidates.filter(function (p) {
-      return p.name !== carry.name && !p.win && underperformed(p);
-    });
-    if (!lowPool.length) {
-      lowPool = candidates.filter(function (p) { return p.name !== carry.name && underperformed(p); });
-    }
-    var low = lowPool.sort(lowRank)[0] || null;
-
-    function factsFor(p, under) {
-      var facts = [];
-      if (p.delta >= 5) addFact(facts, p.pts + "점, 시즌 평균보다 +" + p.delta.toFixed(1) + "점");
-      else if (p.delta <= -5) addFact(facts, p.pts + "점, 시즌 평균보다 " + p.delta.toFixed(1) + "점");
-      else addFact(facts, p.pts + "점, 시즌 평균 " + p.avg.toFixed(1) + "점");
-      var fg = shotInfo(p.fg), three = shotInfo(p.three), ft = shotInfo(p.ft);
-      if (fg) addFact(facts, "야투 " + fg);
-      if (under && p.turnovers >= 3) addFact(facts, "턴오버 " + p.turnovers + "개");
-      if (!under && three && p.three && Number(String(p.three).split(/[-/]/)[0]) >= 3) addFact(facts, "3점슛 " + three);
-      if (!under && p.astDelta != null && p.astDelta >= 2) addFact(facts, "어시스트 " + p.ast + "개 (평균보다 +" + p.astDelta.toFixed(1) + ")");
-      else if (!under && p.rebDelta != null && p.rebDelta >= 3) addFact(facts, "리바운드 " + p.reb + "개 (평균보다 +" + p.rebDelta.toFixed(1) + ")");
-      if (under && facts.length < 2 && ft) addFact(facts, "자유투 " + ft);
-      return facts;
-    }
-    function highlightHTML(p, type, title) {
-      if (!p) return '<article class="pg-highlight quiet"><b>' + title + '</b><p>' +
-        (type === "down" ? '주요 선수 중 뚜렷하게 기대를 밑돈 기록은 없었습니다.' : '이긴 팀 선수 기록을 확인하지 못했습니다.') + '</p></article>';
-      var under = type === "down";
-      var note = under
-        ? (p.delta <= -5 ? "득점이 시즌 평균보다 낮았습니다." : (p.fgPct != null && p.fgPct < .35 ? "야투 효율이 낮았습니다." : "턴오버가 많았습니다."))
-        : (p.delta >= 5 ? "평균을 웃도는 득점으로" : "주요 선수 중 가장 많은 득점으로");
-      return '<article class="pg-highlight ' + type + '"><div class="pg-line"><b>' + title + '</b><span class="pg-tag ' + type + '">' + esc(p.team) + '</span></div>' +
-        '<strong class="pg-name">' + faceHTML(p.name, p.photo) + esc(p.name) + '</strong><p>' + esc(under ? note : note + ' 팀 공격을 이끌었습니다.') + '</p>' +
-        '<div class="pg-facts">' + factsFor(p, under).map(function (x) { return '<span>' + esc(x) + '</span>'; }).join("") + '</div>' +
-        '<small>' + esc(String(p.min)) + '분 출전</small>' + snsReactionHTML(g.id, p.name) + '</article>';
+        '<p class="postgame-note">선수 기록은 받았지만 비교할 시즌 평균이 없어 개인 평가를 만들지 못했습니다.</p></section>';
     }
 
-    var r = g.result, gap = Math.abs(toNum(r.awayScore) - toNum(r.homeScore));
-    var winner = toNum(r.awayScore) > toNum(r.homeScore) ? g.away.name : g.home.name;
-    var gameLine = winner + "이 " + gap + "점 차로 이겼습니다.";
-    var lineScores = r.lines || null;
-    if (lineScores && lineScores.away && lineScores.home) {
-      var maxQ = -1, maxDiff = -1, qLeader = "";
-      for (var qi = 0; qi < Math.min(lineScores.away.length, lineScores.home.length); qi++) {
-        var qa = Number(lineScores.away[qi]), qh = Number(lineScores.home[qi]);
-        if (!isFinite(qa) || !isFinite(qh)) continue;
-        var qdiff = Math.abs(qa - qh);
-        if (qdiff > maxDiff) { maxDiff = qdiff; maxQ = qi + 1; qLeader = qa > qh ? g.away.abbr : g.home.abbr; }
+    // 팀 안에서 ± 최고/최저(15분 이상)를 표시용으로 기억해 둔다
+    ["away", "home"].forEach(function (side) {
+      var pool = cands.filter(function (p) { return p.side === side && p.pm != null && p.min >= 15; });
+      if (!pool.length) return;
+      var hi = pool.slice().sort(function (a, b) { return b.pm - a.pm; })[0];
+      var lo = pool.slice().sort(function (a, b) { return a.pm - b.pm; })[0];
+      hi.pmBest = true;
+      lo.pmWorst = true;
+    });
+
+    function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+    function influence(p) {
+      return p.prod + 0.8 * (p.rel == null ? 0 : clamp(p.rel, -12, 12)) + 1.2 * p.clutch;
+    }
+
+    // ① 이긴 팀을 이끈 선수: 영향력 최대
+    var carryPool = cands.filter(function (p) { return p.isWin && p.min >= 20; });
+    if (!carryPool.length) carryPool = cands.filter(function (p) { return p.isWin; });
+    var carry = carryPool.slice().sort(function (a, b) { return influence(b) - influence(a); })[0] || null;
+
+    // ② 진 팀에서 가장 아쉬웠던 선수
+    //    ① 시즌 평균 대비 뚜렷하게 못한 선수 → ② 기록은 괜찮아도 그가 뛴 구간에 팀이 크게 밀린 선수
+    //    → ③ 22분 이상 뛰고도 생산이 아주 얇은 선수 순으로 찾는다. 셋 다 없으면 비워 둔다.
+    function lowCost(p) {
+      return Math.max(0, -(p.gap == null ? 0 : p.gap)) + 0.8 * Math.max(0, -(p.rel == null ? 0 : p.rel));
+    }
+    var lowPool = cands.filter(function (p) { return !p.isWin && p.min >= 22; });
+    var low = null;
+    var byGap = lowPool.filter(function (p) { return p.gap != null && p.gap <= -4; })
+      .sort(function (a, b) { return lowCost(b) - lowCost(a); });
+    if (byGap.length) low = byGap[0];
+    if (!low) {
+      var byPm = lowPool.filter(function (p) { return p.rel != null && p.rel <= -8; })
+        .sort(function (a, b) { return a.rel - b.rel; });
+      if (byPm.length) low = byPm[0];
+    }
+    if (!low) {
+      var byThin = lowPool.filter(function (p) { return p.prod <= 10; })
+        .sort(function (a, b) { return a.prod - b.prod; });
+      if (byThin.length) low = byThin[0];
+    }
+
+    function statLine(p) {
+      var bits = [p.pts + "점"];
+      if (p.reb > 0) bits.push(p.reb + "리바운드");
+      if (p.ast > 0) bits.push(p.ast + "어시스트");
+      return bits.join("·");
+    }
+    function effText(p) {
+      var out = [];
+      if (p.fg) out.push("야투 " + pgShotText(p.fg));
+      if (p.tp && p.tp.a >= 3) out.push("3점 " + pgShotText(p.tp));
+      return out.join("·");
+    }
+
+    function carryNote(p) {
+      if (!p) return "이긴 팀 선수 기록을 확인하지 못했습니다.";
+      var line = statLine(p), eff = effText(p);
+      var out = [];
+      var bestPts = 0;
+      cands.forEach(function (q) { if (q.side === p.side && q.pts > bestPts) bestPts = q.pts; });
+      if (p.avgPts != null) {
+        var head = p.name + ", " + (p.role ? "팀 내 " + p.role : "주요 선수") + "으로 시즌 평균 " +
+          p.avgPts.toFixed(1) + "점을 넣던 선수가 이 경기에서는 " + line + (eff ? "에 " + eff : "") + "로 ";
+        if (p.gap != null && p.gap >= 3) head += "기대 이상의 몫을 해냈습니다.";
+        else if (p.gap != null && p.gap <= -4) {
+          head += (p.pts >= bestPts ? "평균에는 못 미쳤지만 팀에서 가장 많은 " + p.pts + "점을 올렸습니다." : "평균에는 못 미쳤습니다.");
+        } else head += "제 몫을 해냈습니다.";
+        out.push(head);
+      } else {
+        var verb = p.pts >= 20 ? "팀 공격을 이끌었습니다."
+          : (p.ast >= 8 ? "동료 득점을 만들며 흐름을 이끌었습니다."
+            : (p.reb >= 10 ? "골밑에서 힘을 보탰습니다." : "팀 흐름을 앞세웠습니다."));
+        out.push(p.name + ", 이 경기 " + line + (eff ? "(" + eff + ")" : "") + "로 " + verb);
       }
-      if (maxQ > 0) gameLine += " 가장 큰 쿼터 점수 차는 " + maxQ + "Q " + qLeader + "의 " + maxDiff + "점입니다.";
+      if (p.pm != null && (p.pm > 0 || (p.rel != null && p.rel > 0))) {
+        out.push("팀이 " + margin + "점 이긴 경기에서 그가 코트에 있던 " + p.min + "분 동안 팀 마진은 " +
+          pgSigned(p.pm) + (p.pmBest ? "(팀 최고)" : "") + "이었습니다.");
+      }
+      if (p.clutch >= 5) {
+        out.push("4쿼터 마지막 5분에 " + p.clutch + "점을 넣으며 승부를 닫았습니다.");
+      }
+      return out.join(" ");
     }
-    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>선수 활약 요약</span></div>' +
-      '<p class="pg-game-line">' + esc(gameLine) + '</p><div class="pg-highlights">' +
-      highlightHTML(carry, "up", "캐리한 선수") + highlightHTML(low, "down", "아쉬웠던 선수") +
-      '</div><p class="postgame-note">선수 평가는 시즌 평균 득점과 경기 기록, 야투 효율·턴오버를 바탕으로 한 자동 요약입니다.</p></section>';
+
+    function lowNote(p) {
+      if (!p) return "이 경기 진 팀에서 기대를 크게 밑돈 선수는 없었습니다.";
+      var line = statLine(p), eff = effText(p);
+      var out = [];
+      var shortOfRole = p.gap != null && p.gap <= -4 && p.avgPts != null;
+      if (shortOfRole) {
+        out.push(p.name + ", " + (p.role ? "팀 내 " + p.role : "주요 선수") + "으로 시즌 평균 " +
+          p.avgPts.toFixed(1) + "점을 넣던 선수가 이 경기에서는 " + line + (eff ? "에 " + eff : "") + "로 " +
+          (p.gap <= -8 ? "기대에 크게 못 미쳤습니다." : "제 몫을 다하지 못했습니다."));
+      } else if (p.prod <= 10) {
+        out.push(p.name + ", " + p.min + "분을 뛰고 " + line + (eff ? "(" + eff + ")" : "") + "에 그쳤습니다.");
+      } else {
+        out.push(p.name + ", 이 경기 " + line + (eff ? "(" + eff + ")" : "") + "로 기록 자체는 나쁘지 않았습니다.");
+      }
+      var why = [];
+      if (p.pm != null && p.rel != null && p.rel < 0) {
+        why.push((shortOfRole ? "그가" : "그러나 그가") + " 코트에 있던 " + p.min + "분 동안 팀 마진은 " +
+          pgSigned(p.pm) + (p.pmWorst ? "(팀 최저)" : "") + "이었습니다.");
+      }
+      if (p.fg && p.avgFg != null && p.fg.a >= 8 && p.avgFg - p.fgPct >= 8) {
+        why.push("야투 성공률은 시즌 " + p.avgFg + "%에서 " + p.fgPct + "%로 떨어졌습니다.");
+      } else if (p.tov >= 4) {
+        why.push("턴오버 " + p.tov + "개로 공격 기회를 잃었습니다.");
+      }
+      if (!why.length && shortOfRole) {
+        why.push("득점·리바운드·어시스트를 합친 생산이 시즌 평균에 못 미쳤습니다.");
+      }
+      return out.concat(why.slice(0, 2)).join(" ");
+    }
+
+    function chipsFor(p, under) {
+      var out = [statLine(p)];
+      if (p.fg) out.push("야투 " + pgShotText(p.fg));
+      if (p.tp && p.tp.a >= 3) out.push("3점 " + pgShotText(p.tp));
+      if (under) {
+        if (p.tov >= 3) out.push("턴오버 " + p.tov + "개");
+      } else if (p.stl + p.blk >= 3) {
+        out.push(p.stl > 0 && p.blk > 0 ? "스틸 " + p.stl + "·블록 " + p.blk : (p.stl > 0 ? "스틸 " + p.stl : "블록 " + p.blk));
+      }
+      if (!under && p.clutch > 0) out.push("클러치 " + p.clutch + "점");
+      if (p.avgPts != null) out.push("시즌 평균 " + p.avgPts.toFixed(1) + "점");
+      return out;
+    }
+
+    function highlightHTML(p, type, title) {
+      if (!p) {
+        return '<article class="pg-highlight quiet"><b>' + title + '</b><p>' +
+          esc(type === "down" ? lowNote(null) : "이긴 팀 선수 기록을 확인하지 못했습니다.") + "</p></article>";
+      }
+      var under = type === "down";
+      var chips = chipsFor(p, under).map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("");
+      if (p.pm != null) {
+        chips += '<span class="pg-pm ' + (p.pm > 0 ? "up" : (p.pm < 0 ? "down" : "zero")) + '">± ' +
+          esc(pgSigned(p.pm)) + "</span>";
+      }
+      var body = under ? lowNote(p) : carryNote(p);
+      return '<article class="pg-highlight ' + type + '"><div class="pg-line"><b>' + title + '</b><span class="pg-tag ' + type + '">' +
+        esc(p.team) + '</span></div>' +
+        '<strong class="pg-name">' + faceHTML(p.name, p.photo) + esc(p.name) + '</strong><p>' + esc(body) + "</p>" +
+        '<div class="pg-facts">' + chips + "</div>" +
+        "<small>" + esc(String(p.min)) + "분 출전</small>" + snsReactionHTML(g.id, p.name) + "</article>";
+    }
+
+    /* ── 흐름: 결과 + 리드를 뒤집은 구간 ── */
+    var flowSentences = [];
+    if (!winSide) {
+      flowSentences.push("양 팀이 " + awayPts + "-" + homePts + "로 비겼습니다.");
+    } else {
+      flowSentences.push(pgJosa(winTeam.name, "이", "가") + " " + Math.max(awayPts, homePts) + "-" +
+        Math.min(awayPts, homePts) + pgNumJosa(Math.min(awayPts, homePts), "으로", "로") + " 이겼습니다.");
+    }
+    var quarterRows = [];
+    var ls = r.lines;
+    if (winSide && ls && ls.away && ls.home && ls.away.length) {
+      var wArr = winSide === "away" ? ls.away : ls.home;
+      var lArr = winSide === "away" ? ls.home : ls.away;
+      var wc = 0, lc = 0, big = 0;
+      for (var qi = 0; qi < Math.min(wArr.length, lArr.length); qi++) {
+        var qw = Number(wArr[qi]), ql = Number(lArr[qi]);
+        if (!isFinite(qw) || !isFinite(ql)) continue;
+        wc += qw; lc += ql;
+        quarterRows.push({ w: qw, l: ql, wc: wc, lc: lc, d: qw - ql });
+        if (Math.abs(qw - ql) > Math.abs(quarterRows[big].d)) big = quarterRows.length - 1;
+      }
+      if (quarterRows.length) {
+        var behind = -1;
+        for (var bj = 0; bj < quarterRows.length; bj++) if (quarterRows[bj].wc < quarterRows[bj].lc) behind = bj;
+        var otGame = quarterRows.length > 4 && /OT/i.test(String(r.detail || ""));
+        var beforeOt = quarterRows.length > 4 ? quarterRows[quarterRows.length - 2] : null;
+        if (otGame && beforeOt && beforeOt.wc === beforeOt.lc) {
+          flowSentences.push((behind + 1) + "Q까지 " + quarterRows[behind].wc + "-" + quarterRows[behind].lc +
+            "로 뒤졌지만 4Q에서 " + beforeOt.w + "-" + beforeOt.l + pgNumJosa(beforeOt.l, "으로", "로") +
+            " 따라붙어 연장으로 끌고 갔습니다.");
+        } else if (behind >= 0 && behind < quarterRows.length - 1) {
+          flowSentences.push((behind + 1) + "Q까지 " + quarterRows[behind].wc + "-" + quarterRows[behind].lc +
+            "로 뒤졌지만 " + (behind + 2) + "Q에서는 " + quarterRows[behind + 1].w + "-" + quarterRows[behind + 1].l +
+            pgNumJosa(quarterRows[behind + 1].l, "으로", "로") + " 뒤집었습니다.");
+        } else {
+          flowSentences.push("1Q " + quarterRows[0].w + "-" + quarterRows[0].l +
+            pgNumJosa(quarterRows[0].l, "으로", "로") + " 앞섰고, 쿼터가 끝날 때는 계속 앞서 있었습니다.");
+        }
+      }
+    }
+    if (/OT/i.test(String(r.detail || "")) && !flowSentences.some(function (x) { return x.indexOf("연장") >= 0; })) {
+      flowSentences.push("연장까지 간 접전이었습니다.");
+    }
+    if (statNum(winSide || "away", "leadChanges") != null && statNum(winSide || "away", "leadChanges") >= 8) {
+      flowSentences.push("리드는 모두 " + statNum(winSide || "away", "leadChanges") + "번 바뀌었습니다.");
+    }
+
+    /* ── 승패 원인: 팀 지표에서 이긴 팀 쪽으로 벌어진 항목만 2~3개 ── */
+    var causes = [];
+    if (winSide && boxOf[winSide] && boxOf[winSide === "away" ? "home" : "away"]) {
+      var loseSide = winSide === "away" ? "home" : "away";
+      var wName = winTeam.name, lName = loseTeam.name;
+      var wS = boxOf[winSide].stats || {}, lS = boxOf[loseSide].stats || {};
+      var wFg = pgShot(wS["fieldGoalsMade-fieldGoalsAttempted"]) || { m: 0, a: 0 };
+      var lFg = pgShot(lS["fieldGoalsMade-fieldGoalsAttempted"]) || { m: 0, a: 0 };
+      var wTp = pgShot(wS["threePointFieldGoalsMade-threePointFieldGoalsAttempted"]) || { m: 0, a: 0 };
+      var lTp = pgShot(lS["threePointFieldGoalsMade-threePointFieldGoalsAttempted"]) || { m: 0, a: 0 };
+      var wFt = pgShot(wS["freeThrowsMade-freeThrowsAttempted"]) || { m: 0, a: 0 };
+      var lFt = pgShot(lS["freeThrowsMade-freeThrowsAttempted"]) || { m: 0, a: 0 };
+      var wFgP = statNum(winSide, "fieldGoalPct"), lFgP = statNum(loseSide, "fieldGoalPct");
+      var wTpP = statNum(winSide, "threePointFieldGoalPct"), lTpP = statNum(loseSide, "threePointFieldGoalPct");
+      var wReb = statNum(winSide, "totalRebounds"), lReb = statNum(loseSide, "totalRebounds");
+      var wOreb = statNum(winSide, "offensiveRebounds"), lOreb = statNum(loseSide, "offensiveRebounds");
+      var wAst = statNum(winSide, "assists"), lAst = statNum(loseSide, "assists");
+      var wTo = statNum(winSide, "turnovers"), lTo = statNum(loseSide, "turnovers");
+      var wToPts = statNum(winSide, "turnoverPoints"), lToPts = statNum(loseSide, "turnoverPoints");
+      var wPitp = statNum(winSide, "pointsInPaint"), lPitp = statNum(loseSide, "pointsInPaint");
+      var wFb = statNum(winSide, "fastBreakPoints"), lFb = statNum(loseSide, "fastBreakPoints");
+
+      // 슈팅: 야투 성공률 차이와 3점으로 얻은 득점 차를 한 항목으로 묶는다
+      var fgDiff = (wFgP != null && lFgP != null) ? wFgP - lFgP : 0;
+      var tpPts = 3 * (wTp.m - lTp.m);
+      if (wFg.a && lFg.a && (fgDiff > 0 || tpPts > 0)) {
+        var shoot = "";
+        if (fgDiff > 0) {
+          shoot += pgJosa(wName, "은", "는") + " 야투 " + wFg.m + "-" + wFg.a + "(" + wFgP + "%), " +
+            pgJosa(lName, "은", "는") + " " + lFg.m + "-" + lFg.a + "(" + lFgP + "%)였습니다.";
+        }
+        if ((wTp.a || lTp.a) && tpPts >= 6) {
+          if (shoot) shoot += " 3점은 ";
+          else shoot = "3점은 ";
+          shoot += wName + " " + wTp.m + "-" + wTp.a + (wTpP != null ? "(" + wTpP + "%)" : "") + ", " +
+            lName + " " + lTp.m + "-" + lTp.a + (lTpP != null ? "(" + lTpP + "%)" : "") +
+            "로 " + pgJosa(wName, "이", "가") + " " + tpPts + "점 더 넣었습니다";
+        }
+        if (shoot) causes.push({ strength: Math.max(Math.max(0, fgDiff) * 1.6, Math.max(0, tpPts)), text: shoot.replace(/\.+$/, "") + "." });
+      }
+      // 턴오버: 개수와 '그로 인한 실점'
+      if (wTo != null && lTo != null) {
+        var toPtsEdge = (wToPts != null && lToPts != null) ? wToPts - lToPts : 0;
+        if (toPtsEdge > 0) {
+          var toText = "턴오버는 " + wName + " " + wTo + "개, " + lName + " " + lTo + "개" +
+            (wTo > lTo ? "로 더 많았지만" : "였습니다.");
+          if (wToPts != null && lToPts != null && toPtsEdge !== 0) {
+            toText += " 상대 턴오버에서 얻은 점수는 " + wName + " " + wToPts + "점, " + lName + " " + lToPts + "점이었습니다.";
+          }
+          causes.push({ strength: Math.max(Math.max(0, lTo - wTo) * 1.2, Math.max(0, toPtsEdge) * 0.9), text: toText });
+        }
+      }
+      // 리바운드(공격 리바운드는 이긴 팀이 더 잡았을 때만 덧붙인다)
+      if (wReb != null && lReb != null && (wReb > lReb || (wOreb != null && lOreb != null && wOreb - lOreb >= 3))) {
+        var orebGap = (wOreb == null || lOreb == null) ? 0 : wOreb - lOreb;
+        var rebText = "리바운드는 " + wName + " " + wReb + "개, " + lName + " " + lReb + "개였습니다.";
+        if (wOreb != null && lOreb != null && orebGap > 0) {
+          rebText = "리바운드는 " + wName + " " + wReb + "개, " + lName + " " + lReb + "개" +
+            (wReb > lReb ? "였고" : "로 밀렸지만") + " 공격 리바운드는 " + wOreb + "-" + lOreb +
+            "로 세컨드찬스 기회를 더 가져갔습니다.";
+        }
+        causes.push({ strength: Math.max(0, wReb - lReb) * 1.1 + Math.max(0, orebGap) * 0.8, text: rebText });
+      }
+      // 자유투
+      if (wFt.a && lFt.a && wFt.m - lFt.m >= 3) {
+        causes.push({
+          strength: (wFt.m - lFt.m) * 0.9,
+          text: "자유투는 " + wName + " " + wFt.m + "-" + wFt.a + ", " + lName + " " + lFt.m + "-" + lFt.a +
+            "로 " + pgJosa(wName, "이", "가") + " " + (wFt.m - lFt.m) + "점 더 넣었습니다."
+        });
+      }
+      // 페인트존
+      if (wPitp != null && lPitp != null && wPitp - lPitp >= 8) {
+        causes.push({
+          strength: (wPitp - lPitp) * 0.7,
+          text: "페인트존 득점은 " + wName + " " + wPitp + "점, " + lName + " " + lPitp + "점이었습니다."
+        });
+      }
+      // 속공
+      if (wFb != null && lFb != null && wFb - lFb >= 6) {
+        causes.push({
+          strength: (wFb - lFb) * 0.6,
+          text: "속공 득점은 " + wName + " " + wFb + "점, " + lName + " " + lFb + "점이었습니다."
+        });
+      }
+      // 어시스트
+      if (wAst != null && lAst != null && wAst - lAst >= 6) {
+        causes.push({
+          strength: (wAst - lAst) * 0.5,
+          text: "어시스트는 " + wName + " " + wAst + "개, " + lName + " " + lAst + "개로 " +
+            pgJosa(wName, "이", "가") + " 패스로 만든 득점이 더 많았습니다."
+        });
+      }
+    }
+    var ranked = causes.slice().sort(function (a, b) { return b.strength - a.strength; });
+    var topCauses = ranked.filter(function (c) { return c.strength >= 5; }).slice(0, 3);
+    if (topCauses.length < 2) topCauses = ranked.slice(0, Math.min(3, Math.max(2, topCauses.length)));
+    var whyText;
+    if (topCauses.length) {
+      whyText = topCauses.map(function (c) { return c.text; }).join(" ");
+    } else if (winSide) {
+      whyText = "팀 지표에서 한쪽으로 크게 기울어진 항목이 없었고, " + margin + "점 차 접전이었습니다.";
+    } else {
+      whyText = "팀 지표에서 승부를 가른 항목을 찾지 못했습니다.";
+    }
+
+    /* ── 더 보기: 쿼터 흐름 · 팀 지표 ── */
+    var detailBits = [];
+    if (quarterRows.length) {
+      var bigRow = quarterRows[0];
+      quarterRows.forEach(function (q) { if (Math.abs(q.d) > Math.abs(bigRow.d)) bigRow = q; });
+      var bigIdx = quarterRows.indexOf(bigRow);
+      detailBits.push("가장 크게 갈린 쿼터는 " + (bigIdx + 1) + "Q로 " +
+        (bigRow.d > 0 ? pgJosa(winTeam.name, "이", "가") : pgJosa(loseTeam.name, "이", "가")) + " " +
+        Math.abs(bigRow.d) + "점 앞섰습니다.");
+    }
+    var biggest = statNum(winSide || "away", "largestLead");
+    if (winSide && biggest != null) {
+      detailBits.push("이긴 팀의 최대 리드는 " + biggest + "점이었습니다.");
+    }
+    var teamStatRows = [];
+    if (winSide && boxOf[winSide] && boxOf[winSide === "away" ? "home" : "away"]) {
+      var lsid = winSide === "away" ? "home" : "away";
+      var wAbbr = String(boxOf[winSide].abbr || ""), lAbbr = String(boxOf[lsid].abbr || "");
+      function pair(label, wv, lv) {
+        if (wv == null || lv == null || wv === "") return;
+        teamStatRows.push('<div class="pg-stat-row"><i>' + esc(label) + "</i><span>" +
+          esc(wAbbr + " " + wv + " · " + lAbbr + " " + lv) + "</span></div>");
+      }
+      var wS2 = boxOf[winSide].stats || {}, lS2 = boxOf[lsid].stats || {};
+      function both(key, fmt) {
+        var a = wS2[key], b = lS2[key];
+        if (a == null || b == null) return;
+        pair(fmt.label, fmt.f(a), fmt.f(b));
+      }
+      both("fieldGoalsMade-fieldGoalsAttempted", { label: "야투", f: function (v) { var s = pgShot(v); return s ? pgShotText(s) : v; } });
+      both("threePointFieldGoalsMade-threePointFieldGoalsAttempted", { label: "3점", f: function (v) { var s = pgShot(v); return s ? pgShotText(s) : v; } });
+      both("freeThrowsMade-freeThrowsAttempted", { label: "자유투", f: function (v) { var s = pgShot(v); return s ? pgShotText(s) : v; } });
+      both("totalRebounds", { label: "리바운드", f: function (v) { return v + "개"; } });
+      both("offensiveRebounds", { label: "공격 리바운드", f: function (v) { return v + "개"; } });
+      both("assists", { label: "어시스트", f: function (v) { return v + "개"; } });
+      both("turnovers", { label: "턴오버", f: function (v) { return v + "개"; } });
+      both("turnoverPoints", { label: "턴오버 실점", f: function (v) { return v + "점"; } });
+      both("pointsInPaint", { label: "페인트존", f: function (v) { return v + "점"; } });
+      both("fastBreakPoints", { label: "속공", f: function (v) { return v + "점"; } });
+    }
+
+    var morePieces = "";
+    if (detailBits.length) morePieces += "<p>" + esc(detailBits.join(" ")) + "</p>";
+    if (teamStatRows.length) {
+      morePieces += '<div class="pg-stat-grid" aria-label="팀 지표 비교">' + teamStatRows.join("") + "</div>";
+    }
+
+    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>승패 원인 · 활약</span></div>' +
+      '<p class="pg-game-line">' + esc(flowSentences.join(" ")) + "</p>" +
+      '<div class="pg-why"><b>승부가 갈린 이유</b><p>' + esc(whyText) + "</p></div>" +
+      '<div class="pg-highlights">' + highlightHTML(carry, "up", "캐리한 선수") + highlightHTML(low, "down", "아쉬웠던 선수") + "</div>" +
+      (morePieces ? '<details class="pg-more"><summary>경기 흐름 · 팀 지표 더 보기</summary>' + morePieces + "</details>" : "") +
+      '<p class="postgame-note">선수 평가는 시즌 평균과 박스스코어(득점·리바운드·어시스트·야투·턴오버·±)를 바탕으로 한 자동 요약입니다. ±는 그 선수가 코트에 있던 동안의 팀 득실 마진입니다.</p></section>';
+  }
+
+  /* ── 축구: 결과·흐름 + 승패 원인(점유율·슈팅·선방) + 득점 장면 ──
+     ESPN 축구 요약에는 선수별 시즌 평균이 없어 개인 평가는 하지 않고, 팀 지표와 득점자만 쓴다. */
+  function pgSoccerHTML(g) {
+    var r = g.result;
+    var away = Number(r.awayScore), home = Number(r.homeScore);
+    if (!isFinite(away) || !isFinite(home)) return "";
+    var winSide = away > home ? "away" : (home > away ? "home" : null);
+    var winTeam = winSide ? g[winSide] : null;
+    var loseTeam = winSide ? g[winSide === "away" ? "home" : "away"] : null;
+    var out = [];
+
+    if (!winSide) {
+      out.push("양 팀이 " + away + "-" + home + pgNumJosa(home, "으로", "로") + " 비겼습니다.");
+    } else {
+      out.push(pgJosa(winTeam.name, "이", "가") + " " + Math.max(away, home) + "-" + Math.min(away, home) +
+        pgNumJosa(Math.min(away, home), "으로", "로") + " 이겼습니다.");
+    }
+    var ls = r.lines;
+    if (ls && ls.away && ls.home && ls.away.length) {
+      var halves = [];
+      for (var i = 0; i < Math.min(ls.away.length, ls.home.length); i++) {
+        var wv = winSide === "away" ? ls.away[i] : (winSide === "home" ? ls.home[i] : ls.away[i]);
+        var lv = winSide === "away" ? ls.home[i] : (winSide === "home" ? ls.away[i] : ls.home[i]);
+        halves.push((i === 0 ? "전반" : "후반") + " " + wv + "-" + lv);
+      }
+      out.push(halves.join(", ") + pgNumCopula(ls.home[ls.home.length - 1] || 0) + ".");
+    }
+
+    var entry = summaryEntry(g);
+    var data = entry && entry.data;
+    var boxes = data && Array.isArray(data.box) ? data.box : [];
+    if (!boxes.length) {
+      return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b></div>' +
+        '<p class="postgame-note">' +
+        (entry && entry.err ? "경기 기록을 불러오지 못했습니다." : "경기 기록을 불러오는 중입니다.") +
+        "</p></section>";
+    }
+
+    function sideIdx(side) {
+      var want = String((g[side] && g[side].abbr) || "").toUpperCase();
+      for (var i = 0; i < boxes.length; i++) {
+        if (String(boxes[i].abbr || "").toUpperCase() === want) return i;
+      }
+      return side === "away" ? 0 : 1;
+    }
+    function sn(stats, key) {
+      var v = Number(String(stats[key] == null ? "" : stats[key]).trim());
+      return isFinite(v) ? v : null;
+    }
+    function f1(v) { return Math.round(v * 10) / 10; }
+    function shotsText(name, shots, on) {
+      return name + " " + (shots == null ? "-" : shots) + "개(유효 " + (on == null ? "-" : on) + ")";
+    }
+
+    var why = "팀 지표가 비슷해 한쪽으로 기울어진 항목이 없었습니다.";
+    var whyLabel = winSide ? "승부가 갈린 이유" : "경기 양상";
+    if (boxes.length >= 2) {
+      var wIdx = winSide ? sideIdx(winSide) : sideIdx("away");
+      var lIdx = winSide ? sideIdx(winSide === "away" ? "home" : "away") : sideIdx("home");
+      var wS = boxes[wIdx].stats || {}, lS = boxes[lIdx].stats || {};
+      var wName = winSide ? winTeam.name : g.away.name;
+      var lName = winSide ? loseTeam.name : g.home.name;
+      var wShots = sn(wS, "totalShots"), lShots = sn(lS, "totalShots");
+      var wOn = sn(wS, "shotsOnTarget"), lOn = sn(lS, "shotsOnTarget");
+      var wSaves = sn(wS, "saves"), lSaves = sn(lS, "saves");
+      var wPoss = sn(wS, "possessionPct"), lPoss = sn(lS, "possessionPct");
+      var wCorners = sn(wS, "wonCorners"), lCorners = sn(lS, "wonCorners");
+      var facts = [];
+      var wShotsT = shotsText(wName, wShots, wOn), lShotsT = shotsText(lName, lShots, lOn);
+
+      if (!winSide) {
+        // 무승부: 누가 밀어붙였고 누가 효율로 버텼는지
+        if (wShots != null && lShots != null && wShots !== lShots) {
+          var domW = wShots > lShots ? wName : lName;
+          var domShots = Math.max(wShots, lShots), subShots = Math.min(wShots, lShots);
+          var domOn = wShots > lShots ? wOn : lOn, subOn = wShots > lShots ? lOn : wOn;
+          var domPoss = wShots > lShots ? wPoss : lPoss;
+          var t = pgJosa(domW, "이", "가") + " " + (domPoss != null ? "점유율 " + f1(domPoss) + "%, " : "") + "슈팅 " +
+            domShots + "-" + subShots + "로 밀어붙였지만 " + away + "-" + home + " 무승부였습니다.";
+          if (domOn != null && subOn != null && subOn > domOn) {
+            t += " 유효 슈팅은 " + pgJosa(wShots > lShots ? lName : wName, "이", "가") + " " + subOn + "-" + domOn + "로 더 날카로웠습니다.";
+          }
+          facts.push(t);
+        }
+      } else if (wShots != null && lShots != null && wShots < lShots) {
+        // 슈팅 수에서 밀렸는데 이긴 경기: 골키퍼 선방 차이
+        if (wSaves != null && lSaves != null && wSaves > lSaves) {
+          facts.push("슈팅은 " + wShotsT + ", " + lShotsT + "로 밀렸지만 " + wName + " 골키퍼가 선방 " +
+            wSaves + "개로 " + lName + "(" + lSaves + "개)보다 많았고, 그 차이가 " +
+            Math.max(away, home) + "-" + Math.min(away, home) + " 승부를 지켰습니다.");
+        } else {
+          facts.push("슈팅은 " + wShotsT + ", " + lShotsT + "였습니다.");
+        }
+      } else if (wShots != null && lShots != null) {
+        facts.push("슈팅은 " + wShotsT + ", " + lShotsT + "로 " + pgJosa(wName, "이", "가") + " 더 많이 때렸습니다.");
+      }
+      if (winSide && wOn != null && lOn != null && wOn - lOn >= 3) {
+        facts.push("유효 슈팅은 " + wOn + "-" + lOn + "였습니다.");
+      }
+      if (wPoss != null && lPoss != null && Math.abs(wPoss - lPoss) >= 10 && !(!winSide && wShots !== lShots)) {
+        facts.push("점유율은 " + wName + " " + f1(wPoss) + "%, " + lName + " " + f1(lPoss) + "%였습니다.");
+      }
+      if (wCorners != null && lCorners != null && Math.abs(wCorners - lCorners) >= 5) {
+        facts.push("코너킥은 " + wCorners + "-" + lCorners + "였습니다.");
+      }
+      if (facts.length) why = facts.slice(0, 3).join(" ");
+    }
+
+    var more = "";
+    var goals = (data && Array.isArray(data.goals)) ? data.goals : [];
+    if (goals.length) {
+      var koTeam = {};
+      boxes.forEach(function (b, i) {
+        var ab = String(b.abbr || "").toUpperCase();
+        var side = (g.away && String(g.away.abbr || "").toUpperCase() === ab) ? "away" :
+          ((g.home && String(g.home.abbr || "").toUpperCase() === ab) ? "home" : "");
+        if (side) koTeam[String(b.id || "")] = g[side].name;
+      });
+      more = '<div class="pg-stat-grid">' + goals.map(function (x) {
+        var text = x.text;
+        var ko = koTeam[x.teamId];
+        if (ko && x.teamName) text = text.replace("(" + x.teamName + ")", "(" + ko + ")");
+        return '<div class="pg-stat-row"><i>' + esc(x.minute) + '</i><span>' + esc(text) + "</span></div>";
+      }).join("") + "</div>";
+    }
+    var note = "축구는 ESPN 공개 데이터에 선수별 시즌 평균이 없어 개인 평가는 표시하지 않습니다. 팀 지표와 득점 장면만 정리했습니다.";
+
+    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>승패 원인</span></div>' +
+      '<p class="pg-game-line">' + esc(out.join(" ")) + "</p>" +
+      '<div class="pg-why"><b>' + whyLabel + '</b><p>' + esc(why) + "</p></div>" +
+      (more ? '<details class="pg-more"><summary>득점 장면 더 보기</summary>' + more + "</details>" : "") +
+      '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
 
   function flowRowHTML(row, g) {
@@ -1452,7 +1977,8 @@
     wrap.innerHTML = boxHTML(entry.g);
     // 진행 중인 경기면 선수 기록·최근 플레이를 바로 받아 채운다
     if (entry.g.result && entry.g.result.state === "live") refreshLiveSummary(item, entry.g, false);
-    else if (entry.g.result && entry.g.result.state === "final" && entry.g.sport === "basketball") refreshPostgameSummary(item, entry.g, false);
+    else if (entry.g.result && entry.g.result.state === "final" &&
+      (entry.g.sport === "basketball" || entry.g.sport === "soccer")) refreshPostgameSummary(item, entry.g, false);
     item.classList.add("open");
     btn.setAttribute("aria-expanded", "true");
     label.textContent = "접기";
@@ -2663,9 +3189,48 @@
 
   function koPlay(raw) { return koTranslate(raw).text; }
 
-  // ESPN summary 응답 → 최근 플레이 5개 + 팀별 출전 선수 기록
+  // "6:12" → 372초. 해석할 수 없으면 null.
+  function clockSecs(text) {
+    var m = String(text == null ? "" : text).match(/^(\d+):(\d{2})$/);
+    return m ? Number(m[1]) * 60 + Number(m[2]) : null;
+  }
+
+  // ESPN summary 응답 → 최근 플레이 5개 + 팀별 출전 선수 기록 + 팀 지표
+  // box[i].stats 는 그 팀의 박스스코어 팀 지표(야투·3점·자유투·리바운드·턴오버 등)이고,
+  // out.clutch 는 4쿼터 마지막 5분·연장에서 그 선수가 넣은 득점이다(승부처 기여).
   function parseLiveSummary(j) {
-    var out = { plays: [], box: [] };
+    var out = { plays: [], box: [], clutch: {}, goals: [] };
+
+    // 축구 득점 장면: keyEvents 의 goal 을 시간·득점자·도움으로 줄인다
+    var keyEvents = j && Array.isArray(j.keyEvents) ? j.keyEvents : [];
+    out.goals = keyEvents.filter(function (e) {
+      return e && (e.scoringPlay === true || (e.type && e.type.type === "goal"));
+    }).map(function (e) {
+      var parts = e.participants || [];
+      var scorer = (parts[0] && parts[0].athlete && parts[0].athlete.displayName) || "";
+      var assist = (parts[1] && parts[1].athlete && parts[1].athlete.displayName) || "";
+      var team = (e.team && e.team.displayName) || "";
+      var teamId = String((e.team && e.team.id) || "");
+      var clock = (e.clock && e.clock.displayValue) || "";
+      var text = scorer ? scorer + "(" + team + ")" : String(e.shortText || "");
+      if (assist) text += " · " + assist + " 어시스트";
+      return { minute: clock, text: text, teamId: teamId, teamName: team };
+    }).filter(function (x) { return !!x.text; });
+
+    // 승부처 득점: ESPN play 의 scoringPlay·scoreValue·period·clock 으로 센다
+    var rawPlays = j && Array.isArray(j.plays) ? j.plays : [];
+    rawPlays.forEach(function (p) {
+      if (!p || !p.scoringPlay) return;
+      var val = Number(p.scoreValue);
+      if (!isFinite(val) || val <= 0) return;
+      var per = p.period && p.period.number ? Number(p.period.number) : null;
+      var secs = clockSecs(p.clock && p.clock.displayValue);
+      var clutch = per != null && (per >= 5 || (per === 4 && secs != null && secs <= 300));
+      if (!clutch) return;
+      var who = p.participants && p.participants[0] && p.participants[0].athlete;
+      if (!who || !who.id) return;
+      out.clutch[String(who.id)] = (out.clutch[String(who.id)] || 0) + val;
+    });
 
     var plays = j && Array.isArray(j.plays) ? j.plays : [];
     out.plays = plays.slice(-5).reverse().map(function (p) {
@@ -2699,6 +3264,7 @@
           var min = s[idx.MIN];
           if (min == null || min === "" || min === "--" || toNum(min) <= 0) return;
           rows.push({
+            id: (a.athlete && a.athlete.id) || "",
             name: (a.athlete && (a.athlete.displayName || a.athlete.fullName || a.athlete.shortName)) || "",
             photo: (a.athlete && a.athlete.headshot && a.athlete.headshot.href) || "",
             min: min,
@@ -2710,15 +3276,73 @@
             ft: idx.FT != null ? s[idx.FT] : null,
             turnovers: idx.TO != null ? s[idx.TO] : null,
             stl: idx.STL != null ? s[idx.STL] : null,
-            blk: idx.BLK != null ? s[idx.BLK] : null
+            blk: idx.BLK != null ? s[idx.BLK] : null,
+            oreb: idx.OREB != null ? s[idx.OREB] : null,
+            dreb: idx.DREB != null ? s[idx.DREB] : null,
+            pf: idx.PF != null ? s[idx.PF] : null,
+            pm: idx["+/-"] != null ? s[idx["+/-"]] : null
           });
         });
         out.box.push({
+          id: (t.team && t.team.id) || "",
           abbr: (t.team && t.team.abbreviation) || "",
           name: (t.team && (t.team.shortDisplayName || t.team.displayName)) || "",
-          rows: rows
+          rows: rows,
+          stats: {}
         });
       });
+    }
+
+    // 팀 지표(박스스코어 teams)는 players 와 같은 순서(원정·홈)로 온다
+    var statTeams = j && j.boxscore && j.boxscore.teams;
+    if (Array.isArray(statTeams)) {
+      statTeams.forEach(function (t, i) {
+        var box = out.box[i];
+        if (!box) return;
+        (t.statistics || []).forEach(function (s) {
+          if (!s || !s.name) return;
+          box.stats[s.name] = s.displayValue;
+        });
+      });
+    }
+
+    // 축구는 boxscore.players 가 비어 있고 로스터(rosters)에 경기 기록이 온다
+    var rosterTeams = j && Array.isArray(j.rosters) ? j.rosters : [];
+    if (!out.box.length && rosterTeams.length) {
+      rosterTeams.forEach(function (t) {
+        var rows = [];
+        (t.roster || []).forEach(function (pl) {
+          var st = {};
+          (pl.stats || []).forEach(function (s) { if (s && s.name) st[s.name] = s.displayValue; });
+          if (!pl.athlete) return;
+          rows.push({
+            id: pl.athlete.id || "",
+            name: pl.athlete.displayName || pl.athlete.fullName || "",
+            photo: (pl.athlete.headshot && pl.athlete.headshot.href) || "",
+            starter: !!pl.starter,
+            pos: (pl.position && pl.position.abbreviation) || "",
+            stats: st
+          });
+        });
+        out.box.push({
+          id: (t.team && t.team.id) || "",
+          abbr: (t.team && t.team.abbreviation) || "",
+          name: (t.team && (t.team.shortDisplayName || t.team.displayName)) || "",
+          rows: rows,
+          stats: {}
+        });
+      });
+      statTeams = j && j.boxscore && j.boxscore.teams;
+      if (Array.isArray(statTeams)) {
+        statTeams.forEach(function (t, i) {
+          var box = out.box[i];
+          if (!box) return;
+          (t.statistics || []).forEach(function (s) {
+            if (!s || !s.name) return;
+            box.stats[s.name] = s.displayValue;
+          });
+        });
+      }
     }
     return out;
   }
@@ -3118,7 +3742,7 @@
         }
         // 펼쳐 둔 진행 중 경기는 선수 기록·최근 플레이도 30초마다 새로 받는다
         if (oeLive) refreshLiveSummary(open, oe.g, true);
-        else if (oe.g.result && oe.g.result.state === "final" && oe.g.sport === "basketball") {
+        else if (oe.g.result && oe.g.result.state === "final" && (oe.g.sport === "basketball" || oe.g.sport === "soccer")) {
           var postgameEntry = summaryEntry(oe.g);
           if (!postgameEntry || (postgameEntry.err && Date.now() - postgameEntry.at > 60000)) {
             refreshPostgameSummary(open, oe.g, false);
