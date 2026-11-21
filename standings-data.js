@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-22T06:09:41+09:00
+   생성 시각(기준): 2026-11-22T07:07:46+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-22T06:09:41+09:00",
+  "updated": "2026-11-22T07:07:46+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -850,12 +850,12 @@ window.CLUTCH_STANDINGS = {
               "team": "레알 마드리드",
               "abbr": "RMA",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/86.png",
-              "played": 12,
-              "win": 10,
+              "played": 13,
+              "win": 11,
               "draw": 0,
               "loss": 2,
-              "points": 30,
-              "diff": 21,
+              "points": 33,
+              "diff": 22,
               "pct": null,
               "gb": null,
               "zone": {
@@ -1043,12 +1043,12 @@ window.CLUTCH_STANDINGS = {
               "team": "셀타 비고",
               "abbr": "CEL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/85.png",
-              "played": 12,
+              "played": 13,
               "win": 2,
               "draw": 7,
-              "loss": 3,
+              "loss": 4,
               "points": 13,
-              "diff": 0,
+              "diff": -1,
               "pct": null,
               "gb": null,
               "zone": null
@@ -2561,6 +2561,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 8,
+              "team": "나폴리",
+              "abbr": "NAP",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
+              "played": 12,
+              "win": 5,
+              "draw": 3,
+              "loss": 4,
+              "points": 18,
+              "diff": 5,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 9,
               "team": "볼로냐",
               "abbr": "BOL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/107.png",
@@ -2575,7 +2590,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 9,
+              "rank": 10,
               "team": "칼리아리",
               "abbr": "CAG",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2925.png",
@@ -2590,37 +2605,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 10,
-              "team": "나폴리",
-              "abbr": "NAP",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
-              "played": 11,
-              "win": 4,
-              "draw": 3,
-              "loss": 4,
-              "points": 15,
-              "diff": 4,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
               "rank": 11,
-              "team": "토리노",
-              "abbr": "TOR",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/239.png",
-              "played": 11,
-              "win": 4,
-              "draw": 2,
-              "loss": 5,
-              "points": 14,
-              "diff": -2,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 12,
               "team": "아탈란타",
               "abbr": "ATA",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/105.png",
@@ -2628,6 +2613,21 @@ window.CLUTCH_STANDINGS = {
               "win": 4,
               "draw": 2,
               "loss": 5,
+              "points": 14,
+              "diff": -3,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 12,
+              "team": "토리노",
+              "abbr": "TOR",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/239.png",
+              "played": 12,
+              "win": 4,
+              "draw": 2,
+              "loss": 6,
               "points": 14,
               "diff": -3,
               "pct": null,
