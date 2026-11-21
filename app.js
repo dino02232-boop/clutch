@@ -3844,31 +3844,33 @@
     if (!hb || !ab) return "";
     var hs = hb.stats || {}, as = ab.stats || {};
     var rows = [];
+    // 점수판(원정 왼쪽 · 홈 오른쪽)과 같은 순서로 놓는다
     SOCCER_STATS.forEach(function (r) {
-      var hv = statText(hs[r.key], r.suffix), av = statText(as[r.key], r.suffix);
-      var hn = statNumOf(hs[r.key]), an = statNumOf(as[r.key]);
-      if (!hv || !av || hn == null || an == null) return;
+      var av = statText(as[r.key], r.suffix), hv = statText(hs[r.key], r.suffix);
+      var an = statNumOf(as[r.key]), hn = statNumOf(hs[r.key]);
+      if (!av || !hv || an == null || hn == null) return;
       if (r.onlyIf && !r.onlyIf(hn, an)) return;
-      var total = Math.abs(hn) + Math.abs(an);
-      var pct = total > 0 ? Math.round((Math.abs(hn) / total) * 100) : 50;
+      var total = Math.abs(an) + Math.abs(hn);
+      var pct = total > 0 ? Math.round((Math.abs(an) / total) * 100) : 50;
       rows.push('<div class="sb-row">' +
-        '<b class="sb-v">' + esc(hv) + "</b>" +
+        '<b class="sb-v">' + esc(av) + "</b>" +
         '<span class="sb-mid"><span class="sb-k">' + esc(r.label) + "</span>" +
           '<span class="sb-bar" aria-hidden="true"><i style="width:' + pct + '%"></i></span></span>' +
-        '<b class="sb-v r">' + esc(av) + "</b>" +
+        '<b class="sb-v r">' + esc(hv) + "</b>" +
         "</div>");
     });
     if (!rows.length) return "";
     var hn = String((g.home && (g.home.abbr || g.home.name)) || "홈");
     var an = String((g.away && (g.away.abbr || g.away.name)) || "원정");
     return '<h4 class="lb-sub">팀 지표</h4>' +
-      '<div class="sb-stats" aria-label="팀 지표 비교 (홈 ' + esc(hn) + ', 원정 ' + esc(an) + ')">' +
+      '<div class="sb-stats" aria-label="팀 지표 비교 (원정 ' + esc(an) + ', 홈 ' + esc(hn) + ')">' +
         '<div class="sb-row sb-hd">' +
-          '<span class="sb-side"><b>' + esc(hn) + '</b><i class="sb-tag">홈</i></span>' +
+          '<span class="sb-side"><b>' + esc(an) + '</b><i class="sb-tag away">원정</i></span>' +
           '<span class="sb-k"></span>' +
-          '<span class="sb-side r"><b>' + esc(an) + '</b><i class="sb-tag away">원정</i></span>' +
+          '<span class="sb-side r"><b>' + esc(hn) + '</b><i class="sb-tag">홈</i></span>' +
         "</div>" + rows.join("") + "</div>";
   }
+
 
   function soccerEventRowHTML(e) {
     var sc = e.score ? String(e.score.away) + "-" + String(e.score.home) : "";
