@@ -5,7 +5,7 @@
    화면
    · 홈        : 종목 선택 타일(.tiles / .tile)
    · 일정 목록  : 한 줄 = 한 경기(.rows / .mrow-item / .mrow), 오른쪽에 .cbtn
-   · 클러치 상황: 줄 밑으로 펼쳐지는 네모 박스(.cbox-wrap / .cbox)
+   · VS 상황: 줄 밑으로 펼쳐지는 네모 박스(.cbox-wrap / .cbox)
    ============================================================= */
 
 :root {
@@ -312,13 +312,31 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   line-height: 1.5;
   flex: 0 0 auto;
 }
-/* 홈(종목 선택) 안내 한 줄 */
+/* 홈(종목 선택) 첫 화면 — 사이트 정체성 한 줄 + 안내
+   첫 방문자가 '무슨 사이트인지'를 먼저 읽고, 그다음에 종목을 고르게 한다. */
 .home-lead {
-  margin: -4px 0 14px;
-  font-size: 11.5px;
+  margin: -2px 0 14px;
+  font-size: 12.5px;
   line-height: 1.55;
+  color: var(--text-2);
+  letter-spacing: -.008em;
+}
+.home-lead .hl-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text);
+  letter-spacing: -.022em;
+  word-break: keep-all;
+}
+.home-lead .hl-title b { font-weight: 800; }
+.home-lead .hl-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
   color: var(--text-3);
-  letter-spacing: -.005em;
+  word-break: keep-all;
 }
 
 /* 홈: 종목 선택 타일 */
@@ -448,6 +466,51 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .list-hint b { color: var(--text-2); font-weight: 700; }
 
+/* 리그 필터 칩 — 목록 위 한 줄, 넘치면 가로로 스크롤 */
+.lg-chips {
+  display: flex;
+  gap: 6px;
+  margin: 0 0 9px;
+  padding: 1px 0 2px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.lg-chips::-webkit-scrollbar { display: none; }
+.lchip {
+  appearance: none;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: var(--text-2);
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.lchip .n {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+.lchip.on {
+  border-color: transparent;
+  background: #111827;
+  color: #FFFFFF;
+}
+.lchip.on .n { color: rgba(255, 255, 255, .72); }
+.lchip:hover { border-color: rgba(17, 24, 39, .18); }
+.lchip:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; }
+
 .notify-control {
   display: flex;
   align-items: center;
@@ -545,12 +608,40 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .mtms {
   grid-area: teams;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   min-width: 0;
 }
-.mtms .sport-ball { flex: 0 0 auto; font-size: 14px; line-height: 1; }
+/* 팀 크레스트 — 로고를 얹고, 로고가 없으면 약어가 그대로 남는다(빈 자리가 생기지 않게). */
+.crest {
+  position: relative;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: #F1F3F5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.crest .crest-t {
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: .01em;
+  color: #6B7280;
+  line-height: 1;
+}
+.crest img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #FFFFFF;
+}
+.crest.sm { width: 14px; height: 14px; border-radius: 3px; }
 .mtms .tm {
   display: inline-flex;
   align-items: center;
@@ -569,6 +660,7 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .team-link {
   appearance: none; min-width: 0; padding: 0; border: 0; background: transparent;
   color: inherit; font: inherit; text-align: inherit; cursor: pointer; flex: 1 1 auto;
+  display: inline-flex; align-items: center; gap: 3px;
 }
 .team-link:hover .tm-name { text-decoration: underline; text-underline-offset: 2px; }
 .team-link:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; border-radius: 3px; }
@@ -583,7 +675,7 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   letter-spacing: .04em;
 }
 
-/* 줄 오른쪽 '클러치 상황' 버튼 — 이 화면의 주 진입점 */
+/* 줄 오른쪽 'VS 상황' 버튼 — 이 화면의 주 진입점 */
 .cbtn {
   grid-area: btn;
   appearance: none;
