@@ -86,7 +86,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-21T11:48:11+09:00",
+  updatedAt: "2026-11-21T12:42:33+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -7543,7 +7543,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 천안유관순체육관에서 열립니다.",
               "**순위표** — 한국전력 5승 1패·1위·승점 14, 현대캐피탈 4승 2패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 11:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 12:42 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -7847,7 +7847,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 김천실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행 4승 2패·3위·승점 12, 도로공사 5승 1패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 11:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 12:42 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-20 END */,
@@ -9713,7 +9713,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — OK저축은행 1승 3패·6위·승점 4, 삼성화재 3승 2패·3위·승점 9."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 11:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 12:42 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -10017,7 +10017,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 숲 스타디움에서 열립니다.",
               "**순위표** — 정관장 2승 2패·5위·승점 6, SOOP 0승 5패·7위·승점 0."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 11:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 12:42 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-21 END */,
@@ -14270,14 +14270,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-21 06:16 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-orl-bkn-20261121",
           "espnId": "401909306",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-21T09:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Barclays Center",
           "odds": {
             "provider": "Draft Kings",
@@ -14342,6 +14342,83 @@ window.CLUTCH_DATA = {
               "text": "**올랜도 매직** 6승 8패(원정 5승 3패, 최근 5경기 4승 1패), **브루클린 네츠** 3승 11패(홈 1승 5패, 최근 5경기 1승 4패, 3연패). 직전 경기(11.19) **올랜도 매직**은 필라델피아 세븐티식서스에 116-121로 졌고, Franz Wagner 27점·8리바운드·11어시스트, Jalen Suggs 18점·8리바운드·4어시스트를 기록했습니다. 직전 경기(11.19) **브루클린 네츠**는 시카고 불스에 107-137로 졌고, Egor Demin 22점·4리바운드·4어시스트, Julius Randle 17점·0리바운드·4어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 113,
+            "homeScore": 111,
+            "lines": {
+              "away": [
+                "38",
+                "24",
+                "29",
+                "22"
+              ],
+              "home": [
+                "25",
+                "36",
+                "27",
+                "23"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Franz Wagner",
+                "team": "ORL",
+                "min": "36",
+                "pts": 35,
+                "reb": "5",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png"
+              },
+              {
+                "name": "Julius Randle",
+                "team": "BKN",
+                "min": "39",
+                "pts": 27,
+                "reb": "9",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png"
+              },
+              {
+                "name": "Desmond Bane",
+                "team": "ORL",
+                "min": "31",
+                "pts": 21,
+                "reb": "2",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png"
+              },
+              {
+                "name": "Danny Wolf",
+                "team": "BKN",
+                "min": "26",
+                "pts": 20,
+                "reb": "5",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107173.png"
+              },
+              {
+                "name": "Mikel Brown Jr.",
+                "team": "BKN",
+                "min": "24",
+                "pts": 18,
+                "reb": "1",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5101761.png"
+              },
+              {
+                "name": "Day'Ron Sharpe",
+                "team": "BKN",
+                "min": "26",
+                "pts": 17,
+                "reb": "11",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432194.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -14557,14 +14634,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-21 06:16 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-ind-cle-20261121",
           "espnId": "401909307",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-21T09:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Rocket Arena",
           "odds": {
             "provider": "Draft Kings",
@@ -14629,6 +14706,83 @@ window.CLUTCH_DATA = {
               "text": "**인디애나 페이서스** 5승 10패(원정 3승 4패, 최근 5경기 2승 3패, 2연패), **클리블랜드 캐벌리어스** 8승 8패(홈 6승 3패, 최근 5경기 3승 2패). 직전 경기(11.19) **인디애나 페이서스**는 휴스턴 로키츠에 104-119로 졌고, Pascal Siakam 24점·4리바운드·3어시스트, Kelly Oubre Jr. 17점·4리바운드·0어시스트를 기록했습니다. 직전 경기(11.19) **클리블랜드 캐벌리어스**는 멤피스 그리즐리스에 121-124로 졌고, Donovan Mitchell 34점·4리바운드·3어시스트, Jarrett Allen 19점·9리바운드·4어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 119,
+            "homeScore": 128,
+            "lines": {
+              "away": [
+                "29",
+                "32",
+                "22",
+                "36"
+              ],
+              "home": [
+                "29",
+                "33",
+                "43",
+                "23"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "James Harden",
+                "team": "CLE",
+                "min": "40",
+                "pts": 51,
+                "reb": "6",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3992.png"
+              },
+              {
+                "name": "Pascal Siakam",
+                "team": "IND",
+                "min": "30",
+                "pts": 21,
+                "reb": "7",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png"
+              },
+              {
+                "name": "Ivica Zubac",
+                "team": "IND",
+                "min": "27",
+                "pts": 21,
+                "reb": "10",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4017837.png"
+              },
+              {
+                "name": "Donovan Mitchell",
+                "team": "CLE",
+                "min": "29",
+                "pts": 20,
+                "reb": "3",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png"
+              },
+              {
+                "name": "Kelly Oubre Jr.",
+                "team": "IND",
+                "min": "23",
+                "pts": 17,
+                "reb": "6",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3133603.png"
+              },
+              {
+                "name": "Obi Toppin",
+                "team": "IND",
+                "min": "26",
+                "pts": 17,
+                "reb": "3",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278355.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -14873,14 +15027,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-21 06:16 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-tor-det-20261121",
           "espnId": "401909308",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-21T09:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Little Caesars Arena",
           "odds": {
             "provider": "Draft Kings",
@@ -14945,6 +15099,83 @@ window.CLUTCH_DATA = {
               "text": "**토론토 랩터스** 5승 10패(원정 3승 4패, 최근 5경기 0승 5패, 5연패), **디트로이트 피스턴스** 10승 4패(홈 3승 2패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.19) **토론토 랩터스**는 워싱턴 위저즈에 99-103로 졌고, Immanuel Quickley 24점·3리바운드·5어시스트, Jamison Battle 19점·5리바운드·0어시스트를 기록했습니다. 직전 경기(11.19) **디트로이트 피스턴스**는 뉴올리언스 펠리컨스에 122-109로 이겼고, John Collins 20점·7리바운드·2어시스트, Javonte Green 18점·7리바운드·0어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 105,
+            "homeScore": 102,
+            "lines": {
+              "away": [
+                "26",
+                "28",
+                "23",
+                "28"
+              ],
+              "home": [
+                "23",
+                "25",
+                "24",
+                "30"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Scottie Barnes",
+                "team": "TOR",
+                "min": "37",
+                "pts": 29,
+                "reb": "5",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433134.png"
+              },
+              {
+                "name": "Cade Cunningham",
+                "team": "DET",
+                "min": "36",
+                "pts": 23,
+                "reb": "5",
+                "ast": "9",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png"
+              },
+              {
+                "name": "Allen Graves",
+                "team": "TOR",
+                "min": "33",
+                "pts": 20,
+                "reb": "10",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5149115.png"
+              },
+              {
+                "name": "Kevin Huerter",
+                "team": "DET",
+                "min": "36",
+                "pts": 20,
+                "reb": "3",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066372.png"
+              },
+              {
+                "name": "Immanuel Quickley",
+                "team": "TOR",
+                "min": "33",
+                "pts": 18,
+                "reb": "3",
+                "ast": "10",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395724.png"
+              },
+              {
+                "name": "Daniss Jenkins",
+                "team": "DET",
+                "min": "39",
+                "pts": 14,
+                "reb": "4",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -15188,14 +15419,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-21 06:17 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-was-chi-20261121",
           "espnId": "401909309",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-21T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "United Center",
           "odds": {
             "provider": "Draft Kings",
@@ -15260,6 +15491,83 @@ window.CLUTCH_DATA = {
               "text": "**워싱턴 위저즈** 5승 11패(원정 3승 6패, 최근 5경기 1승 4패), **시카고 불스** 4승 10패(홈 1승 4패, 최근 5경기 3승 2패). 직전 경기(11.19) **워싱턴 위저즈**는 토론토 랩터스에 103-99로 이겼고, Anthony Davis 25점·14리바운드·2어시스트, AJ Dybantsa 23점·12리바운드·2어시스트를 기록했습니다. 직전 경기(11.19) **시카고 불스**는 브루클린 네츠에 137-107로 이겼고, Matas Buzelis 25점·5리바운드·4어시스트, Josh Giddey 18점·14리바운드·9어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 98,
+            "homeScore": 94,
+            "lines": {
+              "away": [
+                "22",
+                "30",
+                "23",
+                "23"
+              ],
+              "home": [
+                "29",
+                "31",
+                "9",
+                "25"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Anthony Davis",
+                "team": "WSH",
+                "min": "34",
+                "pts": 36,
+                "reb": "11",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png"
+              },
+              {
+                "name": "AJ Dybantsa",
+                "team": "WSH",
+                "min": "37",
+                "pts": 20,
+                "reb": "10",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142718.png"
+              },
+              {
+                "name": "Trae Young",
+                "team": "WSH",
+                "min": "35",
+                "pts": 16,
+                "reb": "2",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png"
+              },
+              {
+                "name": "Norman Powell",
+                "team": "CHI",
+                "min": "33",
+                "pts": 16,
+                "reb": "3",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png"
+              },
+              {
+                "name": "Buddy Hield",
+                "team": "CHI",
+                "min": "23",
+                "pts": 15,
+                "reb": "4",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2990984.png"
+              },
+              {
+                "name": "Tre Jones",
+                "team": "CHI",
+                "min": "25",
+                "pts": 12,
+                "reb": "1",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395626.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -15506,14 +15814,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-21 06:17 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-nop-okc-20261121",
           "espnId": "401909310",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-21T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Paycom Center",
           "odds": {
             "provider": "Draft Kings",
@@ -15578,6 +15886,83 @@ window.CLUTCH_DATA = {
               "text": "**뉴올리언스 펠리컨스** 5승 11패(원정 1승 4패, 최근 5경기 1승 4패), **오클라호마시티 썬더** 9승 6패(홈 5승 1패, 최근 5경기 1승 4패). 직전 경기(11.19) **뉴올리언스 펠리컨스**는 뉴올리언스 펠리컨스에 122-109로 이겼고, John Collins 20점·7리바운드·2어시스트, Javonte Green 18점·7리바운드·0어시스트를 기록했습니다. 직전 경기(11.19) **오클라호마시티 썬더**는 애틀랜타 호크스에 112-117로 졌고, Shai Gilgeous-Alexander 34점·5리바운드·3어시스트, Jared McCain 18점·3리바운드·1어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 120,
+            "homeScore": 126,
+            "lines": {
+              "away": [
+                "36",
+                "28",
+                "34",
+                "22"
+              ],
+              "home": [
+                "33",
+                "23",
+                "36",
+                "34"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Shai Gilgeous-Alexander",
+                "team": "OKC",
+                "min": "37",
+                "pts": 40,
+                "reb": "3",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278073.png"
+              },
+              {
+                "name": "Zion Williamson",
+                "team": "NO",
+                "min": "37",
+                "pts": 22,
+                "reb": "6",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png"
+              },
+              {
+                "name": "Jeremiah Fears",
+                "team": "NO",
+                "min": "38",
+                "pts": 22,
+                "reb": "7",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5144091.png"
+              },
+              {
+                "name": "Aday Mara",
+                "team": "OKC",
+                "min": "29",
+                "pts": 22,
+                "reb": "16",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174983.png"
+              },
+              {
+                "name": "Saddiq Bey",
+                "team": "NO",
+                "min": "37",
+                "pts": 21,
+                "reb": "6",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png"
+              },
+              {
+                "name": "Jared McCain",
+                "team": "OKC",
+                "min": "30",
+                "pts": 18,
+                "reb": "3",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
