@@ -3843,13 +3843,18 @@
     var hb = soccerBoxSide(g, s, "home"), ab = soccerBoxSide(g, s, "away");
     if (!hb || !ab) return "";
     var hs = hb.stats || {}, as = ab.stats || {};
-    var rows = [];
+    var rows = [], active = false;
     // 점수판(원정 왼쪽 · 홈 오른쪽)과 같은 순서로 놓는다
     SOCCER_STATS.forEach(function (r) {
       var av = statText(as[r.key], r.suffix), hv = statText(hs[r.key], r.suffix);
       var an = statNumOf(as[r.key]), hn = statNumOf(hs[r.key]);
       if (!av || !hv || an == null || hn == null) return;
       if (r.onlyIf && !r.onlyIf(hn, an)) return;
+      // 킥오프 직후처럼 둘 다 0인 줄은 빼고, 점유율 말고는 아무 일도 없었으면 지표 자체를 그리지 않는다
+      if (r.key !== "possessionPct") {
+        if (hn + an === 0) return;
+        active = true;
+      }
       var total = Math.abs(an) + Math.abs(hn);
       var pct = total > 0 ? Math.round((Math.abs(an) / total) * 100) : 50;
       rows.push('<div class="sb-row">' +
@@ -3859,7 +3864,7 @@
         '<b class="sb-v r">' + esc(hv) + "</b>" +
         "</div>");
     });
-    if (!rows.length) return "";
+    if (!rows.length || !active) return "";
     var hn = String((g.home && (g.home.abbr || g.home.name)) || "홈");
     var an = String((g.away && (g.away.abbr || g.away.name)) || "원정");
     return '<h4 class="lb-sub">팀 지표</h4>' +
