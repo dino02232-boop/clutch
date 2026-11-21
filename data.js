@@ -87,7 +87,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-22T01:12:31+09:00",
+  updatedAt: "2026-11-22T02:11:44+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -10062,7 +10062,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 삼성화재(홈) 4승 2패·2위·승점 12, OK저축은행(원정) 1승 4패·6위·승점 4."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 01:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 02:11 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -10420,7 +10420,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 숲 스타디움에서 열립니다.",
               "**순위표** — SOOP(홈) 0승 6패·7위·승점 1, 정관장(원정) 3승 2패·4위·승점 8."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 01:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 02:11 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-21 END */,
@@ -12588,7 +12588,7 @@ window.CLUTCH_DATA = {
           },
           "status": "final"
         },
-        {
+                {
           "id": "soccer-dor-bmg-20261121",
           "espnId": "401884731",
           "sport": "soccer",
@@ -12666,6 +12666,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **묀헨글라트바흐**(홈) 1.3골 · **도르트문트**(원정) 1.8골, 평균 실점은 홈 2.8골 · 원정 0.8골. 해외 배당을 확률로 환산하면 묀헨글라트바흐 승 19.2% · 무 22.0% · 도르트문트 승 58.8%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 1,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "0",
+                "1"
+              ],
+              "home": [
+                "0",
+                "0"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -12938,9 +12955,10 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 5차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-rbl-fcu-20261121",
           "espnId": "401884732",
           "sport": "soccer",
@@ -13018,6 +13036,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **우니온 베를린**(홈) 0.8골 · **RB 라이프치히**(원정) 3.0골, 평균 실점은 홈 2.3골 · 원정 1.4골. 해외 배당을 확률로 환산하면 우니온 베를린 승 16.8% · 무 20.6% · RB 라이프치히 승 62.6%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 5,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "1",
+                "4"
+              ],
+              "home": [
+                "1",
+                "0"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -13297,9 +13332,10 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 5차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-scf-elv-20261121",
           "espnId": "401884728",
           "sport": "soccer",
@@ -13377,6 +13413,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **엘버스베르크**(홈) 1.9골 · **프라이부르크**(원정) 2.2골, 평균 실점은 홈 2.0골 · 원정 1.1골. 해외 배당을 확률로 환산하면 엘버스베르크 승 27.1% · 무 25.6% · 프라이부르크 승 47.3%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 1,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "0",
+                "1"
+              ],
+              "home": [
+                "0",
+                "0"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -13632,9 +13685,10 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 1차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-scp-b04-20261121",
           "espnId": "401884735",
           "sport": "soccer",
@@ -13712,6 +13766,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **바이어 레버쿠젠**(홈) 2.2골 · **파더보른**(원정) 0.9골, 평균 실점은 홈 1.9골 · 원정 1.2골. 해외 배당을 확률로 환산하면 바이어 레버쿠젠 승 73.1% · 무 15.4% · 파더보른 승 11.5%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 4,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "1",
+                "3"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -13991,9 +14062,10 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 5차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-tsg-sge-20261121",
           "espnId": "401884734",
           "sport": "soccer",
@@ -14071,6 +14143,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **아인트라흐트 프랑크푸르트**(홈) 1.7골 · **호펜하임**(원정) 1.8골, 평균 실점은 홈 2.2골 · 원정 1.9골. 해외 배당을 확률로 환산하면 아인트라흐트 프랑크푸르트 승 39.4% · 무 24.3% · 호펜하임 승 36.3%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "1",
+                "0"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -14342,7 +14431,8 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 5차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         }
         /* SOCCER-AUTO 2026-11-21 END */,
 
@@ -18093,7 +18183,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 2패·4위·승점 8, KB손해보험(원정) 0승 5패·7위·승점 0."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 01:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 02:11 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -18397,13 +18487,13 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 1승 4패·6위·승점 3, 흥국생명(원정) 2승 3패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 01:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 02:11 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
 
         /* SOCCER-AUTO 2026-11-22 START */
-        {
+                {
           "id": "soccer-cry-cov-20261122",
           "espnId": "401879235",
           "sport": "soccer",
@@ -18481,6 +18571,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **코번트리 시티**(홈) 1.0골 · **크리스털 팰리스**(원정) 1.0골, 평균 실점은 홈 1.9골 · 원정 2.4골. 해외 배당을 확률로 환산하면 코번트리 시티 승 38.3% · 무 26.9% · 크리스털 팰리스 승 34.8%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 2,
+            "homeScore": 3,
+            "lines": {
+              "away": [
+                "2",
+                "0"
+              ],
+              "home": [
+                "2",
+                "1"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -18760,9 +18867,10 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 5차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-ips-tot-20261122",
           "espnId": "401878754",
           "sport": "soccer",
@@ -18840,6 +18948,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **토트넘 홋스퍼**(홈) 1.0골 · **입스위치 타운**(원정) 1.5골, 평균 실점은 홈 1.1골 · 원정 2.0골. 해외 배당을 확률로 환산하면 토트넘 홋스퍼 승 60.9% · 무 21.7% · 입스위치 타운 승 17.4%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 2,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "1",
+                "1"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -19119,9 +19244,10 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 5차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-lee-che-20261122",
           "espnId": "401879236",
           "sport": "soccer",
@@ -19199,6 +19325,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **첼시**(홈) 1.9골 · **리즈 유나이티드**(원정) 1.0골, 평균 실점은 홈 1.6골 · 원정 0.8골. 해외 배당을 확률로 환산하면 첼시 승 47.7% · 무 26.5% · 리즈 유나이티드 승 25.8%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 4,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "1",
+                "3"
+              ],
+              "home": [
+                "1",
+                "0"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -19478,9 +19621,10 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 5차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-nfo-bou-20261122",
           "espnId": "401879238",
           "sport": "soccer",
@@ -19558,6 +19702,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **본머스**(홈) 1.6골 · **노팅엄 포리스트**(원정) 0.9골, 평균 실점은 홈 1.4골 · 원정 1.3골. 해외 배당을 확률로 환산하면 본머스 승 49.2% · 무 26.3% · 노팅엄 포리스트 승 24.6%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 2,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "2",
+                "0"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -19837,9 +19998,10 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 5차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-sun-avl-20261122",
           "espnId": "401878756",
           "sport": "soccer",
@@ -19917,6 +20079,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **애스턴 빌라**(홈) 1.4골 · **선덜랜드**(원정) 0.8골, 평균 실점은 홈 1.7골 · 원정 1.7골. 해외 배당을 확률로 환산하면 애스턴 빌라 승 54.0% · 무 24.8% · 선덜랜드 승 21.2%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "0",
+                "0"
+              ]
+            },
+            "winner": null
+          },
           "details": {
             "teams": [
               {
@@ -20189,9 +20368,10 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 5차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-val-ray-20261122",
           "espnId": "401882799",
           "sport": "soccer",
@@ -20269,6 +20449,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **라요 바예카노**(홈) 1.4골 · **발렌시아**(원정) 0.7골, 평균 실점은 홈 1.9골 · 원정 1.7골. 해외 배당을 확률로 환산하면 라요 바예카노 승 49.1% · 무 27.0% · 발렌시아 승 23.9%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 1,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "1",
+                "0"
+              ],
+              "home": [
+                "0",
+                "0"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -20547,7 +20744,8 @@ window.CLUTCH_DATA = {
               ],
               "summary": "최근 5차례 맞대결"
             }
-          }
+          },
+          "status": "final"
         },
         {
           "id": "soccer-roma-par-20261122",
