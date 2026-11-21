@@ -1192,24 +1192,22 @@
     return { win: win, lose: lose, carry: carry, low: low, lowWhy: lowWhy, wa: wa, la: la };
   }
 
-  // 한 줄 결론
+  // 한 줄 결론(농구·축구와 같은 틀)
   function volleyVerdictText(g, pick) {
     if (!pick || !pick.carry) return "";
     var c = pick.carry, out = [];
     var att = toNum(c.at), suc = toNum(c.asn);
-    out.push(pgJosa(c.n, "이", "가") + " " + toNum(c.pt) + "득점" +
-      (att ? "(공격 " + att + "시도 " + suc + "성공·" + volleyPct(c.ap) + ")" : "") +
-      "으로 " + g[pick.win].name + " 공격을 이끌었습니다.");
+    out.push(pgJosa(g[pick.win].name, "은", "는") + " " + c.n + "(" + toNum(c.pt) + "득점" +
+      (att ? "·공격 " + att + "시도 " + suc + "성공 " + volleyPct(c.ap) : "") +
+      ") 덕분에 이겼습니다");
     var l = pick.low;
     if (l) {
-      if (pick.lowWhy === "attack") {
-        out.push(pgJosa(l.n, "은", "는") + " " + toNum(l.at) + "시도 " + toNum(l.asn) + "성공(" +
-          volleyPct(l.ap) + ")으로 팀 평균 " + volleyPct(pick.la.ap) + "에 못 미쳤습니다.");
-      } else {
-        out.push(pgJosa(l.n, "은", "는") + " 범실 " + toNum(l.er) + "개로 흐름을 끊었습니다.");
-      }
+      var how = pick.lowWhy === "attack"
+        ? "공격 " + toNum(l.at) + "시도 " + toNum(l.asn) + "성공 " + volleyPct(l.ap)
+        : "범실 " + toNum(l.er) + "개";
+      out.push(pgJosa(g[pick.lose].name, "은", "는") + " " + l.n + "(" + how + ")에서 흐름이 끊겼습니다");
     }
-    return out.join(" ");
+    return out.join(". ") + ".";
   }
 
   // 승부가 갈린 이유: 팀 합계에서 벌어진 항목만
@@ -1947,57 +1945,55 @@
     return bits;
   }
 
-  // 한 줄 결론: 누가 잘해서 앞서는지 / 누가 묶여 있는지. live=true 면 '현재까지' 어투.
+  // 한 줄 결론. 문장 틀은 농구와 같다:
+  //   "<이긴 팀>은 <선수>(근거) 덕분에 이겼습니다. <진 팀>은 <선수>(근거)에서 흐름이 끊겼습니다."
+  // live=true 면 진행 중 어투로 바꾼다.
   function soccerVerdictText(g, board, live) {
     var pick = soccerPick(g, board);
     var c = pick.carry, l = pick.low;
     var parts = [];
 
     if (c) {
-      var leadName = board[pick.lead].name;
+      var how;
       if (c.pos === "G") {
-        parts.push("골키퍼 " + pgNameJosa(c.name, "이", "가") + " 선방 " + (c.sv || 0) + "개" +
-          ((c.ga || 0) > 0 ? "·실점 " + c.ga + "개" : "·무실점") + "으로 " + leadName +
-          (live ? " 골문을 지키고 있습니다." : " 승리를 지켰습니다."));
+        how = "선방 " + (c.sv || 0) + ((c.ga || 0) > 0 ? "·실점 " + c.ga : "·무실점");
       } else {
         var bits = soccerFeat(c);
         if (!bits.length) bits.push("슈팅 " + (c.sh || 0) + "개");
-        var feats = bits.join("·");
-        parts.push(pgNameJosa(c.name, "이", "가") + " " + pgTailJosa(feats, "으로", "로") + " " + leadName +
-          (live ? " 공격을 끌고 있습니다." : " 공격을 끌었습니다."));
+        how = bits.join("·");
       }
+      parts.push(pgJosa(board[pick.lead].name, "은", "는") + " " + c.name + "(" + how + ")" +
+        (live ? " 덕분에 앞서고 있습니다" : " 덕분에 이겼습니다"));
     } else if (pick.topAway || pick.topHome) {
       // 무승부: 양 팀에서 이름을 남긴 선수를 나란히. 0-0 이면 유효슈팅 합계로만 말한다.
       var aw = pick.topAway, hm = pick.topHome;
       if (aw && hm && (aw.g || hm.g)) {
-        function line(p) { return (soccerFeat(p).join("·") || "슈팅 " + (p.sh || 0) + "개"); }
-        parts.push(board.away.name + "의 " + aw.name + "(" + line(aw) + ")와 " + board.home.name + "의 " +
-          hm.name + "(" + line(hm) + ")가 한 골씩 주고받" + (live ? "고 있습니다." : "았습니다."));
+        function featOf(p) { return soccerFeat(p).join("·") || "슈팅 " + (p.sh || 0) + "개"; }
+        parts.push(board.away.name + "의 " + aw.name + "(" + featOf(aw) + ")와 " + board.home.name + "의 " +
+          hm.name + "(" + featOf(hm) + ")가 한 골씩 주고받" + (live ? "고 있습니다" : "았습니다"));
       } else {
         var as = soccerStat(board.away.stats, "shotsOnTarget"), hs = soccerStat(board.home.stats, "shotsOnTarget");
         if (as != null && hs != null && as + hs > 0) {
           parts.push("양 팀 합쳐 유효슈팅 " + (as + hs) + "개, " +
-            (live ? "아직 골이 없습니다." : "골문을 열지 못했습니다."));
+            (live ? "아직 골이 없습니다" : "골문을 열지 못했습니다"));
         }
       }
     }
 
     if (l) {
-      if (l.pos === "G") {
-        parts.push(pgNameJosa(l.name, "은", "는") + " 선방 " + (l.sv || 0) + "개를 했지만 실점 " + (l.ga || 0) +
-          "개를 막지 못했습니다.");
-      } else {
-        parts.push(pgNameJosa(l.name, "은", "는") + " 슈팅 " + (l.sh || 0) + "개 중 유효 " + (l.sog || 0) + "개로 묶여 " +
-          (live ? "아직 골을 만들지 못하고 있습니다." : "골을 만들지 못했습니다."));
-      }
+      var lhow = l.pos === "G"
+        ? "선방 " + (l.sv || 0) + "·실점 " + (l.ga || 0)
+        : "슈팅 " + (l.sh || 0) + "·유효 " + (l.sog || 0);
+      parts.push(pgJosa(board[pick.trail].name, "은", "는") + " " + l.name + "(" + lhow + ")에서 " +
+        (live ? "흐름이 끊기고 있습니다" : "흐름이 끊겼습니다"));
     } else if (pick.trail) {
       // 개인보다 팀 전체 마무리가 문제인 경기: 팀 슈팅·유효슈팅으로만 말한다(골이 없는 팀에 한해)
       var ts = board[pick.trail].stats || {};
       var tsh = soccerStat(ts, "totalShots"), tsog = soccerStat(ts, "shotsOnTarget");
       var tgoals = pick.trail === "away" ? Number(g.result.awayScore) : Number(g.result.homeScore);
       if (tsh != null && tsog != null && tsh >= 6 && !(tgoals > 0)) {
-        parts.push(board[pick.trail].name + " " + (live ? "는" : "은") + " 슈팅 " + tsh + "개 중 유효 " + tsog + "개로 " +
-          (live ? "아직 골을 만들지 못하고 있습니다." : "골을 만들지 못했습니다."));
+        parts.push(pgJosa(board[pick.trail].name, "은", "는") + " 슈팅 " + tsh + "개 중 유효 " + tsog + "개로 " +
+          (live ? "아직 골을 만들지 못하고 있습니다" : "골을 만들지 못했습니다"));
       }
     }
     // 초반처럼 말할 거리가 없으면(골·도움 없음 + 슈팅 3개 미만) 빈 문장을 만들지 않는다
@@ -2007,7 +2003,7 @@
       (board[side].players || []).forEach(function (p) { totalShots += (p.sh || 0) + (p.sv || 0); });
     });
     if (!c && totalShots < 4) return "";
-    return parts.join(" ");
+    return parts.join(". ") + ".";
   }
 
   // 접어 두는 선수 기록표: 팀별 기여 상위 6명
