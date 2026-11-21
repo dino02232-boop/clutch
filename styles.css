@@ -660,6 +660,8 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   background: #FFFFFF;
 }
 .crest.sm { width: 14px; height: 14px; border-radius: 3px; }
+.crest.lg { width: 34px; height: 34px; border-radius: 10px; }
+.crest.lg .crest-t { font-size: 13px; }
 .mtms .tm {
   display: inline-flex;
   align-items: center;

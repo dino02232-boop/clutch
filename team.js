@@ -276,8 +276,19 @@
 
   var html = [];
 
+  /* 팀 크레스트 — team-logos.js 의 팀 이름 지도에서 찾고, 없으면 약어 칩으로 대신한다. */
+  function crestBig() {
+    var map = window.TEAM_LOGOS || {};
+    var src = (map.byName || {})[teamName] || "";
+    var txt = String(abbr || teamName || "?").slice(0, 3).toUpperCase();
+    if (!/^https:\/\//i.test(src)) src = "";
+    return '<span class="crest lg" aria-hidden="true"><span class="crest-t">' + esc(txt) + "</span>" +
+      (src ? '<img src="' + esc(src) + '" alt="" referrerpolicy="no-referrer" onerror="this.remove()">' : "") +
+      "</span>";
+  }
+
   /* 머리: 이름 · 종목/리그 · 배지 */
-  html.push('<h1 class="tp-name">' + esc(teamName) + "</h1>");
+  html.push('<div class="tp-head">' + crestBig() + '<h1 class="tp-name">' + esc(teamName) + "</h1></div>");
   var sub = ['<span class="tp-chip sport">' + esc(sp.icon + " " + (sp.name || sport)) + "</span>"];
   if (league) sub.push('<span class="tp-chip plain">' + esc(league) + "</span>");
   if (abbr) sub.push('<span class="tp-chip plain">' + esc(abbr) + "</span>");
