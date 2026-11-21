@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" sizes="512x512" href="icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta property="og:image" content="https://dino02232-boop.github.io/clutch/icon.png">
-<link rel="stylesheet" href="styles.css?v=20261121-crest1">
+<link rel="stylesheet" href="styles.css?v=20261121-crest2">
 </head>
 <body>
 <div class="wrap">
@@ -84,6 +84,9 @@
       </div>
     </div>
 
+    <!-- 홈 첫 화면 정체성 한 줄: 무슨 사이트인지 먼저 읽히게(실시간 줄보다 위) -->
+    <p class="home-lead" id="homeLead" hidden></p>
+
     <!-- 실시간 점수 줄: 진행 중인 경기 수·마지막 확인 시각·수동 새로고침 -->
     <div class="livebar" id="livebar" hidden>
       <span class="lb-l">
@@ -96,8 +99,6 @@
         <button type="button" class="lb-btn" id="lbRefresh" aria-label="실시간 점수 새로고침">새로고침</button>
       </span>
     </div>
-
-    <p class="home-lead" id="homeLead" hidden></p>
 
     <div id="panel" role="tabpanel">
       <div id="list"></div>
