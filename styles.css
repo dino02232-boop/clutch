@@ -610,15 +610,15 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   min-width: 0;
 }
 /* 팀 크레스트 — 로고를 얹고, 로고가 없으면 약어가 그대로 남는다(빈 자리가 생기지 않게). */
 .crest {
   position: relative;
   flex: 0 0 auto;
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   border-radius: 4px;
   background: #F1F3F5;
   display: inline-flex;
@@ -660,11 +660,11 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .team-link {
   appearance: none; min-width: 0; padding: 0; border: 0; background: transparent;
   color: inherit; font: inherit; text-align: inherit; cursor: pointer; flex: 1 1 auto;
-  display: inline-flex; align-items: center; gap: 3px;
+  display: inline-flex; align-items: center; gap: 2px;
 }
 .team-link:hover .tm-name { text-decoration: underline; text-underline-offset: 2px; }
 .team-link:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; border-radius: 3px; }
-.mtms .fav-toggle { width: 18px; height: 18px; margin: 0; border-radius: 5px; font-size: 11px; }
+.mtms .fav-toggle { width: 16px; height: 16px; margin: 0; border-radius: 5px; font-size: 10px; }
 .mtms .tm.away { color: #1F2937; }
 .mtms .mslot { min-width: 38px; text-align: center; }
 .mtms .vs {
@@ -1494,6 +1494,9 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   .livebar .lb-auto { display: none; }
   .livebar { font-size: 10px; }
   .livebar .lb-txt { max-width: 116px; }
+  /* 좁은 화면에서는 팀 이름이 들어갈 자리를 조금 더 준다(크레스트를 얻은 대신) */
+  .mtms .tm { font-size: 12.5px; }
+  .mtms .tm { gap: 2px; }
 }
 
 /* ══ 진행 중 경기: 펼친 박스 맨 위 '지금 상황' ══════════════
