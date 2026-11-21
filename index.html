@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" sizes="512x512" href="icon.png?v=20261121-v5">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20261121-v5">
 <meta property="og:image" content="https://dino02232-boop.github.io/clutch/icon.png">
-<link rel="stylesheet" href="styles.css?v=20261121-v6">
+<link rel="stylesheet" href="styles.css?v=20261121-v7">
 </head>
 <body>
 <div class="wrap">
@@ -78,6 +78,9 @@
       </span>
     </div>
 
+    <!-- 홈: 지금 진행 중인 경기 줄 — 누르면 그 경기 브리핑(해시)으로 바로 간다. 진행 중이 없으면 숨김 -->
+    <section class="home-live" id="homeLive" aria-label="지금 진행 중인 경기" hidden></section>
+
     <div id="panel" role="tabpanel">
       <div id="list"></div>
 
@@ -102,7 +105,7 @@
 <script src="data.js?v=20261121-vball3"></script>
 <script src="team-logos.js?v=20261121-crest3"></script>
 <script src="reactions.js?v=20261120-odds7"></script>
-<script src="app.js?v=20261121-vball4"></script>
+<script src="app.js?v=20261121-vball5"></script>
 <script src="visits.js?v=20261120-visits4" defer></script>
 </body>
 </html>

@@ -46,6 +46,7 @@
   var elLiveText = document.getElementById("lbText");
   var elLiveTime = document.getElementById("lbTime");
   var elLiveRefresh = document.getElementById("lbRefresh");
+  var elHomeLive = document.getElementById("homeLive");
 
   if (!DATA || !Array.isArray(DATA.days) || !DATA.days.length) {
     elList.innerHTML = '<div class="empty"><h2>데이터를 찾지 못했습니다</h2>' +
@@ -2321,6 +2322,89 @@
     });
   }
 
+  /* ── 홈: 지금 진행 중인 경기 줄 ───────────────────────
+     첫 화면에서 종목을 고르지 않고도 진행 중 경기로 바로 들어가게 한다.
+     줄 하나가 곧 그 경기의 주소(#종목/경기id)라, 누르면 그 종목 목록이 열리면서
+     그 경기 브리핑이 펼쳐진다. 진행 중인 경기가 없으면 블록 자체를 숨긴다(지금처럼
+     실시간 줄이 상태만 알린다). */
+  function homeLiveEntries() {
+    var t = todayStr(), y = addDays(t, -1);
+    var out = [];
+    GAMES.forEach(function (e) {
+      if (e.date !== t && e.date !== y) return;
+      var g = e.g;
+      if (!g || !g.sport || !g.result || g.result.state !== "live") return;
+      out.push(e);
+    });
+    // 오늘 경기를 먼저, 같은 날은 시작 시각 순(진행 중 경기가 오래된 것부터)
+    out.sort(function (a, b) {
+      if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+      return new Date(a.g.start) - new Date(b.g.start);
+    });
+    return out;
+  }
+
+  function homeLiveRowHTML(e) {
+    var g = e.g, r = g.result || {};
+    var sm = sportMeta(g.sport);
+    var league = g.league || sm.name;
+    var away = g.away ? g.away.name : "—";
+    var home = g.home ? g.home.name : "—";
+    var a = r.awayScore != null ? String(r.awayScore) : "-";
+    var h = r.homeScore != null ? String(r.homeScore) : "-";
+    var label = sm.name + " " + league + ", " + away + " " + a + " 대 " + h + " " + home +
+      (r.detail ? " (" + r.detail + ")" : "") + " — 이 경기 브리핑 열기";
+    return '<li>' +
+      '<a class="hl-row" href="#' + esc(g.sport) + "/" + encodeURIComponent(g.id) + '"' +
+      ' aria-label="' + esc(label) + '">' +
+        '<span class="hl-meta">' +
+          '<span class="hl-ico" aria-hidden="true">' + esc(sm.icon) + "</span>" +
+          '<span class="hl-lg">' + esc(league) + "</span>" +
+          (r.detail ? '<span class="hl-ph">' + esc(r.detail) + "</span>" : "") +
+          '<span class="hl-go" aria-hidden="true">브리핑 ›</span>' +
+        "</span>" +
+        '<span class="hl-teams">' +
+          '<span class="hl-tm away">' + crestHTML(g, "away") + '<span class="hl-name">' + esc(away) + "</span></span>" +
+          '<span class="hl-score"><b>' + esc(a) + "</b><i>:</i><b>" + esc(h) + "</b></span>" +
+          '<span class="hl-tm home">' + crestHTML(g, "home") + '<span class="hl-name">' + esc(home) + "</span></span>" +
+        "</span>" +
+      "</a></li>";
+  }
+
+  var HOME_LIVE_SIG = null;
+  var HOME_LIVE_MAX = 4;   // 첫 화면이 LIVE 목록으로만 채워지지 않게 4줄까지만
+
+  function paintHomeLive() {
+    if (!elHomeLive) return;
+    // 홈은 종목 선택 화면일 때만, 그리고 그 날짜에 진행 중인 경기가 있을 때만
+    var t = todayStr(), y = addDays(t, -1);
+    var isHome = state.sport === null && !state.favorites && !state.allSports &&
+      (state.day === t || state.day === y);
+    var entries = isHome ? homeLiveEntries() : [];
+    if (!entries.length) {
+      if (!elHomeLive.hidden) elHomeLive.innerHTML = "";
+      elHomeLive.hidden = true;
+      HOME_LIVE_SIG = null;
+      return;
+    }
+    elHomeLive.hidden = false;
+    var shown = entries.slice(0, HOME_LIVE_MAX);
+    var rest = entries.length - shown.length;
+    // 점수·진행 시각이 그대로면 다시 그리지 않는다(30초 갱신 때 포커스가 튀지 않게)
+    var sig = shown.map(function (e) {
+      var r = e.g.result || {};
+      return e.g.id + "|" + r.awayScore + "|" + r.homeScore + "|" + (r.detail || "");
+    }).join("~") + "#" + rest;
+    if (sig === HOME_LIVE_SIG) return;
+    HOME_LIVE_SIG = sig;
+    elHomeLive.innerHTML = '<p class="hl-hint">경기를 누르면 그 경기 브리핑이 바로 열립니다.</p>' +
+      '<ul class="hl-rows">' + shown.map(homeLiveRowHTML).join("") +
+        (rest > 0 ? '<li><a class="hl-more" href="#all" aria-label="' +
+          esc("진행 중인 경기 " + entries.length + "개 중 " + shown.length + "개를 보여 주고 있습니다. 전체 일정 " + gamesOf(state.day).length + "경기 보기") +
+          '">나머지 ' + rest + '경기 전체 일정에서 보기 <span aria-hidden="true">›</span></a></li>' : "") +
+      "</ul>";
+  }
+
   /* ── 리그 필터 ─────────────────────────────────────
      같은 날 한 종목에 리그가 여럿이면(축구 4~5개) 목록 위에 리그 칩을 둔다.
      칩은 그날 그 종목의 경기만 대상으로 하고, 다른 날·다른 종목으로 옴기면 풀린다. */
@@ -4225,6 +4309,7 @@
 
     paintTiles();
     paintLiveBar();
+    paintHomeLive();
   }
 
   function finishPoll(ok, errs, manual) {
