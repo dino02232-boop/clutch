@@ -127,7 +127,7 @@ header.top {
 .brand-name {
   display: flex;
   align-items: baseline;
-  gap: 1.5px;
+  gap: 0;
   color: var(--brand-ink);
   font-family: "VERSUS Mark", "Pretendard Variable", Pretendard, sans-serif;
   font-weight: 400;
@@ -135,7 +135,7 @@ header.top {
   transform: skewX(-6deg);
   transform-origin: 0 76%;
 }
-.brand-name .bn-v { font-size: 27px; letter-spacing: -.02em; }
+.brand-name .bn-v { font-size: 27px; letter-spacing: -.02em; margin-right: -.5px; }
 .brand-name .bn-rest { font-size: 12.5px; letter-spacing: .17em; }
 .brand-sub { display: block; font-size: 11px; color: var(--text-3); letter-spacing: .02em; margin-top: 3px; }
 .brand-date {
