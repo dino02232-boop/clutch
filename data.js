@@ -86,7 +86,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-21T11:00:05+09:00",
+  updatedAt: "2026-11-21T11:48:11+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -7543,7 +7543,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 천안유관순체육관에서 열립니다.",
               "**순위표** — 한국전력 5승 1패·1위·승점 14, 현대캐피탈 4승 2패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 10:59 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 11:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -7847,7 +7847,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 김천실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행 4승 2패·3위·승점 12, 도로공사 5승 1패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 10:59 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 11:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-20 END */,
@@ -9713,7 +9713,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — OK저축은행 1승 3패·6위·승점 4, 삼성화재 3승 2패·3위·승점 9."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 10:59 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 11:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -10017,7 +10017,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 숲 스타디움에서 열립니다.",
               "**순위표** — 정관장 2승 2패·5위·승점 6, SOOP 0승 5패·7위·승점 0."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 10:59 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 11:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-21 END */,
@@ -13872,14 +13872,14 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-21 END */,
 
         /* NBA-AUTO 2026-11-21 START */
-        {
+                {
           "id": "nba-cha-atl-20261121",
           "espnId": "401909305",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-21T09:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "State Farm Arena",
           "odds": {
             "provider": "Draft Kings",
@@ -13944,6 +13944,83 @@ window.CLUTCH_DATA = {
               "text": "**샬럿 호네츠** 4승 10패(원정 1승 6패, 최근 5경기 1승 4패, 3연패), **애틀랜타 호크스** 9승 6패(홈 3승 3패, 최근 5경기 3승 2패, 2연승). 직전 경기(11.18) **샬럿 호네츠**는 LA 레이커스에 114-118로 졌고, Brandon Miller 28점·2리바운드·4어시스트, Naz Reid 23점·11리바운드·4어시스트를 기록했습니다. 직전 경기(11.19) **애틀랜타 호크스**는 오클라호마시티 썬더에 117-112로 이겼고, Onyeka Okongwu 28점·9리바운드·2어시스트, Nickeil Alexander-Walker 19점·4리바운드·7어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 97,
+            "homeScore": 111,
+            "lines": {
+              "away": [
+                "31",
+                "26",
+                "19",
+                "21"
+              ],
+              "home": [
+                "23",
+                "33",
+                "31",
+                "24"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Jalen Johnson",
+                "team": "ATL",
+                "min": "36",
+                "pts": 26,
+                "reb": "6",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png"
+              },
+              {
+                "name": "Moussa Diabate",
+                "team": "CHA",
+                "min": "30",
+                "pts": 21,
+                "reb": "15",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433249.png"
+              },
+              {
+                "name": "Brandon Miller",
+                "team": "CHA",
+                "min": "33",
+                "pts": 19,
+                "reb": "8",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433287.png"
+              },
+              {
+                "name": "Aaron Wiggins",
+                "team": "ATL",
+                "min": "34",
+                "pts": 19,
+                "reb": "2",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397183.png"
+              },
+              {
+                "name": "Nickeil Alexander-Walker",
+                "team": "ATL",
+                "min": "32",
+                "pts": 17,
+                "reb": "4",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png"
+              },
+              {
+                "name": "Onyeka Okongwu",
+                "team": "ATL",
+                "min": "34",
+                "pts": 16,
+                "reb": "7",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431680.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
