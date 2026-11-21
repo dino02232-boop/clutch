@@ -978,14 +978,26 @@
     var state = r.state === "final" ? "종료" : "진행 중";
     var rDetail = resultDetailText(r.detail);
     var top = Array.isArray(r.top) ? r.top : [];
+    // 배구는 KOVO 기록지의 선수 기록(result.players)에서 팀별 득점 1~2명을 '주요 선수 기록'으로 올린다
+    if (!top.length && g.sport === "volleyball" && Array.isArray(r.players) && r.players.length) {
+      ["home", "away"].forEach(function (side) {
+        r.players.filter(function (p) { return p && p.s === side && toNum(p.pt) > 0; })
+          .sort(function (a, b) { return toNum(b.pt) - toNum(a.pt); })
+          .slice(0, 2).forEach(function (p) {
+            top.push({ team: (g[side] && g[side].name) || "", name: p.n, pts: toNum(p.pt),
+              ap: p.ap, at: p.at, asn: p.asn, volley: true });
+          });
+      });
+    }
     var linesHTML = linesTableHTML(g, r);
     var topNone = r.state === "live"
       ? (g.sport === "volleyball" ? "공개 실시간 데이터에는 선수별 득점이 포함되지 않습니다." : "실시간 주요 선수 기록은 경기 종료 후 반영됩니다.")
-      : (g.sport === "volleyball" ? "KOVO 공개 결과에는 선수별 기록(공격·블로킹·서브)이 없습니다." : "주요 선수 기록을 받지 못했습니다.");
+      : (g.sport === "volleyball" ? "KOVO 기록지의 선수 기록을 아직 받지 못했습니다." : "주요 선수 기록을 받지 못했습니다.");
     var topHTML = top.length
       ? '<ul class="r-top">' + top.map(function (p) {
           var bits = [];
-          if (p.pts != null) bits.push(p.pts + "점");
+          if (p.pts != null) bits.push(p.pts + (p.volley ? "득점" : "점"));
+          if (p.ap != null) bits.push("공격 " + (Math.round(Number(p.ap) * 10) / 10) + "%");
           if (p.reb != null) bits.push(p.reb + "리바운드");
           if (p.ast != null) bits.push(p.ast + "어시스트");
           return "<li><span class=\"r-team\">" + esc(p.team || "") + "</span>" +
