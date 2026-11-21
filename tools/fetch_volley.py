@@ -326,15 +326,16 @@ def build_game(g, ranks, at_iso, all_games=None, gcode="001", refresh=False):
     round_no = g.get("round")
     start = "%sT%s:00+09:00" % (g.get("gdate"), (g.get("gstime") or "19:00")[:5])
 
-    # ── 흐름: 실제 순위·전적·최근 흐름만 ──────────────────────────
-    def flow_part(name, r):
+    # ── 흐름: 실제 순위·전적·최근 흐름만. 홈 팀을 앞에 두고 홈/원정 라벨을 붙인다.
+    def flow_part(name, side, r):
+        label = "홈" if side == "home" else "원정"
         if not r:
-            return "**%s** 순위표 값이 없습니다" % name
-        return "**%s** %s(리그 %s위, 최근 흐름 %s)" % (
-            name, rec_text(r.get("win"), r.get("lost")), r.get("rank"), r.get("con") or "—")
+            return "**%s**(%s) 순위표 값이 없습니다" % (name, label)
+        return "**%s**(%s) %s(리그 %s위, 최근 흐름 %s)" % (
+            name, label, rec_text(r.get("win"), r.get("lost")), r.get("rank"), r.get("con") or "—")
 
     flow = "%s, %s. %s %s %s." % (
-        flow_part(away_name, ar), flow_part(home_name, hr),
+        flow_part(home_name, "home", hr), flow_part(away_name, "away", ar),
         league_full, str(round_no) + "라운드" if round_no else "", venue + "에서 열립니다" if venue else "")
 
     watch = ""
@@ -345,7 +346,8 @@ def build_game(g, ranks, at_iso, all_games=None, gcode="001", refresh=False):
             sw = abs(int(ar.get("swin") or 0) - int(hr.get("swin") or 0))
             bits = []
             if rk == 1:
-                bits.append("리그 %s·%s위로 바로 옆 순위" % (ar.get("rank"), hr.get("rank")))
+                bits.append("리그 순위는 %s(홈) %s위·%s(원정) %s위로 바로 옆" % (
+                    home_name, hr.get("rank"), away_name, ar.get("rank")))
             if gap <= 3:
                 bits.append("승점 차가 %s점" % ("%g" % gap))
             if sw:
@@ -367,9 +369,9 @@ def build_game(g, ranks, at_iso, all_games=None, gcode="001", refresh=False):
     if venue:
         checks.append("**경기장** — %s에서 열립니다." % venue)
     if ar and hr:
-        checks.append("**순위표** — %s %s승 %s패·%s위·승점 %s, %s %s승 %s패·%s위·승점 %s." % (
-            away_name, ar.get("win"), ar.get("lost"), ar.get("rank"), _wp(ar.get("winp")),
-            home_name, hr.get("win"), hr.get("lost"), hr.get("rank"), _wp(hr.get("winp"))))
+        checks.append("**순위표** — %s(홈) %s승 %s패·%s위·승점 %s, %s(원정) %s승 %s패·%s위·승점 %s." % (
+            home_name, hr.get("win"), hr.get("lost"), hr.get("rank"), _wp(hr.get("winp")),
+            away_name, ar.get("win"), ar.get("lost"), ar.get("rank"), _wp(ar.get("winp"))))
 
     start_iso = datetime.fromisoformat(start).isoformat()
     game = {

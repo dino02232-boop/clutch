@@ -2181,11 +2181,18 @@
     var cards = summaries.map(function (part) {
       var m = part.match(/^\*\*(.+?)\*\*\s*(.*)$/);
       if (!m) return null;
-      return { name: m[1], body: m[2] };
+      // 팀 이름 뒤에 붙은 (홈)/(원정) 라벨은 본문이 아니라 이름 옆 칩으로 보여 준다.
+      var body = m[2] || "";
+      var sm = body.match(/^\((홈|원정)\)\s*/);
+      var side = sm ? (sm[1] === "홈" ? "home" : "away") : "";
+      if (sm) body = body.slice(sm[0].length);
+      return { name: m[1], body: body, side: side };
     }).filter(Boolean).sort(function (a, b) {
       return sideRank(a.name) - sideRank(b.name);
     }).map(function (item) {
-      return '<div class="flow-team"><b>' + esc(item.name) + '</b><p>' + md(item.body) + "</p></div>";
+      return '<div class="flow-team"><div class="ft-head"><b>' + esc(item.name) + "</b>" +
+        (item.side ? '<span class="f-side ' + item.side + '">' + (item.side === "home" ? "홈" : "원정") + "</span>" : "") +
+        "</div><p>" + md(item.body) + "</p></div>";
     }).join("");
     var last = [];
     var re = /직전 경기\(([^)]+)\)\s+\*\*(.+?)\*\*는\s+([\s\S]*?)(?=\. 직전 경기\(|$)/g;

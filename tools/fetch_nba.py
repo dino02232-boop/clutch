@@ -541,6 +541,31 @@ def inj_note(at_iso):
     return "출전 여부는 ESPN %s 기준이며 경기 전까지 변동될 수 있습니다." % stamp
 
 
+def watch_text(home, away, h_ppg, a_ppg, h_rpg, a_rpg, h_tp, a_tp):
+    """관전 포인트 문장 — 팀 이름과 홈/원정을 붙이고 홈 팀을 앞에 두어
+
+    '113.7점 대 121.9점'처럼 숫자만 늘어놓아 어느 팀 값인지 알 수 없는 표현을 만들지 않는다.
+    값이 모자라면 빈 문자열(관전 포인트를 넣지 않음).
+    """
+    def f(*vals):
+        return all(isinstance(x, float) for x in vals)
+
+    if f(h_ppg, a_ppg, h_rpg, a_rpg, h_tp, a_tp):
+        diff = round(abs(a_ppg - h_ppg), 1)
+        numbers = ("시즌 평균 득점은 **%s**(홈) %s점 · **%s**(원정) %s점, "
+                   "평균 리바운드는 홈 %s개 · 원정 %s개, "
+                   "3점 성공률은 홈 %s%% · 원정 %s%%"
+                   % (home, h_ppg, away, a_ppg,
+                      h_rpg, a_rpg, h_tp, a_tp))
+        if diff >= 3:
+            return "%s. 평균 득점 차 %s점이 실제 경기 템포로 이어지는지가 관전 포인트입니다." % (numbers, diff)
+        tdiff = round(abs(h_tp - a_tp), 1)
+        return "%s. 평균 득점 차가 %s점으로 작고, 3점 성공률 차 %s%%p가 외곽 승부를 가르는지가 관전 포인트입니다." % (numbers, diff, tdiff)
+    if f(h_ppg, a_ppg):
+        return "시즌 평균 득점은 **%s**(홈) %s점 · **%s**(원정) %s점입니다." % (home, h_ppg, away, a_ppg)
+    return ""
+
+
 def build_game(event, day):
     comp = event["competitions"][0]
     eid = event["id"]
@@ -618,8 +643,8 @@ def build_game(event, day):
     if all(isinstance(x, float) for x in ppg) and not finished:
         tags.append({"text": "평균 %s점 · %s점" % (ppg[0], ppg[1]), "tone": "info"})
 
-    # 흐름
-    def flow_part(b, name):
+    # 흐름 — 홈 팀을 앞에 두고 홈/원정 라벨을 붙인다(어느 팀 이야기인지 이름만으로도 분명하게).
+    def flow_part(b, name, side):
         bits = []
         if b.get("record"):
             bits.append(b["record"])
@@ -630,11 +655,11 @@ def build_game(event, day):
             inner.append("최근 5경기 " + b["last5"])
         if b.get("streak"):
             inner.append(b["streak"])
-        s = "**%s** %s" % (name, bits[0] if bits else "")
+        s = "**%s**(%s) %s" % (name, "홈" if side == "home" else "원정", bits[0] if bits else "")
         if inner:
             s += "(" + ", ".join(inner) + ")"
         return s
-    flow = "%s, %s." % (flow_part(away_b, away_name), flow_part(home_b, home_name))
+    flow = "%s, %s." % (flow_part(home_b, home_name, "home"), flow_part(away_b, away_name, "away"))
     def last_sentence(b, name, abbr):
         li = b.get("_lastInfo") or {}
         if not li.get("my"):
@@ -677,19 +702,8 @@ def build_game(event, day):
     else:
         inj_text = "양 팀 모두 ESPN 부상 명단에 올라온 선수가 없습니다."
 
-    # 관전 포인트 — 실제 수치 차이만
-    watch = ""
-    if all(isinstance(x, float) for x in ppg + rpg + tp):
-        diff = round(abs(ppg[0] - ppg[1]), 1)
-        if diff >= 3:
-            watch = "두 팀 시즌 평균 득점 **%s점 대 %s점**, 평균 리바운드 %s개 대 %s개, 3점 성공률 %s%% 대 %s%%. 평균 득점 차 %s점이 실제 경기 템포로 이어지는지가 관전 포인트입니다." % (
-                ppg[0], ppg[1], rpg[0], rpg[1], tp[0], tp[1], diff)
-        else:
-            tdiff = round(abs(tp[0] - tp[1]), 1)
-            watch = "두 팀 시즌 평균 득점 **%s점 대 %s점**으로 비슷하고, 평균 리바운드 %s개 대 %s개, 3점 성공률 %s%% 대 %s%%. 3점 성공률 차 %s%%p가 외곽 승부를 가르는지가 관전 포인트입니다." % (
-                ppg[0], ppg[1], rpg[0], rpg[1], tp[0], tp[1], tdiff)
-    elif all(isinstance(x, float) for x in ppg):
-        watch = "두 팀 시즌 평균 득점은 **%s점 대 %s점**입니다." % (ppg[0], ppg[1])
+    # 관전 포인트 — 실제 수치 차이만. 팀 이름과 홈/원정을 붙이고 홈 팀을 앞에 둔다.
+    watch = watch_text(home_name, away_name, ppg[1], ppg[0], rpg[1], rpg[0], tp[1], tp[0])
 
     rows_text = []
     if odds and odds.get("implied"):

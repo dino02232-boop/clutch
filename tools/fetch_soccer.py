@@ -245,6 +245,37 @@ RES_KO = {"W": "승", "D": "무", "L": "패"}
 HA_KO = {"vs": "홈", "@": "원정"}
 
 
+def side_ko(side):
+    return "홈" if side == "home" else "원정"
+
+
+def flow_team_text(name, side, record=None, rank=None, streak=None):
+    """흐름 줄의 팀 한 칸 — 팀 이름에 홈/원정 라벨을 붙이고 전적·순위·최근 흐름을 잇는다.
+
+    숫자만 나열해 어느 팀 값인지 알 수 없는 문장을 만들지 않기 위해,
+    팀을 가리키는 모든 문장은 이 함수를 거친다.
+    """
+    s = "**%s**(%s)" % (name, side_ko(side))
+    if record:
+        s += " " + str(record)
+    if rank:
+        s += "(리그 %s위)" % rank
+    if streak:
+        s += ", " + str(streak)
+    return s
+
+
+def goals_compare_text(home, away, h_gf, a_gf, h_ga, a_ga):
+    """평균 득점·실점 대비 — 홈 팀을 앞에 두고 팀 이름과 홈/원정을 문장마다 붙인다.
+
+    '0.8골 대 2.6골'처럼 숫자만 늘어놓으면 어느 쪽이 홈인지 알 수 없어서,
+    같은 팀 이름을 실점 쪽에도 다시 적는다(생략하지 않는다).
+    """
+    return ("두 팀 평균 득점은 **%s**(홈) %s골 · **%s**(원정) %s골, "
+            "평균 실점은 홈 %s골 · 원정 %s골"
+            % (home, h_gf, away, a_gf, h_ga, a_ga))
+
+
 def streak_text(results):
     """최근 경기 목록(최신이 앞) → '3연승' / '4경기 무승' / '최근 5경기 1승 3패 1무'."""
     if not results:
@@ -573,18 +604,10 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
 
     h2h = h2h_block(summary)
 
-    # 흐름 — 실제 전적·순위·최근 흐름·맞대결만
-    def flow_part(t, st):
-        s = "**%s**" % t["name"]
-        if t.get("record"):
-            s += " " + t["record"]
-        if st.get("rank"):
-            s += "(리그 %d위)" % st["rank"]
-        if t.get("streak"):
-            s += ", " + t["streak"]
-        return s
-
-    flow = "%s, %s." % (flow_part(away, away_st), flow_part(home, home_st))
+    # 흐름 — 실제 전적·순위·최근 흐름·맞대결만. 홈 팀을 앞에 두고 홈/원정 라벨을 붙인다.
+    flow = "%s, %s." % (
+        flow_team_text(home["name"], "home", home.get("record"), home_st.get("rank"), home.get("streak")),
+        flow_team_text(away["name"], "away", away.get("record"), away_st.get("rank"), away.get("streak")))
     if h2h and h2h.get("games"):
         g0 = h2h["games"][0]
         flow += " 최근 맞대결은 %s에 열린 %s %s-%s %s 경기입니다." % (
@@ -596,18 +619,18 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
     h_gf, h_ga = per_game(home_st.get("gf"), home_st.get("played")), per_game(home_st.get("ga"), home_st.get("played"))
     bits = []
     if None not in (a_gf, a_ga, h_gf, h_ga):
-        bits.append("두 팀 평균 득점 **%s골 대 %s골**, 평균 실점 %s골 대 %s골" % (a_gf, h_gf, a_ga, h_ga))
+        bits.append(goals_compare_text(home["name"], away["name"], h_gf, a_gf, h_ga, a_ga))
     if h2h and h2h.get("score"):
         bits.append("최근 맞대결 %s" % h2h["score"])
     if odds and odds.get("implied"):
         imp = odds["implied"]
         p = []
-        if imp.get("away") is not None:
-            p.append("%s 승 %s%%" % (away["name"], imp["away"]))
-        if imp.get("draw") is not None:
-            p.append("무 %s%%" % imp["draw"])
         if imp.get("home") is not None:
             p.append("%s 승 %s%%" % (home["name"], imp["home"]))
+        if imp.get("draw") is not None:
+            p.append("무 %s%%" % imp["draw"])
+        if imp.get("away") is not None:
+            p.append("%s 승 %s%%" % (away["name"], imp["away"]))
         bits.append("해외 배당을 확률로 환산하면 " + " · ".join(p))
     if bits:
         watch = ". ".join(bits) + "."
