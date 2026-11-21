@@ -86,7 +86,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-21T13:47:16+09:00",
+  updatedAt: "2026-11-21T14:46:49+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -7543,7 +7543,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 천안유관순체육관에서 열립니다.",
               "**순위표** — 한국전력 5승 1패·1위·승점 14, 현대캐피탈 4승 2패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 13:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 14:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -7847,7 +7847,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 김천실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행 4승 2패·3위·승점 12, 도로공사 5승 1패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 13:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 14:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-20 END */,
@@ -9713,7 +9713,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — OK저축은행 1승 3패·6위·승점 4, 삼성화재 3승 2패·3위·승점 9."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 13:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 14:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -10017,7 +10017,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 숲 스타디움에서 열립니다.",
               "**순위표** — 정관장 2승 2패·5위·승점 6, SOOP 0승 5패·7위·승점 0."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 13:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 14:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-21 END */,
@@ -16218,14 +16218,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-21 06:17 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-phx-utah-20261121",
           "espnId": "401909311",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-21T11:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Delta Center",
           "odds": {
             "provider": "Draft Kings",
@@ -16290,6 +16290,83 @@ window.CLUTCH_DATA = {
               "text": "**피닉스 선즈** 7승 7패(원정 2승 3패, 최근 5경기 4승 1패, 2연승), **유타 재즈** 3승 13패(홈 1승 7패, 최근 5경기 2승 3패, 2연승). 직전 경기(11.19) **피닉스 선즈**는 새크라멘토 킹스에 128-107로 이겼고, Dillon Brooks 29점·3리바운드·5어시스트, Devin Booker 29점·2리바운드·6어시스트를 기록했습니다. 직전 경기(11.19) **유타 재즈**는 LA 레이커스에 109-97로 이겼고, Keyonte George 30점·1리바운드·10어시스트, Ace Bailey 19점·8리바운드·3어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 111,
+            "homeScore": 101,
+            "lines": {
+              "away": [
+                "26",
+                "35",
+                "28",
+                "22"
+              ],
+              "home": [
+                "23",
+                "26",
+                "27",
+                "25"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Devin Booker",
+                "team": "PHX",
+                "min": "38",
+                "pts": 23,
+                "reb": "2",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png"
+              },
+              {
+                "name": "Darryn Peterson",
+                "team": "UTAH",
+                "min": "32",
+                "pts": 20,
+                "reb": "10",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png"
+              },
+              {
+                "name": "Dillon Brooks",
+                "team": "PHX",
+                "min": "25",
+                "pts": 18,
+                "reb": "3",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155526.png"
+              },
+              {
+                "name": "Miles Bridges",
+                "team": "PHX",
+                "min": "25",
+                "pts": 18,
+                "reb": "9",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png"
+              },
+              {
+                "name": "Jaxson Hayes",
+                "team": "UTAH",
+                "min": "28",
+                "pts": 18,
+                "reb": "14",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397077.png"
+              },
+              {
+                "name": "Brice Sensabaugh",
+                "team": "UTAH",
+                "min": "26",
+                "pts": 18,
+                "reb": "3",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5105839.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -16501,14 +16578,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-21 06:17 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-hou-den-20261121",
           "espnId": "401909312",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-21T12:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Ball Arena",
           "odds": {
             "provider": "Draft Kings",
@@ -16573,6 +16650,83 @@ window.CLUTCH_DATA = {
               "text": "**휴스턴 로키츠** 12승 4패(원정 5승 3패, 최근 5경기 4승 1패), **덴버 너기츠** 8승 5패(홈 3승 3패, 최근 5경기 3승 2패). 직전 경기(11.19) **휴스턴 로키츠**는 인디애나 페이서스에 119-104로 이겼고, Kevin Durant 21점·2리바운드·3어시스트, Reed Sheppard 20점·4리바운드·2어시스트를 기록했습니다. 직전 경기(11.19) **덴버 너기츠**는 보스턴 셀틱스에 105-101로 이겼고, Nikola Jokic 24점·8리바운드·9어시스트, Jamal Murray 21점·7리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 124,
+            "homeScore": 133,
+            "lines": {
+              "away": [
+                "33",
+                "27",
+                "42",
+                "22"
+              ],
+              "home": [
+                "31",
+                "31",
+                "37",
+                "34"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Alperen Sengun",
+                "team": "HOU",
+                "min": "36",
+                "pts": 28,
+                "reb": "11",
+                "ast": "10",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png"
+              },
+              {
+                "name": "Nikola Jokic",
+                "team": "DEN",
+                "min": "38",
+                "pts": 26,
+                "reb": "7",
+                "ast": "11",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png"
+              },
+              {
+                "name": "Fred VanVleet",
+                "team": "HOU",
+                "min": "33",
+                "pts": 25,
+                "reb": "1",
+                "ast": "9",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2991230.png"
+              },
+              {
+                "name": "Amen Thompson",
+                "team": "HOU",
+                "min": "26",
+                "pts": 22,
+                "reb": "6",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684740.png"
+              },
+              {
+                "name": "Jabari Smith Jr.",
+                "team": "HOU",
+                "min": "32",
+                "pts": 21,
+                "reb": "4",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432639.png"
+              },
+              {
+                "name": "Cameron Johnson",
+                "team": "DEN",
+                "min": "29",
+                "pts": 19,
+                "reb": "3",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3138196.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -16785,14 +16939,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-21 06:17 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-sac-lal-20261121",
           "espnId": "401909313",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-21T12:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "crypto.com Arena",
           "odds": {
             "provider": "Draft Kings",
@@ -16857,6 +17011,83 @@ window.CLUTCH_DATA = {
               "text": "**새크라멘토 킹스** 1승 13패(원정 1승 4패, 최근 5경기 0승 5패, 5연패), **LA 레이커스** 13승 3패(홈 6승 2패, 최근 5경기 4승 1패). 직전 경기(11.19) **새크라멘토 킹스**는 피닉스 선즈에 107-128로 졌고, Darius Acuff Jr. 36점·4리바운드·6어시스트, Zach LaVine 18점·5리바운드·2어시스트를 기록했습니다. 직전 경기(11.19) **LA 레이커스**는 유타 재즈에 97-109로 졌고, Luka Doncic 29점·5리바운드·7어시스트, Quentin Grimes 20점·7리바운드·4어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 104,
+            "homeScore": 106,
+            "lines": {
+              "away": [
+                "28",
+                "34",
+                "22",
+                "20"
+              ],
+              "home": [
+                "28",
+                "26",
+                "28",
+                "24"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "De'Andre Hunter",
+                "team": "SAC",
+                "min": "37",
+                "pts": 30,
+                "reb": "6",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065732.png"
+              },
+              {
+                "name": "Luka Doncic",
+                "team": "LAL",
+                "min": "36",
+                "pts": 25,
+                "reb": "4",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png"
+              },
+              {
+                "name": "Domantas Sabonis",
+                "team": "SAC",
+                "min": "38",
+                "pts": 19,
+                "reb": "16",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png"
+              },
+              {
+                "name": "Zach LaVine",
+                "team": "SAC",
+                "min": "39",
+                "pts": 19,
+                "reb": "7",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png"
+              },
+              {
+                "name": "Darius Acuff Jr.",
+                "team": "SAC",
+                "min": "36",
+                "pts": 18,
+                "reb": "1",
+                "ast": "12",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png"
+              },
+              {
+                "name": "Walker Kessler",
+                "team": "LAL",
+                "min": "30",
+                "pts": 15,
+                "reb": "7",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433136.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
