@@ -110,7 +110,7 @@ header.top {
 .mark.sm { width: 22px; height: 22px; border-radius: 7px; box-shadow: 0 3px 9px rgba(17, 24, 39, 0.16); }
 
 .brand-txt { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
-.brand-name { display: block; font-size: 16px; font-weight: 800; letter-spacing: .14em; }
+.brand-name { display: block; font-size: 19px; font-weight: 800; letter-spacing: .04em; }
 .brand-sub { display: block; font-size: 11px; color: var(--text-3); letter-spacing: .02em; margin-top: 3px; }
 .brand-date {
   margin-left: auto;
@@ -826,6 +826,9 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .postgame-note { margin: 8px 0 0; }
 
 /* 경기 후 브리핑 — 승패 원인 문단 · 더 보기 · 팀 지표 */
+.pg-verdict {
+  margin: 9px 0 0; font-size: 12px; line-height: 1.65; font-weight: 800; color: #0B5138;
+}
 .pg-why {
   margin-top: 10px; padding: 9px 10px; border-radius: 9px;
   background: rgba(11, 138, 96, .055);
@@ -1063,7 +1066,7 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   font-size: 10.5px;
   line-height: 1.65;
 }
-.foot .foot-brand { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; color: var(--text-2); font-weight: 800; font-size: 11.5px; letter-spacing: .12em; }
+.foot .foot-brand { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; color: var(--text-2); font-weight: 800; font-size: 11.5px; letter-spacing: .06em; }
 .foot .foot-brand .mark.sm { width: 22px; height: 22px; }
 .foot p { margin: 0 0 6px; }
 .foot p.strong { color: var(--text-2); font-weight: 600; }

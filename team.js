@@ -120,7 +120,7 @@
 
   if (!hits.length) {
     renderEmpty("🔍", "‘" + wantTeam + "’ 팀을 찾지 못했습니다",
-      "클러치 데이터에 이 이름의 경기가 없습니다. 이름 표기를 확인하거나 경기 카드의 팀 이름을 눌러 주세요.");
+      "경기 데이터에 이 이름의 경기가 없습니다. 이름 표기를 확인하거나 경기 카드의 팀 이름을 눌러 주세요.");
     return;
   }
 
@@ -255,7 +255,7 @@
   var injurySummary = pick("injurySummary") || "";
   var note = (ref.g.details && ref.g.details.note) || "";
 
-  document.title = teamName + " — CLUTCH 팀 페이지";
+  document.title = teamName + " — VS 팀 페이지";
   if (elSrc) {
     var up = String(DATA.updatedAt || "");
     elSrc.textContent = up.length >= 16 ? up.slice(5, 10).replace("-", ".") + " " + up.slice(11, 16) : "—";
@@ -502,14 +502,14 @@
   /* 데이터 기준 메모(카드에 적힌 문장 그대로) */
   if (note) html.push('<p class="tp-note">' + esc(note) + "</p>");
 
-  var back = '<a class="tp-back" href="index.html">← 오늘의 클러치</a>';
+  var back = '<a class="tp-back" href="index.html">← 오늘의 매치업</a>';
   root.innerHTML = back + html.join("");
 
   /* ── 데이터가 없을 때 ─────────────────────────────────── */
   function renderEmpty(ico, title, desc) {
-    root.innerHTML = '<a class="tp-back" href="index.html">← 오늘의 클러치</a>' +
+    root.innerHTML = '<a class="tp-back" href="index.html">← 오늘의 매치업</a>' +
       '<div class="tp-empty"><span class="ico" aria-hidden="true">' + ico + "</span>" +
       "<h2>" + esc(title) + "</h2><p>" + esc(desc) + "</p>" +
-      '<a href="index.html">오늘의 클러치로</a></div>';
+      '<a href="index.html">오늘의 매치업으로</a></div>';
   }
 })();

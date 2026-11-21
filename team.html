@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light">
-<title>CLUTCH — 팀 페이지</title>
-<meta name="description" content="팀 하나의 최근 전적·최근 5경기·경기 일정·주요 선수를 클러치 데이터로 정리합니다.">
+<title>VS — 팀 페이지</title>
+<meta name="description" content="팀 하나의 최근 전적·최근 5경기·경기 일정·주요 선수를 경기 데이터로 정리합니다.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
 <link rel="icon" type="image/png" sizes="512x512" href="icon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css?v=20261120-teampage1">
+<link rel="stylesheet" href="styles.css?v=20261121-vs1">
 <style>
 /* 팀 페이지 전용 배치 — styles.css 는 건드리지 않고 이 페이지만의 클래스만 여기에 둡니다.
    390px 기준, 320px 에서도 가로 넘침이 없도록 flex/grid 는 minmax(0,1fr) + 말줄임을 씁니다. */
@@ -161,9 +161,9 @@
 
   <header class="top">
     <div class="top-row">
-      <a class="brand" href="index.html" aria-label="CLUTCH — 오늘의 클러치로 이동">
-        <svg class="mark" viewBox="0 0 40 40" role="img" aria-label="CLUTCH">
-          <title>CLUTCH</title>
+      <a class="brand" href="index.html" aria-label="VS — 오늘의 매치업으로 이동">
+        <svg class="mark" viewBox="0 0 40 40" role="img" aria-label="VS">
+          <title>VS</title>
           <defs>
             <linearGradient id="mkbg" x1="0" y1="0" x2="0.35" y2="1">
               <stop offset="0" stop-color="#12203A"/><stop offset="1" stop-color="#0A1322"/>
@@ -186,7 +186,7 @@
           </g>
         </svg>
         <span class="brand-txt">
-          <span class="brand-name">CLUTCH</span>
+          <span class="brand-name">VS</span>
           <span class="brand-sub">팀 페이지 · 최근 흐름과 일정</span>
         </span>
       </a>
@@ -201,7 +201,7 @@
     <div id="team" aria-live="polite"></div>
 
     <footer class="foot">
-      <p class="strong">팀 페이지는 클러치 카드가 담고 있는 값만 모아 보여 줍니다. 없는 항목은 비워 둡니다.</p>
+      <p class="strong">팀 페이지는 경기 카드가 담고 있는 값만 모아 보여 줍니다. 없는 항목은 비워 둡니다.</p>
       <p>전적·일정은 <code>data.js</code> 의 값 그대로이며, 경기 시작 시각과 출전 명단은 현지 공식 발표로 다시 확인하세요.</p>
     </footer>
   </main>

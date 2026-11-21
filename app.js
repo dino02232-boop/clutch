@@ -1230,16 +1230,34 @@
     var low = null;
     var byGap = lowPool.filter(function (p) { return p.gap != null && p.gap <= -4; })
       .sort(function (a, b) { return lowCost(b) - lowCost(a); });
-    if (byGap.length) low = byGap[0];
+    if (byGap.length) { low = byGap[0]; low.kind = "gap"; }
     if (!low) {
       var byPm = lowPool.filter(function (p) { return p.rel != null && p.rel <= -8; })
         .sort(function (a, b) { return a.rel - b.rel; });
-      if (byPm.length) low = byPm[0];
+      if (byPm.length) { low = byPm[0]; low.kind = "pm"; }
     }
     if (!low) {
       var byThin = lowPool.filter(function (p) { return p.prod <= 10; })
         .sort(function (a, b) { return a.prod - b.prod; });
-      if (byThin.length) low = byThin[0];
+      if (byThin.length) { low = byThin[0]; low.kind = "thin"; }
+    }
+
+    // 화면 맨 위에 '누구 때문에 이겼고 누구 때문에 무너졌는지'를 한 줄로 쓴다
+    function verdictLine(c, l) {
+      var bits = [];
+      if (c) {
+        var cHow = c.clutch >= 5 ? ("4쿼터 " + c.clutch + "점")
+          : (c.pm != null ? ("코트 마진 " + pgSigned(c.pm)) : ("야투 " + (c.fg ? pgShotText(c.fg) : "-")));
+        bits.push(pgJosa(winTeam.name, "은", "는") + " " + c.name + "(" + c.pts + "점·" + cHow + ") 덕분에 이겼습니다");
+      }
+      if (l) {
+        var lHow;
+        if (l.kind === "gap" && l.avgPts != null) lHow = "시즌 평균 " + l.avgPts.toFixed(1) + "점 → " + l.pts + "점";
+        else if (l.kind === "thin") lHow = l.pts + "점·야투 " + (l.fg ? pgShotText(l.fg) : "-");
+        else lHow = l.pm != null ? ("코트 마진 " + pgSigned(l.pm)) : (l.pts + "점");
+        bits.push(pgJosa(loseTeam.name, "은", "는") + " " + l.name + "(" + lHow + ")에서 흐름이 끊겼습니다");
+      }
+      return bits.length ? bits.join(". ") + "." : "";
     }
 
     function statLine(p) {
@@ -1550,6 +1568,7 @@
 
     return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>승패 원인 · 활약</span></div>' +
       '<p class="pg-game-line">' + esc(flowSentences.join(" ")) + "</p>" +
+      (winSide ? '<p class="pg-verdict">' + esc(verdictLine(carry, low)) + "</p>" : "") +
       '<div class="pg-why"><b>승부가 갈린 이유</b><p>' + esc(whyText) + "</p></div>" +
       '<div class="pg-highlights">' + highlightHTML(carry, "up", "캐리한 선수") + highlightHTML(low, "down", "아쉬웠던 선수") + "</div>" +
       (morePieces ? '<details class="pg-more"><summary>경기 흐름 · 팀 지표 더 보기</summary>' + morePieces + "</details>" : "") +

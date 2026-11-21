@@ -1,4 +1,4 @@
-# CLUTCH data.js 자동 갱신
+# data.js 자동 갱신
 
 사이트 카드 데이터(`data.js`)를 사람 손 없이 매일 채우는 도구입니다.
 GitHub Actions 러너가 ESPN(농구 NBA·축구)과 KOVO(배구 V리그) 공개 API를 읽어 `data.js` 값만 갱신하고,
