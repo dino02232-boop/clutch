@@ -1302,9 +1302,17 @@
       }
       if (l) {
         var lHow;
-        if (l.kind === "gap" && l.avgPts != null) lHow = "시즌 평균 " + l.avgPts.toFixed(1) + "점 → " + l.pts + "점";
-        else if (l.kind === "thin") lHow = l.pts + "점·야투 " + (l.fg ? pgShotText(l.fg) : "-");
-        else lHow = l.pm != null ? ("코트 마진 " + pgSigned(l.pm)) : (l.pts + "점");
+        if (l.kind === "gap" && l.avgPts != null && l.pts <= l.avgPts - 4) {
+          lHow = "시즌 평균 " + l.avgPts.toFixed(1) + "점 → " + l.pts + "점";
+        } else if (l.kind === "thin") {
+          lHow = l.pts + "점·야투 " + (l.fg ? pgShotText(l.fg) : "-");
+        } else if (l.tov >= 4) {
+          lHow = "턴오버 " + l.tov + "개";
+        } else if (l.pm != null) {
+          lHow = "코트 마진 " + pgSigned(l.pm);
+        } else {
+          lHow = l.pts + "점";
+        }
         bits.push(pgJosa(loseTeam.name, "은", "는") + " " + l.name + "(" + lHow + ")에서 흐름이 끊겼습니다");
       }
       return bits.length ? bits.join(". ") + "." : "";
