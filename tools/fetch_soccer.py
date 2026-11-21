@@ -299,8 +299,36 @@ def streak_text(results):
     return None
 
 
+def last5_score(e, team_id):
+    """lastFiveGames 의 한 경기 → '내 팀-상대' 점수 문자열.
+
+    ESPN 의 events[].score 는 홈·원정 순서도, 우리 팀 순서도 아니고 **이긴 팀 점수가 앞**으로 온다
+    (예: 1-2 로 진 경기가 '2-1'). 그래서 지는 경기는 방향이 뒤집혀 승/패와 어긋난다.
+    homeTeamScore/awayTeamScore 로 우리 팀 기준을 계산하고, 그 값이 없을 때만 원래 score 를 쓴다.
+    """
+    try:
+        hs, as_ = int(float(e.get("homeTeamScore"))), int(float(e.get("awayTeamScore")))
+    except (TypeError, ValueError):
+        # 팀별 점수가 없는 응답 — 원래 score 는 이긴 팀이 앞이므로 진 경기만 뒤집는다
+        raw = str(e.get("score") or "")
+        m = re.match(r"^(\d+)-(\d+)$", raw.strip())
+        if m and str(e.get("gameResult") or "").upper() == "L" and int(m.group(1)) > int(m.group(2)):
+            return "%s-%s" % (m.group(2), m.group(1)), None, None
+        return raw, None, None
+    if str(e.get("homeTeamId") or "") == str(team_id):
+        mine, theirs = hs, as_
+    elif str(e.get("awayTeamId") or "") == str(team_id):
+        mine, theirs = as_, hs
+    else:  # 팀 id 가 없는 응답 — atVs 로 우리 쪽을 고른다
+        mine, theirs = (hs, as_) if e.get("atVs") == "vs" else (as_, hs)
+    return "%d-%d" % (mine, theirs), mine, theirs
+
+
 def last5_detail(summary, team_id):
-    """ESPN summary 의 lastFiveGames → [{date, opp, ha, score, res, comp}] (최신이 앞)."""
+    """ESPN summary 의 lastFiveGames → [{date, opp, ha, score, res, comp}] (최신이 앞).
+
+    score 는 최근 경기 목록·팀 페이지 경기 목록과 같은 '내 팀-상대' 순서다.
+    """
     for blk in summary.get("lastFiveGames") or []:
         t = blk.get("team") or {}
         if str(t.get("id")) != str(team_id):
@@ -309,12 +337,16 @@ def last5_detail(summary, team_id):
         for e in blk.get("events") or []:
             opp = (e.get("opponent") or {}).get("displayName") or ""
             date = (e.get("gameDate") or "")[:10]
+            score, mine, theirs = last5_score(e, team_id)
+            res = RES_KO.get(str(e.get("gameResult") or "").upper(), "")
+            if not res and mine is not None and theirs is not None:
+                res = "승" if mine > theirs else ("패" if mine < theirs else "무")
             out.append({
                 "date": date,
                 "opp": ko(opp) if opp else "",
                 "ha": HA_KO.get(e.get("atVs") or "vs", "홈"),
-                "score": e.get("score") or "",
-                "res": RES_KO.get(str(e.get("gameResult") or "").upper(), ""),
+                "score": score,
+                "res": res,
                 "comp": short_comp(e.get("competitionName")),
             })
         out.sort(key=lambda r: r["date"], reverse=True)
@@ -566,8 +598,8 @@ def build_team(comp, side, table, league_short, summary, league, refresh=False):
         fs.append("경기당 평균 %s골을 넣고 %s골을 실점했습니다." % (gf, ga))
     if out.get("last5Detail"):
         r0 = out["last5Detail"][0]
-        fs.append("직전 경기 기록은 %s %s %s %s입니다." % (r0.get("date", "").replace("-", "."),
-                   r0.get("ha", ""), r0.get("opp", ""), r0.get("score", "")))
+        fs.append("직전 경기 기록은 %s %s %s %s %s입니다." % (r0.get("date", "").replace("-", "."),
+                   r0.get("ha", ""), r0.get("opp", ""), r0.get("score", ""), r0.get("res", "")))
     fs.append("부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.")
     if fs:
         out["focus"] = " ".join(fs)
@@ -594,7 +626,7 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
             odds["implied"] = imp
     ou = None
     for o in comp.get("odds") or []:
-        if o.get("overUnder") is not None:
+        if o and o.get("overUnder") is not None:
             ou = o["overUnder"]
             break
 
