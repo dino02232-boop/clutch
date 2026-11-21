@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "VERSUS Mark";
+  src: url("fonts/versus-mark.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* =============================================================
    CLUTCH — styles.css
    모바일 우선(390px 기준) 화이트(라이트) UI. 외부 CSS 프레임워크 없음.
@@ -10,7 +18,8 @@
 
 :root {
   color-scheme: light;
-  --bg: #F5F6F8;
+  --bg: #EDF0F6;
+  --brand-ink: #0F172A;
   --bg-2: #FFFFFF;
   --card: #FFFFFF;
   --card-hi: #FFFFFF;
@@ -36,8 +45,8 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background:
-    radial-gradient(120% 55% at 50% -10%, rgba(14, 159, 110, 0.07) 0%, rgba(245, 246, 248, 0) 62%),
-    radial-gradient(90% 40% at 100% 8%, rgba(37, 99, 235, 0.045) 0%, rgba(245, 246, 248, 0) 60%),
+    radial-gradient(128% 56% at 50% -12%, rgba(16, 168, 116, 0.16) 0%, rgba(237, 240, 246, 0) 62%),
+    radial-gradient(85% 42% at 102% 4%, rgba(15, 23, 42, 0.10) 0%, rgba(237, 240, 246, 0) 58%),
     var(--bg);
   color: var(--text);
   font-family: "Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont,
@@ -72,11 +81,12 @@ header.top {
   position: sticky;
   top: 0;
   z-index: 20;
-  padding: calc(env(safe-area-inset-top) + 14px) var(--pad) 10px;
-  background: rgba(255, 255, 255, 0.97);
+  padding: calc(env(safe-area-inset-top) + 13px) var(--pad) 10px;
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 6px 18px -16px rgba(15, 23, 42, 0.5);
 }
 
 .top-row { display: flex; align-items: center; gap: 10px; }
@@ -98,19 +108,35 @@ header.top {
 .brand:active { transform: scale(.985); }
 .brand:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; }
 
-/* 브랜드 마크 — A3 도안을 인라인 SVG 로 옮긴 것(짙은 남색 바탕 + 민트 C 아크 + 부서진 끝의 파편·불티) */
+/* 브랜드 마크 — 민트 배지 위 V 에서 불티가 터지는 도안.
+   도안은 SVG 한 벌로 styles.css 에서만 관리한다(헤더·푸터·아이콘 공통). */
 .mark {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   flex: 0 0 auto;
   display: block;
-  border-radius: 10.5px;
-  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.18), 0 0 0 1px rgba(17, 24, 39, 0.06);
+  border-radius: 12px;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%20width%3D%2240%22%20height%3D%2240%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22vbg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220.35%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238CFFD6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231DC479%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20x%3D%22.6%22%20y%3D%22.6%22%20width%3D%2238.8%22%20height%3D%2238.8%22%20rx%3D%2211%22%20fill%3D%22url(%23vbg)%22%20stroke%3D%22rgba(9%2C23%2C38%2C.14)%22%2F%3E%3Cpath%20d%3D%22M32.73480662983425%20-100.0H3.0386740331491713L36.325966850828735%200.0H72.09944751381217L105.2486187845304%20-100.0H75.5524861878453L54.55801104972376%20-28.729281767955804H53.729281767955804Z%22%20transform%3D%22translate(6.2%2030.4)%20scale(0.19)%22%20fill%3D%22%230A1526%22%2F%3E%3Cpath%20d%3D%22M27.4%209.2%20L30.0%206.4%22%20stroke%3D%22%230A1526%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M29.6%2013.8%20L33.4%2012.8%22%20stroke%3D%22%230A1526%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M26.2%205.4%20L27.0%202.6%22%20stroke%3D%22%230A1526%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2233.2%22%20cy%3D%2217.8%22%20r%3D%221.0%22%20fill%3D%22%230A1526%22%2F%3E%3Ccircle%20cx%3D%2223.4%22%20cy%3D%223.9%22%20r%3D%220.85%22%20fill%3D%22%230A1526%22%2F%3E%3C%2Fsvg%3E") center / 100% 100% no-repeat;
+  box-shadow: 0 5px 14px rgba(9, 17, 32, 0.26), 0 0 0 1px rgba(9, 17, 32, 0.05);
 }
-.mark.sm { width: 22px; height: 22px; border-radius: 7px; box-shadow: 0 3px 9px rgba(17, 24, 39, 0.16); }
+.mark.sm { width: 22px; height: 22px; border-radius: 7px; box-shadow: 0 3px 9px rgba(9, 17, 32, 0.18); }
 
 .brand-txt { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
-.brand-name { display: block; font-size: 19px; font-weight: 800; letter-spacing: .04em; }
+/* 워드마크 — VERSUS. 큰 V 뒤에 작은 ERSES 를 베이스라인에 붙인 락업.
+   V 하나로 읽히는 배지와 짝을 이룬다. */
+.brand-name {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5px;
+  color: var(--brand-ink);
+  font-family: "VERSUS Mark", "Pretendard Variable", Pretendard, sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  transform: skewX(-6deg);
+  transform-origin: 0 76%;
+}
+.brand-name .bn-v { font-size: 27px; letter-spacing: -.02em; }
+.brand-name .bn-rest { font-size: 12.5px; letter-spacing: .17em; }
 .brand-sub { display: block; font-size: 11px; color: var(--text-3); letter-spacing: .02em; margin-top: 3px; }
 .brand-date {
   margin-left: auto;
@@ -669,12 +695,24 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .mtms .fav-toggle { width: 16px; height: 16px; margin: 0; border-radius: 5px; font-size: 10px; }
 .mtms .tm.away { color: #1F2937; }
 .mtms .mslot { min-width: 38px; text-align: center; }
+/* 두 팀 사이의 VS 배지 — 목록 어디서나 같은 자리에 서는 브랜드 장치 */
 .mtms .vs {
   flex: 0 0 auto;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--text-3);
-  letter-spacing: .04em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 23px;
+  height: 16px;
+  padding: 0 4px 0 5px;
+  border-radius: 5px;
+  background: var(--brand-ink);
+  color: #46F0A4;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  line-height: 1;
+  box-shadow: 0 1px 2px rgba(9, 17, 32, 0.22);
 }
 
 /* 줄 오른쪽 'VS 상황' 버튼 — 이 화면의 주 진입점 */
@@ -1160,7 +1198,7 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   font-size: 10.5px;
   line-height: 1.65;
 }
-.foot .foot-brand { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; color: var(--text-2); font-weight: 800; font-size: 11.5px; letter-spacing: .06em; }
+.foot .foot-brand { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; color: var(--text-2); font-weight: 800; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
 .foot .foot-brand .mark.sm { width: 22px; height: 22px; }
 .foot p { margin: 0 0 6px; }
 .foot p.strong { color: var(--text-2); font-weight: 600; }

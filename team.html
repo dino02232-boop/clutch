@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light">
-<title>VS — 팀 페이지</title>
+<title>VERSUS — 팀 페이지</title>
 <meta name="description" content="팀 하나의 최근 전적·최근 5경기·경기 일정·주요 선수를 경기 데이터로 정리합니다.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
 <link rel="icon" type="image/png" sizes="512x512" href="icon.png?v=20261121-vsmark">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20261121-vsmark">
-<link rel="stylesheet" href="styles.css?v=20261121-live4">
+<link rel="stylesheet" href="styles.css?v=20261121-v5">
 <style>
 /* 팀 페이지 전용 배치 — styles.css 는 건드리지 않고 이 페이지만의 클래스만 여기에 둡니다.
    390px 기준, 320px 에서도 가로 넘침이 없도록 flex/grid 는 minmax(0,1fr) + 말줄임을 씁니다. */
@@ -163,32 +163,10 @@
 
   <header class="top">
     <div class="top-row">
-      <a class="brand" href="index.html" aria-label="VS — 오늘의 매치업으로 이동">
-        <svg class="mark" viewBox="0 0 40 40" role="img" aria-label="VS">
-          <title>VS</title>
-          <defs>
-            <linearGradient id="mkbg" x1="0" y1="0" x2="0.35" y2="1">
-              <stop offset="0" stop-color="#12203A"/><stop offset="1" stop-color="#0A1322"/>
-            </linearGradient>
-            <linearGradient id="mkc" x1="0.1" y1="1" x2="0.9" y2="0">
-              <stop offset="0" stop-color="#7DF5C0"/><stop offset="1" stop-color="#3BE38F"/>
-            </linearGradient>
-          </defs>
-          <rect x=".6" y=".6" width="38.8" height="38.8" rx="11" fill="url(#mkbg)" stroke="rgba(255,255,255,.08)"/>
-          <path d="M26.6 29.4 A11.2 11.2 0 1 1 26.6 10.6" fill="none" stroke="url(#mkc)"
-                stroke-width="5.3" stroke-linecap="butt"/>
-          <g fill="url(#mkc)">
-            <path d="M30.2 10.4 L31.2 18.3 L38.6 19.95 L31.2 21.6 L30.2 29.6 L29.2 21.6 L21.8 19.95 L29.2 18.3 Z"/>
-            <polygon points="20.4,13.6 22.6,17.4 17.8,15.9"/>
-            <polygon points="16.6,17.0 19.2,18.6 15.2,19.2"/>
-            <polygon points="18.2,21.2 20.8,21.6 17.6,24.2"/>
-            <polygon points="21.6,22.4 24.2,23.8 20.4,24.6"/>
-            <polygon points="14.6,13.2 16.4,15.4 12.9,15.0"/>
-            <polygon points="15.2,24.2 17.4,23.6 16.2,26.4"/>
-          </g>
-        </svg>
+      <a class="brand" href="index.html" aria-label="VERSUS — 오늘의 매치업으로 이동">
+        <span class="mark" aria-hidden="true"></span>
         <span class="brand-txt">
-          <span class="brand-name">VS</span>
+          <span class="brand-name" aria-hidden="true"><span class="bn-v">V</span><span class="bn-rest">ERSES</span></span>
           <span class="brand-sub">팀 페이지 · 최근 흐름과 일정</span>
         </span>
       </a>

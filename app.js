@@ -4447,7 +4447,14 @@
 
   // 로고(CLUTCH) 또는 목록 화면의 '종목 선택' 칩 → 홈
   elHomeLink.addEventListener("click", function (e) {
+    // 헤더의 VERSUS — 목록·팀·순위 어디서 눌러도 홈(종목 선택)으로.
+    // 이미 홈이면 화면을 다시 그리지 않고 맨 위로만 올린다.
+    var alreadyHome = state.sport === null && !state.favorites && !state.allSports;
     e.preventDefault();
+    if (alreadyHome) {
+      try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch (err) { window.scrollTo(0, 0); }
+      return;
+    }
     goHome();
   });
   elBack.addEventListener("click", goHome);
