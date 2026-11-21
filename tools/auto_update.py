@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
 """CLUTCH — data.js 자동 갱신 오케스트레이터 (GitHub Actions 용)
 
-  python3 tools/auto_update.py --mode results   # 30분마다: 끝난 경기 결과·상태 반영
+  python3 tools/auto_update.py --mode results   # 30분마다: 끝난 경기 결과·상태 반영 + 순위표 갱신
   python3 tools/auto_update.py --mode daily     # 하루 1회: 오늘~+6일 경기 블록 재생성 + 오래된 날짜 정리
 
 동작 방식
   · 스포츠(농구·축구·배구)별로 '임시 사본'에 먼저 써 보고, 경기 수가 줄었거나 결과 파일이
     깨졌으면 그 스포츠의 갱신을 버립니다. 그래서 한 소스(ESPN/KOVO)가 잠깐 실패해도
     사이트에 있던 경기가 사라지지 않습니다.
+  · results 모드에서는 순위표(standings-data.js)도 fetch_standings.py 로 다시 받습니다.
+    순위는 경기 결과에 따라 바뀌므로 결과와 같은 주기로 돕니다. 값이 실제로 바뀐 경우에만
+    파일을 쓰고 커밋하므로 30분마다 같은 내용을 다시 커밋하지 않습니다.
   · 내용이 실제로 바뀐 경우에만 data.js 를 씁니다(updatedAt 만 바뀌면 커밋하지 않음).
   · data.js 구조(스키마)는 건드리지 않고 값만 갱신합니다.
 
 환경변수
-  CLUTCH_DATA_JS   대상 data.js 경로(기본: 저장소 루트)
-  CLUTCH_CACHE_DIR 임시 캐시 폴더(러너에서는 $RUNNER_TEMP 사용)
-  CLUTCH_DAYS_AHEAD 새로 만드는 날짜 범위(기본 6)
-  CLUTCH_KEEP_PAST  지난 날짜 보관 일수(기본 3)
+  CLUTCH_DATA_JS        대상 data.js 경로(기본: 저장소 루트)
+  CLUTCH_STANDINGS_JS   대상 standings-data.js 경로(기본: 저장소 루트)
+  CLUTCH_CACHE_DIR      임시 캐시 폴더(러너에서는 $RUNNER_TEMP 사용)
+  CLUTCH_DAYS_AHEAD     새로 만드는 날짜 범위(기본 6)
+  CLUTCH_KEEP_PAST      지난 날짜 보관 일수(기본 3)
 """
 
 import argparse
@@ -31,6 +35,7 @@ from datetime import datetime, timedelta, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DATA_JS = os.environ.get("CLUTCH_DATA_JS") or os.path.join(ROOT, "data.js")
+STANDINGS_JS = os.environ.get("CLUTCH_STANDINGS_JS") or os.path.join(ROOT, "standings-data.js")
 KST = timezone(timedelta(hours=9))
 DAYS_AHEAD = int(os.environ.get("CLUTCH_DAYS_AHEAD") or 6)
 KEEP_PAST = int(os.environ.get("CLUTCH_KEEP_PAST") or 3)
@@ -239,6 +244,93 @@ def prune(src, keep_from, keep_to):
     return head + "  days: [\n\n" + new_body + "\n  ]" + tail
 
 
+# ── 순위표(standings-data.js) ──────────────────────────────────────
+def strip_standings_stamp(src):
+    """생성 시각만 다른 경우를 같게 보기 위해 시각 값을 비운다."""
+    src = re.sub(r'(?m)^(   생성 시각\(기준\):).*$', r'\1', src, count=1)
+    return re.sub(r'"updated":\s*"[^"]*"', '"updated": ""', src, count=1)
+
+
+def standings_data(src):
+    m = re.search(r'window\.CLUTCH_STANDINGS\s*=\s*(\{.*\})\s*;\s*$', src, re.S)
+    if not m:
+        return None
+    try:
+        return json.loads(m.group(1))
+    except json.JSONDecodeError:
+        return None
+
+
+def standings_counts(src):
+    data = standings_data(src) or {}
+    out = {}
+    for lg in data.get("leagues") or []:
+        out[lg.get("key")] = sum(len(g.get("rows") or []) for g in (lg.get("groups") or []))
+    return out
+
+
+def standings_sanity(src):
+    """순위표가 최소한의 형태를 갖췄는지 — 리그마다 팀 순위 행이 있어야 한다."""
+    if not src.lstrip().startswith("/*"):
+        return "머리 주석이 사라졌습니다"
+    if "window.CLUTCH_STANDINGS" not in src:
+        return "window.CLUTCH_STANDINGS 가 없습니다"
+    data = standings_data(src)
+    if data is None:
+        return "JSON 으로 읽히지 않습니다"
+    leagues = data.get("leagues") or []
+    if not leagues:
+        return "리그가 없습니다"
+    for lg in leagues:
+        key = lg.get("key") or "?"
+        if not (lg.get("groups") or []):
+            return "%s 그룹이 없습니다" % key
+        if not standings_counts(src).get(key):
+            return "%s 팀 순위 행이 비었습니다" % key
+    return None
+
+
+def validate_standings(before_src, after_src):
+    err = standings_sanity(after_src)
+    if err:
+        return "순위표 결과가 깨졌습니다: %s" % err
+    old, new = standings_counts(before_src), standings_counts(after_src)
+    lost = [k for k, n in old.items() if n and new.get(k, 0) < n]
+    if lost:
+        return "순위표 행이 줄었습니다: %s" % ", ".join(sorted(lost))
+    return None
+
+
+def refresh_standings():
+    """순위표를 새로 받아 실제 값이 바뀐 경우에만 standings-data.js 를 쓴다."""
+    before = read(STANDINGS_JS) if os.path.exists(STANDINGS_JS) else None
+    tmpdir = tempfile.mkdtemp(prefix="clutch-standings-")
+    stage = os.path.join(tmpdir, "standings-data.js")
+    env = dict(os.environ)
+    env["CLUTCH_STANDINGS_JS"] = stage
+    env.setdefault("CLUTCH_CACHE_DIR", os.path.join(tempfile.gettempdir(), "clutch-cache"))
+    try:
+        r = subprocess.run([PY, "fetch_standings.py"], cwd=HERE, env=env, capture_output=True, text=True)
+        for line in ((r.stdout or "") + (r.stderr or "")).strip().splitlines()[-15:]:
+            log("    " + line)
+        if r.returncode != 0 or not os.path.exists(stage):
+            log("  ! 순위표 생성 실패(종료코드 %d) — 이번 순위표는 건너뜁니다" % r.returncode)
+            return False
+        after = read(stage)
+        problem = validate_standings(before, after) if before is not None else standings_sanity(after)
+        if problem:
+            log("  ! 순위표 — %s" % problem)
+            return False
+        if before is not None and strip_standings_stamp(before) == strip_standings_stamp(after):
+            log("  · 순위표에 바뀐 내용 없음 — 파일을 그대로 둡니다")
+            return False
+        write(STANDINGS_JS, after)
+        log("  · standings-data.js 갱신 완료")
+        return True
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
 # ── 모드 ────────────────────────────────────────────────────────────
 def mode_daily(cur, today):
     d0 = today
@@ -292,6 +384,11 @@ def main():
         return 1
 
     cur = mode_daily(original, today) if args.mode == "daily" else mode_results(original, today)
+
+    # 순위표는 경기 결과에 따라 바뀌므로 결과 갱신과 같은 주기(results)에 돕니다.
+    if args.mode == "results":
+        log("· 순위표 갱신 (ESPN·KOVO)")
+        refresh_standings()
 
     if args.mode == "daily":
         keep_from = (today - timedelta(days=KEEP_PAST)).isoformat()

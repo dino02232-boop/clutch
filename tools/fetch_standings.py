@@ -35,7 +35,7 @@ from fetch_soccer import TEAM_KO as SOCCER_KO  # noqa: E402  (data.js 와 같은
 from fetch_nba import TEAM_KO as NBA_KO        # noqa: E402
 from fetch_volley import TEAMS as VOLLEY_TEAMS  # noqa: E402  (KOVO 팀 코드 → (약어, 한글명))
 
-OUT = os.path.join(ROOT, "standings-data.js")
+OUT = os.environ.get("CLUTCH_STANDINGS_JS") or os.path.join(ROOT, "standings-data.js")
 KST = timezone(timedelta(hours=9))
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
