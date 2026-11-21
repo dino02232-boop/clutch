@@ -13,6 +13,10 @@
 
 해외 리그(독일·폴란드·이탈리아)는 넣지 않습니다. 값이 없는 항목(부상·결장·배당)은
 비우고 화면에서 "정보 없음"으로 표시합니다. 지어내지 않습니다.
+
+끝난 경기는 같은 응답의 result(W/L)·hspoint/aspoint(세트 승수)·hsNpoint/asNpoint(세트별
+점수)·score 로 카드의 result(state: final, awayScore/homeScore, 세트별 lines)를 채웁니다.
+선수별 공격·블로킹·서브 기록은 이 응답에 없으므로 top 은 넣지 않습니다.
 """
 
 import argparse
@@ -125,6 +129,59 @@ def _wp(v):
 
 def rec_text(win, lost):
     return "%d승 %d패" % (win or 0, lost or 0)
+
+
+def _pt(v):
+    """KOVO 일정 응답의 점수 값 → 정수. 비었거나 숫자가 아니면 None."""
+    try:
+        return int(float(v))
+    except (TypeError, ValueError):
+        return None
+
+
+def build_result(g):
+    """KOVO 일정 응답에 이미 실려 있는 결과값만으로 카드의 result 를 만든다.
+
+    쓰는 값(응답 필드 그대로)
+      · result     'W'/'L' — 홈 팀 기준 승패. 끝난 경기에만 값이 있다(예정 경기는 '').
+      · hspoint/aspoint  세트 승수(홈/원정)
+      · hsNpoint/asNpoint 세트별 점수(N=1~5). 치르지 않은 세트는 0.
+      · score      '홈 : 원정' 세트 스코어. 위 값과 어긋나면 결과를 만들지 않는다.
+
+    선수별 기록(공격·블로킹·서브)은 이 응답에 없으므로 top 은 넣지 않는다.
+    """
+    res = str(g.get("result") or "").strip().upper()
+    if res not in ("W", "L"):
+        return None
+    hp, ap = _pt(g.get("hspoint")), _pt(g.get("aspoint"))
+    if hp is None or ap is None or hp < 0 or ap < 0 or hp + ap <= 0 or hp + ap > 5:
+        return None
+    # score 는 '홈 : 원정' 순서. 값이 있는데 세트 승수와 다르면 만들지 않는다.
+    sc = str(g.get("score") or "").strip()
+    m = re.match(r"^(\d+)\s*:\s*(\d+)$", sc)
+    if m and (int(m.group(1)) != hp or int(m.group(2)) != ap):
+        print("  ! %s score(%s)와 세트 승수(%d:%d)가 달라 결과를 넣지 않습니다" % (
+            g.get("gnum"), sc, hp, ap))
+        return None
+    sets = hp + ap
+    hl = [_pt(g.get("hs%dpoint" % i)) for i in range(1, sets + 1)]
+    al = [_pt(g.get("as%dpoint" % i)) for i in range(1, sets + 1)]
+    lines = None
+    # 세트 점수는 한 세트도 0점으로 끝나지 않는다. 0/빈 값이 섞이면 세트 표를 넣지 않는다.
+    if all(x is not None and x > 0 for x in hl + al):
+        lines = {"away": [str(x) for x in al], "home": [str(x) for x in hl]}
+    out = {
+        "state": "final",
+        "detail": "Final",
+        "awayScore": ap,
+        "homeScore": hp,
+        "winner": "home" if hp > ap else ("away" if ap > hp else None),
+    }
+    if lines:
+        out["lines"] = lines
+    out["kovoNumber"] = str(g.get("gnum"))
+    out["source"] = "kovo"
+    return out
 
 
 def build_game(g, ranks, at_iso, all_games=None):
@@ -273,6 +330,18 @@ def build_game(g, ranks, at_iso, all_games=None):
     }
     if not venue:
         del game["venue"]
+    # 끝난 경기면 스코어·세트 스코어를 카드에 넣는다(예정 경기는 넣지 않는다).
+    result = build_result(g)
+    if result:
+        # 다른 종목 카드와 같은 자리에 둔다: status 는 start 뒤, result 는 details 앞.
+        ordered = {}
+        for k, v in game.items():
+            if k == "details":
+                ordered["result"] = result
+            ordered[k] = v
+            if k == "start":
+                ordered["status"] = "final"
+        game = ordered
     return game
 
 
@@ -409,8 +478,16 @@ def main():
         for day in days:
             print("%s (%s) 배구 %d경기" % (day, weekday_ko(day), len(by_day[day])))
             for g in by_day[day]:
+                r = g.get("result")
+                if r:
+                    ls = r.get("lines") or {}
+                    sets = " / ".join("%s-%s" % (a, h) for a, h in
+                                      zip(ls.get("away") or [], ls.get("home") or []))
+                    tail = "결과 %s:%s%s" % (r["awayScore"], r["homeScore"], (" (" + sets + ")") if sets else "")
+                else:
+                    tail = "예정"
                 print("   ", g["start"][11:16], g["details"]["teams"][0]["name"], "@",
-                      g["details"]["teams"][1]["name"], "|", g.get("venue"))
+                      g["details"]["teams"][1]["name"], "|", g.get("venue"), "|", tail)
         return
 
     src = open(DATA_JS, encoding="utf-8").read()

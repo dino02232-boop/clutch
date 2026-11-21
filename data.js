@@ -86,7 +86,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-21T23:26:12+09:00",
+  updatedAt: "2026-11-21T23:30:24+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -109,6 +109,7 @@ window.CLUTCH_DATA = {
           "leagueFull": "V리그 남자부",
           "source": "kovo",
           "start": "2026-11-18T19:00:00+09:00",
+          "status": "final",
           "venue": "대전충무체육관",
           "away": {
             "name": "우리카드",
@@ -163,10 +164,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "삼성화재",
             "abbr": "SAM",
-            "record": "3승 2패",
+            "record": "4승 2패",
             "badges": [
               {
-                "text": "리그 3위",
+                "text": "리그 2위",
                 "tone": "rank"
               }
             ],
@@ -220,14 +221,35 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**우리카드** 3승 2패(리그 4위, 최근 흐름 2패), **삼성화재** 3승 2패(리그 3위, 최근 흐름 2승). V리그 남자부 1라운드 대전충무체육관에서 열립니다."
+              "text": "**우리카드** 3승 2패(리그 4위, 최근 흐름 2패), **삼성화재** 4승 2패(리그 2위, 최근 흐름 3승). V리그 남자부 1라운드 대전충무체육관에서 열립니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "리그 4·3위로 바로 옆 순위, 승점 차가 1점, 세트 승리 수 차가 2입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
+              "text": "세트 승리 수 차가 5입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 0,
+            "homeScore": 3,
+            "winner": "home",
+            "lines": {
+              "away": [
+                "26",
+                "21",
+                "18"
+              ],
+              "home": [
+                "28",
+                "25",
+                "25"
+              ]
+            },
+            "kovoNumber": "31",
+            "source": "kovo"
+          },
           "details": {
             "teams": [
               {
@@ -317,43 +339,43 @@ window.CLUTCH_DATA = {
                 "name": "삼성화재",
                 "abbr": "SAM",
                 "side": "home",
-                "record": "3승 2패",
+                "record": "4승 2패",
                 "badges": [
                   {
-                    "text": "리그 3위",
+                    "text": "리그 2위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "3승 2패"
+                    "value": "4승 2패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "3위"
+                    "value": "2위"
                   },
                   {
                     "label": "세트",
-                    "value": "11-8"
+                    "value": "14-9"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "2승"
+                    "value": "3승"
                   }
                 ],
                 "nums": [
                   {
                     "label": "승점",
-                    "value": 9.0
+                    "value": 12.0
                   },
                   {
                     "label": "득점",
-                    "value": 482
+                    "value": 582
                   },
                   {
                     "label": "실점",
-                    "value": 458
+                    "value": 536
                   }
                 ],
                 "last5Detail": [
@@ -399,9 +421,9 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "**경기장** — 대전충무체육관에서 열립니다.",
-              "**순위표** — 우리카드 3승 2패·4위·승점 8, 삼성화재 3승 2패·3위·승점 9."
+              "**순위표** — 우리카드 3승 2패·4위·승점 8, 삼성화재 4승 2패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-19 23:43 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -411,6 +433,7 @@ window.CLUTCH_DATA = {
           "leagueFull": "V리그 여자부",
           "source": "kovo",
           "start": "2026-11-18T19:00:00+09:00",
+          "status": "final",
           "venue": "숲 스타디움",
           "away": {
             "name": "현대건설",
@@ -466,7 +489,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "SOOP",
             "abbr": "SOOP",
-            "record": "0승 5패",
+            "record": "0승 6패",
             "badges": [
               {
                 "text": "리그 7위",
@@ -524,14 +547,37 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**현대건설** 1승 4패(리그 6위, 최근 흐름 1승), **SOOP** 0승 5패(리그 7위, 최근 흐름 5패). V리그 여자부 1라운드 숲 스타디움에서 열립니다."
+              "text": "**현대건설** 1승 4패(리그 6위, 최근 흐름 1승), **SOOP** 0승 6패(리그 7위, 최근 흐름 6패). V리그 여자부 1라운드 숲 스타디움에서 열립니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "리그 6·7위로 바로 옆 순위, 승점 차가 3점, 세트 승리 수 차가 1입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
+              "text": "리그 6·7위로 바로 옆 순위, 승점 차가 2점, 세트 승리 수 차가 1입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 3,
+            "homeScore": 1,
+            "winner": "away",
+            "lines": {
+              "away": [
+                "25",
+                "25",
+                "19",
+                "25"
+              ],
+              "home": [
+                "20",
+                "16",
+                "25",
+                "16"
+              ]
+            },
+            "kovoNumber": "32",
+            "source": "kovo"
+          },
           "details": {
             "teams": [
               {
@@ -622,7 +668,7 @@ window.CLUTCH_DATA = {
                 "name": "SOOP",
                 "abbr": "SOOP",
                 "side": "home",
-                "record": "0승 5패",
+                "record": "0승 6패",
                 "badges": [
                   {
                     "text": "리그 7위",
@@ -632,7 +678,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "0승 5패"
+                    "value": "0승 6패"
                   },
                   {
                     "label": "리그 순위",
@@ -640,25 +686,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "세트",
-                    "value": "3-15"
+                    "value": "5-18"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "5패"
+                    "value": "6패"
                   }
                 ],
                 "nums": [
                   {
                     "label": "승점",
-                    "value": 0.0
+                    "value": 1.0
                   },
                   {
                     "label": "득점",
-                    "value": 370
+                    "value": 470
                   },
                   {
                     "label": "실점",
-                    "value": 438
+                    "value": 544
                   }
                 ],
                 "last5Detail": [
@@ -705,9 +751,9 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "**경기장** — 숲 스타디움에서 열립니다.",
-              "**순위표** — 현대건설 1승 4패·6위·승점 3, SOOP 0승 5패·7위·승점 0."
+              "**순위표** — 현대건설 1승 4패·6위·승점 3, SOOP 0승 6패·7위·승점 1."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-19 23:43 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-18 END */,
@@ -2470,6 +2516,7 @@ window.CLUTCH_DATA = {
           "leagueFull": "V리그 남자부",
           "source": "kovo",
           "start": "2026-11-19T19:00:00+09:00",
+          "status": "final",
           "venue": "평택이충문화체육관",
           "away": {
             "name": "대한항공",
@@ -2591,6 +2638,29 @@ window.CLUTCH_DATA = {
               "text": "세트 승리 수 차가 6입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 3,
+            "homeScore": 1,
+            "winner": "away",
+            "lines": {
+              "away": [
+                "25",
+                "27",
+                "21",
+                "25"
+              ],
+              "home": [
+                "20",
+                "25",
+                "25",
+                "20"
+              ]
+            },
+            "kovoNumber": "33",
+            "source": "kovo"
+          },
           "details": {
             "teams": [
               {
@@ -2766,7 +2836,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 평택이충문화체육관에서 열립니다.",
               "**순위표** — 대한항공 2승 3패·5위·승점 7, KB손해보험 0승 5패·7위·승점 0."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-20 23:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -2776,6 +2846,7 @@ window.CLUTCH_DATA = {
           "leagueFull": "V리그 여자부",
           "source": "kovo",
           "start": "2026-11-19T19:00:00+09:00",
+          "status": "final",
           "venue": "인천삼산월드체육관",
           "away": {
             "name": "GS칼텍스",
@@ -2834,7 +2905,7 @@ window.CLUTCH_DATA = {
             "record": "2승 3패",
             "badges": [
               {
-                "text": "리그 4위",
+                "text": "리그 5위",
                 "tone": "rank"
               }
             ],
@@ -2889,7 +2960,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**GS칼텍스** 4승 1패(리그 2위, 최근 흐름 3승), **흥국생명** 2승 3패(리그 4위, 최근 흐름 3패). V리그 여자부 1라운드 인천삼산월드체육관에서 열립니다."
+              "text": "**GS칼텍스** 4승 1패(리그 2위, 최근 흐름 3승), **흥국생명** 2승 3패(리그 5위, 최근 흐름 3패). V리그 여자부 1라운드 인천삼산월드체육관에서 열립니다."
             },
             {
               "kind": "watch",
@@ -2897,6 +2968,29 @@ window.CLUTCH_DATA = {
               "text": "세트 승리 수 차가 5입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 3,
+            "homeScore": 1,
+            "winner": "away",
+            "lines": {
+              "away": [
+                "25",
+                "25",
+                "18",
+                "25"
+              ],
+              "home": [
+                "19",
+                "20",
+                "25",
+                "23"
+              ]
+            },
+            "kovoNumber": "34",
+            "source": "kovo"
+          },
           "details": {
             "teams": [
               {
@@ -2990,7 +3084,7 @@ window.CLUTCH_DATA = {
                 "record": "2승 3패",
                 "badges": [
                   {
-                    "text": "리그 4위",
+                    "text": "리그 5위",
                     "tone": "rank"
                   }
                 ],
@@ -3001,7 +3095,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "리그 순위",
-                    "value": "4위"
+                    "value": "5위"
                   },
                   {
                     "label": "세트",
@@ -3070,9 +3164,9 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
-              "**순위표** — GS칼텍스 4승 1패·2위·승점 12, 흥국생명 2승 3패·4위·승점 6."
+              "**순위표** — GS칼텍스 4승 1패·2위·승점 12, 흥국생명 2승 3패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-20 23:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-19 END */,
@@ -7247,6 +7341,7 @@ window.CLUTCH_DATA = {
           "leagueFull": "V리그 남자부",
           "source": "kovo",
           "start": "2026-11-20T19:00:00+09:00",
+          "status": "final",
           "venue": "천안유관순체육관",
           "away": {
             "name": "한국전력",
@@ -7368,6 +7463,29 @@ window.CLUTCH_DATA = {
               "text": "승점 차가 2점, 세트 승리 수 차가 2입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 3,
+            "homeScore": 1,
+            "winner": "away",
+            "lines": {
+              "away": [
+                "25",
+                "21",
+                "26",
+                "25"
+              ],
+              "home": [
+                "20",
+                "25",
+                "24",
+                "22"
+              ]
+            },
+            "kovoNumber": "35",
+            "source": "kovo"
+          },
           "details": {
             "teams": [
               {
@@ -7543,7 +7661,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 천안유관순체육관에서 열립니다.",
               "**순위표** — 한국전력 5승 1패·1위·승점 14, 현대캐피탈 4승 2패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:26 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -7553,6 +7671,7 @@ window.CLUTCH_DATA = {
           "leagueFull": "V리그 여자부",
           "source": "kovo",
           "start": "2026-11-20T19:00:00+09:00",
+          "status": "final",
           "venue": "김천실내체육관",
           "away": {
             "name": "IBK기업은행",
@@ -7673,6 +7792,29 @@ window.CLUTCH_DATA = {
               "text": "승점 차가 3점, 세트 승리 수 차가 1입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 1,
+            "homeScore": 3,
+            "winner": "home",
+            "lines": {
+              "away": [
+                "23",
+                "25",
+                "20",
+                "20"
+              ],
+              "home": [
+                "25",
+                "21",
+                "25",
+                "25"
+              ]
+            },
+            "kovoNumber": "36",
+            "source": "kovo"
+          },
           "details": {
             "teams": [
               {
@@ -7847,7 +7989,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 김천실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행 4승 2패·3위·승점 12, 도로공사 5승 1패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:26 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-20 END */,
@@ -9417,6 +9559,7 @@ window.CLUTCH_DATA = {
           "leagueFull": "V리그 남자부",
           "source": "kovo",
           "start": "2026-11-21T14:00:00+09:00",
+          "status": "final",
           "venue": "대전충무체육관",
           "away": {
             "name": "OK저축은행",
@@ -9538,6 +9681,29 @@ window.CLUTCH_DATA = {
               "text": "세트 승리 수 차가 6입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 1,
+            "homeScore": 3,
+            "winner": "home",
+            "lines": {
+              "away": [
+                "27",
+                "20",
+                "18",
+                "13"
+              ],
+              "home": [
+                "25",
+                "25",
+                "25",
+                "25"
+              ]
+            },
+            "kovoNumber": "37",
+            "source": "kovo"
+          },
           "details": {
             "teams": [
               {
@@ -9713,7 +9879,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — OK저축은행 1승 4패·6위·승점 4, 삼성화재 4승 2패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:26 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -9723,6 +9889,7 @@ window.CLUTCH_DATA = {
           "leagueFull": "V리그 여자부",
           "source": "kovo",
           "start": "2026-11-21T16:00:00+09:00",
+          "status": "final",
           "venue": "숲 스타디움",
           "away": {
             "name": "정관장",
@@ -9843,6 +10010,31 @@ window.CLUTCH_DATA = {
               "text": "세트 승리 수 차가 4입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 3,
+            "homeScore": 2,
+            "winner": "away",
+            "lines": {
+              "away": [
+                "25",
+                "23",
+                "18",
+                "25",
+                "15"
+              ],
+              "home": [
+                "23",
+                "25",
+                "25",
+                "16",
+                "11"
+              ]
+            },
+            "kovoNumber": "38",
+            "source": "kovo"
+          },
           "details": {
             "teams": [
               {
@@ -10017,7 +10209,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 숲 스타디움에서 열립니다.",
               "**순위표** — 정관장 3승 2패·4위·승점 8, SOOP 0승 6패·7위·승점 1."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:26 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-21 END */,

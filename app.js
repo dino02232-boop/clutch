@@ -961,6 +961,7 @@
     var d = String(detail || "").trim();
     if (!d) return "";
     if (/^종료$/i.test(d)) return "";
+    if (/^경기\s*종료$/i.test(d)) return "";
     if (/^final\s*\/\s*ot$/i.test(d)) return "연장";
     if (/^final$/i.test(d)) return "";
     return d;
@@ -979,7 +980,7 @@
     var linesHTML = linesTableHTML(g, r);
     var topNone = r.state === "live"
       ? (g.sport === "volleyball" ? "공개 실시간 데이터에는 선수별 득점이 포함되지 않습니다." : "실시간 주요 선수 기록은 경기 종료 후 반영됩니다.")
-      : "주요 선수 기록을 받지 못했습니다.";
+      : (g.sport === "volleyball" ? "KOVO 공개 결과에는 선수별 기록(공격·블로킹·서브)이 없습니다." : "주요 선수 기록을 받지 못했습니다.");
     var topHTML = top.length
       ? '<ul class="r-top">' + top.map(function (p) {
           var bits = [];
@@ -1108,6 +1109,19 @@
     return pgPlainHTML(g);
   }
 
+  // 팀 카드의 순위 배지·전적에서 '3위(5승 1패)'를 만든다. 값이 없으면 빈 문자열.
+  function rankTextOf(t) {
+    if (!t) return "";
+    var rank = "";
+    (Array.isArray(t.badges) ? t.badges : []).forEach(function (b) {
+      var m = String((b && b.text) || "").match(/^리그\s*(\d+)위$/);
+      if (m && !rank) rank = m[1] + "위";
+    });
+    var rec = /^\d+승\s*\d+패$/.test(String(t.record || "")) ? String(t.record).trim() : "";
+    if (!rank && !rec) return "";
+    return rank + (rec ? "(" + rec + ")" : "");
+  }
+
   // 농구·축구가 아닌 종목(배구 등): 결과와 세트 흐름만. 선수 기록이 없으면 개인 평가는 쓰지 않는다.
   function pgPlainHTML(g) {
     if (g.result.awayScore == null || g.result.homeScore == null) return "";
@@ -1133,8 +1147,31 @@
     var note = g.sport === "volleyball"
       ? "KOVO 공개 결과에는 선수별 기록(공격·블로킹·서브)이 없어 개인 활약 평가는 표시하지 않습니다."
       : "이 경기의 선수별 기록이 연결되지 않아 개인 활약 평가는 표시하지 않습니다.";
+    // 배구는 세트 스코어·세트별 점수까지만 공개된다. 그 값에서 바로 나오는 합계 득점과
+    // 지금 순위표 이상은 만들지 않는다.
+    var extra = "";
+    if (g.sport === "volleyball") {
+      var awayName = g.away ? g.away.name : "원정";
+      var homeName = g.home ? g.home.name : "홈";
+      var la = ls && Array.isArray(ls.away) ? ls.away : [];
+      var lh = ls && Array.isArray(ls.home) ? ls.home : [];
+      var totA = 0, totH = 0, hasTot = la.length > 0 && la.length === lh.length;
+      for (var t = 0; hasTot && t < la.length; t++) {
+        var pa = toNum(la[t]), ph = toNum(lh[t]);
+        if (!isFinite(pa) || !isFinite(ph)) { hasTot = false; break; }
+        totA += pa; totH += ph;
+      }
+      if (hasTot) {
+        extra += "세트 합계 득점은 " + awayName + " " + totA + "-" + totH + " " + homeName + "입니다.";
+      }
+      var ra = rankTextOf(g.away), rh = rankTextOf(g.home);
+      if (ra && rh) {
+        extra += (extra ? " " : "") + "지금 순위표로는 " + awayName + " " + ra + ", " + homeName + " " + rh + "입니다.";
+      }
+    }
     return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>결과 요약</span></div>' +
       '<p class="pg-game-line">' + esc(line + flow) + "</p>" +
+      (extra ? '<p class="pg-game-line">' + esc(extra) + "</p>" : "") +
       '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
 
@@ -2839,15 +2876,18 @@
         if (!isFinite(away) || !isFinite(home)) return;
         var previousResult = entry.g.result || null;
         var before = JSON.stringify(previousResult);
-        entry.g.result = {
+        var next = {
           state: isFinal ? "final" : "live",
           detail: isFinal ? "경기 종료" : (Number(m.currentSet) + "세트 진행 중 · 세트 스코어"),
           awayScore: away,
           homeScore: home,
-          winner: isFinal ? (away > home ? "away" : "home") : null,
+          winner: isFinal ? (away > home ? "away" : (home > away ? "home" : null)) : null,
           top: null,
           kovoNumber: number
         };
+        // 이 API 는 세트 승수만 준다. data.js 에 이미 있는 세트별 점수는 끝난 경기에서만 그대로 둔다.
+        if (isFinal && previousResult && previousResult.lines) next.lines = previousResult.lines;
+        entry.g.result = next;
         entry.g.status = isFinal ? "final" : "live";
         notifyFavoriteGameChange(entry.g, previousResult, entry.g.result);
         if (before !== JSON.stringify(entry.g.result)) LIVE.kovoChanged = true;
@@ -3675,7 +3715,9 @@
     var n = Math.max(al.length, hl.length);
     var head = "", ar = "", hr = "";
     for (var i = 0; i < n; i++) {
-      head += "<th scope=\"col\">" + (soccerHead ? esc(soccerHead[i] || (i + 1) + "쿼터") : (i + 1) + "Q") + "</th>";
+      var colHead = g && g.sport === "volleyball" ? (i + 1) + "세트"
+        : (soccerHead ? esc(soccerHead[i] || (i + 1) + "쿼터") : (i + 1) + "Q");
+      head += "<th scope=\"col\">" + colHead + "</th>";
       ar += "<td>" + esc(al[i] || "-") + "</td>";
       hr += "<td>" + esc(hl[i] || "-") + "</td>";
     }
