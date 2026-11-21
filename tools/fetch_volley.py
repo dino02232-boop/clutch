@@ -10,13 +10,18 @@
       경기 일정·결과·경기장·라운드·세트 스코어. (헤더 X-Service-Name: user)
   · https://user-api.kovo.co.kr/stat/league/team-rank?seasonCode={시즌}&leagueCode=201
       팀 순위·승/패·세트 승/패·승점·득실점.
+  · https://user-api.kovo.co.kr/stat/game-schedule/{gnum}?gcode={gcode}&seasonCode={시즌}&lang=ko
+      끝난 경기의 기록지. payload.player[] 에 선수별 득점·공격(시도/성공/성공률/효율)·
+      블로킹·서브·디그·리시브·세트·범실이 온다(이름은 Accept-Language: ko 로 한글).
+      gcode 는 /main/game/season 응답값(2026-27 시즌 001).
 
 해외 리그(독일·폴란드·이탈리아)는 넣지 않습니다. 값이 없는 항목(부상·결장·배당)은
 비우고 화면에서 "정보 없음"으로 표시합니다. 지어내지 않습니다.
 
 끝난 경기는 같은 응답의 result(W/L)·hspoint/aspoint(세트 승수)·hsNpoint/asNpoint(세트별
 점수)·score 로 카드의 result(state: final, awayScore/homeScore, 세트별 lines)를 채웁니다.
-선수별 공격·블로킹·서브 기록은 이 응답에 없으므로 top 은 넣지 않습니다.
+선수별 기록은 경기 기록지(game-schedule/{gnum})에서 받아 result.players 로 넣습니다.
+(일정 응답에는 없습니다. 기록지가 없으면 players 를 넣지 않고, 화면은 문구만 띄웁니다.)
 """
 
 import argparse
@@ -69,13 +74,13 @@ TEAMS = {
 GENDER = {"1": ("VLEAGUE", "V리그 남자부"), "2": ("VLEAGUE", "V리그 여자부")}
 
 
-def get_json(url, cache_key, refresh=False):
+def get_json(url, cache_key, refresh=False, headers=None):
     os.makedirs(CACHE, exist_ok=True)
     path = os.path.join(CACHE, cache_key + ".json")
     if not refresh and os.path.exists(path):
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
-    req = urllib.request.Request(url, headers=HDR)
+    req = urllib.request.Request(url, headers=dict(HDR, **(headers or {})))
     for attempt in range(RETRIES):
         try:
             with urllib.request.urlopen(req, timeout=40) as r:
@@ -102,6 +107,66 @@ def schedule_all(refresh=False):
                      "kovo-schedule-%d" % p, refresh)
         content.extend((d.get("payload") or {}).get("content") or [])
     return content
+
+
+def game_code(refresh=False):
+    """현재 시즌 gcode. 기록지 조회에 필요하다(2026-27 시즌 001)."""
+    d = get_json(BASE + "/main/game/season", "kovo-gcode", refresh)
+    return str((d.get("payload") or {}).get("gcode") or "001")
+
+
+def game_record(gnum, season, gcode, refresh=False):
+    """끝난 경기의 선수별 기록지(payload.player[]). 없으면 빈 목록."""
+    d = get_json(BASE + "/stat/game-schedule/%s?gcode=%s&seasonCode=%s&lang=ko"
+                 % (gnum, gcode, season), "kovo-game-%s" % gnum, refresh,
+                 headers={"Accept-Language": "ko"})
+    p = d.get("payload") or {}
+    return p.get("player") or []
+
+
+def _i(v):
+    try:
+        return int(float(v))
+    except (TypeError, ValueError):
+        return 0
+
+
+def _r1(v):
+    try:
+        return round(float(v), 1)
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def build_players(rows, hcode, acode):
+    """기록지 player[] → 카드용 선수 기록(출전 선수만, 짧은 키).
+
+    pt 득점 · at 공격시도 · asn 공격성공 · ap 공격성공률(%) · ep 공격효율(%)
+    bk 블로킹 · sv 서브득점 · dg 디그 · rc 리시브성공 · rt 리시브시도 · set 세트성공 · er 범실
+    """
+    out = []
+    for p in rows:
+        tcode = str(p.get("tcode"))
+        side = "home" if tcode == hcode else ("away" if tcode == acode else "")
+        if not side:
+            continue
+        pt, at, ats = _i(p.get("point")), _i(p.get("att")), _i(p.get("ats"))
+        sv_t, rt_t, st_t = _i(p.get("st")), _i(p.get("rt")), _i(p.get("sett"))
+        bk_t, dg_t = _i(p.get("bt")), _i(p.get("dt"))
+        # 출전 여부: 공격·서브·리시브·세트·블로킹·디그 중 하나라도 시도했거나 득점이 있으면 출전
+        if pt == 0 and at == 0 and sv_t == 0 and rt_t == 0 and st_t == 0 and bk_t == 0 and dg_t == 0:
+            continue
+        out.append({
+            "n": str(p.get("pname") or "").strip(),
+            "p": str(p.get("position") or "").strip(),
+            "s": side,
+            "pt": pt, "at": at, "asn": ats,
+            "ap": _r1(p.get("atsp")), "ep": _r1(p.get("atgp")),
+            "bk": _i(p.get("bs")), "sv": _i(p.get("ss")),
+            "dg": _i(p.get("ds")), "rc": _i(p.get("rs")), "rt": rt_t,
+            "set": _i(p.get("sets")), "er": _i(p.get("err")),
+        })
+    return [x for x in out if x["n"]]
 
 
 def team_rank(season, refresh=False):
@@ -184,7 +249,7 @@ def build_result(g):
     return out
 
 
-def build_game(g, ranks, at_iso, all_games=None):
+def build_game(g, ranks, at_iso, all_games=None, gcode="001", refresh=False):
     gnum = str(g.get("gnum"))
     gender = str(g.get("gender"))
     league_short, league_full = GENDER.get(gender, ("VLEAGUE", "V리그"))
@@ -333,6 +398,15 @@ def build_game(g, ranks, at_iso, all_games=None):
     # 끝난 경기면 스코어·세트 스코어를 카드에 넣는다(예정 경기는 넣지 않는다).
     result = build_result(g)
     if result:
+        try:
+            rows = game_record(gnum, g.get("seasonCode"), gcode, refresh)
+            players = build_players(rows, home_code, away_code)
+            if players:
+                result["players"] = players
+            else:
+                print("  · %s 기록지에 선수 기록이 없습니다" % gnum)
+        except Exception as e:
+            print("  ! %s 기록지 실패: %s" % (gnum, e))
         # 다른 종목 카드와 같은 자리에 둔다: status 는 start 뒤, result 는 details 앞.
         ordered = {}
         for k, v in game.items():
@@ -350,10 +424,24 @@ def marker(day, edge):
     return "/* VOLLEY-AUTO %s %s */" % (day, edge)
 
 
+def game_json(g):
+    """경기 하나를 data.js 구간에 넣을 JSON 으로. 선수 기록은 한 줄에 하나씩 적어 길이를 줄인다."""
+    players = ((g.get("result") or {}).get("players")) or None
+    if players:
+        g = json.loads(json.dumps(g))
+        g["result"]["players"] = "__VOLLEY_PLAYERS__"
+    txt = json.dumps(g, ensure_ascii=False, indent=2)
+    if players:
+        one = ",\n".join("          " + json.dumps(p, ensure_ascii=False, separators=(", ", ": "))
+                         for p in players)
+        txt = txt.replace('"__VOLLEY_PLAYERS__"', "[\n" + one + "\n        ]")
+    return txt
+
+
 def games_text(games):
     lines = []
     for n, g in enumerate(games):
-        txt = json.dumps(g, ensure_ascii=False, indent=2)
+        txt = game_json(g)
         txt = "\n".join("        " + ln for ln in txt.splitlines())
         lines.append(txt + ("," if n < len(games) - 1 else ""))
     return "\n".join(lines)
@@ -463,9 +551,11 @@ def main():
     for key in ("kovo-schedule-0",):
         at_iso = cache_at(CACHE, key)
 
+    gcode = game_code(args.refresh) if in_range else "001"
     by_day = {day: [] for day in days}
     for g in in_range:
-        built = build_game(g, ranks.get(str(g.get("gender"))) or {}, at_iso, content)
+        built = build_game(g, ranks.get(str(g.get("gender"))) or {}, at_iso, content,
+                           gcode=gcode, refresh=args.refresh)
         by_day[built["start"][:10]].append(built)
     for day in days:
         by_day[day].sort(key=lambda x: (x["start"], x["id"]))
@@ -486,6 +576,9 @@ def main():
                     tail = "결과 %s:%s%s" % (r["awayScore"], r["homeScore"], (" (" + sets + ")") if sets else "")
                 else:
                     tail = "예정"
+                np = len(((r or {}).get("players")) or []) if r else 0
+                if r:
+                    tail += " · 선수 %d명" % np
                 print("   ", g["start"][11:16], g["details"]["teams"][0]["name"], "@",
                       g["details"]["teams"][1]["name"], "|", g.get("venue"), "|", tail)
         return

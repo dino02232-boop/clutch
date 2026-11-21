@@ -1124,6 +1124,135 @@
     return rank + (rec ? "(" + rec + ")" : "");
   }
 
+  /* ── 배구: KOVO 경기 기록지의 선수별 기록으로 '누가 이끌고 누가 묶였는지' ──
+     result.players[] 는 tools/fetch_volley.py 가 KOVO 기록지에서 넣는다.
+       pt 득점 · at 공격시도 · asn 공격성공 · ap 공격성공률(%) · ep 공격효율(%)
+       bk 블로킹 · sv 서브득점 · dg 디그 · rc 리시브성공 · rt 리시브시도 · set 세트성공 · er 범실
+     포지션(p): OH 아웃사이드 · OP 아포짓 · MB 미들블로커 · S 세터 · L 리베로 */
+  var VOLLEY_POS = { OH: "아웃사이드", OP: "아포짓", MB: "미들블로커", S: "세터", L: "리베로" };
+
+  function volleyPlayersOf(g) {
+    var r = g.result || {};
+    return Array.isArray(r.players) ? r.players.filter(function (p) { return p && p.n; }) : [];
+  }
+
+  // 한 팀 합계(선수 기록을 그대로 더한다). 공격 성공률은 합계에서 다시 계산한다.
+  function volleyTeamAgg(ps, side) {
+    var a = { at: 0, asn: 0, pt: 0, bk: 0, sv: 0, dg: 0, er: 0, list: [] };
+    ps.forEach(function (p) {
+      if (p.s !== side) return;
+      a.list.push(p);
+      a.at += toNum(p.at); a.asn += toNum(p.asn); a.pt += toNum(p.pt);
+      a.bk += toNum(p.bk); a.sv += toNum(p.sv); a.dg += toNum(p.dg); a.er += toNum(p.er);
+    });
+    a.ap = a.at ? a.asn / a.at * 100 : null;
+    return a;
+  }
+
+  function volleyPct(v) { return v == null ? "—" : (Math.round(v * 10) / 10) + "%"; }
+
+  // 이긴 팀에서 이끈 선수(득점 1위)와 진 팀에서 아쉬웠던 선수를 실제 기록으로만 고른다.
+  //  · 아쉬웠던 선수: ① 아웃사이드·아포짓 중 공격 20시도 이상인데 성공률이 팀 평균보다 2%p 이상 낮은 선수
+  //                  ② 없으면 범실 7개 이상으로 가장 많은 선수. 리베로·세터는 공격이 아니라 이 기준에서 뺀다.
+  function volleyPick(g) {
+    var ps = volleyPlayersOf(g);
+    if (!ps.length) return null;
+    var away = Number(g.result.awayScore), home = Number(g.result.homeScore);
+    if (!isFinite(away) || !isFinite(home) || away === home) return null;
+    var win = away > home ? "away" : "home";
+    var lose = win === "away" ? "home" : "away";
+    var wa = volleyTeamAgg(ps, win), la = volleyTeamAgg(ps, lose);
+    var carry = wa.list.slice().sort(function (x, y) {
+      return (toNum(y.pt) - toNum(x.pt)) || (toNum(y.ap) - toNum(x.ap));
+    })[0] || null;
+    var low = null, lowWhy = "";
+    if (la.ap != null) {
+      low = la.list.filter(function (p) {
+        return (p.p === "OH" || p.p === "OP") && toNum(p.at) >= 20 && toNum(p.ap) <= la.ap - 2;
+      }).sort(function (x, y) { return toNum(x.ap) - toNum(y.ap); })[0] || null;
+      if (low) lowWhy = "attack";
+    }
+    if (!low) {
+      low = la.list.filter(function (p) { return toNum(p.er) >= 7; })
+        .sort(function (x, y) { return toNum(y.er) - toNum(x.er); })[0] || null;
+      if (low) lowWhy = "errors";
+    }
+    return { win: win, lose: lose, carry: carry, low: low, lowWhy: lowWhy, wa: wa, la: la };
+  }
+
+  // 한 줄 결론
+  function volleyVerdictText(g, pick) {
+    if (!pick || !pick.carry) return "";
+    var c = pick.carry, out = [];
+    var att = toNum(c.at), suc = toNum(c.asn);
+    out.push(pgJosa(c.n, "이", "가") + " " + toNum(c.pt) + "득점" +
+      (att ? "(공격 " + att + "시도 " + suc + "성공·" + volleyPct(c.ap) + ")" : "") +
+      "으로 " + g[pick.win].name + " 공격을 이끌었습니다.");
+    var l = pick.low;
+    if (l) {
+      if (pick.lowWhy === "attack") {
+        out.push(pgJosa(l.n, "은", "는") + " " + toNum(l.at) + "시도 " + toNum(l.asn) + "성공(" +
+          volleyPct(l.ap) + ")으로 팀 평균 " + volleyPct(pick.la.ap) + "에 못 미쳤습니다.");
+      } else {
+        out.push(pgJosa(l.n, "은", "는") + " 범실 " + toNum(l.er) + "개로 흐름을 끊었습니다.");
+      }
+    }
+    return out.join(" ");
+  }
+
+  // 승부가 갈린 이유: 팀 합계에서 벌어진 항목만
+  function volleyWhyText(g, pick) {
+    if (!pick) return "";
+    var w = pick.wa, l = pick.la, wn = g[pick.win].name, ln = g[pick.lose].name;
+    var facts = [];
+    if (w.ap != null && l.ap != null && Math.abs(w.ap - l.ap) >= 1.5) {
+      var better = w.ap > l.ap ? wn : ln, worse = w.ap > l.ap ? ln : wn;
+      var bv = Math.max(w.ap, l.ap), wv = Math.min(w.ap, l.ap);
+      facts.push(pgJosa(better, "은", "는") + " 공격 성공률 " + volleyPct(bv) + "로 " + worse + "(" + volleyPct(wv) + ")보다 앞섰습니다.");
+    }
+    if (w.bk !== l.bk) {
+      facts.push("블로킹은 " + Math.max(w.bk, l.bk) + "-" + Math.min(w.bk, l.bk) + "로 " +
+        pgJosa(w.bk > l.bk ? wn : ln, "이", "가") + " 우위였습니다.");
+    }
+    if (w.sv !== l.sv) {
+      facts.push("서브 득점은 " + w.sv + "-" + l.sv + pgNumCopula(Math.min(w.sv, l.sv)) + ".");
+    }
+    if (w.er !== l.er) {
+      facts.push("범실은 " + wn + " " + w.er + "개, " + ln + " " + l.er + "개였습니다.");
+    }
+    return facts.slice(0, 3).join(" ");
+  }
+
+  // 접어 두는 선수 표: 팀별 득점 상위 8명
+  function volleyTableHTML(g) {
+    var ps = volleyPlayersOf(g);
+    if (!ps.length) return "";
+    var html = "";
+    ["home", "away"].forEach(function (side) {
+      var rows = ps.filter(function (p) { return p.s === side; })
+        .sort(function (a, b) { return (toNum(b.pt) - toNum(a.pt)) || (toNum(b.at) - toNum(a.at)); })
+        .slice(0, 8);
+      if (!rows.length) return;
+      var name = (g[side] && g[side].name) || side;
+      html += '<div class="lb-team-box"><div class="lb-team-h">' +
+        '<span class="lbt-side ' + side + '">' + (side === "away" ? "원정" : "홈") + "</span>" +
+        "<b>" + esc(name) + "</b></div>" +
+        '<table class="pg-pl pg-pl-vb"><thead><tr><th scope="col" class="c-nm">선수</th>' +
+        '<th scope="col">득점</th><th scope="col">공격</th><th scope="col">성공률</th>' +
+        '<th scope="col">블록·서브</th><th scope="col">범실</th></tr></thead><tbody>' +
+        rows.map(function (p) {
+          return '<tr><th scope="row" class="c-nm">' + esc(p.n) +
+            '<i class="c-pos">' + esc(p.p || "") + "</i></th>" +
+            '<td class="c-g">' + esc(dash(p.pt)) + "</td>" +
+            "<td>" + esc(dash(p.asn)) + "/" + esc(dash(p.at)) + "</td>" +
+            "<td>" + esc(volleyPct(toNum(p.ap))) + "</td>" +
+            "<td>" + esc(dash(p.bk)) + "·" + esc(dash(p.sv)) + "</td>" +
+            "<td>" + esc(dash(p.er)) + "</td></tr>";
+        }).join("") + "</tbody></table></div>";
+    });
+    return html ? html + '<p class="pg-pl-note">공격은 성공/시도, 블록·서브는 개수입니다.</p>' : "";
+  }
+
   // 농구·축구가 아닌 종목(배구 등): 결과와 세트 흐름만. 선수 기록이 없으면 개인 평가는 쓰지 않는다.
   function pgPlainHTML(g) {
     if (g.result.awayScore == null || g.result.homeScore == null) return "";
@@ -1146,9 +1275,15 @@
       }
       if (parts.length) flow = " 세트 흐름은 " + parts.join(", ") + "입니다.";
     }
-    var note = g.sport === "volleyball"
-      ? "KOVO 공개 결과에는 선수별 기록(공격·블로킹·서브)이 없어 개인 활약 평가는 표시하지 않습니다."
-      : "이 경기의 선수별 기록이 연결되지 않아 개인 활약 평가는 표시하지 않습니다.";
+    var vPick = g.sport === "volleyball" ? volleyPick(g) : null;
+    var vVerdict = vPick ? volleyVerdictText(g, vPick) : "";
+    var vWhy = vPick ? volleyWhyText(g, vPick) : "";
+    var vTable = vPick ? volleyTableHTML(g) : "";
+    var note = vPick
+      ? "선수 기록은 KOVO 경기 기록지(공격·블로킹·서브·리시브·디그·세트·범실)에서 가져옵니다. 득점은 포지션별 공격 부담이 달라 아웃사이드·아포짓 위주로 읽고, 리베로·세터는 이 평가에서 뺍니다."
+      : (g.sport === "volleyball"
+        ? "KOVO 경기 기록지를 아직 받지 못했습니다. 기록지가 열리면 선수별 활약이 표시됩니다."
+        : "이 경기의 선수별 기록이 연결되지 않아 개인 활약 평가는 표시하지 않습니다.");
     // 배구는 세트 스코어·세트별 점수까지만 공개된다. 그 값에서 바로 나오는 합계 득점과
     // 지금 순위표 이상은 만들지 않는다.
     var extra = "";
@@ -1171,9 +1306,13 @@
         extra += (extra ? " " : "") + "지금 순위표로는 " + awayName + " " + ra + ", " + homeName + " " + rh + "입니다.";
       }
     }
-    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>결과 요약</span></div>' +
+    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>' +
+      (vVerdict ? "승패 원인 · 활약" : "결과 요약") + "</span></div>" +
       '<p class="pg-game-line">' + esc(line + flow) + "</p>" +
+      (vVerdict ? '<p class="pg-verdict">' + esc(vVerdict) + "</p>" : "") +
+      (vWhy ? '<div class="pg-why"><b>승부가 갈린 이유</b><p>' + esc(vWhy) + "</p></div>" : "") +
       (extra ? '<p class="pg-game-line">' + esc(extra) + "</p>" : "") +
+      (vTable ? '<details class="pg-more"><summary>선수 기록 더 보기</summary>' + vTable + "</details>" : "") +
       '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
 

@@ -986,6 +986,9 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .pg-pl .c-nm { width: 34%; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .pg-pl .c-g { font-weight: 800; color: #B45309; }
 .lb-team-box + .lb-team-box { margin-top: 9px; }
+.pg-pl-vb .c-nm { width: 30%; }
+.pg-pl .c-pos { margin-left: 3px; font-style: normal; font-size: 8.5px; font-weight: 700; color: var(--text-3); }
+.pg-pl-note { margin: 6px 0 0; font-size: 9.5px; line-height: 1.5; color: var(--text-3); }
 
 .pg-stat-grid {
   display: grid; gap: 5px; margin-top: 8px; padding: 9px 10px;
