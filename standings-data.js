@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-22T05:09:20+09:00
+   생성 시각(기준): 2026-11-22T06:09:41+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-22T05:09:20+09:00",
+  "updated": "2026-11-22T06:09:41+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4401,13 +4401,13 @@ window.CLUTCH_STANDINGS = {
               "team": "필라델피아 세븐티식서스",
               "abbr": "PHI",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
-              "played": 16,
-              "win": 13,
+              "played": 17,
+              "win": 14,
               "draw": null,
               "loss": 3,
               "points": null,
-              "diff": 47,
-              "pct": ".813",
+              "diff": 50,
+              "pct": ".824",
               "gb": "-",
               "zone": null
             },
@@ -4423,7 +4423,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 157,
               "pct": ".733",
-              "gb": "1.5",
+              "gb": "2",
               "zone": null
             },
             {
@@ -4438,7 +4438,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 87,
               "pct": ".667",
-              "gb": "2.5",
+              "gb": "3",
               "zone": null
             },
             {
@@ -4453,7 +4453,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 43,
               "pct": ".625",
-              "gb": "3",
+              "gb": "3.5",
               "zone": null
             },
             {
@@ -4468,7 +4468,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 10,
               "pct": ".600",
-              "gb": "3.5",
+              "gb": "4",
               "zone": null
             },
             {
@@ -4483,7 +4483,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 89,
               "pct": ".600",
-              "gb": "3.5",
+              "gb": "4",
               "zone": null
             },
             {
@@ -4498,7 +4498,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 40,
               "pct": ".529",
-              "gb": "4.5",
+              "gb": "5",
               "zone": null
             },
             {
@@ -4513,7 +4513,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -46,
               "pct": ".467",
-              "gb": "5.5",
+              "gb": "6",
               "zone": null
             },
             {
@@ -4528,7 +4528,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 3,
               "pct": ".375",
-              "gb": "7",
+              "gb": "7.5",
               "zone": null
             },
             {
@@ -4543,7 +4543,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -111,
               "pct": ".353",
-              "gb": "7.5",
+              "gb": "8",
               "zone": null
             },
             {
@@ -4558,7 +4558,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -58,
               "pct": ".313",
-              "gb": "8",
+              "gb": "8.5",
               "zone": null
             },
             {
@@ -4573,7 +4573,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -158,
               "pct": ".267",
-              "gb": "8.5",
+              "gb": "9",
               "zone": null
             },
             {
@@ -4588,7 +4588,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -121,
               "pct": ".267",
-              "gb": "8.5",
+              "gb": "9",
               "zone": null
             },
             {
@@ -4603,7 +4603,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -119,
               "pct": ".200",
-              "gb": "9.5",
+              "gb": "10",
               "zone": null
             },
             {
@@ -4611,14 +4611,14 @@ window.CLUTCH_STANDINGS = {
               "team": "밀워키 벅스",
               "abbr": "MIL",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
-              "played": 16,
+              "played": 17,
               "win": 1,
               "draw": null,
-              "loss": 15,
+              "loss": 16,
               "points": null,
-              "diff": -207,
-              "pct": ".063",
-              "gb": "12",
+              "diff": -210,
+              "pct": ".059",
+              "gb": "13",
               "zone": null
             }
           ]

@@ -87,7 +87,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-22T05:09:20+09:00",
+  updatedAt: "2026-11-22T06:09:42+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -10062,7 +10062,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 삼성화재(홈) 4승 2패·2위·승점 12, OK저축은행(원정) 1승 4패·6위·승점 4."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 05:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 06:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -10420,7 +10420,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 숲 스타디움에서 열립니다.",
               "**순위표** — SOOP(홈) 0승 6패·7위·승점 1, 정관장(원정) 3승 2패·4위·승점 8."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 05:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 06:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-21 END */,
@@ -18183,7 +18183,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 2패·4위·승점 8, KB손해보험(원정) 0승 5패·7위·승점 0."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 05:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 06:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -18487,7 +18487,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 1승 4패·6위·승점 3, 흥국생명(원정) 2승 3패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 05:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 06:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -25102,14 +25102,14 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-22 END */,
 
         /* NBA-AUTO 2026-11-22 START */
-        {
+                {
           "id": "nba-mil-phi-20261122",
           "espnId": "401910023",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-22T03:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Xfinity Mobile Arena",
           "away": {
             "name": "밀워키 벅스",
@@ -25150,6 +25150,83 @@ window.CLUTCH_DATA = {
               "text": "**필라델피아 세븐티식서스**(홈) 13승 3패(홈 6승 2패, 최근 5경기 4승 1패, 4연승), **밀워키 벅스**(원정) 1승 15패(원정 0승 7패, 최근 5경기 0승 5패, 5연패). 직전 경기(11.19) **필라델피아 세븐티식서스**는 올랜도 매직에 121-116로 이겼고, Joel Embiid 26점·6리바운드·7어시스트, VJ Edgecombe 24점·8리바운드·6어시스트를 기록했습니다. 직전 경기(11.20) **밀워키 벅스**는 포틀랜드 트레일블레이저스에 114-124로 졌고, Tyler Herro 19점·4리바운드·3어시스트, Nate Ament 18점·9리바운드·0어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 129,
+            "homeScore": 132,
+            "lines": {
+              "away": [
+                "30",
+                "29",
+                "33",
+                "37"
+              ],
+              "home": [
+                "29",
+                "31",
+                "38",
+                "34"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Tyler Herro",
+                "team": "MIL",
+                "min": "40",
+                "pts": 50,
+                "reb": "11",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png"
+              },
+              {
+                "name": "Brayden Burries",
+                "team": "MIL",
+                "min": "26",
+                "pts": 26,
+                "reb": "8",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5082206.png"
+              },
+              {
+                "name": "Joel Embiid",
+                "team": "PHI",
+                "min": "34",
+                "pts": 26,
+                "reb": "17",
+                "ast": "9",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png"
+              },
+              {
+                "name": "LeBron James",
+                "team": "PHI",
+                "min": "35",
+                "pts": 21,
+                "reb": "6",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png"
+              },
+              {
+                "name": "Anfernee Simons",
+                "team": "PHI",
+                "min": "26",
+                "pts": 18,
+                "reb": "0",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4351851.png"
+              },
+              {
+                "name": "Tyrese Maxey",
+                "team": "PHI",
+                "min": "36",
+                "pts": 17,
+                "reb": "4",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
