@@ -1247,9 +1247,26 @@
     function verdictLine(c, l) {
       var bits = [];
       if (c) {
-        var cHow = c.clutch >= 5 ? ("4쿼터 " + c.clutch + "점")
-          : (c.pm != null ? ("코트 마진 " + pgSigned(c.pm)) : ("야투 " + (c.fg ? pgShotText(c.fg) : "-")));
-        bits.push(pgJosa(winTeam.name, "은", "는") + " " + c.name + "(" + c.pts + "점·" + cHow + ") 덕분에 이겼습니다");
+        // 그 선수를 '왜' 캐리로 뽑았는지가 한눈에 보이는 근거를 고른다
+        var cHow;
+        if (c.pts >= 10 && c.reb >= 10 && c.ast >= 10) {
+          cHow = "트리플더블 " + c.pts + "점·" + c.reb + "리바운드·" + c.ast + "어시스트";
+        } else if (c.pts >= 25) {
+          cHow = c.pts + "점";
+        } else if (c.clutch >= 5) {
+          cHow = "4쿼터 " + c.clutch + "점";
+        } else if (c.ast >= 8) {
+          cHow = c.pts + "점·" + c.ast + "어시스트";
+        } else if (c.reb >= 12) {
+          cHow = c.pts + "점·" + c.reb + "리바운드";
+        } else if (c.pts >= 18) {
+          cHow = c.pts + "점";
+        } else if (c.pm != null && c.pm > 0) {
+          cHow = "코트 마진 " + pgSigned(c.pm);
+        } else {
+          cHow = c.pts + "점";
+        }
+        bits.push(pgJosa(winTeam.name, "은", "는") + " " + c.name + "(" + cHow + ") 덕분에 이겼습니다");
       }
       if (l) {
         var lHow;
