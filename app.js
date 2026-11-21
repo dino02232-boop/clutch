@@ -373,6 +373,7 @@
     sport: null,   // 종목 미선택 상태에서 홈 또는 전체 경기 목록을 표시
     favorites: false,
     allSports: false,
+    league: null,   // 리그 필터(그날·그 종목 안에서만 유효)
     openId: null,  // 펼친 경기 id
     weekStart: null // 날짜 스트립에 보이는 주의 월요일(YYYY-MM-DD)
   };
@@ -430,6 +431,29 @@
     return "";
   }
 
+  /* ── 팀 크레스트 ───────────────────────────────
+     팀 로고는 team-logos.js(window.TEAM_LOGOS)에서 리그·약어 → 팀 이름 순서로 찾는다.
+     로고가 없는 팀(데이터에 없는 신생팀 등)은 약어를 적은 작은 칩으로 대신해서,
+     화면에 빈 원형·깨진 이미지가 남지 않게 한다. */
+  function logoOf(g, side) {
+    var t = g && g[side];
+    if (!t) return "";
+    var map = window.TEAM_LOGOS || {};
+    var byLg = (map.byLeague || {})[String(g.league || "").toUpperCase()] || {};
+    var by = byLg[String(t.abbr || "").toUpperCase()] || (map.byName || {})[String(t.name || "")] || "";
+    return typeof by === "string" && /^https:\/\//i.test(by) ? by : "";
+  }
+
+  function crestHTML(g, side, small) {
+    var t = (g && g[side]) || {};
+    var abbr = String(t.abbr || "").toUpperCase() || initialsOf(t.name);
+    var src = logoOf(g, side);
+    return '<span class="crest' + (small ? " sm" : "") + '" aria-hidden="true"><span class="crest-t">' +
+      esc(abbr.slice(0, 3)) + "</span>" +
+      (src ? '<img src="' + esc(src) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : "") +
+      "</span>";
+  }
+
   /* ── 주 단위 날짜 스트립 (월요일 시작 7칸) ───────────────
      주차 규칙: 그 달 1일이 들어 있는 7일 묶음(1~7일)을 1주차로 센다.
        예) 2026-11-01(일) → 11/1~11/7 = 1주차, 11/16~11/22 = 3주차, 11/23~11/29 = 4주차
@@ -475,6 +499,7 @@
         state.sport = null;
         state.favorites = false;
         state.allSports = true;
+        state.league = null;
         state.openId = null;
         writeHash("all", true);
         render();
@@ -492,6 +517,7 @@
       if (gamesOf(ds).length) pick = ds;
     }
     state.day = pick || monday;
+    state.league = null;
     state.openId = null;
     writeHash(stateRoutePrefix(), true);
     render();
@@ -561,6 +587,7 @@
     state.sport = id;
     state.favorites = false;
     state.allSports = false;
+    state.league = null;
     state.openId = null;
     if (!same) writeHash(id, false);
     render();
@@ -574,6 +601,7 @@
     state.sport = null;
     state.favorites = false;
     state.allSports = true;
+    state.league = null;
     state.openId = null;
     if (!same) writeHash("all", false);
     render();
@@ -585,6 +613,7 @@
     state.sport = null;
     state.favorites = true;
     state.allSports = false;
+    state.league = null;
     state.openId = null;
     if (!same) writeHash("favorites", false);
     render();
@@ -596,6 +625,7 @@
     state.sport = null;
     state.favorites = false;
     state.allSports = false;
+    state.league = null;
     state.openId = null;
     if (!same) writeHash("", false);
     render();
@@ -610,6 +640,7 @@
     state.sport = r.sport;
     state.favorites = !!r.favorites;
     state.allSports = !!r.allSports;
+    state.league = null;
     state.openId = r.openId;
     if (r.openId) {
       var e = gameEntry(r.openId);
@@ -840,6 +871,7 @@
     return '<section class="tblock ' + side + '" data-team-name="' + esc(t.name || "") + '">' +
       '<div class="tb-head">' +
         '<span class="tb-side">' + (side === "home" ? "홈" : "원정") + "</span>" +
+        crestHTML(g, side) +
         '<a class="tb-name" href="team.html?team=' + encodeURIComponent(t.name || t.abbr || "") + '" title="' + esc((t.name || t.abbr || "") + " 팀 페이지") + '" style="color:inherit;text-decoration:none">' + esc(t.name || t.abbr || "") + "</a>" +
         '<span aria-hidden="true" style="flex:0 0 auto;color:#9CA3AF;font-weight:800;font-size:12px;line-height:1;margin-top:-1px">›</span>' +
         (t.abbr ? '<span class="tb-abbr">' + esc(t.abbr) + "</span>" : "") +
@@ -1419,8 +1451,10 @@
             "로 뒤졌지만 " + (behind + 2) + "Q에서는 " + quarterRows[behind + 1].w + "-" + quarterRows[behind + 1].l +
             pgNumJosa(quarterRows[behind + 1].l, "으로", "로") + " 뒤집었습니다.");
         } else {
-          flowSentences.push("1Q " + quarterRows[0].w + "-" + quarterRows[0].l +
-            pgNumJosa(quarterRows[0].l, "으로", "로") + " 앞섰고, 쿼터가 끝날 때는 계속 앞서 있었습니다.");
+          var q1 = quarterRows[0];
+          flowSentences.push(q1.w === q1.l
+            ? ("1Q를 " + q1.w + "-" + q1.l + "로 맞선 뒤 쿼터가 끝날 때마다 뒤지지 않았습니다.")
+            : ("1Q " + q1.w + "-" + q1.l + pgNumJosa(q1.l, "으로", "로") + " 앞선 뒤 쿼터가 끝날 때마다 뒤지지 않았습니다."));
         }
       }
     }
@@ -1942,7 +1976,7 @@
     var away = g.away ? g.away.name : "—";
     var home = g.home ? g.home.name : "—";
     var label = sm.name + " " + when + " " + p.hh + ":" + p.mm + ", 원정 " + away + " 대 홈 " + home +
-      " — 클러치 상황 보기";
+      " — VS 상황 보기";
 
     var oddsChip = g.odds ? '<span class="mchip odds">배당</span>' : "";
 
@@ -1955,15 +1989,14 @@
         "</span>" +
         '<button class="cbtn" type="button" aria-expanded="false" aria-controls="box-' + esc(g.id) + '"' +
         ' aria-label="' + esc(label) + '" data-id="' + esc(g.id) + '">' +
-          '<span class="cbtn-label">클러치 상황</span>' +
+          '<span class="cbtn-label">VS 상황</span>' +
           '<svg class="chev" width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">' +
           '<path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
         "</button>" +
         '<span class="mtms">' +
-          '<span class="sport-ball" aria-hidden="true">' + esc(sm.icon) + "</span>" +
-          '<span class="tm away">' + favoriteButtonHTML(g.sport, away) + '<button class="team-link" type="button" data-team-focus="' + esc(away) + '" aria-label="' + esc(away + " 팀 현황 보기") + '"><span class="tm-name">' + esc(away) + "</span></button></span>" +
+          '<span class="tm away">' + favoriteButtonHTML(g.sport, away) + '<button class="team-link" type="button" data-team-focus="' + esc(away) + '" aria-label="' + esc(away + " 팀 현황 보기") + '">' + crestHTML(g, "away") + '<span class="tm-name">' + esc(away) + "</span></button></span>" +
           '<span class="mslot" data-slot="' + esc(g.id) + '">' + scoreSlotHTML(g) + "</span>" +
-          '<span class="tm home">' + favoriteButtonHTML(g.sport, home) + '<button class="team-link" type="button" data-team-focus="' + esc(home) + '" aria-label="' + esc(home + " 팀 현황 보기") + '"><span class="tm-name">' + esc(home) + "</span></button></span>" +
+          '<span class="tm home">' + favoriteButtonHTML(g.sport, home) + '<button class="team-link" type="button" data-team-focus="' + esc(home) + '" aria-label="' + esc(home + " 팀 현황 보기") + '">' + crestHTML(g, "home") + '<span class="tm-name">' + esc(home) + "</span></button></span>" +
         "</span>" +
       "</div>" +
       '<div class="cbox-wrap" id="box-' + esc(g.id) + '"></div>' +
@@ -2036,7 +2069,7 @@
 
     item.classList.remove("open");
     btn.setAttribute("aria-expanded", "false");
-    label.textContent = "클러치 상황";
+    label.textContent = "VS 상황";
 
     window.clearTimeout(wrap._timer);
     if (!wrap.firstChild) { wrap.style.height = "0px"; wrap.style.opacity = "0"; return; }
@@ -2166,7 +2199,12 @@
   }
 
   /* ── 홈: 종목 선택 타일 ─────────────────────────────── */
-  var HOME_LEAD = "종목을 고르면 그날 경기 일정이 나옵니다.";
+  // 홈(종목 선택) 첫 화면의 정체성 — 무엇을 해 주는 사이트인지 한 줄로 먼저 읽히게.
+  function homeLeadHTML() {
+    var names = SPORTS.map(function (s) { return s.name; }).join("·");
+    return '<span class="hl-title"><b>' + esc(names) + '</b> 오늘 경기의 두 팀 상태와 변수를 30초로 정리합니다.</span>' +
+      '<span class="hl-sub">승자 예측 없이 두 팀을 같은 무게로 · 아래에서 종목을 고르면 그날 일정이 열립니다.</span>';
+  }
 
   // 종목 타일의 한 줄 요약: 그 날짜·그 종목 경기의 리그명을 모아 보여준다.
   function leagueLine(gs) {
@@ -2225,7 +2263,7 @@
       return;
     }
 
-    elHomeLead.textContent = HOME_LEAD;
+    elHomeLead.innerHTML = homeLeadHTML();
     elHomeLead.hidden = false;
     elEmpty.hidden = true;
 
@@ -2238,9 +2276,71 @@
     });
   }
 
+  /* ── 리그 필터 ─────────────────────────────────────
+     같은 날 한 종목에 리그가 여럿이면(축구 4~5개) 목록 위에 리그 칩을 둔다.
+     칩은 그날 그 종목의 경기만 대상으로 하고, 다른 날·다른 종목으로 옴기면 풀린다. */
+  function leagueOf(g) {
+    return String((g && g.league) || (g ? sportMeta(g.sport).name : ""));
+  }
+
+  function leagueFullName(key, games) {
+    for (var i = 0; i < games.length; i++) {
+      if (leagueOf(games[i]) === key && games[i].leagueFull) return games[i].leagueFull;
+    }
+    return key;
+  }
+
+  // 지금 화면(종목·전체)의 그날 경기 전체
+  function scopedGames() {
+    return state.allSports ? gamesOf(state.day) : (state.sport ? gamesIn(state.day, state.sport) : []);
+  }
+
+  // 리그 필터를 적용한 목록 — 그 리그에 경기가 없으면 필터를 풀고 전체를 돌려준다.
+  function visibleGames() {
+    var all = scopedGames();
+    if (!state.league) return all;
+    var out = all.filter(function (g) { return leagueOf(g) === state.league; });
+    if (!out.length) { state.league = null; return all; }
+    return out;
+  }
+
+  function leagueChipsHTML(games) {
+    var keys = [];
+    games.forEach(function (g) {
+      var k = leagueOf(g);
+      if (keys.indexOf(k) < 0) keys.push(k);
+    });
+    if (keys.length < 2) return "";
+
+    var html = '<div class="lg-chips" role="group" aria-label="리그 선택">' +
+      '<button type="button" class="lchip' + (state.league ? "" : " on") + '" data-league="" ' +
+      'aria-pressed="' + (state.league ? "false" : "true") + '">전체 <span class="n">' + games.length + "</span></button>";
+    keys.forEach(function (k) {
+      var n = games.filter(function (g) { return leagueOf(g) === k; }).length;
+      var on = state.league === k;
+      var full = leagueFullName(k, games);
+      html += '<button type="button" class="lchip' + (on ? " on" : "") + '" data-league="' + esc(k) + '" ' +
+        'aria-pressed="' + (on ? "true" : "false") + '" title="' + esc(full) + '">' +
+        (full.length > 10 ? esc(k) : esc(full)) + ' <span class="n">' + n + "</span></button>";
+    });
+    return html + "</div>";
+  }
+
+  function bindLeagueChips() {
+    Array.prototype.forEach.call(elList.querySelectorAll(".lchip"), function (chip) {
+      chip.addEventListener("click", function () {
+        var k = chip.dataset.league || null;
+        state.league = (!k || state.league === k) ? null : k;
+        render();
+      });
+    });
+  }
+
   /* ── 일정 목록 화면 ─────────────────────────────────── */
   function renderSchedule() {
-    var games = state.allSports ? gamesOf(state.day) : gamesIn(state.day, state.sport);
+    var all = scopedGames();
+    var games = visibleGames();
+    var chips = leagueChipsHTML(all);
 
     if (!games.length) {
       elList.innerHTML = "";
@@ -2249,9 +2349,10 @@
     }
 
     elEmpty.hidden = true;
-    elList.innerHTML =
-      '<p class="list-hint">경기 줄 오른쪽 <b>클러치 상황</b>을 누르면 그 경기의 브리핑이 열립니다.</p>' +
+    elList.innerHTML = chips +
+      '<p class="list-hint">경기 줄 오른쪽 <b>VS 상황</b>을 누르면 그 경기의 브리핑이 열립니다.</p>' +
       '<ul class="rows">' + games.map(rowHTML).join("") + "</ul>";
+    bindLeagueChips();
     bindRows();
 
     if (state.openId) {
@@ -2368,13 +2469,13 @@
       renderFavorites();
     } else if (isAll) {
       elBack.hidden = false;
-      elTitle.innerHTML = "<em>" + longDate(state.day) + "</em> 전체 · " + gamesOf(state.day).length + "경기";
+      elTitle.innerHTML = "<em>" + longDate(state.day) + "</em> 전체 · " + visibleGames().length + "경기";
       elHomeLead.hidden = true;
       renderSchedule();
     } else {
       elBack.hidden = false;
       elTitle.innerHTML = "<em>" + longDate(state.day) + "</em> " + esc(sportMeta(state.sport).name) +
-        " · " + gamesIn(state.day, state.sport).length + "경기";
+        " · " + visibleGames().length + "경기";
       elHomeLead.hidden = true;
       renderSchedule();
     }
