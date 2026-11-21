@@ -977,6 +977,16 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .pg-more > summary::after { content: "▾"; font-size: 9px; opacity: .8; }
 .pg-more[open] > summary::after { content: "▴"; }
 .pg-more > p { margin: 7px 0 0; font-size: 11px; line-height: 1.7; color: #4B5563; }
+/* 축구 선수 기록표(접힌 '선수 기록 더 보기' 안) */
+.pg-pl { width: 100%; margin: 4px 0 2px; border-collapse: collapse; table-layout: fixed; font-size: 10.5px; font-variant-numeric: tabular-nums; }
+.pg-pl th, .pg-pl td { padding: 4px 2px; text-align: right; }
+.pg-pl thead th { font-size: 9.5px; font-weight: 700; color: var(--text-3); padding-bottom: 3px; border-bottom: 1px solid var(--line); }
+.pg-pl tbody th { font-weight: 600; color: #1F2937; }
+.pg-pl tbody tr + tr th, .pg-pl tbody tr + tr td { border-top: 1px solid rgba(17, 24, 39, .05); }
+.pg-pl .c-nm { width: 34%; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pg-pl .c-g { font-weight: 800; color: #B45309; }
+.lb-team-box + .lb-team-box { margin-top: 9px; }
+
 .pg-stat-grid {
   display: grid; gap: 5px; margin-top: 8px; padding: 9px 10px;
   border-radius: 9px; background: #F7F9FC;

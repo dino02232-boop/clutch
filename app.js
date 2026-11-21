@@ -1091,8 +1091,9 @@
   function pgSigned(n) { return (n > 0 ? "+" : "") + n; }
   // 점수(숫자) 뒤 조사. 끝자리 0·3·6·7·8(십·삼·육·칠·팔)만 받침이 있다.
   function pgNumJosa(n, withFinal, withoutFinal) {
+    // 0(영)·1(일)·3(삼)·6(육)·7(칠)·8(팔)은 받침이 있고 2(이)·4(사)·5(오)·9(구)는 없다
     var d = String(Math.abs(Number(n) || 0)).slice(-1);
-    return /[03678]/.test(d) ? withFinal : withoutFinal;
+    return /[013678]/.test(d) ? withFinal : withoutFinal;
   }
   function pgNumCopula(n) { return pgNumJosa(n, "이었습니다", "였습니다"); }
   // 팀·선수 이름 뒤 조사(받침 유무). 예) 재즈 → 가 / 너기츠 → 가 / 썬더 → 가
@@ -1673,8 +1674,215 @@
       '<p class="postgame-note">선수 평가는 시즌 평균과 박스스코어(득점·리바운드·어시스트·야투·턴오버·±)를 바탕으로 한 자동 요약입니다. ±는 그 선수가 코트에 있던 동안의 팀 득실 마진입니다.</p></section>';
   }
 
-  /* ── 축구: 결과·흐름 + 승패 원인(점유율·슈팅·선방) + 득점 장면 ──
-     ESPN 축구 요약에는 선수별 시즌 평균이 없어 개인 평가는 하지 않고, 팀 지표와 득점자만 쓴다. */
+  /* ── 축구: 선수 기록(ESPN 로스터) → 개인 활약 ──────────────────────
+     ESPN 축구 summary 의 rosters 에는 선수별 경기 기록이 이렇게 온다(대회 공통).
+       totalGoals 골 · goalAssists 도움 · totalShots 슈팅 · shotsOnTarget 유효슈팅
+       saves 선방 · goalsConceded 실점 · foulsCommitted 파울 · yellowCards/redCards 카드
+     패스·태클·평점은 ESPN 이 주지 않으므로 쓰지 않는다(추정 금지). */
+  function soccerStat(st, key) {
+    var v = st ? st[key] : null;
+    if (v == null || v === "") return null;
+    var n = Number(String(v).trim());
+    return isFinite(n) ? n : null;
+  }
+
+  // 기여 점수: 골 4 · 도움 3 · 유효슈팅 1 · 빗나간 슈팅 0.3 · 선방 1.2 · (골키퍼) 실점 -1
+  function soccerProd(p) {
+    var g = p.g || 0, a = p.a || 0, sog = p.sog || 0, sh = p.sh || 0, sv = p.sv || 0;
+    return 4 * g + 3 * a + sog + 0.3 * Math.max(0, sh - sog) + 1.2 * sv - (p.pos === "G" ? (p.ga || 0) : 0);
+  }
+
+  // 요약(box)에서 홈·원정 선수 목록과 팀 지표를 꺼내 한 모양으로 만든다.
+  function soccerBoard(g, data) {
+    var boxes = (data && Array.isArray(data.box)) ? data.box : [];
+    if (boxes.length < 2) return null;
+    function sideOf(b, i) {
+      var ab = String(b.abbr || "").toUpperCase();
+      if (g.away && String(g.away.abbr || "").toUpperCase() === ab) return "away";
+      if (g.home && String(g.home.abbr || "").toUpperCase() === ab) return "home";
+      if (b.side === "away" || b.side === "home") return b.side;
+      return i === 0 ? "away" : "home";
+    }
+    var out = { away: null, home: null };
+    boxes.forEach(function (b, i) {
+      var side = sideOf(b, i);
+      var players = (b.rows || []).map(function (r) {
+        var st = r.stats || {};
+        var p = {
+          name: String(r.name || ""), photo: r.photo || "", pos: String(r.pos || ""),
+          starter: !!r.starter,
+          g: soccerStat(st, "totalGoals"), a: soccerStat(st, "goalAssists"),
+          sh: soccerStat(st, "totalShots"), sog: soccerStat(st, "shotsOnTarget"),
+          sv: soccerStat(st, "saves"), ga: soccerStat(st, "goalsConceded"),
+          fc: soccerStat(st, "foulsCommitted"), yc: soccerStat(st, "yellowCards"),
+          rc: soccerStat(st, "redCards"), og: soccerStat(st, "ownGoals")
+        };
+        // 선발이거나 무언가 기록이 남은 선수만 '출전'으로 본다(벤치 전원 0 과 구분)
+        var marks = [p.g, p.a, p.sh, p.sv, p.fc, p.yc, p.rc, p.og];
+        var any = false;
+        for (var k = 0; k < marks.length; k++) if (marks[k] != null && marks[k] > 0) any = true;
+        p.played = p.starter || any;
+        p.prod = soccerProd(p);
+        return p;
+      }).filter(function (p) { return p.played && p.name; });
+      out[side] = {
+        name: (g[side] && g[side].name) || b.name || "", abbr: (g[side] && g[side].abbr) || b.abbr || "",
+        players: players, stats: b.stats || {}
+      };
+    });
+    if (!out.away || !out.home) return null;
+    return out;
+  }
+
+  // 이긴 팀에서 이끈 선수 1명 + 진 팀에서 아쉬웠던 선수 1명을 실제 기록으로만 고른다.
+  //  · 이끈 선수: 기여 점수 최대(골 > 도움 > 유효슈팅·선방 순으로 자연히 반영)
+  //  · 아쉬웠던 선수: ① 슈팅 3개 이상인데 골이 없는 필드 플레이어 ② 선방 4개 이상인데 실점 2 이상인 골키퍼
+  //  · 무승부면 양 팀에서 각각 한 명(득점·도움 순)을 고른다.
+  function soccerPick(g, board) {
+    var away = Number(g.result.awayScore), home = Number(g.result.homeScore);
+    var lead = away > home ? "away" : (home > away ? "home" : null);
+    var trail = lead === "away" ? "home" : (lead === "home" ? "away" : null);
+    function best(side) {
+      var list = (board[side].players || []).filter(function (p) { return p.prod > 0; })
+        .sort(function (x, y) { return (y.prod - x.prod) || ((y.g || 0) - (x.g || 0)) || ((y.sog || 0) - (x.sog || 0)); });
+      return list[0] || null;
+    }
+    var carry = lead ? best(lead) : null;
+    // 골키퍼는 무실점이거나 선방이 아주 많을 때만 '이끈 선수'로 올린다(실점 2 이상이면 필드 플레이어를 본다)
+    if (carry && carry.pos === "G" && (carry.ga || 0) > 1 && !((carry.sv || 0) >= 6 && (carry.ga || 0) <= 2)) {
+      var alt = (board[lead].players || []).filter(function (p) { return p.pos !== "G" && p.prod > 0; })
+        .sort(function (x, y) { return (y.prod - x.prod) || ((y.g || 0) - (x.g || 0)); })[0];
+      if (alt && alt.prod >= (carry.sv || 0)) carry = alt;
+    }
+    var low = null;
+    if (trail) {
+      var t = board[trail].players || [];
+      low = t.filter(function (p) { return p.pos !== "G" && (p.sh || 0) >= 3 && !(p.g > 0); })
+        .sort(function (x, y) { return ((y.sh || 0) - (x.sh || 0)) || ((x.sog || 0) - (y.sog || 0)); })[0] || null;
+      if (!low) {
+        low = t.filter(function (p) { return p.pos === "G" && (p.sv || 0) >= 4 && (p.ga || 0) >= 2; })[0] || null;
+      }
+    }
+    return { lead: lead, trail: trail, carry: carry, low: low,
+      topAway: lead ? null : best("away"), topHome: lead ? null : best("home") };
+  }
+
+  // 로마자 이름 뒤 조사: 끝 글자로 받침을 근사한다(Williams→가, Brown→이).
+  // 한글 이름은 원래 규칙(pgJosa)을 그대로 쓴다.
+  function pgNameJosa(name, withFinal, withoutFinal) {
+    var s = String(name || "");
+    var c = s.charCodeAt(s.length - 1);
+    if (c >= 0xAC00 && c <= 0xD7A3) return pgJosa(s, withFinal, withoutFinal);
+    var last = s.slice(-1).toLowerCase();
+    if (!last) return s + withoutFinal;
+    // 모음으로 끝나는 소리(a·e·i·o·u·y, 그리고 한국어로 '스'로 적는 s·z·x)
+    var vowelish = "aeiouyzsxéáíóúèêàâ".indexOf(last) >= 0;
+    return s + (vowelish ? withoutFinal : withFinal);
+  }
+
+  // 문장 끝에 붙는 조사: 마지막이 숫자면 그 수의 받침, 아니면 이름 규칙을 따른다
+  function pgTailJosa(text, withFinal, withoutFinal) {
+    var m = String(text).match(/(\d+)$/);
+    if (m) return text + pgNumJosa(Number(m[1]), withFinal, withoutFinal);
+    return pgNameJosa(text, withFinal, withoutFinal);
+  }
+
+  // 선수를 한 구절로: 골·도움·유효슈팅·선방 중 있는 값만
+  function soccerFeat(p) {
+    var bits = [];
+    if (p.g) bits.push("골 " + p.g);
+    if (p.a) bits.push("도움 " + p.a);
+    if (p.sog) bits.push("유효슈팅 " + p.sog);
+    return bits;
+  }
+
+  // 한 줄 결론: 누가 잘해서 앞서는지 / 누가 묶여 있는지. live=true 면 '현재까지' 어투.
+  function soccerVerdictText(g, board, live) {
+    var pick = soccerPick(g, board);
+    var c = pick.carry, l = pick.low;
+    var parts = [];
+
+    if (c) {
+      var leadName = board[pick.lead].name;
+      if (c.pos === "G") {
+        parts.push("골키퍼 " + pgNameJosa(c.name, "이", "가") + " 선방 " + (c.sv || 0) + "개" +
+          ((c.ga || 0) > 0 ? "·실점 " + c.ga + "개" : "·무실점") + "으로 " + leadName +
+          (live ? " 골문을 지키고 있습니다." : " 승리를 지켰습니다."));
+      } else {
+        var bits = soccerFeat(c);
+        if (!bits.length) bits.push("슈팅 " + (c.sh || 0) + "개");
+        var feats = bits.join("·");
+        parts.push(pgNameJosa(c.name, "이", "가") + " " + pgTailJosa(feats, "으로", "로") + " " + leadName +
+          (live ? " 공격을 끌고 있습니다." : " 공격을 끌었습니다."));
+      }
+    } else if (pick.topAway || pick.topHome) {
+      // 무승부: 양 팀에서 이름을 남긴 선수를 나란히. 0-0 이면 유효슈팅 합계로만 말한다.
+      var aw = pick.topAway, hm = pick.topHome;
+      if (aw && hm && (aw.g || hm.g)) {
+        function line(p) { return (soccerFeat(p).join("·") || "슈팅 " + (p.sh || 0) + "개"); }
+        parts.push(board.away.name + "의 " + aw.name + "(" + line(aw) + ")와 " + board.home.name + "의 " +
+          hm.name + "(" + line(hm) + ")가 한 골씩 주고받" + (live ? "고 있습니다." : "았습니다."));
+      } else {
+        var as = soccerStat(board.away.stats, "shotsOnTarget"), hs = soccerStat(board.home.stats, "shotsOnTarget");
+        if (as != null && hs != null && as + hs > 0) {
+          parts.push("양 팀 합쳐 유효슈팅 " + (as + hs) + "개, " +
+            (live ? "아직 골이 없습니다." : "골문을 열지 못했습니다."));
+        }
+      }
+    }
+
+    if (l) {
+      if (l.pos === "G") {
+        parts.push(pgNameJosa(l.name, "은", "는") + " 선방 " + (l.sv || 0) + "개를 했지만 실점 " + (l.ga || 0) +
+          "개를 막지 못했습니다.");
+      } else {
+        parts.push(pgNameJosa(l.name, "은", "는") + " 슈팅 " + (l.sh || 0) + "개 중 유효 " + (l.sog || 0) + "개로 묶여 " +
+          (live ? "아직 골을 만들지 못하고 있습니다." : "골을 만들지 못했습니다."));
+      }
+    } else if (pick.trail) {
+      // 개인보다 팀 전체 마무리가 문제인 경기: 팀 슈팅·유효슈팅으로만 말한다(골이 없는 팀에 한해)
+      var ts = board[pick.trail].stats || {};
+      var tsh = soccerStat(ts, "totalShots"), tsog = soccerStat(ts, "shotsOnTarget");
+      var tgoals = pick.trail === "away" ? Number(g.result.awayScore) : Number(g.result.homeScore);
+      if (tsh != null && tsog != null && tsh >= 6 && !(tgoals > 0)) {
+        parts.push(board[pick.trail].name + " " + (live ? "는" : "은") + " 슈팅 " + tsh + "개 중 유효 " + tsog + "개로 " +
+          (live ? "아직 골을 만들지 못하고 있습니다." : "골을 만들지 못했습니다."));
+      }
+    }
+    // 초반처럼 말할 거리가 없으면(골·도움 없음 + 슈팅 3개 미만) 빈 문장을 만들지 않는다
+    if (!parts.length) return "";
+    var totalShots = 0;
+    ["away", "home"].forEach(function (side) {
+      (board[side].players || []).forEach(function (p) { totalShots += (p.sh || 0) + (p.sv || 0); });
+    });
+    if (!c && totalShots < 4) return "";
+    return parts.join(" ");
+  }
+
+  // 접어 두는 선수 기록표: 팀별 기여 상위 6명
+  function soccerPlayerTableHTML(g, board) {
+    var html = "";
+    ["home", "away"].forEach(function (side) {
+      var tm = board[side];
+      if (!tm || !tm.players.length) return;
+      var rows = tm.players.slice().sort(function (a, b) { return b.prod - a.prod; }).slice(0, 6);
+      html += '<div class="lb-team-box"><div class="lb-team-h">' +
+        '<span class="lbt-side ' + side + '">' + (side === "away" ? "원정" : "홈") + "</span>" +
+        "<b>" + esc(tm.name) + "</b></div>" +
+        '<table class="pg-pl"><thead><tr><th scope="col" class="c-nm">선수</th>' +
+        '<th scope="col">슈팅</th><th scope="col">유효</th><th scope="col">골</th><th scope="col">도움</th><th scope="col">선방</th>' +
+        "</tr></thead><tbody>" +
+        rows.map(function (p) {
+          return '<tr><th scope="row" class="c-nm">' + esc(p.name) + "</th>" +
+            "<td>" + esc(dash(p.sh)) + "</td><td>" + esc(dash(p.sog)) + "</td>" +
+            '<td class="c-g">' + esc(dash(p.g)) + "</td><td>" + esc(dash(p.a)) + "</td>" +
+            "<td>" + (p.pos === "G" ? esc(dash(p.sv)) : "—") + "</td></tr>";
+        }).join("") + "</tbody></table></div>";
+    });
+    return html;
+  }
+
+  /* ── 축구: 결과·흐름 + 승패 원인(점유율·슈팅·선방) + 선수 활약 + 득점 장면 ── */
   function pgSoccerHTML(g) {
     var r = g.result;
     var away = Number(r.awayScore), home = Number(r.homeScore);
@@ -1781,6 +1989,10 @@
       if (facts.length) why = facts.slice(0, 3).join(" ");
     }
 
+    var board = soccerBoard(g, data);
+    var verdict = board ? soccerVerdictText(g, board, false) : "";
+    var plTable = board ? soccerPlayerTableHTML(g, board) : "";
+
     var more = "";
     var goals = (data && Array.isArray(data.goals)) ? data.goals : [];
     if (goals.length) {
@@ -1798,12 +2010,17 @@
         return '<div class="pg-stat-row"><i>' + esc(x.minute) + '</i><span>' + esc(text) + "</span></div>";
       }).join("") + "</div>";
     }
-    var note = "축구는 ESPN 공개 데이터에 선수별 시즌 평균이 없어 개인 평가는 표시하지 않습니다. 팀 지표와 득점 장면만 정리했습니다.";
+    var note = board
+      ? "선수 활약은 ESPN 공개 기록(골·도움·슈팅·유효슈팅·선방·파울)으로만 자동 요약합니다. 패스·태클·평점은 ESPN이 제공하지 않아 쓰지 않습니다."
+      : "축구는 ESPN 공개 기록에 선수별 시즌 평균이 없어 개인 평가를 만들지 않습니다. 팀 지표와 득점 장면만 정리했습니다.";
 
-    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>승패 원인</span></div>' +
+    return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>승패 원인 · 활약</span></div>' +
       '<p class="pg-game-line">' + esc(out.join(" ")) + "</p>" +
+      (verdict ? '<p class="pg-verdict">' + esc(verdict) + "</p>" : "") +
       '<div class="pg-why"><b>' + whyLabel + '</b><p>' + esc(why) + "</p></div>" +
-      (more ? '<details class="pg-more"><summary>득점 장면 더 보기</summary>' + more + "</details>" : "") +
+      ((more || plTable) ? '<details class="pg-more"><summary>' +
+        (plTable && more ? "선수 기록 · 득점 장면 더 보기" : (plTable ? "선수 기록 더 보기" : "득점 장면 더 보기")) + "</summary>" +
+        plTable + more + "</details>" : "") +
       '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
 
@@ -4051,7 +4268,14 @@
   function soccerLiveExtraHTML(g) {
     var s = summaryEntry(g);
     if (!s) return '<p class="lb-none">실시간 지표 · 중계를 불러오는 중…</p>';
-    var out = soccerStatsHTML(g, s) + soccerEventsHTML(s) + soccerCommentaryHTML(s);
+    // 진행 중에도 '누가 만들고 누가 흔들리는지'를 실제 기록으로 한 줄 말한다.
+    var board = soccerBoard(g, s.data);
+    var verdict = board ? soccerVerdictText(g, board, true) : "";
+    var roster = board ? soccerPlayerTableHTML(g, board) : "";
+    var out = (verdict ? '<p class="pg-verdict">' + esc(verdict) + "</p>" : "") +
+      soccerStatsHTML(g, s) +
+      (roster ? '<details class="lb-more"><summary>선수 기록 더 보기</summary>' + roster + "</details>" : "") +
+      soccerEventsHTML(s) + soccerCommentaryHTML(s);
     if (out) return out;
     if (s.err) return '<p class="lb-none">실시간 지표를 받지 못했습니다. 잠시 뒤 새로고침을 눌러 주세요.</p>';
     return '<p class="lb-none">아직 표시할 중계 데이터가 없습니다.</p>';
