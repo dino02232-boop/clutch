@@ -1563,6 +1563,31 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .lb-tbl .c-min { color: var(--text-2); }
 .lb-tbl .c-pts { font-weight: 800; color: #B45309; }
 
+/* 축구 라이브: 팀 지표 비교(홈 왼쪽 · 가운데 막대로 비중) */
+.sb-stats { margin: 0 0 2px; }
+.sb-row { display: grid; grid-template-columns: 54px minmax(0, 1fr) 54px; align-items: center; gap: 8px; padding: 3px 0; }
+.sb-hd { padding: 0 0 5px; }
+.sb-side { display: flex; align-items: center; gap: 4px; min-width: 0; }
+.sb-side.r { justify-content: flex-end; }
+.sb-side b { font-size: 9.5px; font-weight: 800; letter-spacing: .05em; color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sb-tag {
+  flex: 0 0 auto; font-style: normal; font-size: 8.5px; font-weight: 800; line-height: 1.5;
+  border-radius: 4px; padding: 0 4px; color: #FFFFFF; background: var(--accent);
+}
+.sb-tag.away { color: var(--text-3); background: transparent; border: 1px solid var(--line); }
+.sb-v { font-size: 11.5px; font-weight: 800; color: #111827; font-variant-numeric: tabular-nums; }
+.sb-v.r { text-align: right; }
+.sb-mid { min-width: 0; text-align: center; }
+.sb-k { display: block; font-size: 9.5px; font-weight: 700; color: var(--text-3); letter-spacing: .01em; }
+.sb-bar { display: block; height: 3px; margin-top: 3px; border-radius: 2px; background: rgba(17, 24, 39, .09); overflow: hidden; }
+.sb-bar > i { display: block; height: 100%; border-radius: 2px; background: var(--accent); }
+
+/* 진행 중 카드 안의 '이전 장면' 접기 */
+.lb-more { margin: 5px 0 2px; }
+.lb-more > summary { list-style: none; cursor: pointer; padding: 4px 0; font-size: 11px; font-weight: 700; color: var(--accent); }
+.lb-more > summary::-webkit-details-marker { display: none; }
+.lb-more[open] > summary { margin-bottom: 4px; }
+
 /* 경기 전 브리핑은 라이브·최종 결과 아래 접어서 둔다 */
 .pregame { display: block; margin-top: 12px; border-top: 1px solid var(--line); }
 .pregame > summary {
@@ -1579,6 +1604,7 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   .lb-pts { font-size: 29px; }
   .lb-tbl { font-size: 11px; }
   .lb-plays li { font-size: 11.5px; }
+  .sb-row { grid-template-columns: 46px minmax(0, 1fr) 46px; gap: 6px; }
   .flow-teams { grid-template-columns: 1fr; }
 }
 
