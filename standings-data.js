@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-23T00:12:11+09:00
+   생성 시각(기준): 2026-11-23T01:10:27+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-23T00:12:11+09:00",
+  "updated": "2026-11-23T01:10:27+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -45,12 +45,12 @@ window.CLUTCH_STANDINGS = {
               "team": "브라이턴",
               "abbr": "BHA",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/331.png",
-              "played": 10,
+              "played": 11,
               "win": 7,
               "draw": 1,
-              "loss": 2,
+              "loss": 3,
               "points": 22,
-              "diff": 19,
+              "diff": 17,
               "pct": null,
               "gb": null,
               "zone": {
@@ -193,6 +193,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 11,
+              "team": "헐 시티",
+              "abbr": "HUL",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/306.png",
+              "played": 11,
+              "win": 3,
+              "draw": 5,
+              "loss": 3,
+              "points": 14,
+              "diff": 2,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 12,
               "team": "애스턴 빌라",
               "abbr": "AVL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
@@ -207,7 +222,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 12,
+              "rank": 13,
               "team": "뉴캐슬 유나이티드",
               "abbr": "NEW",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/361.png",
@@ -222,7 +237,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 13,
+              "rank": 14,
               "team": "코번트리 시티",
               "abbr": "COV",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/388.png",
@@ -232,21 +247,6 @@ window.CLUTCH_STANDINGS = {
               "loss": 7,
               "points": 12,
               "diff": -8,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 14,
-              "team": "헐 시티",
-              "abbr": "HUL",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/306.png",
-              "played": 10,
-              "win": 2,
-              "draw": 5,
-              "loss": 3,
-              "points": 11,
-              "diff": 0,
               "pct": null,
               "gb": null,
               "zone": null
@@ -2579,11 +2579,11 @@ window.CLUTCH_STANDINGS = {
               "team": "볼로냐",
               "abbr": "BOL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/107.png",
-              "played": 11,
+              "played": 12,
               "win": 5,
-              "draw": 2,
+              "draw": 3,
               "loss": 4,
-              "points": 17,
+              "points": 18,
               "diff": 2,
               "pct": null,
               "gb": null,
@@ -2591,6 +2591,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 10,
+              "team": "제노아",
+              "abbr": "GEN",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3263.png",
+              "played": 12,
+              "win": 5,
+              "draw": 1,
+              "loss": 6,
+              "points": 16,
+              "diff": -3,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 11,
               "team": "칼리아리",
               "abbr": "CAG",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2925.png",
@@ -2605,7 +2620,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 11,
+              "rank": 12,
               "team": "아탈란타",
               "abbr": "ATA",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/105.png",
@@ -2620,7 +2635,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 12,
+              "rank": 13,
               "team": "토리노",
               "abbr": "TOR",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/239.png",
@@ -2630,21 +2645,6 @@ window.CLUTCH_STANDINGS = {
               "loss": 6,
               "points": 14,
               "diff": -3,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 13,
-              "team": "제노아",
-              "abbr": "GEN",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3263.png",
-              "played": 11,
-              "win": 4,
-              "draw": 1,
-              "loss": 6,
-              "points": 13,
-              "diff": -5,
               "pct": null,
               "gb": null,
               "zone": null
@@ -2681,21 +2681,6 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 16,
-              "team": "사수올로",
-              "abbr": "SAS",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3997.png",
-              "played": 11,
-              "win": 2,
-              "draw": 2,
-              "loss": 7,
-              "points": 8,
-              "diff": -13,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 17,
               "team": "파르마",
               "abbr": "PAR",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/115.png",
@@ -2705,6 +2690,21 @@ window.CLUTCH_STANDINGS = {
               "loss": 8,
               "points": 8,
               "diff": -12,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 17,
+              "team": "사수올로",
+              "abbr": "SAS",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3997.png",
+              "played": 12,
+              "win": 2,
+              "draw": 2,
+              "loss": 8,
+              "points": 8,
+              "diff": -15,
               "pct": null,
               "gb": null,
               "zone": null
@@ -2730,15 +2730,15 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 19,
-              "team": "베네치아",
-              "abbr": "VEN",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17530.png",
+              "team": "우디네세",
+              "abbr": "UDI",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/118.png",
               "played": 12,
-              "win": 2,
-              "draw": 0,
-              "loss": 10,
+              "win": 1,
+              "draw": 3,
+              "loss": 8,
               "points": 6,
-              "diff": -17,
+              "diff": -13,
               "pct": null,
               "gb": null,
               "zone": {
@@ -2749,15 +2749,15 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 20,
-              "team": "우디네세",
-              "abbr": "UDI",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/118.png",
-              "played": 11,
-              "win": 1,
-              "draw": 2,
-              "loss": 8,
-              "points": 5,
-              "diff": -13,
+              "team": "베네치아",
+              "abbr": "VEN",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17530.png",
+              "played": 12,
+              "win": 2,
+              "draw": 0,
+              "loss": 10,
+              "points": 6,
+              "diff": -17,
               "pct": null,
               "gb": null,
               "zone": {
