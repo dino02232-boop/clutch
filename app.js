@@ -2017,6 +2017,8 @@
   function pgTailRo(text) {
     var m = String(text).match(/(\d+)$/);
     if (m) return text + pgNumRo(Number(m[1]));
+    // '43.9%' 처럼 퍼센트로 끝나면 '퍼센트로'
+    if (/%$/.test(String(text))) return text + "로";
     return pgNameJosa(text, "으로", "로");
   }
 
