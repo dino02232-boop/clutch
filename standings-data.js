@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-23T01:10:27+09:00
+   생성 시각(기준): 2026-11-23T02:10:51+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-23T01:10:27+09:00",
+  "updated": "2026-11-23T02:10:51+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -1808,6 +1808,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 10,
+              "team": "아우크스부르크",
+              "abbr": "FCA",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3841.png",
+              "played": 10,
+              "win": 3,
+              "draw": 3,
+              "loss": 4,
+              "points": 12,
+              "diff": 2,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 11,
               "team": "호펜하임",
               "abbr": "TSG",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7911.png",
@@ -1822,7 +1837,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 11,
+              "rank": 12,
               "team": "함부르크",
               "abbr": "HSV",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/127.png",
@@ -1837,22 +1852,22 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 12,
+              "rank": 13,
               "team": "마인츠",
               "abbr": "M05",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2950.png",
-              "played": 9,
+              "played": 10,
               "win": 3,
               "draw": 1,
-              "loss": 5,
+              "loss": 6,
               "points": 10,
-              "diff": -1,
+              "diff": -3,
               "pct": null,
               "gb": null,
               "zone": null
             },
             {
-              "rank": 13,
+              "rank": 14,
               "team": "쾰른",
               "abbr": "KOE",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/122.png",
@@ -1867,7 +1882,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 14,
+              "rank": 15,
               "team": "파더보른",
               "abbr": "SCP",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3307.png",
@@ -1877,21 +1892,6 @@ window.CLUTCH_STANDINGS = {
               "loss": 4,
               "points": 10,
               "diff": -7,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 15,
-              "team": "아우크스부르크",
-              "abbr": "FCA",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3841.png",
-              "played": 9,
-              "win": 2,
-              "draw": 3,
-              "loss": 4,
-              "points": 9,
-              "diff": 0,
               "pct": null,
               "gb": null,
               "zone": null
