@@ -5,15 +5,15 @@
    브라우저에서 index.html 을 그냥 열어도 동작하도록 JSON 대신
    전역 변수(window.CLUTCH_DATA)로 데이터를 넣습니다.
 
-   ✅ 실제 데이터 (KST 2026-11-19 ~ 11-28) — 화면에 뜨는 값은 모두 실제 소스 값입니다.
-      지난 날짜(11/19~11/21)는 끝난 경기 결과가 들어 있고, 11/22 이후는 예정 경기입니다.
+   ✅ 실제 데이터 (KST 2026-11-20 ~ 11-29) — 화면에 뜨는 값은 모두 실제 소스 값입니다.
+      지난 날짜(11/20~11/22)는 끝난 경기 결과가 들어 있고, 11/23 이후는 예정 경기입니다.
       · 농구(NBA)  : ESPN 공개 API
                      - 일정·전적·최근 5경기·홈/원정 전적·부상 명단: scoreboard / summary
                      - 선수 시즌 평균·팀 내 득점 순위: byathlete 리더보드
                      - 직전 경기 박스스코어: summary boxscore
                      - 해외 배당: scoreboard/summary odds (provider 표기 그대로)
                      구간 표식 NBA-AUTO / 생성기 tools/fetch_nba.py
-                     python3 tools/fetch_nba.py --from 2026-11-22 --to 2026-11-28 --write
+                     python3 tools/fetch_nba.py --from 2026-11-23 --to 2026-11-29 --write
       · 축구        : ESPN 공개 API (UCL·EPL·라리가·분데스리가·세리에A, 일정·전적·순위·최근 5경기·맞대결·배당)
                      구간 표식 SOCCER-AUTO / 생성기 tools/fetch_soccer.py
                      부상·결장 명단은 ESPN 축구에 없어 FotMob 공개 엔드포인트에서 받아
@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-23T06:12:00+09:00",
+  updatedAt: "2026-11-23T06:14:32+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -102,4882 +102,6 @@ window.CLUTCH_DATA = {
   ],
 
   days: [
-
-    /* ── 2026-11-19 (목) ─────────────────────────────────── */
-    {
-      date: "2026-11-19",
-      games: [
-        /* VOLLEY-AUTO 2026-11-19 START */
-        {
-          "id": "vball-kovo-33",
-          "sport": "volleyball",
-          "league": "VLEAGUE",
-          "leagueFull": "V리그 남자부",
-          "source": "kovo",
-          "start": "2026-11-19T19:00:00+09:00",
-          "status": "final",
-          "venue": "평택이충문화체육관",
-          "away": {
-            "name": "대한항공",
-            "abbr": "KAL",
-            "record": "2승 3패",
-            "badges": [
-              {
-                "text": "리그 5위",
-                "tone": "rank"
-              }
-            ],
-            "last5Detail": [
-              {
-                "date": "2026-11-14",
-                "opp": "삼성화재",
-                "ha": "홈",
-                "score": "1-3",
-                "res": "패"
-              },
-              {
-                "date": "2026-11-11",
-                "opp": "우리카드",
-                "ha": "원정",
-                "score": "2-3",
-                "res": "패"
-              },
-              {
-                "date": "2026-11-06",
-                "opp": "한국전력",
-                "ha": "홈",
-                "score": "1-3",
-                "res": "패"
-              },
-              {
-                "date": "2026-10-31",
-                "opp": "현대캐피탈",
-                "ha": "홈",
-                "score": "3-0",
-                "res": "승"
-              },
-              {
-                "date": "2026-10-25",
-                "opp": "현대캐피탈",
-                "ha": "홈",
-                "score": "3-1",
-                "res": "승"
-              }
-            ],
-            "last5": "2승 3패",
-            "streak": "3연패",
-            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
-          },
-          "home": {
-            "name": "KB손해보험",
-            "abbr": "KB",
-            "record": "0승 5패",
-            "badges": [
-              {
-                "text": "리그 7위",
-                "tone": "rank"
-              }
-            ],
-            "last5Detail": [
-              {
-                "date": "2026-11-13",
-                "opp": "한국전력",
-                "ha": "원정",
-                "score": "0-3",
-                "res": "패"
-              },
-              {
-                "date": "2026-11-08",
-                "opp": "현대캐피탈",
-                "ha": "원정",
-                "score": "1-3",
-                "res": "패"
-              },
-              {
-                "date": "2026-11-04",
-                "opp": "OK저축은행",
-                "ha": "홈",
-                "score": "1-3",
-                "res": "패"
-              },
-              {
-                "date": "2026-11-01",
-                "opp": "삼성화재",
-                "ha": "홈",
-                "score": "1-3",
-                "res": "패"
-              },
-              {
-                "date": "2026-10-20",
-                "opp": "우리카드",
-                "ha": "홈",
-                "score": "0-3",
-                "res": "패"
-              }
-            ],
-            "last5": "0승 5패",
-            "streak": "5연패",
-            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
-          },
-          "tags": [
-            {
-              "text": "V리그 남자부 · 1라운드",
-              "tone": "info"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**KB손해보험**(홈) 0승 5패(리그 7위, 최근 흐름 5패), **대한항공**(원정) 2승 3패(리그 5위, 최근 흐름 1승). V리그 남자부 1라운드 평택이충문화체육관에서 열립니다."
-            },
-            {
-              "kind": "watch",
-              "label": "관전 포인트",
-              "text": "세트 승리 수 차가 6입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 3,
-            "homeScore": 1,
-            "winner": "away",
-            "lines": {
-              "away": [
-                "25",
-                "27",
-                "21",
-                "25"
-              ],
-              "home": [
-                "20",
-                "25",
-                "25",
-                "20"
-              ]
-            },
-            "kovoNumber": "33",
-            "source": "kovo",
-            "players": [
-                  {"n": "케트진스키", "p": "OH", "s": "away", "pt": 21, "at": 33, "asn": 18, "ap": 54.5, "ep": 37.5, "bk": 2, "sv": 1, "dg": 8, "rc": 2, "rt": 10, "set": 1, "er": 8},
-                  {"n": "홍상혁", "p": "OH", "s": "home", "pt": 20, "at": 40, "asn": 19, "ap": 47.5, "ep": 36.7, "bk": 0, "sv": 1, "dg": 2, "rc": 11, "rt": 27, "set": 0, "er": 3},
-                  {"n": "정지석", "p": "OH", "s": "away", "pt": 20, "at": 20, "asn": 15, "ap": 75.0, "ep": 22.7, "bk": 3, "sv": 2, "dg": 5, "rc": 15, "rt": 32, "set": 1, "er": 8},
-                  {"n": "윤서진", "p": "OH", "s": "home", "pt": 19, "at": 29, "asn": 17, "ap": 58.6, "ep": 26.6, "bk": 1, "sv": 1, "dg": 4, "rc": 9, "rt": 22, "set": 0, "er": 8},
-                  {"n": "임동혁", "p": "OP", "s": "away", "pt": 9, "at": 16, "asn": 8, "ap": 50.0, "ep": 18.2, "bk": 1, "sv": 0, "dg": 5, "rc": 1, "rt": 1, "set": 0, "er": 4},
-                  {"n": "김민재", "p": "MB", "s": "away", "pt": 7, "at": 8, "asn": 6, "ap": 75.0, "ep": 9.1, "bk": 1, "sv": 0, "dg": 2, "rc": 0, "rt": 0, "set": 1, "er": 0},
-                  {"n": "임동균", "p": "MB", "s": "home", "pt": 7, "at": 8, "asn": 5, "ap": 62.5, "ep": 7.3, "bk": 2, "sv": 0, "dg": 6, "rc": 0, "rt": 1, "set": 0, "er": 5},
-                  {"n": "나웅진", "p": "OH", "s": "home", "pt": 5, "at": 15, "asn": 5, "ap": 33.3, "ep": 13.8, "bk": 0, "sv": 0, "dg": 4, "rc": 1, "rt": 2, "set": 4, "er": 5},
-                  {"n": "이준영", "p": "MB", "s": "home", "pt": 5, "at": 5, "asn": 5, "ap": 100.0, "ep": 4.6, "bk": 0, "sv": 0, "dg": 4, "rc": 1, "rt": 3, "set": 1, "er": 4},
-                  {"n": "한선수", "p": "S", "s": "away", "pt": 3, "at": 1, "asn": 1, "ap": 100.0, "ep": 1.1, "bk": 0, "sv": 2, "dg": 7, "rc": 0, "rt": 0, "set": 43, "er": 2},
-                  {"n": "조재영", "p": "MB", "s": "away", "pt": 3, "at": 4, "asn": 3, "ap": 75.0, "ep": 4.5, "bk": 0, "sv": 0, "dg": 2, "rc": 0, "rt": 0, "set": 0, "er": 1},
-                  {"n": "리누스", "p": "OP", "s": "home", "pt": 3, "at": 8, "asn": 3, "ap": 37.5, "ep": 7.3, "bk": 0, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 0, "er": 3},
-                  {"n": "신승훈", "p": "S", "s": "home", "pt": 2, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 2, "dg": 5, "rc": 0, "rt": 0, "set": 22, "er": 2},
-                  {"n": "황택의", "p": "S", "s": "home", "pt": 2, "at": 1, "asn": 1, "ap": 100.0, "ep": 0.9, "bk": 0, "sv": 1, "dg": 3, "rc": 0, "rt": 0, "set": 21, "er": 2},
-                  {"n": "김규민", "p": "MB", "s": "away", "pt": 1, "at": 5, "asn": 1, "ap": 20.0, "ep": 5.7, "bk": 0, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 0, "er": 2},
-                  {"n": "장지원", "p": "L", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 11, "rc": 5, "rt": 19, "set": 4, "er": 0},
-                  {"n": "이상욱", "p": "L", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 4, "rc": 10, "rt": 16, "set": 2, "er": 0},
-                  {"n": "정한용", "p": "OH", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 3, "rc": 2, "rt": 4, "set": 0, "er": 0},
-                  {"n": "류", "p": "S", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 2, "er": 0},
-                  {"n": "황경민", "p": "OH", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 1, "rt": 3, "set": 0, "er": 0},
-                  {"n": "최준혁", "p": "MB", "s": "away", "pt": 0, "at": 1, "asn": 0, "ap": 0.0, "ep": 1.1, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 1, "set": 0, "er": 2},
-                  {"n": "이학진", "p": "L", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 0, "er": 0},
-                  {"n": "차영석", "p": "MB", "s": "home", "pt": 0, "at": 3, "asn": 0, "ap": 0.0, "ep": 2.8, "bk": 0, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 0, "er": 2},
-                  {"n": "김관우", "p": "S", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 0, "er": 0},
-                  {"n": "박상하", "p": "MB", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 0, "er": 0}
-                ]
-          },
-          "details": {
-            "teams": [
-              {
-                "name": "대한항공",
-                "abbr": "KAL",
-                "side": "away",
-                "record": "2승 3패",
-                "badges": [
-                  {
-                    "text": "리그 5위",
-                    "tone": "rank"
-                  }
-                ],
-                "cells": [
-                  {
-                    "label": "시즌 전적",
-                    "value": "2승 3패"
-                  },
-                  {
-                    "label": "리그 순위",
-                    "value": "5위"
-                  },
-                  {
-                    "label": "세트",
-                    "value": "10-10"
-                  },
-                  {
-                    "label": "최근 흐름",
-                    "value": "1승"
-                  }
-                ],
-                "nums": [
-                  {
-                    "label": "승점",
-                    "value": 7.0
-                  },
-                  {
-                    "label": "득점",
-                    "value": 456
-                  },
-                  {
-                    "label": "실점",
-                    "value": 458
-                  }
-                ],
-                "last5Detail": [
-                  {
-                    "date": "2026-11-14",
-                    "opp": "삼성화재",
-                    "ha": "홈",
-                    "score": "1-3",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "우리카드",
-                    "ha": "원정",
-                    "score": "2-3",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-06",
-                    "opp": "한국전력",
-                    "ha": "홈",
-                    "score": "1-3",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-10-31",
-                    "opp": "현대캐피탈",
-                    "ha": "홈",
-                    "score": "3-0",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-10-25",
-                    "opp": "현대캐피탈",
-                    "ha": "홈",
-                    "score": "3-1",
-                    "res": "승"
-                  }
-                ],
-                "last5": "2승 3패",
-                "streak": "3연패",
-                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
-              },
-              {
-                "name": "KB손해보험",
-                "abbr": "KB",
-                "side": "home",
-                "record": "0승 5패",
-                "badges": [
-                  {
-                    "text": "리그 7위",
-                    "tone": "rank"
-                  }
-                ],
-                "cells": [
-                  {
-                    "label": "시즌 전적",
-                    "value": "0승 5패"
-                  },
-                  {
-                    "label": "리그 순위",
-                    "value": "7위"
-                  },
-                  {
-                    "label": "세트",
-                    "value": "4-15"
-                  },
-                  {
-                    "label": "최근 흐름",
-                    "value": "5패"
-                  }
-                ],
-                "nums": [
-                  {
-                    "label": "승점",
-                    "value": 0.0
-                  },
-                  {
-                    "label": "득점",
-                    "value": 432
-                  },
-                  {
-                    "label": "실점",
-                    "value": 489
-                  }
-                ],
-                "last5Detail": [
-                  {
-                    "date": "2026-11-13",
-                    "opp": "한국전력",
-                    "ha": "원정",
-                    "score": "0-3",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "현대캐피탈",
-                    "ha": "원정",
-                    "score": "1-3",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-04",
-                    "opp": "OK저축은행",
-                    "ha": "홈",
-                    "score": "1-3",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-01",
-                    "opp": "삼성화재",
-                    "ha": "홈",
-                    "score": "1-3",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-10-20",
-                    "opp": "우리카드",
-                    "ha": "홈",
-                    "score": "0-3",
-                    "res": "패"
-                  }
-                ],
-                "last5": "0승 5패",
-                "streak": "5연패",
-                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
-              }
-            ],
-            "checkpoints": [
-              "**경기장** — 평택이충문화체육관에서 열립니다.",
-              "**순위표** — 대한항공 2승 3패·5위·승점 7, KB손해보험 0승 5패·7위·승점 0."
-            ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
-          }
-        },
-        {
-          "id": "vball-kovo-34",
-          "sport": "volleyball",
-          "league": "VLEAGUE",
-          "leagueFull": "V리그 여자부",
-          "source": "kovo",
-          "start": "2026-11-19T19:00:00+09:00",
-          "status": "final",
-          "venue": "인천삼산월드체육관",
-          "away": {
-            "name": "GS칼텍스",
-            "abbr": "GSC",
-            "record": "4승 1패",
-            "badges": [
-              {
-                "text": "리그 2위",
-                "tone": "rank"
-              }
-            ],
-            "last5Detail": [
-              {
-                "date": "2026-11-14",
-                "opp": "SOOP",
-                "ha": "홈",
-                "score": "3-0",
-                "res": "승"
-              },
-              {
-                "date": "2026-11-11",
-                "opp": "현대건설",
-                "ha": "원정",
-                "score": "3-0",
-                "res": "승"
-              },
-              {
-                "date": "2026-11-06",
-                "opp": "IBK기업은행",
-                "ha": "원정",
-                "score": "1-3",
-                "res": "패"
-              },
-              {
-                "date": "2026-10-31",
-                "opp": "도로공사",
-                "ha": "홈",
-                "score": "3-0",
-                "res": "승"
-              },
-              {
-                "date": "2026-10-18",
-                "opp": "도로공사",
-                "ha": "홈",
-                "score": "3-2",
-                "res": "승"
-              }
-            ],
-            "last5": "4승 1패",
-            "streak": "2연승",
-            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
-          },
-          "home": {
-            "name": "흥국생명",
-            "abbr": "HUN",
-            "record": "2승 3패",
-            "badges": [
-              {
-                "text": "리그 5위",
-                "tone": "rank"
-              }
-            ],
-            "last5Detail": [
-              {
-                "date": "2026-11-13",
-                "opp": "IBK기업은행",
-                "ha": "원정",
-                "score": "0-3",
-                "res": "패"
-              },
-              {
-                "date": "2026-11-08",
-                "opp": "도로공사",
-                "ha": "원정",
-                "score": "1-3",
-                "res": "패"
-              },
-              {
-                "date": "2026-11-04",
-                "opp": "정관장",
-                "ha": "홈",
-                "score": "3-0",
-                "res": "승"
-              },
-              {
-                "date": "2026-11-01",
-                "opp": "SOOP",
-                "ha": "홈",
-                "score": "3-0",
-                "res": "승"
-              },
-              {
-                "date": "2026-10-17",
-                "opp": "GS칼텍스",
-                "ha": "홈",
-                "score": "2-3",
-                "res": "패"
-              }
-            ],
-            "last5": "2승 3패",
-            "streak": "2연패",
-            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
-          },
-          "tags": [
-            {
-              "text": "V리그 여자부 · 1라운드",
-              "tone": "info"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**흥국생명**(홈) 2승 3패(리그 5위, 최근 흐름 3패), **GS칼텍스**(원정) 4승 1패(리그 2위, 최근 흐름 3승). V리그 여자부 1라운드 인천삼산월드체육관에서 열립니다."
-            },
-            {
-              "kind": "watch",
-              "label": "관전 포인트",
-              "text": "세트 승리 수 차가 5입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 3,
-            "homeScore": 1,
-            "winner": "away",
-            "lines": {
-              "away": [
-                "25",
-                "25",
-                "18",
-                "25"
-              ],
-              "home": [
-                "19",
-                "20",
-                "25",
-                "23"
-              ]
-            },
-            "kovoNumber": "34",
-            "source": "kovo",
-            "players": [
-                  {"n": "킨델란", "p": "OP", "s": "home", "pt": 35, "at": 60, "asn": 30, "ap": 50.0, "ep": 43.8, "bk": 0, "sv": 5, "dg": 9, "rc": 0, "rt": 0, "set": 0, "er": 6},
-                  {"n": "실바", "p": "OP", "s": "away", "pt": 22, "at": 48, "asn": 21, "ap": 43.8, "ep": 36.4, "bk": 1, "sv": 0, "dg": 11, "rc": 0, "rt": 0, "set": 0, "er": 8},
-                  {"n": "정호영", "p": "MB", "s": "home", "pt": 14, "at": 16, "asn": 9, "ap": 56.2, "ep": 11.7, "bk": 4, "sv": 1, "dg": 0, "rc": 0, "rt": 0, "set": 0, "er": 3},
-                  {"n": "최가은", "p": "MB", "s": "away", "pt": 12, "at": 16, "asn": 10, "ap": 62.5, "ep": 12.1, "bk": 1, "sv": 1, "dg": 3, "rc": 0, "rt": 1, "set": 0, "er": 0},
-                  {"n": "타나차", "p": "OH", "s": "away", "pt": 12, "at": 33, "asn": 10, "ap": 30.3, "ep": 25.0, "bk": 0, "sv": 2, "dg": 7, "rc": 4, "rt": 18, "set": 0, "er": 4},
-                  {"n": "권민지", "p": "OH", "s": "away", "pt": 11, "at": 21, "asn": 9, "ap": 42.9, "ep": 15.9, "bk": 2, "sv": 0, "dg": 9, "rc": 15, "rt": 29, "set": 3, "er": 2},
-                  {"n": "자스티스", "p": "OH", "s": "home", "pt": 10, "at": 32, "asn": 10, "ap": 31.2, "ep": 23.4, "bk": 0, "sv": 0, "dg": 13, "rc": 5, "rt": 13, "set": 0, "er": 2},
-                  {"n": "유서연", "p": "OH", "s": "away", "pt": 7, "at": 7, "asn": 6, "ap": 85.7, "ep": 5.3, "bk": 0, "sv": 1, "dg": 3, "rc": 2, "rt": 9, "set": 0, "er": 1},
-                  {"n": "김다은", "p": "OH", "s": "home", "pt": 6, "at": 16, "asn": 6, "ap": 37.5, "ep": 11.7, "bk": 0, "sv": 0, "dg": 8, "rc": 8, "rt": 32, "set": 3, "er": 2},
-                  {"n": "오세연", "p": "MB", "s": "away", "pt": 6, "at": 7, "asn": 4, "ap": 57.1, "ep": 5.3, "bk": 2, "sv": 0, "dg": 4, "rc": 0, "rt": 1, "set": 0, "er": 1},
-                  {"n": "김수지", "p": "MB", "s": "home", "pt": 5, "at": 6, "asn": 3, "ap": 50.0, "ep": 4.4, "bk": 2, "sv": 0, "dg": 8, "rc": 1, "rt": 1, "set": 0, "er": 3},
-                  {"n": "김효임", "p": "OH", "s": "away", "pt": 2, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 2, "dg": 5, "rc": 1, "rt": 1, "set": 0, "er": 0},
-                  {"n": "박혜진", "p": "S", "s": "home", "pt": 1, "at": 6, "asn": 1, "ap": 16.7, "ep": 4.4, "bk": 0, "sv": 0, "dg": 8, "rc": 0, "rt": 0, "set": 46, "er": 3},
-                  {"n": "신연경", "p": "L", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 9, "rc": 0, "rt": 1, "set": 0, "er": 0},
-                  {"n": "김지원", "p": "S", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 11, "rc": 0, "rt": 0, "set": 41, "er": 0},
-                  {"n": "고민지", "p": "L", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 5, "rc": 6, "rt": 29, "set": 4, "er": 0},
-                  {"n": "한수진", "p": "L", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 21, "rc": 8, "rt": 19, "set": 10, "er": 0},
-                  {"n": "표승주", "p": "OH", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 5, "rc": 5, "rt": 8, "set": 0, "er": 0},
-                  {"n": "박수연", "p": "OH", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 1, "rt": 2, "set": 0, "er": 1},
-                  {"n": "이나연", "p": "S", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 3, "er": 1},
-                  {"n": "김주향", "p": "OH", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 0, "er": 0},
-                  {"n": "정윤주", "p": "OH", "s": "home", "pt": 0, "at": 1, "asn": 0, "ap": 0.0, "ep": 0.7, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 0, "er": 0}
-                ]
-          },
-          "details": {
-            "teams": [
-              {
-                "name": "GS칼텍스",
-                "abbr": "GSC",
-                "side": "away",
-                "record": "4승 1패",
-                "badges": [
-                  {
-                    "text": "리그 2위",
-                    "tone": "rank"
-                  }
-                ],
-                "cells": [
-                  {
-                    "label": "시즌 전적",
-                    "value": "4승 1패"
-                  },
-                  {
-                    "label": "리그 순위",
-                    "value": "2위"
-                  },
-                  {
-                    "label": "세트",
-                    "value": "13-4"
-                  },
-                  {
-                    "label": "최근 흐름",
-                    "value": "3승"
-                  }
-                ],
-                "nums": [
-                  {
-                    "label": "승점",
-                    "value": 12.0
-                  },
-                  {
-                    "label": "득점",
-                    "value": 416
-                  },
-                  {
-                    "label": "실점",
-                    "value": 370
-                  }
-                ],
-                "last5Detail": [
-                  {
-                    "date": "2026-11-14",
-                    "opp": "SOOP",
-                    "ha": "홈",
-                    "score": "3-0",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "현대건설",
-                    "ha": "원정",
-                    "score": "3-0",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-06",
-                    "opp": "IBK기업은행",
-                    "ha": "원정",
-                    "score": "1-3",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-10-31",
-                    "opp": "도로공사",
-                    "ha": "홈",
-                    "score": "3-0",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-10-18",
-                    "opp": "도로공사",
-                    "ha": "홈",
-                    "score": "3-2",
-                    "res": "승"
-                  }
-                ],
-                "last5": "4승 1패",
-                "streak": "2연승",
-                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
-              },
-              {
-                "name": "흥국생명",
-                "abbr": "HUN",
-                "side": "home",
-                "record": "2승 3패",
-                "badges": [
-                  {
-                    "text": "리그 5위",
-                    "tone": "rank"
-                  }
-                ],
-                "cells": [
-                  {
-                    "label": "시즌 전적",
-                    "value": "2승 3패"
-                  },
-                  {
-                    "label": "리그 순위",
-                    "value": "5위"
-                  },
-                  {
-                    "label": "세트",
-                    "value": "8-9"
-                  },
-                  {
-                    "label": "최근 흐름",
-                    "value": "3패"
-                  }
-                ],
-                "nums": [
-                  {
-                    "label": "승점",
-                    "value": 6.0
-                  },
-                  {
-                    "label": "득점",
-                    "value": 387
-                  },
-                  {
-                    "label": "실점",
-                    "value": 400
-                  }
-                ],
-                "last5Detail": [
-                  {
-                    "date": "2026-11-13",
-                    "opp": "IBK기업은행",
-                    "ha": "원정",
-                    "score": "0-3",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "도로공사",
-                    "ha": "원정",
-                    "score": "1-3",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-04",
-                    "opp": "정관장",
-                    "ha": "홈",
-                    "score": "3-0",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-01",
-                    "opp": "SOOP",
-                    "ha": "홈",
-                    "score": "3-0",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-10-17",
-                    "opp": "GS칼텍스",
-                    "ha": "홈",
-                    "score": "2-3",
-                    "res": "패"
-                  }
-                ],
-                "last5": "2승 3패",
-                "streak": "2연패",
-                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
-              }
-            ],
-            "checkpoints": [
-              "**경기장** — 인천삼산월드체육관에서 열립니다.",
-              "**순위표** — GS칼텍스 4승 1패·2위·승점 12, 흥국생명 2승 3패·5위·승점 6."
-            ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-21 23:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
-          }
-        }
-        /* VOLLEY-AUTO 2026-11-19 END */,
-
-        /* ── NBA 실제 데이터 · tools/fetch_nba.py 가 생성/갱신 ── */
-        /* NBA-AUTO 2026-11-19 START */
-        {
-          "id": "nba-mem-cle-20261119",
-          "espnId": "401910007",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T09:00:00+09:00",
-          "status": "final",
-          "venue": "Rocket Arena",
-          "away": {
-            "name": "멤피스 그리즐리스",
-            "abbr": "MEM",
-            "record": "10승 4패",
-            "badges": [
-              {
-                "text": "원정 7승 0패",
-                "tone": "hot"
-              }
-            ]
-          },
-          "home": {
-            "name": "클리블랜드 캐벌리어스",
-            "abbr": "CLE",
-            "record": "8승 7패",
-            "badges": [
-              {
-                "text": "홈 6승 2패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 9명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**클리블랜드 캐벌리어스**(홈) 8승 7패(홈 6승 2패, 최근 5경기 3승 2패, 2연승), **멤피스 그리즐리스**(원정) 10승 4패(원정 7승 0패, 최근 5경기 4승 1패, 3연승). 직전 경기(11.17) **클리블랜드 캐벌리어스**는 시카고 불스에 126-115로 이겼고, Donovan Mitchell 39점·4리바운드·4어시스트, Tyrese Proctor 17점·3리바운드·2어시스트를 기록했습니다. 직전 경기(11.17) **멤피스 그리즐리스**는 워싱턴 위저즈에 136-120로 이겼고, Cameron Boozer 29점·7리바운드·7어시스트, Zach Edey 23점·10리바운드·1어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 124,
-            "homeScore": 121,
-            "lines": {
-              "away": [
-                "30",
-                "41",
-                "29",
-                "24"
-              ],
-              "home": [
-                "37",
-                "35",
-                "27",
-                "22"
-              ]
-            },
-            "top": [
-              {
-                "name": "Donovan Mitchell",
-                "id": "3908809",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
-                "team": "CLE",
-                "min": "35",
-                "pts": 34,
-                "reb": "4",
-                "ast": "3"
-              },
-              {
-                "name": "Cam Spencer",
-                "id": "4433083",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433083.png",
-                "team": "MEM",
-                "min": "29",
-                "pts": 26,
-                "reb": "1",
-                "ast": "7"
-              },
-              {
-                "name": "Cedric Coward",
-                "id": "4903027",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
-                "team": "MEM",
-                "min": "33",
-                "pts": 20,
-                "reb": "3",
-                "ast": "5"
-              },
-              {
-                "name": "Jarrett Allen",
-                "id": "4066328",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066328.png",
-                "team": "CLE",
-                "min": "30",
-                "pts": 19,
-                "reb": "9",
-                "ast": "4"
-              },
-              {
-                "name": "Cameron Boozer",
-                "id": "5041935",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
-                "team": "MEM",
-                "min": "28",
-                "pts": 18,
-                "reb": "8",
-                "ast": "5"
-              },
-              {
-                "name": "Taylor Hendricks",
-                "id": "4684806",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684806.png",
-                "team": "MEM",
-                "min": "21",
-                "pts": 18,
-                "reb": "6",
-                "ast": "2"
-              }
-            ],
-            "winner": "away"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "MEM",
-                "name": "멤피스 그리즐리스",
-                "side": "away",
-                "record": "10승 4패",
-                "venueRecord": "원정 7승 0패",
-                "streak": "3연승",
-                "last5": "4승 1패",
-                "lastGame": "136-120 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "원정",
-                    "score": "136-120",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "브루클린 네츠",
-                    "ha": "홈",
-                    "score": "129-110",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "뉴올리언스 펠리컨스",
-                    "ha": "원정",
-                    "score": "142-111",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "덴버 너기츠",
-                    "ha": "홈",
-                    "score": "118-123",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "토론토 랩터스",
-                    "ha": "원정",
-                    "score": "118-102",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Ty Jerome",
-                    "id": "4065733",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
-                    "pos": "G",
-                    "stat": "25.4점 · 3.4리바운드 · 5.3어시스트",
-                    "sub": "야투 48.5% · 3점 35.9% · 팀 내 1옵션",
-                    "recent": "최근 3경기 22.0점 · 야투 43.6%"
-                  },
-                  {
-                    "name": "Cameron Boozer",
-                    "id": "5041935",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041935.png",
-                    "pos": "F",
-                    "stat": "16.6점 · 9.4리바운드 · 5.3어시스트",
-                    "sub": "야투 40.0% · 3점 32.2% · 팀 내 2옵션",
-                    "last": "직전 29분 29점 7리바운드 7어시스트, 야투 10-21",
-                    "recent": "최근 5경기 18.2점 · 야투 48.6%"
-                  },
-                  {
-                    "name": "Cedric Coward",
-                    "id": "4903027",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
-                    "pos": "F",
-                    "stat": "14.5점 · 8.4리바운드 · 3.4어시스트",
-                    "sub": "야투 47.7% · 3점 45.2% · 팀 내 3옵션",
-                    "last": "직전 27분 18점 8리바운드 6어시스트, 야투 7-10",
-                    "recent": "최근 5경기 14.6점 · 야투 47.2%"
-                  }
-                ],
-                "focus": "최근 3경기 Ty Jerome의 평균은 22.0점·야투 43.6%·3점 34.8%입니다. 결장 5명의 시즌 평균 득점 합계는 49.4점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명",
-                "injuryOut": 5,
-                "injuryPpg": 49.4,
-                "injuries": [
-                  {
-                    "player": "GG Jackson",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 11옵션 · 6.7점 · 3.0리바운드"
-                  },
-                  {
-                    "player": "Isaiah Stewart",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 6옵션 · 10.9점 · 3.3리바운드"
-                  },
-                  {
-                    "player": "Ty Jerome",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 1옵션 · 25.4점 · 3.4리바운드"
-                  },
-                  {
-                    "player": "Scotty Pippen Jr.",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 12옵션 · 6.4점 · 2.2리바운드"
-                  },
-                  {
-                    "player": "Richie Saunders",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G"
-                  }
-                ]
-              },
-              {
-                "abbr": "CLE",
-                "name": "클리블랜드 캐벌리어스",
-                "side": "home",
-                "record": "8승 7패",
-                "venueRecord": "홈 6승 2패",
-                "streak": "2연승",
-                "last5": "3승 2패",
-                "lastGame": "126-115 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "시카고 불스",
-                    "ha": "홈",
-                    "score": "126-115",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "댈러스 매버릭스",
-                    "ha": "홈",
-                    "score": "127-117",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "마이애미 히트",
-                    "ha": "원정",
-                    "score": "121-133",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "뉴욕 닉스",
-                    "ha": "원정",
-                    "score": "115-107",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "샬럿 호네츠",
-                    "ha": "원정",
-                    "score": "112-124",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Donovan Mitchell",
-                    "id": "3908809",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
-                    "pos": "G",
-                    "stat": "24.8점 · 4.8리바운드 · 5.3어시스트",
-                    "sub": "야투 49.8% · 3점 36.9% · 팀 내 1옵션",
-                    "last": "직전 36분 39점 4리바운드 4어시스트, 야투 16-25",
-                    "recent": "최근 4경기 24.5점 · 야투 51.4%"
-                  },
-                  {
-                    "name": "Evan Mobley",
-                    "id": "4432158",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432158.png",
-                    "pos": "C",
-                    "stat": "16.9점 · 7.3리바운드 · 3.6어시스트",
-                    "sub": "야투 55.5% · 3점 47.9% · 팀 내 2옵션",
-                    "recent": "최근 2경기 9.5점 · 야투 53.8%"
-                  },
-                  {
-                    "name": "James Harden",
-                    "id": "3992",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3992.png",
-                    "pos": "G",
-                    "stat": "16.2점 · 4.7리바운드 · 6.3어시스트",
-                    "sub": "야투 38.5% · 3점 37.5% · 팀 내 3옵션",
-                    "last": "직전 34분 9점 4리바운드 10어시스트, 야투 3-10",
-                    "recent": "최근 4경기 18.0점 · 야투 43.5%"
-                  }
-                ],
-                "focus": "최근 4경기 Donovan Mitchell의 평균은 24.5점·야투 51.4%·3점 37.0%입니다. 결장 4명의 시즌 평균 득점 합계는 37.1점입니다. 직전 경기에서는 Donovan Mitchell가 39점·4리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명",
-                "injuryOut": 4,
-                "injuryPpg": 37.1,
-                "injuries": [
-                  {
-                    "player": "Peyton Watson",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 6옵션 · 10.7점 · 4.5리바운드"
-                  },
-                  {
-                    "player": "Jaylon Tyson",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 8옵션 · 9.5점 · 3.1리바운드"
-                  },
-                  {
-                    "player": "Nae'Qwan Tomlin",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
-                  {
-                    "player": "Evan Mobley",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 2옵션 · 16.9점 · 7.3리바운드"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-hou-ind-20261119",
-          "espnId": "401910008",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T09:00:00+09:00",
-          "status": "final",
-          "venue": "Gainbridge Fieldhouse",
-          "away": {
-            "name": "휴스턴 로키츠",
-            "abbr": "HOU",
-            "record": "11승 4패",
-            "badges": [
-              {
-                "text": "원정 4승 3패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "인디애나 페이서스",
-            "abbr": "IND",
-            "record": "5승 9패",
-            "badges": [
-              {
-                "text": "홈 2승 5패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 5명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**인디애나 페이서스**(홈) 5승 9패(홈 2승 5패, 최근 5경기 2승 3패), **휴스턴 로키츠**(원정) 11승 4패(원정 4승 3패, 최근 5경기 4승 1패). 직전 경기(11.15) **인디애나 페이서스**는 필라델피아 세븐티식서스에 124-131로 졌고, Pascal Siakam 31점·2리바운드·2어시스트, Kelly Oubre Jr. 16점·4리바운드·2어시스트를 기록했습니다. 직전 경기(11.17) **휴스턴 로키츠**는 마이애미 히트에 110-128로 졌고, Alperen Sengun 23점·7리바운드·2어시스트, Kevin Durant 22점·2리바운드·3어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 119,
-            "homeScore": 104,
-            "lines": {
-              "away": [
-                "39",
-                "23",
-                "31",
-                "26"
-              ],
-              "home": [
-                "28",
-                "18",
-                "30",
-                "28"
-              ]
-            },
-            "top": [
-              {
-                "name": "Pascal Siakam",
-                "id": "3149673",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
-                "team": "IND",
-                "min": "33",
-                "pts": 24,
-                "reb": "4",
-                "ast": "3"
-              },
-              {
-                "name": "Kevin Durant",
-                "id": "3202",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
-                "team": "HOU",
-                "min": "32",
-                "pts": 21,
-                "reb": "2",
-                "ast": "3"
-              },
-              {
-                "name": "Reed Sheppard",
-                "id": "4711272",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711272.png",
-                "team": "HOU",
-                "min": "25",
-                "pts": 20,
-                "reb": "4",
-                "ast": "2"
-              },
-              {
-                "name": "Jabari Smith Jr.",
-                "id": "4432639",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432639.png",
-                "team": "HOU",
-                "min": "26",
-                "pts": 17,
-                "reb": "4",
-                "ast": "2"
-              },
-              {
-                "name": "Kelly Oubre Jr.",
-                "id": "3133603",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3133603.png",
-                "team": "IND",
-                "min": "23",
-                "pts": 17,
-                "reb": "4",
-                "ast": "0"
-              },
-              {
-                "name": "Fred VanVleet",
-                "id": "2991230",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2991230.png",
-                "team": "HOU",
-                "min": "27",
-                "pts": 15,
-                "reb": "2",
-                "ast": "6"
-              }
-            ],
-            "winner": "away"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "HOU",
-                "name": "휴스턴 로키츠",
-                "side": "away",
-                "record": "11승 4패",
-                "venueRecord": "원정 4승 3패",
-                "last5": "4승 1패",
-                "lastGame": "110-128 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "마이애미 히트",
-                    "ha": "원정",
-                    "score": "110-128",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-16",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "원정",
-                    "score": "147-119",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "유타 재즈",
-                    "ha": "홈",
-                    "score": "125-118",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "골든스테이트 워리어스",
-                    "ha": "홈",
-                    "score": "115-108",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "덴버 너기츠",
-                    "ha": "홈",
-                    "score": "110-100",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Alperen Sengun",
-                    "id": "4871144",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png",
-                    "pos": "C",
-                    "stat": "21.6점 · 9.1리바운드 · 6.8어시스트",
-                    "sub": "야투 54.5% · 3점 50.0% · 팀 내 1옵션",
-                    "last": "직전 30분 23점 7리바운드 2어시스트, 야투 8-11",
-                    "recent": "최근 5경기 24.8점 · 야투 63.5%"
-                  },
-                  {
-                    "name": "Kevin Durant",
-                    "id": "3202",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
-                    "pos": "F",
-                    "stat": "21.3점 · 5.2리바운드 · 3.8어시스트",
-                    "sub": "야투 49.8% · 3점 40.6% · 팀 내 2옵션",
-                    "last": "직전 29분 22점 2리바운드 3어시스트, 야투 8-19",
-                    "recent": "최근 5경기 22.4점 · 야투 44.9%"
-                  },
-                  {
-                    "name": "Amen Thompson",
-                    "id": "4684740",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684740.png",
-                    "pos": "G",
-                    "stat": "15.7점 · 7.1리바운드 · 3.3어시스트",
-                    "sub": "야투 53.6% · 3점 33.3% · 팀 내 3옵션",
-                    "recent": "최근 4경기 16.2점 · 야투 63.2%"
-                  }
-                ],
-                "focus": "최근 5경기 Alperen Sengun의 평균은 24.8점·야투 63.5%·3점 45.5%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 23점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명(팀 득점 11위) · 출전 불투명 1명",
-                "injuryOut": 1,
-                "injuryPpg": 3.2,
-                "injuries": [
-                  {
-                    "player": "Alperen Sengun",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "C",
-                    "line": "팀 내 1옵션 · 21.6점 · 9.1리바운드"
-                  },
-                  {
-                    "player": "Clint Capela",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 11옵션 · 3.2점 · 5.2리바운드"
-                  }
-                ]
-              },
-              {
-                "abbr": "IND",
-                "name": "인디애나 페이서스",
-                "side": "home",
-                "record": "5승 9패",
-                "venueRecord": "홈 2승 5패",
-                "last5": "2승 3패",
-                "lastGame": "124-131 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-15",
-                    "opp": "필라델피아 세븐티식서스",
-                    "ha": "원정",
-                    "score": "124-131",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "뉴욕 닉스",
-                    "ha": "홈",
-                    "score": "106-104",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "홈",
-                    "score": "114-101",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "댈러스 매버릭스",
-                    "ha": "원정",
-                    "score": "122-125",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-07",
-                    "opp": "덴버 너기츠",
-                    "ha": "홈",
-                    "score": "102-114",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Pascal Siakam",
-                    "id": "3149673",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
-                    "pos": "F",
-                    "stat": "23.1점 · 6.1리바운드 · 3.9어시스트",
-                    "sub": "야투 52.0% · 3점 35.9% · 팀 내 1옵션",
-                    "last": "직전 34분 31점 2리바운드 2어시스트, 야투 12-19",
-                    "recent": "최근 5경기 26.0점 · 야투 51.8%"
-                  },
-                  {
-                    "name": "Tyrese Haliburton",
-                    "id": "4396993",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396993.png",
-                    "pos": "G",
-                    "stat": "21.8점 · 4.5리바운드 · 9.5어시스트",
-                    "sub": "야투 51.6% · 3점 37.0% · 팀 내 2옵션"
-                  },
-                  {
-                    "name": "Andrew Nembhard",
-                    "id": "4395712",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
-                    "pos": "G",
-                    "stat": "16.6점 · 2.3리바운드 · 7.6어시스트",
-                    "sub": "야투 44.6% · 3점 40.3% · 팀 내 3옵션",
-                    "recent": "최근 4경기 12.5점 · 야투 40.9%"
-                  }
-                ],
-                "focus": "최근 5경기 Pascal Siakam의 평균은 26.0점·야투 51.8%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 41.4점입니다. 직전 경기에서는 Pascal Siakam가 31점·2리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
-                "injuryOut": 4,
-                "injuryPpg": 41.4,
-                "injuries": [
-                  {
-                    "player": "Braden Smith",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 13옵션 · 4.2점 · 1.1리바운드"
-                  },
-                  {
-                    "player": "Andrew Nembhard",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 3옵션 · 16.6점 · 2.3리바운드"
-                  },
-                  {
-                    "player": "Tyrese Haliburton",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 2옵션 · 21.8점 · 4.5리바운드"
-                  },
-                  {
-                    "player": "Johnny Furphy",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G"
-                  },
-                  {
-                    "player": "Ben Sheppard",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 16옵션 · 3.0점 · 1.0리바운드"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-mil-mia-20261119",
-          "espnId": "401910009",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T09:00:00+09:00",
-          "status": "final",
-          "venue": "Kaseya Center",
-          "away": {
-            "name": "밀워키 벅스",
-            "abbr": "MIL",
-            "record": "1승 13패",
-            "badges": [
-              {
-                "text": "원정 0승 6패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "마이애미 히트",
-            "abbr": "MIA",
-            "record": "8승 6패",
-            "badges": [
-              {
-                "text": "홈 4승 3패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 3명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**마이애미 히트**(홈) 8승 6패(홈 4승 3패, 최근 5경기 5승 0패, 5연승), **밀워키 벅스**(원정) 1승 13패(원정 0승 6패, 최근 5경기 0승 5패, 5연패). 직전 경기(11.17) **마이애미 히트**는 휴스턴 로키츠에 128-110로 이겼고, Giannis Antetokounmpo 20점·13리바운드·6어시스트, Klay Thompson 17점·0리바운드·2어시스트를 기록했습니다. 직전 경기(11.16) **밀워키 벅스**는 애틀랜타 호크스에 106-113로 졌고, Kasparas Jakucionis 25점·5리바운드·5어시스트, Gary Trent Jr. 18점·2리바운드·1어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 130,
-            "homeScore": 137,
-            "lines": {
-              "away": [
-                "23",
-                "25",
-                "38",
-                "44"
-              ],
-              "home": [
-                "34",
-                "40",
-                "38",
-                "25"
-              ]
-            },
-            "top": [
-              {
-                "name": "Giannis Antetokounmpo",
-                "id": "3032977",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032977.png",
-                "team": "MIA",
-                "min": "32",
-                "pts": 27,
-                "reb": "14",
-                "ast": "9"
-              },
-              {
-                "name": "Kyle Kuzma",
-                "id": "3134907",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
-                "team": "MIL",
-                "min": "30",
-                "pts": 26,
-                "reb": "5",
-                "ast": "1"
-              },
-              {
-                "name": "Bam Adebayo",
-                "id": "4066261",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png",
-                "team": "MIA",
-                "min": "30",
-                "pts": 26,
-                "reb": "4",
-                "ast": "2"
-              },
-              {
-                "name": "Davion Mitchell",
-                "id": "4278053",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
-                "team": "MIA",
-                "min": "36",
-                "pts": 24,
-                "reb": "2",
-                "ast": "6"
-              },
-              {
-                "name": "Brayden Burries",
-                "id": "5082206",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5082206.png",
-                "team": "MIL",
-                "min": "25",
-                "pts": 20,
-                "reb": "7",
-                "ast": "1"
-              },
-              {
-                "name": "Kasparas Jakucionis",
-                "id": "5214640",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5214640.png",
-                "team": "MIL",
-                "min": "26",
-                "pts": 20,
-                "reb": "3",
-                "ast": "5"
-              }
-            ],
-            "winner": "home"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "MIL",
-                "name": "밀워키 벅스",
-                "side": "away",
-                "record": "1승 13패",
-                "venueRecord": "원정 0승 6패",
-                "streak": "5연패",
-                "last5": "0승 5패",
-                "lastGame": "106-113 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-16",
-                    "opp": "애틀랜타 호크스",
-                    "ha": "홈",
-                    "score": "106-113",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "올랜도 매직",
-                    "ha": "원정",
-                    "score": "99-107",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "LA 레이커스",
-                    "ha": "홈",
-                    "score": "112-123",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "뉴욕 닉스",
-                    "ha": "원정",
-                    "score": "85-117",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-09",
-                    "opp": "보스턴 셀틱스",
-                    "ha": "홈",
-                    "score": "97-117",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Tyler Herro",
-                    "id": "4395725",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
-                    "pos": "G",
-                    "stat": "19.4점 · 4.0리바운드 · 4.2어시스트",
-                    "sub": "야투 42.4% · 3점 34.3% · 팀 내 1옵션",
-                    "last": "직전 20분 5점 5리바운드 3어시스트, 야투 2-13",
-                    "recent": "최근 4경기 15.8점 · 야투 34.5%"
-                  },
-                  {
-                    "name": "Jaime Jaquez Jr.",
-                    "id": "4432848",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png",
-                    "pos": "F",
-                    "stat": "15.4점 · 5.4리바운드 · 3.1어시스트",
-                    "sub": "야투 47.1% · 3점 43.3% · 팀 내 2옵션",
-                    "last": "직전 30분 6점 5리바운드 4어시스트, 야투 2-7",
-                    "recent": "최근 5경기 14.6점 · 야투 44.4%"
-                  },
-                  {
-                    "name": "Kyle Kuzma",
-                    "id": "3134907",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
-                    "pos": "F",
-                    "stat": "12.3점 · 5.3리바운드 · 2.4어시스트",
-                    "sub": "야투 46.2% · 3점 32.9% · 팀 내 3옵션",
-                    "last": "직전 22분 14점 6리바운드 2어시스트, 야투 5-11",
-                    "recent": "최근 5경기 13.8점 · 야투 42.9%"
-                  }
-                ],
-                "focus": "최근 4경기 Tyler Herro의 평균은 15.8점·야투 34.5%·3점 20.8%입니다. 결장 2명의 시즌 평균 득점 합계는 14.4점입니다. 직전 경기에서는 Kasparas Jakucionis가 25점·5리바운드·5어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 4·13위)",
-                "injuryOut": 2,
-                "injuryPpg": 14.4,
-                "injuries": [
-                  {
-                    "player": "Ryan Rollins",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 4옵션 · 10.5점 · 5.0리바운드"
-                  },
-                  {
-                    "player": "Ousmane Dieng",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 13옵션 · 3.9점 · 1.2리바운드"
-                  }
-                ]
-              },
-              {
-                "abbr": "MIA",
-                "name": "마이애미 히트",
-                "side": "home",
-                "record": "8승 6패",
-                "venueRecord": "홈 4승 3패",
-                "streak": "5연승",
-                "last5": "5승 0패",
-                "lastGame": "128-110 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "휴스턴 로키츠",
-                    "ha": "홈",
-                    "score": "128-110",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "디트로이트 피스턴스",
-                    "ha": "홈",
-                    "score": "137-117",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "클리블랜드 캐벌리어스",
-                    "ha": "홈",
-                    "score": "133-121",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "유타 재즈",
-                    "ha": "원정",
-                    "score": "115-109",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-09",
-                    "opp": "새크라멘토 킹스",
-                    "ha": "원정",
-                    "score": "114-108",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Giannis Antetokounmpo",
-                    "id": "3032977",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032977.png",
-                    "pos": "F",
-                    "stat": "28.2점 · 12.6리바운드 · 5.5어시스트",
-                    "sub": "야투 60.2% · 3점 24.2% · 팀 내 1옵션",
-                    "last": "직전 29분 20점 13리바운드 6어시스트, 야투 8-11",
-                    "recent": "최근 5경기 30.0점 · 야투 67.4%"
-                  },
-                  {
-                    "name": "Bam Adebayo",
-                    "id": "4066261",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png",
-                    "pos": "C",
-                    "stat": "18.9점 · 7.7리바운드 · 3.1어시스트",
-                    "sub": "야투 52.4% · 3점 24.5% · 팀 내 2옵션",
-                    "last": "직전 16분 4점 1리바운드 2어시스트, 야투 1-3",
-                    "recent": "최근 5경기 18.0점 · 야투 50.9%"
-                  },
-                  {
-                    "name": "Davion Mitchell",
-                    "id": "4278053",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
-                    "pos": "G",
-                    "stat": "17.2점 · 2.4리바운드 · 9.0어시스트",
-                    "sub": "야투 51.1% · 3점 43.7% · 팀 내 3옵션",
-                    "last": "직전 33분 16점 3리바운드 10어시스트, 야투 7-15",
-                    "recent": "최근 5경기 17.8점 · 야투 49.2%"
-                  }
-                ],
-                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 30.0점·야투 67.4%·3점 37.5%입니다. 결장 1명의 시즌 평균 득점 합계는 3.0점입니다. 직전 경기에서는 Giannis Antetokounmpo가 20점·13리바운드·6어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명(팀 득점 11위)",
-                "injuryOut": 1,
-                "injuryPpg": 3.0,
-                "injuries": [
-                  {
-                    "player": "Myron Gardner",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 11옵션 · 3.0점 · 2.3리바운드"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-phi-orl-20261119",
-          "espnId": "401910010",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T09:00:00+09:00",
-          "status": "final",
-          "venue": "Kia Center",
-          "away": {
-            "name": "필라델피아 세븐티식서스",
-            "abbr": "PHI",
-            "record": "12승 3패",
-            "badges": [
-              {
-                "text": "원정 6승 1패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "올랜도 매직",
-            "abbr": "ORL",
-            "record": "6승 7패",
-            "badges": [
-              {
-                "text": "홈 1승 4패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 9명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**올랜도 매직**(홈) 6승 7패(홈 1승 4패, 최근 5경기 4승 1패, 4연승), **필라델피아 세븐티식서스**(원정) 12승 3패(원정 6승 1패, 최근 5경기 4승 1패, 3연승). 직전 경기(11.17) **올랜도 매직**은 보스턴 셀틱스에 115-105로 이겼고, Desmond Bane 24점·8리바운드·5어시스트, Franz Wagner 21점·8리바운드·9어시스트를 기록했습니다. 직전 경기(11.17) **필라델피아 세븐티식서스**는 브루클린 네츠에 135-123로 이겼고, Joel Embiid 37점·5리바운드·1어시스트, Jaylen Brown 31점·13리바운드·4어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 121,
-            "homeScore": 116,
-            "lines": {
-              "away": [
-                "27",
-                "37",
-                "28",
-                "29"
-              ],
-              "home": [
-                "40",
-                "29",
-                "28",
-                "19"
-              ]
-            },
-            "top": [
-              {
-                "name": "Franz Wagner",
-                "id": "4566434",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
-                "team": "ORL",
-                "min": "36",
-                "pts": 27,
-                "reb": "8",
-                "ast": "11"
-              },
-              {
-                "name": "Joel Embiid",
-                "id": "3059318",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
-                "team": "PHI",
-                "min": "36",
-                "pts": 26,
-                "reb": "6",
-                "ast": "7"
-              },
-              {
-                "name": "VJ Edgecombe",
-                "id": "5124612",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5124612.png",
-                "team": "PHI",
-                "min": "43",
-                "pts": 24,
-                "reb": "8",
-                "ast": "6"
-              },
-              {
-                "name": "LeBron James",
-                "id": "1966",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png",
-                "team": "PHI",
-                "min": "31",
-                "pts": 22,
-                "reb": "3",
-                "ast": "6"
-              },
-              {
-                "name": "Anfernee Simons",
-                "id": "4351851",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4351851.png",
-                "team": "PHI",
-                "min": "38",
-                "pts": 18,
-                "reb": "2",
-                "ast": "2"
-              },
-              {
-                "name": "Jalen Suggs",
-                "id": "4432165",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432165.png",
-                "team": "ORL",
-                "min": "31",
-                "pts": 18,
-                "reb": "8",
-                "ast": "4"
-              }
-            ],
-            "winner": "away"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "PHI",
-                "name": "필라델피아 세븐티식서스",
-                "side": "away",
-                "record": "12승 3패",
-                "venueRecord": "원정 6승 1패",
-                "streak": "3연승",
-                "last5": "4승 1패",
-                "lastGame": "135-123 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "브루클린 네츠",
-                    "ha": "원정",
-                    "score": "135-123",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "인디애나 페이서스",
-                    "ha": "홈",
-                    "score": "131-124",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "토론토 랩터스",
-                    "ha": "홈",
-                    "score": "123-112",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "보스턴 셀틱스",
-                    "ha": "홈",
-                    "score": "101-123",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "시카고 불스",
-                    "ha": "원정",
-                    "score": "127-121",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Tyrese Maxey",
-                    "id": "4431678",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
-                    "pos": "G",
-                    "stat": "26.5점 · 3.3리바운드 · 5.8어시스트",
-                    "sub": "야투 50.0% · 3점 38.0% · 팀 내 1옵션",
-                    "last": "직전 35분 24점 1리바운드 9어시스트, 야투 7-12",
-                    "recent": "최근 5경기 25.8점 · 야투 56.9%"
-                  },
-                  {
-                    "name": "Jaylen Brown",
-                    "id": "3917376",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3917376.png",
-                    "pos": "G",
-                    "stat": "22.6점 · 6.6리바운드 · 3.6어시스트",
-                    "sub": "야투 49.4% · 3점 38.6% · 팀 내 2옵션",
-                    "last": "직전 33분 31점 13리바운드 4어시스트, 야투 9-19",
-                    "recent": "최근 5경기 24.4점 · 야투 53.0%"
-                  },
-                  {
-                    "name": "Joel Embiid",
-                    "id": "3059318",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
-                    "pos": "C",
-                    "stat": "20.0점 · 8.3리바운드 · 3.8어시스트",
-                    "sub": "야투 39.9% · 3점 14.6% · 팀 내 3옵션",
-                    "last": "직전 32분 37점 5리바운드 1어시스트, 야투 13-22",
-                    "recent": "최근 4경기 22.8점 · 야투 43.3%"
-                  }
-                ],
-                "focus": "최근 5경기 Tyrese Maxey의 평균은 25.8점·야투 56.9%·3점 48.5%입니다. 결장 5명의 시즌 평균 득점 합계는 56.0점입니다. 직전 경기에서는 Joel Embiid가 37점·5리바운드·1어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명",
-                "injuryOut": 5,
-                "injuryPpg": 56.0,
-                "injuries": [
-                  {
-                    "player": "Tyrese Maxey",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 1옵션 · 26.5점 · 3.3리바운드"
-                  },
-                  {
-                    "player": "Dean Wade",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 9옵션 · 4.8점 · 4.6리바운드"
-                  },
-                  {
-                    "player": "Jaylen Brown",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
-                  },
-                  {
-                    "player": "Dominick Barlow",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
-                  {
-                    "player": "Adem Bona",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 11옵션 · 2.1점 · 3.9리바운드"
-                  }
-                ]
-              },
-              {
-                "abbr": "ORL",
-                "name": "올랜도 매직",
-                "side": "home",
-                "record": "6승 7패",
-                "venueRecord": "홈 1승 4패",
-                "streak": "4연승",
-                "last5": "4승 1패",
-                "lastGame": "115-105 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "보스턴 셀틱스",
-                    "ha": "원정",
-                    "score": "115-105",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "밀워키 벅스",
-                    "ha": "홈",
-                    "score": "107-99",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "유타 재즈",
-                    "ha": "원정",
-                    "score": "123-108",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "새크라멘토 킹스",
-                    "ha": "원정",
-                    "score": "107-100",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "골든스테이트 워리어스",
-                    "ha": "원정",
-                    "score": "119-126",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Paolo Banchero",
-                    "id": "4432573",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432573.png",
-                    "pos": "F",
-                    "stat": "24.5점 · 6.5리바운드 · 7.5어시스트",
-                    "sub": "야투 69.6% · 3점 50.0% · 팀 내 1옵션"
-                  },
-                  {
-                    "name": "Franz Wagner",
-                    "id": "4566434",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
-                    "pos": "F",
-                    "stat": "24.4점 · 6.9리바운드 · 8.5어시스트",
-                    "sub": "야투 47.0% · 3점 25.0% · 팀 내 2옵션",
-                    "last": "직전 38분 21점 8리바운드 9어시스트, 야투 8-21",
-                    "recent": "최근 5경기 31.4점 · 야투 50.5%"
-                  },
-                  {
-                    "name": "Desmond Bane",
-                    "id": "4066320",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
-                    "pos": "G",
-                    "stat": "18.5점 · 4.3리바운드 · 2.7어시스트",
-                    "sub": "야투 42.6% · 3점 41.7% · 팀 내 3옵션",
-                    "last": "직전 39분 24점 8리바운드 5어시스트, 야투 8-13",
-                    "recent": "최근 4경기 21.2점 · 야투 47.5%"
-                  }
-                ],
-                "focus": "결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Desmond Bane가 24점·8리바운드·5어시스트를 기록했습니다. 이어서 Franz Wagner, Desmond Bane가 뒤를 받칩니다.",
-                "injurySummary": "결장 4명",
-                "injuryOut": 4,
-                "injuryPpg": 24.5,
-                "injuries": [
-                  {
-                    "player": "Izaiyah Nelson",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
-                  {
-                    "player": "Jonathan Isaac",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
-                  {
-                    "player": "Noah Penda",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
-                  {
-                    "player": "Paolo Banchero",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 1옵션 · 24.5점 · 6.5리바운드"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-chi-bkn-20261119",
-          "espnId": "401910011",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T09:30:00+09:00",
-          "status": "final",
-          "venue": "Barclays Center",
-          "away": {
-            "name": "시카고 불스",
-            "abbr": "CHI",
-            "record": "3승 10패",
-            "badges": [
-              {
-                "text": "원정 2승 6패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "브루클린 네츠",
-            "abbr": "BKN",
-            "record": "3승 10패",
-            "badges": [
-              {
-                "text": "홈 1승 4패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 2명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**브루클린 네츠**(홈) 3승 10패(홈 1승 4패, 최근 5경기 1승 4패, 2연패), **시카고 불스**(원정) 3승 10패(원정 2승 6패, 최근 5경기 2승 3패). 직전 경기(11.17) **브루클린 네츠**는 필라델피아 세븐티식서스에 123-135로 졌고, Julius Randle 33점·6리바운드·1어시스트, Michael Porter Jr. 25점·6리바운드·2어시스트를 기록했습니다. 직전 경기(11.17) **시카고 불스**는 클리블랜드 캐벌리어스에 115-126로 졌고, Norman Powell 27점·2리바운드·6어시스트, Matas Buzelis 23점·3리바운드·0어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 137,
-            "homeScore": 107,
-            "lines": {
-              "away": [
-                "37",
-                "39",
-                "35",
-                "26"
-              ],
-              "home": [
-                "21",
-                "30",
-                "26",
-                "30"
-              ]
-            },
-            "top": [
-              {
-                "name": "Matas Buzelis",
-                "id": "4711294",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
-                "team": "CHI",
-                "min": "30",
-                "pts": 25,
-                "reb": "5",
-                "ast": "4"
-              },
-              {
-                "name": "Egor Demin",
-                "id": "5175643",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175643.png",
-                "team": "BKN",
-                "min": "31",
-                "pts": 22,
-                "reb": "4",
-                "ast": "4"
-              },
-              {
-                "name": "Josh Giddey",
-                "id": "4871145",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871145.png",
-                "team": "CHI",
-                "min": "28",
-                "pts": 18,
-                "reb": "14",
-                "ast": "9"
-              },
-              {
-                "name": "Norman Powell",
-                "id": "2595516",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
-                "team": "CHI",
-                "min": "26",
-                "pts": 17,
-                "reb": "2",
-                "ast": "5"
-              },
-              {
-                "name": "Julius Randle",
-                "id": "3064514",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
-                "team": "BKN",
-                "min": "27",
-                "pts": 17,
-                "reb": "0",
-                "ast": "4"
-              },
-              {
-                "name": "Mikel Brown Jr.",
-                "id": "5101761",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5101761.png",
-                "team": "BKN",
-                "min": "27",
-                "pts": 15,
-                "reb": "1",
-                "ast": "4"
-              }
-            ],
-            "winner": "away"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "CHI",
-                "name": "시카고 불스",
-                "side": "away",
-                "record": "3승 10패",
-                "venueRecord": "원정 2승 6패",
-                "last5": "2승 3패",
-                "lastGame": "115-126 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "클리블랜드 캐벌리어스",
-                    "ha": "원정",
-                    "score": "115-126",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "미네소타 팀버울브스",
-                    "ha": "원정",
-                    "score": "117-106",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "애틀랜타 호크스",
-                    "ha": "홈",
-                    "score": "125-117",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "샌안토니오 스퍼스",
-                    "ha": "홈",
-                    "score": "119-124",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "필라델피아 세븐티식서스",
-                    "ha": "홈",
-                    "score": "121-127",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Norman Powell",
-                    "id": "2595516",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
-                    "pos": "G",
-                    "stat": "21.2점 · 2.8리바운드 · 2.4어시스트",
-                    "sub": "야투 45.1% · 3점 34.9% · 팀 내 1옵션",
-                    "last": "직전 33분 27점 2리바운드 6어시스트, 야투 10-18",
-                    "recent": "최근 3경기 28.0점 · 야투 57.1%"
-                  },
-                  {
-                    "name": "Caleb Wilson",
-                    "id": "5095151",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5095151.png",
-                    "pos": "F",
-                    "stat": "18.9점 · 6.2리바운드 · 1.9어시스트",
-                    "sub": "야투 42.0% · 3점 32.4% · 팀 내 2옵션",
-                    "recent": "최근 2경기 16.5점 · 야투 48.0%"
-                  },
-                  {
-                    "name": "Matas Buzelis",
-                    "id": "4711294",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
-                    "pos": "F",
-                    "stat": "15.1점 · 4.7리바운드 · 2.0어시스트",
-                    "sub": "야투 46.2% · 3점 37.7% · 팀 내 3옵션",
-                    "last": "직전 31분 23점 3리바운드 0어시스트, 야투 8-14",
-                    "recent": "최근 5경기 16.8점 · 야투 50.9%"
-                  }
-                ],
-                "focus": "최근 3경기 Norman Powell의 평균은 28.0점·야투 57.1%·3점 36.8%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 27점·2리바운드·6어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 2·16위)",
-                "injuryOut": 2,
-                "injuryPpg": 20.9,
-                "injuries": [
-                  {
-                    "player": "Tobe Awaka",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 16옵션 · 2.0점 · 5.2리바운드"
-                  },
-                  {
-                    "player": "Caleb Wilson",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 2옵션 · 18.9점 · 6.2리바운드"
-                  }
-                ]
-              },
-              {
-                "abbr": "BKN",
-                "name": "브루클린 네츠",
-                "side": "home",
-                "record": "3승 10패",
-                "venueRecord": "홈 1승 4패",
-                "streak": "2연패",
-                "last5": "1승 4패",
-                "lastGame": "123-135 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "필라델피아 세븐티식서스",
-                    "ha": "홈",
-                    "score": "123-135",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "멤피스 그리즐리스",
-                    "ha": "원정",
-                    "score": "110-129",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "뉴올리언스 펠리컨스",
-                    "ha": "원정",
-                    "score": "145-111",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-09",
-                    "opp": "댈러스 매버릭스",
-                    "ha": "원정",
-                    "score": "93-130",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "애틀랜타 호크스",
-                    "ha": "원정",
-                    "score": "121-124",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Julius Randle",
-                    "id": "3064514",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
-                    "pos": "F",
-                    "stat": "20.6점 · 5.8리바운드 · 4.6어시스트",
-                    "sub": "야투 46.8% · 3점 35.9% · 팀 내 1옵션",
-                    "last": "직전 34분 33점 6리바운드 1어시스트, 야투 13-20",
-                    "recent": "최근 5경기 20.8점 · 야투 52.6%"
-                  },
-                  {
-                    "name": "Michael Porter Jr.",
-                    "id": "4278104",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278104.png",
-                    "pos": "F",
-                    "stat": "20.5점 · 7.1리바운드 · 1.3어시스트",
-                    "sub": "야투 45.0% · 3점 36.8% · 팀 내 2옵션",
-                    "last": "직전 40분 25점 6리바운드 2어시스트, 야투 8-15",
-                    "recent": "최근 4경기 22.8점 · 야투 45.9%"
-                  },
-                  {
-                    "name": "Nolan Traore",
-                    "id": "5279130",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5279130.png",
-                    "pos": "G",
-                    "stat": "13.5점 · 1.8리바운드 · 2.8어시스트",
-                    "sub": "야투 51.9% · 3점 42.0% · 팀 내 3옵션",
-                    "last": "직전 30분 23점 1리바운드 4어시스트, 야투 7-12",
-                    "recent": "최근 4경기 16.8점 · 야투 52.0%"
-                  }
-                ],
-                "focus": "최근 5경기 Julius Randle의 평균은 20.8점·야투 52.6%·3점 33.3%입니다. 직전 경기에서는 Julius Randle가 33점·6리바운드·1어시스트를 기록했습니다. 이어서 Michael Porter Jr., Nolan Traore가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음",
-                "injuries": []
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-was-tor-20261119",
-          "espnId": "401910012",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T09:30:00+09:00",
-          "status": "final",
-          "venue": "Scotiabank Arena",
-          "away": {
-            "name": "워싱턴 위저즈",
-            "abbr": "WAS",
-            "record": "4승 11패",
-            "badges": [
-              {
-                "text": "원정 2승 6패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "토론토 랩터스",
-            "abbr": "TOR",
-            "record": "5승 9패",
-            "badges": [
-              {
-                "text": "홈 2승 5패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 8명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**토론토 랩터스**(홈) 5승 9패(홈 2승 5패, 최근 5경기 0승 5패, 5연패), **워싱턴 위저즈**(원정) 4승 11패(원정 2승 6패, 최근 5경기 0승 5패, 5연패). 직전 경기(11.18) **토론토 랩터스**는 뉴욕 닉스에 102-111로 졌고, Ja'Kobe Walter 25점·1리바운드·2어시스트, RJ Barrett 22점·5리바운드·5어시스트를 기록했습니다. 직전 경기(11.17) **워싱턴 위저즈**는 워싱턴 위저즈에 136-120로 이겼고, Cameron Boozer 29점·7리바운드·7어시스트, Zach Edey 23점·10리바운드·1어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 103,
-            "homeScore": 99,
-            "lines": {
-              "away": [
-                "29",
-                "20",
-                "29",
-                "25"
-              ],
-              "home": [
-                "23",
-                "24",
-                "32",
-                "20"
-              ]
-            },
-            "top": [
-              {
-                "name": "Anthony Davis",
-                "id": "6583",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
-                "team": "WSH",
-                "min": "34",
-                "pts": 25,
-                "reb": "14",
-                "ast": "2"
-              },
-              {
-                "name": "Immanuel Quickley",
-                "id": "4395724",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395724.png",
-                "team": "TOR",
-                "min": "34",
-                "pts": 24,
-                "reb": "3",
-                "ast": "5"
-              },
-              {
-                "name": "AJ Dybantsa",
-                "id": "5142718",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142718.png",
-                "team": "WSH",
-                "min": "38",
-                "pts": 23,
-                "reb": "12",
-                "ast": "2"
-              },
-              {
-                "name": "Kyshawn George",
-                "id": "5174563",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
-                "team": "WSH",
-                "min": "40",
-                "pts": 20,
-                "reb": "2",
-                "ast": "4"
-              },
-              {
-                "name": "Jamison Battle",
-                "id": "4431893",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431893.png",
-                "team": "TOR",
-                "min": "33",
-                "pts": 19,
-                "reb": "5",
-                "ast": "0"
-              },
-              {
-                "name": "Ja'Kobe Walter",
-                "id": "4684272",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684272.png",
-                "team": "TOR",
-                "min": "38",
-                "pts": 18,
-                "reb": "7",
-                "ast": "6"
-              }
-            ],
-            "winner": "away"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "WAS",
-                "name": "워싱턴 위저즈",
-                "side": "away",
-                "record": "4승 11패",
-                "venueRecord": "원정 2승 6패",
-                "streak": "5연패",
-                "last5": "0승 5패",
-                "lastGame": "120-136 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "멤피스 그리즐리스",
-                    "ha": "홈",
-                    "score": "120-136",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-16",
-                    "opp": "휴스턴 로키츠",
-                    "ha": "홈",
-                    "score": "119-147",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "디트로이트 피스턴스",
-                    "ha": "홈",
-                    "score": "140-144",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "인디애나 페이서스",
-                    "ha": "원정",
-                    "score": "101-114",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "디트로이트 피스턴스",
-                    "ha": "원정",
-                    "score": "111-122",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Anthony Davis",
-                    "id": "6583",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
-                    "pos": "F",
-                    "stat": "24.6점 · 10.1리바운드 · 2.1어시스트",
-                    "sub": "야투 52.0% · 3점 34.4% · 팀 내 1옵션",
-                    "last": "직전 35분 23점 4리바운드 0어시스트, 야투 8-15",
-                    "recent": "최근 5경기 26.4점 · 야투 54.5%"
-                  },
-                  {
-                    "name": "Kyshawn George",
-                    "id": "5174563",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
-                    "pos": "F",
-                    "stat": "17.8점 · 4.2리바운드 · 4.4어시스트",
-                    "sub": "야투 48.6% · 3점 42.4% · 팀 내 2옵션",
-                    "last": "직전 38분 18점 6리바운드 1어시스트, 야투 7-10",
-                    "recent": "최근 5경기 16.0점 · 야투 48.4%"
-                  },
-                  {
-                    "name": "Trae Young",
-                    "id": "4277905",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
-                    "pos": "G",
-                    "stat": "17.5점 · 2.8리바운드 · 8.9어시스트",
-                    "sub": "야투 37.1% · 3점 30.4% · 팀 내 3옵션",
-                    "last": "직전 33분 13점 2리바운드 12어시스트, 야투 3-10",
-                    "recent": "최근 5경기 17.0점 · 야투 33.8%"
-                  }
-                ],
-                "focus": "최근 5경기 Anthony Davis의 평균은 26.4점·야투 54.5%·3점 22.2%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Cameron Boozer가 29점·7리바운드·7어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
-                "injuryOut": 4,
-                "injuryPpg": 7.2,
-                "injuries": [
-                  {
-                    "player": "Felix Okpara",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 15옵션 · 1.0점 · 0.7리바운드"
-                  },
-                  {
-                    "player": "Tristan Vukcevic",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
-                  {
-                    "player": "Reece Beekman",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 16옵션 · 0.0점 · 0.0리바운드"
-                  },
-                  {
-                    "player": "Justin Champagnie",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 7옵션 · 7.2점 · 7.5리바운드"
-                  },
-                  {
-                    "player": "Jamir Watkins",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G"
-                  }
-                ]
-              },
-              {
-                "abbr": "TOR",
-                "name": "토론토 랩터스",
-                "side": "home",
-                "record": "5승 9패",
-                "venueRecord": "홈 2승 5패",
-                "streak": "5연패",
-                "last5": "0승 5패",
-                "lastGame": "102-111 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-18",
-                    "opp": "뉴욕 닉스",
-                    "ha": "홈",
-                    "score": "102-111",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "뉴욕 닉스",
-                    "ha": "홈",
-                    "score": "108-112",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "필라델피아 세븐티식서스",
-                    "ha": "원정",
-                    "score": "112-123",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "보스턴 셀틱스",
-                    "ha": "홈",
-                    "score": "93-98",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "멤피스 그리즐리스",
-                    "ha": "홈",
-                    "score": "102-118",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Scottie Barnes",
-                    "id": "4433134",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433134.png",
-                    "pos": "F",
-                    "stat": "23.8점 · 7.4리바운드 · 4.7어시스트",
-                    "sub": "야투 47.7% · 3점 25.0% · 팀 내 1옵션",
-                    "last": "직전 34분 20점 4리바운드 2어시스트, 야투 7-14",
-                    "recent": "최근 2경기 25.0점 · 야투 48.8%"
-                  },
-                  {
-                    "name": "RJ Barrett",
-                    "id": "4395625",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395625.png",
-                    "pos": "F",
-                    "stat": "20.9점 · 6.4리바운드 · 4.3어시스트",
-                    "sub": "야투 47.3% · 3점 28.4% · 팀 내 2옵션",
-                    "last": "직전 39분 22점 5리바운드 5어시스트, 야투 9-17",
-                    "recent": "최근 5경기 19.6점 · 야투 47.1%"
-                  },
-                  {
-                    "name": "Kawhi Leonard",
-                    "id": "6450",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6450.png",
-                    "pos": "F",
-                    "stat": "19.5점 · 7.5리바운드 · 1.5어시스트",
-                    "sub": "야투 32.4% · 3점 28.6% · 팀 내 3옵션"
-                  }
-                ],
-                "focus": "최근 2경기 Scottie Barnes의 평균은 25.0점·야투 48.8%·3점 50.0%입니다. 결장 4명의 시즌 평균 득점 합계는 64.2점입니다. 직전 경기에서는 Ja'Kobe Walter가 25점·1리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
-                "injuryOut": 4,
-                "injuryPpg": 64.2,
-                "injuries": [
-                  {
-                    "player": "Collin Murray-Boyles",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 6옵션 · 9.3점 · 4.6리바운드"
-                  },
-                  {
-                    "player": "RJ Barrett",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 2옵션 · 20.9점 · 6.4리바운드"
-                  },
-                  {
-                    "player": "Scottie Barnes",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 1옵션 · 23.8점 · 7.4리바운드"
-                  },
-                  {
-                    "player": "Kawhi Leonard",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 3옵션 · 19.5점 · 7.5리바운드"
-                  },
-                  {
-                    "player": "Nate Bittle",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-det-nop-20261119",
-          "espnId": "401910013",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T10:00:00+09:00",
-          "status": "final",
-          "venue": "Smoothie King Center",
-          "away": {
-            "name": "디트로이트 피스턴스",
-            "abbr": "DET",
-            "record": "9승 4패",
-            "badges": [
-              {
-                "text": "원정 6승 2패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "뉴올리언스 펠리컨스",
-            "abbr": "NOP",
-            "record": "5승 10패",
-            "badges": [
-              {
-                "text": "홈 4승 6패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 10명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**뉴올리언스 펠리컨스**(홈) 5승 10패(홈 4승 6패, 최근 5경기 1승 4패), **디트로이트 피스턴스**(원정) 9승 4패(원정 6승 2패, 최근 5경기 3승 2패). 직전 경기(11.17) **뉴올리언스 펠리컨스**는 뉴올리언스 펠리컨스에 94-115로 졌고, Yaxel Lendeborg 28점·8리바운드·3어시스트, Brandin Podziemski 15점·6리바운드·3어시스트를 기록했습니다. 직전 경기(11.18) **디트로이트 피스턴스**는 샌안토니오 스퍼스에 105-93로 이겼고, Cade Cunningham 27점·5리바운드·6어시스트, Daniss Jenkins 25점·5리바운드·5어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 122,
-            "homeScore": 109,
-            "lines": {
-              "away": [
-                "31",
-                "36",
-                "25",
-                "30"
-              ],
-              "home": [
-                "31",
-                "29",
-                "26",
-                "23"
-              ]
-            },
-            "top": [
-              {
-                "name": "Zion Williamson",
-                "id": "4395628",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png",
-                "team": "NO",
-                "min": "32",
-                "pts": 24,
-                "reb": "7",
-                "ast": "1"
-              },
-              {
-                "name": "Jordan Poole",
-                "id": "4277956",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277956.png",
-                "team": "NO",
-                "min": "30",
-                "pts": 22,
-                "reb": "1",
-                "ast": "5"
-              },
-              {
-                "name": "John Collins",
-                "id": "3908845",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908845.png",
-                "team": "DET",
-                "min": "30",
-                "pts": 20,
-                "reb": "7",
-                "ast": "2"
-              },
-              {
-                "name": "Javonte Green",
-                "id": "2596112",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2596112.png",
-                "team": "DET",
-                "min": "35",
-                "pts": 18,
-                "reb": "7",
-                "ast": "0"
-              },
-              {
-                "name": "Daniss Jenkins",
-                "id": "5107199",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
-                "team": "DET",
-                "min": "36",
-                "pts": 17,
-                "reb": "4",
-                "ast": "9"
-              },
-              {
-                "name": "Paul Reed",
-                "id": "4278562",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278562.png",
-                "team": "DET",
-                "min": "20",
-                "pts": 17,
-                "reb": "7",
-                "ast": "1"
-              }
-            ],
-            "winner": "away"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "DET",
-                "name": "디트로이트 피스턴스",
-                "side": "away",
-                "record": "9승 4패",
-                "venueRecord": "원정 6승 2패",
-                "last5": "3승 2패",
-                "lastGame": "105-93 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-18",
-                    "opp": "샌안토니오 스퍼스",
-                    "ha": "원정",
-                    "score": "105-93",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "마이애미 히트",
-                    "ha": "원정",
-                    "score": "117-137",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "원정",
-                    "score": "144-140",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "홈",
-                    "score": "122-111",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "LA 레이커스",
-                    "ha": "홈",
-                    "score": "116-121",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Cade Cunningham",
-                    "id": "4432166",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
-                    "pos": "G",
-                    "stat": "25.8점 · 5.2리바운드 · 7.8어시스트",
-                    "sub": "야투 47.7% · 3점 31.7% · 팀 내 1옵션",
-                    "last": "직전 38분 27점 5리바운드 6어시스트, 야투 12-25",
-                    "recent": "최근 5경기 28.6점 · 야투 48.5%"
-                  },
-                  {
-                    "name": "Duncan Robinson",
-                    "id": "3157465",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3157465.png",
-                    "pos": "F",
-                    "stat": "17.4점 · 1.8리바운드 · 2.1어시스트",
-                    "sub": "야투 45.0% · 3점 43.1% · 팀 내 2옵션",
-                    "recent": "최근 4경기 14.2점 · 야투 40.0%"
-                  },
-                  {
-                    "name": "Daniss Jenkins",
-                    "id": "5107199",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
-                    "pos": "G",
-                    "stat": "14.3점 · 3.7리바운드 · 4.7어시스트",
-                    "sub": "야투 45.2% · 3점 43.7% · 팀 내 3옵션",
-                    "last": "직전 38분 25점 5리바운드 5어시스트, 야투 11-21",
-                    "recent": "최근 5경기 21.8점 · 야투 46.8%"
-                  }
-                ],
-                "focus": "최근 5경기 Cade Cunningham의 평균은 28.6점·야투 48.5%·3점 29.6%입니다. 결장 5명의 시즌 평균 득점 합계는 63.1점입니다. 직전 경기에서는 Cade Cunningham가 27점·5리바운드·6어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명(팀 득점 1·2·4·11·15위)",
-                "injuryOut": 5,
-                "injuryPpg": 63.1,
-                "injuries": [
-                  {
-                    "player": "Cade Cunningham",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 1옵션 · 25.8점 · 5.2리바운드"
-                  },
-                  {
-                    "player": "Taurean Prince",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 15옵션 · 2.0점 · 0.7리바운드"
-                  },
-                  {
-                    "player": "Ronald Holland II",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 11옵션 · 4.9점 · 3.8리바운드"
-                  },
-                  {
-                    "player": "Duncan Robinson",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 2옵션 · 17.4점 · 1.8리바운드"
-                  },
-                  {
-                    "player": "Jalen Duren",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 4옵션 · 13.0점 · 7.5리바운드"
-                  }
-                ]
-              },
-              {
-                "abbr": "NOP",
-                "name": "뉴올리언스 펠리컨스",
-                "side": "home",
-                "record": "5승 10패",
-                "venueRecord": "홈 4승 6패",
-                "last5": "1승 4패",
-                "lastGame": "115-94 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "골든스테이트 워리어스",
-                    "ha": "홈",
-                    "score": "115-94",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "덴버 너기츠",
-                    "ha": "홈",
-                    "score": "108-116",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "멤피스 그리즐리스",
-                    "ha": "홈",
-                    "score": "111-142",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "브루클린 네츠",
-                    "ha": "홈",
-                    "score": "111-145",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "골든스테이트 워리어스",
-                    "ha": "원정",
-                    "score": "87-138",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Zion Williamson",
-                    "id": "4395628",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png",
-                    "pos": "F",
-                    "stat": "21.7점 · 5.4리바운드 · 2.5어시스트",
-                    "sub": "야투 59.6% · 3점 46.2% · 팀 내 1옵션",
-                    "last": "직전 25분 16점 6리바운드 2어시스트, 야투 6-13",
-                    "recent": "최근 4경기 22.8점 · 야투 51.7%"
-                  },
-                  {
-                    "name": "Saddiq Bey",
-                    "id": "4397136",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
-                    "pos": "F",
-                    "stat": "16.5점 · 4.4리바운드 · 2.6어시스트",
-                    "sub": "야투 44.4% · 3점 39.4% · 팀 내 2옵션",
-                    "last": "직전 33분 23점 6리바운드 3어시스트, 야투 8-15",
-                    "recent": "최근 5경기 18.6점 · 야투 44.3%"
-                  },
-                  {
-                    "name": "Jeremiah Fears",
-                    "id": "5144091",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5144091.png",
-                    "pos": "G",
-                    "stat": "15.6점 · 4.9리바운드 · 5.4어시스트",
-                    "sub": "야투 44.7% · 3점 28.1% · 팀 내 3옵션",
-                    "last": "직전 29분 19점 10리바운드 10어시스트, 야투 6-13",
-                    "recent": "최근 5경기 15.0점 · 야투 41.8%"
-                  }
-                ],
-                "focus": "최근 4경기 Zion Williamson의 평균은 22.8점·야투 51.7%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 45.4점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명(팀 득점 4·5·8·13·15위)",
-                "injuryOut": 5,
-                "injuryPpg": 45.4,
-                "injuries": [
-                  {
-                    "player": "Bennedict Mathurin",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 13옵션 · 5.5점 · 1.8리바운드"
-                  },
-                  {
-                    "player": "Bryce McGowens",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 15옵션 · 3.7점 · 0.7리바운드"
-                  },
-                  {
-                    "player": "Trendon Watford",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 8옵션 · 7.2점 · 3.5리바운드"
-                  },
-                  {
-                    "player": "Trey Murphy III",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 4옵션 · 15.6점 · 4.8리바운드"
-                  },
-                  {
-                    "player": "Dejounte Murray",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 5옵션 · 13.4점 · 4.6리바운드"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-atl-okc-20261119",
-          "espnId": "401910014",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T10:00:00+09:00",
-          "status": "final",
-          "venue": "Paycom Center",
-          "away": {
-            "name": "애틀랜타 호크스",
-            "abbr": "ATL",
-            "record": "8승 6패",
-            "badges": [
-              {
-                "text": "원정 5승 3패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "오클라호마시티 썬더",
-            "abbr": "OKC",
-            "record": "9승 5패",
-            "badges": [
-              {
-                "text": "홈 5승 0패",
-                "tone": "hot"
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 10명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**오클라호마시티 썬더**(홈) 9승 5패(홈 5승 0패, 최근 5경기 2승 3패), **애틀랜타 호크스**(원정) 8승 6패(원정 5승 3패, 최근 5경기 3승 2패). 직전 경기(11.16) **오클라호마시티 썬더**는 새크라멘토 킹스에 125-103로 이겼고, Shai Gilgeous-Alexander 37점·2리바운드·2어시스트, Aday Mara 16점·13리바운드·3어시스트를 기록했습니다. 직전 경기(11.16) **애틀랜타 호크스**는 밀워키 벅스에 113-106로 이겼고, CJ McCollum 20점·4리바운드·2어시스트, Nickeil Alexander-Walker 20점·5리바운드·4어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 117,
-            "homeScore": 112,
-            "lines": {
-              "away": [
-                "31",
-                "33",
-                "19",
-                "34"
-              ],
-              "home": [
-                "29",
-                "22",
-                "32",
-                "29"
-              ]
-            },
-            "top": [
-              {
-                "name": "Shai Gilgeous-Alexander",
-                "id": "4278073",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278073.png",
-                "team": "OKC",
-                "min": "36",
-                "pts": 34,
-                "reb": "5",
-                "ast": "3"
-              },
-              {
-                "name": "Onyeka Okongwu",
-                "id": "4431680",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431680.png",
-                "team": "ATL",
-                "min": "36",
-                "pts": 28,
-                "reb": "9",
-                "ast": "2"
-              },
-              {
-                "name": "Nickeil Alexander-Walker",
-                "id": "4278039",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png",
-                "team": "ATL",
-                "min": "32",
-                "pts": 19,
-                "reb": "4",
-                "ast": "7"
-              },
-              {
-                "name": "Jared McCain",
-                "id": "4683778",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
-                "team": "OKC",
-                "min": "33",
-                "pts": 18,
-                "reb": "3",
-                "ast": "1"
-              },
-              {
-                "name": "Jalen Johnson",
-                "id": "4701230",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png",
-                "team": "ATL",
-                "min": "34",
-                "pts": 16,
-                "reb": "12",
-                "ast": "11"
-              },
-              {
-                "name": "Luguentz Dort",
-                "id": "4397020",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397020.png",
-                "team": "ATL",
-                "min": "31",
-                "pts": 16,
-                "reb": "3",
-                "ast": "0"
-              }
-            ],
-            "winner": "away"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "ATL",
-                "name": "애틀랜타 호크스",
-                "side": "away",
-                "record": "8승 6패",
-                "venueRecord": "원정 5승 3패",
-                "last5": "3승 2패",
-                "lastGame": "113-106 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-16",
-                    "opp": "밀워키 벅스",
-                    "ha": "원정",
-                    "score": "113-106",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "시카고 불스",
-                    "ha": "원정",
-                    "score": "117-125",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "LA 레이커스",
-                    "ha": "홈",
-                    "score": "114-124",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "브루클린 네츠",
-                    "ha": "홈",
-                    "score": "124-121",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-07",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "홈",
-                    "score": "139-132",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Nickeil Alexander-Walker",
-                    "id": "4278039",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png",
-                    "pos": "G",
-                    "stat": "21.2점 · 3.6리바운드 · 3.0어시스트",
-                    "sub": "야투 41.7% · 3점 34.9% · 팀 내 1옵션",
-                    "last": "직전 33분 20점 5리바운드 4어시스트, 야투 7-15",
-                    "recent": "최근 5경기 20.8점 · 야투 36.7%"
-                  },
-                  {
-                    "name": "Jalen Johnson",
-                    "id": "4701230",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png",
-                    "pos": "F",
-                    "stat": "19.2점 · 9.2리바운드 · 7.6어시스트",
-                    "sub": "야투 43.2% · 3점 18.0% · 팀 내 2옵션",
-                    "last": "직전 35분 14점 11리바운드 5어시스트, 야투 5-13",
-                    "recent": "최근 4경기 21.5점 · 야투 47.1%"
-                  },
-                  {
-                    "name": "Onyeka Okongwu",
-                    "id": "4431680",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431680.png",
-                    "pos": "F",
-                    "stat": "15.0점 · 8.2리바운드 · 2.5어시스트",
-                    "sub": "야투 50.0% · 3점 33.7% · 팀 내 3옵션",
-                    "last": "직전 36분 16점 11리바운드 0어시스트, 야투 6-12",
-                    "recent": "최근 5경기 17.4점 · 야투 55.2%"
-                  }
-                ],
-                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 20.8점·야투 36.7%·3점 24.1%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 CJ McCollum가 20점·4리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명",
-                "injuryOut": 5,
-                "injuryPpg": 32.7,
-                "injuries": [
-                  {
-                    "player": "Jock Landale",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 10옵션 · 6.8점 · 4.9리바운드"
-                  },
-                  {
-                    "player": "Kingston Flemings",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 9옵션 · 7.8점 · 2.5리바운드"
-                  },
-                  {
-                    "player": "Asa Newell",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 13옵션 · 3.6점 · 2.6리바운드"
-                  },
-                  {
-                    "player": "CJ McCollum",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 4옵션 · 14.5점 · 3.1리바운드"
-                  },
-                  {
-                    "player": "Mouhamed Gueye",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  }
-                ]
-              },
-              {
-                "abbr": "OKC",
-                "name": "오클라호마시티 썬더",
-                "side": "home",
-                "record": "9승 5패",
-                "venueRecord": "홈 5승 0패",
-                "last5": "2승 3패",
-                "lastGame": "125-103 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-16",
-                    "opp": "새크라멘토 킹스",
-                    "ha": "원정",
-                    "score": "125-103",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "LA 클리퍼스",
-                    "ha": "원정",
-                    "score": "112-113",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "포틀랜드 트레일블레이저스",
-                    "ha": "원정",
-                    "score": "108-118",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "포틀랜드 트레일블레이저스",
-                    "ha": "원정",
-                    "score": "103-123",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "홈",
-                    "score": "114-75",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Shai Gilgeous-Alexander",
-                    "id": "4278073",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278073.png",
-                    "pos": "G",
-                    "stat": "31.1점 · 4.1리바운드 · 4.3어시스트",
-                    "sub": "야투 47.6% · 3점 35.8% · 팀 내 1옵션",
-                    "last": "직전 30분 37점 2리바운드 2어시스트, 야투 13-20",
-                    "recent": "최근 5경기 32.8점 · 야투 51.9%"
-                  },
-                  {
-                    "name": "Ajay Mitchell",
-                    "id": "4900671",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
-                    "pos": "G",
-                    "stat": "17.7점 · 3.8리바운드 · 3.6어시스트",
-                    "sub": "야투 51.1% · 3점 25.0% · 팀 내 2옵션",
-                    "last": "직전 27분 14점 3리바운드 5어시스트, 야투 6-14",
-                    "recent": "최근 3경기 13.3점 · 야투 44.7%"
-                  },
-                  {
-                    "name": "Jared McCain",
-                    "id": "4683778",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
-                    "pos": "G",
-                    "stat": "13.7점 · 3.4리바운드 · 1.8어시스트",
-                    "sub": "야투 40.8% · 3점 34.3% · 팀 내 3옵션",
-                    "last": "직전 30분 12점 1리바운드 1어시스트, 야투 3-12",
-                    "recent": "최근 5경기 17.0점 · 야투 43.1%"
-                  }
-                ],
-                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 32.8점·야투 51.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 39.4점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 37점·2리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명",
-                "injuryOut": 5,
-                "injuryPpg": 39.4,
-                "injuries": [
-                  {
-                    "player": "Alex Caruso",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 8옵션 · 7.4점 · 3.7리바운드"
-                  },
-                  {
-                    "player": "Thomas Sorber",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
-                  },
-                  {
-                    "player": "Cason Wallace",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 11옵션 · 6.3점 · 2.7리바운드"
-                  },
-                  {
-                    "player": "Chet Holmgren",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 5옵션 · 12.0점 · 9.3리바운드"
-                  },
-                  {
-                    "player": "Jalen Williams",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 4옵션 · 13.7점 · 4.7리바운드"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-gsw-dal-20261119",
-          "espnId": "401910016",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T10:00:00+09:00",
-          "status": "final",
-          "venue": "American Airlines Center",
-          "away": {
-            "name": "골든스테이트 워리어스",
-            "abbr": "GSW",
-            "record": "8승 6패",
-            "badges": [
-              {
-                "text": "원정 2승 5패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "댈러스 매버릭스",
-            "abbr": "DAL",
-            "record": "7승 7패",
-            "badges": [
-              {
-                "text": "홈 5승 2패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 9명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**댈러스 매버릭스**(홈) 7승 7패(홈 5승 2패, 최근 5경기 2승 3패, 3연패), **골든스테이트 워리어스**(원정) 8승 6패(원정 2승 5패, 최근 5경기 2승 3패, 3연패). 직전 경기(11.15) **댈러스 매버릭스**는 클리블랜드 캐벌리어스에 117-127로 졌고, Kyrie Irving 34점·6리바운드·5어시스트, Cooper Flagg 18점·8리바운드·5어시스트를 기록했습니다. 직전 경기(11.17) **골든스테이트 워리어스**는 뉴올리언스 펠리컨스에 94-115로 졌고, Yaxel Lendeborg 28점·8리바운드·3어시스트, Brandin Podziemski 15점·6리바운드·3어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 94,
-            "homeScore": 116,
-            "lines": {
-              "away": [
-                "25",
-                "24",
-                "23",
-                "22"
-              ],
-              "home": [
-                "35",
-                "27",
-                "30",
-                "24"
-              ]
-            },
-            "top": [
-              {
-                "name": "Cooper Flagg",
-                "id": "5041939",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
-                "team": "DAL",
-                "min": "34",
-                "pts": 33,
-                "reb": "5",
-                "ast": "9"
-              },
-              {
-                "name": "P.J. Washington",
-                "id": "4278078",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278078.png",
-                "team": "DAL",
-                "min": "25",
-                "pts": 21,
-                "reb": "5",
-                "ast": "2"
-              },
-              {
-                "name": "Will Richard",
-                "id": "4897262",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4897262.png",
-                "team": "GS",
-                "min": "27",
-                "pts": 20,
-                "reb": "0",
-                "ast": "3"
-              },
-              {
-                "name": "Kyrie Irving",
-                "id": "6442",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
-                "team": "DAL",
-                "min": "29",
-                "pts": 17,
-                "reb": "6",
-                "ast": "5"
-              },
-              {
-                "name": "Yaxel Lendeborg",
-                "id": "5175737",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
-                "team": "GS",
-                "min": "30",
-                "pts": 13,
-                "reb": "5",
-                "ast": "4"
-              },
-              {
-                "name": "Naji Marshall",
-                "id": "4278594",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278594.png",
-                "team": "DAL",
-                "min": "27",
-                "pts": 12,
-                "reb": "5",
-                "ast": "2"
-              }
-            ],
-            "winner": "home"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "GSW",
-                "name": "골든스테이트 워리어스",
-                "side": "away",
-                "record": "8승 6패",
-                "venueRecord": "원정 2승 5패",
-                "streak": "3연패",
-                "last5": "2승 3패",
-                "lastGame": "94-115 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "뉴올리언스 펠리컨스",
-                    "ha": "원정",
-                    "score": "94-115",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "샌안토니오 스퍼스",
-                    "ha": "원정",
-                    "score": "85-123",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "휴스턴 로키츠",
-                    "ha": "원정",
-                    "score": "108-115",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "뉴올리언스 펠리컨스",
-                    "ha": "홈",
-                    "score": "138-87",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "올랜도 매직",
-                    "ha": "홈",
-                    "score": "126-119",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Stephen Curry",
-                    "id": "3975",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3975.png",
-                    "pos": "G",
-                    "stat": "27.8점 · 3.7리바운드 · 3.9어시스트",
-                    "sub": "야투 50.0% · 3점 45.7% · 팀 내 1옵션",
-                    "recent": "최근 3경기 23.0점 · 야투 62.5%"
-                  },
-                  {
-                    "name": "Yaxel Lendeborg",
-                    "id": "5175737",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
-                    "pos": "F",
-                    "stat": "20.3점 · 7.3리바운드 · 3.5어시스트",
-                    "sub": "야투 46.4% · 3점 37.8% · 팀 내 2옵션",
-                    "last": "직전 33분 28점 8리바운드 3어시스트, 야투 9-23",
-                    "recent": "최근 5경기 20.4점 · 야투 45.0%"
-                  },
-                  {
-                    "name": "Brandin Podziemski",
-                    "id": "4709138",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
-                    "pos": "G",
-                    "stat": "15.8점 · 4.8리바운드 · 3.8어시스트",
-                    "sub": "야투 45.0% · 3점 37.8% · 팀 내 3옵션",
-                    "last": "직전 30분 15점 6리바운드 3어시스트, 야투 3-8",
-                    "recent": "최근 5경기 17.0점 · 야투 45.8%"
-                  }
-                ],
-                "focus": "최근 3경기 Stephen Curry의 평균은 23.0점·야투 62.5%·3점 52.6%입니다. 결장 5명의 시즌 평균 득점 합계는 42.1점입니다. 직전 경기에서는 Yaxel Lendeborg가 28점·8리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명",
-                "injuryOut": 5,
-                "injuryPpg": 42.1,
-                "injuries": [
-                  {
-                    "player": "Al Horford",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 13옵션 · 3.9점 · 3.8리바운드"
-                  },
-                  {
-                    "player": "Brandon Williams",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 4옵션 · 10.4점 · 2.1리바운드"
-                  },
-                  {
-                    "player": "Stephen Curry",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 1옵션 · 27.8점 · 3.7리바운드"
-                  },
-                  {
-                    "player": "Kristaps Porzingis",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
-                  },
-                  {
-                    "player": "Moses Moody",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G"
-                  }
-                ]
-              },
-              {
-                "abbr": "DAL",
-                "name": "댈러스 매버릭스",
-                "side": "home",
-                "record": "7승 7패",
-                "venueRecord": "홈 5승 2패",
-                "streak": "3연패",
-                "last5": "2승 3패",
-                "lastGame": "117-127 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-15",
-                    "opp": "클리블랜드 캐벌리어스",
-                    "ha": "원정",
-                    "score": "117-127",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "보스턴 셀틱스",
-                    "ha": "원정",
-                    "score": "94-131",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "미네소타 팀버울브스",
-                    "ha": "원정",
-                    "score": "94-133",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "인디애나 페이서스",
-                    "ha": "홈",
-                    "score": "125-122",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-09",
-                    "opp": "브루클린 네츠",
-                    "ha": "홈",
-                    "score": "130-93",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Cooper Flagg",
-                    "id": "5041939",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
-                    "pos": "F",
-                    "stat": "24.2점 · 6.6리바운드 · 6.4어시스트",
-                    "sub": "야투 48.5% · 3점 29.9% · 팀 내 1옵션",
-                    "last": "직전 38분 18점 8리바운드 5어시스트, 야투 6-19",
-                    "recent": "최근 5경기 23.0점 · 야투 47.6%"
-                  },
-                  {
-                    "name": "Kyrie Irving",
-                    "id": "6442",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
-                    "pos": "G",
-                    "stat": "22.2점 · 3.7리바운드 · 4.4어시스트",
-                    "sub": "야투 47.3% · 3점 38.5% · 팀 내 2옵션",
-                    "last": "직전 37분 34점 6리바운드 5어시스트, 야투 11-25",
-                    "recent": "최근 4경기 25.0점 · 야투 50.7%"
-                  },
-                  {
-                    "name": "P.J. Washington",
-                    "id": "4278078",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278078.png",
-                    "pos": "F",
-                    "stat": "14.0점 · 6.7리바운드 · 1.3어시스트",
-                    "sub": "야투 42.1% · 3점 36.2% · 팀 내 3옵션",
-                    "last": "직전 26분 10점 3리바운드 1어시스트, 야투 3-9",
-                    "recent": "최근 5경기 9.4점 · 야투 38.1%"
-                  }
-                ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 23.0점·야투 47.6%·3점 36.0%입니다. 결장 4명의 시즌 평균 득점 합계는 6.6점입니다. 직전 경기에서는 Kyrie Irving가 34점·6리바운드·5어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명",
-                "injuryOut": 4,
-                "injuryPpg": 6.6,
-                "injuries": [
-                  {
-                    "player": "Tobi Lawal",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 15옵션 · 1.4점 · 1.1리바운드"
-                  },
-                  {
-                    "player": "Sergio de Larrea",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 11옵션 · 5.2점 · 2.0리바운드"
-                  },
-                  {
-                    "player": "Dereck Lively II",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
-                  },
-                  {
-                    "player": "Tarik Biberovic",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-bos-den-20261119",
-          "espnId": "401910015",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T11:30:00+09:00",
-          "status": "final",
-          "venue": "Ball Arena",
-          "away": {
-            "name": "보스턴 셀틱스",
-            "abbr": "BOS",
-            "record": "11승 3패",
-            "badges": [
-              {
-                "text": "원정 5승 2패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "덴버 너기츠",
-            "abbr": "DEN",
-            "record": "7승 5패",
-            "badges": [
-              {
-                "text": "홈 2승 3패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 1명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**덴버 너기츠**(홈) 7승 5패(홈 2승 3패, 최근 5경기 3승 2패), **보스턴 셀틱스**(원정) 11승 3패(원정 5승 2패, 최근 5경기 4승 1패). 직전 경기(11.17) **덴버 너기츠**는 피닉스 선즈에 105-117로 졌고, Nikola Jokic 28점·15리바운드·7어시스트, Jamal Murray 28점·4리바운드·4어시스트를 기록했습니다. 직전 경기(11.17) **보스턴 셀틱스**는 올랜도 매직에 105-115로 졌고, Jayson Tatum 24점·12리바운드·4어시스트, Paul George 22점·8리바운드·3어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 101,
-            "homeScore": 105,
-            "lines": {
-              "away": [
-                "30",
-                "31",
-                "19",
-                "21"
-              ],
-              "home": [
-                "24",
-                "25",
-                "31",
-                "25"
-              ]
-            },
-            "top": [
-              {
-                "name": "Jayson Tatum",
-                "id": "4065648",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
-                "team": "BOS",
-                "min": "37",
-                "pts": 24,
-                "reb": "8",
-                "ast": "3"
-              },
-              {
-                "name": "Nikola Jokic",
-                "id": "3112335",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
-                "team": "DEN",
-                "min": "39",
-                "pts": 24,
-                "reb": "8",
-                "ast": "9"
-              },
-              {
-                "name": "Jamal Murray",
-                "id": "3936299",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
-                "team": "DEN",
-                "min": "38",
-                "pts": 21,
-                "reb": "7",
-                "ast": "2"
-              },
-              {
-                "name": "DeMar DeRozan",
-                "id": "3978",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3978.png",
-                "team": "DEN",
-                "min": "25",
-                "pts": 18,
-                "reb": "2",
-                "ast": "2"
-              },
-              {
-                "name": "Neemias Queta",
-                "id": "4397424",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397424.png",
-                "team": "BOS",
-                "min": "27",
-                "pts": 17,
-                "reb": "10",
-                "ast": "3"
-              },
-              {
-                "name": "Payton Pritchard",
-                "id": "4066354",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
-                "team": "BOS",
-                "min": "30",
-                "pts": 15,
-                "reb": "1",
-                "ast": "2"
-              }
-            ],
-            "winner": "home"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "BOS",
-                "name": "보스턴 셀틱스",
-                "side": "away",
-                "record": "11승 3패",
-                "venueRecord": "원정 5승 2패",
-                "last5": "4승 1패",
-                "lastGame": "105-115 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "올랜도 매직",
-                    "ha": "홈",
-                    "score": "105-115",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "댈러스 매버릭스",
-                    "ha": "홈",
-                    "score": "131-94",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "토론토 랩터스",
-                    "ha": "원정",
-                    "score": "98-93",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "필라델피아 세븐티식서스",
-                    "ha": "원정",
-                    "score": "123-101",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-09",
-                    "opp": "밀워키 벅스",
-                    "ha": "원정",
-                    "score": "117-97",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Jayson Tatum",
-                    "id": "4065648",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
-                    "pos": "F",
-                    "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
-                    "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
-                    "last": "직전 36분 24점 12리바운드 4어시스트, 야투 9-23",
-                    "recent": "최근 5경기 24.4점 · 야투 41.2%"
-                  },
-                  {
-                    "name": "Paul George",
-                    "id": "4251",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png",
-                    "pos": "F",
-                    "stat": "19.9점 · 5.5리바운드 · 3.7어시스트",
-                    "sub": "야투 46.5% · 3점 42.3% · 팀 내 2옵션",
-                    "last": "직전 36분 22점 8리바운드 3어시스트, 야투 7-13",
-                    "recent": "최근 4경기 23.0점 · 야투 54.7%"
-                  },
-                  {
-                    "name": "Payton Pritchard",
-                    "id": "4066354",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
-                    "pos": "G",
-                    "stat": "13.7점 · 3.1리바운드 · 3.8어시스트",
-                    "sub": "야투 42.4% · 3점 37.1% · 팀 내 3옵션",
-                    "last": "직전 32분 21점 4리바운드 5어시스트, 야투 7-16",
-                    "recent": "최근 5경기 15.0점 · 야투 41.5%"
-                  }
-                ],
-                "focus": "최근 5경기 Jayson Tatum의 평균은 24.4점·야투 41.2%·3점 38.3%입니다. 직전 경기에서는 Jayson Tatum가 24점·12리바운드·4어시스트를 기록했습니다. 이어서 Paul George, Payton Pritchard가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음",
-                "injuries": []
-              },
-              {
-                "abbr": "DEN",
-                "name": "덴버 너기츠",
-                "side": "home",
-                "record": "7승 5패",
-                "venueRecord": "홈 2승 3패",
-                "last5": "3승 2패",
-                "lastGame": "105-117 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "피닉스 선즈",
-                    "ha": "홈",
-                    "score": "105-117",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "뉴올리언스 펠리컨스",
-                    "ha": "원정",
-                    "score": "116-108",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "멤피스 그리즐리스",
-                    "ha": "원정",
-                    "score": "123-118",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "휴스턴 로키츠",
-                    "ha": "원정",
-                    "score": "100-110",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-07",
-                    "opp": "인디애나 페이서스",
-                    "ha": "원정",
-                    "score": "114-102",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Jamal Murray",
-                    "id": "3936299",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
-                    "pos": "G",
-                    "stat": "25.7점 · 5.2리바운드 · 5.7어시스트",
-                    "sub": "야투 50.7% · 3점 46.2% · 팀 내 1옵션",
-                    "last": "직전 35분 28점 4리바운드 4어시스트, 야투 9-19",
-                    "recent": "최근 5경기 27.0점 · 야투 55.6%"
-                  },
-                  {
-                    "name": "Nikola Jokic",
-                    "id": "3112335",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
-                    "pos": "C",
-                    "stat": "24.1점 · 10.7리바운드 · 8.9어시스트",
-                    "sub": "야투 51.7% · 3점 28.1% · 팀 내 2옵션",
-                    "last": "직전 38분 28점 15리바운드 7어시스트, 야투 12-21",
-                    "recent": "최근 5경기 25.0점 · 야투 53.3%"
-                  },
-                  {
-                    "name": "Christian Braun",
-                    "id": "4431767",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png",
-                    "pos": "G",
-                    "stat": "12.8점 · 4.3리바운드 · 2.4어시스트",
-                    "sub": "야투 47.1% · 3점 31.7% · 팀 내 3옵션",
-                    "last": "직전 33분 10점 3리바운드 3어시스트, 야투 4-7",
-                    "recent": "최근 5경기 9.8점 · 야투 38.8%"
-                  }
-                ],
-                "focus": "최근 5경기 Jamal Murray의 평균은 27.0점·야투 55.6%·3점 40.0%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 28점·15리바운드·7어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명",
-                "injuryOut": 1,
-                "injuries": [
-                  {
-                    "player": "Julian Strawther",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-utah-lal-20261119",
-          "espnId": "401910017",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T12:00:00+09:00",
-          "status": "final",
-          "venue": "crypto.com Arena",
-          "away": {
-            "name": "유타 재즈",
-            "abbr": "UTAH",
-            "record": "2승 13패",
-            "badges": [
-              {
-                "text": "원정 1승 6패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "LA 레이커스",
-            "abbr": "LAL",
-            "record": "13승 2패",
-            "badges": [
-              {
-                "text": "홈 6승 1패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 4명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**LA 레이커스**(홈) 13승 2패(홈 6승 1패, 최근 5경기 5승 0패, 5연승), **유타 재즈**(원정) 2승 13패(원정 1승 6패, 최근 5경기 1승 4패). 직전 경기(11.18) **LA 레이커스**는 샬럿 호네츠에 118-114로 이겼고, Quentin Grimes 47점·6리바운드·3어시스트, Luka Doncic 36점·6리바운드·7어시스트를 기록했습니다. 직전 경기(11.18) **유타 재즈**는 LA 클리퍼스에 132-107로 이겼고, Brice Sensabaugh 40점·11리바운드·5어시스트, Keyonte George 30점·2리바운드·11어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 109,
-            "homeScore": 97,
-            "lines": {
-              "away": [
-                "29",
-                "27",
-                "22",
-                "31"
-              ],
-              "home": [
-                "34",
-                "20",
-                "22",
-                "21"
-              ]
-            },
-            "top": [
-              {
-                "name": "Keyonte George",
-                "id": "4433627",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
-                "team": "UTAH",
-                "min": "39",
-                "pts": 30,
-                "reb": "1",
-                "ast": "10"
-              },
-              {
-                "name": "Luka Doncic",
-                "id": "3945274",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
-                "team": "LAL",
-                "min": "37",
-                "pts": 29,
-                "reb": "5",
-                "ast": "7"
-              },
-              {
-                "name": "Quentin Grimes",
-                "id": "4397014",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397014.png",
-                "team": "LAL",
-                "min": "35",
-                "pts": 20,
-                "reb": "7",
-                "ast": "4"
-              },
-              {
-                "name": "Ace Bailey",
-                "id": "4873138",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4873138.png",
-                "team": "UTAH",
-                "min": "27",
-                "pts": 19,
-                "reb": "8",
-                "ast": "3"
-              },
-              {
-                "name": "Svi Mykhailiuk",
-                "id": "3133602",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3133602.png",
-                "team": "UTAH",
-                "min": "34",
-                "pts": 15,
-                "reb": "3",
-                "ast": "5"
-              },
-              {
-                "name": "Collin Sexton",
-                "id": "4277811",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277811.png",
-                "team": "LAL",
-                "min": "20",
-                "pts": 12,
-                "reb": "0",
-                "ast": "1"
-              }
-            ],
-            "winner": "away"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "UTAH",
-                "name": "유타 재즈",
-                "side": "away",
-                "record": "2승 13패",
-                "venueRecord": "원정 1승 6패",
-                "last5": "1승 4패",
-                "lastGame": "132-107 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-18",
-                    "opp": "LA 클리퍼스",
-                    "ha": "원정",
-                    "score": "132-107",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "샌안토니오 스퍼스",
-                    "ha": "홈",
-                    "score": "102-110",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "휴스턴 로키츠",
-                    "ha": "원정",
-                    "score": "118-125",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "올랜도 매직",
-                    "ha": "홈",
-                    "score": "108-123",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "마이애미 히트",
-                    "ha": "홈",
-                    "score": "109-115",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Keyonte George",
-                    "id": "4433627",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
-                    "pos": "G",
-                    "stat": "21.6점 · 4.1리바운드 · 7.1어시스트",
-                    "sub": "야투 44.1% · 3점 34.7% · 팀 내 1옵션",
-                    "last": "직전 35분 30점 2리바운드 11어시스트, 야투 10-17",
-                    "recent": "최근 4경기 20.8점 · 야투 40.0%"
-                  },
-                  {
-                    "name": "Lauri Markkanen",
-                    "id": "4066336",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066336.png",
-                    "pos": "F",
-                    "stat": "18.0점 · 6.8리바운드 · 2.0어시스트",
-                    "sub": "야투 38.9% · 3점 39.7% · 팀 내 2옵션"
-                  },
-                  {
-                    "name": "Darryn Peterson",
-                    "id": "5041955",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png",
-                    "pos": "G",
-                    "stat": "16.5점 · 4.1리바운드 · 3.6어시스트",
-                    "sub": "야투 40.4% · 3점 36.1% · 팀 내 3옵션",
-                    "last": "직전 31분 13점 5리바운드 2어시스트, 야투 3-10",
-                    "recent": "최근 5경기 21.0점 · 야투 40.9%"
-                  }
-                ],
-                "focus": "최근 4경기 Keyonte George의 평균은 20.8점·야투 40.0%·3점 37.9%입니다. 결장 3명의 시즌 평균 득점 합계는 34.2점입니다. 직전 경기에서는 Brice Sensabaugh가 40점·11리바운드·5어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명",
-                "injuryOut": 3,
-                "injuryPpg": 34.2,
-                "injuries": [
-                  {
-                    "player": "Lauri Markkanen",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 2옵션 · 18.0점 · 6.8리바운드"
-                  },
-                  {
-                    "player": "Jusuf Nurkic",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
-                  },
-                  {
-                    "player": "Jaren Jackson Jr.",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 4옵션 · 16.2점 · 5.0리바운드"
-                  }
-                ]
-              },
-              {
-                "abbr": "LAL",
-                "name": "LA 레이커스",
-                "side": "home",
-                "record": "13승 2패",
-                "venueRecord": "홈 6승 1패",
-                "streak": "5연승",
-                "last5": "5승 0패",
-                "lastGame": "118-114 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-18",
-                    "opp": "샬럿 호네츠",
-                    "ha": "홈",
-                    "score": "118-114",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "피닉스 선즈",
-                    "ha": "원정",
-                    "score": "131-123",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "밀워키 벅스",
-                    "ha": "원정",
-                    "score": "123-112",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "애틀랜타 호크스",
-                    "ha": "원정",
-                    "score": "124-114",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-08",
-                    "opp": "디트로이트 피스턴스",
-                    "ha": "원정",
-                    "score": "121-116",
-                    "res": "승"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Luka Doncic",
-                    "id": "3945274",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
-                    "pos": "G",
-                    "stat": "38.1점 · 7.0리바운드 · 7.6어시스트",
-                    "sub": "야투 46.6% · 3점 38.3% · 팀 내 1옵션",
-                    "last": "직전 42분 36점 6리바운드 7어시스트, 야투 13-34",
-                    "recent": "최근 4경기 35.8점 · 야투 43.1%"
-                  },
-                  {
-                    "name": "Austin Reaves",
-                    "id": "4066457",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066457.png",
-                    "pos": "G",
-                    "stat": "24.7점 · 3.3리바운드 · 4.7어시스트",
-                    "sub": "야투 51.3% · 3점 40.9% · 팀 내 2옵션",
-                    "recent": "최근 2경기 30.5점 · 야투 54.1%"
-                  },
-                  {
-                    "name": "Walker Kessler",
-                    "id": "4433136",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433136.png",
-                    "pos": "C",
-                    "stat": "14.2점 · 10.9리바운드 · 1.8어시스트",
-                    "sub": "야투 66.7% · 3점 0.0% · 팀 내 3옵션",
-                    "recent": "최근 4경기 14.2점 · 야투 59.5%"
-                  }
-                ],
-                "focus": "최근 4경기 Luka Doncic의 평균은 35.8점·야투 43.1%·3점 34.6%입니다. 결장 1명의 시즌 평균 득점 합계는 24.7점입니다. 직전 경기에서는 Quentin Grimes가 47점·6리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명(팀 득점 2위)",
-                "injuryOut": 1,
-                "injuryPpg": 24.7,
-                "injuries": [
-                  {
-                    "player": "Austin Reaves",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 2옵션 · 24.7점 · 3.3리바운드"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        },
-        {
-          "id": "nba-phx-sac-20261119",
-          "espnId": "401910018",
-          "sport": "basketball",
-          "league": "NBA",
-          "source": "espn",
-          "start": "2026-11-19T12:00:00+09:00",
-          "status": "final",
-          "venue": "Golden 1 Center",
-          "away": {
-            "name": "피닉스 선즈",
-            "abbr": "PHX",
-            "record": "6승 7패",
-            "badges": [
-              {
-                "text": "원정 1승 3패",
-                "tone": ""
-              }
-            ]
-          },
-          "home": {
-            "name": "새크라멘토 킹스",
-            "abbr": "SAC",
-            "record": "1승 12패",
-            "badges": [
-              {
-                "text": "홈 0승 8패",
-                "tone": ""
-              }
-            ]
-          },
-          "tags": [
-            {
-              "text": "결장 3명",
-              "tone": "warn"
-            }
-          ],
-          "rows": [
-            {
-              "kind": "flow",
-              "label": "흐름",
-              "text": "**새크라멘토 킹스**(홈) 1승 12패(홈 0승 8패, 최근 5경기 0승 5패, 5연패), **피닉스 선즈**(원정) 6승 7패(원정 1승 3패, 최근 5경기 3승 2패). 직전 경기(11.16) **새크라멘토 킹스**는 오클라호마시티 썬더에 103-125로 졌고, Darius Acuff Jr. 26점·0리바운드·6어시스트, Malik Monk 14점·1리바운드·10어시스트를 기록했습니다. 직전 경기(11.17) **피닉스 선즈**는 덴버 너기츠에 117-105로 이겼고, Devin Booker 20점·4리바운드·8어시스트, Miles Bridges 16점·8리바운드·2어시스트를 기록했습니다."
-            }
-          ],
-          "result": {
-            "state": "final",
-            "detail": "Final",
-            "awayScore": 128,
-            "homeScore": 107,
-            "lines": {
-              "away": [
-                "36",
-                "29",
-                "34",
-                "29"
-              ],
-              "home": [
-                "31",
-                "29",
-                "24",
-                "23"
-              ]
-            },
-            "top": [
-              {
-                "name": "Darius Acuff Jr.",
-                "id": "5142620",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
-                "team": "SAC",
-                "min": "35",
-                "pts": 36,
-                "reb": "4",
-                "ast": "6"
-              },
-              {
-                "name": "Dillon Brooks",
-                "id": "3155526",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155526.png",
-                "team": "PHX",
-                "min": "31",
-                "pts": 29,
-                "reb": "3",
-                "ast": "5"
-              },
-              {
-                "name": "Devin Booker",
-                "id": "3136193",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png",
-                "team": "PHX",
-                "min": "33",
-                "pts": 29,
-                "reb": "2",
-                "ast": "6"
-              },
-              {
-                "name": "Jalen Green",
-                "id": "4437244",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4437244.png",
-                "team": "PHX",
-                "min": "30",
-                "pts": 18,
-                "reb": "7",
-                "ast": "7"
-              },
-              {
-                "name": "Zach LaVine",
-                "id": "3064440",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
-                "team": "SAC",
-                "min": "32",
-                "pts": 18,
-                "reb": "5",
-                "ast": "2"
-              },
-              {
-                "name": "Miles Bridges",
-                "id": "4066383",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png",
-                "team": "PHX",
-                "min": "29",
-                "pts": 13,
-                "reb": "6",
-                "ast": "5"
-              }
-            ],
-            "winner": "away"
-          },
-          "details": {
-            "teams": [
-              {
-                "abbr": "PHX",
-                "name": "피닉스 선즈",
-                "side": "away",
-                "record": "6승 7패",
-                "venueRecord": "원정 1승 3패",
-                "last5": "3승 2패",
-                "lastGame": "117-105 승",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-17",
-                    "opp": "덴버 너기츠",
-                    "ha": "원정",
-                    "score": "117-105",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-15",
-                    "opp": "LA 레이커스",
-                    "ha": "홈",
-                    "score": "123-131",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "샬럿 호네츠",
-                    "ha": "홈",
-                    "score": "101-96",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "LA 클리퍼스",
-                    "ha": "홈",
-                    "score": "133-110",
-                    "res": "승"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "샌안토니오 스퍼스",
-                    "ha": "홈",
-                    "score": "96-122",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Devin Booker",
-                    "id": "3136193",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png",
-                    "pos": "G",
-                    "stat": "24.8점 · 2.7리바운드 · 5.4어시스트",
-                    "sub": "야투 48.0% · 3점 34.2% · 팀 내 1옵션",
-                    "last": "직전 37분 20점 4리바운드 8어시스트, 야투 5-14",
-                    "recent": "최근 5경기 23.2점 · 야투 46.8%"
-                  },
-                  {
-                    "name": "Dillon Brooks",
-                    "id": "3155526",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155526.png",
-                    "pos": "F",
-                    "stat": "14.9점 · 3.6리바운드 · 2.3어시스트",
-                    "sub": "야투 45.4% · 3점 44.8% · 팀 내 2옵션",
-                    "last": "직전 27분 15점 4리바운드 4어시스트, 야투 6-17",
-                    "recent": "최근 5경기 9.2점 · 야투 32.8%"
-                  },
-                  {
-                    "name": "Miles Bridges",
-                    "id": "4066383",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png",
-                    "pos": "F",
-                    "stat": "14.6점 · 6.9리바운드 · 3.1어시스트",
-                    "sub": "야투 47.0% · 3점 31.6% · 팀 내 3옵션",
-                    "last": "직전 29분 16점 8리바운드 2어시스트, 야투 7-15",
-                    "recent": "최근 5경기 11.2점 · 야투 43.1%"
-                  }
-                ],
-                "focus": "최근 5경기 Devin Booker의 평균은 23.2점·야투 46.8%·3점 35.7%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Devin Booker가 20점·4리바운드·8어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명",
-                "injuryOut": 1,
-                "injuries": [
-                  {
-                    "player": "Mark Williams",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
-                  }
-                ]
-              },
-              {
-                "abbr": "SAC",
-                "name": "새크라멘토 킹스",
-                "side": "home",
-                "record": "1승 12패",
-                "venueRecord": "홈 0승 8패",
-                "streak": "5연패",
-                "last5": "0승 5패",
-                "lastGame": "103-125 패",
-                "last5Detail": [
-                  {
-                    "date": "2026-11-16",
-                    "opp": "오클라호마시티 썬더",
-                    "ha": "홈",
-                    "score": "103-125",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "포틀랜드 트레일블레이저스",
-                    "ha": "홈",
-                    "score": "107-120",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "올랜도 매직",
-                    "ha": "홈",
-                    "score": "100-107",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-09",
-                    "opp": "마이애미 히트",
-                    "ha": "홈",
-                    "score": "108-114",
-                    "res": "패"
-                  },
-                  {
-                    "date": "2026-11-07",
-                    "opp": "샌안토니오 스퍼스",
-                    "ha": "홈",
-                    "score": "109-124",
-                    "res": "패"
-                  }
-                ],
-                "players": [
-                  {
-                    "name": "Darius Acuff Jr.",
-                    "id": "5142620",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
-                    "pos": "G",
-                    "stat": "26.2점 · 3.6리바운드 · 7.0어시스트",
-                    "sub": "야투 41.6% · 3점 34.3% · 팀 내 1옵션",
-                    "last": "직전 33분 26점 0리바운드 6어시스트, 야투 10-25",
-                    "recent": "최근 5경기 25.2점 · 야투 43.4%"
-                  },
-                  {
-                    "name": "Zach LaVine",
-                    "id": "3064440",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
-                    "pos": "G",
-                    "stat": "21.2점 · 3.4리바운드 · 2.8어시스트",
-                    "sub": "야투 51.1% · 3점 38.7% · 팀 내 2옵션",
-                    "recent": "최근 4경기 18.0점 · 야투 51.1%"
-                  },
-                  {
-                    "name": "Domantas Sabonis",
-                    "id": "3155942",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
-                    "pos": "F",
-                    "stat": "13.7점 · 13.2리바운드 · 5.8어시스트",
-                    "sub": "야투 63.4% · 3점 27.3% · 팀 내 3옵션",
-                    "last": "직전 29분 11점 13리바운드 3어시스트, 야투 3-6",
-                    "recent": "최근 4경기 12.2점 · 야투 55.6%"
-                  }
-                ],
-                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 43.4%·3점 35.6%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 26점·0리바운드·6어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명",
-                "injuryOut": 2,
-                "injuries": [
-                  {
-                    "player": "Maxime Raynaud",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
-                  },
-                  {
-                    "player": "Ben Simmons",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G"
-                  }
-                ]
-              }
-            ],
-            "checkpoints": [
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
-            ],
-            "note": "출전 여부는 ESPN 2026-11-19 21:38 기준이며 경기 전까지 변동될 수 있습니다."
-          }
-        }
-        /* NBA-AUTO 2026-11-19 END */
-      ]
-    },
 
     /* ── 2026-11-20 (금) — 축구·야구는 경기가 없는 날 예시 ── */
     {
@@ -28113,7 +23237,7 @@ window.CLUTCH_DATA = {
       games: [
 
         /* SOCCER-AUTO 2026-11-23 START */
-                {
+        {
           "id": "soccer-rso-rac-20261123",
           "espnId": "401882800",
           "sport": "soccer",
@@ -28122,35 +23246,10 @@ window.CLUTCH_DATA = {
           "source": "espn",
           "start": "2026-11-23T00:15:00+09:00",
           "venue": "El Sardineros",
-          "odds": {
-            "provider": "DraftKings",
-            "at": "2026-11-22T14:11:30+09:00",
-            "moneyline": {
-              "away": 100,
-              "draw": 310,
-              "home": 220
-            },
-            "spread": {
-              "homeLine": "+0.5",
-              "awayLine": "-0.5",
-              "home": -130,
-              "away": -105
-            },
-            "total": {
-              "line": "3.5",
-              "over": -105,
-              "under": -115
-            },
-            "implied": {
-              "away": 47.3,
-              "draw": 23.1,
-              "home": 29.6
-            }
-          },
           "away": {
             "name": "레알 소시에다드",
             "abbr": "RSO",
-            "record": "7승 1무 4패",
+            "record": "7승 1무 5패",
             "badges": [
               {
                 "text": "리그 5위",
@@ -28161,10 +23260,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "라싱 산탄데르",
             "abbr": "RAC",
-            "record": "4승 2무 6패",
+            "record": "5승 2무 6패",
             "badges": [
               {
-                "text": "리그 12위",
+                "text": "리그 7위",
                 "tone": "rank"
               }
             ]
@@ -28172,10 +23271,6 @@ window.CLUTCH_DATA = {
           "tags": [
             {
               "text": "LALIGA · 라리가",
-              "tone": "info"
-            },
-            {
-              "text": "오버언더 3.5골",
               "tone": "info"
             },
             {
@@ -28187,39 +23282,22 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**라싱 산탄데르**(홈) 4승 2무 6패(리그 12위), 최근 5경기 3승 0무 2패, **레알 소시에다드**(원정) 7승 1무 4패(리그 5위), 최근 5경기 3승 1무 1패. 최근 맞대결은 2014.01.30에 열린 라싱 산탄데르 0-0 레알 소시에다드 경기입니다."
+              "text": "**라싱 산탄데르**(홈) 5승 2무 6패(리그 7위), 최근 5경기 3승 0무 2패, **레알 소시에다드**(원정) 7승 1무 5패(리그 5위), 최근 5경기 3승 1무 1패. 최근 맞대결은 2014.01.30에 열린 라싱 산탄데르 0-0 레알 소시에다드 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **라싱 산탄데르**(홈) 1.4골 · **레알 소시에다드**(원정) 1.8골, 평균 실점은 홈 2.5골 · 원정 1.7골. 해외 배당을 확률로 환산하면 라싱 산탄데르 승 29.6% · 무 23.1% · 레알 소시에다드 승 47.3%."
+              "text": "두 팀 평균 득점은 **라싱 산탄데르**(홈) 1.5골 · **레알 소시에다드**(원정) 1.8골, 평균 실점은 홈 2.5골 · 원정 1.8골."
             }
           ],
-          "result": {
-            "state": "final",
-            "detail": "FT",
-            "awayScore": 2,
-            "homeScore": 3,
-            "lines": {
-              "away": [
-                "1",
-                "1"
-              ],
-              "home": [
-                "2",
-                "1"
-              ]
-            },
-            "winner": "home"
-          },
           "details": {
             "teams": [
               {
                 "abbr": "RSO",
                 "name": "레알 소시에다드",
                 "side": "away",
-                "record": "7승 1무 4패",
-                "venueRecord": "원정 3승 0무 3패",
+                "record": "7승 1무 5패",
+                "venueRecord": "원정 3승 0무 4패",
                 "badges": [
                   {
                     "text": "리그 5위",
@@ -28229,7 +23307,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "7승 1무 4패"
+                    "value": "7승 1무 5패"
                   },
                   {
                     "label": "리그 순위",
@@ -28241,11 +23319,11 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "+1"
+                    "value": "0"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "승-무-패-승-승"
+                    "value": "패-승-무-패-승"
                   }
                 ],
                 "nums": [
@@ -28255,11 +23333,11 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.7골"
+                    "value": "1.8골"
                   },
                   {
                     "label": "득실차",
-                    "value": "+1"
+                    "value": "0"
                   }
                 ],
                 "streak": "최근 5경기 3승 1무 1패",
@@ -28306,16 +23384,16 @@ window.CLUTCH_DATA = {
                     "comp": "UEL"
                   }
                 ],
-                "focus": "최근 5경기 3승 1무 1패입니다. 원정 3승 0무 3패입니다. 경기당 평균 1.8골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 라요 바예카노 1-0 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 3승 1무 1패입니다. 원정 3승 0무 4패입니다. 경기당 평균 1.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 라요 바예카노 1-0 승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
-                    "player": "Yangel Herrera",
+                    "player": "Álvaro Odriozola",
                     "status": "OUT",
                     "line": "복귀 예상 2026년 12월 초"
                   },
                   {
-                    "player": "Álvaro Odriozola",
+                    "player": "Yangel Herrera",
                     "status": "OUT",
                     "line": "복귀 예상 2026년 12월 초"
                   },
@@ -28335,7 +23413,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Gonçalo Guedes",
-                    "rating": 8.5,
+                    "rating": 8.6,
                     "pos": "MF",
                     "starter": true
                   },
@@ -28346,8 +23424,8 @@ window.CLUTCH_DATA = {
                     "starter": true
                   },
                   {
-                    "name": "Luka Sučić",
-                    "rating": 7.4,
+                    "name": "Jon Gorrotxategi",
+                    "rating": 7.3,
                     "pos": "MF",
                     "starter": true
                   },
@@ -28364,7 +23442,7 @@ window.CLUTCH_DATA = {
                     "starter": false
                   },
                   {
-                    "name": "Jon Gorrotxategi",
+                    "name": "Luka Sučić",
                     "rating": 7.2,
                     "pos": "MF",
                     "starter": true
@@ -28388,16 +23466,16 @@ window.CLUTCH_DATA = {
                     "starter": false
                   },
                   {
-                    "name": "Takefusa Kubo",
-                    "rating": 6.4,
-                    "pos": "FW",
-                    "starter": false
-                  },
-                  {
                     "name": "Igor Zubeldia",
-                    "rating": 6.3,
+                    "rating": 6.4,
                     "pos": "DF",
                     "starter": true
+                  },
+                  {
+                    "name": "Takefusa Kubo",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Orri Óskarsson",
@@ -28417,40 +23495,40 @@ window.CLUTCH_DATA = {
                 "abbr": "RAC",
                 "name": "라싱 산탄데르",
                 "side": "home",
-                "record": "4승 2무 6패",
-                "venueRecord": "홈 3승 2무 1패",
+                "record": "5승 2무 6패",
+                "venueRecord": "홈 4승 2무 1패",
                 "badges": [
                   {
-                    "text": "리그 12위",
+                    "text": "리그 7위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "4승 2무 6패"
+                    "value": "5승 2무 6패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "12위"
+                    "value": "7위"
                   },
                   {
                     "label": "승점",
-                    "value": "14"
+                    "value": "17"
                   },
                   {
                     "label": "득실차",
-                    "value": "-13"
+                    "value": "-12"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "승-패-승-승-패"
+                    "value": "승-승-패-승-승"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "1.4골"
+                    "value": "1.5골"
                   },
                   {
                     "label": "평균 실점",
@@ -28458,7 +23536,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "-13"
+                    "value": "-12"
                   }
                 ],
                 "streak": "최근 5경기 3승 0무 2패",
@@ -28505,8 +23583,8 @@ window.CLUTCH_DATA = {
                     "comp": "라리가"
                   }
                 ],
-                "focus": "최근 5경기 3승 0무 2패입니다. 홈 3승 2무 1패입니다. 경기당 평균 1.4골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 말라가 2-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 3승 0무 2패입니다. 홈 4승 2무 1패입니다. 경기당 평균 1.5골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 말라가 2-1 승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Álvaro Mantilla",
@@ -28540,7 +23618,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Iker Luque",
-                    "rating": 7.9,
+                    "rating": 8.0,
                     "pos": "FW",
                     "starter": true
                   },
@@ -28551,14 +23629,14 @@ window.CLUTCH_DATA = {
                     "starter": true
                   },
                   {
-                    "name": "Pablo Ramón",
-                    "rating": 7.3,
+                    "name": "Pedro Felipe",
+                    "rating": 7.4,
                     "pos": "DF",
                     "starter": true
                   },
                   {
-                    "name": "Pedro Felipe",
-                    "rating": 7.2,
+                    "name": "Pablo Ramón",
+                    "rating": 7.3,
                     "pos": "DF",
                     "starter": true
                   },
@@ -28575,20 +23653,20 @@ window.CLUTCH_DATA = {
                     "starter": true
                   },
                   {
+                    "name": "Iván Martín",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
                     "name": "Pablo García",
                     "rating": 6.7,
                     "pos": "FW",
                     "starter": false
                   },
                   {
-                    "name": "Iván Martín",
-                    "rating": 6.6,
-                    "pos": "MF",
-                    "starter": true
-                  },
-                  {
                     "name": "Jorge Salinas",
-                    "rating": 6.3,
+                    "rating": 6.4,
                     "pos": "DF",
                     "starter": true
                   },
@@ -28601,61 +23679,11 @@ window.CLUTCH_DATA = {
                 ]
               }
             ],
-            "keyPlayers": [
-              {
-                "side": "home",
-                "team": "라싱 산탄데르",
-                "players": [
-                  {
-                    "name": "Yassir Zabiri",
-                    "id": "390389",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Yassir_Zabiri_%28cropped%29.jpg/120px-Yassir_Zabiri_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 9"
-                    ],
-                    "rating": 9.2
-                  },
-                  {
-                    "name": "Iñigo Vicente",
-                    "id": "284699",
-                    "photo": "https://upload.wikimedia.org/wikipedia/commons/9/9d/I%C3%B1igo_Vicente.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-                    "stats": [
-                      "도움 3"
-                    ],
-                    "rating": 7.7
-                  }
-                ]
-              },
-              {
-                "side": "away",
-                "team": "레알 소시에다드",
-                "players": [
-                  {
-                    "name": "Luka Sucic",
-                    "id": "306263",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Luka_Sucic_Croatia_v_Portugal_2_July_2026-062.jpg/120px-Luka_Sucic_Croatia_v_Portugal_2_July_2026-062.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 4"
-                    ],
-                    "rating": 7.4
-                  },
-                  {
-                    "name": "Carlos Soler",
-                    "id": "235072",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Carlos_Soler_2020_%28cropped%29.png/120px-Carlos_Soler_2020_%28cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "도움 3"
-                    ],
-                    "rating": 6.8
-                  }
-                ]
-              }
-            ],
             "checkpoints": [
-              "**라싱 산탄데르** — 리그 12위, 승점 14, 득실 -13.",
-              "**레알 소시에다드** — 리그 5위, 승점 22, 득실 +1."
+              "**라싱 산탄데르** — 리그 7위, 승점 17, 득실 -12.",
+              "**레알 소시에다드** — 리그 5위, 승점 22, 득실 0."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -28693,10 +23721,9 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868137,
             "fotmobSwapped": false
-          },
-          "status": "final"
+          }
         },
-                {
+        {
           "id": "soccer-hsv-svw-20261123",
           "espnId": "401884730",
           "sport": "soccer",
@@ -28705,27 +23732,13 @@ window.CLUTCH_DATA = {
           "source": "espn",
           "start": "2026-11-23T01:30:00+09:00",
           "venue": "Weserstadion",
-          "odds": {
-            "provider": "Bet 365",
-            "at": "2026-11-22T14:11:35+09:00",
-            "moneyline": {
-              "away": 400,
-              "draw": 333,
-              "home": -175
-            },
-            "implied": {
-              "away": 18.7,
-              "draw": 21.6,
-              "home": 59.6
-            }
-          },
           "away": {
             "name": "함부르크",
             "abbr": "HSV",
-            "record": "4승 0무 5패",
+            "record": "4승 0무 6패",
             "badges": [
               {
-                "text": "리그 11위",
+                "text": "리그 12위",
                 "tone": "rank"
               }
             ]
@@ -28733,7 +23746,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "베르더 브레멘",
             "abbr": "SVW",
-            "record": "4승 3무 2패",
+            "record": "5승 3무 2패",
             "badges": [
               {
                 "text": "리그 6위",
@@ -28755,53 +23768,36 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**베르더 브레멘**(홈) 4승 3무 2패(리그 6위), 최근 5경기 2승 1무 2패, **함부르크**(원정) 4승 0무 5패(리그 11위), 최근 5경기 1승 1무 3패. 최근 맞대결은 2026.04.18에 열린 베르더 브레멘 3-1 함부르크 경기입니다."
+              "text": "**베르더 브레멘**(홈) 5승 3무 2패(리그 6위), 최근 5경기 2승 1무 2패, **함부르크**(원정) 4승 0무 6패(리그 12위), 최근 5경기 1승 1무 3패. 최근 맞대결은 2026.04.18에 열린 베르더 브레멘 3-1 함부르크 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **베르더 브레멘**(홈) 1.9골 · **함부르크**(원정) 1.1골, 평균 실점은 홈 1.7골 · 원정 2.2골. 해외 배당을 확률로 환산하면 베르더 브레멘 승 59.6% · 무 21.6% · 함부르크 승 18.7%."
+              "text": "두 팀 평균 득점은 **베르더 브레멘**(홈) 2.1골 · **함부르크**(원정) 1.0골, 평균 실점은 홈 1.5골 · 원정 2.4골."
             }
           ],
-          "result": {
-            "state": "final",
-            "detail": "FT",
-            "awayScore": 0,
-            "homeScore": 4,
-            "lines": {
-              "away": [
-                "0",
-                "0"
-              ],
-              "home": [
-                "0",
-                "4"
-              ]
-            },
-            "winner": "home"
-          },
           "details": {
             "teams": [
               {
                 "abbr": "HSV",
                 "name": "함부르크",
                 "side": "away",
-                "record": "4승 0무 5패",
-                "venueRecord": "원정 1승 0무 4패",
+                "record": "4승 0무 6패",
+                "venueRecord": "원정 1승 0무 5패",
                 "badges": [
                   {
-                    "text": "리그 11위",
+                    "text": "리그 12위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "4승 0무 5패"
+                    "value": "4승 0무 6패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "11위"
+                    "value": "12위"
                   },
                   {
                     "label": "승점",
@@ -28809,25 +23805,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "-10"
+                    "value": "-14"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "승-패-패-패-승"
+                    "value": "패-승-패-패-패"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "1.1골"
+                    "value": "1.0골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "2.2골"
+                    "value": "2.4골"
                   },
                   {
                     "label": "득실차",
-                    "value": "-10"
+                    "value": "-14"
                   }
                 ],
                 "streak": "최근 5경기 1승 1무 3패",
@@ -28874,8 +23870,8 @@ window.CLUTCH_DATA = {
                     "comp": "분데스리가"
                   }
                 ],
-                "focus": "최근 5경기 1승 1무 3패입니다. 원정 1승 0무 4패입니다. 경기당 평균 1.1골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.15 홈 Hajduk Split 1-1 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 1승 1무 3패입니다. 원정 1승 0무 5패입니다. 경기당 평균 1.0골을 넣고 2.4골을 실점했습니다. 직전 경기 기록은 2026.11.15 홈 Hajduk Split 1-1 무입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jordan Torunarigha",
@@ -28918,34 +23914,34 @@ window.CLUTCH_DATA = {
                     "starter": false
                   },
                   {
-                    "name": "Otto Stange",
+                    "name": "Albert Grønbæk",
                     "rating": 6.4,
-                    "pos": "FW",
-                    "starter": false
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
-                    "name": "Albert Grønbæk",
+                    "name": "David Møller Wolfe",
                     "rating": 6.3,
                     "pos": "MF",
                     "starter": true
                   },
                   {
-                    "name": "Alexander Røssing",
-                    "rating": 6.2,
-                    "pos": "FW",
-                    "starter": true
-                  },
-                  {
-                    "name": "David Møller Wolfe",
-                    "rating": 6.2,
-                    "pos": "MF",
-                    "starter": true
-                  },
-                  {
                     "name": "Fábio Vieira",
-                    "rating": 6.1,
+                    "rating": 6.3,
                     "pos": "MF",
                     "starter": false
+                  },
+                  {
+                    "name": "Otto Stange",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Alexander Røssing",
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Patson Daka",
@@ -28978,20 +23974,20 @@ window.CLUTCH_DATA = {
                     "starter": true
                   },
                   {
-                    "name": "Sebastiaan Bornauw",
-                    "rating": 5.2,
+                    "name": "Warmed Omari",
+                    "rating": 5.6,
                     "pos": "DF",
                     "starter": true
                   },
                   {
-                    "name": "Warmed Omari",
-                    "rating": 5.2,
+                    "name": "Sebastiaan Bornauw",
+                    "rating": 5.3,
                     "pos": "DF",
                     "starter": true
                   },
                   {
                     "name": "Daniel Heuer Fernandes",
-                    "rating": 4.7,
+                    "rating": 4.8,
                     "pos": "GK",
                     "starter": true
                   }
@@ -29001,8 +23997,8 @@ window.CLUTCH_DATA = {
                 "abbr": "SVW",
                 "name": "베르더 브레멘",
                 "side": "home",
-                "record": "4승 3무 2패",
-                "venueRecord": "홈 3승 1무 0패",
+                "record": "5승 3무 2패",
+                "venueRecord": "홈 4승 1무 0패",
                 "badges": [
                   {
                     "text": "리그 6위",
@@ -29012,7 +24008,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "4승 3무 2패"
+                    "value": "5승 3무 2패"
                   },
                   {
                     "label": "리그 순위",
@@ -29020,29 +24016,29 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "승점",
-                    "value": "15"
+                    "value": "18"
                   },
                   {
                     "label": "득실차",
-                    "value": "+2"
+                    "value": "+6"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "패-승-패-승-무"
+                    "value": "승-패-승-패-승"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "1.9골"
+                    "value": "2.1골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.7골"
+                    "value": "1.5골"
                   },
                   {
                     "label": "득실차",
-                    "value": "+2"
+                    "value": "+6"
                   }
                 ],
                 "streak": "최근 5경기 2승 1무 2패",
@@ -29089,8 +24085,8 @@ window.CLUTCH_DATA = {
                     "comp": "분데스리가"
                   }
                 ],
-                "focus": "최근 5경기 2승 1무 2패입니다. 홈 3승 1무 0패입니다. 경기당 평균 1.9골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 슈투트가르트 0-1 패입니다. FotMob 기준 결장 7명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 2승 1무 2패입니다. 홈 4승 1무 0패입니다. 경기당 평균 2.1골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 슈투트가르트 0-1 패입니다. FotMob 기준 결장 7명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Mitchell Weiser",
@@ -29150,7 +24146,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Ludovit Reis",
-                    "rating": 8.0,
+                    "rating": 7.9,
                     "pos": "MF",
                     "starter": true
                   },
@@ -29192,7 +24188,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "name": "Eren Dinkçi",
-                    "rating": 6.8,
+                    "rating": 6.9,
                     "pos": "FW",
                     "starter": true
                   },
@@ -29211,59 +24207,11 @@ window.CLUTCH_DATA = {
                 ]
               }
             ],
-            "keyPlayers": [
-              {
-                "side": "home",
-                "team": "베르더 브레멘",
-                "players": [
-                  {
-                    "name": "Niclas Füllkrug",
-                    "id": "170257",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/NiclasF%C3%BCllkrug_%28cropped%29.jpg/120px-NiclasF%C3%BCllkrug_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 9"
-                    ],
-                    "rating": 9.0
-                  },
-                  {
-                    "name": "Marco Grüll",
-                    "id": "305853",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Austria_national_under-21_football_team_-_Teamcamp_October_2019_%2831%29.jpg/120px-Austria_national_under-21_football_team_-_Teamcamp_October_2019_%2831%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "도움 6"
-                    ]
-                  }
-                ]
-              },
-              {
-                "side": "away",
-                "team": "함부르크",
-                "players": [
-                  {
-                    "name": "Miro Muheim",
-                    "id": "243626",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/2025-05-16_Hamburger_SV_Miro_Muheim_%28cropped%29.jpg/120px-2025-05-16_Hamburger_SV_Miro_Muheim_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 3"
-                    ],
-                    "rating": 5.8
-                  },
-                  {
-                    "name": "Albert Grønbaek",
-                    "id": "297750",
-                    "stats": [
-                      "도움 4"
-                    ],
-                    "rating": 6.3
-                  }
-                ]
-              }
-            ],
             "checkpoints": [
-              "**베르더 브레멘** — 리그 6위, 승점 15, 득실 +2.",
-              "**함부르크** — 리그 11위, 승점 12, 득실 -10."
+              "**베르더 브레멘** — 리그 6위, 승점 18, 득실 +6.",
+              "**함부르크** — 리그 12위, 승점 12, 득실 -14."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -29301,10 +24249,9 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5881232,
             "fotmobSwapped": false
-          },
-          "status": "final"
+          }
         },
-                {
+        {
           "id": "soccer-man-liv-20261123",
           "espnId": "401878755",
           "sport": "soccer",
@@ -29313,35 +24260,10 @@ window.CLUTCH_DATA = {
           "source": "espn",
           "start": "2026-11-23T01:30:00+09:00",
           "venue": "Anfield",
-          "odds": {
-            "provider": "DraftKings",
-            "at": "2026-11-22T14:11:24+09:00",
-            "moneyline": {
-              "away": 340,
-              "draw": 330,
-              "home": -140
-            },
-            "spread": {
-              "homeLine": "-0.5",
-              "awayLine": "+0.5",
-              "home": -155,
-              "away": 110
-            },
-            "total": {
-              "line": "3.5",
-              "over": 125,
-              "under": -155
-            },
-            "implied": {
-              "away": 21.8,
-              "draw": 22.3,
-              "home": 56.0
-            }
-          },
           "away": {
             "name": "맨체스터 유나이티드",
             "abbr": "MAN",
-            "record": "1승 5무 4패",
+            "record": "1승 5무 5패",
             "badges": [
               {
                 "text": "리그 19위",
@@ -29352,10 +24274,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "리버풀",
             "abbr": "LIV",
-            "record": "5승 3무 2패",
+            "record": "6승 3무 2패",
             "badges": [
               {
-                "text": "리그 5위",
+                "text": "리그 4위",
                 "tone": "rank"
               }
             ]
@@ -29363,10 +24285,6 @@ window.CLUTCH_DATA = {
           "tags": [
             {
               "text": "EPL · 프리미어리그",
-              "tone": "info"
-            },
-            {
-              "text": "오버언더 3.5골",
               "tone": "info"
             },
             {
@@ -29378,39 +24296,22 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**리버풀**(홈) 5승 3무 2패(리그 5위), 최근 5경기 3승 0무 2패, **맨체스터 유나이티드**(원정) 1승 5무 4패(리그 19위), 최근 5경기 1승 1무 3패. 최근 맞대결은 2026.05.03에 열린 맨체스터 유나이티드 3-2 리버풀 경기입니다."
+              "text": "**리버풀**(홈) 6승 3무 2패(리그 4위), 최근 5경기 3승 0무 2패, **맨체스터 유나이티드**(원정) 1승 5무 5패(리그 19위), 최근 5경기 1승 1무 3패. 최근 맞대결은 2026.05.03에 열린 맨체스터 유나이티드 3-2 리버풀 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **리버풀**(홈) 1.4골 · **맨체스터 유나이티드**(원정) 1.4골, 평균 실점은 홈 1.0골 · 원정 1.9골. 해외 배당을 확률로 환산하면 리버풀 승 56.0% · 무 22.3% · 맨체스터 유나이티드 승 21.8%."
+              "text": "두 팀 평균 득점은 **리버풀**(홈) 1.6골 · **맨체스터 유나이티드**(원정) 1.3골, 평균 실점은 홈 0.9골 · 원정 2.1골."
             }
           ],
-          "result": {
-            "state": "final",
-            "detail": "FT",
-            "awayScore": 0,
-            "homeScore": 4,
-            "lines": {
-              "away": [
-                "0",
-                "0"
-              ],
-              "home": [
-                "2",
-                "2"
-              ]
-            },
-            "winner": "home"
-          },
           "details": {
             "teams": [
               {
                 "abbr": "MAN",
                 "name": "맨체스터 유나이티드",
                 "side": "away",
-                "record": "1승 5무 4패",
-                "venueRecord": "원정 0승 3무 2패",
+                "record": "1승 5무 5패",
+                "venueRecord": "원정 0승 3무 3패",
                 "badges": [
                   {
                     "text": "리그 19위",
@@ -29420,7 +24321,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "1승 5무 4패"
+                    "value": "1승 5무 5패"
                   },
                   {
                     "label": "리그 순위",
@@ -29432,25 +24333,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "-5"
+                    "value": "-9"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "무-승-패-패-패"
+                    "value": "패-무-승-패-패"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "1.4골"
+                    "value": "1.3골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.9골"
+                    "value": "2.1골"
                   },
                   {
                     "label": "득실차",
-                    "value": "-5"
+                    "value": "-9"
                   }
                 ],
                 "streak": "최근 5경기 1승 1무 3패",
@@ -29497,21 +24398,9 @@ window.CLUTCH_DATA = {
                     "comp": "UCL"
                   }
                 ],
-                "focus": "최근 5경기 1승 1무 3패입니다. 원정 0승 3무 2패입니다. 경기당 평균 1.4골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 애스턴 빌라 4-4 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 1승 1무 3패입니다. 원정 0승 3무 3패입니다. 경기당 평균 1.3골을 넣고 2.1골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 애스턴 빌라 4-4 무입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
-                  {
-                    "player": "Ayden Heaven",
-                    "status": "DOUBTFUL"
-                  },
-                  {
-                    "player": "Shea Lacey",
-                    "status": "DOUBTFUL"
-                  },
-                  {
-                    "player": "Marcus Rashford",
-                    "status": "DOUBTFUL"
-                  },
                   {
                     "player": "Luke Shaw",
                     "status": "DOUBTFUL"
@@ -29530,9 +24419,13 @@ window.CLUTCH_DATA = {
                     "player": "Benjamin Šeško",
                     "status": "OUT",
                     "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Marcus Rashford",
+                    "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 3명 · 불확실 4명",
+                "injurySummary": "결장 3명 · 불확실 2명",
                 "players": [
                   {
                     "name": "Bruno Fernandes",
@@ -29624,48 +24517,48 @@ window.CLUTCH_DATA = {
                 "abbr": "LIV",
                 "name": "리버풀",
                 "side": "home",
-                "record": "5승 3무 2패",
-                "venueRecord": "홈 1승 2무 2패",
+                "record": "6승 3무 2패",
+                "venueRecord": "홈 2승 2무 2패",
                 "badges": [
                   {
-                    "text": "리그 5위",
+                    "text": "리그 4위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "5승 3무 2패"
+                    "value": "6승 3무 2패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "5위"
+                    "value": "4위"
                   },
                   {
                     "label": "승점",
-                    "value": "18"
+                    "value": "21"
                   },
                   {
                     "label": "득실차",
-                    "value": "+4"
+                    "value": "+8"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "무-패-패-승-승"
+                    "value": "승-승-패-패-승"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "1.4골"
+                    "value": "1.6골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.0골"
+                    "value": "0.9골"
                   },
                   {
                     "label": "득실차",
-                    "value": "+4"
+                    "value": "+8"
                   }
                 ],
                 "streak": "최근 5경기 3승 0무 2패",
@@ -29712,8 +24605,8 @@ window.CLUTCH_DATA = {
                     "comp": "EPL"
                   }
                 ],
-                "focus": "최근 5경기 3승 0무 2패입니다. 홈 1승 2무 2패입니다. 경기당 평균 1.4골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 크리스털 팰리스 3-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 3승 0무 2패입니다. 홈 2승 2무 2패입니다. 경기당 평균 1.6골을 넣고 0.9골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 크리스털 팰리스 3-1 승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Conor Bradley",
@@ -29820,61 +24713,11 @@ window.CLUTCH_DATA = {
                 ]
               }
             ],
-            "keyPlayers": [
-              {
-                "side": "home",
-                "team": "리버풀",
-                "players": [
-                  {
-                    "name": "Alexander Isak",
-                    "id": "235662",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg/120px-Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 7"
-                    ],
-                    "rating": 7.7
-                  },
-                  {
-                    "name": "Florian Wirtz",
-                    "id": "303748",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg/120px-Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "도움 3"
-                    ],
-                    "rating": 9.4
-                  }
-                ]
-              },
-              {
-                "side": "away",
-                "team": "맨체스터 유나이티드",
-                "players": [
-                  {
-                    "name": "Bryan Mbeumo",
-                    "id": "271170",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bryan_Mbeumo_00-02-31.18.png/120px-Bryan_Mbeumo_00-02-31.18.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 4"
-                    ],
-                    "rating": 6.0
-                  },
-                  {
-                    "name": "Matheus Cunha",
-                    "id": "259902",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg/120px-Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "도움 2"
-                    ],
-                    "rating": 6.0
-                  }
-                ]
-              }
-            ],
             "checkpoints": [
-              "**리버풀** — 리그 5위, 승점 18, 득실 +4.",
-              "**맨체스터 유나이티드** — 리그 19위, 승점 8, 득실 -5."
+              "**리버풀** — 리그 4위, 승점 21, 득실 +8.",
+              "**맨체스터 유나이티드** — 리그 19위, 승점 8, 득실 -9."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -29912,10 +24755,9 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795521,
             "fotmobSwapped": false
-          },
-          "status": "final"
+          }
         },
-                {
+        {
           "id": "soccer-fro-mil-20261123",
           "espnId": "401874989",
           "sport": "soccer",
@@ -29924,38 +24766,13 @@ window.CLUTCH_DATA = {
           "source": "espn",
           "start": "2026-11-23T02:00:00+09:00",
           "venue": "San Siro",
-          "odds": {
-            "provider": "DraftKings",
-            "at": "2026-11-22T14:11:42+09:00",
-            "moneyline": {
-              "away": 390,
-              "draw": 330,
-              "home": -185
-            },
-            "spread": {
-              "homeLine": "-1.5",
-              "awayLine": "+1.5",
-              "home": 130,
-              "away": -180
-            },
-            "total": {
-              "line": "3.5",
-              "over": -110,
-              "under": -115
-            },
-            "implied": {
-              "away": 18.8,
-              "draw": 21.4,
-              "home": 59.8
-            }
-          },
           "away": {
             "name": "프로시노네",
             "abbr": "FRO",
-            "record": "6승 2무 3패",
+            "record": "6승 2무 4패",
             "badges": [
               {
-                "text": "리그 6위",
+                "text": "리그 7위",
                 "tone": "rank"
               }
             ]
@@ -29963,10 +24780,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "AC 밀란",
             "abbr": "MIL",
-            "record": "7승 3무 1패",
+            "record": "8승 3무 1패",
             "badges": [
               {
-                "text": "리그 5위",
+                "text": "리그 4위",
                 "tone": "rank"
               }
             ]
@@ -29974,10 +24791,6 @@ window.CLUTCH_DATA = {
           "tags": [
             {
               "text": "SERIEA · 세리에 A",
-              "tone": "info"
-            },
-            {
-              "text": "오버언더 3.5골",
               "tone": "info"
             },
             {
@@ -29989,53 +24802,36 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**AC 밀란**(홈) 7승 3무 1패(리그 5위), 최근 5경기 3승 0무 2패, **프로시노네**(원정) 6승 2무 3패(리그 6위), 최근 5경기 3승 1무 1패. 최근 맞대결은 2024.02.03에 열린 프로시노네 2-3 AC 밀란 경기입니다."
+              "text": "**AC 밀란**(홈) 8승 3무 1패(리그 4위), 최근 5경기 3승 0무 2패, **프로시노네**(원정) 6승 2무 4패(리그 7위), 최근 5경기 3승 1무 1패. 최근 맞대결은 2024.02.03에 열린 프로시노네 2-3 AC 밀란 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **AC 밀란**(홈) 2.1골 · **프로시노네**(원정) 2.2골, 평균 실점은 홈 1.2골 · 원정 1.4골. 해외 배당을 확률로 환산하면 AC 밀란 승 59.8% · 무 21.4% · 프로시노네 승 18.8%."
+              "text": "두 팀 평균 득점은 **AC 밀란**(홈) 2.3골 · **프로시노네**(원정) 2.1골, 평균 실점은 홈 1.2골 · 원정 1.7골."
             }
           ],
-          "result": {
-            "state": "final",
-            "detail": "FT",
-            "awayScore": 1,
-            "homeScore": 5,
-            "lines": {
-              "away": [
-                "1",
-                "0"
-              ],
-              "home": [
-                "2",
-                "3"
-              ]
-            },
-            "winner": "home"
-          },
           "details": {
             "teams": [
               {
                 "abbr": "FRO",
                 "name": "프로시노네",
                 "side": "away",
-                "record": "6승 2무 3패",
-                "venueRecord": "원정 1승 2무 2패",
+                "record": "6승 2무 4패",
+                "venueRecord": "원정 1승 2무 3패",
                 "badges": [
                   {
-                    "text": "리그 6위",
+                    "text": "리그 7위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "6승 2무 3패"
+                    "value": "6승 2무 4패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "6위"
+                    "value": "7위"
                   },
                   {
                     "label": "승점",
@@ -30043,25 +24839,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "+9"
+                    "value": "+5"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "패-승-승-무-승"
+                    "value": "패-패-승-승-무"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "2.2골"
+                    "value": "2.1골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.4골"
+                    "value": "1.7골"
                   },
                   {
                     "label": "득실차",
-                    "value": "+9"
+                    "value": "+5"
                   }
                 ],
                 "streak": "최근 5경기 3승 1무 1패",
@@ -30108,8 +24904,8 @@ window.CLUTCH_DATA = {
                     "comp": "세리에A"
                   }
                 ],
-                "focus": "최근 5경기 3승 1무 1패입니다. 원정 1승 2무 2패입니다. 경기당 평균 2.2골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 칼리아리 0-1 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 3승 1무 1패입니다. 원정 1승 2무 3패입니다. 경기당 평균 2.1골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 칼리아리 0-1 패입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Gabriele Bracaglia",
@@ -30229,40 +25025,40 @@ window.CLUTCH_DATA = {
                 "abbr": "MIL",
                 "name": "AC 밀란",
                 "side": "home",
-                "record": "7승 3무 1패",
-                "venueRecord": "홈 4승 0무 1패",
+                "record": "8승 3무 1패",
+                "venueRecord": "홈 5승 0무 1패",
                 "badges": [
                   {
-                    "text": "리그 5위",
+                    "text": "리그 4위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "7승 3무 1패"
+                    "value": "8승 3무 1패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "5위"
+                    "value": "4위"
                   },
                   {
                     "label": "승점",
-                    "value": "24"
+                    "value": "27"
                   },
                   {
                     "label": "득실차",
-                    "value": "+10"
+                    "value": "+14"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "승-패-승-패-승"
+                    "value": "승-승-패-승-패"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "2.1골"
+                    "value": "2.3골"
                   },
                   {
                     "label": "평균 실점",
@@ -30270,7 +25066,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "+10"
+                    "value": "+14"
                   }
                 ],
                 "streak": "최근 5경기 3승 0무 2패",
@@ -30317,8 +25113,8 @@ window.CLUTCH_DATA = {
                     "comp": "세리에A"
                   }
                 ],
-                "focus": "최근 5경기 3승 0무 2패입니다. 홈 4승 0무 1패입니다. 경기당 평균 2.1골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 제노아 2-1 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 3승 0무 2패입니다. 홈 5승 0무 1패입니다. 경기당 평균 2.3골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 제노아 2-1 승입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Pietro Terracciano",
@@ -30444,51 +25240,11 @@ window.CLUTCH_DATA = {
                 ]
               }
             ],
-            "keyPlayers": [
-              {
-                "side": "home",
-                "team": "AC 밀란",
-                "players": [
-                  {
-                    "name": "Adrien Rabiot",
-                    "id": "176203",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Adrien_Rabiot_France_v_Senegal_16_June_2026-253.jpg/120px-Adrien_Rabiot_France_v_Senegal_16_June_2026-253.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 5",
-                      "도움 4"
-                    ],
-                    "rating": 8.5
-                  }
-                ]
-              },
-              {
-                "side": "away",
-                "team": "프로시노네",
-                "players": [
-                  {
-                    "name": "Antonio Raimondo",
-                    "id": "319265",
-                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/9ph2tj1678801932.jpg",
-                    "stats": [
-                      "득점 8"
-                    ]
-                  },
-                  {
-                    "name": "Giorgi Kvernadze",
-                    "id": "360714",
-                    "stats": [
-                      "도움 4"
-                    ],
-                    "rating": 6.9
-                  }
-                ]
-              }
-            ],
             "checkpoints": [
-              "**AC 밀란** — 리그 5위, 승점 24, 득실 +10.",
-              "**프로시노네** — 리그 6위, 승점 20, 득실 +9."
+              "**AC 밀란** — 리그 4위, 승점 27, 득실 +14.",
+              "**프로시노네** — 리그 7위, 승점 20, 득실 +5."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -30526,10 +25282,9 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5749750,
             "fotmobSwapped": false
-          },
-          "status": "final"
+          }
         },
-                {
+        {
           "id": "soccer-mcf-osa-20261123",
           "espnId": "401882801",
           "sport": "soccer",
@@ -30538,35 +25293,10 @@ window.CLUTCH_DATA = {
           "source": "espn",
           "start": "2026-11-23T02:30:00+09:00",
           "venue": "El Sadar",
-          "odds": {
-            "provider": "DraftKings",
-            "at": "2026-11-22T14:11:30+09:00",
-            "moneyline": {
-              "away": 340,
-              "draw": 260,
-              "home": -120
-            },
-            "spread": {
-              "homeLine": "-0.5",
-              "awayLine": "+0.5",
-              "home": -130,
-              "away": -105
-            },
-            "total": {
-              "line": "2.5",
-              "over": 100,
-              "under": -125
-            },
-            "implied": {
-              "away": 21.6,
-              "draw": 26.4,
-              "home": 52.0
-            }
-          },
           "away": {
             "name": "말라가",
             "abbr": "MCF",
-            "record": "0승 5무 7패",
+            "record": "0승 5무 8패",
             "badges": [
               {
                 "text": "리그 20위",
@@ -30577,10 +25307,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "오사수나",
             "abbr": "OSA",
-            "record": "3승 3무 6패",
+            "record": "4승 3무 6패",
             "badges": [
               {
-                "text": "리그 16위",
+                "text": "리그 13위",
                 "tone": "rank"
               }
             ]
@@ -30588,10 +25318,6 @@ window.CLUTCH_DATA = {
           "tags": [
             {
               "text": "LALIGA · 라리가",
-              "tone": "info"
-            },
-            {
-              "text": "오버언더 2.5골",
               "tone": "info"
             },
             {
@@ -30603,39 +25329,22 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**오사수나**(홈) 3승 3무 6패(리그 16위), 최근 5경기 2승 1무 2패, **말라가**(원정) 0승 5무 7패(리그 20위), 2연패. 최근 맞대결은 2019.03.11에 열린 말라가 1-2 오사수나 경기입니다."
+              "text": "**오사수나**(홈) 4승 3무 6패(리그 13위), 최근 5경기 2승 1무 2패, **말라가**(원정) 0승 5무 8패(리그 20위), 2연패. 최근 맞대결은 2019.03.11에 열린 말라가 1-2 오사수나 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **오사수나**(홈) 1.0골 · **말라가**(원정) 0.8골, 평균 실점은 홈 1.9골 · 원정 1.9골. 해외 배당을 확률로 환산하면 오사수나 승 52.0% · 무 26.4% · 말라가 승 21.6%."
+              "text": "두 팀 평균 득점은 **오사수나**(홈) 1.0골 · **말라가**(원정) 0.7골, 평균 실점은 홈 1.8골 · 원정 1.8골."
             }
           ],
-          "result": {
-            "state": "final",
-            "detail": "FT",
-            "awayScore": 0,
-            "homeScore": 1,
-            "lines": {
-              "away": [
-                "0",
-                "0"
-              ],
-              "home": [
-                "1",
-                "0"
-              ]
-            },
-            "winner": "home"
-          },
           "details": {
             "teams": [
               {
                 "abbr": "MCF",
                 "name": "말라가",
                 "side": "away",
-                "record": "0승 5무 7패",
-                "venueRecord": "원정 0승 2무 4패",
+                "record": "0승 5무 8패",
+                "venueRecord": "원정 0승 2무 5패",
                 "badges": [
                   {
                     "text": "리그 20위",
@@ -30645,7 +25354,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "0승 5무 7패"
+                    "value": "0승 5무 8패"
                   },
                   {
                     "label": "리그 순위",
@@ -30657,25 +25366,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "-14"
+                    "value": "-15"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "패-패-승-무-패"
+                    "value": "패-패-패-승-무"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "0.8골"
+                    "value": "0.7골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.9골"
+                    "value": "1.8골"
                   },
                   {
                     "label": "득실차",
-                    "value": "-14"
+                    "value": "-15"
                   }
                 ],
                 "streak": "2연패",
@@ -30722,13 +25431,18 @@ window.CLUTCH_DATA = {
                     "comp": "라리가"
                   }
                 ],
-                "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 1무 3패입니다. 원정 0승 2무 4패입니다. 경기당 평균 0.8골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 라싱 산탄데르 1-2 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 1무 3패입니다. 원정 0승 2무 5패입니다. 경기당 평균 0.7골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 라싱 산탄데르 1-2 패입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Adam Aznou",
                     "status": "OUT",
                     "line": "징계 출장정지 · 복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Fernando Calero",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
                   },
                   {
                     "player": "Rafita",
@@ -30740,7 +25454,7 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 2명 · 불확실 1명",
+                "injurySummary": "결장 3명 · 불확실 1명",
                 "players": [
                   {
                     "name": "Diego Murillo",
@@ -30838,34 +25552,34 @@ window.CLUTCH_DATA = {
                 "abbr": "OSA",
                 "name": "오사수나",
                 "side": "home",
-                "record": "3승 3무 6패",
-                "venueRecord": "홈 2승 3무 1패",
+                "record": "4승 3무 6패",
+                "venueRecord": "홈 3승 3무 1패",
                 "badges": [
                   {
-                    "text": "리그 16위",
+                    "text": "리그 13위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "3승 3무 6패"
+                    "value": "4승 3무 6패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "16위"
+                    "value": "13위"
                   },
                   {
                     "label": "승점",
-                    "value": "12"
+                    "value": "15"
                   },
                   {
                     "label": "득실차",
-                    "value": "-11"
+                    "value": "-10"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "무-패-승-패-승"
+                    "value": "승-무-패-승-패"
                   }
                 ],
                 "nums": [
@@ -30875,11 +25589,11 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.9골"
+                    "value": "1.8골"
                   },
                   {
                     "label": "득실차",
-                    "value": "-11"
+                    "value": "-10"
                   }
                 ],
                 "streak": "최근 5경기 2승 1무 2패",
@@ -30926,19 +25640,9 @@ window.CLUTCH_DATA = {
                     "comp": "라리가"
                   }
                 ],
-                "focus": "최근 5경기 2승 1무 2패입니다. 홈 2승 3무 1패입니다. 경기당 평균 1.0골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 아틀레틱 빌바오 1-1 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 2승 1무 2패입니다. 홈 3승 3무 1패입니다. 경기당 평균 1.0골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 아틀레틱 빌바오 1-1 무입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
-                  {
-                    "player": "Rockson Yeboah",
-                    "status": "OUT",
-                    "line": "복귀 예상 2027년 1월 초"
-                  },
-                  {
-                    "player": "Aitor Fernández",
-                    "status": "OUT",
-                    "line": "복귀 예상 2026년 12월 말"
-                  },
                   {
                     "player": "Asier Bonel",
                     "status": "DOUBTFUL"
@@ -30949,11 +25653,12 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 약 1~2주"
                   },
                   {
-                    "player": "Jorge Herrando",
-                    "status": "DOUBTFUL"
+                    "player": "Rockson Yeboah",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 3명 · 불확실 2명",
+                "injurySummary": "결장 2명 · 불확실 1명",
                 "players": [
                   {
                     "name": "Valentin Rosier",
@@ -31048,60 +25753,11 @@ window.CLUTCH_DATA = {
                 ]
               }
             ],
-            "keyPlayers": [
-              {
-                "side": "home",
-                "team": "오사수나",
-                "players": [
-                  {
-                    "name": "Ante Budimir",
-                    "id": "207288",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg/120px-Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 8"
-                    ],
-                    "rating": 8.2
-                  },
-                  {
-                    "name": "Moi Gómez",
-                    "id": "169089",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Moi_G%C3%B3mez.jpg/120px-Moi_G%C3%B3mez.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "도움 2"
-                    ],
-                    "rating": 7.8
-                  }
-                ]
-              },
-              {
-                "side": "away",
-                "team": "말라가",
-                "players": [
-                  {
-                    "name": "Adrián Niño",
-                    "id": "373542",
-                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/v6e47u1784904389.jpg",
-                    "stats": [
-                      "득점 5"
-                    ],
-                    "rating": 6.1
-                  },
-                  {
-                    "name": "Pablo Martínez",
-                    "id": "271151",
-                    "stats": [
-                      "도움 2"
-                    ],
-                    "rating": 6.6
-                  }
-                ]
-              }
-            ],
             "checkpoints": [
-              "**오사수나** — 리그 16위, 승점 12, 득실 -11.",
-              "**말라가** — 리그 20위, 승점 5, 득실 -14."
+              "**오사수나** — 리그 13위, 승점 15, 득실 -10.",
+              "**말라가** — 리그 20위, 승점 5, 득실 -15."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -31139,8 +25795,7 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868136,
             "fotmobSwapped": false
-          },
-          "status": "final"
+          }
         },
         {
           "id": "soccer-int-ata-20261123",
@@ -31153,17 +25808,17 @@ window.CLUTCH_DATA = {
           "venue": "New Balance Arena",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:42+09:00",
+            "at": "2026-11-23T06:13:56+09:00",
             "moneyline": {
-              "away": -195,
-              "draw": 350,
-              "home": 400
+              "away": -170,
+              "draw": 330,
+              "home": 360
             },
             "spread": {
-              "homeLine": "+1.5",
-              "awayLine": "-1.5",
-              "home": -185,
-              "away": 130
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": 125,
+              "away": -180
             },
             "total": {
               "line": "3.5",
@@ -31171,9 +25826,9 @@ window.CLUTCH_DATA = {
               "under": -125
             },
             "implied": {
-              "away": 61.1,
-              "draw": 20.5,
-              "home": 18.4
+              "away": 58.3,
+              "draw": 21.6,
+              "home": 20.1
             }
           },
           "away": {
@@ -31193,7 +25848,7 @@ window.CLUTCH_DATA = {
             "record": "4승 2무 5패",
             "badges": [
               {
-                "text": "리그 11위",
+                "text": "리그 12위",
                 "tone": "rank"
               }
             ]
@@ -31208,7 +25863,7 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "결장 2명",
+              "text": "결장 3명",
               "tone": "warn"
             }
           ],
@@ -31216,12 +25871,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**아탈란타**(홈) 4승 2무 5패(리그 11위), 최근 5경기 1승 3무 1패, **인터 밀란**(원정) 9승 1무 1패(리그 3위), 2연승. 최근 맞대결은 2026.03.14에 열린 인터 밀란 1-1 아탈란타 경기입니다."
+              "text": "**아탈란타**(홈) 4승 2무 5패(리그 12위), 최근 5경기 1승 3무 1패, **인터 밀란**(원정) 9승 1무 1패(리그 3위), 2연승. 최근 맞대결은 2026.03.14에 열린 인터 밀란 1-1 아탈란타 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **아탈란타**(홈) 1.5골 · **인터 밀란**(원정) 2.5골, 평균 실점은 홈 1.8골 · 원정 1.2골. 해외 배당을 확률로 환산하면 아탈란타 승 18.4% · 무 20.5% · 인터 밀란 승 61.1%."
+              "text": "두 팀 평균 득점은 **아탈란타**(홈) 1.5골 · **인터 밀란**(원정) 2.5골, 평균 실점은 홈 1.8골 · 원정 1.2골. 해외 배당을 확률로 환산하면 아탈란타 승 20.1% · 무 21.6% · 인터 밀란 승 58.3%."
             }
           ],
           "details": {
@@ -31319,7 +25974,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 4승 0무 1패입니다. 원정 3승 1무 1패입니다. 경기당 평균 2.5골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 코모 2-0 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Piotr Zieliński",
@@ -31341,7 +25996,7 @@ window.CLUTCH_DATA = {
                 "venueRecord": "홈 3승 1무 2패",
                 "badges": [
                   {
-                    "text": "리그 11위",
+                    "text": "리그 12위",
                     "tone": "rank"
                   }
                 ],
@@ -31352,7 +26007,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "리그 순위",
-                    "value": "11위"
+                    "value": "12위"
                   },
                   {
                     "label": "승점",
@@ -31425,9 +26080,14 @@ window.CLUTCH_DATA = {
                     "comp": "세리에A"
                   }
                 ],
-                "focus": "최근 5경기 1승 3무 1패입니다. 홈 3승 1무 2패입니다. 경기당 평균 1.5골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 몬차 1-0 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 1승 3무 1패입니다. 홈 3승 1무 2패입니다. 경기당 평균 1.5골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 몬차 1-0 승입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
+                  {
+                    "player": "Marco Carnesecchi",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
                   {
                     "player": "Thomas Pompei",
                     "status": "OUT",
@@ -31442,60 +26102,14 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 1명 · 불확실 2명"
-              }
-            ],
-            "keyPlayers": [
-              {
-                "side": "home",
-                "team": "아탈란타",
-                "players": [
-                  {
-                    "name": "Nikola Krstovic",
-                    "id": "258158",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Nikola_Krstovi%C4%87_%28cropped%29.jpg/120px-Nikola_Krstovi%C4%87_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 7"
-                    ]
-                  },
-                  {
-                    "name": "Charles De Ketelaere",
-                    "id": "296319",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Charles_De_Ketelaere_USMNT_v_Belgium_Mar_28_2026-76_%28cropped%29.jpg/120px-Charles_De_Ketelaere_USMNT_v_Belgium_Mar_28_2026-76_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "도움 3"
-                    ]
-                  }
-                ]
-              },
-              {
-                "side": "away",
-                "team": "인터 밀란",
-                "players": [
-                  {
-                    "name": "Marcus Thuram",
-                    "id": "217331",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Marcus_Thuram_France_v_Senegal_16_June_2026-261_%28cropped%29.jpg/120px-Marcus_Thuram_France_v_Senegal_16_June_2026-261_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 6"
-                    ]
-                  },
-                  {
-                    "name": "Andy Diouf",
-                    "id": "319167",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Andy_Diouf_ASSE_RCL_2425.jpg/120px-Andy_Diouf_ASSE_RCL_2425.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "도움 4"
-                    ]
-                  }
-                ]
+                "injurySummary": "결장 2명 · 불확실 2명"
               }
             ],
             "checkpoints": [
-              "**아탈란타** — 리그 11위, 승점 14, 득실 -3.",
+              "**아탈란타** — 리그 12위, 승점 14, 득실 -3.",
               "**인터 밀란** — 리그 3위, 승점 28, 득실 +15."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -31546,27 +26160,27 @@ window.CLUTCH_DATA = {
           "venue": "Estadio Coliseum",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:30+09:00",
+            "at": "2026-11-23T06:13:43+09:00",
             "moneyline": {
-              "away": -195,
-              "draw": 310,
-              "home": 600
+              "away": -180,
+              "draw": 295,
+              "home": 550
             },
             "spread": {
-              "homeLine": "+1.5",
-              "awayLine": "-1.5",
-              "home": -215,
-              "away": 150
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": 145,
+              "away": -200
             },
             "total": {
               "line": "2.5",
-              "over": 105,
-              "under": -135
+              "over": 115,
+              "under": -140
             },
             "implied": {
-              "away": 63.1,
-              "draw": 23.3,
-              "home": 13.6
+              "away": 61.2,
+              "draw": 24.2,
+              "home": 14.7
             }
           },
           "away": {
@@ -31586,7 +26200,7 @@ window.CLUTCH_DATA = {
             "record": "3승 3무 6패",
             "badges": [
               {
-                "text": "리그 15위",
+                "text": "리그 16위",
                 "tone": "rank"
               }
             ]
@@ -31601,7 +26215,7 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "결장 6명",
+              "text": "결장 8명",
               "tone": "warn"
             }
           ],
@@ -31609,12 +26223,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**헤타페**(홈) 3승 3무 6패(리그 15위), 2연패, **아틀레티코 마드리드**(원정) 9승 1무 2패(리그 3위), 2연패. 최근 맞대결은 2026.07.29에 열린 아틀레티코 마드리드 4-1 헤타페 경기입니다."
+              "text": "**헤타페**(홈) 3승 3무 6패(리그 16위), 2연패, **아틀레티코 마드리드**(원정) 9승 1무 2패(리그 3위), 2연패. 최근 맞대결은 2026.07.29에 열린 아틀레티코 마드리드 4-1 헤타페 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **헤타페**(홈) 0.7골 · **아틀레티코 마드리드**(원정) 1.9골, 평균 실점은 홈 1.5골 · 원정 0.8골. 해외 배당을 확률로 환산하면 헤타페 승 13.6% · 무 23.3% · 아틀레티코 마드리드 승 63.1%."
+              "text": "두 팀 평균 득점은 **헤타페**(홈) 0.7골 · **아틀레티코 마드리드**(원정) 1.9골, 평균 실점은 홈 1.5골 · 원정 0.8골. 해외 배당을 확률로 환산하면 헤타페 승 14.7% · 무 24.2% · 아틀레티코 마드리드 승 61.2%."
             }
           ],
           "details": {
@@ -31712,7 +26326,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 원정 5승 0무 1패입니다. 경기당 평균 1.9골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 바르셀로나 1-2 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jorge Domínguez",
@@ -31744,7 +26358,7 @@ window.CLUTCH_DATA = {
                 "venueRecord": "홈 3승 3무 0패",
                 "badges": [
                   {
-                    "text": "리그 15위",
+                    "text": "리그 16위",
                     "tone": "rank"
                   }
                 ],
@@ -31755,7 +26369,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "리그 순위",
-                    "value": "15위"
+                    "value": "16위"
                   },
                   {
                     "label": "승점",
@@ -31828,9 +26442,19 @@ window.CLUTCH_DATA = {
                     "comp": "라리가"
                   }
                 ],
-                "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 0무 3패입니다. 홈 3승 3무 0패입니다. 경기당 평균 0.7골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 비야레알 0-2 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 0무 3패입니다. 홈 3승 3무 0패입니다. 경기당 평균 0.7골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 비야레알 0-2 패입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
+                  {
+                    "player": "Daniel Carvajal",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Sebastián Boselli",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
                   {
                     "player": "Nemanja Gudelj",
                     "status": "OUT",
@@ -31847,46 +26471,14 @@ window.CLUTCH_DATA = {
                     "line": "복귀 시점 미정"
                   }
                 ],
-                "injurySummary": "결장 3명"
-              }
-            ],
-            "keyPlayers": [
-              {
-                "side": "home",
-                "team": "헤타페",
-                "players": [
-                  {
-                    "name": "Martín Satriano",
-                    "id": "284854",
-                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/i3a6p31678570988.jpg",
-                    "stats": [
-                      "득점 3",
-                      "도움 2"
-                    ]
-                  }
-                ]
-              },
-              {
-                "side": "away",
-                "team": "아틀레티코 마드리드",
-                "players": [
-                  {
-                    "name": "Álex Baena",
-                    "id": "297373",
-                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Alex_Baena_France_v_Spain_7.24.26-024.jpg/120px-Alex_Baena_France_v_Spain_7.24.26-024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-                    "stats": [
-                      "득점 5",
-                      "도움 3"
-                    ]
-                  }
-                ]
+                "injurySummary": "결장 5명"
               }
             ],
             "checkpoints": [
-              "**헤타페** — 리그 15위, 승점 12, 득실 -10.",
+              "**헤타페** — 리그 16위, 승점 12, 득실 -10.",
               "**아틀레티코 마드리드** — 리그 3위, 승점 28, 득실 +13."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -31936,32 +26528,8 @@ window.CLUTCH_DATA = {
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-23T05:30:00+09:00",
-          "status": "scheduled",
+          "status": "live",
           "venue": "State Farm Arena",
-          "odds": {
-            "provider": "Draft Kings",
-            "at": "2026-11-22T14:10:29+09:00",
-            "moneyline": {
-              "away": -135,
-              "draw": null,
-              "home": 114
-            },
-            "spread": {
-              "homeLine": "+2.5",
-              "awayLine": "-2.5",
-              "home": -113,
-              "away": -107
-            },
-            "total": {
-              "line": "225.5",
-              "over": -112,
-              "under": -108
-            },
-            "implied": {
-              "away": 55.2,
-              "home": 44.8
-            }
-          },
           "away": {
             "name": "디트로이트 피스턴스",
             "abbr": "DET",
@@ -31986,11 +26554,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 9명",
               "tone": "warn"
             },
             {
-              "text": "평균 114.5점 · 117.3점",
+              "text": "평균 28.0점 · 33.0점",
               "tone": "info"
             }
           ],
@@ -32001,6 +26569,72 @@ window.CLUTCH_DATA = {
               "text": "**애틀랜타 호크스**(홈) 10승 6패(홈 4승 3패, 최근 5경기 3승 2패, 3연승), **디트로이트 피스턴스**(원정) 10승 5패(원정 7승 2패, 최근 5경기 3승 2패). 직전 경기(11.21) **디트로이트 피스턴스**는 토론토 랩터스에 102-105로 졌고, Cade Cunningham 23점·5리바운드·9어시스트, Kevin Huerter 20점·3리바운드·3어시스트를 기록했습니다. 직전 경기(11.21) **애틀랜타 호크스**는 샬럿 호네츠에 111-97로 이겼고, Jalen Johnson 26점·6리바운드·6어시스트, Aaron Wiggins 19점·2리바운드·3어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "live",
+            "detail": "11:04 - 2nd Quarter",
+            "awayScore": 28,
+            "homeScore": 33,
+            "lines": {
+              "away": [
+                "26",
+                "2"
+              ],
+              "home": [
+                "29",
+                "4"
+              ]
+            },
+            "top": [
+              {
+                "name": "Jalen Johnson",
+                "team": "ATL",
+                "min": "8",
+                "pts": 8,
+                "reb": "3",
+                "ast": "0"
+              },
+              {
+                "name": "Nickeil Alexander-Walker",
+                "team": "ATL",
+                "min": "7",
+                "pts": 8,
+                "reb": "1",
+                "ast": "0"
+              },
+              {
+                "name": "Ausar Thompson",
+                "team": "DET",
+                "min": "8",
+                "pts": 6,
+                "reb": "1",
+                "ast": "1"
+              },
+              {
+                "name": "Corey Kispert",
+                "team": "ATL",
+                "min": "4",
+                "pts": 6,
+                "reb": "1",
+                "ast": "1"
+              },
+              {
+                "name": "John Collins",
+                "team": "DET",
+                "min": "7",
+                "pts": 5,
+                "reb": "2",
+                "ast": "0"
+              },
+              {
+                "name": "Paul Reed",
+                "team": "DET",
+                "min": "5",
+                "pts": 5,
+                "reb": "1",
+                "ast": "0"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -32048,9 +26682,9 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 114.5,
-                "rpg": 43.1,
-                "tp": 37.0,
+                "ppg": 28.0,
+                "rpg": 10.0,
+                "tp": 23.1,
                 "players": [
                   {
                     "name": "Cade Cunningham",
@@ -32082,31 +26716,17 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.4점 · 야투 43.4%"
                   }
                 ],
-                "focus": "최근 4경기 Cade Cunningham의 평균은 33.8점·야투 50.0%·3점 37.5%입니다. 결장 3명의 시즌 평균 득점 합계는 9.1점입니다. 직전 경기에서는 Cade Cunningham가 23점·5리바운드·9어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명(팀 득점 11·13·15위) · 출전 불투명 2명",
-                "injuryOut": 3,
-                "injuryPpg": 9.1,
+                "focus": "최근 4경기 Cade Cunningham의 평균은 33.8점·야투 50.0%·3점 37.5%입니다. 결장 4명의 시즌 평균 득점 합계는 34.6점입니다. 직전 경기에서는 Cade Cunningham가 23점·5리바운드·9어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명(팀 득점 2·4·13·15위)",
+                "injuryOut": 4,
+                "injuryPpg": 34.6,
                 "injuries": [
-                  {
-                    "player": "Ronald Holland II",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 11옵션 · 4.9점 · 3.8리바운드"
-                  },
                   {
                     "player": "Ebuka Okorie",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 13옵션 · 2.2점 · 0.4리바운드"
-                  },
-                  {
-                    "player": "Cade Cunningham",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 1옵션 · 25.6점 · 5.1리바운드"
                   },
                   {
                     "player": "Taurean Prince",
@@ -32116,10 +26736,18 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 15옵션 · 2.0점 · 0.7리바운드"
                   },
                   {
-                    "player": "Ugonna Onyenso",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "C"
+                    "player": "Duncan Robinson",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 2옵션 · 17.4점 · 1.8리바운드"
+                  },
+                  {
+                    "player": "Jalen Duren",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 4옵션 · 13.0점 · 7.5리바운드"
                   }
                 ]
               },
@@ -32169,9 +26797,9 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 117.3,
-                "rpg": 44.7,
-                "tp": 34.5,
+                "ppg": 33.0,
+                "rpg": 18.0,
+                "tp": 21.4,
                 "players": [
                   {
                     "name": "Nickeil Alexander-Walker",
@@ -32204,18 +26832,11 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 18.6점 · 야투 53.7%"
                   }
                 ],
-                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 18.4점·야투 38.2%·3점 25.0%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 Jalen Johnson가 26점·6리바운드·6어시스트를 기록했습니다.",
+                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 18.4점·야투 38.2%·3점 25.0%입니다. 결장 5명의 시즌 평균 득점 합계는 24.9점입니다. 직전 경기에서는 Jalen Johnson가 26점·6리바운드·6어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
-                "injuryPpg": 32.7,
+                "injuryPpg": 24.9,
                 "injuries": [
-                  {
-                    "player": "Kingston Flemings",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 9옵션 · 7.8점 · 2.5리바운드"
-                  },
                   {
                     "player": "Jock Landale",
                     "status": "OUT",
@@ -32242,17 +26863,21 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F"
+                  },
+                  {
+                    "player": "Henri Veesaar",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 디트로이트 피스턴스 승 55.2% · 애틀랜타 호크스 승 44.8%입니다.",
-              "시즌 평균 득점은 **애틀랜타 호크스**(홈) 117.3점 · **디트로이트 피스턴스**(원정) 114.5점, 평균 리바운드는 홈 44.7개 · 원정 43.1개, 3점 성공률은 홈 34.5% · 원정 37.0%. 평균 득점 차가 2.8점으로 작고, 3점 성공률 차 2.5%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 디트로이트 피스턴스 승률 47.1%, 애틀랜타 호크스 52.9%.",
+              "시즌 평균 득점은 **애틀랜타 호크스**(홈) 33.0점 · **디트로이트 피스턴스**(원정) 28.0점, 평균 리바운드는 홈 18.0개 · 원정 10.0개, 3점 성공률은 홈 21.4% · 원정 23.1%. 평균 득점 차 5.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:10 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -32265,27 +26890,27 @@ window.CLUTCH_DATA = {
           "status": "scheduled",
           "venue": "Kaseya Center",
           "odds": {
-            "provider": "Draft Kings",
-            "at": "2026-11-22T14:10:29+09:00",
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:11+09:00",
             "moneyline": {
-              "away": 117,
+              "away": 146,
               "draw": null,
-              "home": -139
+              "home": -173
             },
             "spread": {
-              "homeLine": "-2.5",
-              "awayLine": "+2.5",
-              "home": -110,
-              "away": -110
+              "homeLine": "-3.5",
+              "awayLine": "+3.5",
+              "home": -116,
+              "away": -104
             },
             "total": {
               "line": "231.5",
-              "over": -110,
-              "under": -110
+              "over": -107,
+              "under": -113
             },
             "implied": {
-              "away": 44.2,
-              "home": 55.8
+              "away": 39.1,
+              "home": 60.9
             }
           },
           "away": {
@@ -32552,12 +27177,12 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 오클라호마시티 썬더 승 44.2% · 마이애미 히트 승 55.8%입니다.",
+              "해외 배당을 확률로 환산하면 오클라호마시티 썬더 승 39.1% · 마이애미 히트 승 60.9%입니다.",
               "시즌 평균 득점은 **마이애미 히트**(홈) 120.5점 · **오클라호마시티 썬더**(원정) 113.0점, 평균 리바운드는 홈 42.2개 · 원정 45.8개, 3점 성공률은 홈 35.2% · 원정 34.5%. 평균 득점 차 7.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**ESPN 매치업 예측** — 오클라호마시티 썬더 승률 50.4%, 마이애미 히트 49.6%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:10 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -32570,27 +27195,27 @@ window.CLUTCH_DATA = {
           "status": "scheduled",
           "venue": "Capital One Arena",
           "odds": {
-            "provider": "Draft Kings",
-            "at": "2026-11-22T14:10:29+09:00",
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:11+09:00",
             "moneyline": {
-              "away": -206,
+              "away": -197,
               "draw": null,
-              "home": 172
+              "home": 165
             },
             "spread": {
-              "homeLine": "+5.5",
-              "awayLine": "-5.5",
-              "home": -110,
-              "away": -110
+              "homeLine": "+4.5",
+              "awayLine": "-4.5",
+              "home": -105,
+              "away": -115
             },
             "total": {
-              "line": "222.5",
-              "over": -110,
-              "under": -110
+              "line": "220.5",
+              "over": -108,
+              "under": -112
             },
             "implied": {
-              "away": 64.6,
-              "home": 35.4
+              "away": 63.7,
+              "home": 36.3
             }
           },
           "away": {
@@ -32617,7 +27242,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 7명",
               "tone": "warn"
             },
             {
@@ -32825,11 +27450,25 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.8점 · 야투 44.4%"
                   }
                 ],
-                "focus": "최근 5경기 Anthony Davis의 평균은 25.6점·야투 56.2%·3점 40.0%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Anthony Davis가 36점·11리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명",
-                "injuryOut": 4,
+                "focus": "최근 5경기 Anthony Davis의 평균은 25.6점·야투 56.2%·3점 40.0%입니다. 결장 3명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Anthony Davis가 36점·11리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
+                "injuryOut": 3,
                 "injuryPpg": 7.2,
                 "injuries": [
+                  {
+                    "player": "Bub Carrington",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 9옵션 · 4.8점 · 1.3리바운드"
+                  },
+                  {
+                    "player": "Deandre Ayton",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "C",
+                    "line": "팀 내 11옵션 · 3.8점 · 4.1리바운드"
+                  },
                   {
                     "player": "Tristan Vukcevic",
                     "status": "OUT",
@@ -32849,23 +27488,17 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 7옵션 · 7.2점 · 7.5리바운드"
-                  },
-                  {
-                    "player": "Jamir Watkins",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 올랜도 매직 승 64.6% · 워싱턴 위저즈 승 35.4%입니다.",
+              "해외 배당을 확률로 환산하면 올랜도 매직 승 63.7% · 워싱턴 위저즈 승 36.3%입니다.",
               "시즌 평균 득점은 **워싱턴 위저즈**(홈) 110.0점 · **올랜도 매직**(원정) 109.6점, 평균 리바운드는 홈 42.5개 · 원정 42.6개, 3점 성공률은 홈 31.9% · 원정 35.8%. 평균 득점 차가 0.4점으로 작고, 3점 성공률 차 3.9%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 올랜도 매직 승률 59.9%, 워싱턴 위저즈 40.1%.",
+              "**ESPN 매치업 예측** — 올랜도 매직 승률 61.5%, 워싱턴 위저즈 38.5%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:10 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -32878,27 +27511,27 @@ window.CLUTCH_DATA = {
           "status": "scheduled",
           "venue": "United Center",
           "odds": {
-            "provider": "Draft Kings",
-            "at": "2026-11-22T14:10:29+09:00",
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:11+09:00",
             "moneyline": {
-              "away": -375,
+              "away": -437,
               "draw": null,
-              "home": 298
+              "home": 340
             },
             "spread": {
-              "homeLine": "+8.5",
-              "awayLine": "-8.5",
-              "home": -110,
-              "away": -110
+              "homeLine": "+9.5",
+              "awayLine": "-9.5",
+              "home": -105,
+              "away": -115
             },
             "total": {
-              "line": "237.5",
-              "over": -110,
-              "under": -110
+              "line": "235.5",
+              "over": -108,
+              "under": -112
             },
             "implied": {
-              "away": 75.8,
-              "home": 24.2
+              "away": 78.2,
+              "home": 21.8
             }
           },
           "away": {
@@ -32925,7 +27558,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 3명",
+              "text": "결장 4명",
               "tone": "warn"
             },
             {
@@ -33113,17 +27746,17 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.2점 · 야투 50.9%"
                   }
                 ],
-                "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 2·16위) · 출전 불투명 2명",
-                "injuryOut": 2,
-                "injuryPpg": 20.9,
+                "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 1·2·7위) · 출전 불투명 2명",
+                "injuryOut": 3,
+                "injuryPpg": 49.0,
                 "injuries": [
                   {
-                    "player": "Norman Powell",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
+                    "player": "Nic Claxton",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 7옵션 · 9.3점 · 4.8리바운드"
                   },
                   {
                     "player": "Jalen Smith",
@@ -33133,11 +27766,18 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 4옵션 · 13.4점 · 7.9리바운드"
                   },
                   {
-                    "player": "Tobe Awaka",
+                    "player": "Norman Powell",
                     "status": "OUT",
                     "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
+                  },
+                  {
+                    "player": "Patrick Williams",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
-                    "line": "팀 내 16옵션 · 2.0점 · 5.2리바운드"
+                    "line": "팀 내 10옵션 · 6.9점 · 2.9리바운드"
                   },
                   {
                     "player": "Caleb Wilson",
@@ -33150,12 +27790,12 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 덴버 너기츠 승 75.8% · 시카고 불스 승 24.2%입니다.",
+              "해외 배당을 확률로 환산하면 덴버 너기츠 승 78.2% · 시카고 불스 승 21.8%입니다.",
               "시즌 평균 득점은 **시카고 불스**(홈) 114.7점 · **덴버 너기츠**(원정) 114.6점, 평균 리바운드는 홈 43.8개 · 원정 41.6개, 3점 성공률은 홈 31.8% · 원정 34.3%. 평균 득점 차가 0.1점으로 작고, 3점 성공률 차 2.5%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 덴버 너기츠 승률 74.4%, 시카고 불스 25.6%.",
+              "**ESPN 매치업 예측** — 덴버 너기츠 승률 75.5%, 시카고 불스 24.5%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:10 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -33168,27 +27808,27 @@ window.CLUTCH_DATA = {
           "status": "scheduled",
           "venue": "Delta Center",
           "odds": {
-            "provider": "Draft Kings",
-            "at": "2026-11-22T14:10:29+09:00",
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:11+09:00",
             "moneyline": {
-              "away": -120,
+              "away": -135,
               "draw": null,
-              "home": 101
+              "home": 114
             },
             "spread": {
-              "homeLine": "+1.5",
-              "awayLine": "-1.5",
-              "home": -110,
-              "away": -110
+              "homeLine": "+2.5",
+              "awayLine": "-2.5",
+              "home": -114,
+              "away": -106
             },
             "total": {
               "line": "225.5",
-              "over": -110,
-              "under": -110
+              "over": -113,
+              "under": -107
             },
             "implied": {
-              "away": 52.3,
-              "home": 47.7
+              "away": 55.2,
+              "home": 44.8
             }
           },
           "away": {
@@ -33215,11 +27855,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
-              "text": "평균 112.3점 · 108.3점",
+              "text": "평균 112.2점 · 108.3점",
               "tone": "info"
             }
           ],
@@ -33278,17 +27918,17 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 112.3,
-                "rpg": 43.2,
-                "tp": 34.1,
+                "ppg": 112.2,
+                "rpg": 43.8,
+                "tp": 34.4,
                 "players": [
                   {
                     "name": "Cooper Flagg",
                     "id": "5041939",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                     "pos": "F",
-                    "stat": "24.2점 · 6.6리바운드 · 6.4어시스트",
-                    "sub": "야투 48.5% · 3점 29.9% · 팀 내 1옵션",
+                    "stat": "24.1점 · 6.5리바운드 · 6.5어시스트",
+                    "sub": "야투 47.9% · 3점 31.5% · 팀 내 1옵션",
                     "last": "직전 36분 22점 6리바운드 8어시스트, 야투 6-16",
                     "recent": "최근 5경기 20.4점 · 야투 42.9%"
                   },
@@ -33297,8 +27937,8 @@ window.CLUTCH_DATA = {
                     "id": "6442",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                     "pos": "G",
-                    "stat": "22.2점 · 3.7리바운드 · 4.4어시스트",
-                    "sub": "야투 47.3% · 3점 38.5% · 팀 내 2옵션",
+                    "stat": "22.5점 · 3.8리바운드 · 4.4어시스트",
+                    "sub": "야투 45.9% · 3점 37.4% · 팀 내 2옵션",
                     "last": "직전 35분 25점 6리바운드 4어시스트, 야투 8-24",
                     "recent": "최근 4경기 21.5점 · 야투 40.0%"
                   },
@@ -33312,17 +27952,24 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.2점 · 야투 45.9%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 20.4점·야투 42.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 20.6점입니다. 직전 경기에서는 Kyrie Irving가 25점·6리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명",
-                "injuryOut": 5,
-                "injuryPpg": 20.6,
+                "focus": "최근 5경기 Cooper Flagg의 평균은 20.4점·야투 42.9%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 6.6점입니다. 직전 경기에서는 Kyrie Irving가 25점·6리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
+                "injuryOut": 3,
+                "injuryPpg": 6.6,
                 "injuries": [
                   {
                     "player": "P.J. Washington",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 3옵션 · 14.0점 · 6.7리바운드"
+                  },
+                  {
+                    "player": "Walter Clayton Jr.",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 7옵션 · 7.7점 · 3.1리바운드"
                   },
                   {
                     "player": "Tobi Lawal",
@@ -33342,13 +27989,7 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 11옵션 · 5.2점 · 2.0리바운드"
-                  },
-                  {
-                    "player": "Tarik Biberovic",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
+                    "line": "팀 내 12옵션 · 5.2점 · 2.0리바운드"
                   }
                 ]
               },
@@ -33459,12 +28100,12 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 댈러스 매버릭스 승 52.3% · 유타 재즈 승 47.7%입니다.",
-              "시즌 평균 득점은 **유타 재즈**(홈) 108.3점 · **댈러스 매버릭스**(원정) 112.3점, 평균 리바운드는 홈 44.8개 · 원정 43.2개, 3점 성공률은 홈 34.7% · 원정 34.1%. 평균 득점 차 4.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 58.0%, 유타 재즈 42.0%.",
+              "해외 배당을 확률로 환산하면 댈러스 매버릭스 승 55.2% · 유타 재즈 승 44.8%입니다.",
+              "시즌 평균 득점은 **유타 재즈**(홈) 108.3점 · **댈러스 매버릭스**(원정) 112.2점, 평균 리바운드는 홈 44.8개 · 원정 43.8개, 3점 성공률은 홈 34.7% · 원정 34.4%. 평균 득점 차 3.9점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 58.1%, 유타 재즈 41.9%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -33477,27 +28118,27 @@ window.CLUTCH_DATA = {
           "status": "scheduled",
           "venue": "Madison Square Garden",
           "odds": {
-            "provider": "Draft Kings",
-            "at": "2026-11-22T14:10:29+09:00",
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:11+09:00",
             "moneyline": {
-              "away": 312,
+              "away": 240,
               "draw": null,
-              "home": -396
+              "home": -296
             },
             "spread": {
-              "homeLine": "-10.5",
-              "awayLine": "+10.5",
-              "home": -105,
-              "away": -115
+              "homeLine": "-7.5",
+              "awayLine": "+7.5",
+              "home": -110,
+              "away": -110
             },
             "total": {
-              "line": "218.5",
-              "over": -110,
-              "under": -110
+              "line": "213.5",
+              "over": -106,
+              "under": -114
             },
             "implied": {
-              "away": 23.3,
-              "home": 76.7
+              "away": 28.3,
+              "home": 71.7
             }
           },
           "away": {
@@ -33524,11 +28165,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
-              "text": "평균 112.0점 · 109.5점",
+              "text": "평균 112.0점 · 108.7점",
               "tone": "info"
             }
           ],
@@ -33707,17 +28348,17 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 109.5,
-                "rpg": 47.0,
-                "tp": 36.5,
+                "ppg": 108.7,
+                "rpg": 46.7,
+                "tp": 37.0,
                 "players": [
                   {
                     "name": "Jalen Brunson",
                     "id": "3934672",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
-                    "stat": "26.6점 · 2.9리바운드 · 5.9어시스트",
-                    "sub": "야투 43.3% · 3점 40.0% · 팀 내 1옵션",
+                    "stat": "26.8점 · 3.1리바운드 · 5.9어시스트",
+                    "sub": "야투 43.6% · 3점 41.7% · 팀 내 1옵션",
                     "last": "직전 36분 30점 7리바운드 5어시스트, 야투 11-23",
                     "recent": "최근 5경기 28.6점 · 야투 45.0%"
                   },
@@ -33740,9 +28381,18 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 15.8점 · 야투 43.8%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 28.6점·야투 45.0%·3점 51.2%입니다. 직전 경기에서는 Donovan Clingan가 22점·13리바운드·4어시스트를 기록했습니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음 · 출전 불투명 3명",
+                "focus": "최근 5경기 Jalen Brunson의 평균은 28.6점·야투 45.0%·3점 51.2%입니다. 결장 2명의 시즌 평균 득점 합계는 21.2점입니다. 직전 경기에서는 Donovan Clingan가 22점·13리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 3·8위) · 출전 불투명 1명",
+                "injuryOut": 2,
+                "injuryPpg": 21.2,
                 "injuries": [
+                  {
+                    "player": "OG Anunoby",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 3옵션 · 16.3점 · 5.4리바운드"
+                  },
                   {
                     "player": "Karl-Anthony Towns",
                     "status": "DAY-TO-DAY",
@@ -33752,28 +28402,21 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "player": "Jordan Clarkson",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "G",
                     "line": "팀 내 8옵션 · 4.9점 · 1.6리바운드"
-                  },
-                  {
-                    "player": "OG Anunoby",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 3옵션 · 16.3점 · 5.4리바운드"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 인디애나 페이서스 승 23.3% · 뉴욕 닉스 승 76.7%입니다.",
-              "시즌 평균 득점은 **뉴욕 닉스**(홈) 109.5점 · **인디애나 페이서스**(원정) 112.0점, 평균 리바운드는 홈 47.0개 · 원정 41.8개, 3점 성공률은 홈 36.5% · 원정 33.1%. 평균 득점 차가 2.5점으로 작고, 3점 성공률 차 3.4%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 인디애나 페이서스 승률 17.7%, 뉴욕 닉스 82.3%.",
+              "해외 배당을 확률로 환산하면 인디애나 페이서스 승 28.3% · 뉴욕 닉스 승 71.7%입니다.",
+              "시즌 평균 득점은 **뉴욕 닉스**(홈) 108.7점 · **인디애나 페이서스**(원정) 112.0점, 평균 리바운드는 홈 46.7개 · 원정 41.8개, 3점 성공률은 홈 37.0% · 원정 33.1%. 평균 득점 차 3.3점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 인디애나 페이서스 승률 18.2%, 뉴욕 닉스 81.8%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -33786,36 +28429,36 @@ window.CLUTCH_DATA = {
           "status": "scheduled",
           "venue": "Chase Center",
           "odds": {
-            "provider": "Draft Kings",
-            "at": "2026-11-22T14:10:29+09:00",
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:11+09:00",
             "moneyline": {
-              "away": -378,
+              "away": -304,
               "draw": null,
-              "home": 299
+              "home": 247
             },
             "spread": {
-              "homeLine": "+8.5",
-              "awayLine": "-8.5",
-              "home": -105,
-              "away": -115
+              "homeLine": "+7.5",
+              "awayLine": "-7.5",
+              "home": -108,
+              "away": -112
             },
             "total": {
-              "line": "212.5",
+              "line": "209.5",
               "over": -110,
               "under": -110
             },
             "implied": {
-              "away": 76.0,
-              "home": 24.0
+              "away": 72.3,
+              "home": 27.7
             }
           },
           "away": {
             "name": "보스턴 셀틱스",
             "abbr": "BOS",
-            "record": "11승 4패",
+            "record": "11승 5패",
             "badges": [
               {
-                "text": "원정 5승 3패",
+                "text": "원정 5승 4패",
                 "tone": ""
               }
             ]
@@ -33837,7 +28480,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 113.9점 · 112.7점",
+              "text": "평균 112.8점 · 112.7점",
               "tone": "info"
             }
           ],
@@ -33845,7 +28488,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**골든스테이트 워리어스**(홈) 8승 8패(홈 6승 1패, 최근 5경기 0승 5패, 5연패), **보스턴 셀틱스**(원정) 11승 4패(원정 5승 3패, 최근 5경기 3승 2패, 2연패). 직전 경기(11.19) **보스턴 셀틱스**는 덴버 너기츠에 101-105로 졌고, Jayson Tatum 24점·8리바운드·3어시스트, Neemias Queta 17점·10리바운드·3어시스트를 기록했습니다. 직전 경기(11.20) **골든스테이트 워리어스**는 멤피스 그리즐리스에 98-126로 졌고, Charles Bassey 16점·13리바운드·1어시스트, Brandin Podziemski 15점·3리바운드·2어시스트를 기록했습니다."
+              "text": "**골든스테이트 워리어스**(홈) 8승 8패(홈 6승 1패, 최근 5경기 0승 5패, 5연패), **보스턴 셀틱스**(원정) 11승 5패(원정 5승 4패, 최근 5경기 2승 3패, 3연패). 직전 경기(11.22) **보스턴 셀틱스**는 새크라멘토 킹스에 96-97로 졌고, Paul George 19점·8리바운드·5어시스트, Mike Conley 19점·4리바운드·2어시스트를 기록했습니다. 직전 경기(11.20) **골든스테이트 워리어스**는 멤피스 그리즐리스에 98-126로 졌고, Charles Bassey 16점·13리바운드·1어시스트, Brandin Podziemski 15점·3리바운드·2어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -33854,12 +28497,19 @@ window.CLUTCH_DATA = {
                 "abbr": "BOS",
                 "name": "보스턴 셀틱스",
                 "side": "away",
-                "record": "11승 4패",
-                "venueRecord": "원정 5승 3패",
-                "streak": "2연패",
-                "last5": "3승 2패",
-                "lastGame": "101-105 패",
+                "record": "11승 5패",
+                "venueRecord": "원정 5승 4패",
+                "streak": "3연패",
+                "last5": "2승 3패",
+                "lastGame": "96-97 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "새크라멘토 킹스",
+                    "ha": "원정",
+                    "score": "96-97",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-19",
                     "opp": "덴버 너기츠",
@@ -33887,18 +28537,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "98-93",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "필라델피아 세븐티식서스",
-                    "ha": "원정",
-                    "score": "123-101",
-                    "res": "승"
                   }
                 ],
-                "ppg": 113.9,
-                "rpg": 45.0,
-                "tp": 37.3,
+                "ppg": 112.8,
+                "rpg": 45.4,
+                "tp": 36.1,
                 "players": [
                   {
                     "name": "Jayson Tatum",
@@ -33907,55 +28550,47 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
                     "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
-                    "last": "직전 37분 24점 8리바운드 3어시스트, 야투 10-22",
-                    "recent": "최근 5경기 25.0점 · 야투 43.6%"
+                    "recent": "최근 4경기 26.0점 · 야투 42.9%"
                   },
                   {
                     "name": "Paul George",
                     "id": "4251",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png",
                     "pos": "F",
-                    "stat": "19.9점 · 5.5리바운드 · 3.7어시스트",
-                    "sub": "야투 46.5% · 3점 42.3% · 팀 내 2옵션",
-                    "last": "직전 23분 10점 4리바운드 1어시스트, 야투 3-12",
-                    "recent": "최근 4경기 18.8점 · 야투 46.6%"
+                    "stat": "19.9점 · 5.6리바운드 · 3.8어시스트",
+                    "sub": "야투 44.8% · 3점 40.7% · 팀 내 2옵션",
+                    "last": "직전 37분 19점 8리바운드 5어시스트, 야투 6-21",
+                    "recent": "최근 4경기 14.5점 · 야투 33.3%"
                   },
                   {
                     "name": "Payton Pritchard",
                     "id": "4066354",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
-                    "stat": "13.7점 · 3.1리바운드 · 3.8어시스트",
-                    "sub": "야투 42.4% · 3점 37.1% · 팀 내 3옵션",
-                    "last": "직전 30분 15점 1리바운드 2어시스트, 야투 6-11",
-                    "recent": "최근 5경기 15.6점 · 야투 45.3%"
+                    "stat": "13.4점 · 3.2리바운드 · 4.1어시스트",
+                    "sub": "야투 40.7% · 3점 34.3% · 팀 내 3옵션",
+                    "last": "직전 34분 9점 6리바운드 8어시스트, 야투 4-17",
+                    "recent": "최근 5경기 13.8점 · 야투 39.4%"
                   }
                 ],
-                "focus": "최근 5경기 Jayson Tatum의 평균은 25.0점·야투 43.6%·3점 36.4%입니다. 결장 3명의 시즌 평균 득점 합계는 44.2점입니다. 직전 경기에서는 Jayson Tatum가 24점·8리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명(팀 득점 1·4·9위)",
-                "injuryOut": 3,
-                "injuryPpg": 44.2,
+                "focus": "최근 4경기 Jayson Tatum의 평균은 26.0점·야투 42.9%·3점 35.1%입니다. 결장 2명의 시즌 평균 득점 합계는 25.0점입니다. 직전 경기에서는 Paul George가 19점·8리바운드·5어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 2·10위)",
+                "injuryOut": 2,
+                "injuryPpg": 25.0,
                 "injuries": [
                   {
                     "player": "Mitchell Robinson",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "C",
-                    "line": "팀 내 9옵션 · 5.1점 · 5.4리바운드"
+                    "line": "팀 내 10옵션 · 5.1점 · 5.4리바운드"
                   },
                   {
-                    "player": "Derrick White",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 4옵션 · 12.7점 · 3.0리바운드"
-                  },
-                  {
-                    "player": "Jayson Tatum",
+                    "player": "Paul George",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 1옵션 · 26.4점 · 6.6리바운드"
+                    "line": "팀 내 2옵션 · 19.9점 · 5.6리바운드"
                   }
                 ]
               },
@@ -34039,18 +28674,11 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.0점 · 야투 37.9%"
                   }
                 ],
-                "focus": "최근 1경기 Stephen Curry의 평균은 3.0점·야투 33.3%·3점 50.0%입니다. 결장 4명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Charles Bassey가 16점·13리바운드·1어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
-                "injuryOut": 4,
+                "focus": "최근 1경기 Stephen Curry의 평균은 3.0점·야투 33.3%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Charles Bassey가 16점·13리바운드·1어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명",
+                "injuryOut": 5,
                 "injuryPpg": 38.2,
                 "injuries": [
-                  {
-                    "player": "Draymond Green",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 14옵션 · 3.2점 · 4.7리바운드"
-                  },
                   {
                     "player": "Brandon Williams",
                     "status": "OUT",
@@ -34076,17 +28704,23 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G"
+                  },
+                  {
+                    "player": "Jimmy Butler III",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 보스턴 셀틱스 승 76.0% · 골든스테이트 워리어스 승 24.0%입니다.",
-              "시즌 평균 득점은 **골든스테이트 워리어스**(홈) 112.7점 · **보스턴 셀틱스**(원정) 113.9점, 평균 리바운드는 홈 44.1개 · 원정 45.0개, 3점 성공률은 홈 36.4% · 원정 37.3%. 평균 득점 차가 1.2점으로 작고, 3점 성공률 차 0.9%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 보스턴 셀틱스 승률 70.3%, 골든스테이트 워리어스 29.7%.",
+              "해외 배당을 확률로 환산하면 보스턴 셀틱스 승 72.3% · 골든스테이트 워리어스 승 27.7%입니다.",
+              "시즌 평균 득점은 **골든스테이트 워리어스**(홈) 112.7점 · **보스턴 셀틱스**(원정) 112.8점, 평균 리바운드는 홈 44.1개 · 원정 45.4개, 3점 성공률은 홈 36.4% · 원정 36.1%. 평균 득점 차가 0.1점으로 작고, 3점 성공률 차 0.3%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 보스턴 셀틱스 승률 76.2%, 골든스테이트 워리어스 23.8%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-23 END */
@@ -34399,7 +29033,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 4패·6위·승점 4, 대한항공(원정) 2승 3패·5위·승점 7."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -34705,7 +29339,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 2패·4위·승점 8, GS칼텍스(원정) 4승 1패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
@@ -34722,7 +29356,7 @@ window.CLUTCH_DATA = {
           "venue": "U-Power Stadium",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:45+09:00",
+            "at": "2026-11-23T06:13:56+09:00",
             "moneyline": {
               "away": -110,
               "draw": 270,
@@ -34735,9 +29369,9 @@ window.CLUTCH_DATA = {
               "away": -115
             },
             "total": {
-              "line": "2.5",
-              "over": -175,
-              "under": 135
+              "line": "3.5",
+              "over": 140,
+              "under": -180
             },
             "implied": {
               "away": 48.7,
@@ -34773,7 +29407,7 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "오버언더 2.5골",
+              "text": "오버언더 3.5골",
               "tone": "info"
             },
             {
@@ -34888,7 +29522,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 2무 2패입니다. 원정 2승 0무 3패입니다. 경기당 평균 1.5골을 넣고 2.3골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 유벤투스 2-2 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Federico Croci",
@@ -35001,7 +29635,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연패입니다. 최근 5경기 1승 0무 4패입니다. 홈 2승 0무 3패입니다. 경기당 평균 1.5골을 넣고 2.3골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 아탈란타 0-1 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Yvan Kouadio Maye",
@@ -35072,7 +29706,7 @@ window.CLUTCH_DATA = {
               "**몬차** — 리그 18위, 승점 7, 득실 -8.",
               "**피오렌티나** — 리그 15위, 승점 9, 득실 -8."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -35123,7 +29757,7 @@ window.CLUTCH_DATA = {
           "venue": "Estadi Ciutat de València",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:32+09:00",
+            "at": "2026-11-23T06:13:44+09:00",
             "moneyline": {
               "away": 225,
               "draw": 255,
@@ -35133,12 +29767,12 @@ window.CLUTCH_DATA = {
               "homeLine": "-0.5",
               "awayLine": "+0.5",
               "home": 105,
-              "away": -150
+              "away": -145
             },
             "total": {
               "line": "2.5",
-              "over": -145,
-              "under": 115
+              "over": -150,
+              "under": 120
             },
             "implied": {
               "away": 29.5,
@@ -35289,16 +29923,16 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 원정 2승 3무 1패입니다. 경기당 평균 1.2골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 레알 베티스 0-2 패입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
-                  {
-                    "player": "Marc Aguado",
-                    "status": "DOUBTFUL"
-                  },
                   {
                     "player": "Ali Houary",
                     "status": "OUT",
                     "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Marc Aguado",
+                    "status": "DOUBTFUL"
                   },
                   {
                     "player": "Yago Santiago",
@@ -35453,7 +30087,7 @@ window.CLUTCH_DATA = {
               "**레반테** — 리그 18위, 승점 11, 득실 -5.",
               "**엘체** — 리그 19위, 승점 10, 득실 -6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -35504,7 +30138,7 @@ window.CLUTCH_DATA = {
           "venue": "Gtech Community Stadium",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:26+09:00",
+            "at": "2026-11-23T06:13:40+09:00",
             "moneyline": {
               "away": 205,
               "draw": 250,
@@ -35766,8 +30400,17 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 홈 3승 1무 1패입니다. 경기당 평균 1.6골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 브라이턴 0-2 패입니다. FotMob 기준 결장 6명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
+                  {
+                    "player": "Fábio Carvalho",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Aaron Hickey",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  },
                   {
                     "player": "Nathan Collins",
                     "status": "OUT",
@@ -35784,11 +30427,6 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 11월 말"
                   },
                   {
-                    "player": "Fábio Carvalho",
-                    "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 말"
-                  },
-                  {
                     "player": "Igor Thiago",
                     "status": "OUT",
                     "line": "징계 출장정지 · 복귀 예상 2026년 12월 초"
@@ -35799,7 +30437,7 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 11월 말"
                   }
                 ],
-                "injurySummary": "결장 6명"
+                "injurySummary": "결장 6명 · 불확실 1명"
               }
             ],
             "keyPlayers": [
@@ -35852,7 +30490,7 @@ window.CLUTCH_DATA = {
               "**브렌트퍼드** — 리그 10위, 승점 14, 득실 +5.",
               "**에버턴** — 리그 7위, 승점 16, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -35928,11 +30566,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 7명",
+              "text": "결장 4명",
               "tone": "warn"
             },
             {
-              "text": "평균 122.1점 · 99.9점",
+              "text": "평균 120.5점 · 99.9점",
               "tone": "info"
             }
           ],
@@ -35990,17 +30628,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 122.1,
-                "rpg": 46.2,
-                "tp": 39.8,
+                "ppg": 120.5,
+                "rpg": 45.6,
+                "tp": 39.1,
                 "players": [
                   {
                     "name": "Ty Jerome",
                     "id": "4065733",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
                     "pos": "G",
-                    "stat": "25.4점 · 3.4리바운드 · 5.3어시스트",
-                    "sub": "야투 48.5% · 3점 35.9% · 팀 내 1옵션",
+                    "stat": "24.8점 · 3.4리바운드 · 5.3어시스트",
+                    "sub": "야투 47.9% · 3점 35.6% · 팀 내 1옵션",
                     "last": "직전 27분 18점 4리바운드 6어시스트, 야투 7-17",
                     "recent": "최근 1경기 18.0점 · 야투 41.2%"
                   },
@@ -36018,37 +30656,37 @@ window.CLUTCH_DATA = {
                     "id": "4903027",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                     "pos": "F",
-                    "stat": "14.8점 · 8.1리바운드 · 3.5어시스트",
-                    "sub": "야투 47.9% · 3점 46.3% · 팀 내 3옵션",
+                    "stat": "15.3점 · 8.0리바운드 · 3.4어시스트",
+                    "sub": "야투 48.1% · 3점 47.2% · 팀 내 3옵션",
                     "last": "직전 30분 23점 7리바운드 2어시스트, 야투 8-16",
                     "recent": "최근 5경기 20.6점 · 야투 54.7%"
                   }
                 ],
-                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 5명의 시즌 평균 득점 합계는 49.9점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명(팀 득점 2·7·8·11·12위)",
-                "injuryOut": 5,
-                "injuryPpg": 49.9,
+                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 2명의 시즌 평균 득점 합계는 13.1점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 11·12위) · 출전 불투명 3명",
+                "injuryOut": 2,
+                "injuryPpg": 13.1,
                 "injuries": [
                   {
-                    "player": "Jerami Grant",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 7옵션 · 10.6점 · 1.7리바운드"
-                  },
-                  {
                     "player": "Javon Small",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "G",
                     "line": "팀 내 8옵션 · 9.6점 · 3.1리바운드"
                   },
                   {
                     "player": "Cameron Boozer",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 2옵션 · 16.6점 · 9.2리바운드"
+                  },
+                  {
+                    "player": "Jerami Grant",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 6옵션 · 10.6점 · 1.7리바운드"
                   },
                   {
                     "player": "GG Jackson",
@@ -36183,11 +30821,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **샬럿 호네츠**(홈) 99.9점 · **멤피스 그리즐리스**(원정) 122.1점, 평균 리바운드는 홈 47.0개 · 원정 46.2개, 3점 성공률은 홈 31.0% · 원정 39.8%. 평균 득점 차 22.2점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "시즌 평균 득점은 **샬럿 호네츠**(홈) 99.9점 · **멤피스 그리즐리스**(원정) 120.5점, 평균 리바운드는 홈 47.0개 · 원정 45.6개, 3점 성공률은 홈 31.0% · 원정 39.1%. 평균 득점 차 20.6점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
               "**ESPN 매치업 예측** — 멤피스 그리즐리스 승률 65.1%, 샬럿 호네츠 34.9%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -36223,11 +30861,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
-              "text": "평균 117.5점 · 114.5점",
+              "text": "평균 116.1점 · 115.5점",
               "tone": "info"
             }
           ],
@@ -36285,17 +30923,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 117.5,
-                "rpg": 44.7,
-                "tp": 36.3,
+                "ppg": 116.1,
+                "rpg": 44.9,
+                "tp": 35.8,
                 "players": [
                   {
                     "name": "Deni Avdija",
                     "id": "4683021",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
                     "pos": "F",
-                    "stat": "24.2점 · 6.2리바운드 · 6.1어시스트",
-                    "sub": "야투 50.7% · 3점 38.6% · 팀 내 1옵션",
+                    "stat": "23.9점 · 6.4리바운드 · 6.0어시스트",
+                    "sub": "야투 50.9% · 3점 39.7% · 팀 내 1옵션",
                     "last": "직전 36분 20점 9리바운드 5어시스트, 야투 7-13",
                     "recent": "최근 3경기 27.0점 · 야투 64.4%"
                   },
@@ -36304,8 +30942,8 @@ window.CLUTCH_DATA = {
                     "id": "6606",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                     "pos": "G",
-                    "stat": "20.9점 · 3.2리바운드 · 4.1어시스트",
-                    "sub": "야투 40.9% · 3점 35.8% · 팀 내 2옵션",
+                    "stat": "20.6점 · 3.2리바운드 · 4.0어시스트",
+                    "sub": "야투 40.3% · 3점 34.2% · 팀 내 2옵션",
                     "last": "직전 33분 15점 3리바운드 3어시스트, 야투 5-16",
                     "recent": "최근 5경기 22.2점 · 야투 36.0%"
                   },
@@ -36398,17 +31036,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 114.5,
+                "ppg": 115.5,
                 "rpg": 42.8,
-                "tp": 35.5,
+                "tp": 35.3,
                 "players": [
                   {
                     "name": "Tyrese Maxey",
                     "id": "4431678",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
                     "pos": "G",
-                    "stat": "26.5점 · 3.3리바운드 · 5.8어시스트",
-                    "sub": "야투 50.0% · 3점 38.0% · 팀 내 1옵션",
+                    "stat": "25.9점 · 3.3리바운드 · 5.7어시스트",
+                    "sub": "야투 49.5% · 3점 36.9% · 팀 내 1옵션",
                     "last": "직전 36분 17점 4리바운드 4어시스트, 야투 4-11",
                     "recent": "최근 4경기 23.8점 · 야투 50.9%"
                   },
@@ -36426,37 +31064,37 @@ window.CLUTCH_DATA = {
                     "id": "3059318",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
                     "pos": "C",
-                    "stat": "20.0점 · 8.3리바운드 · 3.8어시스트",
-                    "sub": "야투 39.9% · 3점 14.6% · 팀 내 3옵션",
+                    "stat": "20.4점 · 8.9리바운드 · 4.1어시스트",
+                    "sub": "야투 40.0% · 3점 14.3% · 팀 내 3옵션",
                     "last": "직전 34분 26점 17리바운드 9어시스트, 야투 7-17",
                     "recent": "최근 4경기 27.2점 · 야투 45.9%"
                   }
                 ],
-                "focus": "최근 4경기 Tyrese Maxey의 평균은 23.8점·야투 50.9%·3점 40.0%입니다. 결장 4명의 시즌 평균 득점 합계는 29.5점입니다. 직전 경기에서는 Joel Embiid가 26점·17리바운드·9어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명",
-                "injuryOut": 4,
-                "injuryPpg": 29.5,
+                "focus": "최근 4경기 Tyrese Maxey의 평균은 23.8점·야투 50.9%·3점 40.0%입니다. 결장 2명의 시즌 평균 득점 합계는 2.1점입니다. 직전 경기에서는 Joel Embiid가 26점·17리바운드·9어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 2명",
+                "injuryOut": 2,
+                "injuryPpg": 2.1,
                 "injuries": [
                   {
                     "player": "Dean Wade",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
-                    "line": "팀 내 9옵션 · 4.8점 · 4.6리바운드"
+                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
+                  },
+                  {
+                    "player": "Jaylen Brown",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
                   },
                   {
                     "player": "Adem Bona",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "C",
-                    "line": "팀 내 11옵션 · 2.1점 · 3.9리바운드"
-                  },
-                  {
-                    "player": "Jaylen Brown",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
+                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
                   },
                   {
                     "player": "Ariel Hukporti",
@@ -36468,11 +31106,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **필라델피아 세븐티식서스**(홈) 114.5점 · **포틀랜드 트레일블레이저스**(원정) 117.5점, 평균 리바운드는 홈 42.8개 · 원정 44.7개, 3점 성공률은 홈 35.5% · 원정 36.3%. 평균 득점 차 3.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 포틀랜드 트레일블레이저스 승률 41.5%, 필라델피아 세븐티식서스 58.5%.",
+              "시즌 평균 득점은 **필라델피아 세븐티식서스**(홈) 115.5점 · **포틀랜드 트레일블레이저스**(원정) 116.1점, 평균 리바운드는 홈 42.8개 · 원정 44.9개, 3점 성공률은 홈 35.3% · 원정 35.8%. 평균 득점 차가 0.6점으로 작고, 3점 성공률 차 0.5%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 포틀랜드 트레일블레이저스 승률 42.4%, 필라델피아 세븐티식서스 57.6%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -36769,10 +31407,10 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **인디애나 페이서스**(홈) 112.0점 · **오클라호마시티 썬더**(원정) 113.0점, 평균 리바운드는 홈 41.8개 · 원정 45.8개, 3점 성공률은 홈 33.1% · 원정 34.5%. 평균 득점 차가 1.0점으로 작고, 3점 성공률 차 1.4%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 오클라호마시티 썬더 승률 74.1%, 인디애나 페이서스 25.9%.",
+              "**ESPN 매치업 예측** — 오클라호마시티 썬더 승률 73.6%, 인디애나 페이서스 26.4%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -36812,7 +31450,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 108.1점 · 111.6점",
+              "text": "평균 109.4점 · 111.6점",
               "tone": "info"
             }
           ],
@@ -36871,17 +31509,17 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 108.1,
-                "rpg": 44.4,
-                "tp": 34.4,
+                "ppg": 109.4,
+                "rpg": 44.7,
+                "tp": 34.5,
                 "players": [
                   {
                     "name": "Tyler Herro",
                     "id": "4395725",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
                     "pos": "G",
-                    "stat": "19.4점 · 4.0리바운드 · 4.1어시스트",
-                    "sub": "야투 43.0% · 3점 35.8% · 팀 내 1옵션",
+                    "stat": "21.3점 · 4.4리바운드 · 4.3어시스트",
+                    "sub": "야투 45.0% · 3점 38.0% · 팀 내 1옵션",
                     "last": "직전 40분 50점 11리바운드 7어시스트, 야투 15-23",
                     "recent": "최근 5경기 20.0점 · 야투 42.9%"
                   },
@@ -36890,8 +31528,8 @@ window.CLUTCH_DATA = {
                     "id": "4432848",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png",
                     "pos": "F",
-                    "stat": "15.0점 · 5.1리바운드 · 3.0어시스트",
-                    "sub": "야투 45.9% · 3점 42.3% · 팀 내 2옵션",
+                    "stat": "14.6점 · 4.8리바운드 · 2.9어시스트",
+                    "sub": "야투 46.4% · 3점 42.5% · 팀 내 2옵션",
                     "last": "직전 25분 9점 0리바운드 1어시스트, 야투 4-7",
                     "recent": "최근 5경기 11.2점 · 야투 42.6%"
                   },
@@ -36900,14 +31538,14 @@ window.CLUTCH_DATA = {
                     "id": "3134907",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
                     "pos": "F",
-                    "stat": "12.3점 · 5.3리바운드 · 2.4어시스트",
-                    "sub": "야투 46.2% · 3점 32.9% · 팀 내 3옵션",
+                    "stat": "12.2점 · 5.2리바운드 · 2.3어시스트",
+                    "sub": "야투 44.1% · 3점 32.1% · 팀 내 3옵션",
                     "last": "직전 33분 12점 5리바운드 1어시스트, 야투 4-16",
                     "recent": "최근 4경기 16.5점 · 야투 40.4%"
                   }
                 ],
                 "focus": "최근 5경기 Tyler Herro의 평균은 20.0점·야투 42.9%·3점 36.1%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Tyler Herro가 50점·11리바운드·7어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명(팀 득점 14위)",
+                "injurySummary": "결장 1명(팀 득점 13위)",
                 "injuryOut": 1,
                 "injuryPpg": 3.9,
                 "injuries": [
@@ -36916,7 +31554,7 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 14옵션 · 3.9점 · 1.2리바운드"
+                    "line": "팀 내 13옵션 · 3.9점 · 1.2리바운드"
                   }
                 ]
               },
@@ -37033,11 +31671,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **토론토 랩터스**(홈) 111.6점 · **밀워키 벅스**(원정) 108.1점, 평균 리바운드는 홈 40.6개 · 원정 44.4개, 3점 성공률은 홈 33.6% · 원정 34.4%. 평균 득점 차 3.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 밀워키 벅스 승률 25.0%, 토론토 랩터스 75.0%.",
+              "시즌 평균 득점은 **토론토 랩터스**(홈) 111.6점 · **밀워키 벅스**(원정) 109.4점, 평균 리바운드는 홈 40.6개 · 원정 44.7개, 3점 성공률은 홈 33.6% · 원정 34.5%. 평균 득점 차가 2.2점으로 작고, 3점 성공률 차 0.9%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 밀워키 벅스 승률 25.3%, 토론토 랩터스 74.7%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -37073,11 +31711,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 3명",
+              "text": "결장 4명",
               "tone": "warn"
             },
             {
-              "text": "평균 110.9점 · 115.6점",
+              "text": "평균 110.9점 · 114.9점",
               "tone": "info"
             }
           ],
@@ -37171,21 +31809,23 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.8점 · 야투 50.0%"
                   }
                 ],
-                "focus": "최근 5경기 Julius Randle의 평균은 23.2점·야투 50.0%·3점 33.3%입니다. 직전 경기에서는 Julius Randle가 27점·9리바운드·6어시스트를 기록했습니다. 이어서 Michael Porter Jr., Nolan Traore가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음 · 출전 불투명 2명",
+                "focus": "최근 5경기 Julius Randle의 평균은 23.2점·야투 50.0%·3점 33.3%입니다. 결장 1명의 시즌 평균 득점 합계는 12.9점입니다. 직전 경기에서는 Julius Randle가 27점·9리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 3위) · 출전 불투명 1명",
+                "injuryOut": 1,
+                "injuryPpg": 12.9,
                 "injuries": [
-                  {
-                    "player": "Nolan Traore",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 3옵션 · 12.9점 · 1.6리바운드"
-                  },
                   {
                     "player": "Grant Nelson",
                     "status": "DAY-TO-DAY",
                     "note": "당일 체크",
                     "pos": "F"
+                  },
+                  {
+                    "player": "Nolan Traore",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 3옵션 · 12.9점 · 1.6리바운드"
                   }
                 ]
               },
@@ -37234,9 +31874,9 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 115.6,
-                "rpg": 48.0,
-                "tp": 37.4,
+                "ppg": 114.9,
+                "rpg": 47.5,
+                "tp": 37.2,
                 "players": [
                   {
                     "name": "Anthony Edwards",
@@ -37251,23 +31891,23 @@ window.CLUTCH_DATA = {
                     "id": "4397002",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png",
                     "pos": "G",
-                    "stat": "17.8점 · 4.6리바운드 · 3.5어시스트",
-                    "sub": "야투 50.9% · 3점 45.9% · 팀 내 2옵션",
+                    "stat": "17.9점 · 4.4리바운드 · 3.4어시스트",
+                    "sub": "야투 51.7% · 3점 43.8% · 팀 내 2옵션",
                     "last": "직전 34분 19점 2리바운드 2어시스트, 야투 9-14",
                     "recent": "최근 5경기 17.4점 · 야투 50.7%"
                   },
                   {
-                    "name": "LaMelo Ball",
-                    "id": "4432816",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
-                    "pos": "G",
-                    "stat": "17.6점 · 4.3리바운드 · 5.7어시스트",
-                    "sub": "야투 40.7% · 3점 36.2% · 팀 내 3옵션",
-                    "last": "직전 32분 12점 5리바운드 7어시스트, 야투 5-10",
-                    "recent": "최근 5경기 14.0점 · 야투 31.4%"
+                    "name": "Jaden McDaniels",
+                    "id": "4431671",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431671.png",
+                    "pos": "F",
+                    "stat": "17.5점 · 5.9리바운드 · 3.6어시스트",
+                    "sub": "야투 54.2% · 3점 34.7% · 팀 내 3옵션",
+                    "last": "직전 36분 25점 5리바운드 4어시스트, 야투 11-17",
+                    "recent": "최근 5경기 19.0점 · 야투 60.0%"
                   }
                 ],
-                "focus": "결장 3명의 시즌 평균 득점 합계는 37.7점입니다. 직전 경기에서는 Jaden McDaniels가 25점·5리바운드·4어시스트를 기록했습니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
+                "focus": "결장 3명의 시즌 평균 득점 합계는 37.7점입니다. 직전 경기에서는 Jaden McDaniels가 25점·5리바운드·4어시스트를 기록했습니다. 이어서 Ayo Dosunmu, Jaden McDaniels가 뒤를 받칩니다.",
                 "injurySummary": "결장 3명",
                 "injuryOut": 3,
                 "injuryPpg": 37.7,
@@ -37296,11 +31936,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **미네소타 팀버울브스**(홈) 115.6점 · **브루클린 네츠**(원정) 110.9점, 평균 리바운드는 홈 48.0개 · 원정 41.3개, 3점 성공률은 홈 37.4% · 원정 36.0%. 평균 득점 차 4.7점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 브루클린 네츠 승률 14.7%, 미네소타 팀버울브스 85.3%.",
+              "시즌 평균 득점은 **미네소타 팀버울브스**(홈) 114.9점 · **브루클린 네츠**(원정) 110.9점, 평균 리바운드는 홈 47.5개 · 원정 41.3개, 3점 성공률은 홈 37.2% · 원정 36.0%. 평균 득점 차 4.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 브루클린 네츠 승률 14.3%, 미네소타 팀버울브스 85.7%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -37336,7 +31976,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 5명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
@@ -37536,17 +32176,17 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.2점 · 야투 50.9%"
                   }
                 ],
-                "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 2·16위) · 출전 불투명 2명",
-                "injuryOut": 2,
-                "injuryPpg": 20.9,
+                "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 1·2·7위) · 출전 불투명 2명",
+                "injuryOut": 3,
+                "injuryPpg": 49.0,
                 "injuries": [
                   {
-                    "player": "Norman Powell",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
+                    "player": "Nic Claxton",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 7옵션 · 9.3점 · 4.8리바운드"
                   },
                   {
                     "player": "Jalen Smith",
@@ -37556,11 +32196,18 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 4옵션 · 13.4점 · 7.9리바운드"
                   },
                   {
-                    "player": "Tobe Awaka",
+                    "player": "Norman Powell",
                     "status": "OUT",
                     "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
+                  },
+                  {
+                    "player": "Patrick Williams",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
-                    "line": "팀 내 16옵션 · 2.0점 · 5.2리바운드"
+                    "line": "팀 내 10옵션 · 6.9점 · 2.9리바운드"
                   },
                   {
                     "player": "Caleb Wilson",
@@ -37574,10 +32221,10 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **시카고 불스**(홈) 114.7점 · **클리블랜드 캐벌리어스**(원정) 118.8점, 평균 리바운드는 홈 43.8개 · 원정 45.6개, 3점 성공률은 홈 31.8% · 원정 37.1%. 평균 득점 차 4.1점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 클리블랜드 캐벌리어스 승률 78.0%, 시카고 불스 22.0%.",
+              "**ESPN 매치업 예측** — 클리블랜드 캐벌리어스 승률 78.6%, 시카고 불스 21.4%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -37613,11 +32260,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 6명",
+              "text": "결장 4명",
               "tone": "warn"
             },
             {
-              "text": "평균 113.9점 · 115.6점",
+              "text": "평균 113.9점 · 114.3점",
               "tone": "info"
             }
           ],
@@ -37776,9 +32423,9 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 115.6,
-                "rpg": 41.9,
-                "tp": 34.4,
+                "ppg": 114.3,
+                "rpg": 42.5,
+                "tp": 33.6,
                 "players": [
                   {
                     "name": "Zion Williamson",
@@ -37790,42 +32437,49 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 21.5점 · 야투 53.2%"
                   },
                   {
-                    "name": "Saddiq Bey",
-                    "id": "4397136",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
-                    "pos": "F",
-                    "stat": "16.8점 · 4.5리바운드 · 2.6어시스트",
-                    "sub": "야투 44.7% · 3점 39.8% · 팀 내 2옵션",
-                    "last": "직전 32분 2점 5리바운드 2어시스트, 야투 1-12",
-                    "recent": "최근 5경기 14.4점 · 야투 33.3%"
-                  },
-                  {
                     "name": "Jeremiah Fears",
                     "id": "5144091",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5144091.png",
                     "pos": "G",
-                    "stat": "15.9점 · 4.9리바운드 · 5.4어시스트",
-                    "sub": "야투 44.7% · 3점 29.6% · 팀 내 3옵션",
+                    "stat": "16.7점 · 4.9리바운드 · 5.3어시스트",
+                    "sub": "야투 45.2% · 3점 29.9% · 팀 내 2옵션",
                     "last": "직전 34분 29점 5리바운드 4어시스트, 야투 9-17",
                     "recent": "최근 5경기 19.8점 · 야투 46.8%"
+                  },
+                  {
+                    "name": "Saddiq Bey",
+                    "id": "4397136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
+                    "pos": "F",
+                    "stat": "15.9점 · 4.5리바운드 · 2.6어시스트",
+                    "sub": "야투 42.7% · 3점 37.3% · 팀 내 3옵션",
+                    "last": "직전 32분 2점 5리바운드 2어시스트, 야투 1-12",
+                    "recent": "최근 5경기 14.4점 · 야투 33.3%"
                   }
                 ],
-                "focus": "최근 4경기 Zion Williamson의 평균은 21.5점·야투 53.2%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 53.8점입니다. 직전 경기에서는 Jeremiah Fears가 29점·5리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명(팀 득점 1·4·8·13·15위)",
-                "injuryOut": 5,
-                "injuryPpg": 53.8,
+                "focus": "최근 4경기 Zion Williamson의 평균은 21.5점·야투 53.2%·3점 50.0%입니다. 결장 3명의 시즌 평균 득점 합계는 16.4점입니다. 직전 경기에서는 Jeremiah Fears가 29점·5리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 8·13·15위) · 출전 불투명 2명",
+                "injuryOut": 3,
+                "injuryPpg": 16.4,
                 "injuries": [
                   {
-                    "player": "Zion Williamson",
+                    "player": "Bryce McGowens",
                     "status": "OUT",
                     "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 15옵션 · 3.7점 · 0.7리바운드"
+                  },
+                  {
+                    "player": "Zion Williamson",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 1옵션 · 21.7점 · 5.4리바운드"
                   },
                   {
                     "player": "Trey Murphy III",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 4옵션 · 15.7점 · 4.7리바운드"
                   },
@@ -37835,13 +32489,6 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 8옵션 · 7.2점 · 3.5리바운드"
-                  },
-                  {
-                    "player": "Bryce McGowens",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 15옵션 · 3.7점 · 0.7리바운드"
                   },
                   {
                     "player": "Bennedict Mathurin",
@@ -37854,11 +32501,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **뉴올리언스 펠리컨스**(홈) 115.6점 · **피닉스 선즈**(원정) 113.9점, 평균 리바운드는 홈 41.9개 · 원정 40.8개, 3점 성공률은 홈 34.4% · 원정 36.6%. 평균 득점 차가 1.7점으로 작고, 3점 성공률 차 2.2%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "시즌 평균 득점은 **뉴올리언스 펠리컨스**(홈) 114.3점 · **피닉스 선즈**(원정) 113.9점, 평균 리바운드는 홈 42.5개 · 원정 40.8개, 3점 성공률은 홈 33.6% · 원정 36.6%. 평균 득점 차가 0.4점으로 작고, 3점 성공률 차 3.0%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
               "**ESPN 매치업 예측** — 피닉스 선즈 승률 75.5%, 뉴올리언스 펠리컨스 24.5%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -37898,7 +32545,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 111.9점 · 118.2점",
+              "text": "평균 111.1점 · 118.2점",
               "tone": "info"
             }
           ],
@@ -37957,17 +32604,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 111.9,
-                "rpg": 39.1,
-                "tp": 39.2,
+                "ppg": 111.1,
+                "rpg": 40.0,
+                "tp": 38.7,
                 "players": [
                   {
                     "name": "Darius Garland",
                     "id": "4396907",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
                     "pos": "G",
-                    "stat": "21.3점 · 2.2리바운드 · 6.8어시스트",
-                    "sub": "야투 46.6% · 3점 35.7% · 팀 내 1옵션",
+                    "stat": "20.9점 · 2.1리바운드 · 6.5어시스트",
+                    "sub": "야투 46.7% · 3점 35.6% · 팀 내 1옵션",
                     "last": "직전 32분 16점 1리바운드 2어시스트, 야투 5-10",
                     "recent": "최근 5경기 22.0점 · 야투 46.8%"
                   },
@@ -37976,8 +32623,8 @@ window.CLUTCH_DATA = {
                     "id": "3448",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png",
                     "pos": "C",
-                    "stat": "15.4점 · 5.2리바운드 · 2.0어시스트",
-                    "sub": "야투 55.3% · 3점 44.8% · 팀 내 2옵션",
+                    "stat": "15.7점 · 5.3리바운드 · 1.9어시스트",
+                    "sub": "야투 55.2% · 3점 42.2% · 팀 내 2옵션",
                     "last": "직전 25분 21점 6리바운드 0어시스트, 야투 8-15",
                     "recent": "최근 5경기 20.0점 · 야투 52.8%"
                   },
@@ -37986,8 +32633,8 @@ window.CLUTCH_DATA = {
                     "id": "4066648",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066648.png",
                     "pos": "F",
-                    "stat": "13.6점 · 6.0리바운드 · 1.6어시스트",
-                    "sub": "야투 40.6% · 3점 37.9% · 팀 내 3옵션",
+                    "stat": "14.0점 · 6.2리바운드 · 1.5어시스트",
+                    "sub": "야투 41.9% · 3점 40.8% · 팀 내 3옵션",
                     "last": "직전 29분 19점 8리바운드 1어시스트, 야투 7-12",
                     "recent": "최근 5경기 13.4점 · 야투 49.0%"
                   }
@@ -38112,11 +32759,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **휴스턴 로키츠**(홈) 118.2점 · **LA 클리퍼스**(원정) 111.9점, 평균 리바운드는 홈 45.3개 · 원정 39.1개, 3점 성공률은 홈 38.0% · 원정 39.2%. 평균 득점 차 6.3점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — LA 클리퍼스 승률 13.3%, 휴스턴 로키츠 86.7%.",
+              "시즌 평균 득점은 **휴스턴 로키츠**(홈) 118.2점 · **LA 클리퍼스**(원정) 111.1점, 평균 리바운드는 홈 45.3개 · 원정 40.0개, 3점 성공률은 홈 38.0% · 원정 38.7%. 평균 득점 차 7.1점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — LA 클리퍼스 승률 13.1%, 휴스턴 로키츠 86.9%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -38370,10 +33017,10 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **LA 레이커스**(홈) 120.0점 · **유타 재즈**(원정) 108.3점, 평균 리바운드는 홈 41.1개 · 원정 44.8개, 3점 성공률은 홈 37.1% · 원정 34.7%. 평균 득점 차 11.7점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 유타 재즈 승률 19.2%, LA 레이커스 80.8%.",
+              "**ESPN 매치업 예측** — 유타 재즈 승률 18.9%, LA 레이커스 81.1%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -38399,10 +33046,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "새크라멘토 킹스",
             "abbr": "SAC",
-            "record": "1승 14패",
+            "record": "2승 14패",
             "badges": [
               {
-                "text": "홈 0승 9패",
+                "text": "홈 1승 9패",
                 "tone": ""
               }
             ]
@@ -38413,7 +33060,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 117.5점 · 107.5점",
+              "text": "평균 117.3점 · 106.8점",
               "tone": "info"
             }
           ],
@@ -38421,7 +33068,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**새크라멘토 킹스**(홈) 1승 14패(홈 0승 9패, 최근 5경기 0승 5패, 5연패), **샌안토니오 스퍼스**(원정) 14승 3패(원정 7승 0패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.22) **샌안토니오 스퍼스**는 샌안토니오 스퍼스에 91-114로 졌고, Jeremiah Fears 29점·5리바운드·4어시스트, Jordan Poole 25점·3리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **새크라멘토 킹스**는 LA 레이커스에 104-106로 졌고, De'Andre Hunter 30점·6리바운드·2어시스트, Domantas Sabonis 19점·16리바운드·1어시스트를 기록했습니다."
+              "text": "**새크라멘토 킹스**(홈) 2승 14패(홈 1승 9패, 최근 5경기 1승 4패), **샌안토니오 스퍼스**(원정) 14승 3패(원정 7승 0패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.22) **샌안토니오 스퍼스**는 샌안토니오 스퍼스에 91-114로 졌고, Jeremiah Fears 29점·5리바운드·4어시스트, Jordan Poole 25점·3리바운드·2어시스트를 기록했습니다. 직전 경기(11.22) **새크라멘토 킹스**는 보스턴 셀틱스에 97-96로 이겼고, Darius Acuff Jr. 21점·6리바운드·8어시스트, De'Andre Hunter 20점·6리바운드·2어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -38472,17 +33119,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 117.5,
-                "rpg": 47.4,
-                "tp": 33.6,
+                "ppg": 117.3,
+                "rpg": 47.8,
+                "tp": 33.7,
                 "players": [
                   {
                     "name": "Victor Wembanyama",
                     "id": "5104157",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
                     "pos": "F",
-                    "stat": "28.6점 · 11.9리바운드 · 3.3어시스트",
-                    "sub": "야투 52.8% · 3점 30.0% · 팀 내 1옵션",
+                    "stat": "29.9점 · 12.3리바운드 · 3.2어시스트",
+                    "sub": "야투 54.1% · 3점 31.5% · 팀 내 1옵션",
                     "last": "직전 32분 50점 19리바운드 1어시스트, 야투 20-29",
                     "recent": "최근 5경기 29.0점 · 야투 53.6%"
                   },
@@ -38500,8 +33147,8 @@ window.CLUTCH_DATA = {
                     "id": "4845367",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png",
                     "pos": "G",
-                    "stat": "15.7점 · 5.2리바운드 · 5.9어시스트",
-                    "sub": "야투 42.9% · 3점 34.8% · 팀 내 3옵션",
+                    "stat": "15.9점 · 5.1리바운드 · 5.9어시스트",
+                    "sub": "야투 43.7% · 3점 37.4% · 팀 내 3옵션",
                     "last": "직전 29분 19점 3리바운드 6어시스트, 야투 7-12",
                     "recent": "최근 5경기 20.4점 · 야투 54.7%"
                   }
@@ -38536,12 +33183,18 @@ window.CLUTCH_DATA = {
                 "abbr": "SAC",
                 "name": "새크라멘토 킹스",
                 "side": "home",
-                "record": "1승 14패",
-                "venueRecord": "홈 0승 9패",
-                "streak": "5연패",
-                "last5": "0승 5패",
-                "lastGame": "104-106 패",
+                "record": "2승 14패",
+                "venueRecord": "홈 1승 9패",
+                "last5": "1승 4패",
+                "lastGame": "97-96 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "보스턴 셀틱스",
+                    "ha": "홈",
+                    "score": "97-96",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "LA 레이커스",
@@ -38569,51 +33222,44 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "107-120",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "올랜도 매직",
-                    "ha": "홈",
-                    "score": "100-107",
-                    "res": "패"
                   }
                 ],
-                "ppg": 107.5,
-                "rpg": 40.0,
-                "tp": 34.4,
+                "ppg": 106.8,
+                "rpg": 40.8,
+                "tp": 34.1,
                 "players": [
                   {
                     "name": "Darius Acuff Jr.",
                     "id": "5142620",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
                     "pos": "G",
-                    "stat": "25.7점 · 3.4리바운드 · 7.3어시스트",
-                    "sub": "야투 41.2% · 3점 33.1% · 팀 내 1옵션",
-                    "last": "직전 36분 18점 1리바운드 12어시스트, 야투 8-23",
-                    "recent": "최근 5경기 25.2점 · 야투 40.9%"
+                    "stat": "25.4점 · 3.6리바운드 · 7.4어시스트",
+                    "sub": "야투 40.5% · 3점 32.9% · 팀 내 1옵션",
+                    "last": "직전 40분 21점 6리바운드 8어시스트, 야투 7-23",
+                    "recent": "최근 5경기 23.6점 · 야투 37.5%"
                   },
                   {
                     "name": "Zach LaVine",
                     "id": "3064440",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
                     "pos": "G",
-                    "stat": "21.0점 · 3.6리바운드 · 2.9어시스트",
-                    "sub": "야투 50.3% · 3점 38.8% · 팀 내 2옵션",
-                    "last": "직전 39분 19점 7리바운드 4어시스트, 야투 7-17",
-                    "recent": "최근 4경기 20.0점 · 야투 53.7%"
+                    "stat": "20.5점 · 3.6리바운드 · 2.7어시스트",
+                    "sub": "야투 49.8% · 3점 39.6% · 팀 내 2옵션",
+                    "last": "직전 30분 13점 3리바운드 0어시스트, 야투 4-10",
+                    "recent": "최근 4경기 15.5점 · 야투 47.9%"
                   },
                   {
                     "name": "De'Andre Hunter",
                     "id": "4065732",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065732.png",
                     "pos": "F",
-                    "stat": "14.9점 · 4.4리바운드 · 1.6어시스트",
+                    "stat": "15.3점 · 4.5리바운드 · 1.6어시스트",
                     "sub": "야투 46.2% · 3점 40.3% · 팀 내 3옵션",
-                    "last": "직전 37분 30점 6리바운드 2어시스트, 야투 12-16",
-                    "recent": "최근 4경기 19.0점 · 야투 52.9%"
+                    "last": "직전 41분 20점 6리바운드 2어시스트, 야투 5-11",
+                    "recent": "최근 4경기 20.2점 · 야투 52.9%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 40.9%·3점 35.3%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 De'Andre Hunter가 30점·6리바운드·2어시스트를 기록했습니다.",
+                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 23.6점·야투 37.5%·3점 32.7%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 21점·6리바운드·8어시스트를 기록했습니다.",
                 "injurySummary": "결장 2명",
                 "injuryOut": 2,
                 "injuries": [
@@ -38633,11 +33279,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **새크라멘토 킹스**(홈) 107.5점 · **샌안토니오 스퍼스**(원정) 117.5점, 평균 리바운드는 홈 40.0개 · 원정 47.4개, 3점 성공률은 홈 34.4% · 원정 33.6%. 평균 득점 차 10.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 샌안토니오 스퍼스 승률 90.7%, 새크라멘토 킹스 9.3%.",
+              "시즌 평균 득점은 **새크라멘토 킹스**(홈) 106.8점 · **샌안토니오 스퍼스**(원정) 117.3점, 평균 리바운드는 홈 40.8개 · 원정 47.8개, 3점 성공률은 홈 34.1% · 원정 33.7%. 평균 득점 차 10.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 샌안토니오 스퍼스 승률 90.6%, 새크라멘토 킹스 9.4%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 2-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-24 END */
@@ -38950,7 +33596,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 한국전력(홈) 5승 1패·1위·승점 14, 현대캐피탈(원정) 4승 2패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -39256,7 +33902,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 화성종합실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행(홈) 4승 2패·3위·승점 12, 도로공사(원정) 5승 1패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-25 END */,
@@ -39273,27 +33919,27 @@ window.CLUTCH_DATA = {
           "venue": "RAMS Park",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:11+09:00",
+            "at": "2026-11-23T06:13:32+09:00",
             "moneyline": {
-              "away": 140,
-              "draw": 295,
+              "away": 135,
+              "draw": 300,
               "home": 165
             },
             "spread": {
               "homeLine": "+0.5",
               "awayLine": "-0.5",
-              "home": -180,
-              "away": 130
+              "home": -170,
+              "away": 120
             },
             "total": {
               "line": "3.5",
-              "over": 105,
-              "under": -130
+              "over": -110,
+              "under": -115
             },
             "implied": {
-              "away": 39.8,
-              "draw": 24.2,
-              "home": 36.0
+              "away": 40.4,
+              "draw": 23.7,
+              "home": 35.8
             }
           },
           "away": {
@@ -39341,7 +33987,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **갈라타사라이**(홈) 2.0골 · **애스턴 빌라**(원정) 3.0골, 평균 실점은 홈 2.2골 · 원정 1.5골. 해외 배당을 확률로 환산하면 갈라타사라이 승 36.0% · 무 24.2% · 애스턴 빌라 승 39.8%."
+              "text": "두 팀 평균 득점은 **갈라타사라이**(홈) 2.0골 · **애스턴 빌라**(원정) 3.0골, 평균 실점은 홈 2.2골 · 원정 1.5골. 해외 배당을 확률로 환산하면 갈라타사라이 승 35.8% · 무 23.7% · 애스턴 빌라 승 40.4%."
             }
           ],
           "details": {
@@ -39439,7 +34085,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2경기 연속 무승부입니다. 최근 5경기 0승 3무 2패입니다. 원정 1승 0무 1패입니다. 경기당 평균 3.0골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 선덜랜드 0-0 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Matty Cash",
@@ -39552,7 +34198,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 1승 0무 1패입니다. 경기당 평균 2.0골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Samsunspor 2-1 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Rafael Leão",
@@ -39613,7 +34259,7 @@ window.CLUTCH_DATA = {
               "**갈라타사라이** — 리그 18위, 승점 6, 득실 -1.",
               "**애스턴 빌라** — 리그 6위, 승점 9, 득실 +6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "fotmobId": 6106339,
             "fotmobSwapped": false
           }
@@ -39629,27 +34275,27 @@ window.CLUTCH_DATA = {
           "venue": "Aspmyra Stadion",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:11+09:00",
+            "at": "2026-11-23T06:13:32+09:00",
             "moneyline": {
-              "away": 380,
+              "away": 400,
               "draw": 400,
-              "home": -175
+              "home": -185
             },
             "spread": {
               "homeLine": "-1.5",
               "awayLine": "+1.5",
-              "home": 125,
-              "away": -170
+              "home": 120,
+              "away": -165
             },
             "total": {
               "line": "3.5",
-              "over": -135,
+              "over": -140,
               "under": 110
             },
             "implied": {
-              "away": 19.9,
+              "away": 19.1,
               "draw": 19.1,
-              "home": 60.9
+              "home": 61.9
             }
           },
           "away": {
@@ -39697,7 +34343,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **보되/글림트**(홈) 1.0골 · **LASK 린츠**(원정) 2.5골, 평균 실점은 홈 2.2골 · 원정 2.2골. 해외 배당을 확률로 환산하면 보되/글림트 승 60.9% · 무 19.1% · LASK 린츠 승 19.9%."
+              "text": "두 팀 평균 득점은 **보되/글림트**(홈) 1.0골 · **LASK 린츠**(원정) 2.5골, 평균 실점은 홈 2.2골 · 원정 2.2골. 해외 배당을 확률로 환산하면 보되/글림트 승 61.9% · 무 19.1% · LASK 린츠 승 19.1%."
             }
           ],
           "details": {
@@ -39795,7 +34441,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연승입니다. 최근 5경기 4승 0무 1패입니다. 원정 1승 0무 1패입니다. 경기당 평균 2.5골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 TSV Hartberg 2-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "George Bello",
@@ -39903,7 +34549,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 3승 1무 1패입니다. 홈 1승 1무 0패입니다. 경기당 평균 1.0골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.20 원정 Molde 4-2 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Håkon Evjen",
@@ -39969,7 +34615,7 @@ window.CLUTCH_DATA = {
               "**보되/글림트** — 리그 25위, 승점 4, 득실 -5.",
               "**LASK 린츠** — 리그 16위, 승점 6, 득실 +1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "fotmobId": 6106317,
             "fotmobSwapped": false
           }
@@ -39985,27 +34631,27 @@ window.CLUTCH_DATA = {
           "venue": "Giuseppe Sinigaglia",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:11+09:00",
+            "at": "2026-11-23T06:13:32+09:00",
             "moneyline": {
-              "away": 750,
-              "draw": 450,
-              "home": -300
+              "away": 850,
+              "draw": 500,
+              "home": -360
             },
             "spread": {
               "homeLine": "-1.5",
               "awayLine": "+1.5",
-              "home": -125,
-              "away": -110
+              "home": -150,
+              "away": 110
             },
             "total": {
               "line": "3.5",
-              "over": -110,
-              "under": -115
+              "over": -120,
+              "under": -105
             },
             "implied": {
-              "away": 11.2,
-              "draw": 17.3,
-              "home": 71.5
+              "away": 10.0,
+              "draw": 15.8,
+              "home": 74.2
             }
           },
           "away": {
@@ -40053,7 +34699,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **코모**(홈) 4.8골 · **AEK 아테네**(원정) 1.2골, 평균 실점은 홈 1.5골 · 원정 2.8골. 해외 배당을 확률로 환산하면 코모 승 71.5% · 무 17.3% · AEK 아테네 승 11.2%."
+              "text": "두 팀 평균 득점은 **코모**(홈) 4.8골 · **AEK 아테네**(원정) 1.2골, 평균 실점은 홈 1.5골 · 원정 2.8골. 해외 배당을 확률로 환산하면 코모 승 74.2% · 무 15.8% · AEK 아테네 승 10.0%."
             }
           ],
           "details": {
@@ -40151,7 +34797,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 3승 0무 2패입니다. 원정 0승 0무 2패입니다. 경기당 평균 1.2골을 넣고 2.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 Kalamata 1-0 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Zine",
@@ -40262,7 +34908,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 4승 0무 1패입니다. 홈 2승 0무 0패입니다. 경기당 평균 4.8골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 칼리아리 2-0 승입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Riccardo Cassano",
@@ -40335,7 +34981,7 @@ window.CLUTCH_DATA = {
               "**코모** — 리그 4위, 승점 9, 득실 +13.",
               "**AEK 아테네** — 리그 29위, 승점 3, 득실 -6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "fotmobId": 6106412,
             "fotmobSwapped": false
           }
@@ -40351,7 +34997,7 @@ window.CLUTCH_DATA = {
           "venue": "Národny Futbalovy Stadión",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:11+09:00",
+            "at": "2026-11-23T06:13:32+09:00",
             "moneyline": {
               "away": -425,
               "draw": 600,
@@ -40366,7 +35012,7 @@ window.CLUTCH_DATA = {
             "total": {
               "line": "3.5",
               "over": -110,
-              "under": -115
+              "under": -110
             },
             "implied": {
               "away": 77.2,
@@ -40517,7 +35163,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 원정 1승 0무 1패입니다. 경기당 평균 2.0골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 세비야 1-1 무입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Dani Ceballos",
@@ -40625,7 +35271,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연패입니다. 최근 5경기 1승 0무 4패입니다. 홈 0승 0무 1패입니다. 경기당 평균 0.2골을 넣고 4.2골을 실점했습니다. 직전 경기 기록은 2026.11.03 원정 LASK 린츠 0-4 패입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Roman Čerepkai",
@@ -40685,7 +35331,7 @@ window.CLUTCH_DATA = {
               "**슬로반 브라티슬라바** — 리그 36위, 승점 0, 득실 -16.",
               "**레알 베티스** — 리그 11위, 승점 9, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "fotmobId": 6106394,
             "fotmobSwapped": false
           }
@@ -40701,7 +35347,7 @@ window.CLUTCH_DATA = {
           "venue": "Emirates Stadium",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:11+09:00",
+            "at": "2026-11-23T06:13:32+09:00",
             "moneyline": {
               "away": 700,
               "draw": 400,
@@ -40867,7 +35513,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 4승 1무 0패입니다. 원정 1승 0무 1패입니다. 경기당 평균 1.8골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 묀헨글라트바흐 1-0 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Samuele Inácio",
@@ -40989,7 +35635,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 홈 1승 0무 0패입니다. 경기당 평균 2.0골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 뉴캐슬 유나이티드 2-2 무입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Martín Zubimendi",
@@ -41055,7 +35701,7 @@ window.CLUTCH_DATA = {
               "**아스널** — 리그 3위, 승점 10, 득실 +5.",
               "**도르트문트** — 리그 12위, 승점 9, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -41106,7 +35752,7 @@ window.CLUTCH_DATA = {
           "venue": "De Kuip",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:11+09:00",
+            "at": "2026-11-23T06:13:32+09:00",
             "moneyline": {
               "away": 145,
               "draw": 270,
@@ -41121,7 +35767,7 @@ window.CLUTCH_DATA = {
             "total": {
               "line": "2.5",
               "over": -165,
-              "under": 135
+              "under": 130
             },
             "implied": {
               "away": 39.2,
@@ -41272,7 +35918,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 원정 0승 0무 1패입니다. 경기당 평균 1.5골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.20 홈 Paredes 1-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Chris Smalling",
@@ -41385,7 +36031,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연패입니다. 최근 5경기 0승 2무 3패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 2.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Excelsior 2-3 패입니다. FotMob 기준 결장 6명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jakub Moder",
@@ -41471,7 +36117,7 @@ window.CLUTCH_DATA = {
               "**페예노르트** — 리그 32위, 승점 3, 득실 -7.",
               "**FC 포르투** — 리그 26위, 승점 3, 득실 -1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -41504,27 +36150,27 @@ window.CLUTCH_DATA = {
           "venue": "Etihad Stadium",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:11+09:00",
+            "at": "2026-11-23T06:13:32+09:00",
             "moneyline": {
               "away": 900,
               "draw": 550,
-              "home": -400
+              "home": -380
             },
             "spread": {
               "homeLine": "-1.5",
               "awayLine": "+1.5",
-              "home": -160,
-              "away": 115
+              "home": -155,
+              "away": 110
             },
             "total": {
               "line": "3.5",
-              "over": -115,
+              "over": -110,
               "under": -110
             },
             "implied": {
               "away": 9.5,
-              "draw": 14.6,
-              "home": 75.9
+              "draw": 14.7,
+              "home": 75.8
             }
           },
           "away": {
@@ -41572,7 +36218,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **맨체스터 시티**(홈) 3.0골 · **나폴리**(원정) 1.5골, 평균 실점은 홈 1.8골 · 원정 2.8골. 해외 배당을 확률로 환산하면 맨체스터 시티 승 75.9% · 무 14.6% · 나폴리 승 9.5%."
+              "text": "두 팀 평균 득점은 **맨체스터 시티**(홈) 3.0골 · **나폴리**(원정) 1.5골, 평균 실점은 홈 1.8골 · 원정 2.8골. 해외 배당을 확률로 환산하면 맨체스터 시티 승 75.8% · 무 14.7% · 나폴리 승 9.5%."
             }
           ],
           "details": {
@@ -41670,7 +36316,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 원정 0승 0무 2패입니다. 경기당 평균 1.5골을 넣고 2.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 토리노 1-0 승입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Alex Meret",
@@ -41797,7 +36443,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 1승 0무 1패입니다. 경기당 평균 3.0골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 풀럼 1-1 무입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Antoine Semenyo",
@@ -41858,7 +36504,7 @@ window.CLUTCH_DATA = {
               "**맨체스터 시티** — 리그 7위, 승점 9, 득실 +5.",
               "**나폴리** — 리그 27위, 승점 3, 득실 -5."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -41909,7 +36555,7 @@ window.CLUTCH_DATA = {
           "venue": "Santiago Bernabéu",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:11+09:00",
+            "at": "2026-11-23T06:13:32+09:00",
             "moneyline": {
               "away": 1000,
               "draw": 750,
@@ -41918,13 +36564,13 @@ window.CLUTCH_DATA = {
             "spread": {
               "homeLine": "-2.5",
               "awayLine": "+2.5",
-              "home": 100,
-              "away": -140
+              "home": -105,
+              "away": -135
             },
             "total": {
               "line": "4.5",
-              "over": 105,
-              "under": -130
+              "over": 100,
+              "under": -125
             },
             "implied": {
               "away": 8.7,
@@ -42075,7 +36721,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 3승 1무 1패입니다. 원정 1승 0무 1패입니다. 경기당 평균 0.8골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 NEC Nijmegen 4-1 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Sami Ouaissa",
@@ -42193,7 +36839,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 2승 0무 0패입니다. 경기당 평균 3.2골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 셀타 비고 2-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Raúl Asencio",
@@ -42264,7 +36910,7 @@ window.CLUTCH_DATA = {
               "**레알 마드리드** — 리그 2위, 승점 12, 득실 +6.",
               "**PSV 에인트호번** — 리그 24위, 승점 4, 득실 -1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "fotmobId": 6106243,
             "fotmobSwapped": false
           }
@@ -42280,17 +36926,17 @@ window.CLUTCH_DATA = {
           "venue": "Red Bull Arena",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:11+09:00",
+            "at": "2026-11-23T06:13:32+09:00",
             "moneyline": {
-              "away": 475,
-              "draw": 450,
-              "home": -225
+              "away": 500,
+              "draw": 475,
+              "home": -250
             },
             "spread": {
               "homeLine": "-1.5",
               "awayLine": "+1.5",
-              "home": -105,
-              "away": -135
+              "home": -115,
+              "away": -125
             },
             "total": {
               "line": "3.5",
@@ -42298,9 +36944,9 @@ window.CLUTCH_DATA = {
               "under": 105
             },
             "implied": {
-              "away": 16.6,
-              "draw": 17.3,
-              "home": 66.1
+              "away": 15.8,
+              "draw": 16.5,
+              "home": 67.7
             }
           },
           "away": {
@@ -42348,7 +36994,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **RB 라이프치히**(홈) 1.2골 · **랑스**(원정) 1.0골, 평균 실점은 홈 2.8골 · 원정 4.0골. 해외 배당을 확률로 환산하면 RB 라이프치히 승 66.1% · 무 17.3% · 랑스 승 16.6%."
+              "text": "두 팀 평균 득점은 **RB 라이프치히**(홈) 1.2골 · **랑스**(원정) 1.0골, 평균 실점은 홈 2.8골 · 원정 4.0골. 해외 배당을 확률로 환산하면 RB 라이프치히 승 67.7% · 무 16.5% · 랑스 승 15.8%."
             }
           ],
           "details": {
@@ -42446,7 +37092,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 원정 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 4.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Toulouse 1-1 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Andrija Bulatović",
@@ -42559,7 +37205,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.2골을 넣고 2.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 우니온 베를린 5-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Marc Guiu",
@@ -42625,7 +37271,7 @@ window.CLUTCH_DATA = {
               "**RB 라이프치히** — 리그 30위, 승점 3, 득실 -6.",
               "**랑스** — 리그 33위, 승점 3, 득실 -12."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "fotmobId": 6106325,
             "fotmobSwapped": false
           }
@@ -42666,7 +37312,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 7명",
+              "text": "결장 8명",
               "tone": "warn"
             },
             {
@@ -42762,31 +37408,17 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.4점 · 야투 43.4%"
                   }
                 ],
-                "focus": "최근 4경기 Cade Cunningham의 평균은 33.8점·야투 50.0%·3점 37.5%입니다. 결장 3명의 시즌 평균 득점 합계는 9.1점입니다. 직전 경기에서는 Cade Cunningham가 23점·5리바운드·9어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명(팀 득점 11·13·15위) · 출전 불투명 2명",
-                "injuryOut": 3,
-                "injuryPpg": 9.1,
+                "focus": "최근 4경기 Cade Cunningham의 평균은 33.8점·야투 50.0%·3점 37.5%입니다. 결장 4명의 시즌 평균 득점 합계는 34.6점입니다. 직전 경기에서는 Cade Cunningham가 23점·5리바운드·9어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명(팀 득점 2·4·13·15위)",
+                "injuryOut": 4,
+                "injuryPpg": 34.6,
                 "injuries": [
-                  {
-                    "player": "Ronald Holland II",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 11옵션 · 4.9점 · 3.8리바운드"
-                  },
                   {
                     "player": "Ebuka Okorie",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 13옵션 · 2.2점 · 0.4리바운드"
-                  },
-                  {
-                    "player": "Cade Cunningham",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 1옵션 · 25.6점 · 5.1리바운드"
                   },
                   {
                     "player": "Taurean Prince",
@@ -42796,10 +37428,18 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 15옵션 · 2.0점 · 0.7리바운드"
                   },
                   {
-                    "player": "Ugonna Onyenso",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "C"
+                    "player": "Duncan Robinson",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 2옵션 · 17.4점 · 1.8리바운드"
+                  },
+                  {
+                    "player": "Jalen Duren",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 4옵션 · 13.0점 · 7.5리바운드"
                   }
                 ]
               },
@@ -42916,10 +37556,10 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **올랜도 매직**(홈) 109.6점 · **디트로이트 피스턴스**(원정) 114.5점, 평균 리바운드는 홈 42.6개 · 원정 43.1개, 3점 성공률은 홈 35.8% · 원정 37.0%. 평균 득점 차 4.9점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 디트로이트 피스턴스 승률 57.2%, 올랜도 매직 42.8%.",
+              "**ESPN 매치업 예측** — 디트로이트 피스턴스 승률 57.5%, 올랜도 매직 42.5%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -42934,10 +37574,10 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "보스턴 셀틱스",
             "abbr": "BOS",
-            "record": "11승 4패",
+            "record": "11승 5패",
             "badges": [
               {
-                "text": "원정 5승 3패",
+                "text": "원정 5승 4패",
                 "tone": ""
               }
             ]
@@ -42955,11 +37595,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 7명",
+              "text": "결장 5명",
               "tone": "warn"
             },
             {
-              "text": "평균 113.9점 · 110.0점",
+              "text": "평균 112.8점 · 110.0점",
               "tone": "info"
             }
           ],
@@ -42967,7 +37607,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**워싱턴 위저즈**(홈) 6승 11패(홈 2승 5패, 최근 5경기 2승 3패, 2연승), **보스턴 셀틱스**(원정) 11승 4패(원정 5승 3패, 최근 5경기 3승 2패, 2연패). 직전 경기(11.19) **보스턴 셀틱스**는 덴버 너기츠에 101-105로 졌고, Jayson Tatum 24점·8리바운드·3어시스트, Neemias Queta 17점·10리바운드·3어시스트를 기록했습니다. 직전 경기(11.21) **워싱턴 위저즈**는 시카고 불스에 98-94로 이겼고, Anthony Davis 36점·11리바운드·3어시스트, AJ Dybantsa 20점·10리바운드·6어시스트를 기록했습니다."
+              "text": "**워싱턴 위저즈**(홈) 6승 11패(홈 2승 5패, 최근 5경기 2승 3패, 2연승), **보스턴 셀틱스**(원정) 11승 5패(원정 5승 4패, 최근 5경기 2승 3패, 3연패). 직전 경기(11.22) **보스턴 셀틱스**는 새크라멘토 킹스에 96-97로 졌고, Paul George 19점·8리바운드·5어시스트, Mike Conley 19점·4리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **워싱턴 위저즈**는 시카고 불스에 98-94로 이겼고, Anthony Davis 36점·11리바운드·3어시스트, AJ Dybantsa 20점·10리바운드·6어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -42976,12 +37616,19 @@ window.CLUTCH_DATA = {
                 "abbr": "BOS",
                 "name": "보스턴 셀틱스",
                 "side": "away",
-                "record": "11승 4패",
-                "venueRecord": "원정 5승 3패",
-                "streak": "2연패",
-                "last5": "3승 2패",
-                "lastGame": "101-105 패",
+                "record": "11승 5패",
+                "venueRecord": "원정 5승 4패",
+                "streak": "3연패",
+                "last5": "2승 3패",
+                "lastGame": "96-97 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "새크라멘토 킹스",
+                    "ha": "원정",
+                    "score": "96-97",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-19",
                     "opp": "덴버 너기츠",
@@ -43009,18 +37656,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "98-93",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "필라델피아 세븐티식서스",
-                    "ha": "원정",
-                    "score": "123-101",
-                    "res": "승"
                   }
                 ],
-                "ppg": 113.9,
-                "rpg": 45.0,
-                "tp": 37.3,
+                "ppg": 112.8,
+                "rpg": 45.4,
+                "tp": 36.1,
                 "players": [
                   {
                     "name": "Jayson Tatum",
@@ -43029,55 +37669,47 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
                     "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
-                    "last": "직전 37분 24점 8리바운드 3어시스트, 야투 10-22",
-                    "recent": "최근 5경기 25.0점 · 야투 43.6%"
+                    "recent": "최근 4경기 26.0점 · 야투 42.9%"
                   },
                   {
                     "name": "Paul George",
                     "id": "4251",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png",
                     "pos": "F",
-                    "stat": "19.9점 · 5.5리바운드 · 3.7어시스트",
-                    "sub": "야투 46.5% · 3점 42.3% · 팀 내 2옵션",
-                    "last": "직전 23분 10점 4리바운드 1어시스트, 야투 3-12",
-                    "recent": "최근 4경기 18.8점 · 야투 46.6%"
+                    "stat": "19.9점 · 5.6리바운드 · 3.8어시스트",
+                    "sub": "야투 44.8% · 3점 40.7% · 팀 내 2옵션",
+                    "last": "직전 37분 19점 8리바운드 5어시스트, 야투 6-21",
+                    "recent": "최근 4경기 14.5점 · 야투 33.3%"
                   },
                   {
                     "name": "Payton Pritchard",
                     "id": "4066354",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
-                    "stat": "13.7점 · 3.1리바운드 · 3.8어시스트",
-                    "sub": "야투 42.4% · 3점 37.1% · 팀 내 3옵션",
-                    "last": "직전 30분 15점 1리바운드 2어시스트, 야투 6-11",
-                    "recent": "최근 5경기 15.6점 · 야투 45.3%"
+                    "stat": "13.4점 · 3.2리바운드 · 4.1어시스트",
+                    "sub": "야투 40.7% · 3점 34.3% · 팀 내 3옵션",
+                    "last": "직전 34분 9점 6리바운드 8어시스트, 야투 4-17",
+                    "recent": "최근 5경기 13.8점 · 야투 39.4%"
                   }
                 ],
-                "focus": "최근 5경기 Jayson Tatum의 평균은 25.0점·야투 43.6%·3점 36.4%입니다. 결장 3명의 시즌 평균 득점 합계는 44.2점입니다. 직전 경기에서는 Jayson Tatum가 24점·8리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명(팀 득점 1·4·9위)",
-                "injuryOut": 3,
-                "injuryPpg": 44.2,
+                "focus": "최근 4경기 Jayson Tatum의 평균은 26.0점·야투 42.9%·3점 35.1%입니다. 결장 2명의 시즌 평균 득점 합계는 25.0점입니다. 직전 경기에서는 Paul George가 19점·8리바운드·5어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 2·10위)",
+                "injuryOut": 2,
+                "injuryPpg": 25.0,
                 "injuries": [
                   {
                     "player": "Mitchell Robinson",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "C",
-                    "line": "팀 내 9옵션 · 5.1점 · 5.4리바운드"
+                    "line": "팀 내 10옵션 · 5.1점 · 5.4리바운드"
                   },
                   {
-                    "player": "Derrick White",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 4옵션 · 12.7점 · 3.0리바운드"
-                  },
-                  {
-                    "player": "Jayson Tatum",
+                    "player": "Paul George",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 1옵션 · 26.4점 · 6.6리바운드"
+                    "line": "팀 내 2옵션 · 19.9점 · 5.6리바운드"
                   }
                 ]
               },
@@ -43162,11 +37794,25 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.8점 · 야투 44.4%"
                   }
                 ],
-                "focus": "최근 5경기 Anthony Davis의 평균은 25.6점·야투 56.2%·3점 40.0%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Anthony Davis가 36점·11리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명",
-                "injuryOut": 4,
+                "focus": "최근 5경기 Anthony Davis의 평균은 25.6점·야투 56.2%·3점 40.0%입니다. 결장 3명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Anthony Davis가 36점·11리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
+                "injuryOut": 3,
                 "injuryPpg": 7.2,
                 "injuries": [
+                  {
+                    "player": "Bub Carrington",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 9옵션 · 4.8점 · 1.3리바운드"
+                  },
+                  {
+                    "player": "Deandre Ayton",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "C",
+                    "line": "팀 내 11옵션 · 3.8점 · 4.1리바운드"
+                  },
                   {
                     "player": "Tristan Vukcevic",
                     "status": "OUT",
@@ -43186,22 +37832,16 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 7옵션 · 7.2점 · 7.5리바운드"
-                  },
-                  {
-                    "player": "Jamir Watkins",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **워싱턴 위저즈**(홈) 110.0점 · **보스턴 셀틱스**(원정) 113.9점, 평균 리바운드는 홈 42.5개 · 원정 45.0개, 3점 성공률은 홈 31.9% · 원정 37.3%. 평균 득점 차 3.9점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 보스턴 셀틱스 승률 77.0%, 워싱턴 위저즈 23.0%.",
+              "시즌 평균 득점은 **워싱턴 위저즈**(홈) 110.0점 · **보스턴 셀틱스**(원정) 112.8점, 평균 리바운드는 홈 42.5개 · 원정 45.4개, 3점 성공률은 홈 31.9% · 원정 36.1%. 평균 득점 차가 2.8점으로 작고, 3점 성공률 차 4.2%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 보스턴 셀틱스 승률 79.5%, 워싱턴 위저즈 20.5%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -43237,11 +37877,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 6명",
+              "text": "결장 4명",
               "tone": "warn"
             },
             {
-              "text": "평균 112.3점 · 114.6점",
+              "text": "평균 112.2점 · 114.6점",
               "tone": "info"
             }
           ],
@@ -43300,17 +37940,17 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 112.3,
-                "rpg": 43.2,
-                "tp": 34.1,
+                "ppg": 112.2,
+                "rpg": 43.8,
+                "tp": 34.4,
                 "players": [
                   {
                     "name": "Cooper Flagg",
                     "id": "5041939",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                     "pos": "F",
-                    "stat": "24.2점 · 6.6리바운드 · 6.4어시스트",
-                    "sub": "야투 48.5% · 3점 29.9% · 팀 내 1옵션",
+                    "stat": "24.1점 · 6.5리바운드 · 6.5어시스트",
+                    "sub": "야투 47.9% · 3점 31.5% · 팀 내 1옵션",
                     "last": "직전 36분 22점 6리바운드 8어시스트, 야투 6-16",
                     "recent": "최근 5경기 20.4점 · 야투 42.9%"
                   },
@@ -43319,8 +37959,8 @@ window.CLUTCH_DATA = {
                     "id": "6442",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                     "pos": "G",
-                    "stat": "22.2점 · 3.7리바운드 · 4.4어시스트",
-                    "sub": "야투 47.3% · 3점 38.5% · 팀 내 2옵션",
+                    "stat": "22.5점 · 3.8리바운드 · 4.4어시스트",
+                    "sub": "야투 45.9% · 3점 37.4% · 팀 내 2옵션",
                     "last": "직전 35분 25점 6리바운드 4어시스트, 야투 8-24",
                     "recent": "최근 4경기 21.5점 · 야투 40.0%"
                   },
@@ -43334,17 +37974,24 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.2점 · 야투 45.9%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 20.4점·야투 42.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 20.6점입니다. 직전 경기에서는 Kyrie Irving가 25점·6리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명",
-                "injuryOut": 5,
-                "injuryPpg": 20.6,
+                "focus": "최근 5경기 Cooper Flagg의 평균은 20.4점·야투 42.9%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 6.6점입니다. 직전 경기에서는 Kyrie Irving가 25점·6리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
+                "injuryOut": 3,
+                "injuryPpg": 6.6,
                 "injuries": [
                   {
                     "player": "P.J. Washington",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 3옵션 · 14.0점 · 6.7리바운드"
+                  },
+                  {
+                    "player": "Walter Clayton Jr.",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 7옵션 · 7.7점 · 3.1리바운드"
                   },
                   {
                     "player": "Tobi Lawal",
@@ -43364,13 +38011,7 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 11옵션 · 5.2점 · 2.0리바운드"
-                  },
-                  {
-                    "player": "Tarik Biberovic",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
+                    "line": "팀 내 12옵션 · 5.2점 · 2.0리바운드"
                   }
                 ]
               },
@@ -43469,11 +38110,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **덴버 너기츠**(홈) 114.6점 · **댈러스 매버릭스**(원정) 112.3점, 평균 리바운드는 홈 41.6개 · 원정 43.2개, 3점 성공률은 홈 34.3% · 원정 34.1%. 평균 득점 차가 2.3점으로 작고, 3점 성공률 차 0.2%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 31.0%, 덴버 너기츠 69.0%.",
+              "시즌 평균 득점은 **덴버 너기츠**(홈) 114.6점 · **댈러스 매버릭스**(원정) 112.2점, 평균 리바운드는 홈 41.6개 · 원정 43.8개, 3점 성공률은 홈 34.3% · 원정 34.4%. 평균 득점 차가 2.4점으로 작고, 3점 성공률 차 0.1%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 30.6%, 덴버 너기츠 69.4%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-25 END */
@@ -43547,7 +38188,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "우리카드",
             "abbr": "WOO",
-            "record": "3승 2패",
+            "record": "3승 3패",
             "badges": [
               {
                 "text": "리그 4위",
@@ -43559,8 +38200,8 @@ window.CLUTCH_DATA = {
                 "date": "2026-11-22",
                 "opp": "KB손해보험",
                 "ha": "홈",
-                "score": "0-0",
-                "res": "무"
+                "score": "2-3",
+                "res": "패"
               },
               {
                 "date": "2026-11-18",
@@ -43591,7 +38232,8 @@ window.CLUTCH_DATA = {
                 "res": "승"
               }
             ],
-            "last5": "2승 2패",
+            "last5": "2승 3패",
+            "streak": "3연패",
             "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
           },
           "tags": [
@@ -43604,12 +38246,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**우리카드**(홈) 3승 2패(리그 4위, 최근 흐름 2패), **삼성화재**(원정) 4승 2패(리그 2위, 최근 흐름 3승). V리그 남자부 2라운드 서울장충체육관에서 열립니다."
+              "text": "**우리카드**(홈) 3승 3패(리그 4위, 최근 흐름 3패), **삼성화재**(원정) 4승 2패(리그 2위, 최근 흐름 3승). V리그 남자부 2라운드 서울장충체육관에서 열립니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "세트 승리 수 차가 5입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
+              "text": "승점 차가 3점, 세트 승리 수 차가 3입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -43702,7 +38344,7 @@ window.CLUTCH_DATA = {
                 "name": "우리카드",
                 "abbr": "WOO",
                 "side": "home",
-                "record": "3승 2패",
+                "record": "3승 3패",
                 "badges": [
                   {
                     "text": "리그 4위",
@@ -43712,7 +38354,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "3승 2패"
+                    "value": "3승 3패"
                   },
                   {
                     "label": "리그 순위",
@@ -43720,25 +38362,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "세트",
-                    "value": "9-9"
+                    "value": "11-12"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "2패"
+                    "value": "3패"
                   }
                 ],
                 "nums": [
                   {
                     "label": "승점",
-                    "value": 8.0
+                    "value": 9.0
                   },
                   {
                     "label": "득점",
-                    "value": 413
+                    "value": 513
                   },
                   {
                     "label": "실점",
-                    "value": 402
+                    "value": 512
                   }
                 ],
                 "last5Detail": [
@@ -43746,8 +38388,8 @@ window.CLUTCH_DATA = {
                     "date": "2026-11-22",
                     "opp": "KB손해보험",
                     "ha": "홈",
-                    "score": "0-0",
-                    "res": "무"
+                    "score": "2-3",
+                    "res": "패"
                   },
                   {
                     "date": "2026-11-18",
@@ -43778,15 +38420,16 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "last5": "2승 2패",
+                "last5": "2승 3패",
+                "streak": "3연패",
                 "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
               }
             ],
             "checkpoints": [
               "**경기장** — 서울장충체육관에서 열립니다.",
-              "**순위표** — 우리카드(홈) 3승 2패·4위·승점 8, 삼성화재(원정) 4승 2패·2위·승점 12."
+              "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, 삼성화재(원정) 4승 2패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -43851,7 +38494,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "현대건설",
             "abbr": "HDC",
-            "record": "1승 4패",
+            "record": "2승 4패",
             "badges": [
               {
                 "text": "리그 6위",
@@ -43863,8 +38506,8 @@ window.CLUTCH_DATA = {
                 "date": "2026-11-22",
                 "opp": "흥국생명",
                 "ha": "홈",
-                "score": "0-0",
-                "res": "무"
+                "score": "3-0",
+                "res": "승"
               },
               {
                 "date": "2026-11-18",
@@ -43895,7 +38538,8 @@ window.CLUTCH_DATA = {
                 "res": "패"
               }
             ],
-            "last5": "1승 3패",
+            "last5": "2승 3패",
+            "streak": "2연승",
             "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
           },
           "tags": [
@@ -43908,12 +38552,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**현대건설**(홈) 1승 4패(리그 6위, 최근 흐름 1승), **SOOP**(원정) 0승 6패(리그 7위, 최근 흐름 6패). V리그 여자부 2라운드 수원체육관에서 열립니다."
+              "text": "**현대건설**(홈) 2승 4패(리그 6위, 최근 흐름 2승), **SOOP**(원정) 0승 6패(리그 7위, 최근 흐름 6패). V리그 여자부 2라운드 수원체육관에서 열립니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "리그 순위는 현대건설(홈) 6위·SOOP(원정) 7위로 바로 옆, 승점 차가 2점, 세트 승리 수 차가 1입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
+              "text": "리그 순위는 현대건설(홈) 6위·SOOP(원정) 7위로 바로 옆, 세트 승리 수 차가 2입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -44006,7 +38650,7 @@ window.CLUTCH_DATA = {
                 "name": "현대건설",
                 "abbr": "HDC",
                 "side": "home",
-                "record": "1승 4패",
+                "record": "2승 4패",
                 "badges": [
                   {
                     "text": "리그 6위",
@@ -44016,7 +38660,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "1승 4패"
+                    "value": "2승 4패"
                   },
                   {
                     "label": "리그 순위",
@@ -44024,25 +38668,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "세트",
-                    "value": "4-13"
+                    "value": "7-13"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "1승"
+                    "value": "2승"
                   }
                 ],
                 "nums": [
                   {
                     "label": "승점",
-                    "value": 3.0
+                    "value": 6.0
                   },
                   {
                     "label": "득점",
-                    "value": 365
+                    "value": 443
                   },
                   {
                     "label": "실점",
-                    "value": 404
+                    "value": 466
                   }
                 ],
                 "last5Detail": [
@@ -44050,8 +38694,8 @@ window.CLUTCH_DATA = {
                     "date": "2026-11-22",
                     "opp": "흥국생명",
                     "ha": "홈",
-                    "score": "0-0",
-                    "res": "무"
+                    "score": "3-0",
+                    "res": "승"
                   },
                   {
                     "date": "2026-11-18",
@@ -44082,15 +38726,16 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "last5": "1승 3패",
+                "last5": "2승 3패",
+                "streak": "2연승",
                 "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
               }
             ],
             "checkpoints": [
               "**경기장** — 수원체육관에서 열립니다.",
-              "**순위표** — 현대건설(홈) 1승 4패·6위·승점 3, SOOP(원정) 0승 6패·7위·승점 1."
+              "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, SOOP(원정) 0승 6패·7위·승점 1."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-26 END */,
@@ -44107,11 +38752,11 @@ window.CLUTCH_DATA = {
           "venue": "Baku Olympic Stadium",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:16+09:00",
+            "at": "2026-11-23T06:13:35+09:00",
             "moneyline": {
               "away": -1400,
-              "draw": 1300,
-              "home": 1900
+              "draw": 1400,
+              "home": 2000
             },
             "spread": {
               "homeLine": "+3.5",
@@ -44120,14 +38765,14 @@ window.CLUTCH_DATA = {
               "away": 105
             },
             "total": {
-              "line": "4.5",
-              "over": -160,
-              "under": 125
+              "line": "5.5",
+              "over": 130,
+              "under": -165
             },
             "implied": {
-              "away": 88.5,
-              "draw": 6.8,
-              "home": 4.7
+              "away": 89.1,
+              "draw": 6.4,
+              "home": 4.5
             }
           },
           "away": {
@@ -44158,11 +38803,11 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "오버언더 4.5골",
+              "text": "오버언더 5.5골",
               "tone": "info"
             },
             {
-              "text": "결장 5명",
+              "text": "결장 4명",
               "tone": "warn"
             }
           ],
@@ -44175,7 +38820,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **Sabah FK**(홈) 1.0골 · **바르셀로나**(원정) 3.5골, 평균 실점은 홈 2.5골 · 원정 1.5골. 해외 배당을 확률로 환산하면 Sabah FK 승 4.7% · 무 6.8% · 바르셀로나 승 88.5%."
+              "text": "두 팀 평균 득점은 **Sabah FK**(홈) 1.0골 · **바르셀로나**(원정) 3.5골, 평균 실점은 홈 2.5골 · 원정 1.5골. 해외 배당을 확률로 환산하면 Sabah FK 승 4.5% · 무 6.4% · 바르셀로나 승 89.1%."
             }
           ],
           "details": {
@@ -44211,7 +38856,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "승-승-승-패-패"
+                    "value": "승-승-승-승-패"
                   }
                 ],
                 "nums": [
@@ -44273,7 +38918,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 3승 0무 2패입니다. 원정 1승 0무 1패입니다. 경기당 평균 3.5골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 아틀레티코 마드리드 2-1 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jordi Pesquer",
@@ -44394,16 +39039,9 @@ window.CLUTCH_DATA = {
                     "comp": "UCL"
                   }
                 ],
-                "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 0무 3패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.04 원정 Viking FK 1-4 패입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
-                "injuries": [
-                  {
-                    "player": "Aden McCarthy",
-                    "status": "OUT",
-                    "line": "징계 출장정지 · 복귀 예상 2026년 12월 초"
-                  }
-                ],
-                "injurySummary": "결장 1명"
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 0무 3패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.04 원정 Viking FK 1-4 패입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
+                "injuryNote": "FotMob 결장 명단에 올라온 선수가 없습니다.",
+                "injuries": []
               }
             ],
             "keyPlayers": [
@@ -44456,7 +39094,7 @@ window.CLUTCH_DATA = {
               "**Sabah FK** — 리그 31위, 승점 3, 득실 -6.",
               "**바르셀로나** — 리그 5위, 승점 9, 득실 +8."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "fotmobId": 6106421,
             "fotmobSwapped": false
           }
@@ -44472,27 +39110,27 @@ window.CLUTCH_DATA = {
           "venue": "Fortuna Arena",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:16+09:00",
+            "at": "2026-11-23T06:13:35+09:00",
             "moneyline": {
-              "away": 120,
-              "draw": 285,
-              "home": 190
+              "away": 115,
+              "draw": 295,
+              "home": 205
             },
             "spread": {
               "homeLine": "+0.5",
               "awayLine": "-0.5",
-              "home": -155,
+              "home": -145,
               "away": 105
             },
             "total": {
               "line": "3.5",
-              "over": 130,
-              "under": -170
+              "over": 135,
+              "under": -165
             },
             "implied": {
-              "away": 42.9,
-              "draw": 24.5,
-              "home": 32.6
+              "away": 44.5,
+              "draw": 24.2,
+              "home": 31.3
             }
           },
           "away": {
@@ -44540,7 +39178,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **Slavia Prague**(홈) 1.2골 · **비야레알**(원정) 2.0골, 평균 실점은 홈 2.2골 · 원정 3.5골. 해외 배당을 확률로 환산하면 Slavia Prague 승 32.6% · 무 24.5% · 비야레알 승 42.9%."
+              "text": "두 팀 평균 득점은 **Slavia Prague**(홈) 1.2골 · **비야레알**(원정) 2.0골, 평균 실점은 홈 2.2골 · 원정 3.5골. 해외 배당을 확률로 환산하면 Slavia Prague 승 31.3% · 무 24.2% · 비야레알 승 44.5%."
             }
           ],
           "details": {
@@ -44576,7 +39214,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "승-패-패-승-승"
+                    "value": "패-승-패-패-승"
                   }
                 ],
                 "nums": [
@@ -44638,7 +39276,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 원정 0승 0무 2패입니다. 경기당 평균 2.0골을 넣고 3.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 헤타페 2-0 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Juan Foyth",
@@ -44756,7 +39394,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5경기 무승입니다. 최근 5경기 0승 1무 4패입니다. 홈 0승 0무 2패입니다. 경기당 평균 1.2골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.04 홈 아스널 1-2 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Eliás Piták",
@@ -44824,7 +39462,7 @@ window.CLUTCH_DATA = {
               "**Slavia Prague** — 리그 34위, 승점 1, 득실 -4.",
               "**비야레알** — 리그 28위, 승점 3, 득실 -6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -44857,27 +39495,27 @@ window.CLUTCH_DATA = {
           "venue": "Stamford Bridge",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:16+09:00",
+            "at": "2026-11-23T06:13:35+09:00",
             "moneyline": {
               "away": 160,
-              "draw": 245,
-              "home": 160
+              "draw": 250,
+              "home": 165
             },
             "spread": {
-              "homeLine": "+0.5",
-              "awayLine": "-0.5",
-              "home": -205,
-              "away": 140
+              "homeLine": "-0.5",
+              "awayLine": "+0.5",
+              "home": 145,
+              "away": -205
             },
             "total": {
               "line": "2.5",
-              "over": -145,
-              "under": 110
+              "over": -140,
+              "under": 115
             },
             "implied": {
-              "away": 36.3,
-              "draw": 27.4,
-              "home": 36.3
+              "away": 36.7,
+              "draw": 27.3,
+              "home": 36.0
             }
           },
           "away": {
@@ -44925,7 +39563,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **Shakhtar Donetsk**(홈) 1.0골 · **Fenerbahce**(원정) 1.5골, 평균 실점은 홈 1.0골 · 원정 2.8골. 해외 배당을 확률로 환산하면 Shakhtar Donetsk 승 36.3% · 무 27.4% · Fenerbahce 승 36.3%."
+              "text": "두 팀 평균 득점은 **Shakhtar Donetsk**(홈) 1.0골 · **Fenerbahce**(원정) 1.5골, 평균 실점은 홈 1.0골 · 원정 2.8골. 해외 배당을 확률로 환산하면 Shakhtar Donetsk 승 36.0% · 무 27.3% · Fenerbahce 승 36.7%."
             }
           ],
           "details": {
@@ -45023,7 +39661,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 원정 0승 0무 1패입니다. 경기당 평균 1.5골을 넣고 2.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 Kocaelispor 2-2 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Nathan Aké",
@@ -45140,7 +39778,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.03 홈 Sporting CP 0-1 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Pedrinho",
@@ -45202,7 +39840,7 @@ window.CLUTCH_DATA = {
               "**Shakhtar Donetsk** — 리그 21위, 승점 4, 득실 0.",
               "**Fenerbahce** — 리그 19위, 승점 5, 득실 -5."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -45241,7 +39879,7 @@ window.CLUTCH_DATA = {
           "venue": "Jan Breydel Stadium",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:16+09:00",
+            "at": "2026-11-23T06:13:35+09:00",
             "moneyline": {
               "away": -150,
               "draw": 360,
@@ -45250,13 +39888,13 @@ window.CLUTCH_DATA = {
             "spread": {
               "homeLine": "+0.5",
               "awayLine": "-0.5",
-              "home": 115,
-              "away": -170
+              "home": 120,
+              "away": -165
             },
             "total": {
               "line": "3.5",
-              "over": -130,
-              "under": 100
+              "over": -125,
+              "under": 105
             },
             "implied": {
               "away": 56.8,
@@ -45296,7 +39934,7 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "결장 5명",
+              "text": "결장 4명",
               "tone": "warn"
             }
           ],
@@ -45345,7 +39983,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "무-패-패-승-승"
+                    "value": "승-승-패-패-승"
                   }
                 ],
                 "nums": [
@@ -45407,7 +40045,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 원정 1승 0무 1패입니다. 경기당 평균 3.5골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 크리스털 팰리스 3-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Hugo Ekitiké",
@@ -45519,21 +40157,16 @@ window.CLUTCH_DATA = {
                     "comp": "2026-27 Belgian Pro League"
                   }
                 ],
-                "focus": "최근 5경기 4승 1무 0패입니다. 홈 1승 0무 1패입니다. 경기당 평균 2.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 KV Mechelen 5-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 4승 1무 0패입니다. 홈 1승 0무 1패입니다. 경기당 평균 2.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 KV Mechelen 5-1 승입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
-                  {
-                    "player": "Jan Virgili",
-                    "status": "OUT",
-                    "line": "복귀 예상 2026년 12월 초"
-                  },
                   {
                     "player": "Joel Ordóñez",
                     "status": "OUT",
                     "line": "복귀 예상 Day to day"
                   }
                 ],
-                "injurySummary": "결장 2명"
+                "injurySummary": "결장 1명"
               }
             ],
             "keyPlayers": [
@@ -45586,7 +40219,7 @@ window.CLUTCH_DATA = {
               "**Club Brugge** — 리그 9위, 승점 9, 득실 +4.",
               "**리버풀** — 리그 8위, 승점 9, 득실 +4."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "fotmobId": 6106294,
             "fotmobSwapped": false
           }
@@ -45602,27 +40235,27 @@ window.CLUTCH_DATA = {
           "venue": "Estádio José Alvalade",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:16+09:00",
+            "at": "2026-11-23T06:13:35+09:00",
             "moneyline": {
-              "away": 155,
-              "draw": 265,
+              "away": 160,
+              "draw": 270,
               "home": 155
             },
             "spread": {
               "homeLine": "-0.5",
               "awayLine": "+0.5",
-              "home": 135,
-              "away": -200
+              "home": 140,
+              "away": -195
             },
             "total": {
               "line": "3.5",
-              "over": 135,
-              "under": -175
+              "over": 140,
+              "under": -170
             },
             "implied": {
-              "away": 37.1,
-              "draw": 25.9,
-              "home": 37.1
+              "away": 36.7,
+              "draw": 25.8,
+              "home": 37.5
             }
           },
           "away": {
@@ -45670,7 +40303,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **Sporting CP**(홈) 2.0골 · **맨체스터 유나이티드**(원정) 2.0골, 평균 실점은 홈 1.0골 · 원정 2.0골. 해외 배당을 확률로 환산하면 Sporting CP 승 37.1% · 무 25.9% · 맨체스터 유나이티드 승 37.1%."
+              "text": "두 팀 평균 득점은 **Sporting CP**(홈) 2.0골 · **맨체스터 유나이티드**(원정) 2.0골, 평균 실점은 홈 1.0골 · 원정 2.0골. 해외 배당을 확률로 환산하면 Sporting CP 승 37.5% · 무 25.8% · 맨체스터 유나이티드 승 36.7%."
             }
           ],
           "details": {
@@ -45706,7 +40339,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "무-승-패-패-패"
+                    "value": "패-무-승-패-패"
                   }
                 ],
                 "nums": [
@@ -45768,12 +40401,8 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 원정 0승 0무 2패입니다. 경기당 평균 2.0골을 넣고 2.0골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 애스턴 빌라 4-4 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
-                  {
-                    "player": "Ayden Heaven",
-                    "status": "DOUBTFUL"
-                  },
                   {
                     "player": "Shea Lacey",
                     "status": "DOUBTFUL"
@@ -45806,7 +40435,7 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 4월 초"
                   }
                 ],
-                "injurySummary": "결장 3명 · 불확실 5명"
+                "injurySummary": "결장 3명 · 불확실 4명"
               },
               {
                 "abbr": "SCP",
@@ -45901,7 +40530,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연승입니다. 최근 5경기 4승 0무 1패입니다. 홈 1승 0무 1패입니다. 경기당 평균 2.0골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Uniao da Serra 4-0 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Zeno Debast",
@@ -45967,7 +40596,7 @@ window.CLUTCH_DATA = {
               "**Sporting CP** — 리그 10위, 승점 9, 득실 +4.",
               "**맨체스터 유나이티드** — 리그 17위, 승점 6, 득실 0."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -46000,27 +40629,27 @@ window.CLUTCH_DATA = {
           "venue": "Decathlon Arena - Stade Pierre-Mauroy",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:16+09:00",
+            "at": "2026-11-23T06:13:35+09:00",
             "moneyline": {
               "away": -165,
-              "draw": 340,
-              "home": 390
+              "draw": 350,
+              "home": 400
             },
             "spread": {
               "homeLine": "+0.5",
               "awayLine": "-0.5",
-              "home": 125,
-              "away": -185
+              "home": 130,
+              "away": -180
             },
             "total": {
               "line": "3.5",
-              "over": 125,
-              "under": -160
+              "over": 140,
+              "under": -175
             },
             "implied": {
-              "away": 59.0,
-              "draw": 21.6,
-              "home": 19.4
+              "away": 59.5,
+              "draw": 21.3,
+              "home": 19.2
             }
           },
           "away": {
@@ -46055,7 +40684,7 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "결장 7명",
+              "text": "결장 8명",
               "tone": "warn"
             }
           ],
@@ -46068,7 +40697,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **Lille**(홈) 1.0골 · **바이에른 뮌헨**(원정) 3.0골, 평균 실점은 홈 2.5골 · 원정 1.2골. 해외 배당을 확률로 환산하면 Lille 승 19.4% · 무 21.6% · 바이에른 뮌헨 승 59.0%."
+              "text": "두 팀 평균 득점은 **Lille**(홈) 1.0골 · **바이에른 뮌헨**(원정) 3.0골, 평균 실점은 홈 2.5골 · 원정 1.2골. 해외 배당을 확률로 환산하면 Lille 승 19.2% · 무 21.3% · 바이에른 뮌헨 승 59.5%."
             }
           ],
           "details": {
@@ -46166,7 +40795,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 2무 0패입니다. 원정 1승 1무 0패입니다. 경기당 평균 3.0골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.20 홈 쾰른 1-1 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Harry Kane",
@@ -46296,9 +40925,14 @@ window.CLUTCH_DATA = {
                     "comp": "2026-27 Ligue 1"
                   }
                 ],
-                "focus": "최근 5경기 2승 2무 1패입니다. 홈 0승 0무 2패입니다. 경기당 평균 1.0골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Lyon 0-1 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 2승 2무 1패입니다. 홈 0승 0무 2패입니다. 경기당 평균 1.0골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Lyon 0-1 패입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
+                  {
+                    "player": "Tanguy Nianzou",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
                   {
                     "player": "Tiago Santos",
                     "status": "OUT",
@@ -46310,7 +40944,7 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 11월 말"
                   }
                 ],
-                "injurySummary": "결장 2명"
+                "injurySummary": "결장 3명"
               }
             ],
             "keyPlayers": [
@@ -46356,7 +40990,7 @@ window.CLUTCH_DATA = {
               "**Lille** — 리그 35위, 승점 1, 득실 -6.",
               "**바이에른 뮌헨** — 리그 13위, 승점 8, 득실 +7."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -46389,27 +41023,27 @@ window.CLUTCH_DATA = {
           "venue": "Parc des Princes",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:16+09:00",
+            "at": "2026-11-23T06:13:35+09:00",
             "moneyline": {
-              "away": 550,
+              "away": 600,
               "draw": 450,
-              "home": -270
+              "home": -260
             },
             "spread": {
               "homeLine": "-1.5",
               "awayLine": "+1.5",
-              "home": -115,
-              "away": -130
+              "home": -110,
+              "away": -125
             },
             "total": {
               "line": "3.5",
               "over": -120,
-              "under": -110
+              "under": -105
             },
             "implied": {
-              "away": 14.4,
-              "draw": 17.1,
-              "home": 68.5
+              "away": 13.6,
+              "draw": 17.3,
+              "home": 69.1
             }
           },
           "away": {
@@ -46457,7 +41091,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **Paris Saint-Germain**(홈) 5.0골 · **AS 로마**(원정) 2.5골, 평균 실점은 홈 1.2골 · 원정 2.0골. 해외 배당을 확률로 환산하면 Paris Saint-Germain 승 68.5% · 무 17.1% · AS 로마 승 14.4%."
+              "text": "두 팀 평균 득점은 **Paris Saint-Germain**(홈) 5.0골 · **AS 로마**(원정) 2.5골, 평균 실점은 홈 1.2골 · 원정 2.0골. 해외 배당을 확률로 환산하면 Paris Saint-Germain 승 69.1% · 무 17.3% · AS 로마 승 13.6%."
             }
           ],
           "details": {
@@ -46555,12 +41189,8 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 4승 0무 1패입니다. 원정 0승 1무 1패입니다. 경기당 평균 2.5골을 넣고 2.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 파르마 5-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
-                  {
-                    "player": "Leonardo Balerdi",
-                    "status": "DOUBTFUL"
-                  },
                   {
                     "player": "Devyne Rensch",
                     "status": "OUT",
@@ -46572,7 +41202,7 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 2명 · 불확실 1명"
+                "injurySummary": "결장 2명"
               },
               {
                 "abbr": "PSG",
@@ -46667,12 +41297,12 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 2승 0무 0패입니다. 경기당 평균 5.0골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 Nice 3-2 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Désiré Doué",
                     "status": "OUT",
-                    "line": "복귀 예상 2027년 1월 초"
+                    "line": "시즌 아웃"
                   },
                   {
                     "player": "Khvicha Kvaratskhelia",
@@ -46726,7 +41356,7 @@ window.CLUTCH_DATA = {
               "**Paris Saint-Germain** — 리그 1위, 승점 12, 득실 +15.",
               "**AS 로마** — 리그 20위, 승점 4, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -46753,11 +41383,11 @@ window.CLUTCH_DATA = {
           "venue": "San Siro",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:16+09:00",
+            "at": "2026-11-23T06:13:35+09:00",
             "moneyline": {
-              "away": 475,
+              "away": 500,
               "draw": 450,
-              "home": -240
+              "home": -235
             },
             "spread": {
               "homeLine": "-1.5",
@@ -46767,13 +41397,13 @@ window.CLUTCH_DATA = {
             },
             "total": {
               "line": "3.5",
-              "over": -160,
+              "over": -155,
               "under": 125
             },
             "implied": {
-              "away": 16.4,
-              "draw": 17.2,
-              "home": 66.4
+              "away": 15.9,
+              "draw": 17.4,
+              "home": 66.7
             }
           },
           "away": {
@@ -46821,7 +41451,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **인터 밀란**(홈) 2.0골 · **슈투트가르트**(원정) 1.8골, 평균 실점은 홈 1.5골 · 원정 1.0골. 해외 배당을 확률로 환산하면 인터 밀란 승 66.4% · 무 17.2% · 슈투트가르트 승 16.4%."
+              "text": "두 팀 평균 득점은 **인터 밀란**(홈) 2.0골 · **슈투트가르트**(원정) 1.8골, 평균 실점은 홈 1.5골 · 원정 1.0골. 해외 배당을 확률로 환산하면 인터 밀란 승 66.7% · 무 17.4% · 슈투트가르트 승 15.9%."
             }
           ],
           "details": {
@@ -46919,7 +41549,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 원정 1승 0무 1패입니다. 경기당 평균 1.8골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 샬케 04 0-0 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Luca Jaquez",
@@ -47042,19 +41672,15 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 4승 0무 1패입니다. 홈 1승 0무 1패입니다. 경기당 평균 2.0골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 코모 2-0 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
-                  {
-                    "player": "Piotr Zieliński",
-                    "status": "DOUBTFUL"
-                  },
                   {
                     "player": "Ange-Yoan Bonny",
                     "status": "OUT",
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 1명 · 불확실 1명"
+                "injurySummary": "결장 1명"
               }
             ],
             "keyPlayers": [
@@ -47107,7 +41733,7 @@ window.CLUTCH_DATA = {
               "**인터 밀란** — 리그 15위, 승점 6, 득실 +2.",
               "**슈투트가르트** — 리그 14위, 승점 7, 득실 +3."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "fotmobId": 6106253,
             "fotmobSwapped": false
           }
@@ -47123,27 +41749,27 @@ window.CLUTCH_DATA = {
           "venue": "Riyadh Air Metropolitano",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:16+09:00",
+            "at": "2026-11-23T06:13:35+09:00",
             "moneyline": {
-              "away": 1800,
-              "draw": 950,
-              "home": -1000
+              "away": 1900,
+              "draw": 1000,
+              "home": -900
             },
             "spread": {
               "homeLine": "-2.5",
               "awayLine": "+2.5",
-              "home": -135,
-              "away": -110
+              "home": -130,
+              "away": -105
             },
             "total": {
               "line": "3.5",
-              "over": -145,
-              "under": 110
+              "over": -140,
+              "under": 115
             },
             "implied": {
-              "away": 5.0,
-              "draw": 9.0,
-              "home": 86.0
+              "away": 4.8,
+              "draw": 8.7,
+              "home": 86.5
             }
           },
           "away": {
@@ -47191,7 +41817,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **아틀레티코 마드리드**(홈) 1.0골 · **Viking FK**(원정) 2.2골, 평균 실점은 홈 1.2골 · 원정 2.5골. 해외 배당을 확률로 환산하면 아틀레티코 마드리드 승 86.0% · 무 9.0% · Viking FK 승 5.0%."
+              "text": "두 팀 평균 득점은 **아틀레티코 마드리드**(홈) 1.0골 · **Viking FK**(원정) 2.2골, 평균 실점은 홈 1.2골 · 원정 2.5골. 해외 배당을 확률로 환산하면 아틀레티코 마드리드 승 86.5% · 무 8.7% · Viking FK 승 4.8%."
             }
           ],
           "details": {
@@ -47289,7 +41915,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 원정 0승 0무 2패입니다. 경기당 평균 2.2골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 Tromso 2-3 패입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Sondre Bjørshol",
@@ -47407,7 +42033,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 바르셀로나 1-2 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jorge Domínguez",
@@ -47475,7 +42101,7 @@ window.CLUTCH_DATA = {
               "**아틀레티코 마드리드** — 리그 23위, 승점 4, 득실 -1.",
               "**Viking FK** — 리그 22위, 승점 4, 득실 -1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "fotmobId": 6106269,
             "fotmobSwapped": false
           }
@@ -47516,11 +42142,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 2명",
               "tone": "warn"
             },
             {
-              "text": "평균 120.5점 · 114.5점",
+              "text": "평균 120.5점 · 115.5점",
               "tone": "info"
             }
           ],
@@ -47679,17 +42305,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 114.5,
+                "ppg": 115.5,
                 "rpg": 42.8,
-                "tp": 35.5,
+                "tp": 35.3,
                 "players": [
                   {
                     "name": "Tyrese Maxey",
                     "id": "4431678",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
                     "pos": "G",
-                    "stat": "26.5점 · 3.3리바운드 · 5.8어시스트",
-                    "sub": "야투 50.0% · 3점 38.0% · 팀 내 1옵션",
+                    "stat": "25.9점 · 3.3리바운드 · 5.7어시스트",
+                    "sub": "야투 49.5% · 3점 36.9% · 팀 내 1옵션",
                     "last": "직전 36분 17점 4리바운드 4어시스트, 야투 4-11",
                     "recent": "최근 4경기 23.8점 · 야투 50.9%"
                   },
@@ -47707,37 +42333,37 @@ window.CLUTCH_DATA = {
                     "id": "3059318",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
                     "pos": "C",
-                    "stat": "20.0점 · 8.3리바운드 · 3.8어시스트",
-                    "sub": "야투 39.9% · 3점 14.6% · 팀 내 3옵션",
+                    "stat": "20.4점 · 8.9리바운드 · 4.1어시스트",
+                    "sub": "야투 40.0% · 3점 14.3% · 팀 내 3옵션",
                     "last": "직전 34분 26점 17리바운드 9어시스트, 야투 7-17",
                     "recent": "최근 4경기 27.2점 · 야투 45.9%"
                   }
                 ],
-                "focus": "최근 4경기 Tyrese Maxey의 평균은 23.8점·야투 50.9%·3점 40.0%입니다. 결장 4명의 시즌 평균 득점 합계는 29.5점입니다. 직전 경기에서는 Joel Embiid가 26점·17리바운드·9어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명",
-                "injuryOut": 4,
-                "injuryPpg": 29.5,
+                "focus": "최근 4경기 Tyrese Maxey의 평균은 23.8점·야투 50.9%·3점 40.0%입니다. 결장 2명의 시즌 평균 득점 합계는 2.1점입니다. 직전 경기에서는 Joel Embiid가 26점·17리바운드·9어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 2명",
+                "injuryOut": 2,
+                "injuryPpg": 2.1,
                 "injuries": [
                   {
                     "player": "Dean Wade",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
-                    "line": "팀 내 9옵션 · 4.8점 · 4.6리바운드"
+                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
+                  },
+                  {
+                    "player": "Jaylen Brown",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
                   },
                   {
                     "player": "Adem Bona",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "C",
-                    "line": "팀 내 11옵션 · 2.1점 · 3.9리바운드"
-                  },
-                  {
-                    "player": "Jaylen Brown",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
+                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
                   },
                   {
                     "player": "Ariel Hukporti",
@@ -47749,11 +42375,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **필라델피아 세븐티식서스**(홈) 114.5점 · **마이애미 히트**(원정) 120.5점, 평균 리바운드는 홈 42.8개 · 원정 42.2개, 3점 성공률은 홈 35.5% · 원정 35.2%. 평균 득점 차 6.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 마이애미 히트 승률 39.1%, 필라델피아 세븐티식서스 60.9%.",
+              "시즌 평균 득점은 **필라델피아 세븐티식서스**(홈) 115.5점 · **마이애미 히트**(원정) 120.5점, 평균 리바운드는 홈 42.8개 · 원정 42.2개, 3점 성공률은 홈 35.3% · 원정 35.2%. 평균 득점 차 5.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 마이애미 히트 승률 39.8%, 필라델피아 세븐티식서스 60.2%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -47789,7 +42415,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 5명",
               "tone": "warn"
             },
             {
@@ -47884,17 +42510,17 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.2점 · 야투 50.9%"
                   }
                 ],
-                "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 2명의 시즌 평균 득점 합계는 20.9점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 2·16위) · 출전 불투명 2명",
-                "injuryOut": 2,
-                "injuryPpg": 20.9,
+                "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 1·2·7위) · 출전 불투명 2명",
+                "injuryOut": 3,
+                "injuryPpg": 49.0,
                 "injuries": [
                   {
-                    "player": "Norman Powell",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
+                    "player": "Nic Claxton",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 7옵션 · 9.3점 · 4.8리바운드"
                   },
                   {
                     "player": "Jalen Smith",
@@ -47904,11 +42530,18 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 4옵션 · 13.4점 · 7.9리바운드"
                   },
                   {
-                    "player": "Tobe Awaka",
+                    "player": "Norman Powell",
                     "status": "OUT",
                     "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
+                  },
+                  {
+                    "player": "Patrick Williams",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
-                    "line": "팀 내 16옵션 · 2.0점 · 5.2리바운드"
+                    "line": "팀 내 10옵션 · 6.9점 · 2.9리바운드"
                   },
                   {
                     "player": "Caleb Wilson",
@@ -48037,10 +42670,10 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **샬럿 호네츠**(홈) 99.9점 · **시카고 불스**(원정) 114.7점, 평균 리바운드는 홈 47.0개 · 원정 43.8개, 3점 성공률은 홈 31.0% · 원정 31.8%. 평균 득점 차 14.8점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 시카고 불스 승률 46.8%, 샬럿 호네츠 53.2%.",
+              "**ESPN 매치업 예측** — 시카고 불스 승률 44.2%, 샬럿 호네츠 55.8%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -48076,11 +42709,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 3명",
+              "text": "결장 5명",
               "tone": "warn"
             },
             {
-              "text": "평균 118.8점 · 109.5점",
+              "text": "평균 118.8점 · 108.7점",
               "tone": "info"
             }
           ],
@@ -48244,17 +42877,17 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 109.5,
-                "rpg": 47.0,
-                "tp": 36.5,
+                "ppg": 108.7,
+                "rpg": 46.7,
+                "tp": 37.0,
                 "players": [
                   {
                     "name": "Jalen Brunson",
                     "id": "3934672",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
-                    "stat": "26.6점 · 2.9리바운드 · 5.9어시스트",
-                    "sub": "야투 43.3% · 3점 40.0% · 팀 내 1옵션",
+                    "stat": "26.8점 · 3.1리바운드 · 5.9어시스트",
+                    "sub": "야투 43.6% · 3점 41.7% · 팀 내 1옵션",
                     "last": "직전 36분 30점 7리바운드 5어시스트, 야투 11-23",
                     "recent": "최근 5경기 28.6점 · 야투 45.0%"
                   },
@@ -48277,9 +42910,18 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 15.8점 · 야투 43.8%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 28.6점·야투 45.0%·3점 51.2%입니다. 직전 경기에서는 Donovan Clingan가 22점·13리바운드·4어시스트를 기록했습니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음 · 출전 불투명 3명",
+                "focus": "최근 5경기 Jalen Brunson의 평균은 28.6점·야투 45.0%·3점 51.2%입니다. 결장 2명의 시즌 평균 득점 합계는 21.2점입니다. 직전 경기에서는 Donovan Clingan가 22점·13리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 3·8위) · 출전 불투명 1명",
+                "injuryOut": 2,
+                "injuryPpg": 21.2,
                 "injuries": [
+                  {
+                    "player": "OG Anunoby",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 3옵션 · 16.3점 · 5.4리바운드"
+                  },
                   {
                     "player": "Karl-Anthony Towns",
                     "status": "DAY-TO-DAY",
@@ -48289,27 +42931,20 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "player": "Jordan Clarkson",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "G",
                     "line": "팀 내 8옵션 · 4.9점 · 1.6리바운드"
-                  },
-                  {
-                    "player": "OG Anunoby",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 3옵션 · 16.3점 · 5.4리바운드"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **뉴욕 닉스**(홈) 109.5점 · **클리블랜드 캐벌리어스**(원정) 118.8점, 평균 리바운드는 홈 47.0개 · 원정 45.6개, 3점 성공률은 홈 36.5% · 원정 37.1%. 평균 득점 차 9.3점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 클리블랜드 캐벌리어스 승률 38.7%, 뉴욕 닉스 61.3%.",
+              "시즌 평균 득점은 **뉴욕 닉스**(홈) 108.7점 · **클리블랜드 캐벌리어스**(원정) 118.8점, 평균 리바운드는 홈 46.7개 · 원정 45.6개, 3점 성공률은 홈 37.0% · 원정 37.1%. 평균 득점 차 10.1점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 클리블랜드 캐벌리어스 승률 37.7%, 뉴욕 닉스 62.3%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -48349,7 +42984,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 115.6점 · 113.0점",
+              "text": "평균 114.9점 · 113.0점",
               "tone": "info"
             }
           ],
@@ -48407,9 +43042,9 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 115.6,
-                "rpg": 48.0,
-                "tp": 37.4,
+                "ppg": 114.9,
+                "rpg": 47.5,
+                "tp": 37.2,
                 "players": [
                   {
                     "name": "Anthony Edwards",
@@ -48424,23 +43059,23 @@ window.CLUTCH_DATA = {
                     "id": "4397002",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png",
                     "pos": "G",
-                    "stat": "17.8점 · 4.6리바운드 · 3.5어시스트",
-                    "sub": "야투 50.9% · 3점 45.9% · 팀 내 2옵션",
+                    "stat": "17.9점 · 4.4리바운드 · 3.4어시스트",
+                    "sub": "야투 51.7% · 3점 43.8% · 팀 내 2옵션",
                     "last": "직전 34분 19점 2리바운드 2어시스트, 야투 9-14",
                     "recent": "최근 5경기 17.4점 · 야투 50.7%"
                   },
                   {
-                    "name": "LaMelo Ball",
-                    "id": "4432816",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
-                    "pos": "G",
-                    "stat": "17.6점 · 4.3리바운드 · 5.7어시스트",
-                    "sub": "야투 40.7% · 3점 36.2% · 팀 내 3옵션",
-                    "last": "직전 32분 12점 5리바운드 7어시스트, 야투 5-10",
-                    "recent": "최근 5경기 14.0점 · 야투 31.4%"
+                    "name": "Jaden McDaniels",
+                    "id": "4431671",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431671.png",
+                    "pos": "F",
+                    "stat": "17.5점 · 5.9리바운드 · 3.6어시스트",
+                    "sub": "야투 54.2% · 3점 34.7% · 팀 내 3옵션",
+                    "last": "직전 36분 25점 5리바운드 4어시스트, 야투 11-17",
+                    "recent": "최근 5경기 19.0점 · 야투 60.0%"
                   }
                 ],
-                "focus": "결장 3명의 시즌 평균 득점 합계는 37.7점입니다. 직전 경기에서는 Jaden McDaniels가 25점·5리바운드·4어시스트를 기록했습니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
+                "focus": "결장 3명의 시즌 평균 득점 합계는 37.7점입니다. 직전 경기에서는 Jaden McDaniels가 25점·5리바운드·4어시스트를 기록했습니다. 이어서 Ayo Dosunmu, Jaden McDaniels가 뒤를 받칩니다.",
                 "injurySummary": "결장 3명",
                 "injuryOut": 3,
                 "injuryPpg": 37.7,
@@ -48590,11 +43225,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **오클라호마시티 썬더**(홈) 113.0점 · **미네소타 팀버울브스**(원정) 115.6점, 평균 리바운드는 홈 45.8개 · 원정 48.0개, 3점 성공률은 홈 34.5% · 원정 37.4%. 평균 득점 차가 2.6점으로 작고, 3점 성공률 차 2.9%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 미네소타 팀버울브스 승률 44.3%, 오클라호마시티 썬더 55.7%.",
+              "시즌 평균 득점은 **오클라호마시티 썬더**(홈) 113.0점 · **미네소타 팀버울브스**(원정) 114.9점, 평균 리바운드는 홈 45.8개 · 원정 47.5개, 3점 성공률은 홈 34.5% · 원정 37.2%. 평균 득점 차가 1.9점으로 작고, 3점 성공률 차 2.7%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 미네소타 팀버울브스 승률 44.6%, 오클라호마시티 썬더 55.4%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -48630,11 +43265,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 5명",
               "tone": "warn"
             },
             {
-              "text": "평균 111.9점 · 122.1점",
+              "text": "평균 111.1점 · 120.5점",
               "tone": "info"
             }
           ],
@@ -48693,17 +43328,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 111.9,
-                "rpg": 39.1,
-                "tp": 39.2,
+                "ppg": 111.1,
+                "rpg": 40.0,
+                "tp": 38.7,
                 "players": [
                   {
                     "name": "Darius Garland",
                     "id": "4396907",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
                     "pos": "G",
-                    "stat": "21.3점 · 2.2리바운드 · 6.8어시스트",
-                    "sub": "야투 46.6% · 3점 35.7% · 팀 내 1옵션",
+                    "stat": "20.9점 · 2.1리바운드 · 6.5어시스트",
+                    "sub": "야투 46.7% · 3점 35.6% · 팀 내 1옵션",
                     "last": "직전 32분 16점 1리바운드 2어시스트, 야투 5-10",
                     "recent": "최근 5경기 22.0점 · 야투 46.8%"
                   },
@@ -48712,8 +43347,8 @@ window.CLUTCH_DATA = {
                     "id": "3448",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png",
                     "pos": "C",
-                    "stat": "15.4점 · 5.2리바운드 · 2.0어시스트",
-                    "sub": "야투 55.3% · 3점 44.8% · 팀 내 2옵션",
+                    "stat": "15.7점 · 5.3리바운드 · 1.9어시스트",
+                    "sub": "야투 55.2% · 3점 42.2% · 팀 내 2옵션",
                     "last": "직전 25분 21점 6리바운드 0어시스트, 야투 8-15",
                     "recent": "최근 5경기 20.0점 · 야투 52.8%"
                   },
@@ -48722,8 +43357,8 @@ window.CLUTCH_DATA = {
                     "id": "4066648",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066648.png",
                     "pos": "F",
-                    "stat": "13.6점 · 6.0리바운드 · 1.6어시스트",
-                    "sub": "야투 40.6% · 3점 37.9% · 팀 내 3옵션",
+                    "stat": "14.0점 · 6.2리바운드 · 1.5어시스트",
+                    "sub": "야투 41.9% · 3점 40.8% · 팀 내 3옵션",
                     "last": "직전 29분 19점 8리바운드 1어시스트, 야투 7-12",
                     "recent": "최근 5경기 13.4점 · 야투 49.0%"
                   }
@@ -48797,17 +43432,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 122.1,
-                "rpg": 46.2,
-                "tp": 39.8,
+                "ppg": 120.5,
+                "rpg": 45.6,
+                "tp": 39.1,
                 "players": [
                   {
                     "name": "Ty Jerome",
                     "id": "4065733",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
                     "pos": "G",
-                    "stat": "25.4점 · 3.4리바운드 · 5.3어시스트",
-                    "sub": "야투 48.5% · 3점 35.9% · 팀 내 1옵션",
+                    "stat": "24.8점 · 3.4리바운드 · 5.3어시스트",
+                    "sub": "야투 47.9% · 3점 35.6% · 팀 내 1옵션",
                     "last": "직전 27분 18점 4리바운드 6어시스트, 야투 7-17",
                     "recent": "최근 1경기 18.0점 · 야투 41.2%"
                   },
@@ -48825,37 +43460,37 @@ window.CLUTCH_DATA = {
                     "id": "4903027",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                     "pos": "F",
-                    "stat": "14.8점 · 8.1리바운드 · 3.5어시스트",
-                    "sub": "야투 47.9% · 3점 46.3% · 팀 내 3옵션",
+                    "stat": "15.3점 · 8.0리바운드 · 3.4어시스트",
+                    "sub": "야투 48.1% · 3점 47.2% · 팀 내 3옵션",
                     "last": "직전 30분 23점 7리바운드 2어시스트, 야투 8-16",
                     "recent": "최근 5경기 20.6점 · 야투 54.7%"
                   }
                 ],
-                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 5명의 시즌 평균 득점 합계는 49.9점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명(팀 득점 2·7·8·11·12위)",
-                "injuryOut": 5,
-                "injuryPpg": 49.9,
+                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 2명의 시즌 평균 득점 합계는 13.1점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 11·12위) · 출전 불투명 3명",
+                "injuryOut": 2,
+                "injuryPpg": 13.1,
                 "injuries": [
                   {
-                    "player": "Jerami Grant",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 7옵션 · 10.6점 · 1.7리바운드"
-                  },
-                  {
                     "player": "Javon Small",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "G",
                     "line": "팀 내 8옵션 · 9.6점 · 3.1리바운드"
                   },
                   {
                     "player": "Cameron Boozer",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 2옵션 · 16.6점 · 9.2리바운드"
+                  },
+                  {
+                    "player": "Jerami Grant",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 6옵션 · 10.6점 · 1.7리바운드"
                   },
                   {
                     "player": "GG Jackson",
@@ -48875,11 +43510,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **멤피스 그리즐리스**(홈) 122.1점 · **LA 클리퍼스**(원정) 111.9점, 평균 리바운드는 홈 46.2개 · 원정 39.1개, 3점 성공률은 홈 39.8% · 원정 39.2%. 평균 득점 차 10.2점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — LA 클리퍼스 승률 24.8%, 멤피스 그리즐리스 75.2%.",
+              "시즌 평균 득점은 **멤피스 그리즐리스**(홈) 120.5점 · **LA 클리퍼스**(원정) 111.1점, 평균 리바운드는 홈 45.6개 · 원정 40.0개, 3점 성공률은 홈 39.1% · 원정 38.7%. 평균 득점 차 9.4점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — LA 클리퍼스 승률 24.2%, 멤피스 그리즐리스 75.8%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -48915,11 +43550,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 1명",
+              "text": "결장 2명",
               "tone": "warn"
             },
             {
-              "text": "평균 110.9점 · 108.1점",
+              "text": "평균 110.9점 · 109.4점",
               "tone": "info"
             }
           ],
@@ -49013,21 +43648,23 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.8점 · 야투 50.0%"
                   }
                 ],
-                "focus": "최근 5경기 Julius Randle의 평균은 23.2점·야투 50.0%·3점 33.3%입니다. 직전 경기에서는 Julius Randle가 27점·9리바운드·6어시스트를 기록했습니다. 이어서 Michael Porter Jr., Nolan Traore가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음 · 출전 불투명 2명",
+                "focus": "최근 5경기 Julius Randle의 평균은 23.2점·야투 50.0%·3점 33.3%입니다. 결장 1명의 시즌 평균 득점 합계는 12.9점입니다. 직전 경기에서는 Julius Randle가 27점·9리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 3위) · 출전 불투명 1명",
+                "injuryOut": 1,
+                "injuryPpg": 12.9,
                 "injuries": [
-                  {
-                    "player": "Nolan Traore",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 3옵션 · 12.9점 · 1.6리바운드"
-                  },
                   {
                     "player": "Grant Nelson",
                     "status": "DAY-TO-DAY",
                     "note": "당일 체크",
                     "pos": "F"
+                  },
+                  {
+                    "player": "Nolan Traore",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 3옵션 · 12.9점 · 1.6리바운드"
                   }
                 ]
               },
@@ -49077,17 +43714,17 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 108.1,
-                "rpg": 44.4,
-                "tp": 34.4,
+                "ppg": 109.4,
+                "rpg": 44.7,
+                "tp": 34.5,
                 "players": [
                   {
                     "name": "Tyler Herro",
                     "id": "4395725",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
                     "pos": "G",
-                    "stat": "19.4점 · 4.0리바운드 · 4.1어시스트",
-                    "sub": "야투 43.0% · 3점 35.8% · 팀 내 1옵션",
+                    "stat": "21.3점 · 4.4리바운드 · 4.3어시스트",
+                    "sub": "야투 45.0% · 3점 38.0% · 팀 내 1옵션",
                     "last": "직전 40분 50점 11리바운드 7어시스트, 야투 15-23",
                     "recent": "최근 5경기 20.0점 · 야투 42.9%"
                   },
@@ -49096,8 +43733,8 @@ window.CLUTCH_DATA = {
                     "id": "4432848",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png",
                     "pos": "F",
-                    "stat": "15.0점 · 5.1리바운드 · 3.0어시스트",
-                    "sub": "야투 45.9% · 3점 42.3% · 팀 내 2옵션",
+                    "stat": "14.6점 · 4.8리바운드 · 2.9어시스트",
+                    "sub": "야투 46.4% · 3점 42.5% · 팀 내 2옵션",
                     "last": "직전 25분 9점 0리바운드 1어시스트, 야투 4-7",
                     "recent": "최근 5경기 11.2점 · 야투 42.6%"
                   },
@@ -49106,14 +43743,14 @@ window.CLUTCH_DATA = {
                     "id": "3134907",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
                     "pos": "F",
-                    "stat": "12.3점 · 5.3리바운드 · 2.4어시스트",
-                    "sub": "야투 46.2% · 3점 32.9% · 팀 내 3옵션",
+                    "stat": "12.2점 · 5.2리바운드 · 2.3어시스트",
+                    "sub": "야투 44.1% · 3점 32.1% · 팀 내 3옵션",
                     "last": "직전 33분 12점 5리바운드 1어시스트, 야투 4-16",
                     "recent": "최근 4경기 16.5점 · 야투 40.4%"
                   }
                 ],
                 "focus": "최근 5경기 Tyler Herro의 평균은 20.0점·야투 42.9%·3점 36.1%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Tyler Herro가 50점·11리바운드·7어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명(팀 득점 14위)",
+                "injurySummary": "결장 1명(팀 득점 13위)",
                 "injuryOut": 1,
                 "injuryPpg": 3.9,
                 "injuries": [
@@ -49122,17 +43759,17 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 14옵션 · 3.9점 · 1.2리바운드"
+                    "line": "팀 내 13옵션 · 3.9점 · 1.2리바운드"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **밀워키 벅스**(홈) 108.1점 · **브루클린 네츠**(원정) 110.9점, 평균 리바운드는 홈 44.4개 · 원정 41.3개, 3점 성공률은 홈 34.4% · 원정 36.0%. 평균 득점 차가 2.8점으로 작고, 3점 성공률 차 1.6%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 브루클린 네츠 승률 48.5%, 밀워키 벅스 51.5%.",
+              "시즌 평균 득점은 **밀워키 벅스**(홈) 109.4점 · **브루클린 네츠**(원정) 110.9점, 평균 리바운드는 홈 44.7개 · 원정 41.3개, 3점 성공률은 홈 34.5% · 원정 36.0%. 평균 득점 차가 1.5점으로 작고, 3점 성공률 차 1.5%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 브루클린 네츠 승률 47.2%, 밀워키 벅스 52.8%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -49382,10 +44019,10 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **휴스턴 로키츠**(홈) 118.2점 · **피닉스 선즈**(원정) 113.9점, 평균 리바운드는 홈 45.3개 · 원정 40.8개, 3점 성공률은 홈 38.0% · 원정 36.6%. 평균 득점 차 4.3점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 피닉스 선즈 승률 26.8%, 휴스턴 로키츠 73.2%.",
+              "**ESPN 매치업 예측** — 피닉스 선즈 승률 27.0%, 휴스턴 로키츠 73.0%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -49400,7 +44037,7 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "새크라멘토 킹스",
             "abbr": "SAC",
-            "record": "1승 14패",
+            "record": "2승 14패",
             "badges": [
               {
                 "text": "원정 1승 5패",
@@ -49421,11 +44058,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 6명",
+              "text": "결장 7명",
               "tone": "warn"
             },
             {
-              "text": "평균 107.5점 · 112.7점",
+              "text": "평균 106.8점 · 112.7점",
               "tone": "info"
             }
           ],
@@ -49433,7 +44070,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**골든스테이트 워리어스**(홈) 8승 8패(홈 6승 1패, 최근 5경기 0승 5패, 5연패), **새크라멘토 킹스**(원정) 1승 14패(원정 1승 5패, 최근 5경기 0승 5패, 5연패). 직전 경기(11.21) **새크라멘토 킹스**는 LA 레이커스에 104-106로 졌고, De'Andre Hunter 30점·6리바운드·2어시스트, Domantas Sabonis 19점·16리바운드·1어시스트를 기록했습니다. 직전 경기(11.20) **골든스테이트 워리어스**는 멤피스 그리즐리스에 98-126로 졌고, Charles Bassey 16점·13리바운드·1어시스트, Brandin Podziemski 15점·3리바운드·2어시스트를 기록했습니다."
+              "text": "**골든스테이트 워리어스**(홈) 8승 8패(홈 6승 1패, 최근 5경기 0승 5패, 5연패), **새크라멘토 킹스**(원정) 2승 14패(원정 1승 5패, 최근 5경기 1승 4패). 직전 경기(11.22) **새크라멘토 킹스**는 보스턴 셀틱스에 97-96로 이겼고, Darius Acuff Jr. 21점·6리바운드·8어시스트, De'Andre Hunter 20점·6리바운드·2어시스트를 기록했습니다. 직전 경기(11.20) **골든스테이트 워리어스**는 멤피스 그리즐리스에 98-126로 졌고, Charles Bassey 16점·13리바운드·1어시스트, Brandin Podziemski 15점·3리바운드·2어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -49442,12 +44079,18 @@ window.CLUTCH_DATA = {
                 "abbr": "SAC",
                 "name": "새크라멘토 킹스",
                 "side": "away",
-                "record": "1승 14패",
+                "record": "2승 14패",
                 "venueRecord": "원정 1승 5패",
-                "streak": "5연패",
-                "last5": "0승 5패",
-                "lastGame": "104-106 패",
+                "last5": "1승 4패",
+                "lastGame": "97-96 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "보스턴 셀틱스",
+                    "ha": "홈",
+                    "score": "97-96",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "LA 레이커스",
@@ -49475,51 +44118,44 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "107-120",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "올랜도 매직",
-                    "ha": "홈",
-                    "score": "100-107",
-                    "res": "패"
                   }
                 ],
-                "ppg": 107.5,
-                "rpg": 40.0,
-                "tp": 34.4,
+                "ppg": 106.8,
+                "rpg": 40.8,
+                "tp": 34.1,
                 "players": [
                   {
                     "name": "Darius Acuff Jr.",
                     "id": "5142620",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
                     "pos": "G",
-                    "stat": "25.7점 · 3.4리바운드 · 7.3어시스트",
-                    "sub": "야투 41.2% · 3점 33.1% · 팀 내 1옵션",
-                    "last": "직전 36분 18점 1리바운드 12어시스트, 야투 8-23",
-                    "recent": "최근 5경기 25.2점 · 야투 40.9%"
+                    "stat": "25.4점 · 3.6리바운드 · 7.4어시스트",
+                    "sub": "야투 40.5% · 3점 32.9% · 팀 내 1옵션",
+                    "last": "직전 40분 21점 6리바운드 8어시스트, 야투 7-23",
+                    "recent": "최근 5경기 23.6점 · 야투 37.5%"
                   },
                   {
                     "name": "Zach LaVine",
                     "id": "3064440",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
                     "pos": "G",
-                    "stat": "21.0점 · 3.6리바운드 · 2.9어시스트",
-                    "sub": "야투 50.3% · 3점 38.8% · 팀 내 2옵션",
-                    "last": "직전 39분 19점 7리바운드 4어시스트, 야투 7-17",
-                    "recent": "최근 4경기 20.0점 · 야투 53.7%"
+                    "stat": "20.5점 · 3.6리바운드 · 2.7어시스트",
+                    "sub": "야투 49.8% · 3점 39.6% · 팀 내 2옵션",
+                    "last": "직전 30분 13점 3리바운드 0어시스트, 야투 4-10",
+                    "recent": "최근 4경기 15.5점 · 야투 47.9%"
                   },
                   {
                     "name": "De'Andre Hunter",
                     "id": "4065732",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065732.png",
                     "pos": "F",
-                    "stat": "14.9점 · 4.4리바운드 · 1.6어시스트",
+                    "stat": "15.3점 · 4.5리바운드 · 1.6어시스트",
                     "sub": "야투 46.2% · 3점 40.3% · 팀 내 3옵션",
-                    "last": "직전 37분 30점 6리바운드 2어시스트, 야투 12-16",
-                    "recent": "최근 4경기 19.0점 · 야투 52.9%"
+                    "last": "직전 41분 20점 6리바운드 2어시스트, 야투 5-11",
+                    "recent": "최근 4경기 20.2점 · 야투 52.9%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 25.2점·야투 40.9%·3점 35.3%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 De'Andre Hunter가 30점·6리바운드·2어시스트를 기록했습니다.",
+                "focus": "최근 5경기 Darius Acuff Jr.의 평균은 23.6점·야투 37.5%·3점 32.7%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Darius Acuff Jr.가 21점·6리바운드·8어시스트를 기록했습니다.",
                 "injurySummary": "결장 2명",
                 "injuryOut": 2,
                 "injuries": [
@@ -49617,18 +44253,11 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.0점 · 야투 37.9%"
                   }
                 ],
-                "focus": "최근 1경기 Stephen Curry의 평균은 3.0점·야투 33.3%·3점 50.0%입니다. 결장 4명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Charles Bassey가 16점·13리바운드·1어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
-                "injuryOut": 4,
+                "focus": "최근 1경기 Stephen Curry의 평균은 3.0점·야투 33.3%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Charles Bassey가 16점·13리바운드·1어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명",
+                "injuryOut": 5,
                 "injuryPpg": 38.2,
                 "injuries": [
-                  {
-                    "player": "Draymond Green",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 14옵션 · 3.2점 · 4.7리바운드"
-                  },
                   {
                     "player": "Brandon Williams",
                     "status": "OUT",
@@ -49654,16 +44283,22 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G"
+                  },
+                  {
+                    "player": "Jimmy Butler III",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **골든스테이트 워리어스**(홈) 112.7점 · **새크라멘토 킹스**(원정) 107.5점, 평균 리바운드는 홈 44.1개 · 원정 40.0개, 3점 성공률은 홈 36.4% · 원정 34.4%. 평균 득점 차 5.2점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 새크라멘토 킹스 승률 27.7%, 골든스테이트 워리어스 72.3%.",
+              "시즌 평균 득점은 **골든스테이트 워리어스**(홈) 112.7점 · **새크라멘토 킹스**(원정) 106.8점, 평균 리바운드는 홈 44.1개 · 원정 40.8개, 3점 성공률은 홈 36.4% · 원정 34.1%. 평균 득점 차 5.9점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 새크라멘토 킹스 승률 27.6%, 골든스테이트 워리어스 72.4%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -49703,7 +44338,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 117.5점 · 117.5점",
+              "text": "평균 117.3점 · 116.1점",
               "tone": "info"
             }
           ],
@@ -49762,17 +44397,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 117.5,
-                "rpg": 47.4,
-                "tp": 33.6,
+                "ppg": 117.3,
+                "rpg": 47.8,
+                "tp": 33.7,
                 "players": [
                   {
                     "name": "Victor Wembanyama",
                     "id": "5104157",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
                     "pos": "F",
-                    "stat": "28.6점 · 11.9리바운드 · 3.3어시스트",
-                    "sub": "야투 52.8% · 3점 30.0% · 팀 내 1옵션",
+                    "stat": "29.9점 · 12.3리바운드 · 3.2어시스트",
+                    "sub": "야투 54.1% · 3점 31.5% · 팀 내 1옵션",
                     "last": "직전 32분 50점 19리바운드 1어시스트, 야투 20-29",
                     "recent": "최근 5경기 29.0점 · 야투 53.6%"
                   },
@@ -49790,8 +44425,8 @@ window.CLUTCH_DATA = {
                     "id": "4845367",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png",
                     "pos": "G",
-                    "stat": "15.7점 · 5.2리바운드 · 5.9어시스트",
-                    "sub": "야투 42.9% · 3점 34.8% · 팀 내 3옵션",
+                    "stat": "15.9점 · 5.1리바운드 · 5.9어시스트",
+                    "sub": "야투 43.7% · 3점 37.4% · 팀 내 3옵션",
                     "last": "직전 29분 19점 3리바운드 6어시스트, 야투 7-12",
                     "recent": "최근 5경기 20.4점 · 야투 54.7%"
                   }
@@ -49867,17 +44502,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 117.5,
-                "rpg": 44.7,
-                "tp": 36.3,
+                "ppg": 116.1,
+                "rpg": 44.9,
+                "tp": 35.8,
                 "players": [
                   {
                     "name": "Deni Avdija",
                     "id": "4683021",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
                     "pos": "F",
-                    "stat": "24.2점 · 6.2리바운드 · 6.1어시스트",
-                    "sub": "야투 50.7% · 3점 38.6% · 팀 내 1옵션",
+                    "stat": "23.9점 · 6.4리바운드 · 6.0어시스트",
+                    "sub": "야투 50.9% · 3점 39.7% · 팀 내 1옵션",
                     "last": "직전 36분 20점 9리바운드 5어시스트, 야투 7-13",
                     "recent": "최근 3경기 27.0점 · 야투 64.4%"
                   },
@@ -49886,8 +44521,8 @@ window.CLUTCH_DATA = {
                     "id": "6606",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                     "pos": "G",
-                    "stat": "20.9점 · 3.2리바운드 · 4.1어시스트",
-                    "sub": "야투 40.9% · 3점 35.8% · 팀 내 2옵션",
+                    "stat": "20.6점 · 3.2리바운드 · 4.0어시스트",
+                    "sub": "야투 40.3% · 3점 34.2% · 팀 내 2옵션",
                     "last": "직전 33분 15점 3리바운드 3어시스트, 야투 5-16",
                     "recent": "최근 5경기 22.2점 · 야투 36.0%"
                   },
@@ -49936,11 +44571,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **포틀랜드 트레일블레이저스**(홈) 117.5점 · **샌안토니오 스퍼스**(원정) 117.5점, 평균 리바운드는 홈 44.7개 · 원정 47.4개, 3점 성공률은 홈 36.3% · 원정 33.6%. 평균 득점 차가 0.0점으로 작고, 3점 성공률 차 2.7%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 샌안토니오 스퍼스 승률 60.7%, 포틀랜드 트레일블레이저스 39.3%.",
+              "시즌 평균 득점은 **포틀랜드 트레일블레이저스**(홈) 116.1점 · **샌안토니오 스퍼스**(원정) 117.3점, 평균 리바운드는 홈 44.9개 · 원정 47.8개, 3점 성공률은 홈 35.8% · 원정 33.7%. 평균 득점 차가 1.2점으로 작고, 3점 성공률 차 2.1%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 샌안토니오 스퍼스 승률 60.6%, 포틀랜드 트레일블레이저스 39.4%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-26 END */
@@ -49963,7 +44598,7 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "KB손해보험",
             "abbr": "KB",
-            "record": "0승 5패",
+            "record": "1승 5패",
             "badges": [
               {
                 "text": "리그 7위",
@@ -49975,8 +44610,8 @@ window.CLUTCH_DATA = {
                 "date": "2026-11-22",
                 "opp": "우리카드",
                 "ha": "원정",
-                "score": "0-0",
-                "res": "무"
+                "score": "3-2",
+                "res": "승"
               },
               {
                 "date": "2026-11-19",
@@ -50007,7 +44642,7 @@ window.CLUTCH_DATA = {
                 "res": "패"
               }
             ],
-            "last5": "0승 4패",
+            "last5": "1승 4패",
             "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
           },
           "home": {
@@ -50070,12 +44705,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**대한항공**(홈) 2승 3패(리그 5위, 최근 흐름 1승), **KB손해보험**(원정) 0승 5패(리그 7위, 최근 흐름 5패). V리그 남자부 2라운드 인천계양체육관에서 열립니다."
+              "text": "**대한항공**(홈) 2승 3패(리그 5위, 최근 흐름 1승), **KB손해보험**(원정) 1승 5패(리그 7위, 최근 흐름 1승). V리그 남자부 2라운드 인천계양체육관에서 열립니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "세트 승리 수 차가 6입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
+              "text": "세트 승리 수 차가 3입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
           "details": {
@@ -50084,7 +44719,7 @@ window.CLUTCH_DATA = {
                 "name": "KB손해보험",
                 "abbr": "KB",
                 "side": "away",
-                "record": "0승 5패",
+                "record": "1승 5패",
                 "badges": [
                   {
                     "text": "리그 7위",
@@ -50094,7 +44729,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "0승 5패"
+                    "value": "1승 5패"
                   },
                   {
                     "label": "리그 순위",
@@ -50102,25 +44737,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "세트",
-                    "value": "4-15"
+                    "value": "7-17"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "5패"
+                    "value": "1승"
                   }
                 ],
                 "nums": [
                   {
                     "label": "승점",
-                    "value": 0.0
+                    "value": 2.0
                   },
                   {
                     "label": "득점",
-                    "value": 432
+                    "value": 542
                   },
                   {
                     "label": "실점",
-                    "value": 489
+                    "value": 589
                   }
                 ],
                 "last5Detail": [
@@ -50128,8 +44763,8 @@ window.CLUTCH_DATA = {
                     "date": "2026-11-22",
                     "opp": "우리카드",
                     "ha": "원정",
-                    "score": "0-0",
-                    "res": "무"
+                    "score": "3-2",
+                    "res": "승"
                   },
                   {
                     "date": "2026-11-19",
@@ -50160,7 +44795,7 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "last5": "0승 4패",
+                "last5": "1승 4패",
                 "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
               },
               {
@@ -50249,9 +44884,9 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "**경기장** — 인천계양체육관에서 열립니다.",
-              "**순위표** — 대한항공(홈) 2승 3패·5위·승점 7, KB손해보험(원정) 0승 5패·7위·승점 0."
+              "**순위표** — 대한항공(홈) 2승 3패·5위·승점 7, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -50315,7 +44950,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "흥국생명",
             "abbr": "HUN",
-            "record": "2승 3패",
+            "record": "2승 4패",
             "badges": [
               {
                 "text": "리그 5위",
@@ -50327,8 +44962,8 @@ window.CLUTCH_DATA = {
                 "date": "2026-11-22",
                 "opp": "현대건설",
                 "ha": "원정",
-                "score": "0-0",
-                "res": "무"
+                "score": "0-3",
+                "res": "패"
               },
               {
                 "date": "2026-11-19",
@@ -50359,7 +44994,8 @@ window.CLUTCH_DATA = {
                 "res": "승"
               }
             ],
-            "last5": "1승 3패",
+            "last5": "1승 4패",
+            "streak": "4연패",
             "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
           },
           "tags": [
@@ -50372,7 +45008,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**흥국생명**(홈) 2승 3패(리그 5위, 최근 흐름 3패), **GS칼텍스**(원정) 4승 1패(리그 2위, 최근 흐름 3승). V리그 여자부 2라운드 인천삼산월드체육관에서 열립니다."
+              "text": "**흥국생명**(홈) 2승 4패(리그 5위, 최근 흐름 4패), **GS칼텍스**(원정) 4승 1패(리그 2위, 최근 흐름 3승). V리그 여자부 2라운드 인천삼산월드체육관에서 열립니다."
             },
             {
               "kind": "watch",
@@ -50469,7 +45105,7 @@ window.CLUTCH_DATA = {
                 "name": "흥국생명",
                 "abbr": "HUN",
                 "side": "home",
-                "record": "2승 3패",
+                "record": "2승 4패",
                 "badges": [
                   {
                     "text": "리그 5위",
@@ -50479,7 +45115,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "2승 3패"
+                    "value": "2승 4패"
                   },
                   {
                     "label": "리그 순위",
@@ -50487,11 +45123,11 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "세트",
-                    "value": "8-9"
+                    "value": "8-12"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "3패"
+                    "value": "4패"
                   }
                 ],
                 "nums": [
@@ -50501,11 +45137,11 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득점",
-                    "value": 387
+                    "value": 449
                   },
                   {
                     "label": "실점",
-                    "value": 400
+                    "value": 478
                   }
                 ],
                 "last5Detail": [
@@ -50513,8 +45149,8 @@ window.CLUTCH_DATA = {
                     "date": "2026-11-22",
                     "opp": "현대건설",
                     "ha": "원정",
-                    "score": "0-0",
-                    "res": "무"
+                    "score": "0-3",
+                    "res": "패"
                   },
                   {
                     "date": "2026-11-19",
@@ -50545,15 +45181,16 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "last5": "1승 3패",
+                "last5": "1승 4패",
+                "streak": "4연패",
                 "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
               }
             ],
             "checkpoints": [
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
-              "**순위표** — 흥국생명(홈) 2승 3패·5위·승점 6, GS칼텍스(원정) 4승 1패·2위·승점 12."
+              "**순위표** — 흥국생명(홈) 2승 4패·5위·승점 6, GS칼텍스(원정) 4승 1패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-27 END */
@@ -50864,7 +45501,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 4패·6위·승점 4, 한국전력(원정) 5승 1패·1위·승점 14."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -51166,7 +45803,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 2패·4위·승점 8, IBK기업은행(원정) 4승 2패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-28 END */,
@@ -51183,7 +45820,7 @@ window.CLUTCH_DATA = {
           "venue": "Weserstadion",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:37+09:00",
+            "at": "2026-11-23T06:13:47+09:00",
             "moneyline": {
               "away": 285,
               "draw": 310,
@@ -51220,7 +45857,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "베르더 브레멘",
             "abbr": "SVW",
-            "record": "4승 3무 2패",
+            "record": "5승 3무 2패",
             "badges": [
               {
                 "text": "리그 6위",
@@ -51238,7 +45875,7 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "결장 14명",
+              "text": "결장 12명",
               "tone": "warn"
             }
           ],
@@ -51246,12 +45883,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**베르더 브레멘**(홈) 4승 3무 2패(리그 6위), 최근 5경기 2승 1무 2패, **묀헨글라트바흐**(원정) 1승 1무 8패(리그 18위), 최근 5경기 2승 1무 2패. 최근 맞대결은 2026.01.31에 열린 베르더 브레멘 1-1 묀헨글라트바흐 경기입니다."
+              "text": "**베르더 브레멘**(홈) 5승 3무 2패(리그 6위), 최근 5경기 2승 1무 2패, **묀헨글라트바흐**(원정) 1승 1무 8패(리그 18위), 최근 5경기 2승 1무 2패. 최근 맞대결은 2026.01.31에 열린 베르더 브레멘 1-1 묀헨글라트바흐 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **베르더 브레멘**(홈) 1.9골 · **묀헨글라트바흐**(원정) 1.2골, 평균 실점은 홈 1.7골 · 원정 2.6골. 해외 배당을 확률로 환산하면 베르더 브레멘 승 54.0% · 무 22.3% · 묀헨글라트바흐 승 23.7%."
+              "text": "두 팀 평균 득점은 **베르더 브레멘**(홈) 2.1골 · **묀헨글라트바흐**(원정) 1.2골, 평균 실점은 홈 1.5골 · 원정 2.6골. 해외 배당을 확률로 환산하면 베르더 브레멘 승 54.0% · 무 22.3% · 묀헨글라트바흐 승 23.7%."
             }
           ],
           "details": {
@@ -51348,8 +45985,8 @@ window.CLUTCH_DATA = {
                     "comp": "2026-27 German Cup"
                   }
                 ],
-                "focus": "최근 5경기 2승 1무 2패입니다. 원정 1승 0무 4패입니다. 경기당 평균 1.2골을 넣고 2.6골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 도르트문트 0-1 패입니다. FotMob 기준 결장 7명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 2승 1무 2패입니다. 원정 1승 0무 4패입니다. 경기당 평균 1.2골을 넣고 2.6골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 도르트문트 0-1 패입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Lukas Ullrich",
@@ -51361,17 +45998,7 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   },
                   {
-                    "player": "Nicolas-Gerrit Kühn",
-                    "status": "OUT",
-                    "line": "복귀 예상 약 1~2주"
-                  },
-                  {
                     "player": "Hugo Bolin",
-                    "status": "OUT",
-                    "line": "복귀 예상 약 1~2주"
-                  },
-                  {
-                    "player": "Fritz Fleck",
                     "status": "OUT",
                     "line": "복귀 예상 약 1~2주"
                   },
@@ -51391,14 +46018,14 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 5월 말"
                   }
                 ],
-                "injurySummary": "결장 7명 · 불확실 1명"
+                "injurySummary": "결장 5명 · 불확실 1명"
               },
               {
                 "abbr": "SVW",
                 "name": "베르더 브레멘",
                 "side": "home",
-                "record": "4승 3무 2패",
-                "venueRecord": "홈 3승 1무 0패",
+                "record": "5승 3무 2패",
+                "venueRecord": "홈 4승 1무 0패",
                 "badges": [
                   {
                     "text": "리그 6위",
@@ -51408,7 +46035,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "4승 3무 2패"
+                    "value": "5승 3무 2패"
                   },
                   {
                     "label": "리그 순위",
@@ -51416,29 +46043,29 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "승점",
-                    "value": "15"
+                    "value": "18"
                   },
                   {
                     "label": "득실차",
-                    "value": "+2"
+                    "value": "+6"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "패-승-패-승-무"
+                    "value": "승-패-승-패-승"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "1.9골"
+                    "value": "2.1골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.7골"
+                    "value": "1.5골"
                   },
                   {
                     "label": "득실차",
-                    "value": "+2"
+                    "value": "+6"
                   }
                 ],
                 "streak": "최근 5경기 2승 1무 2패",
@@ -51485,8 +46112,8 @@ window.CLUTCH_DATA = {
                     "comp": "분데스리가"
                   }
                 ],
-                "focus": "최근 5경기 2승 1무 2패입니다. 홈 3승 1무 0패입니다. 경기당 평균 1.9골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 슈투트가르트 0-1 패입니다. FotMob 기준 결장 7명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 2승 1무 2패입니다. 홈 4승 1무 0패입니다. 경기당 평균 2.1골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 슈투트가르트 0-1 패입니다. FotMob 기준 결장 7명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Mitchell Weiser",
@@ -51496,7 +46123,7 @@ window.CLUTCH_DATA = {
                   {
                     "player": "Skelly Alvero",
                     "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 중순"
+                    "line": "복귀 예상 2026년 12월 초"
                   },
                   {
                     "player": "Salim Musah",
@@ -51506,17 +46133,17 @@ window.CLUTCH_DATA = {
                   {
                     "player": "Moussa N'Diaye",
                     "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 중순"
+                    "line": "복귀 예상 2026년 12월 초"
                   },
                   {
                     "player": "Jens Stage",
                     "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 중순"
+                    "line": "복귀 예상 2026년 12월 초"
                   },
                   {
                     "player": "Felix Agu",
                     "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 중순"
+                    "line": "복귀 예상 2026년 12월 초"
                   },
                   {
                     "player": "Keke Topp",
@@ -51567,10 +46194,10 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "**베르더 브레멘** — 리그 6위, 승점 15, 득실 +2.",
+              "**베르더 브레멘** — 리그 6위, 승점 18, 득실 +6.",
               "**묀헨글라트바흐** — 리그 18위, 승점 4, 득실 -14."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -51621,33 +46248,33 @@ window.CLUTCH_DATA = {
           "venue": "Stadio Pier Luigi Penzo",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:46+09:00",
+            "at": "2026-11-23T06:13:57+09:00",
             "moneyline": {
               "away": 100,
-              "draw": 235,
-              "home": 240
+              "draw": 225,
+              "home": 245
             },
             "spread": {
               "homeLine": "+0.5",
               "awayLine": "-0.5",
-              "home": -135,
-              "away": -110
+              "home": -140,
+              "away": -105
             },
             "total": {
               "line": "2.5",
-              "over": -125,
-              "under": -105
+              "over": -105,
+              "under": -125
             },
             "implied": {
-              "away": 45.8,
-              "draw": 27.3,
-              "home": 26.9
+              "away": 45.6,
+              "draw": 28.0,
+              "home": 26.4
             }
           },
           "away": {
             "name": "볼로냐",
             "abbr": "BOL",
-            "record": "5승 2무 4패",
+            "record": "5승 3무 4패",
             "badges": [
               {
                 "text": "리그 9위",
@@ -51658,10 +46285,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "베네치아",
             "abbr": "VEN",
-            "record": "2승 0무 9패",
+            "record": "2승 0무 10패",
             "badges": [
               {
-                "text": "리그 19위",
+                "text": "리그 20위",
                 "tone": "rank"
               }
             ]
@@ -51684,12 +46311,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**베네치아**(홈) 2승 0무 9패(리그 19위), 최근 5경기 2승 0무 3패, **볼로냐**(원정) 5승 2무 4패(리그 9위), 4연승. 최근 맞대결은 2025.03.29에 열린 베네치아 0-1 볼로냐 경기입니다."
+              "text": "**베네치아**(홈) 2승 0무 10패(리그 20위), 최근 5경기 2승 0무 3패, **볼로냐**(원정) 5승 3무 4패(리그 9위), 4연승. 최근 맞대결은 2025.03.29에 열린 베네치아 0-1 볼로냐 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **베네치아**(홈) 0.7골 · **볼로냐**(원정) 1.5골, 평균 실점은 홈 1.9골 · 원정 1.3골. 해외 배당을 확률로 환산하면 베네치아 승 26.9% · 무 27.3% · 볼로냐 승 45.8%."
+              "text": "두 팀 평균 득점은 **베네치아**(홈) 0.7골 · **볼로냐**(원정) 1.4골, 평균 실점은 홈 2.1골 · 원정 1.2골. 해외 배당을 확률로 환산하면 베네치아 승 26.4% · 무 28.0% · 볼로냐 승 45.6%."
             }
           ],
           "details": {
@@ -51698,7 +46325,7 @@ window.CLUTCH_DATA = {
                 "abbr": "BOL",
                 "name": "볼로냐",
                 "side": "away",
-                "record": "5승 2무 4패",
+                "record": "5승 3무 4패",
                 "venueRecord": "원정 4승 0무 2패",
                 "badges": [
                   {
@@ -51709,7 +46336,7 @@ window.CLUTCH_DATA = {
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "5승 2무 4패"
+                    "value": "5승 3무 4패"
                   },
                   {
                     "label": "리그 순위",
@@ -51717,7 +46344,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "승점",
-                    "value": "17"
+                    "value": "18"
                   },
                   {
                     "label": "득실차",
@@ -51725,17 +46352,17 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "승-승-승-승-패"
+                    "value": "무-승-승-승-승"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "1.5골"
+                    "value": "1.4골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.3골"
+                    "value": "1.2골"
                   },
                   {
                     "label": "득실차",
@@ -51786,8 +46413,8 @@ window.CLUTCH_DATA = {
                     "comp": "세리에A"
                   }
                 ],
-                "focus": "최근 흐름은 4연승입니다. 최근 5경기 4승 0무 1패입니다. 원정 4승 0무 2패입니다. 경기당 평균 1.5골을 넣고 1.3골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 파르마 2-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 흐름은 4연승입니다. 최근 5경기 4승 0무 1패입니다. 원정 4승 0무 2패입니다. 경기당 평균 1.4골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 파르마 2-1 승입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Oussama El Azzouzi",
@@ -51814,22 +46441,22 @@ window.CLUTCH_DATA = {
                 "abbr": "VEN",
                 "name": "베네치아",
                 "side": "home",
-                "record": "2승 0무 9패",
+                "record": "2승 0무 10패",
                 "venueRecord": "홈 2승 0무 4패",
                 "badges": [
                   {
-                    "text": "리그 19위",
+                    "text": "리그 20위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "2승 0무 9패"
+                    "value": "2승 0무 10패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "19위"
+                    "value": "20위"
                   },
                   {
                     "label": "승점",
@@ -51837,11 +46464,11 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "-13"
+                    "value": "-17"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "승-패-패-패-승"
+                    "value": "패-승-패-패-패"
                   }
                 ],
                 "nums": [
@@ -51851,11 +46478,11 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.9골"
+                    "value": "2.1골"
                   },
                   {
                     "label": "득실차",
-                    "value": "-13"
+                    "value": "-17"
                   }
                 ],
                 "streak": "최근 5경기 2승 0무 3패",
@@ -51902,8 +46529,8 @@ window.CLUTCH_DATA = {
                     "comp": "세리에A"
                   }
                 ],
-                "focus": "최근 5경기 2승 0무 3패입니다. 홈 2승 0무 4패입니다. 경기당 평균 0.7골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.06 홈 우디네세 2-1 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 2승 0무 3패입니다. 홈 2승 0무 4패입니다. 경기당 평균 0.7골을 넣고 2.1골을 실점했습니다. 직전 경기 기록은 2026.11.06 홈 우디네세 2-1 승입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Toma Bašić",
@@ -51973,10 +46600,10 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "**베네치아** — 리그 19위, 승점 6, 득실 -13.",
-              "**볼로냐** — 리그 9위, 승점 17, 득실 +2."
+              "**베네치아** — 리그 20위, 승점 6, 득실 -17.",
+              "**볼로냐** — 리그 9위, 승점 18, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -52021,7 +46648,7 @@ window.CLUTCH_DATA = {
           "venue": "The City Ground",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:27+09:00",
+            "at": "2026-11-23T06:13:40+09:00",
             "moneyline": {
               "away": 145,
               "draw": 250,
@@ -52076,7 +46703,7 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "결장 7명",
+              "text": "결장 8명",
               "tone": "warn"
             }
           ],
@@ -52186,9 +46813,14 @@ window.CLUTCH_DATA = {
                     "comp": "EPL"
                   }
                 ],
-                "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 0무 4패입니다. 원정 2승 0무 3패입니다. 경기당 평균 1.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 리즈 유나이티드 1-4 패입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 0무 4패입니다. 원정 2승 0무 3패입니다. 경기당 평균 1.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 리즈 유나이티드 1-4 패입니다. FotMob 기준 결장 6명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
+                  {
+                    "player": "Moisés Caicedo",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
                   {
                     "player": "Jorrel Hato",
                     "status": "OUT",
@@ -52215,7 +46847,7 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 중순"
                   }
                 ],
-                "injurySummary": "결장 5명"
+                "injurySummary": "결장 6명"
               },
               {
                 "abbr": "NFO",
@@ -52310,7 +46942,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 홈 1승 1무 3패입니다. 경기당 평균 0.8골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 본머스 0-2 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Callum Hudson-Odoi",
@@ -52380,7 +47012,7 @@ window.CLUTCH_DATA = {
               "**노팅엄 포리스트** — 리그 17위, 승점 9, 득실 -6.",
               "**첼시** — 리그 8위, 승점 16, 득실 0."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -52431,7 +47063,7 @@ window.CLUTCH_DATA = {
           "venue": "Estadi Ciutat de València",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:33+09:00",
+            "at": "2026-11-23T06:13:45+09:00",
             "moneyline": {
               "away": 215,
               "draw": 285,
@@ -52457,10 +47089,10 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "라싱 산탄데르",
             "abbr": "RAC",
-            "record": "4승 2무 6패",
+            "record": "5승 2무 6패",
             "badges": [
               {
-                "text": "리그 12위",
+                "text": "리그 7위",
                 "tone": "rank"
               }
             ]
@@ -52494,12 +47126,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**레반테**(홈) 2승 5무 5패(리그 18위), 최근 5경기 2승 1무 2패, **라싱 산탄데르**(원정) 4승 2무 6패(리그 12위), 최근 5경기 3승 0무 2패. 최근 맞대결은 2025.04.06에 열린 레반테 3-1 라싱 산탄데르 경기입니다."
+              "text": "**레반테**(홈) 2승 5무 5패(리그 18위), 최근 5경기 2승 1무 2패, **라싱 산탄데르**(원정) 5승 2무 6패(리그 7위), 최근 5경기 3승 0무 2패. 최근 맞대결은 2025.04.06에 열린 레반테 3-1 라싱 산탄데르 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **레반테**(홈) 1.3골 · **라싱 산탄데르**(원정) 1.4골, 평균 실점은 홈 1.8골 · 원정 2.5골. 해외 배당을 확률로 환산하면 레반테 승 45.8% · 무 24.4% · 라싱 산탄데르 승 29.8%."
+              "text": "두 팀 평균 득점은 **레반테**(홈) 1.3골 · **라싱 산탄데르**(원정) 1.5골, 평균 실점은 홈 1.8골 · 원정 2.5골. 해외 배당을 확률로 환산하면 레반테 승 45.8% · 무 24.4% · 라싱 산탄데르 승 29.8%."
             }
           ],
           "details": {
@@ -52508,40 +47140,40 @@ window.CLUTCH_DATA = {
                 "abbr": "RAC",
                 "name": "라싱 산탄데르",
                 "side": "away",
-                "record": "4승 2무 6패",
+                "record": "5승 2무 6패",
                 "venueRecord": "원정 1승 0무 5패",
                 "badges": [
                   {
-                    "text": "리그 12위",
+                    "text": "리그 7위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "4승 2무 6패"
+                    "value": "5승 2무 6패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "12위"
+                    "value": "7위"
                   },
                   {
                     "label": "승점",
-                    "value": "14"
+                    "value": "17"
                   },
                   {
                     "label": "득실차",
-                    "value": "-13"
+                    "value": "-12"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "승-패-승-승-패"
+                    "value": "승-승-패-승-승"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "1.4골"
+                    "value": "1.5골"
                   },
                   {
                     "label": "평균 실점",
@@ -52549,7 +47181,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "-13"
+                    "value": "-12"
                   }
                 ],
                 "streak": "최근 5경기 3승 0무 2패",
@@ -52596,8 +47228,8 @@ window.CLUTCH_DATA = {
                     "comp": "라리가"
                   }
                 ],
-                "focus": "최근 5경기 3승 0무 2패입니다. 원정 1승 0무 5패입니다. 경기당 평균 1.4골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 말라가 2-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 3승 0무 2패입니다. 원정 1승 0무 5패입니다. 경기당 평균 1.5골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 말라가 2-1 승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Maguette Gueye",
@@ -52762,9 +47394,9 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "**레반테** — 리그 18위, 승점 11, 득실 -5.",
-              "**라싱 산탄데르** — 리그 12위, 승점 14, 득실 -13."
+              "**라싱 산탄데르** — 리그 7위, 승점 17, 득실 -12."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -52815,27 +47447,27 @@ window.CLUTCH_DATA = {
           "venue": "Estadio La Cartuja",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:33+09:00",
+            "at": "2026-11-23T06:13:45+09:00",
             "moneyline": {
               "away": 450,
-              "draw": 360,
-              "home": -195
+              "draw": 340,
+              "home": -185
             },
             "spread": {
               "homeLine": "-1.5",
               "awayLine": "+1.5",
-              "home": 125,
-              "away": -180
+              "home": 130,
+              "away": -190
             },
             "total": {
               "line": "3.5",
-              "over": 125,
-              "under": -165
+              "over": 130,
+              "under": -170
             },
             "implied": {
-              "away": 17.1,
-              "draw": 20.5,
-              "home": 62.4
+              "away": 17.2,
+              "draw": 21.5,
+              "home": 61.3
             }
           },
           "away": {
@@ -52844,7 +47476,7 @@ window.CLUTCH_DATA = {
             "record": "3승 3무 6패",
             "badges": [
               {
-                "text": "리그 14위",
+                "text": "리그 15위",
                 "tone": "rank"
               }
             ]
@@ -52878,12 +47510,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**레알 베티스**(홈) 8승 3무 2패(리그 4위), 최근 5경기 3승 1무 1패, **라요 바예카노**(원정) 3승 3무 6패(리그 14위), 2연패. 최근 맞대결은 2026.02.21에 열린 레알 베티스 1-1 라요 바예카노 경기입니다."
+              "text": "**레알 베티스**(홈) 8승 3무 2패(리그 4위), 최근 5경기 3승 1무 1패, **라요 바예카노**(원정) 3승 3무 6패(리그 15위), 2연패. 최근 맞대결은 2026.02.21에 열린 레알 베티스 1-1 라요 바예카노 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **레알 베티스**(홈) 1.6골 · **라요 바예카노**(원정) 1.2골, 평균 실점은 홈 1.2골 · 원정 1.8골. 해외 배당을 확률로 환산하면 레알 베티스 승 62.4% · 무 20.5% · 라요 바예카노 승 17.1%."
+              "text": "두 팀 평균 득점은 **레알 베티스**(홈) 1.6골 · **라요 바예카노**(원정) 1.2골, 평균 실점은 홈 1.2골 · 원정 1.8골. 해외 배당을 확률로 환산하면 레알 베티스 승 61.3% · 무 21.5% · 라요 바예카노 승 17.2%."
             }
           ],
           "details": {
@@ -52896,7 +47528,7 @@ window.CLUTCH_DATA = {
                 "venueRecord": "원정 0승 2무 4패",
                 "badges": [
                   {
-                    "text": "리그 14위",
+                    "text": "리그 15위",
                     "tone": "rank"
                   }
                 ],
@@ -52907,7 +47539,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "리그 순위",
-                    "value": "14위"
+                    "value": "15위"
                   },
                   {
                     "label": "승점",
@@ -52981,7 +47613,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 0무 3패입니다. 원정 0승 2무 4패입니다. 경기당 평균 1.2골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 발렌시아 0-1 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Óscar Valentín",
@@ -53094,7 +47726,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 홈 5승 0무 1패입니다. 경기당 평균 1.6골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 세비야 1-1 무입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Antony",
@@ -53128,9 +47760,9 @@ window.CLUTCH_DATA = {
                     ]
                   },
                   {
-                    "name": "Cucho Hernández",
-                    "id": "336809",
-                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F336809.png&w=120&h=120&scale=crop",
+                    "name": "Isco",
+                    "id": "143564",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Isco_2018.jpg/120px-Isco_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
                     ]
@@ -53162,9 +47794,9 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "**레알 베티스** — 리그 4위, 승점 27, 득실 +5.",
-              "**라요 바예카노** — 리그 14위, 승점 12, 득실 -7."
+              "**라요 바예카노** — 리그 15위, 승점 12, 득실 -7."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -53215,27 +47847,27 @@ window.CLUTCH_DATA = {
           "venue": "Stadio Benito Stirpe",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:46+09:00",
+            "at": "2026-11-23T06:13:58+09:00",
             "moneyline": {
               "away": 400,
-              "draw": 350,
+              "draw": 360,
               "home": -210
             },
             "spread": {
               "homeLine": "-1.5",
               "awayLine": "+1.5",
               "home": 115,
-              "away": -170
+              "away": -165
             },
             "total": {
               "line": "3.5",
-              "over": 105,
-              "under": -135
+              "over": 100,
+              "under": -130
             },
             "implied": {
-              "away": 18.2,
-              "draw": 20.2,
-              "home": 61.5
+              "away": 18.3,
+              "draw": 19.9,
+              "home": 61.8
             }
           },
           "away": {
@@ -53244,7 +47876,7 @@ window.CLUTCH_DATA = {
             "record": "2승 2무 8패",
             "badges": [
               {
-                "text": "리그 17위",
+                "text": "리그 16위",
                 "tone": "rank"
               }
             ]
@@ -53252,10 +47884,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "프로시노네",
             "abbr": "FRO",
-            "record": "6승 2무 3패",
+            "record": "6승 2무 4패",
             "badges": [
               {
-                "text": "리그 6위",
+                "text": "리그 7위",
                 "tone": "rank"
               }
             ]
@@ -53270,7 +47902,7 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "결장 3명",
+              "text": "결장 4명",
               "tone": "warn"
             }
           ],
@@ -53278,12 +47910,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**프로시노네**(홈) 6승 2무 3패(리그 6위), 최근 5경기 3승 1무 1패, **파르마**(원정) 2승 2무 8패(리그 17위), 2연패. 최근 맞대결은 2023.02.24에 열린 프로시노네 3-4 파르마 경기입니다."
+              "text": "**프로시노네**(홈) 6승 2무 4패(리그 7위), 최근 5경기 3승 1무 1패, **파르마**(원정) 2승 2무 8패(리그 16위), 2연패. 최근 맞대결은 2023.02.24에 열린 프로시노네 3-4 파르마 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **프로시노네**(홈) 2.2골 · **파르마**(원정) 0.8골, 평균 실점은 홈 1.4골 · 원정 1.8골. 해외 배당을 확률로 환산하면 프로시노네 승 61.5% · 무 20.2% · 파르마 승 18.2%."
+              "text": "두 팀 평균 득점은 **프로시노네**(홈) 2.1골 · **파르마**(원정) 0.8골, 평균 실점은 홈 1.7골 · 원정 1.8골. 해외 배당을 확률로 환산하면 프로시노네 승 61.8% · 무 19.9% · 파르마 승 18.3%."
             }
           ],
           "details": {
@@ -53296,7 +47928,7 @@ window.CLUTCH_DATA = {
                 "venueRecord": "원정 1승 0무 4패",
                 "badges": [
                   {
-                    "text": "리그 17위",
+                    "text": "리그 16위",
                     "tone": "rank"
                   }
                 ],
@@ -53307,7 +47939,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "리그 순위",
-                    "value": "17위"
+                    "value": "16위"
                   },
                   {
                     "label": "승점",
@@ -53381,7 +48013,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 1무 3패입니다. 원정 1승 0무 4패입니다. 경기당 평균 0.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 AS 로마 1-5 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Djibril Diallo",
@@ -53400,22 +48032,22 @@ window.CLUTCH_DATA = {
                 "abbr": "FRO",
                 "name": "프로시노네",
                 "side": "home",
-                "record": "6승 2무 3패",
+                "record": "6승 2무 4패",
                 "venueRecord": "홈 5승 0무 1패",
                 "badges": [
                   {
-                    "text": "리그 6위",
+                    "text": "리그 7위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "6승 2무 3패"
+                    "value": "6승 2무 4패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "6위"
+                    "value": "7위"
                   },
                   {
                     "label": "승점",
@@ -53423,25 +48055,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "+9"
+                    "value": "+5"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "패-승-승-무-승"
+                    "value": "패-패-승-승-무"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "2.2골"
+                    "value": "2.1골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "1.4골"
+                    "value": "1.7골"
                   },
                   {
                     "label": "득실차",
-                    "value": "+9"
+                    "value": "+5"
                   }
                 ],
                 "streak": "최근 5경기 3승 1무 1패",
@@ -53488,9 +48120,14 @@ window.CLUTCH_DATA = {
                     "comp": "세리에A"
                   }
                 ],
-                "focus": "최근 5경기 3승 1무 1패입니다. 홈 5승 0무 1패입니다. 경기당 평균 2.2골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 칼리아리 0-1 패입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 3승 1무 1패입니다. 홈 5승 0무 1패입니다. 경기당 평균 2.1골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 칼리아리 0-1 패입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
+                  {
+                    "player": "Daniel Bîrligea",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
                   {
                     "player": "Antonio Raimondo",
                     "status": "OUT",
@@ -53501,7 +48138,7 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 1명 · 불확실 1명"
+                "injurySummary": "결장 2명 · 불확실 1명"
               }
             ],
             "keyPlayers": [
@@ -53549,10 +48186,10 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "**프로시노네** — 리그 6위, 승점 20, 득실 +9.",
-              "**파르마** — 리그 17위, 승점 8, 득실 -12."
+              "**프로시노네** — 리그 7위, 승점 20, 득실 +5.",
+              "**파르마** — 리그 16위, 승점 8, 득실 -12."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -53603,17 +48240,17 @@ window.CLUTCH_DATA = {
           "venue": "RheinEnergieStadion",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:37+09:00",
+            "at": "2026-11-23T06:13:47+09:00",
             "moneyline": {
-              "away": 230,
-              "draw": 270,
-              "home": -110
+              "away": 245,
+              "draw": 275,
+              "home": -115
             },
             "spread": {
               "homeLine": "-0.5",
               "awayLine": "+0.5",
-              "home": -115,
-              "away": -125
+              "home": -120,
+              "away": -120
             },
             "total": {
               "line": "3.5",
@@ -53621,9 +48258,9 @@ window.CLUTCH_DATA = {
               "under": -160
             },
             "implied": {
-              "away": 27.6,
-              "draw": 24.6,
-              "home": 47.7
+              "away": 26.6,
+              "draw": 24.4,
+              "home": 49.0
             }
           },
           "away": {
@@ -53643,7 +48280,7 @@ window.CLUTCH_DATA = {
             "record": "2승 4무 4패",
             "badges": [
               {
-                "text": "리그 13위",
+                "text": "리그 14위",
                 "tone": "rank"
               }
             ]
@@ -53658,7 +48295,7 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "결장 8명",
+              "text": "결장 6명",
               "tone": "warn"
             }
           ],
@@ -53666,12 +48303,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**쾰른**(홈) 2승 4무 4패(리그 13위), 최근 5경기 1승 3무 1패, **엘버스베르크**(원정) 4승 1무 5패(리그 9위), 2연패. 최근 맞대결은 2025.01.25에 열린 쾰른 1-0 엘버스베르크 경기입니다."
+              "text": "**쾰른**(홈) 2승 4무 4패(리그 14위), 최근 5경기 1승 3무 1패, **엘버스베르크**(원정) 4승 1무 5패(리그 9위), 2연패. 최근 맞대결은 2025.01.25에 열린 쾰른 1-0 엘버스베르크 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **쾰른**(홈) 1.1골 · **엘버스베르크**(원정) 1.7골, 평균 실점은 홈 1.5골 · 원정 1.9골. 해외 배당을 확률로 환산하면 쾰른 승 47.7% · 무 24.6% · 엘버스베르크 승 27.6%."
+              "text": "두 팀 평균 득점은 **쾰른**(홈) 1.1골 · **엘버스베르크**(원정) 1.7골, 평균 실점은 홈 1.5골 · 원정 1.9골. 해외 배당을 확률로 환산하면 쾰른 승 49.0% · 무 24.4% · 엘버스베르크 승 26.6%."
             }
           ],
           "details": {
@@ -53768,8 +48405,8 @@ window.CLUTCH_DATA = {
                     "comp": "분데스리가"
                   }
                 ],
-                "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 0무 4패입니다. 원정 1승 1무 3패입니다. 경기당 평균 1.7골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 프라이부르크 0-1 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 0무 4패입니다. 원정 1승 1무 3패입니다. 경기당 평균 1.7골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 프라이부르크 0-1 패입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Nicholas Mickelson",
@@ -53777,25 +48414,11 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 말"
                   },
                   {
-                    "player": "Lukas Pinckert",
-                    "status": "DOUBTFUL"
-                  },
-                  {
-                    "player": "Jan Gyamerah",
-                    "status": "OUT",
-                    "line": "복귀 예상 몇 주"
-                  },
-                  {
-                    "player": "Tom Zimmerschied",
-                    "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 중순"
-                  },
-                  {
                     "player": "Noah Darvich",
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 3명 · 불확실 2명"
+                "injurySummary": "결장 1명 · 불확실 1명"
               },
               {
                 "abbr": "KOE",
@@ -53805,7 +48428,7 @@ window.CLUTCH_DATA = {
                 "venueRecord": "홈 2승 2무 1패",
                 "badges": [
                   {
-                    "text": "리그 13위",
+                    "text": "리그 14위",
                     "tone": "rank"
                   }
                 ],
@@ -53816,7 +48439,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "리그 순위",
-                    "value": "13위"
+                    "value": "14위"
                   },
                   {
                     "label": "승점",
@@ -53890,7 +48513,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 3무 1패입니다. 홈 2승 2무 1패입니다. 경기당 평균 1.1골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.20 원정 바이에른 뮌헨 1-1 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Imad Rondić",
@@ -53966,10 +48589,10 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "**쾰른** — 리그 13위, 승점 10, 득실 -4.",
+              "**쾰른** — 리그 14위, 승점 10, 득실 -4.",
               "**엘버스베르크** — 리그 9위, 승점 13, 득실 -2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -54002,7 +48625,7 @@ window.CLUTCH_DATA = {
           "venue": "MEWA ARENA",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:37+09:00",
+            "at": "2026-11-23T06:13:47+09:00",
             "moneyline": {
               "away": 450,
               "draw": 340,
@@ -54039,10 +48662,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "마인츠",
             "abbr": "M05",
-            "record": "3승 1무 5패",
+            "record": "3승 1무 6패",
             "badges": [
               {
-                "text": "리그 12위",
+                "text": "리그 13위",
                 "tone": "rank"
               }
             ]
@@ -54065,12 +48688,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**마인츠**(홈) 3승 1무 5패(리그 12위), 4연패, **우니온 베를린**(원정) 1승 4무 5패(리그 17위), 3연패. 최근 맞대결은 2026.05.10에 열린 마인츠 1-3 우니온 베를린 경기입니다."
+              "text": "**마인츠**(홈) 3승 1무 6패(리그 13위), 4연패, **우니온 베를린**(원정) 1승 4무 5패(리그 17위), 3연패. 최근 맞대결은 2026.05.10에 열린 마인츠 1-3 우니온 베를린 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **마인츠**(홈) 2.0골 · **우니온 베를린**(원정) 0.8골, 평균 실점은 홈 2.1골 · 원정 2.6골. 해외 배당을 확률로 환산하면 마인츠 승 62.4% · 무 20.9% · 우니온 베를린 승 16.7%."
+              "text": "두 팀 평균 득점은 **마인츠**(홈) 1.9골 · **우니온 베를린**(원정) 0.8골, 평균 실점은 홈 2.2골 · 원정 2.6골. 해외 배당을 확률로 환산하면 마인츠 승 62.4% · 무 20.9% · 우니온 베를린 승 16.7%."
             }
           ],
           "details": {
@@ -54168,7 +48791,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연패입니다. 최근 5경기 0승 1무 4패입니다. 원정 0승 1무 3패입니다. 경기당 평균 0.8골을 넣고 2.6골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 RB 라이프치히 1-5 패입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Livan Burcu",
@@ -54182,12 +48805,12 @@ window.CLUTCH_DATA = {
                   {
                     "player": "Robert Skov",
                     "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 중순"
+                    "line": "복귀 예상 2026년 12월 초"
                   },
                   {
                     "player": "Stanley N'Soki",
                     "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 중순"
+                    "line": "복귀 예상 2026년 12월 초"
                   },
                   {
                     "player": "Andrik Markgraf",
@@ -54201,22 +48824,22 @@ window.CLUTCH_DATA = {
                 "abbr": "M05",
                 "name": "마인츠",
                 "side": "home",
-                "record": "3승 1무 5패",
+                "record": "3승 1무 6패",
                 "venueRecord": "홈 0승 1무 4패",
                 "badges": [
                   {
-                    "text": "리그 12위",
+                    "text": "리그 13위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "3승 1무 5패"
+                    "value": "3승 1무 6패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "12위"
+                    "value": "13위"
                   },
                   {
                     "label": "승점",
@@ -54224,25 +48847,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "-1"
+                    "value": "-3"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "패-패-패-패-승"
+                    "value": "패-패-패-패-패"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "2.0골"
+                    "value": "1.9골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "2.1골"
+                    "value": "2.2골"
                   },
                   {
                     "label": "득실차",
-                    "value": "-1"
+                    "value": "-3"
                   }
                 ],
                 "streak": "4연패",
@@ -54289,8 +48912,8 @@ window.CLUTCH_DATA = {
                     "comp": "분데스리가"
                   }
                 ],
-                "focus": "최근 흐름은 4연패입니다. 최근 5경기 1승 0무 4패입니다. 홈 0승 1무 4패입니다. 경기당 평균 2.0골을 넣고 2.1골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 바이에른 뮌헨 1-2 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 흐름은 4연패입니다. 최근 5경기 1승 0무 4패입니다. 홈 0승 1무 4패입니다. 경기당 평균 1.9골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 바이에른 뮌헨 1-2 패입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Otto Ruoppi",
@@ -54358,10 +48981,10 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "**마인츠** — 리그 12위, 승점 10, 득실 -1.",
+              "**마인츠** — 리그 13위, 승점 10, 득실 -3.",
               "**우니온 베를린** — 리그 17위, 승점 7, 득실 -18."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -54412,7 +49035,7 @@ window.CLUTCH_DATA = {
           "venue": "Volksparkstadion",
           "odds": {
             "provider": "Bet 365",
-            "at": "2026-11-22T14:11:37+09:00",
+            "at": "2026-11-23T06:13:47+09:00",
             "moneyline": {
               "away": -400,
               "draw": 500,
@@ -54438,10 +49061,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "함부르크",
             "abbr": "HSV",
-            "record": "4승 0무 5패",
+            "record": "4승 0무 6패",
             "badges": [
               {
-                "text": "리그 11위",
+                "text": "리그 12위",
                 "tone": "rank"
               }
             ]
@@ -54452,7 +49075,7 @@ window.CLUTCH_DATA = {
               "tone": "info"
             },
             {
-              "text": "결장 11명",
+              "text": "결장 10명",
               "tone": "warn"
             }
           ],
@@ -54460,12 +49083,12 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**함부르크**(홈) 4승 0무 5패(리그 11위), 최근 5경기 1승 1무 3패, **바이에른 뮌헨**(원정) 6승 4무 0패(리그 2위), 최근 5경기 3승 2무 0패. 최근 맞대결은 2026.01.31에 열린 함부르크 2-2 바이에른 뮌헨 경기입니다."
+              "text": "**함부르크**(홈) 4승 0무 6패(리그 12위), 최근 5경기 1승 1무 3패, **바이에른 뮌헨**(원정) 6승 4무 0패(리그 2위), 최근 5경기 3승 2무 0패. 최근 맞대결은 2026.01.31에 열린 함부르크 2-2 바이에른 뮌헨 경기입니다."
             },
             {
               "kind": "watch",
               "label": "관전 포인트",
-              "text": "두 팀 평균 득점은 **함부르크**(홈) 1.1골 · **바이에른 뮌헨**(원정) 3.0골, 평균 실점은 홈 2.2골 · 원정 1.0골. 해외 배당을 확률로 환산하면 함부르크 승 10.8% · 무 15.4% · 바이에른 뮌헨 승 73.8%."
+              "text": "두 팀 평균 득점은 **함부르크**(홈) 1.0골 · **바이에른 뮌헨**(원정) 3.0골, 평균 실점은 홈 2.4골 · 원정 1.0골. 해외 배당을 확률로 환산하면 함부르크 승 10.8% · 무 15.4% · 바이에른 뮌헨 승 73.8%."
             }
           ],
           "details": {
@@ -54562,8 +49185,8 @@ window.CLUTCH_DATA = {
                     "comp": "2026-27 German Cup"
                   }
                 ],
-                "focus": "최근 5경기 3승 2무 0패입니다. 원정 3승 2무 0패입니다. 경기당 평균 3.0골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.20 홈 쾰른 1-1 무입니다. FotMob 기준 결장 6명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 3승 2무 0패입니다. 원정 3승 2무 0패입니다. 경기당 평균 3.0골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.20 홈 쾰른 1-1 무입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Harry Kane",
@@ -54596,32 +49219,31 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "player": "Luis Díaz",
-                    "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 말"
+                    "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 6명 · 불확실 1명"
+                "injurySummary": "결장 5명 · 불확실 2명"
               },
               {
                 "abbr": "HSV",
                 "name": "함부르크",
                 "side": "home",
-                "record": "4승 0무 5패",
+                "record": "4승 0무 6패",
                 "venueRecord": "홈 3승 0무 1패",
                 "badges": [
                   {
-                    "text": "리그 11위",
+                    "text": "리그 12위",
                     "tone": "rank"
                   }
                 ],
                 "cells": [
                   {
                     "label": "시즌 전적",
-                    "value": "4승 0무 5패"
+                    "value": "4승 0무 6패"
                   },
                   {
                     "label": "리그 순위",
-                    "value": "11위"
+                    "value": "12위"
                   },
                   {
                     "label": "승점",
@@ -54629,25 +49251,25 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "득실차",
-                    "value": "-10"
+                    "value": "-14"
                   },
                   {
                     "label": "최근 흐름",
-                    "value": "승-패-패-패-승"
+                    "value": "패-승-패-패-패"
                   }
                 ],
                 "nums": [
                   {
                     "label": "평균 득점",
-                    "value": "1.1골"
+                    "value": "1.0골"
                   },
                   {
                     "label": "평균 실점",
-                    "value": "2.2골"
+                    "value": "2.4골"
                   },
                   {
                     "label": "득실차",
-                    "value": "-10"
+                    "value": "-14"
                   }
                 ],
                 "streak": "최근 5경기 1승 1무 3패",
@@ -54694,8 +49316,8 @@ window.CLUTCH_DATA = {
                     "comp": "분데스리가"
                   }
                 ],
-                "focus": "최근 5경기 1승 1무 3패입니다. 홈 3승 0무 1패입니다. 경기당 평균 1.1골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.15 홈 Hajduk Split 1-1 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "focus": "최근 5경기 1승 1무 3패입니다. 홈 3승 0무 1패입니다. 경기당 평균 1.0골을 넣고 2.4골을 실점했습니다. 직전 경기 기록은 2026.11.15 홈 Hajduk Split 1-1 무입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jordan Torunarigha",
@@ -54772,10 +49394,10 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "**함부르크** — 리그 11위, 승점 12, 득실 -10.",
+              "**함부르크** — 리그 12위, 승점 12, 득실 -14.",
               "**바이에른 뮌헨** — 리그 2위, 승점 22, 득실 +20."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -54826,7 +49448,7 @@ window.CLUTCH_DATA = {
           "venue": "Home Deluxe Arena",
           "odds": {
             "provider": "DraftKings",
-            "at": "2026-11-22T14:11:37+09:00",
+            "at": "2026-11-23T06:13:47+09:00",
             "moneyline": {
               "away": 180,
               "draw": 225,
@@ -54835,13 +49457,13 @@ window.CLUTCH_DATA = {
             "spread": {
               "homeLine": "-0.5",
               "awayLine": "+0.5",
-              "home": 125,
+              "home": 120,
               "away": -180
             },
             "total": {
               "line": "2.5",
-              "over": -125,
-              "under": -105
+              "over": -135,
+              "under": 100
             },
             "implied": {
               "away": 32.8,
@@ -54866,7 +49488,7 @@ window.CLUTCH_DATA = {
             "record": "2승 4무 4패",
             "badges": [
               {
-                "text": "리그 14위",
+                "text": "리그 15위",
                 "tone": "rank"
               }
             ]
@@ -54889,7 +49511,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**파더보른**(홈) 2승 4무 4패(리그 14위), 최근 5경기 1승 2무 2패, **샬케 04**(원정) 1승 4무 5패(리그 16위), 5경기 무승. 최근 맞대결은 2026.04.26에 열린 파더보른 2-3 샬케 04 경기입니다."
+              "text": "**파더보른**(홈) 2승 4무 4패(리그 15위), 최근 5경기 1승 2무 2패, **샬케 04**(원정) 1승 4무 5패(리그 16위), 5경기 무승. 최근 맞대결은 2026.04.26에 열린 파더보른 2-3 샬케 04 경기입니다."
             },
             {
               "kind": "watch",
@@ -54992,7 +49614,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5경기 무승입니다. 최근 5경기 0승 2무 3패입니다. 원정 1승 1무 3패입니다. 경기당 평균 0.5골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 슈투트가르트 0-0 무입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Robin Gosens",
@@ -55029,7 +49651,7 @@ window.CLUTCH_DATA = {
                 "venueRecord": "홈 2승 1무 2패",
                 "badges": [
                   {
-                    "text": "리그 14위",
+                    "text": "리그 15위",
                     "tone": "rank"
                   }
                 ],
@@ -55040,7 +49662,7 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "label": "리그 순위",
-                    "value": "14위"
+                    "value": "15위"
                   },
                   {
                     "label": "승점",
@@ -55114,12 +49736,8 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 2무 2패입니다. 홈 2승 1무 2패입니다. 경기당 평균 0.8골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 바이어 레버쿠젠 0-4 패입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:11) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
                 "injuries": [
-                  {
-                    "player": "Tom Baack",
-                    "status": "DOUBTFUL"
-                  },
                   {
                     "player": "Sven Michel",
                     "status": "DOUBTFUL"
@@ -55127,7 +49745,7 @@ window.CLUTCH_DATA = {
                   {
                     "player": "Oliver Batista Meier",
                     "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 중순"
+                    "line": "복귀 예상 2026년 12월 초"
                   },
                   {
                     "player": "Marcel Hoffmeier",
@@ -55137,12 +49755,12 @@ window.CLUTCH_DATA = {
                   {
                     "player": "Nyamekye Awortwie-Grant",
                     "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 중순"
+                    "line": "복귀 예상 2026년 12월 초"
                   },
                   {
                     "player": "Sebastian Klaas",
                     "status": "OUT",
-                    "line": "복귀 예상 2026년 11월 중순"
+                    "line": "복귀 예상 2026년 12월 초"
                   },
                   {
                     "player": "Timur Gayret",
@@ -55150,7 +49768,7 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 5명 · 불확실 2명"
+                "injurySummary": "결장 5명 · 불확실 1명"
               }
             ],
             "keyPlayers": [
@@ -55200,10 +49818,10 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "**파더보른** — 리그 14위, 승점 10, 득실 -7.",
+              "**파더보른** — 리그 15위, 승점 10, 득실 -7.",
               "**샬케 04** — 리그 16위, 승점 7, 득실 -6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:11 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:11 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -55279,11 +49897,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "부상 5명",
+              "text": "결장 2명",
               "tone": "warn"
             },
             {
-              "text": "평균 120.5점 · 109.5점",
+              "text": "평균 120.5점 · 108.7점",
               "tone": "info"
             }
           ],
@@ -55442,17 +50060,17 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 109.5,
-                "rpg": 47.0,
-                "tp": 36.5,
+                "ppg": 108.7,
+                "rpg": 46.7,
+                "tp": 37.0,
                 "players": [
                   {
                     "name": "Jalen Brunson",
                     "id": "3934672",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
-                    "stat": "26.6점 · 2.9리바운드 · 5.9어시스트",
-                    "sub": "야투 43.3% · 3점 40.0% · 팀 내 1옵션",
+                    "stat": "26.8점 · 3.1리바운드 · 5.9어시스트",
+                    "sub": "야투 43.6% · 3점 41.7% · 팀 내 1옵션",
                     "last": "직전 36분 30점 7리바운드 5어시스트, 야투 11-23",
                     "recent": "최근 5경기 28.6점 · 야투 45.0%"
                   },
@@ -55475,9 +50093,18 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 15.8점 · 야투 43.8%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 28.6점·야투 45.0%·3점 51.2%입니다. 직전 경기에서는 Donovan Clingan가 22점·13리바운드·4어시스트를 기록했습니다. 이어서 Karl-Anthony Towns, OG Anunoby가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음 · 출전 불투명 3명",
+                "focus": "최근 5경기 Jalen Brunson의 평균은 28.6점·야투 45.0%·3점 51.2%입니다. 결장 2명의 시즌 평균 득점 합계는 21.2점입니다. 직전 경기에서는 Donovan Clingan가 22점·13리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 3·8위) · 출전 불투명 1명",
+                "injuryOut": 2,
+                "injuryPpg": 21.2,
                 "injuries": [
+                  {
+                    "player": "OG Anunoby",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 3옵션 · 16.3점 · 5.4리바운드"
+                  },
                   {
                     "player": "Karl-Anthony Towns",
                     "status": "DAY-TO-DAY",
@@ -55487,27 +50114,20 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "player": "Jordan Clarkson",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "G",
                     "line": "팀 내 8옵션 · 4.9점 · 1.6리바운드"
-                  },
-                  {
-                    "player": "OG Anunoby",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 3옵션 · 16.3점 · 5.4리바운드"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **뉴욕 닉스**(홈) 109.5점 · **마이애미 히트**(원정) 120.5점, 평균 리바운드는 홈 47.0개 · 원정 42.2개, 3점 성공률은 홈 36.5% · 원정 35.2%. 평균 득점 차 11.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 마이애미 히트 승률 30.3%, 뉴욕 닉스 69.7%.",
+              "시즌 평균 득점은 **뉴욕 닉스**(홈) 108.7점 · **마이애미 히트**(원정) 120.5점, 평균 리바운드는 홈 46.7개 · 원정 42.2개, 3점 성공률은 홈 37.0% · 원정 35.2%. 평균 득점 차 11.8점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 마이애미 히트 승률 30.4%, 뉴욕 닉스 69.6%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -55543,11 +50163,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 5명",
               "tone": "warn"
             },
             {
-              "text": "평균 108.1점 · 114.5점",
+              "text": "평균 109.4점 · 114.5점",
               "tone": "info"
             }
           ],
@@ -55606,17 +50226,17 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 108.1,
-                "rpg": 44.4,
-                "tp": 34.4,
+                "ppg": 109.4,
+                "rpg": 44.7,
+                "tp": 34.5,
                 "players": [
                   {
                     "name": "Tyler Herro",
                     "id": "4395725",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
                     "pos": "G",
-                    "stat": "19.4점 · 4.0리바운드 · 4.1어시스트",
-                    "sub": "야투 43.0% · 3점 35.8% · 팀 내 1옵션",
+                    "stat": "21.3점 · 4.4리바운드 · 4.3어시스트",
+                    "sub": "야투 45.0% · 3점 38.0% · 팀 내 1옵션",
                     "last": "직전 40분 50점 11리바운드 7어시스트, 야투 15-23",
                     "recent": "최근 5경기 20.0점 · 야투 42.9%"
                   },
@@ -55625,8 +50245,8 @@ window.CLUTCH_DATA = {
                     "id": "4432848",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png",
                     "pos": "F",
-                    "stat": "15.0점 · 5.1리바운드 · 3.0어시스트",
-                    "sub": "야투 45.9% · 3점 42.3% · 팀 내 2옵션",
+                    "stat": "14.6점 · 4.8리바운드 · 2.9어시스트",
+                    "sub": "야투 46.4% · 3점 42.5% · 팀 내 2옵션",
                     "last": "직전 25분 9점 0리바운드 1어시스트, 야투 4-7",
                     "recent": "최근 5경기 11.2점 · 야투 42.6%"
                   },
@@ -55635,14 +50255,14 @@ window.CLUTCH_DATA = {
                     "id": "3134907",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
                     "pos": "F",
-                    "stat": "12.3점 · 5.3리바운드 · 2.4어시스트",
-                    "sub": "야투 46.2% · 3점 32.9% · 팀 내 3옵션",
+                    "stat": "12.2점 · 5.2리바운드 · 2.3어시스트",
+                    "sub": "야투 44.1% · 3점 32.1% · 팀 내 3옵션",
                     "last": "직전 33분 12점 5리바운드 1어시스트, 야투 4-16",
                     "recent": "최근 4경기 16.5점 · 야투 40.4%"
                   }
                 ],
                 "focus": "최근 5경기 Tyler Herro의 평균은 20.0점·야투 42.9%·3점 36.1%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Tyler Herro가 50점·11리바운드·7어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명(팀 득점 14위)",
+                "injurySummary": "결장 1명(팀 득점 13위)",
                 "injuryOut": 1,
                 "injuryPpg": 3.9,
                 "injuries": [
@@ -55651,7 +50271,7 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 14옵션 · 3.9점 · 1.2리바운드"
+                    "line": "팀 내 13옵션 · 3.9점 · 1.2리바운드"
                   }
                 ]
               },
@@ -55734,31 +50354,17 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 17.4점 · 야투 43.4%"
                   }
                 ],
-                "focus": "최근 4경기 Cade Cunningham의 평균은 33.8점·야투 50.0%·3점 37.5%입니다. 결장 3명의 시즌 평균 득점 합계는 9.1점입니다. 직전 경기에서는 Cade Cunningham가 23점·5리바운드·9어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명(팀 득점 11·13·15위) · 출전 불투명 2명",
-                "injuryOut": 3,
-                "injuryPpg": 9.1,
+                "focus": "최근 4경기 Cade Cunningham의 평균은 33.8점·야투 50.0%·3점 37.5%입니다. 결장 4명의 시즌 평균 득점 합계는 34.6점입니다. 직전 경기에서는 Cade Cunningham가 23점·5리바운드·9어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명(팀 득점 2·4·13·15위)",
+                "injuryOut": 4,
+                "injuryPpg": 34.6,
                 "injuries": [
-                  {
-                    "player": "Ronald Holland II",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 11옵션 · 4.9점 · 3.8리바운드"
-                  },
                   {
                     "player": "Ebuka Okorie",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 13옵션 · 2.2점 · 0.4리바운드"
-                  },
-                  {
-                    "player": "Cade Cunningham",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 1옵션 · 25.6점 · 5.1리바운드"
                   },
                   {
                     "player": "Taurean Prince",
@@ -55768,20 +50374,28 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 15옵션 · 2.0점 · 0.7리바운드"
                   },
                   {
-                    "player": "Ugonna Onyenso",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "C"
+                    "player": "Duncan Robinson",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 2옵션 · 17.4점 · 1.8리바운드"
+                  },
+                  {
+                    "player": "Jalen Duren",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 4옵션 · 13.0점 · 7.5리바운드"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **디트로이트 피스턴스**(홈) 114.5점 · **밀워키 벅스**(원정) 108.1점, 평균 리바운드는 홈 43.1개 · 원정 44.4개, 3점 성공률은 홈 37.0% · 원정 34.4%. 평균 득점 차 6.4점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 밀워키 벅스 승률 11.2%, 디트로이트 피스턴스 88.8%.",
+              "시즌 평균 득점은 **디트로이트 피스턴스**(홈) 114.5점 · **밀워키 벅스**(원정) 109.4점, 평균 리바운드는 홈 43.1개 · 원정 44.7개, 3점 성공률은 홈 37.0% · 원정 34.5%. 평균 득점 차 5.1점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 밀워키 벅스 승률 11.6%, 디트로이트 피스턴스 88.4%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -55817,11 +50431,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
-              "text": "평균 114.5점 · 112.0점",
+              "text": "평균 115.5점 · 112.0점",
               "tone": "info"
             }
           ],
@@ -55880,17 +50494,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 114.5,
+                "ppg": 115.5,
                 "rpg": 42.8,
-                "tp": 35.5,
+                "tp": 35.3,
                 "players": [
                   {
                     "name": "Tyrese Maxey",
                     "id": "4431678",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
                     "pos": "G",
-                    "stat": "26.5점 · 3.3리바운드 · 5.8어시스트",
-                    "sub": "야투 50.0% · 3점 38.0% · 팀 내 1옵션",
+                    "stat": "25.9점 · 3.3리바운드 · 5.7어시스트",
+                    "sub": "야투 49.5% · 3점 36.9% · 팀 내 1옵션",
                     "last": "직전 36분 17점 4리바운드 4어시스트, 야투 4-11",
                     "recent": "최근 4경기 23.8점 · 야투 50.9%"
                   },
@@ -55908,37 +50522,37 @@ window.CLUTCH_DATA = {
                     "id": "3059318",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
                     "pos": "C",
-                    "stat": "20.0점 · 8.3리바운드 · 3.8어시스트",
-                    "sub": "야투 39.9% · 3점 14.6% · 팀 내 3옵션",
+                    "stat": "20.4점 · 8.9리바운드 · 4.1어시스트",
+                    "sub": "야투 40.0% · 3점 14.3% · 팀 내 3옵션",
                     "last": "직전 34분 26점 17리바운드 9어시스트, 야투 7-17",
                     "recent": "최근 4경기 27.2점 · 야투 45.9%"
                   }
                 ],
-                "focus": "최근 4경기 Tyrese Maxey의 평균은 23.8점·야투 50.9%·3점 40.0%입니다. 결장 4명의 시즌 평균 득점 합계는 29.5점입니다. 직전 경기에서는 Joel Embiid가 26점·17리바운드·9어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명",
-                "injuryOut": 4,
-                "injuryPpg": 29.5,
+                "focus": "최근 4경기 Tyrese Maxey의 평균은 23.8점·야투 50.9%·3점 40.0%입니다. 결장 2명의 시즌 평균 득점 합계는 2.1점입니다. 직전 경기에서는 Joel Embiid가 26점·17리바운드·9어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 2명",
+                "injuryOut": 2,
+                "injuryPpg": 2.1,
                 "injuries": [
                   {
                     "player": "Dean Wade",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
-                    "line": "팀 내 9옵션 · 4.8점 · 4.6리바운드"
+                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
+                  },
+                  {
+                    "player": "Jaylen Brown",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
                   },
                   {
                     "player": "Adem Bona",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "C",
-                    "line": "팀 내 11옵션 · 2.1점 · 3.9리바운드"
-                  },
-                  {
-                    "player": "Jaylen Brown",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
+                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
                   },
                   {
                     "player": "Ariel Hukporti",
@@ -56070,11 +50684,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **인디애나 페이서스**(홈) 112.0점 · **필라델피아 세븐티식서스**(원정) 114.5점, 평균 리바운드는 홈 41.8개 · 원정 42.8개, 3점 성공률은 홈 33.1% · 원정 35.5%. 평균 득점 차가 2.5점으로 작고, 3점 성공률 차 2.4%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 필라델피아 세븐티식서스 승률 68.3%, 인디애나 페이서스 31.7%.",
+              "시즌 평균 득점은 **인디애나 페이서스**(홈) 112.0점 · **필라델피아 세븐티식서스**(원정) 115.5점, 평균 리바운드는 홈 41.8개 · 원정 42.8개, 3점 성공률은 홈 33.1% · 원정 35.3%. 평균 득점 차 3.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 필라델피아 세븐티식서스 승률 66.8%, 인디애나 페이서스 33.2%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 2-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -56110,7 +50724,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 3명",
+              "text": "결장 4명",
               "tone": "warn"
             },
             {
@@ -56208,21 +50822,23 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.8점 · 야투 50.0%"
                   }
                 ],
-                "focus": "최근 5경기 Julius Randle의 평균은 23.2점·야투 50.0%·3점 33.3%입니다. 직전 경기에서는 Julius Randle가 27점·9리바운드·6어시스트를 기록했습니다. 이어서 Michael Porter Jr., Nolan Traore가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음 · 출전 불투명 2명",
+                "focus": "최근 5경기 Julius Randle의 평균은 23.2점·야투 50.0%·3점 33.3%입니다. 결장 1명의 시즌 평균 득점 합계는 12.9점입니다. 직전 경기에서는 Julius Randle가 27점·9리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 3위) · 출전 불투명 1명",
+                "injuryOut": 1,
+                "injuryPpg": 12.9,
                 "injuries": [
-                  {
-                    "player": "Nolan Traore",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 3옵션 · 12.9점 · 1.6리바운드"
-                  },
                   {
                     "player": "Grant Nelson",
                     "status": "DAY-TO-DAY",
                     "note": "당일 체크",
                     "pos": "F"
+                  },
+                  {
+                    "player": "Nolan Traore",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 3옵션 · 12.9점 · 1.6리바운드"
                   }
                 ]
               },
@@ -56340,10 +50956,10 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **토론토 랩터스**(홈) 111.6점 · **브루클린 네츠**(원정) 110.9점, 평균 리바운드는 홈 40.6개 · 원정 41.3개, 3점 성공률은 홈 33.6% · 원정 36.0%. 평균 득점 차가 0.7점으로 작고, 3점 성공률 차 2.4%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 브루클린 네츠 승률 26.9%, 토론토 랩터스 73.1%.",
+              "**ESPN 매치업 예측** — 브루클린 네츠 승률 26.3%, 토론토 랩터스 73.7%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -56369,7 +50985,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "보스턴 셀틱스",
             "abbr": "BOS",
-            "record": "11승 4패",
+            "record": "11승 5패",
             "badges": [
               {
                 "text": "홈 6승 1패",
@@ -56379,11 +50995,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 7명",
               "tone": "warn"
             },
             {
-              "text": "평균 117.3점 · 113.9점",
+              "text": "평균 117.3점 · 112.8점",
               "tone": "info"
             }
           ],
@@ -56391,7 +51007,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**보스턴 셀틱스**(홈) 11승 4패(홈 6승 1패, 최근 5경기 3승 2패, 2연패), **애틀랜타 호크스**(원정) 10승 6패(원정 6승 3패, 최근 5경기 3승 2패, 3연승). 직전 경기(11.21) **애틀랜타 호크스**는 샬럿 호네츠에 111-97로 이겼고, Jalen Johnson 26점·6리바운드·6어시스트, Aaron Wiggins 19점·2리바운드·3어시스트를 기록했습니다. 직전 경기(11.19) **보스턴 셀틱스**는 덴버 너기츠에 101-105로 졌고, Jayson Tatum 24점·8리바운드·3어시스트, Neemias Queta 17점·10리바운드·3어시스트를 기록했습니다."
+              "text": "**보스턴 셀틱스**(홈) 11승 5패(홈 6승 1패, 최근 5경기 2승 3패, 3연패), **애틀랜타 호크스**(원정) 10승 6패(원정 6승 3패, 최근 5경기 3승 2패, 3연승). 직전 경기(11.21) **애틀랜타 호크스**는 샬럿 호네츠에 111-97로 이겼고, Jalen Johnson 26점·6리바운드·6어시스트, Aaron Wiggins 19점·2리바운드·3어시스트를 기록했습니다. 직전 경기(11.22) **보스턴 셀틱스**는 새크라멘토 킹스에 96-97로 졌고, Paul George 19점·8리바운드·5어시스트, Mike Conley 19점·4리바운드·2어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -56477,18 +51093,11 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 18.6점 · 야투 53.7%"
                   }
                 ],
-                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 18.4점·야투 38.2%·3점 25.0%입니다. 결장 5명의 시즌 평균 득점 합계는 32.7점입니다. 직전 경기에서는 Jalen Johnson가 26점·6리바운드·6어시스트를 기록했습니다.",
+                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 18.4점·야투 38.2%·3점 25.0%입니다. 결장 5명의 시즌 평균 득점 합계는 24.9점입니다. 직전 경기에서는 Jalen Johnson가 26점·6리바운드·6어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
-                "injuryPpg": 32.7,
+                "injuryPpg": 24.9,
                 "injuries": [
-                  {
-                    "player": "Kingston Flemings",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 9옵션 · 7.8점 · 2.5리바운드"
-                  },
                   {
                     "player": "Jock Landale",
                     "status": "OUT",
@@ -56515,6 +51124,12 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F"
+                  },
+                  {
+                    "player": "Henri Veesaar",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C"
                   }
                 ]
               },
@@ -56522,12 +51137,19 @@ window.CLUTCH_DATA = {
                 "abbr": "BOS",
                 "name": "보스턴 셀틱스",
                 "side": "home",
-                "record": "11승 4패",
+                "record": "11승 5패",
                 "venueRecord": "홈 6승 1패",
-                "streak": "2연패",
-                "last5": "3승 2패",
-                "lastGame": "101-105 패",
+                "streak": "3연패",
+                "last5": "2승 3패",
+                "lastGame": "96-97 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "새크라멘토 킹스",
+                    "ha": "원정",
+                    "score": "96-97",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-19",
                     "opp": "덴버 너기츠",
@@ -56555,18 +51177,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "98-93",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "필라델피아 세븐티식서스",
-                    "ha": "원정",
-                    "score": "123-101",
-                    "res": "승"
                   }
                 ],
-                "ppg": 113.9,
-                "rpg": 45.0,
-                "tp": 37.3,
+                "ppg": 112.8,
+                "rpg": 45.4,
+                "tp": 36.1,
                 "players": [
                   {
                     "name": "Jayson Tatum",
@@ -56575,65 +51190,57 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
                     "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
-                    "last": "직전 37분 24점 8리바운드 3어시스트, 야투 10-22",
-                    "recent": "최근 5경기 25.0점 · 야투 43.6%"
+                    "recent": "최근 4경기 26.0점 · 야투 42.9%"
                   },
                   {
                     "name": "Paul George",
                     "id": "4251",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png",
                     "pos": "F",
-                    "stat": "19.9점 · 5.5리바운드 · 3.7어시스트",
-                    "sub": "야투 46.5% · 3점 42.3% · 팀 내 2옵션",
-                    "last": "직전 23분 10점 4리바운드 1어시스트, 야투 3-12",
-                    "recent": "최근 4경기 18.8점 · 야투 46.6%"
+                    "stat": "19.9점 · 5.6리바운드 · 3.8어시스트",
+                    "sub": "야투 44.8% · 3점 40.7% · 팀 내 2옵션",
+                    "last": "직전 37분 19점 8리바운드 5어시스트, 야투 6-21",
+                    "recent": "최근 4경기 14.5점 · 야투 33.3%"
                   },
                   {
                     "name": "Payton Pritchard",
                     "id": "4066354",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
-                    "stat": "13.7점 · 3.1리바운드 · 3.8어시스트",
-                    "sub": "야투 42.4% · 3점 37.1% · 팀 내 3옵션",
-                    "last": "직전 30분 15점 1리바운드 2어시스트, 야투 6-11",
-                    "recent": "최근 5경기 15.6점 · 야투 45.3%"
+                    "stat": "13.4점 · 3.2리바운드 · 4.1어시스트",
+                    "sub": "야투 40.7% · 3점 34.3% · 팀 내 3옵션",
+                    "last": "직전 34분 9점 6리바운드 8어시스트, 야투 4-17",
+                    "recent": "최근 5경기 13.8점 · 야투 39.4%"
                   }
                 ],
-                "focus": "최근 5경기 Jayson Tatum의 평균은 25.0점·야투 43.6%·3점 36.4%입니다. 결장 3명의 시즌 평균 득점 합계는 44.2점입니다. 직전 경기에서는 Jayson Tatum가 24점·8리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명(팀 득점 1·4·9위)",
-                "injuryOut": 3,
-                "injuryPpg": 44.2,
+                "focus": "최근 4경기 Jayson Tatum의 평균은 26.0점·야투 42.9%·3점 35.1%입니다. 결장 2명의 시즌 평균 득점 합계는 25.0점입니다. 직전 경기에서는 Paul George가 19점·8리바운드·5어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 2·10위)",
+                "injuryOut": 2,
+                "injuryPpg": 25.0,
                 "injuries": [
                   {
                     "player": "Mitchell Robinson",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "C",
-                    "line": "팀 내 9옵션 · 5.1점 · 5.4리바운드"
+                    "line": "팀 내 10옵션 · 5.1점 · 5.4리바운드"
                   },
                   {
-                    "player": "Derrick White",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 4옵션 · 12.7점 · 3.0리바운드"
-                  },
-                  {
-                    "player": "Jayson Tatum",
+                    "player": "Paul George",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 1옵션 · 26.4점 · 6.6리바운드"
+                    "line": "팀 내 2옵션 · 19.9점 · 5.6리바운드"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **보스턴 셀틱스**(홈) 113.9점 · **애틀랜타 호크스**(원정) 117.3점, 평균 리바운드는 홈 45.0개 · 원정 44.7개, 3점 성공률은 홈 37.3% · 원정 34.5%. 평균 득점 차 3.4점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 애틀랜타 호크스 승률 30.0%, 보스턴 셀틱스 70.0%.",
+              "시즌 평균 득점은 **보스턴 셀틱스**(홈) 112.8점 · **애틀랜타 호크스**(원정) 117.3점, 평균 리바운드는 홈 45.4개 · 원정 44.7개, 3점 성공률은 홈 36.1% · 원정 34.5%. 평균 득점 차 4.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 애틀랜타 호크스 승률 28.8%, 보스턴 셀틱스 71.2%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -56669,11 +51276,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 5명",
               "tone": "warn"
             },
             {
-              "text": "평균 122.1점 · 115.6점",
+              "text": "평균 120.5점 · 114.9점",
               "tone": "info"
             }
           ],
@@ -56731,17 +51338,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 122.1,
-                "rpg": 46.2,
-                "tp": 39.8,
+                "ppg": 120.5,
+                "rpg": 45.6,
+                "tp": 39.1,
                 "players": [
                   {
                     "name": "Ty Jerome",
                     "id": "4065733",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
                     "pos": "G",
-                    "stat": "25.4점 · 3.4리바운드 · 5.3어시스트",
-                    "sub": "야투 48.5% · 3점 35.9% · 팀 내 1옵션",
+                    "stat": "24.8점 · 3.4리바운드 · 5.3어시스트",
+                    "sub": "야투 47.9% · 3점 35.6% · 팀 내 1옵션",
                     "last": "직전 27분 18점 4리바운드 6어시스트, 야투 7-17",
                     "recent": "최근 1경기 18.0점 · 야투 41.2%"
                   },
@@ -56759,37 +51366,37 @@ window.CLUTCH_DATA = {
                     "id": "4903027",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png",
                     "pos": "F",
-                    "stat": "14.8점 · 8.1리바운드 · 3.5어시스트",
-                    "sub": "야투 47.9% · 3점 46.3% · 팀 내 3옵션",
+                    "stat": "15.3점 · 8.0리바운드 · 3.4어시스트",
+                    "sub": "야투 48.1% · 3점 47.2% · 팀 내 3옵션",
                     "last": "직전 30분 23점 7리바운드 2어시스트, 야투 8-16",
                     "recent": "최근 5경기 20.6점 · 야투 54.7%"
                   }
                 ],
-                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 5명의 시즌 평균 득점 합계는 49.9점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명(팀 득점 2·7·8·11·12위)",
-                "injuryOut": 5,
-                "injuryPpg": 49.9,
+                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 2명의 시즌 평균 득점 합계는 13.1점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 11·12위) · 출전 불투명 3명",
+                "injuryOut": 2,
+                "injuryPpg": 13.1,
                 "injuries": [
                   {
-                    "player": "Jerami Grant",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F",
-                    "line": "팀 내 7옵션 · 10.6점 · 1.7리바운드"
-                  },
-                  {
                     "player": "Javon Small",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "G",
                     "line": "팀 내 8옵션 · 9.6점 · 3.1리바운드"
                   },
                   {
                     "player": "Cameron Boozer",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 2옵션 · 16.6점 · 9.2리바운드"
+                  },
+                  {
+                    "player": "Jerami Grant",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 6옵션 · 10.6점 · 1.7리바운드"
                   },
                   {
                     "player": "GG Jackson",
@@ -56852,9 +51459,9 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 115.6,
-                "rpg": 48.0,
-                "tp": 37.4,
+                "ppg": 114.9,
+                "rpg": 47.5,
+                "tp": 37.2,
                 "players": [
                   {
                     "name": "Anthony Edwards",
@@ -56869,23 +51476,23 @@ window.CLUTCH_DATA = {
                     "id": "4397002",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png",
                     "pos": "G",
-                    "stat": "17.8점 · 4.6리바운드 · 3.5어시스트",
-                    "sub": "야투 50.9% · 3점 45.9% · 팀 내 2옵션",
+                    "stat": "17.9점 · 4.4리바운드 · 3.4어시스트",
+                    "sub": "야투 51.7% · 3점 43.8% · 팀 내 2옵션",
                     "last": "직전 34분 19점 2리바운드 2어시스트, 야투 9-14",
                     "recent": "최근 5경기 17.4점 · 야투 50.7%"
                   },
                   {
-                    "name": "LaMelo Ball",
-                    "id": "4432816",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432816.png",
-                    "pos": "G",
-                    "stat": "17.6점 · 4.3리바운드 · 5.7어시스트",
-                    "sub": "야투 40.7% · 3점 36.2% · 팀 내 3옵션",
-                    "last": "직전 32분 12점 5리바운드 7어시스트, 야투 5-10",
-                    "recent": "최근 5경기 14.0점 · 야투 31.4%"
+                    "name": "Jaden McDaniels",
+                    "id": "4431671",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431671.png",
+                    "pos": "F",
+                    "stat": "17.5점 · 5.9리바운드 · 3.6어시스트",
+                    "sub": "야투 54.2% · 3점 34.7% · 팀 내 3옵션",
+                    "last": "직전 36분 25점 5리바운드 4어시스트, 야투 11-17",
+                    "recent": "최근 5경기 19.0점 · 야투 60.0%"
                   }
                 ],
-                "focus": "결장 3명의 시즌 평균 득점 합계는 37.7점입니다. 직전 경기에서는 Jaden McDaniels가 25점·5리바운드·4어시스트를 기록했습니다. 이어서 Ayo Dosunmu, LaMelo Ball가 뒤를 받칩니다.",
+                "focus": "결장 3명의 시즌 평균 득점 합계는 37.7점입니다. 직전 경기에서는 Jaden McDaniels가 25점·5리바운드·4어시스트를 기록했습니다. 이어서 Ayo Dosunmu, Jaden McDaniels가 뒤를 받칩니다.",
                 "injurySummary": "결장 3명",
                 "injuryOut": 3,
                 "injuryPpg": 37.7,
@@ -56914,11 +51521,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **미네소타 팀버울브스**(홈) 115.6점 · **멤피스 그리즐리스**(원정) 122.1점, 평균 리바운드는 홈 48.0개 · 원정 46.2개, 3점 성공률은 홈 37.4% · 원정 39.8%. 평균 득점 차 6.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 멤피스 그리즐리스 승률 32.1%, 미네소타 팀버울브스 67.9%.",
+              "시즌 평균 득점은 **미네소타 팀버울브스**(홈) 114.9점 · **멤피스 그리즐리스**(원정) 120.5점, 평균 리바운드는 홈 47.5개 · 원정 45.6개, 3점 성공률은 홈 37.2% · 원정 39.1%. 평균 득점 차 5.6점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 멤피스 그리즐리스 승률 31.4%, 미네소타 팀버울브스 68.6%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -56954,11 +51561,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 6명",
+              "text": "결장 4명",
               "tone": "warn"
             },
             {
-              "text": "평균 112.3점 · 113.9점",
+              "text": "평균 112.2점 · 113.9점",
               "tone": "info"
             }
           ],
@@ -57017,17 +51624,17 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 112.3,
-                "rpg": 43.2,
-                "tp": 34.1,
+                "ppg": 112.2,
+                "rpg": 43.8,
+                "tp": 34.4,
                 "players": [
                   {
                     "name": "Cooper Flagg",
                     "id": "5041939",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                     "pos": "F",
-                    "stat": "24.2점 · 6.6리바운드 · 6.4어시스트",
-                    "sub": "야투 48.5% · 3점 29.9% · 팀 내 1옵션",
+                    "stat": "24.1점 · 6.5리바운드 · 6.5어시스트",
+                    "sub": "야투 47.9% · 3점 31.5% · 팀 내 1옵션",
                     "last": "직전 36분 22점 6리바운드 8어시스트, 야투 6-16",
                     "recent": "최근 5경기 20.4점 · 야투 42.9%"
                   },
@@ -57036,8 +51643,8 @@ window.CLUTCH_DATA = {
                     "id": "6442",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                     "pos": "G",
-                    "stat": "22.2점 · 3.7리바운드 · 4.4어시스트",
-                    "sub": "야투 47.3% · 3점 38.5% · 팀 내 2옵션",
+                    "stat": "22.5점 · 3.8리바운드 · 4.4어시스트",
+                    "sub": "야투 45.9% · 3점 37.4% · 팀 내 2옵션",
                     "last": "직전 35분 25점 6리바운드 4어시스트, 야투 8-24",
                     "recent": "최근 4경기 21.5점 · 야투 40.0%"
                   },
@@ -57051,17 +51658,24 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.2점 · 야투 45.9%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 20.4점·야투 42.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 20.6점입니다. 직전 경기에서는 Kyrie Irving가 25점·6리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명",
-                "injuryOut": 5,
-                "injuryPpg": 20.6,
+                "focus": "최근 5경기 Cooper Flagg의 평균은 20.4점·야투 42.9%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 6.6점입니다. 직전 경기에서는 Kyrie Irving가 25점·6리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
+                "injuryOut": 3,
+                "injuryPpg": 6.6,
                 "injuries": [
                   {
                     "player": "P.J. Washington",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 3옵션 · 14.0점 · 6.7리바운드"
+                  },
+                  {
+                    "player": "Walter Clayton Jr.",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 7옵션 · 7.7점 · 3.1리바운드"
                   },
                   {
                     "player": "Tobi Lawal",
@@ -57081,13 +51695,7 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 11옵션 · 5.2점 · 2.0리바운드"
-                  },
-                  {
-                    "player": "Tarik Biberovic",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
+                    "line": "팀 내 12옵션 · 5.2점 · 2.0리바운드"
                   }
                 ]
               },
@@ -57193,11 +51801,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **피닉스 선즈**(홈) 113.9점 · **댈러스 매버릭스**(원정) 112.3점, 평균 리바운드는 홈 40.8개 · 원정 43.2개, 3점 성공률은 홈 36.6% · 원정 34.1%. 평균 득점 차가 1.6점으로 작고, 3점 성공률 차 2.5%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 42.2%, 피닉스 선즈 57.8%.",
+              "시즌 평균 득점은 **피닉스 선즈**(홈) 113.9점 · **댈러스 매버릭스**(원정) 112.2점, 평균 리바운드는 홈 40.8개 · 원정 43.8개, 3점 성공률은 홈 36.6% · 원정 34.4%. 평균 득점 차가 1.7점으로 작고, 3점 성공률 차 2.2%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 42.4%, 피닉스 선즈 57.6%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -57237,7 +51845,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 120.0점 · 117.5점",
+              "text": "평균 120.0점 · 117.3점",
               "tone": "info"
             }
           ],
@@ -57389,17 +51997,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 117.5,
-                "rpg": 47.4,
-                "tp": 33.6,
+                "ppg": 117.3,
+                "rpg": 47.8,
+                "tp": 33.7,
                 "players": [
                   {
                     "name": "Victor Wembanyama",
                     "id": "5104157",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
                     "pos": "F",
-                    "stat": "28.6점 · 11.9리바운드 · 3.3어시스트",
-                    "sub": "야투 52.8% · 3점 30.0% · 팀 내 1옵션",
+                    "stat": "29.9점 · 12.3리바운드 · 3.2어시스트",
+                    "sub": "야투 54.1% · 3점 31.5% · 팀 내 1옵션",
                     "last": "직전 32분 50점 19리바운드 1어시스트, 야투 20-29",
                     "recent": "최근 5경기 29.0점 · 야투 53.6%"
                   },
@@ -57417,8 +52025,8 @@ window.CLUTCH_DATA = {
                     "id": "4845367",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png",
                     "pos": "G",
-                    "stat": "15.7점 · 5.2리바운드 · 5.9어시스트",
-                    "sub": "야투 42.9% · 3점 34.8% · 팀 내 3옵션",
+                    "stat": "15.9점 · 5.1리바운드 · 5.9어시스트",
+                    "sub": "야투 43.7% · 3점 37.4% · 팀 내 3옵션",
                     "last": "직전 29분 19점 3리바운드 6어시스트, 야투 7-12",
                     "recent": "최근 5경기 20.4점 · 야투 54.7%"
                   }
@@ -57451,11 +52059,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **샌안토니오 스퍼스**(홈) 117.5점 · **LA 레이커스**(원정) 120.0점, 평균 리바운드는 홈 47.4개 · 원정 41.1개, 3점 성공률은 홈 33.6% · 원정 37.1%. 평균 득점 차가 2.5점으로 작고, 3점 성공률 차 3.5%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — LA 레이커스 승률 31.3%, 샌안토니오 스퍼스 68.7%.",
+              "시즌 평균 득점은 **샌안토니오 스퍼스**(홈) 117.3점 · **LA 레이커스**(원정) 120.0점, 평균 리바운드는 홈 47.8개 · 원정 41.1개, 3점 성공률은 홈 33.7% · 원정 37.1%. 평균 득점 차가 2.7점으로 작고, 3점 성공률 차 3.4%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — LA 레이커스 승률 31.2%, 샌안토니오 스퍼스 68.8%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -57709,10 +52317,10 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **유타 재즈**(홈) 108.3점 · **덴버 너기츠**(원정) 114.6점, 평균 리바운드는 홈 44.8개 · 원정 41.6개, 3점 성공률은 홈 34.7% · 원정 34.3%. 평균 득점 차 6.3점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 덴버 너기츠 승률 71.1%, 유타 재즈 28.9%.",
+              "**ESPN 매치업 예측** — 덴버 너기츠 승률 71.5%, 유타 재즈 28.5%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -57748,11 +52356,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
-              "text": "평균 115.6점 · 111.9점",
+              "text": "평균 114.3점 · 111.1점",
               "tone": "info"
             }
           ],
@@ -57811,9 +52419,9 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 115.6,
-                "rpg": 41.9,
-                "tp": 34.4,
+                "ppg": 114.3,
+                "rpg": 42.5,
+                "tp": 33.6,
                 "players": [
                   {
                     "name": "Zion Williamson",
@@ -57825,42 +52433,49 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 21.5점 · 야투 53.2%"
                   },
                   {
-                    "name": "Saddiq Bey",
-                    "id": "4397136",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
-                    "pos": "F",
-                    "stat": "16.8점 · 4.5리바운드 · 2.6어시스트",
-                    "sub": "야투 44.7% · 3점 39.8% · 팀 내 2옵션",
-                    "last": "직전 32분 2점 5리바운드 2어시스트, 야투 1-12",
-                    "recent": "최근 5경기 14.4점 · 야투 33.3%"
-                  },
-                  {
                     "name": "Jeremiah Fears",
                     "id": "5144091",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5144091.png",
                     "pos": "G",
-                    "stat": "15.9점 · 4.9리바운드 · 5.4어시스트",
-                    "sub": "야투 44.7% · 3점 29.6% · 팀 내 3옵션",
+                    "stat": "16.7점 · 4.9리바운드 · 5.3어시스트",
+                    "sub": "야투 45.2% · 3점 29.9% · 팀 내 2옵션",
                     "last": "직전 34분 29점 5리바운드 4어시스트, 야투 9-17",
                     "recent": "최근 5경기 19.8점 · 야투 46.8%"
+                  },
+                  {
+                    "name": "Saddiq Bey",
+                    "id": "4397136",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png",
+                    "pos": "F",
+                    "stat": "15.9점 · 4.5리바운드 · 2.6어시스트",
+                    "sub": "야투 42.7% · 3점 37.3% · 팀 내 3옵션",
+                    "last": "직전 32분 2점 5리바운드 2어시스트, 야투 1-12",
+                    "recent": "최근 5경기 14.4점 · 야투 33.3%"
                   }
                 ],
-                "focus": "최근 4경기 Zion Williamson의 평균은 21.5점·야투 53.2%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 53.8점입니다. 직전 경기에서는 Jeremiah Fears가 29점·5리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 5명(팀 득점 1·4·8·13·15위)",
-                "injuryOut": 5,
-                "injuryPpg": 53.8,
+                "focus": "최근 4경기 Zion Williamson의 평균은 21.5점·야투 53.2%·3점 50.0%입니다. 결장 3명의 시즌 평균 득점 합계는 16.4점입니다. 직전 경기에서는 Jeremiah Fears가 29점·5리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 8·13·15위) · 출전 불투명 2명",
+                "injuryOut": 3,
+                "injuryPpg": 16.4,
                 "injuries": [
                   {
-                    "player": "Zion Williamson",
+                    "player": "Bryce McGowens",
                     "status": "OUT",
                     "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 15옵션 · 3.7점 · 0.7리바운드"
+                  },
+                  {
+                    "player": "Zion Williamson",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 1옵션 · 21.7점 · 5.4리바운드"
                   },
                   {
                     "player": "Trey Murphy III",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 4옵션 · 15.7점 · 4.7리바운드"
                   },
@@ -57870,13 +52485,6 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 8옵션 · 7.2점 · 3.5리바운드"
-                  },
-                  {
-                    "player": "Bryce McGowens",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "G",
-                    "line": "팀 내 15옵션 · 3.7점 · 0.7리바운드"
                   },
                   {
                     "player": "Bennedict Mathurin",
@@ -57933,17 +52541,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 111.9,
-                "rpg": 39.1,
-                "tp": 39.2,
+                "ppg": 111.1,
+                "rpg": 40.0,
+                "tp": 38.7,
                 "players": [
                   {
                     "name": "Darius Garland",
                     "id": "4396907",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
                     "pos": "G",
-                    "stat": "21.3점 · 2.2리바운드 · 6.8어시스트",
-                    "sub": "야투 46.6% · 3점 35.7% · 팀 내 1옵션",
+                    "stat": "20.9점 · 2.1리바운드 · 6.5어시스트",
+                    "sub": "야투 46.7% · 3점 35.6% · 팀 내 1옵션",
                     "last": "직전 32분 16점 1리바운드 2어시스트, 야투 5-10",
                     "recent": "최근 5경기 22.0점 · 야투 46.8%"
                   },
@@ -57952,8 +52560,8 @@ window.CLUTCH_DATA = {
                     "id": "3448",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png",
                     "pos": "C",
-                    "stat": "15.4점 · 5.2리바운드 · 2.0어시스트",
-                    "sub": "야투 55.3% · 3점 44.8% · 팀 내 2옵션",
+                    "stat": "15.7점 · 5.3리바운드 · 1.9어시스트",
+                    "sub": "야투 55.2% · 3점 42.2% · 팀 내 2옵션",
                     "last": "직전 25분 21점 6리바운드 0어시스트, 야투 8-15",
                     "recent": "최근 5경기 20.0점 · 야투 52.8%"
                   },
@@ -57962,8 +52570,8 @@ window.CLUTCH_DATA = {
                     "id": "4066648",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066648.png",
                     "pos": "F",
-                    "stat": "13.6점 · 6.0리바운드 · 1.6어시스트",
-                    "sub": "야투 40.6% · 3점 37.9% · 팀 내 3옵션",
+                    "stat": "14.0점 · 6.2리바운드 · 1.5어시스트",
+                    "sub": "야투 41.9% · 3점 40.8% · 팀 내 3옵션",
                     "last": "직전 29분 19점 8리바운드 1어시스트, 야투 7-12",
                     "recent": "최근 5경기 13.4점 · 야투 49.0%"
                   }
@@ -57994,11 +52602,11 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **LA 클리퍼스**(홈) 111.9점 · **뉴올리언스 펠리컨스**(원정) 115.6점, 평균 리바운드는 홈 39.1개 · 원정 41.9개, 3점 성공률은 홈 39.2% · 원정 34.4%. 평균 득점 차 3.7점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 뉴올리언스 펠리컨스 승률 41.9%, LA 클리퍼스 58.1%.",
+              "시즌 평균 득점은 **LA 클리퍼스**(홈) 111.1점 · **뉴올리언스 펠리컨스**(원정) 114.3점, 평균 리바운드는 홈 40.0개 · 원정 42.5개, 3점 성공률은 홈 38.7% · 원정 33.6%. 평균 득점 차 3.2점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 뉴올리언스 펠리컨스 승률 42.4%, LA 클리퍼스 57.6%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -58034,11 +52642,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 9명",
               "tone": "warn"
             },
             {
-              "text": "평균 112.7점 · 117.5점",
+              "text": "평균 112.7점 · 116.1점",
               "tone": "info"
             }
           ],
@@ -58131,18 +52739,11 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 14.0점 · 야투 37.9%"
                   }
                 ],
-                "focus": "최근 1경기 Stephen Curry의 평균은 3.0점·야투 33.3%·3점 50.0%입니다. 결장 4명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Charles Bassey가 16점·13리바운드·1어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
-                "injuryOut": 4,
+                "focus": "최근 1경기 Stephen Curry의 평균은 3.0점·야투 33.3%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Charles Bassey가 16점·13리바운드·1어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명",
+                "injuryOut": 5,
                 "injuryPpg": 38.2,
                 "injuries": [
-                  {
-                    "player": "Draymond Green",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 14옵션 · 3.2점 · 4.7리바운드"
-                  },
                   {
                     "player": "Brandon Williams",
                     "status": "OUT",
@@ -58168,6 +52769,12 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G"
+                  },
+                  {
+                    "player": "Jimmy Butler III",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F"
                   }
                 ]
               },
@@ -58216,17 +52823,17 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 117.5,
-                "rpg": 44.7,
-                "tp": 36.3,
+                "ppg": 116.1,
+                "rpg": 44.9,
+                "tp": 35.8,
                 "players": [
                   {
                     "name": "Deni Avdija",
                     "id": "4683021",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
                     "pos": "F",
-                    "stat": "24.2점 · 6.2리바운드 · 6.1어시스트",
-                    "sub": "야투 50.7% · 3점 38.6% · 팀 내 1옵션",
+                    "stat": "23.9점 · 6.4리바운드 · 6.0어시스트",
+                    "sub": "야투 50.9% · 3점 39.7% · 팀 내 1옵션",
                     "last": "직전 36분 20점 9리바운드 5어시스트, 야투 7-13",
                     "recent": "최근 3경기 27.0점 · 야투 64.4%"
                   },
@@ -58235,8 +52842,8 @@ window.CLUTCH_DATA = {
                     "id": "6606",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
                     "pos": "G",
-                    "stat": "20.9점 · 3.2리바운드 · 4.1어시스트",
-                    "sub": "야투 40.9% · 3점 35.8% · 팀 내 2옵션",
+                    "stat": "20.6점 · 3.2리바운드 · 4.0어시스트",
+                    "sub": "야투 40.3% · 3점 34.2% · 팀 내 2옵션",
                     "last": "직전 33분 15점 3리바운드 3어시스트, 야투 5-16",
                     "recent": "최근 5경기 22.2점 · 야투 36.0%"
                   },
@@ -58285,14 +52892,9268 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **포틀랜드 트레일블레이저스**(홈) 117.5점 · **골든스테이트 워리어스**(원정) 112.7점, 평균 리바운드는 홈 44.7개 · 원정 44.1개, 3점 성공률은 홈 36.3% · 원정 36.4%. 평균 득점 차 4.8점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 골든스테이트 워리어스 승률 19.4%, 포틀랜드 트레일블레이저스 80.6%.",
+              "시즌 평균 득점은 **포틀랜드 트레일블레이저스**(홈) 116.1점 · **골든스테이트 워리어스**(원정) 112.7점, 평균 리바운드는 홈 44.9개 · 원정 44.1개, 3점 성공률은 홈 35.8% · 원정 36.4%. 평균 득점 차 3.4점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 골든스테이트 워리어스 승률 19.6%, 포틀랜드 트레일블레이저스 80.4%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-22 14:11 기준이며 경기 전까지 변동될 수 있습니다."
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-28 END */
+      ]
+    },
+
+    /* ── 2026-11-29 (일) ─────────────────────────────────── */
+    {
+      date: "2026-11-29",
+      games: [
+        /* VOLLEY-AUTO 2026-11-29 START */
+        {
+          "id": "vball-kovo-51",
+          "sport": "volleyball",
+          "league": "VLEAGUE",
+          "leagueFull": "V리그 남자부",
+          "source": "kovo",
+          "start": "2026-11-29T14:00:00+09:00",
+          "venue": "대전충무체육관",
+          "away": {
+            "name": "현대캐피탈",
+            "abbr": "HYC",
+            "record": "4승 2패",
+            "badges": [
+              {
+                "text": "리그 3위",
+                "tone": "rank"
+              }
+            ],
+            "last5Detail": [
+              {
+                "date": "2026-11-25",
+                "opp": "한국전력",
+                "ha": "원정",
+                "score": "0-0",
+                "res": "무"
+              },
+              {
+                "date": "2026-11-20",
+                "opp": "한국전력",
+                "ha": "홈",
+                "score": "1-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-15",
+                "opp": "우리카드",
+                "ha": "원정",
+                "score": "3-0",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-12",
+                "opp": "OK저축은행",
+                "ha": "원정",
+                "score": "3-1",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-08",
+                "opp": "KB손해보험",
+                "ha": "홈",
+                "score": "3-1",
+                "res": "승"
+              }
+            ],
+            "last5": "3승 1패",
+            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+          },
+          "home": {
+            "name": "삼성화재",
+            "abbr": "SAM",
+            "record": "4승 2패",
+            "badges": [
+              {
+                "text": "리그 2위",
+                "tone": "rank"
+              }
+            ],
+            "last5Detail": [
+              {
+                "date": "2026-11-26",
+                "opp": "우리카드",
+                "ha": "원정",
+                "score": "0-0",
+                "res": "무"
+              },
+              {
+                "date": "2026-11-21",
+                "opp": "OK저축은행",
+                "ha": "홈",
+                "score": "3-1",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-18",
+                "opp": "우리카드",
+                "ha": "홈",
+                "score": "3-0",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-14",
+                "opp": "대한항공",
+                "ha": "원정",
+                "score": "3-1",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-10",
+                "opp": "한국전력",
+                "ha": "홈",
+                "score": "1-3",
+                "res": "패"
+              }
+            ],
+            "last5": "3승 1패",
+            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+          },
+          "tags": [
+            {
+              "text": "V리그 남자부 · 2라운드",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**삼성화재**(홈) 4승 2패(리그 2위, 최근 흐름 3승), **현대캐피탈**(원정) 4승 2패(리그 3위, 최근 흐름 1패). V리그 남자부 2라운드 대전충무체육관에서 열립니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "리그 순위는 삼성화재(홈) 2위·현대캐피탈(원정) 3위로 바로 옆, 승점 차가 0점, 세트 승리 수 차가 1입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "name": "현대캐피탈",
+                "abbr": "HYC",
+                "side": "away",
+                "record": "4승 2패",
+                "badges": [
+                  {
+                    "text": "리그 3위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "3위"
+                  },
+                  {
+                    "label": "세트",
+                    "value": "13-9"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "1패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "승점",
+                    "value": 12.0
+                  },
+                  {
+                    "label": "득점",
+                    "value": 531
+                  },
+                  {
+                    "label": "실점",
+                    "value": 502
+                  }
+                ],
+                "last5Detail": [
+                  {
+                    "date": "2026-11-25",
+                    "opp": "한국전력",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무"
+                  },
+                  {
+                    "date": "2026-11-20",
+                    "opp": "한국전력",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-15",
+                    "opp": "우리카드",
+                    "ha": "원정",
+                    "score": "3-0",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-12",
+                    "opp": "OK저축은행",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "KB손해보험",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승"
+                  }
+                ],
+                "last5": "3승 1패",
+                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+              },
+              {
+                "name": "삼성화재",
+                "abbr": "SAM",
+                "side": "home",
+                "record": "4승 2패",
+                "badges": [
+                  {
+                    "text": "리그 2위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "2위"
+                  },
+                  {
+                    "label": "세트",
+                    "value": "14-9"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "3승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "승점",
+                    "value": 12.0
+                  },
+                  {
+                    "label": "득점",
+                    "value": 582
+                  },
+                  {
+                    "label": "실점",
+                    "value": 536
+                  }
+                ],
+                "last5Detail": [
+                  {
+                    "date": "2026-11-26",
+                    "opp": "우리카드",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무"
+                  },
+                  {
+                    "date": "2026-11-21",
+                    "opp": "OK저축은행",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-18",
+                    "opp": "우리카드",
+                    "ha": "홈",
+                    "score": "3-0",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-14",
+                    "opp": "대한항공",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-10",
+                    "opp": "한국전력",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패"
+                  }
+                ],
+                "last5": "3승 1패",
+                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+              }
+            ],
+            "checkpoints": [
+              "**경기장** — 대전충무체육관에서 열립니다.",
+              "**순위표** — 삼성화재(홈) 4승 2패·2위·승점 12, 현대캐피탈(원정) 4승 2패·3위·승점 12."
+            ],
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+          }
+        },
+        {
+          "id": "vball-kovo-52",
+          "sport": "volleyball",
+          "league": "VLEAGUE",
+          "leagueFull": "V리그 여자부",
+          "source": "kovo",
+          "start": "2026-11-29T16:00:00+09:00",
+          "venue": "숲 스타디움",
+          "away": {
+            "name": "도로공사",
+            "abbr": "DOW",
+            "record": "5승 1패",
+            "badges": [
+              {
+                "text": "리그 1위",
+                "tone": "rank"
+              }
+            ],
+            "last5Detail": [
+              {
+                "date": "2026-11-25",
+                "opp": "IBK기업은행",
+                "ha": "원정",
+                "score": "0-0",
+                "res": "무"
+              },
+              {
+                "date": "2026-11-20",
+                "opp": "IBK기업은행",
+                "ha": "홈",
+                "score": "3-1",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-15",
+                "opp": "현대건설",
+                "ha": "원정",
+                "score": "3-0",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-12",
+                "opp": "정관장",
+                "ha": "원정",
+                "score": "3-0",
+                "res": "승"
+              },
+              {
+                "date": "2026-11-08",
+                "opp": "흥국생명",
+                "ha": "홈",
+                "score": "3-1",
+                "res": "승"
+              }
+            ],
+            "last5": "4승 0패",
+            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+          },
+          "home": {
+            "name": "SOOP",
+            "abbr": "SOOP",
+            "record": "0승 6패",
+            "badges": [
+              {
+                "text": "리그 7위",
+                "tone": "rank"
+              }
+            ],
+            "last5Detail": [
+              {
+                "date": "2026-11-26",
+                "opp": "현대건설",
+                "ha": "원정",
+                "score": "0-0",
+                "res": "무"
+              },
+              {
+                "date": "2026-11-21",
+                "opp": "정관장",
+                "ha": "홈",
+                "score": "2-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-18",
+                "opp": "현대건설",
+                "ha": "홈",
+                "score": "1-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-14",
+                "opp": "GS칼텍스",
+                "ha": "원정",
+                "score": "0-3",
+                "res": "패"
+              },
+              {
+                "date": "2026-11-10",
+                "opp": "IBK기업은행",
+                "ha": "홈",
+                "score": "1-3",
+                "res": "패"
+              }
+            ],
+            "last5": "0승 4패",
+            "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+          },
+          "tags": [
+            {
+              "text": "V리그 여자부 · 2라운드",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**SOOP**(홈) 0승 6패(리그 7위, 최근 흐름 6패), **도로공사**(원정) 5승 1패(리그 1위, 최근 흐름 5승). V리그 여자부 2라운드 숲 스타디움에서 열립니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "세트 승리 수 차가 10입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "name": "도로공사",
+                "abbr": "DOW",
+                "side": "away",
+                "record": "5승 1패",
+                "badges": [
+                  {
+                    "text": "리그 1위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "5승 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "1위"
+                  },
+                  {
+                    "label": "세트",
+                    "value": "15-6"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "5승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "승점",
+                    "value": 15.0
+                  },
+                  {
+                    "label": "득점",
+                    "value": 501
+                  },
+                  {
+                    "label": "실점",
+                    "value": 447
+                  }
+                ],
+                "last5Detail": [
+                  {
+                    "date": "2026-11-25",
+                    "opp": "IBK기업은행",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무"
+                  },
+                  {
+                    "date": "2026-11-20",
+                    "opp": "IBK기업은행",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-15",
+                    "opp": "현대건설",
+                    "ha": "원정",
+                    "score": "3-0",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-12",
+                    "opp": "정관장",
+                    "ha": "원정",
+                    "score": "3-0",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "흥국생명",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승"
+                  }
+                ],
+                "last5": "4승 0패",
+                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+              },
+              {
+                "name": "SOOP",
+                "abbr": "SOOP",
+                "side": "home",
+                "record": "0승 6패",
+                "badges": [
+                  {
+                    "text": "리그 7위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "0승 6패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "7위"
+                  },
+                  {
+                    "label": "세트",
+                    "value": "5-18"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "6패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "승점",
+                    "value": 1.0
+                  },
+                  {
+                    "label": "득점",
+                    "value": 470
+                  },
+                  {
+                    "label": "실점",
+                    "value": 544
+                  }
+                ],
+                "last5Detail": [
+                  {
+                    "date": "2026-11-26",
+                    "opp": "현대건설",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무"
+                  },
+                  {
+                    "date": "2026-11-21",
+                    "opp": "정관장",
+                    "ha": "홈",
+                    "score": "2-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-18",
+                    "opp": "현대건설",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-14",
+                    "opp": "GS칼텍스",
+                    "ha": "원정",
+                    "score": "0-3",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-10",
+                    "opp": "IBK기업은행",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패"
+                  }
+                ],
+                "last5": "0승 4패",
+                "injuryNote": "KOVO 공식 기록에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 구단 발표를 확인하세요."
+              }
+            ],
+            "checkpoints": [
+              "**경기장** — 숲 스타디움에서 열립니다.",
+              "**순위표** — SOOP(홈) 0승 6패·7위·승점 1, 도로공사(원정) 5승 1패·1위·승점 15."
+            ],
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:14 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+          }
+        }
+        /* VOLLEY-AUTO 2026-11-29 END */,
+
+        /* SOCCER-AUTO 2026-11-29 START */
+        {
+          "id": "soccer-bre-man-20261129",
+          "espnId": "401879226",
+          "sport": "soccer",
+          "league": "EPL",
+          "leagueFull": "프리미어리그",
+          "source": "espn",
+          "start": "2026-11-29T00:00:00+09:00",
+          "venue": "Old Trafford",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:41+09:00",
+            "moneyline": {
+              "away": 240,
+              "draw": 275,
+              "home": 100
+            },
+            "spread": {
+              "homeLine": "-0.5",
+              "awayLine": "+0.5",
+              "home": -110,
+              "away": -135
+            },
+            "total": {
+              "line": "3.5",
+              "over": 135,
+              "under": -180
+            },
+            "implied": {
+              "away": 27.7,
+              "draw": 25.1,
+              "home": 47.1
+            }
+          },
+          "away": {
+            "name": "브렌트퍼드",
+            "abbr": "BRE",
+            "record": "3승 5무 2패",
+            "badges": [
+              {
+                "text": "리그 10위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "맨체스터 유나이티드",
+            "abbr": "MAN",
+            "record": "1승 5무 5패",
+            "badges": [
+              {
+                "text": "리그 19위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "EPL · 프리미어리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 10명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**맨체스터 유나이티드**(홈) 1승 5무 5패(리그 19위), 최근 5경기 1승 1무 3패, **브렌트퍼드**(원정) 3승 5무 2패(리그 10위), 최근 5경기 1승 1무 3패. 최근 맞대결은 2026.04.27에 열린 맨체스터 유나이티드 2-1 브렌트퍼드 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **맨체스터 유나이티드**(홈) 1.3골 · **브렌트퍼드**(원정) 1.6골, 평균 실점은 홈 2.1골 · 원정 1.1골. 해외 배당을 확률로 환산하면 맨체스터 유나이티드 승 47.1% · 무 25.1% · 브렌트퍼드 승 27.7%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "BRE",
+                "name": "브렌트퍼드",
+                "side": "away",
+                "record": "3승 5무 2패",
+                "venueRecord": "원정 0승 4무 1패",
+                "badges": [
+                  {
+                    "text": "리그 10위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "3승 5무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "10위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "14"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+5"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-승-패-무-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.6골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.1골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+5"
+                  }
+                ],
+                "streak": "최근 5경기 1승 1무 3패",
+                "last5": "1승 1무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-08",
+                    "opp": "브라이턴",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "노팅엄 포리스트",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "선덜랜드",
+                    "ha": "원정",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "카라바오컵"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "헐 시티",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-17",
+                    "opp": "리버풀",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 5경기 1승 1무 3패입니다. 원정 0승 4무 1패입니다. 경기당 평균 1.6골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 브라이턴 0-2 패입니다. FotMob 기준 결장 6명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Igor Thiago",
+                    "status": "OUT",
+                    "line": "징계 출장정지 · 복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Aaron Hickey",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  },
+                  {
+                    "player": "Nathan Collins",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Fábio Carvalho",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Rico Henry",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Joshua Dasilva",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Antoni Milambo",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  }
+                ],
+                "injurySummary": "결장 6명 · 불확실 1명"
+              },
+              {
+                "abbr": "MAN",
+                "name": "맨체스터 유나이티드",
+                "side": "home",
+                "record": "1승 5무 5패",
+                "venueRecord": "홈 1승 2무 2패",
+                "badges": [
+                  {
+                    "text": "리그 19위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "1승 5무 5패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "19위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "8"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-9"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-무-승-패-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.3골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.1골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-9"
+                  }
+                ],
+                "streak": "최근 5경기 1승 1무 3패",
+                "last5": "1승 1무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-08",
+                    "opp": "애스턴 빌라",
+                    "ha": "홈",
+                    "score": "4-4",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-03",
+                    "opp": "AS 로마",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "UCL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "첼시",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "본머스",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-21",
+                    "opp": "코모",
+                    "ha": "원정",
+                    "score": "1-4",
+                    "res": "패",
+                    "comp": "UCL"
+                  }
+                ],
+                "focus": "최근 5경기 1승 1무 3패입니다. 홈 1승 2무 2패입니다. 경기당 평균 1.3골을 넣고 2.1골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 애스턴 빌라 4-4 무입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Leny Yoro",
+                    "status": "OUT",
+                    "line": "징계 출장정지 · 복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Ayden Heaven",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Shea Lacey",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Patrick Dorgu",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Carlos Baleba",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Marcus Rashford",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Luke Shaw",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Benjamin Šeško",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Manuel Ugarte",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 4월 초"
+                  }
+                ],
+                "injurySummary": "결장 4명 · 불확실 5명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "맨체스터 유나이티드",
+                "players": [
+                  {
+                    "name": "Bryan Mbeumo",
+                    "id": "271170",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bryan_Mbeumo_00-02-31.18.png/120px-Bryan_Mbeumo_00-02-31.18.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Matheus Cunha",
+                    "id": "259902",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg/120px-Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "브렌트퍼드",
+                "players": [
+                  {
+                    "name": "Kevin Schade",
+                    "id": "310958",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Kevin_Schade_02082025_%281%29.jpg/120px-Kevin_Schade_02082025_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Igor Thiago",
+                    "id": "301894",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Igor_Thiago_Brazil_V_Morocco_13_June_2026-120_%28cropped%29.jpg/120px-Igor_Thiago_Brazil_V_Morocco_13_June_2026-120_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**맨체스터 유나이티드** — 리그 19위, 승점 8, 득실 -9.",
+              "**브렌트퍼드** — 리그 10위, 승점 14, 득실 +5."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-04-27",
+                  "home": "맨체스터 유나이티드",
+                  "away": "브렌트퍼드",
+                  "score": "2-1"
+                },
+                {
+                  "date": "2025-09-27",
+                  "home": "브렌트퍼드",
+                  "away": "맨체스터 유나이티드",
+                  "score": "3-1"
+                },
+                {
+                  "date": "2025-05-04",
+                  "home": "브렌트퍼드",
+                  "away": "맨체스터 유나이티드",
+                  "score": "4-3"
+                },
+                {
+                  "date": "2024-10-19",
+                  "home": "맨체스터 유나이티드",
+                  "away": "브렌트퍼드",
+                  "score": "2-1"
+                },
+                {
+                  "date": "2024-03-30",
+                  "home": "브렌트퍼드",
+                  "away": "맨체스터 유나이티드",
+                  "score": "1-1"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5795532,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-cov-lee-20261129",
+          "espnId": "401879227",
+          "sport": "soccer",
+          "league": "EPL",
+          "leagueFull": "프리미어리그",
+          "source": "espn",
+          "start": "2026-11-29T00:00:00+09:00",
+          "venue": "Elland Road",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:41+09:00",
+            "moneyline": {
+              "away": 475,
+              "draw": 330,
+              "home": -190
+            },
+            "spread": {
+              "homeLine": "-1.5",
+              "awayLine": "+1.5",
+              "home": 135,
+              "away": -195
+            },
+            "total": {
+              "line": "2.5",
+              "over": -140,
+              "under": 110
+            },
+            "implied": {
+              "away": 16.4,
+              "draw": 21.9,
+              "home": 61.7
+            }
+          },
+          "away": {
+            "name": "코번트리 시티",
+            "abbr": "COV",
+            "record": "4승 0무 7패",
+            "badges": [
+              {
+                "text": "리그 14위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "리즈 유나이티드",
+            "abbr": "LEE",
+            "record": "4승 5무 2패",
+            "badges": [
+              {
+                "text": "리그 6위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "EPL · 프리미어리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 6명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**리즈 유나이티드**(홈) 4승 5무 2패(리그 6위), 2연승, **코번트리 시티**(원정) 4승 0무 7패(리그 14위), 최근 5경기 2승 0무 3패. 최근 맞대결은 2025.02.05에 열린 코번트리 시티 0-2 리즈 유나이티드 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **리즈 유나이티드**(홈) 1.3골 · **코번트리 시티**(원정) 1.2골, 평균 실점은 홈 0.8골 · 원정 1.9골. 해외 배당을 확률로 환산하면 리즈 유나이티드 승 61.7% · 무 21.9% · 코번트리 시티 승 16.4%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "COV",
+                "name": "코번트리 시티",
+                "side": "away",
+                "record": "4승 0무 7패",
+                "venueRecord": "원정 1승 0무 4패",
+                "badges": [
+                  {
+                    "text": "리그 14위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 0무 7패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "14위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "12"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-8"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-패-승-패-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.9골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-8"
+                  }
+                ],
+                "streak": "최근 5경기 2승 0무 3패",
+                "last5": "2승 0무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "크리스털 팰리스",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-06",
+                    "opp": "에버턴",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "선덜랜드",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "풀럼",
+                    "ha": "홈",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-19",
+                    "opp": "토트넘 홋스퍼",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 5경기 2승 0무 3패입니다. 원정 1승 0무 4패입니다. 경기당 평균 1.2골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 크리스털 팰리스 3-2 승입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Taiwo Awoniyi",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  },
+                  {
+                    "player": "Caleb Yirenkyi",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Ephron Mason-Clark",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Aurèle Amenda",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Josh Eccles",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Luke Woolfenden",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Haji Wright",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  }
+                ],
+                "injurySummary": "결장 5명 · 불확실 2명"
+              },
+              {
+                "abbr": "LEE",
+                "name": "리즈 유나이티드",
+                "side": "home",
+                "record": "4승 5무 2패",
+                "venueRecord": "홈 2승 3무 0패",
+                "badges": [
+                  {
+                    "text": "리그 6위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 5무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "6위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "17"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+5"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-승-패-무-무"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.3골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+5"
+                  }
+                ],
+                "streak": "2연승",
+                "last5": "2승 2무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "첼시",
+                    "ha": "원정",
+                    "score": "4-1",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "토트넘 홋스퍼",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "본머스",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "선덜랜드",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-18",
+                    "opp": "맨체스터 유나이티드",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 흐름은 2연승입니다. 최근 5경기 2승 2무 1패입니다. 홈 2승 3무 0패입니다. 경기당 평균 1.3골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 첼시 4-1 승입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Mateo Joseph",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  }
+                ],
+                "injurySummary": "결장 1명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "리즈 유나이티드",
+                "players": [
+                  {
+                    "name": "Dominic Calvert-Lewin",
+                    "id": "197717",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Dominic_Calvert-Lewin_13092025_%285%29.jpg/120px-Dominic_Calvert-Lewin_13092025_%285%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Tarik Muharemovic",
+                    "id": "318390",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_Internazionale_Milano_v_US_Sassuolo_Calcio%2C_21_September_2025_-_08_%28Tarik_Muharemovi%C4%87%29.jpg?width=120",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "코번트리 시티",
+                "players": [
+                  {
+                    "name": "Jack Rudoni",
+                    "id": "286967",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Jack_Rudoni.png/120px-Jack_Rudoni.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 3",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**리즈 유나이티드** — 리그 6위, 승점 17, 득실 +5.",
+              "**코번트리 시티** — 리그 14위, 승점 12, 득실 -8."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2025-02-05",
+                  "home": "코번트리 시티",
+                  "away": "리즈 유나이티드",
+                  "score": "0-2"
+                },
+                {
+                  "date": "2024-09-28",
+                  "home": "리즈 유나이티드",
+                  "away": "코번트리 시티",
+                  "score": "3-0"
+                },
+                {
+                  "date": "2024-04-06",
+                  "home": "코번트리 시티",
+                  "away": "리즈 유나이티드",
+                  "score": "2-1"
+                },
+                {
+                  "date": "2023-12-16",
+                  "home": "리즈 유나이티드",
+                  "away": "코번트리 시티",
+                  "score": "1-1"
+                },
+                {
+                  "date": "2012-02-14",
+                  "home": "코번트리 시티",
+                  "away": "리즈 유나이티드",
+                  "score": "2-1"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5795531,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-ath-mcf-20261129",
+          "espnId": "401882790",
+          "sport": "soccer",
+          "league": "LALIGA",
+          "leagueFull": "라리가",
+          "source": "espn",
+          "start": "2026-11-29T00:15:00+09:00",
+          "venue": "La Rosaleda",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:45+09:00",
+            "moneyline": {
+              "away": -130,
+              "draw": 270,
+              "home": 340
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": 100,
+              "away": -140
+            },
+            "total": {
+              "line": "2.5",
+              "over": -115,
+              "under": -115
+            },
+            "implied": {
+              "away": 53.2,
+              "draw": 25.4,
+              "home": 21.4
+            }
+          },
+          "away": {
+            "name": "아틀레틱 빌바오",
+            "abbr": "ATH",
+            "record": "4승 4무 4패",
+            "badges": [
+              {
+                "text": "리그 8위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "말라가",
+            "abbr": "MCF",
+            "record": "0승 5무 8패",
+            "badges": [
+              {
+                "text": "리그 20위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "LALIGA · 라리가",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 6명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**말라가**(홈) 0승 5무 8패(리그 20위), 2연패, **아틀레틱 빌바오**(원정) 4승 4무 4패(리그 8위), 최근 5경기 3승 1무 1패. 최근 맞대결은 2018.02.25에 열린 아틀레틱 빌바오 2-1 말라가 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **말라가**(홈) 0.7골 · **아틀레틱 빌바오**(원정) 1.2골, 평균 실점은 홈 1.8골 · 원정 1.0골. 해외 배당을 확률로 환산하면 말라가 승 21.4% · 무 25.4% · 아틀레틱 빌바오 승 53.2%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "ATH",
+                "name": "아틀레틱 빌바오",
+                "side": "away",
+                "record": "4승 4무 4패",
+                "venueRecord": "원정 1승 2무 2패",
+                "badges": [
+                  {
+                    "text": "리그 8위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 4무 4패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "8위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "16"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-무-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  }
+                ],
+                "streak": "최근 5경기 3승 1무 1패",
+                "last5": "3승 1무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-20",
+                    "opp": "에스파뇰",
+                    "ha": "홈",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "오사수나",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "레알 소시에다드",
+                    "ha": "홈",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-29",
+                    "opp": "AE Prat",
+                    "ha": "원정",
+                    "score": "6-1",
+                    "res": "승",
+                    "comp": "코파델레이"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "헤타페",
+                    "ha": "홈",
+                    "score": "4-0",
+                    "res": "승",
+                    "comp": "라리가"
+                  }
+                ],
+                "focus": "최근 5경기 3승 1무 1패입니다. 원정 1승 2무 2패입니다. 경기당 평균 1.2골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.20 홈 에스파뇰 0-1 패입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Daniel Vivian",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Maroan Sannadi",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Gorka Guruzeta",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  },
+                  {
+                    "player": "Unai Eguiluz",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 중순"
+                  }
+                ],
+                "injurySummary": "결장 4명"
+              },
+              {
+                "abbr": "MCF",
+                "name": "말라가",
+                "side": "home",
+                "record": "0승 5무 8패",
+                "venueRecord": "홈 0승 3무 3패",
+                "badges": [
+                  {
+                    "text": "리그 20위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "0승 5무 8패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "20위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "5"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-15"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-패-승-무"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "0.7골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-15"
+                  }
+                ],
+                "streak": "2연패",
+                "last5": "1승 1무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-07",
+                    "opp": "라싱 산탄데르",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "레알 베티스",
+                    "ha": "원정",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-27",
+                    "opp": "Sporting de Alcázar",
+                    "ha": "원정",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "코파델레이"
+                  },
+                  {
+                    "date": "2026-10-23",
+                    "opp": "알라베스",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-18",
+                    "opp": "레알 소시에다드",
+                    "ha": "홈",
+                    "score": "2-5",
+                    "res": "패",
+                    "comp": "라리가"
+                  }
+                ],
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 1무 3패입니다. 홈 0승 3무 3패입니다. 경기당 평균 0.7골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 라싱 산탄데르 1-2 패입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Fernando Calero",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Rafita",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Aarón Ochoa",
+                    "status": "DOUBTFUL"
+                  }
+                ],
+                "injurySummary": "결장 2명 · 불확실 1명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "말라가",
+                "players": [
+                  {
+                    "name": "Adrián Niño",
+                    "id": "373542",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/v6e47u1784904389.jpg",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Pablo Martínez",
+                    "id": "271151",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "아틀레틱 빌바오",
+                "players": [
+                  {
+                    "name": "Álex Berenguer",
+                    "id": "209579",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/ranylg1723532557.jpg",
+                    "stats": [
+                      "득점 4",
+                      "도움 4"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**말라가** — 리그 20위, 승점 5, 득실 -15.",
+              "**아틀레틱 빌바오** — 리그 8위, 승점 16, 득실 +3."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2018-02-25",
+                  "home": "아틀레틱 빌바오",
+                  "away": "말라가",
+                  "score": "2-1"
+                },
+                {
+                  "date": "2017-09-23",
+                  "home": "말라가",
+                  "away": "아틀레틱 빌바오",
+                  "score": "3-3"
+                },
+                {
+                  "date": "2017-03-05",
+                  "home": "아틀레틱 빌바오",
+                  "away": "말라가",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2016-10-02",
+                  "home": "말라가",
+                  "away": "아틀레틱 빌바오",
+                  "score": "2-1"
+                },
+                {
+                  "date": "2016-04-17",
+                  "home": "말라가",
+                  "away": "아틀레틱 빌바오",
+                  "score": "0-1"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5868147,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-laz-tor-20261129",
+          "espnId": "401874826",
+          "sport": "soccer",
+          "league": "SERIEA",
+          "leagueFull": "세리에 A",
+          "source": "espn",
+          "start": "2026-11-29T02:00:00+09:00",
+          "venue": "Stadio Olimpico Grande Torino",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:58+09:00",
+            "moneyline": {
+              "away": 100,
+              "draw": 235,
+              "home": 240
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -140,
+              "away": -105
+            },
+            "total": {
+              "line": "2.5",
+              "over": -115,
+              "under": -115
+            },
+            "implied": {
+              "away": 45.8,
+              "draw": 27.3,
+              "home": 26.9
+            }
+          },
+          "away": {
+            "name": "라치오",
+            "abbr": "LAZ",
+            "record": "10승 2무 0패",
+            "badges": [
+              {
+                "text": "리그 1위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "토리노",
+            "abbr": "TOR",
+            "record": "4승 2무 6패",
+            "badges": [
+              {
+                "text": "리그 13위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "SERIEA · 세리에 A",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 5명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**토리노**(홈) 4승 2무 6패(리그 13위), 최근 5경기 1승 1무 3패, **라치오**(원정) 10승 2무 0패(리그 1위), 최근 5경기 4승 1무 0패. 최근 맞대결은 2026.03.01에 열린 토리노 2-0 라치오 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **토리노**(홈) 1.2골 · **라치오**(원정) 2.3골, 평균 실점은 홈 1.5골 · 원정 0.8골. 해외 배당을 확률로 환산하면 토리노 승 26.9% · 무 27.3% · 라치오 승 45.8%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "LAZ",
+                "name": "라치오",
+                "side": "away",
+                "record": "10승 2무 0패",
+                "venueRecord": "원정 5승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 1위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "10승 2무 0패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "1위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "32"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+19"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-무-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.3골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+19"
+                  }
+                ],
+                "streak": "최근 5경기 4승 1무 0패",
+                "last5": "4승 1무 0패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "레체",
+                    "ha": "홈",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "나폴리",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "칼리아리",
+                    "ha": "홈",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-27",
+                    "opp": "사수올로",
+                    "ha": "원정",
+                    "score": "6-2",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "파르마",
+                    "ha": "홈",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "세리에A"
+                  }
+                ],
+                "focus": "최근 5경기 4승 1무 0패입니다. 원정 5승 1무 0패입니다. 경기당 평균 2.3골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 레체 3-0 승입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Adam Marušić",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Nuno Tavares",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Josip Šutalo",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Mattia Zaccagni",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  }
+                ],
+                "injurySummary": "결장 4명"
+              },
+              {
+                "abbr": "TOR",
+                "name": "토리노",
+                "side": "home",
+                "record": "4승 2무 6패",
+                "venueRecord": "홈 2승 1무 3패",
+                "badges": [
+                  {
+                    "text": "리그 13위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 2무 6패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "13위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "14"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-무-패-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  }
+                ],
+                "streak": "최근 5경기 1승 1무 3패",
+                "last5": "1승 1무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "나폴리",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "레체",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "프로시노네",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-27",
+                    "opp": "코모",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-23",
+                    "opp": "몬차",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "세리에A"
+                  }
+                ],
+                "focus": "최근 5경기 1승 1무 3패입니다. 홈 2승 1무 3패입니다. 경기당 평균 1.2골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 나폴리 0-1 패입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Ardian Ismajli",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Rafik Belghali",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  }
+                ],
+                "injurySummary": "결장 1명 · 불확실 1명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "토리노",
+                "players": [
+                  {
+                    "name": "Ché Adams",
+                    "id": "213725",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Che_Adams_Scotland_v_Bolivia_6_June_2026-37_%28cropped%29.jpg/120px-Che_Adams_Scotland_v_Bolivia_6_June_2026-37_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Rafik Belghali",
+                    "id": "364590",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/vfqhwg1759162273.jpg",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "라치오",
+                "players": [
+                  {
+                    "name": "Tijjani Noslin",
+                    "id": "323113",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F323113.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Mattia Zaccagni",
+                    "id": "204669",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Mattia_Zaccagni_2021.jpg/120px-Mattia_Zaccagni_2021.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 5"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**토리노** — 리그 13위, 승점 14, 득실 -3.",
+              "**라치오** — 리그 1위, 승점 32, 득실 +19."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-03-01",
+                  "home": "토리노",
+                  "away": "라치오",
+                  "score": "2-0"
+                },
+                {
+                  "date": "2025-10-04",
+                  "home": "라치오",
+                  "away": "토리노",
+                  "score": "3-3"
+                },
+                {
+                  "date": "2025-03-31",
+                  "home": "라치오",
+                  "away": "토리노",
+                  "score": "1-1"
+                },
+                {
+                  "date": "2024-09-29",
+                  "home": "토리노",
+                  "away": "라치오",
+                  "score": "2-3"
+                },
+                {
+                  "date": "2024-02-22",
+                  "home": "토리노",
+                  "away": "라치오",
+                  "score": "0-2"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5749767,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-atm-elc-20261129",
+          "espnId": "401882793",
+          "sport": "soccer",
+          "league": "LALIGA",
+          "leagueFull": "라리가",
+          "source": "espn",
+          "start": "2026-11-29T02:30:00+09:00",
+          "venue": "Estadio Martínez Valero",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:45+09:00",
+            "moneyline": {
+              "away": -170,
+              "draw": 340,
+              "home": 400
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": 130,
+              "away": -190
+            },
+            "total": {
+              "line": "3.5",
+              "over": 135,
+              "under": -180
+            },
+            "implied": {
+              "away": 59.5,
+              "draw": 21.5,
+              "home": 18.9
+            }
+          },
+          "away": {
+            "name": "아틀레티코 마드리드",
+            "abbr": "ATM",
+            "record": "9승 1무 2패",
+            "badges": [
+              {
+                "text": "리그 3위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "엘체",
+            "abbr": "ELC",
+            "record": "2승 4무 6패",
+            "badges": [
+              {
+                "text": "리그 19위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "LALIGA · 라리가",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 4명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**엘체**(홈) 2승 4무 6패(리그 19위), 2연패, **아틀레티코 마드리드**(원정) 9승 1무 2패(리그 3위), 2연패. 최근 맞대결은 2026.04.22에 열린 엘체 3-2 아틀레티코 마드리드 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **엘체**(홈) 1.2골 · **아틀레티코 마드리드**(원정) 1.9골, 평균 실점은 홈 1.7골 · 원정 0.8골. 해외 배당을 확률로 환산하면 엘체 승 18.9% · 무 21.5% · 아틀레티코 마드리드 승 59.5%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "ATM",
+                "name": "아틀레티코 마드리드",
+                "side": "away",
+                "record": "9승 1무 2패",
+                "venueRecord": "원정 5승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 3위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "9승 1무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "3위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "28"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+13"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-승-승-무"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.9골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+13"
+                  }
+                ],
+                "streak": "2연패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-08",
+                    "opp": "바르셀로나",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-03",
+                    "opp": "바이에른 뮌헨",
+                    "ha": "홈",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "UCL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "레반테",
+                    "ha": "원정",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "데포르티보",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-20",
+                    "opp": "슈투트가르트",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "UCL"
+                  }
+                ],
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 원정 5승 0무 1패입니다. 경기당 평균 1.9골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 바르셀로나 1-2 패입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Jorge Domínguez",
+                    "status": "OUT",
+                    "line": "대표팀 차출"
+                  },
+                  {
+                    "player": "Marc Pubill",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Ademola Lookman",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Cristian Romero",
+                    "status": "DOUBTFUL"
+                  }
+                ],
+                "injurySummary": "결장 3명 · 불확실 1명"
+              },
+              {
+                "abbr": "ELC",
+                "name": "엘체",
+                "side": "home",
+                "record": "2승 4무 6패",
+                "venueRecord": "홈 0승 1무 5패",
+                "badges": [
+                  {
+                    "text": "리그 19위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "2승 4무 6패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "19위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "10"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-6"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-승-승-무"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.7골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-6"
+                  }
+                ],
+                "streak": "2연패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-08",
+                    "opp": "레알 베티스",
+                    "ha": "홈",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "발렌시아",
+                    "ha": "홈",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-27",
+                    "opp": "Atlético Pinatarense",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "코파델레이"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "라요 바예카노",
+                    "ha": "원정",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-17",
+                    "opp": "비야레알",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "라리가"
+                  }
+                ],
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 홈 0승 1무 5패입니다. 경기당 평균 1.2골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 레알 베티스 0-2 패입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Ali Houary",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Marc Aguado",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Yago Santiago",
+                    "status": "DOUBTFUL"
+                  }
+                ],
+                "injurySummary": "결장 1명 · 불확실 2명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "엘체",
+                "players": [
+                  {
+                    "name": "Fer Niño",
+                    "id": "301684",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/eju2mp1609280660.jpg",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "José Antonio Morente",
+                    "id": "259916",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "아틀레티코 마드리드",
+                "players": [
+                  {
+                    "name": "Álex Baena",
+                    "id": "297373",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Alex_Baena_France_v_Spain_7.24.26-024.jpg/120px-Alex_Baena_France_v_Spain_7.24.26-024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 5",
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**엘체** — 리그 19위, 승점 10, 득실 -6.",
+              "**아틀레티코 마드리드** — 리그 3위, 승점 28, 득실 +13."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-04-22",
+                  "home": "엘체",
+                  "away": "아틀레티코 마드리드",
+                  "score": "3-2"
+                },
+                {
+                  "date": "2025-08-23",
+                  "home": "아틀레티코 마드리드",
+                  "away": "엘체",
+                  "score": "1-1"
+                },
+                {
+                  "date": "2025-01-15",
+                  "home": "엘체",
+                  "away": "아틀레티코 마드리드",
+                  "score": "0-4"
+                },
+                {
+                  "date": "2023-05-14",
+                  "home": "엘체",
+                  "away": "아틀레티코 마드리드",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2022-12-29",
+                  "home": "아틀레티코 마드리드",
+                  "away": "엘체",
+                  "score": "2-0"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5868144,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-avl-ips-20261129",
+          "espnId": "401878752",
+          "sport": "soccer",
+          "league": "EPL",
+          "leagueFull": "프리미어리그",
+          "source": "espn",
+          "start": "2026-11-29T02:30:00+09:00",
+          "venue": "Portman Road",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:41+09:00",
+            "moneyline": {
+              "away": 100,
+              "draw": 280,
+              "home": 235
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -130,
+              "away": -110
+            },
+            "total": {
+              "line": "3.5",
+              "over": 135,
+              "under": -175
+            },
+            "implied": {
+              "away": 47.1,
+              "draw": 24.8,
+              "home": 28.1
+            }
+          },
+          "away": {
+            "name": "애스턴 빌라",
+            "abbr": "AVL",
+            "record": "3승 5무 3패",
+            "badges": [
+              {
+                "text": "리그 12위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "입스위치 타운",
+            "abbr": "IPS",
+            "record": "3승 2무 6패",
+            "badges": [
+              {
+                "text": "리그 16위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "EPL · 프리미어리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 3명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**입스위치 타운**(홈) 3승 2무 6패(리그 16위), 2연패, **애스턴 빌라**(원정) 3승 5무 3패(리그 12위), 2경기 연속 무승부. 최근 맞대결은 2025.02.15에 열린 애스턴 빌라 1-1 입스위치 타운 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **입스위치 타운**(홈) 1.4골 · **애스턴 빌라**(원정) 1.3골, 평균 실점은 홈 2.0골 · 원정 1.5골. 해외 배당을 확률로 환산하면 입스위치 타운 승 28.1% · 무 24.8% · 애스턴 빌라 승 47.1%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "AVL",
+                "name": "애스턴 빌라",
+                "side": "away",
+                "record": "3승 5무 3패",
+                "venueRecord": "원정 2승 2무 1패",
+                "badges": [
+                  {
+                    "text": "리그 12위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "3승 5무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "12위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "14"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-무-패-무-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.3골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  }
+                ],
+                "streak": "2경기 연속 무승부",
+                "last5": "0승 3무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "선덜랜드",
+                    "ha": "홈",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "맨체스터 유나이티드",
+                    "ha": "원정",
+                    "score": "4-4",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-03",
+                    "opp": "바르셀로나",
+                    "ha": "원정",
+                    "score": "0-3",
+                    "res": "패",
+                    "comp": "UCL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "풀럼",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "본머스",
+                    "ha": "원정",
+                    "score": "0-3",
+                    "res": "패",
+                    "comp": "카라바오컵"
+                  }
+                ],
+                "focus": "최근 흐름은 2경기 연속 무승부입니다. 최근 5경기 0승 3무 2패입니다. 원정 2승 2무 1패입니다. 경기당 평균 1.3골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 선덜랜드 0-0 무입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Matty Cash",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Matteo Ruggeri",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Amadou Onana",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 4월 중순"
+                  }
+                ],
+                "injurySummary": "결장 3명"
+              },
+              {
+                "abbr": "IPS",
+                "name": "입스위치 타운",
+                "side": "home",
+                "record": "3승 2무 6패",
+                "venueRecord": "홈 2승 1무 2패",
+                "badges": [
+                  {
+                    "text": "리그 16위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "3승 2무 6패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "16위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "11"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-7"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-무-무-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.4골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-7"
+                  }
+                ],
+                "streak": "2연패",
+                "last5": "0승 2무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "토트넘 홋스퍼",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "본머스",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "헐 시티",
+                    "ha": "원정",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-23",
+                    "opp": "노팅엄 포리스트",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-17",
+                    "opp": "맨체스터 시티",
+                    "ha": "원정",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 0승 2무 3패입니다. 홈 2승 1무 2패입니다. 경기당 평균 1.4골을 넣고 2.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 토트넘 홋스퍼 0-2 패입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
+                "injuryNote": "FotMob 결장 명단에 올라온 선수가 없습니다.",
+                "injuries": []
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "입스위치 타운",
+                "players": [
+                  {
+                    "name": "Leif Davis",
+                    "id": "283086",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Davis_220826.jpg/120px-Davis_220826.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Julio Enciso",
+                    "id": "20975",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Julio_Enciso_France_v_Paraguay_4_July_2026-039.jpg/120px-Julio_Enciso_France_v_Paraguay_4_July_2026-039.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "애스턴 빌라",
+                "players": [
+                  {
+                    "name": "Nicolas Jackson",
+                    "id": "308524",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg/120px-Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "John McGinn",
+                    "id": "162843",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/John_McGinn_Scotland_v_Bolivia_6_June_2026-2.jpg/120px-John_McGinn_Scotland_v_Bolivia_6_June_2026-2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**입스위치 타운** — 리그 16위, 승점 11, 득실 -7.",
+              "**애스턴 빌라** — 리그 12위, 승점 14, 득실 -3."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2025-02-15",
+                  "home": "애스턴 빌라",
+                  "away": "입스위치 타운",
+                  "score": "1-1"
+                },
+                {
+                  "date": "2024-09-29",
+                  "home": "입스위치 타운",
+                  "away": "애스턴 빌라",
+                  "score": "2-2"
+                },
+                {
+                  "date": "2019-01-26",
+                  "home": "애스턴 빌라",
+                  "away": "입스위치 타운",
+                  "score": "2-1"
+                },
+                {
+                  "date": "2018-08-18",
+                  "home": "입스위치 타운",
+                  "away": "애스턴 빌라",
+                  "score": "1-1"
+                },
+                {
+                  "date": "2018-04-21",
+                  "home": "입스위치 타운",
+                  "away": "애스턴 빌라",
+                  "score": "0-4"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5795530,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-sge-vfb-20261129",
+          "espnId": "401884726",
+          "sport": "soccer",
+          "league": "BUNDES",
+          "leagueFull": "분데스리가",
+          "source": "espn",
+          "start": "2026-11-29T02:30:00+09:00",
+          "venue": "MHPArena",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:47+09:00",
+            "moneyline": {
+              "away": 280,
+              "draw": 340,
+              "home": -150
+            },
+            "spread": {
+              "homeLine": "-0.5",
+              "awayLine": "+0.5",
+              "home": -155,
+              "away": 110
+            },
+            "total": {
+              "line": "3.5",
+              "over": -145,
+              "under": 110
+            },
+            "implied": {
+              "away": 24.2,
+              "draw": 20.9,
+              "home": 55.0
+            }
+          },
+          "away": {
+            "name": "아인트라흐트 프랑크푸르트",
+            "abbr": "SGE",
+            "record": "4승 3무 3패",
+            "badges": [
+              {
+                "text": "리그 7위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "슈투트가르트",
+            "abbr": "VFB",
+            "record": "4승 1무 5패",
+            "badges": [
+              {
+                "text": "리그 8위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "BUNDES · 분데스리가",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 6명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**슈투트가르트**(홈) 4승 1무 5패(리그 8위), 최근 5경기 3승 1무 1패, **아인트라흐트 프랑크푸르트**(원정) 4승 3무 3패(리그 7위), 최근 5경기 3승 1무 1패. 최근 맞대결은 2026.05.16에 열린 아인트라흐트 프랑크푸르트 2-2 슈투트가르트 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **슈투트가르트**(홈) 1.5골 · **아인트라흐트 프랑크푸르트**(원정) 1.6골, 평균 실점은 홈 1.5골 · 원정 2.0골. 해외 배당을 확률로 환산하면 슈투트가르트 승 55.0% · 무 20.9% · 아인트라흐트 프랑크푸르트 승 24.2%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "SGE",
+                "name": "아인트라흐트 프랑크푸르트",
+                "side": "away",
+                "record": "4승 3무 3패",
+                "venueRecord": "원정 1승 2무 2패",
+                "badges": [
+                  {
+                    "text": "리그 7위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 3무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "7위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "15"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-4"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-무-승-승-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.6골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-4"
+                  }
+                ],
+                "streak": "최근 5경기 3승 1무 1패",
+                "last5": "3승 1무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "호펜하임",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "파더보른",
+                    "ha": "원정",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "함부르크",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-10-27",
+                    "opp": "함부르크",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "2026-27 German Cup"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "도르트문트",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "분데스리가"
+                  }
+                ],
+                "focus": "최근 5경기 3승 1무 1패입니다. 원정 1승 2무 2패입니다. 경기당 평균 1.6골을 넣고 2.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 호펜하임 1-0 승입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Jessic Ngankam",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  }
+                ],
+                "injurySummary": "결장 1명"
+              },
+              {
+                "abbr": "VFB",
+                "name": "슈투트가르트",
+                "side": "home",
+                "record": "4승 1무 5패",
+                "venueRecord": "홈 2승 0무 2패",
+                "badges": [
+                  {
+                    "text": "리그 8위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 1무 5패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "8위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "13"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "0"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-승-패-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "0"
+                  }
+                ],
+                "streak": "최근 5경기 3승 1무 1패",
+                "last5": "3승 1무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "샬케 04",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "베르더 브레멘",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-03",
+                    "opp": "갈라타사라이",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "UCL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "바이어 레버쿠젠",
+                    "ha": "원정",
+                    "score": "4-2",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "파더보른",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "2026-27 German Cup"
+                  }
+                ],
+                "focus": "최근 5경기 3승 1무 1패입니다. 홈 2승 0무 2패입니다. 경기당 평균 1.5골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 샬케 04 0-0 무입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Luca Jaquez",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Leo Sauer",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Angelo Stiller",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1주"
+                  },
+                  {
+                    "player": "Josha Vagnoman",
+                    "status": "OUT",
+                    "line": "복귀 예상 몇 주"
+                  },
+                  {
+                    "player": "Justin Diehl",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  }
+                ],
+                "injurySummary": "결장 5명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "슈투트가르트",
+                "players": [
+                  {
+                    "name": "Ermedin Demirovic",
+                    "id": "269136",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/ahykd01778543129.jpg",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Angelo Stiller",
+                    "id": "290232",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Angelo_Stiller_Ecuador_v_Germany_25_June_2026-233_%28cropped%29.jpg/120px-Angelo_Stiller_Ecuador_v_Germany_25_June_2026-233_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "아인트라흐트 프랑크푸르트",
+                "players": [
+                  {
+                    "name": "Jonathan Burkardt",
+                    "id": "274887",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/6lgcz41759567686.jpg",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Robin Koch",
+                    "id": "208285",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/b7eapb1578087942.jpg",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**슈투트가르트** — 리그 8위, 승점 13, 득실 0.",
+              "**아인트라흐트 프랑크푸르트** — 리그 7위, 승점 15, 득실 -4."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-05-16",
+                  "home": "아인트라흐트 프랑크푸르트",
+                  "away": "슈투트가르트",
+                  "score": "2-2"
+                },
+                {
+                  "date": "2026-01-13",
+                  "home": "슈투트가르트",
+                  "away": "아인트라흐트 프랑크푸르트",
+                  "score": "3-2"
+                },
+                {
+                  "date": "2025-03-29",
+                  "home": "아인트라흐트 프랑크푸르트",
+                  "away": "슈투트가르트",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2024-11-10",
+                  "home": "슈투트가르트",
+                  "away": "아인트라흐트 프랑크푸르트",
+                  "score": "2-3"
+                },
+                {
+                  "date": "2024-04-13",
+                  "home": "슈투트가르트",
+                  "away": "아인트라흐트 프랑크푸르트",
+                  "score": "3-0"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5881240,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-gen-int-20261129",
+          "espnId": "401874977",
+          "sport": "soccer",
+          "league": "SERIEA",
+          "leagueFull": "세리에 A",
+          "source": "espn",
+          "start": "2026-11-29T04:45:00+09:00",
+          "venue": "San Siro",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:58+09:00",
+            "moneyline": {
+              "away": 750,
+              "draw": 450,
+              "home": -380
+            },
+            "spread": {
+              "homeLine": "-1.5",
+              "awayLine": "+1.5",
+              "home": -130,
+              "away": -115
+            },
+            "total": {
+              "line": "2.5",
+              "over": -180,
+              "under": 135
+            },
+            "implied": {
+              "away": 10.8,
+              "draw": 16.6,
+              "home": 72.6
+            }
+          },
+          "away": {
+            "name": "제노아",
+            "abbr": "GEN",
+            "record": "5승 1무 6패",
+            "badges": [
+              {
+                "text": "리그 10위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "인터 밀란",
+            "abbr": "INT",
+            "record": "9승 1무 1패",
+            "badges": [
+              {
+                "text": "리그 3위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "SERIEA · 세리에 A",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 1명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**인터 밀란**(홈) 9승 1무 1패(리그 3위), 2연승, **제노아**(원정) 5승 1무 6패(리그 10위), 최근 5경기 3승 0무 2패. 최근 맞대결은 2026.02.28에 열린 인터 밀란 2-0 제노아 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **인터 밀란**(홈) 2.5골 · **제노아**(원정) 1.1골, 평균 실점은 홈 1.2골 · 원정 1.3골. 해외 배당을 확률로 환산하면 인터 밀란 승 72.6% · 무 16.6% · 제노아 승 10.8%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "GEN",
+                "name": "제노아",
+                "side": "away",
+                "record": "5승 1무 6패",
+                "venueRecord": "원정 2승 0무 3패",
+                "badges": [
+                  {
+                    "text": "리그 10위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "5승 1무 6패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "10위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "16"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-패-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.1골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.3골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  }
+                ],
+                "streak": "최근 5경기 3승 0무 2패",
+                "last5": "3승 0무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-08",
+                    "opp": "AC 밀란",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "레체",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "유벤투스",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "베네치아",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-17",
+                    "opp": "AS 로마",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "세리에A"
+                  }
+                ],
+                "focus": "최근 5경기 3승 0무 2패입니다. 원정 2승 0무 3패입니다. 경기당 평균 1.1골을 넣고 1.3골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 AC 밀란 1-2 패입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Lorenzo Colombo",
+                    "status": "DOUBTFUL"
+                  }
+                ],
+                "injurySummary": "출전 불확실 1명"
+              },
+              {
+                "abbr": "INT",
+                "name": "인터 밀란",
+                "side": "home",
+                "record": "9승 1무 1패",
+                "venueRecord": "홈 6승 0무 0패",
+                "badges": [
+                  {
+                    "text": "리그 3위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "9승 1무 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "3위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "28"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+15"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-패-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+15"
+                  }
+                ],
+                "streak": "2연승",
+                "last5": "4승 0무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-08",
+                    "opp": "코모",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-03",
+                    "opp": "페예노르트",
+                    "ha": "원정",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "UCL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "AC 밀란",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "베네치아",
+                    "ha": "원정",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "피오렌티나",
+                    "ha": "홈",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "세리에A"
+                  }
+                ],
+                "focus": "최근 흐름은 2연승입니다. 최근 5경기 4승 0무 1패입니다. 홈 6승 0무 0패입니다. 경기당 평균 2.5골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 코모 2-0 승입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Piotr Zieliński",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Ange-Yoan Bonny",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  }
+                ],
+                "injurySummary": "결장 1명 · 불확실 1명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "인터 밀란",
+                "players": [
+                  {
+                    "name": "Marcus Thuram",
+                    "id": "217331",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Marcus_Thuram_France_v_Senegal_16_June_2026-261_%28cropped%29.jpg/120px-Marcus_Thuram_France_v_Senegal_16_June_2026-261_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Andy Diouf",
+                    "id": "319167",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Andy_Diouf_ASSE_RCL_2425.jpg/120px-Andy_Diouf_ASSE_RCL_2425.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "제노아",
+                "players": [
+                  {
+                    "name": "Milutin Osmajic",
+                    "id": "275444",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/06cfkz1629539351.jpg",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Lorenzo Colombo",
+                    "id": "297220",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/8vq3vj1602959747.jpg",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**인터 밀란** — 리그 3위, 승점 28, 득실 +15.",
+              "**제노아** — 리그 10위, 승점 16, 득실 -3."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-02-28",
+                  "home": "인터 밀란",
+                  "away": "제노아",
+                  "score": "2-0"
+                },
+                {
+                  "date": "2025-12-14",
+                  "home": "제노아",
+                  "away": "인터 밀란",
+                  "score": "1-2"
+                },
+                {
+                  "date": "2025-02-22",
+                  "home": "인터 밀란",
+                  "away": "제노아",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2024-08-17",
+                  "home": "제노아",
+                  "away": "인터 밀란",
+                  "score": "2-2"
+                },
+                {
+                  "date": "2024-03-04",
+                  "home": "인터 밀란",
+                  "away": "제노아",
+                  "score": "2-1"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5749764,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-ala-rma-20261129",
+          "espnId": "401882789",
+          "sport": "soccer",
+          "league": "LALIGA",
+          "leagueFull": "라리가",
+          "source": "espn",
+          "start": "2026-11-29T05:00:00+09:00",
+          "venue": "Santiago Bernabéu",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:45+09:00",
+            "moneyline": {
+              "away": 1300,
+              "draw": 750,
+              "home": -650
+            },
+            "spread": {
+              "homeLine": "-2.5",
+              "awayLine": "+2.5",
+              "home": 110,
+              "away": -160
+            },
+            "total": {
+              "line": "3.5",
+              "over": -120,
+              "under": -110
+            },
+            "implied": {
+              "away": 6.7,
+              "draw": 11.1,
+              "home": 82.1
+            }
+          },
+          "away": {
+            "name": "알라베스",
+            "abbr": "ALA",
+            "record": "4승 4무 5패",
+            "badges": [
+              {
+                "text": "리그 9위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "레알 마드리드",
+            "abbr": "RMA",
+            "record": "11승 0무 2패",
+            "badges": [
+              {
+                "text": "리그 2위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "LALIGA · 라리가",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 6명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**레알 마드리드**(홈) 11승 0무 2패(리그 2위), 5연승, **알라베스**(원정) 4승 4무 5패(리그 9위), 2연승. 최근 맞대결은 2026.04.21에 열린 레알 마드리드 2-1 알라베스 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **레알 마드리드**(홈) 2.5골 · **알라베스**(원정) 1.4골, 평균 실점은 홈 0.8골 · 원정 1.4골. 해외 배당을 확률로 환산하면 레알 마드리드 승 82.1% · 무 11.1% · 알라베스 승 6.7%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "ALA",
+                "name": "알라베스",
+                "side": "away",
+                "record": "4승 4무 5패",
+                "venueRecord": "원정 0승 3무 3패",
+                "badges": [
+                  {
+                    "text": "리그 9위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 4무 5패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "9위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "16"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "0"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-무-패-무"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.4골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.4골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "0"
+                  }
+                ],
+                "streak": "2연승",
+                "last5": "2승 2무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "데포르티보",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-10",
+                    "opp": "Anaitasuna",
+                    "ha": "원정",
+                    "score": "6-1",
+                    "res": "승",
+                    "comp": "코파델레이"
+                  },
+                  {
+                    "date": "2026-11-06",
+                    "opp": "세비야",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "바르셀로나",
+                    "ha": "원정",
+                    "score": "1-6",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-23",
+                    "opp": "말라가",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "라리가"
+                  }
+                ],
+                "focus": "최근 흐름은 2연승입니다. 최근 5경기 2승 2무 1패입니다. 원정 0승 3무 3패입니다. 경기당 평균 1.4골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 데포르티보 3-1 승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Hugo Novoa",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Facundo Garcés",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  },
+                  {
+                    "player": "Mikel Rodríguez",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  }
+                ],
+                "injurySummary": "결장 3명"
+              },
+              {
+                "abbr": "RMA",
+                "name": "레알 마드리드",
+                "side": "home",
+                "record": "11승 0무 2패",
+                "venueRecord": "홈 6승 0무 0패",
+                "badges": [
+                  {
+                    "text": "리그 2위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "11승 0무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "2위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "33"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+22"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+22"
+                  }
+                ],
+                "streak": "5연승",
+                "last5": "5승 0무 0패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "셀타 비고",
+                    "ha": "홈",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "발렌시아",
+                    "ha": "원정",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-04",
+                    "opp": "AEK 아테네",
+                    "ha": "원정",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "UCL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "라싱 산탄데르",
+                    "ha": "원정",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "바르셀로나",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "라리가"
+                  }
+                ],
+                "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 6승 0무 0패입니다. 경기당 평균 2.5골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 셀타 비고 2-1 승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Raúl Asencio",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  },
+                  {
+                    "player": "Ferland Mendy",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  },
+                  {
+                    "player": "Rodrygo",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  }
+                ],
+                "injurySummary": "결장 3명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "레알 마드리드",
+                "players": [
+                  {
+                    "name": "Kylian Mbappé",
+                    "id": "231388",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg/120px-Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 13"
+                    ]
+                  },
+                  {
+                    "name": "Arda Güler",
+                    "id": "310452",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Arda_G%C3%BCler_2025_%28cropped%29.jpg/120px-Arda_G%C3%BCler_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "알라베스",
+                "players": [
+                  {
+                    "name": "Lucas Boyé",
+                    "id": "207236",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas_boye_celtic_aek.jpg?width=120",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Mariano Díaz",
+                    "id": "198832",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Mariano_D%C3%ADaz%2C_Real_Madrid%2C_2022.jpg/120px-Mariano_D%C3%ADaz%2C_Real_Madrid%2C_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 4"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**레알 마드리드** — 리그 2위, 승점 33, 득실 +22.",
+              "**알라베스** — 리그 9위, 승점 16, 득실 0."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-04-21",
+                  "home": "레알 마드리드",
+                  "away": "알라베스",
+                  "score": "2-1"
+                },
+                {
+                  "date": "2025-12-14",
+                  "home": "알라베스",
+                  "away": "레알 마드리드",
+                  "score": "1-2"
+                },
+                {
+                  "date": "2025-04-13",
+                  "home": "알라베스",
+                  "away": "레알 마드리드",
+                  "score": "0-1"
+                },
+                {
+                  "date": "2024-09-24",
+                  "home": "레알 마드리드",
+                  "away": "알라베스",
+                  "score": "3-2"
+                },
+                {
+                  "date": "2024-05-14",
+                  "home": "레알 마드리드",
+                  "away": "알라베스",
+                  "score": "5-0"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5868148,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-fio-udi-20261129",
+          "espnId": "401875031",
+          "sport": "soccer",
+          "league": "SERIEA",
+          "leagueFull": "세리에 A",
+          "source": "espn",
+          "start": "2026-11-29T20:30:00+09:00",
+          "venue": "Stadio Friuli",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:58+09:00",
+            "moneyline": {
+              "away": 105,
+              "draw": 245,
+              "home": 215
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -145,
+              "away": 100
+            },
+            "total": {
+              "line": "2.5",
+              "over": -140,
+              "under": 105
+            },
+            "implied": {
+              "away": 44.5,
+              "draw": 26.5,
+              "home": 29.0
+            }
+          },
+          "away": {
+            "name": "피오렌티나",
+            "abbr": "FIO",
+            "record": "2승 3무 6패",
+            "badges": [
+              {
+                "text": "리그 15위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "우디네세",
+            "abbr": "UDI",
+            "record": "1승 3무 8패",
+            "badges": [
+              {
+                "text": "리그 19위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "SERIEA · 세리에 A",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 5명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**우디네세**(홈) 1승 3무 8패(리그 19위), 2연패, **피오렌티나**(원정) 2승 3무 6패(리그 15위), 최근 5경기 1승 2무 2패. 최근 맞대결은 2026.03.02에 열린 우디네세 3-0 피오렌티나 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **우디네세**(홈) 1.1골 · **피오렌티나**(원정) 1.5골, 평균 실점은 홈 2.2골 · 원정 2.3골. 해외 배당을 확률로 환산하면 우디네세 승 29.0% · 무 26.5% · 피오렌티나 승 44.5%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "FIO",
+                "name": "피오렌티나",
+                "side": "away",
+                "record": "2승 3무 6패",
+                "venueRecord": "원정 2승 0무 3패",
+                "badges": [
+                  {
+                    "text": "리그 15위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "2승 3무 6패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "15위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "9"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-8"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-승-무-패-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.3골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-8"
+                  }
+                ],
+                "streak": "최근 5경기 1승 2무 2패",
+                "last5": "1승 2무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-08",
+                    "opp": "유벤투스",
+                    "ha": "홈",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-02",
+                    "opp": "사수올로",
+                    "ha": "원정",
+                    "score": "4-2",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-29",
+                    "opp": "아탈란타",
+                    "ha": "홈",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "인터 밀란",
+                    "ha": "원정",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-18",
+                    "opp": "코모",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "세리에A"
+                  }
+                ],
+                "focus": "최근 5경기 1승 2무 2패입니다. 원정 2승 0무 3패입니다. 경기당 평균 1.5골을 넣고 2.3골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 유벤투스 2-2 무입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Federico Croci",
+                    "status": "OUT",
+                    "line": "대표팀 차출"
+                  },
+                  {
+                    "player": "Marin Pongračić",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Fabiano Parisi",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  }
+                ],
+                "injurySummary": "결장 3명"
+              },
+              {
+                "abbr": "UDI",
+                "name": "우디네세",
+                "side": "home",
+                "record": "1승 3무 8패",
+                "venueRecord": "홈 0승 1무 5패",
+                "badges": [
+                  {
+                    "text": "리그 19위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "1승 3무 8패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "19위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "6"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-13"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-패-패-무-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.1골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.2골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-13"
+                  }
+                ],
+                "streak": "2연패",
+                "last5": "0승 1무 4패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-06",
+                    "opp": "베네치아",
+                    "ha": "원정",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "AS 로마",
+                    "ha": "홈",
+                    "score": "2-5",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "파르마",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "AC 밀란",
+                    "ha": "홈",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-18",
+                    "opp": "레체",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패",
+                    "comp": "세리에A"
+                  }
+                ],
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 0승 1무 4패입니다. 홈 0승 1무 5패입니다. 경기당 평균 1.1골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.06 원정 베네치아 1-2 패입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Keinan Davis",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Nicolò Bertola",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Idrissa Gueye",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  }
+                ],
+                "injurySummary": "결장 2명 · 불확실 1명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "우디네세",
+                "players": [
+                  {
+                    "name": "Jurgen Ekkelenkamp",
+                    "id": "270817",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F270817.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Hassane Kamara",
+                    "id": "193919",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Lens_-_Nice_%2823-01-2021%29_51.jpg/120px-Lens_-_Nice_%2823-01-2021%29_51.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "피오렌티나",
+                "players": [
+                  {
+                    "name": "Franco Mastantuono",
+                    "id": "376473",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Franco_Mastantuono_in_2025_%28cropped%29.jpg/120px-Franco_Mastantuono_in_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Cher Ndour",
+                    "id": "360061",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Cher_Ndour.jpg/120px-Cher_Ndour.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**우디네세** — 리그 19위, 승점 6, 득실 -13.",
+              "**피오렌티나** — 리그 15위, 승점 9, 득실 -8."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-03-02",
+                  "home": "우디네세",
+                  "away": "피오렌티나",
+                  "score": "3-0"
+                },
+                {
+                  "date": "2025-12-21",
+                  "home": "피오렌티나",
+                  "away": "우디네세",
+                  "score": "5-1"
+                },
+                {
+                  "date": "2025-05-25",
+                  "home": "우디네세",
+                  "away": "피오렌티나",
+                  "score": "2-3"
+                },
+                {
+                  "date": "2024-12-23",
+                  "home": "피오렌티나",
+                  "away": "우디네세",
+                  "score": "1-2"
+                },
+                {
+                  "date": "2024-01-14",
+                  "home": "피오렌티나",
+                  "away": "우디네세",
+                  "score": "2-2"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5749768,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-liv-eve-20261129",
+          "espnId": "401879229",
+          "sport": "soccer",
+          "league": "EPL",
+          "leagueFull": "프리미어리그",
+          "source": "espn",
+          "start": "2026-11-29T21:00:00+09:00",
+          "venue": "Hill Dickinson Stadium",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:41+09:00",
+            "moneyline": {
+              "away": 105,
+              "draw": 260,
+              "home": 245
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -140,
+              "away": -105
+            },
+            "total": {
+              "line": "2.5",
+              "over": -145,
+              "under": 115
+            },
+            "implied": {
+              "away": 46.2,
+              "draw": 26.3,
+              "home": 27.5
+            }
+          },
+          "away": {
+            "name": "리버풀",
+            "abbr": "LIV",
+            "record": "6승 3무 2패",
+            "badges": [
+              {
+                "text": "리그 4위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "에버턴",
+            "abbr": "EVE",
+            "record": "4승 4무 2패",
+            "badges": [
+              {
+                "text": "리그 7위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "EPL · 프리미어리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 3명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**에버턴**(홈) 4승 4무 2패(리그 7위), 3연승, **리버풀**(원정) 6승 3무 2패(리그 4위), 최근 5경기 3승 0무 2패. 최근 맞대결은 2026.04.19에 열린 에버턴 1-2 리버풀 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **에버턴**(홈) 1.2골 · **리버풀**(원정) 1.6골, 평균 실점은 홈 1.0골 · 원정 0.9골. 해외 배당을 확률로 환산하면 에버턴 승 27.5% · 무 26.3% · 리버풀 승 46.2%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "LIV",
+                "name": "리버풀",
+                "side": "away",
+                "record": "6승 3무 2패",
+                "venueRecord": "원정 4승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 4위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "6승 3무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "4위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "21"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+8"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-패-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.6골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.9골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+8"
+                  }
+                ],
+                "streak": "최근 5경기 3승 0무 2패",
+                "last5": "3승 0무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-08",
+                    "opp": "크리스털 팰리스",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-04",
+                    "opp": "Fenerbahce",
+                    "ha": "원정",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "UCL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "아스널",
+                    "ha": "홈",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "첼시",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "승",
+                    "comp": "카라바오컵"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "브라이턴",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 5경기 3승 0무 2패입니다. 원정 4승 1무 0패입니다. 경기당 평균 1.6골을 넣고 0.9골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 크리스털 팰리스 3-1 승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Hugo Ekitiké",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Conor Bradley",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  },
+                  {
+                    "player": "Giovanni Leoni",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  }
+                ],
+                "injurySummary": "결장 3명"
+              },
+              {
+                "abbr": "EVE",
+                "name": "에버턴",
+                "side": "home",
+                "record": "4승 4무 2패",
+                "venueRecord": "홈 3승 1무 1패",
+                "badges": [
+                  {
+                    "text": "리그 7위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 4무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "7위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "16"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+2"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-승-승-패-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+2"
+                  }
+                ],
+                "streak": "3연승",
+                "last5": "3승 0무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-06",
+                    "opp": "코번트리 시티",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-02",
+                    "opp": "뉴캐슬 유나이티드",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-29",
+                    "opp": "뉴캐슬 유나이티드",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "카라바오컵"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "아스널",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-17",
+                    "opp": "첼시",
+                    "ha": "홈",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 흐름은 3연승입니다. 최근 5경기 3승 0무 2패입니다. 홈 3승 1무 1패입니다. 경기당 평균 1.2골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.06 홈 코번트리 시티 3-1 승입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
+                "injuryNote": "FotMob 결장 명단에 올라온 선수가 없습니다.",
+                "injuries": []
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "에버턴",
+                "players": [
+                  {
+                    "name": "Thierno Barry",
+                    "id": "301166",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/el24x91727900526.jpg",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "James Tarkowski",
+                    "id": "155226",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/James_Tarkowski_%28Oct_2017%29.jpg/120px-James_Tarkowski_%28Oct_2017%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "리버풀",
+                "players": [
+                  {
+                    "name": "Alexander Isak",
+                    "id": "235662",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg/120px-Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 7"
+                    ]
+                  },
+                  {
+                    "name": "Florian Wirtz",
+                    "id": "303748",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg/120px-Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**에버턴** — 리그 7위, 승점 16, 득실 +2.",
+              "**리버풀** — 리그 4위, 승점 21, 득실 +8."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-04-19",
+                  "home": "에버턴",
+                  "away": "리버풀",
+                  "score": "1-2"
+                },
+                {
+                  "date": "2025-09-20",
+                  "home": "리버풀",
+                  "away": "에버턴",
+                  "score": "2-1"
+                },
+                {
+                  "date": "2025-04-02",
+                  "home": "리버풀",
+                  "away": "에버턴",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2025-02-12",
+                  "home": "에버턴",
+                  "away": "리버풀",
+                  "score": "2-2"
+                },
+                {
+                  "date": "2024-04-24",
+                  "home": "에버턴",
+                  "away": "리버풀",
+                  "score": "2-0"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5795528,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-osa-val-20261129",
+          "espnId": "401882787",
+          "sport": "soccer",
+          "league": "LALIGA",
+          "leagueFull": "라리가",
+          "source": "espn",
+          "start": "2026-11-29T22:00:00+09:00",
+          "venue": "Mestalla Stadium",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:46+09:00",
+            "moneyline": {
+              "away": 260,
+              "draw": 235,
+              "home": 110
+            },
+            "spread": {
+              "homeLine": "-0.5",
+              "awayLine": "+0.5",
+              "home": -105,
+              "away": -140
+            },
+            "total": {
+              "line": "2.5",
+              "over": 105,
+              "under": -135
+            },
+            "implied": {
+              "away": 26.4,
+              "draw": 28.4,
+              "home": 45.2
+            }
+          },
+          "away": {
+            "name": "오사수나",
+            "abbr": "OSA",
+            "record": "4승 3무 6패",
+            "badges": [
+              {
+                "text": "리그 13위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "발렌시아",
+            "abbr": "VAL",
+            "record": "3승 3무 7패",
+            "badges": [
+              {
+                "text": "리그 17위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "LALIGA · 라리가",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 7명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**발렌시아**(홈) 3승 3무 7패(리그 17위), 2연승, **오사수나**(원정) 4승 3무 6패(리그 13위), 최근 5경기 2승 1무 2패. 최근 맞대결은 2026.03.01에 열린 발렌시아 1-0 오사수나 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **발렌시아**(홈) 0.7골 · **오사수나**(원정) 1.0골, 평균 실점은 홈 1.5골 · 원정 1.8골. 해외 배당을 확률로 환산하면 발렌시아 승 45.2% · 무 28.4% · 오사수나 승 26.4%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "OSA",
+                "name": "오사수나",
+                "side": "away",
+                "record": "4승 3무 6패",
+                "venueRecord": "원정 1승 0무 5패",
+                "badges": [
+                  {
+                    "text": "리그 13위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 3무 6패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "13위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "15"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-10"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-무-패-승-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-10"
+                  }
+                ],
+                "streak": "최근 5경기 2승 1무 2패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-07",
+                    "opp": "아틀레틱 빌바오",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-02",
+                    "opp": "데포르티보",
+                    "ha": "원정",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-29",
+                    "opp": "Atlético Calatayud",
+                    "ha": "원정",
+                    "score": "6-0",
+                    "res": "승",
+                    "comp": "코파델레이"
+                  },
+                  {
+                    "date": "2026-10-26",
+                    "opp": "세비야",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-18",
+                    "opp": "라싱 산탄데르",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "라리가"
+                  }
+                ],
+                "focus": "최근 5경기 2승 1무 2패입니다. 원정 1승 0무 5패입니다. 경기당 평균 1.0골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 아틀레틱 빌바오 1-1 무입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Alejandro Catena",
+                    "status": "OUT",
+                    "line": "징계 출장정지 · 복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Rockson Yeboah",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Abel Bretones",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Aitor Fernández",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  },
+                  {
+                    "player": "Asier Bonel",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Jorge Herrando",
+                    "status": "DOUBTFUL"
+                  }
+                ],
+                "injurySummary": "결장 4명 · 불확실 2명"
+              },
+              {
+                "abbr": "VAL",
+                "name": "발렌시아",
+                "side": "home",
+                "record": "3승 3무 7패",
+                "venueRecord": "홈 0승 2무 5패",
+                "badges": [
+                  {
+                    "text": "리그 17위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "3승 3무 7패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "17위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "12"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-11"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-패-승-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "0.7골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-11"
+                  }
+                ],
+                "streak": "2연승",
+                "last5": "3승 0무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "라요 바예카노",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-10",
+                    "opp": "Tavernes de la Valldigna",
+                    "ha": "원정",
+                    "score": "6-0",
+                    "res": "승",
+                    "comp": "코파델레이"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "레알 마드리드",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "엘체",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "비야레알",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "라리가"
+                  }
+                ],
+                "focus": "최근 흐름은 2연승입니다. 최근 5경기 3승 0무 2패입니다. 홈 0승 2무 5패입니다. 경기당 평균 0.7골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 라요 바예카노 1-0 승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Jesús Vázquez",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Diego López",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 2월 중순"
+                  },
+                  {
+                    "player": "Sergi Canós",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  }
+                ],
+                "injurySummary": "결장 3명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "발렌시아",
+                "players": [
+                  {
+                    "name": "Umar Sadiq",
+                    "id": "211770",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/SD_Negreira_-_Real_Sociedad%2C_Copa_do_Rei_2025-26_06_-_Umar_Sadiq.jpg/120px-SD_Negreira_-_Real_Sociedad%2C_Copa_do_Rei_2025-26_06_-_Umar_Sadiq.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Javier Guerra",
+                    "id": "16340",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "오사수나",
+                "players": [
+                  {
+                    "name": "Ante Budimir",
+                    "id": "207288",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg/120px-Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 8"
+                    ]
+                  },
+                  {
+                    "name": "Moi Gómez",
+                    "id": "169089",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Moi_G%C3%B3mez.jpg/120px-Moi_G%C3%B3mez.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**발렌시아** — 리그 17위, 승점 12, 득실 -11.",
+              "**오사수나** — 리그 13위, 승점 15, 득실 -10."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-03-01",
+                  "home": "발렌시아",
+                  "away": "오사수나",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2025-08-24",
+                  "home": "오사수나",
+                  "away": "발렌시아",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2025-03-02",
+                  "home": "오사수나",
+                  "away": "발렌시아",
+                  "score": "3-3"
+                },
+                {
+                  "date": "2024-09-24",
+                  "home": "발렌시아",
+                  "away": "오사수나",
+                  "score": "0-0"
+                },
+                {
+                  "date": "2024-04-15",
+                  "home": "오사수나",
+                  "away": "발렌시아",
+                  "score": "0-1"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5868150,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-nap-sas-20261129",
+          "espnId": "401874992",
+          "sport": "soccer",
+          "league": "SERIEA",
+          "leagueFull": "세리에 A",
+          "source": "espn",
+          "start": "2026-11-29T23:00:00+09:00",
+          "venue": "Mapei Stadium",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:58+09:00",
+            "moneyline": {
+              "away": -160,
+              "draw": 310,
+              "home": 330
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": 115,
+              "away": -170
+            },
+            "total": {
+              "line": "3.5",
+              "over": 130,
+              "under": -175
+            },
+            "implied": {
+              "away": 56.4,
+              "draw": 22.3,
+              "home": 21.3
+            }
+          },
+          "away": {
+            "name": "나폴리",
+            "abbr": "NAP",
+            "record": "5승 3무 4패",
+            "badges": [
+              {
+                "text": "리그 8위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "사수올로",
+            "abbr": "SAS",
+            "record": "2승 2무 8패",
+            "badges": [
+              {
+                "text": "리그 17위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "SERIEA · 세리에 A",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 10명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**사수올로**(홈) 2승 2무 8패(리그 17위), 5연패, **나폴리**(원정) 5승 3무 4패(리그 8위), 최근 5경기 2승 1무 2패. 최근 맞대결은 2026.01.17에 열린 나폴리 1-0 사수올로 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **사수올로**(홈) 1.3골 · **나폴리**(원정) 1.6골, 평균 실점은 홈 2.6골 · 원정 1.2골. 해외 배당을 확률로 환산하면 사수올로 승 21.3% · 무 22.3% · 나폴리 승 56.4%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "NAP",
+                "name": "나폴리",
+                "side": "away",
+                "record": "5승 3무 4패",
+                "venueRecord": "원정 2승 1무 3패",
+                "badges": [
+                  {
+                    "text": "리그 8위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "5승 3무 4패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "8위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "18"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+5"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-무-패-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.6골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+5"
+                  }
+                ],
+                "streak": "최근 5경기 2승 1무 2패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "토리노",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "라치오",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-04",
+                    "opp": "FC 포르투",
+                    "ha": "원정",
+                    "score": "1-4",
+                    "res": "패",
+                    "comp": "UCL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "유벤투스",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "몬차",
+                    "ha": "원정",
+                    "score": "4-1",
+                    "res": "승",
+                    "comp": "세리에A"
+                  }
+                ],
+                "focus": "최근 5경기 2승 1무 2패입니다. 원정 2승 1무 3패입니다. 경기당 평균 1.6골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 토리노 1-0 승입니다. FotMob 기준 결장 6명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Antonio Vergara",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Alex Meret",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Giovanni Di Lorenzo",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Stanislav Lobotka",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  },
+                  {
+                    "player": "Benoît Badiashile",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Alisson Santos",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Alessandro Buongiorno",
+                    "status": "DOUBTFUL"
+                  }
+                ],
+                "injurySummary": "결장 6명 · 불확실 1명"
+              },
+              {
+                "abbr": "SAS",
+                "name": "사수올로",
+                "side": "home",
+                "record": "2승 2무 8패",
+                "venueRecord": "홈 2승 1무 3패",
+                "badges": [
+                  {
+                    "text": "리그 17위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "2승 2무 8패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "17위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "8"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-15"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-패-패-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.3골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.6골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-15"
+                  }
+                ],
+                "streak": "5연패",
+                "last5": "0승 0무 5패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-07",
+                    "opp": "AS 로마",
+                    "ha": "원정",
+                    "score": "0-3",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-02",
+                    "opp": "피오렌티나",
+                    "ha": "홈",
+                    "score": "2-4",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-27",
+                    "opp": "라치오",
+                    "ha": "홈",
+                    "score": "2-6",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "코모",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-16",
+                    "opp": "프로시노네",
+                    "ha": "원정",
+                    "score": "2-4",
+                    "res": "패",
+                    "comp": "세리에A"
+                  }
+                ],
+                "focus": "최근 흐름은 5연패입니다. 최근 5경기 0승 0무 5패입니다. 홈 2승 1무 3패입니다. 경기당 평균 1.3골을 넣고 2.6골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 AS 로마 0-3 패입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Darryl Bakola",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Vasilije Adžić",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  },
+                  {
+                    "player": "Cristian Volpato",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Fedde Leysen",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  },
+                  {
+                    "player": "Daniel Boloca",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  },
+                  {
+                    "player": "Ismaël Koné",
+                    "status": "DOUBTFUL"
+                  }
+                ],
+                "injurySummary": "결장 4명 · 불확실 2명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "사수올로",
+                "players": [
+                  {
+                    "name": "Vasilije Adzic",
+                    "id": "344917",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/wnsadd1750331314.jpg",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Nemanja Matic",
+                    "id": "135743",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Nemanja_Mati%C4%87_2018_%28cropped%29.jpg/120px-Nemanja_Mati%C4%87_2018_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "나폴리",
+                "players": [
+                  {
+                    "name": "Kevin De Bruyne",
+                    "id": "134947",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg/120px-Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Matteo Politano",
+                    "id": "188306",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/4pr9591702565157.jpg",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**사수올로** — 리그 17위, 승점 8, 득실 -15.",
+              "**나폴리** — 리그 8위, 승점 18, 득실 +5."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-01-17",
+                  "home": "나폴리",
+                  "away": "사수올로",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2025-08-23",
+                  "home": "사수올로",
+                  "away": "나폴리",
+                  "score": "0-2"
+                },
+                {
+                  "date": "2024-02-28",
+                  "home": "사수올로",
+                  "away": "나폴리",
+                  "score": "1-6"
+                },
+                {
+                  "date": "2023-08-27",
+                  "home": "나폴리",
+                  "away": "사수올로",
+                  "score": "2-0"
+                },
+                {
+                  "date": "2023-02-17",
+                  "home": "사수올로",
+                  "away": "나폴리",
+                  "score": "0-2"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5749766,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-bou-ful-20261129",
+          "espnId": "401879228",
+          "sport": "soccer",
+          "league": "EPL",
+          "leagueFull": "프리미어리그",
+          "source": "espn",
+          "start": "2026-11-29T23:05:00+09:00",
+          "venue": "Craven Cottage",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:41+09:00",
+            "moneyline": {
+              "away": 155,
+              "draw": 250,
+              "home": 160
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -205,
+              "away": 140
+            },
+            "total": {
+              "line": "2.5",
+              "over": -140,
+              "under": 110
+            },
+            "implied": {
+              "away": 36.9,
+              "draw": 26.9,
+              "home": 36.2
+            }
+          },
+          "away": {
+            "name": "본머스",
+            "abbr": "BOU",
+            "record": "5승 3무 3패",
+            "badges": [
+              {
+                "text": "리그 5위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "풀럼",
+            "abbr": "FUL",
+            "record": "2승 5무 4패",
+            "badges": [
+              {
+                "text": "리그 15위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "EPL · 프리미어리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 5명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**풀럼**(홈) 2승 5무 4패(리그 15위), 3경기 연속 무승부, **본머스**(원정) 5승 3무 3패(리그 5위), 5연승. 최근 맞대결은 2026.05.09에 열린 풀럼 0-1 본머스 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **풀럼**(홈) 1.0골 · **본머스**(원정) 1.6골, 평균 실점은 홈 1.2골 · 원정 1.3골. 해외 배당을 확률로 환산하면 풀럼 승 36.2% · 무 26.9% · 본머스 승 36.9%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "BOU",
+                "name": "본머스",
+                "side": "away",
+                "record": "5승 3무 3패",
+                "venueRecord": "원정 2승 1무 2패",
+                "badges": [
+                  {
+                    "text": "리그 5위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "5승 3무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "5위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "18"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+4"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.6골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.3골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+4"
+                  }
+                ],
+                "streak": "5연승",
+                "last5": "5승 0무 0패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "노팅엄 포리스트",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "입스위치 타운",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "Sparta Prague",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "리즈 유나이티드",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "애스턴 빌라",
+                    "ha": "홈",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "카라바오컵"
+                  }
+                ],
+                "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 원정 2승 1무 2패입니다. 경기당 평균 1.6골을 넣고 1.3골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 노팅엄 포리스트 2-0 승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Juanlu Sánchez",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Alex Tóth",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 2월 초"
+                  },
+                  {
+                    "player": "Julián Araujo",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  }
+                ],
+                "injurySummary": "결장 3명"
+              },
+              {
+                "abbr": "FUL",
+                "name": "풀럼",
+                "side": "home",
+                "record": "2승 5무 4패",
+                "venueRecord": "홈 1승 2무 2패",
+                "badges": [
+                  {
+                    "text": "리그 15위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "2승 5무 4패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "15위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "11"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-2"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-무-무-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-2"
+                  }
+                ],
+                "streak": "3경기 연속 무승부",
+                "last5": "1승 3무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "맨체스터 시티",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "뉴캐슬 유나이티드",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "애스턴 빌라",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "크리스털 팰리스",
+                    "ha": "홈",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "카라바오컵"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "코번트리 시티",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 흐름은 3경기 연속 무승부입니다. 최근 5경기 1승 3무 1패입니다. 홈 1승 2무 2패입니다. 경기당 평균 1.0골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 맨체스터 시티 1-1 무입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Emile Smith Rowe",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Benjamin Lecomte",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 7월 초"
+                  }
+                ],
+                "injurySummary": "결장 2명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "풀럼",
+                "players": [
+                  {
+                    "name": "Josh King",
+                    "id": "409541",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Josh_King_01112025_%281%29.jpg/120px-Josh_King_01112025_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 2",
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "본머스",
+                "players": [
+                  {
+                    "name": "Evanilson",
+                    "id": "102368",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Evanilson_29122024_%281%29.jpg/120px-Evanilson_29122024_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 6",
+                      "도움 4"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**풀럼** — 리그 15위, 승점 11, 득실 -2.",
+              "**본머스** — 리그 5위, 승점 18, 득실 +4."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-05-09",
+                  "home": "풀럼",
+                  "away": "본머스",
+                  "score": "0-1"
+                },
+                {
+                  "date": "2025-10-03",
+                  "home": "본머스",
+                  "away": "풀럼",
+                  "score": "3-1"
+                },
+                {
+                  "date": "2025-04-14",
+                  "home": "본머스",
+                  "away": "풀럼",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2024-12-29",
+                  "home": "풀럼",
+                  "away": "본머스",
+                  "score": "2-2"
+                },
+                {
+                  "date": "2024-02-10",
+                  "home": "풀럼",
+                  "away": "본머스",
+                  "score": "3-1"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5795529,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-hul-cry-20261129",
+          "espnId": "401879230",
+          "sport": "soccer",
+          "league": "EPL",
+          "leagueFull": "프리미어리그",
+          "source": "espn",
+          "start": "2026-11-29T23:05:00+09:00",
+          "venue": "Selhurst Park",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:41+09:00",
+            "moneyline": {
+              "away": 295,
+              "draw": 280,
+              "home": -120
+            },
+            "spread": {
+              "homeLine": "-0.5",
+              "awayLine": "+0.5",
+              "home": -130,
+              "away": -110
+            },
+            "total": {
+              "line": "2.5",
+              "over": -145,
+              "under": 110
+            },
+            "implied": {
+              "away": 23.8,
+              "draw": 24.8,
+              "home": 51.4
+            }
+          },
+          "away": {
+            "name": "헐 시티",
+            "abbr": "HUL",
+            "record": "3승 5무 3패",
+            "badges": [
+              {
+                "text": "리그 11위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "크리스털 팰리스",
+            "abbr": "CRY",
+            "record": "2승 1무 8패",
+            "badges": [
+              {
+                "text": "리그 20위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "EPL · 프리미어리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 10명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**크리스털 팰리스**(홈) 2승 1무 8패(리그 20위), 2연패, **헐 시티**(원정) 3승 5무 3패(리그 11위), 5경기 무승. 최근 맞대결은 2017.05.14에 열린 크리스털 팰리스 4-0 헐 시티 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **크리스털 팰리스**(홈) 1.1골 · **헐 시티**(원정) 1.2골, 평균 실점은 홈 2.5골 · 원정 1.0골. 해외 배당을 확률로 환산하면 크리스털 팰리스 승 51.4% · 무 24.8% · 헐 시티 승 23.8%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "HUL",
+                "name": "헐 시티",
+                "side": "away",
+                "record": "3승 5무 3패",
+                "venueRecord": "원정 1승 1무 3패",
+                "badges": [
+                  {
+                    "text": "리그 11위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "3승 5무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "11위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "14"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+2"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-패-무-무-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+2"
+                  }
+                ],
+                "streak": "5경기 무승",
+                "last5": "0승 3무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-07",
+                    "opp": "아스널",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "입스위치 타운",
+                    "ha": "홈",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "브렌트퍼드",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-17",
+                    "opp": "풀럼",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-11",
+                    "opp": "에버턴",
+                    "ha": "홈",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 흐름은 5경기 무승입니다. 최근 5경기 0승 3무 2패입니다. 원정 1승 1무 3패입니다. 경기당 평균 1.2골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 아스널 0-1 패입니다. FotMob 기준 결장 6명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Tim Iroegbunam",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  },
+                  {
+                    "player": "Hidemasa Morita",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Matt Targett",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Ilyas Ansah",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Charlie Hughes",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Eliot Matazo",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 2월 초"
+                  }
+                ],
+                "injurySummary": "결장 6명"
+              },
+              {
+                "abbr": "CRY",
+                "name": "크리스털 팰리스",
+                "side": "home",
+                "record": "2승 1무 8패",
+                "venueRecord": "홈 1승 0무 4패",
+                "badges": [
+                  {
+                    "text": "리그 20위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "2승 1무 8패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "20위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "7"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-15"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-무-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.1골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-15"
+                  }
+                ],
+                "streak": "2연패",
+                "last5": "1승 1무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "코번트리 시티",
+                    "ha": "원정",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "리버풀",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "호펜하임",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "토트넘 홋스퍼",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "풀럼",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "카라바오컵"
+                  }
+                ],
+                "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 1무 3패입니다. 홈 1승 0무 4패입니다. 경기당 평균 1.1골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 코번트리 시티 2-3 패입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Jean-Philippe Mateta",
+                    "status": "OUT",
+                    "line": "징계 출장정지 · 복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Ismaïla Sarr",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Takehiro Tomiyasu",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Chadi Riad",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 6월 말"
+                  }
+                ],
+                "injurySummary": "결장 4명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "크리스털 팰리스",
+                "players": [
+                  {
+                    "name": "Tyrick Mitchell",
+                    "id": "300853",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Tyrick_Mitchell%2C_Manchester_United_v_Crystal_Palace%2C_5_December_2021_%28cropped%29.jpg/120px-Tyrick_Mitchell%2C_Manchester_United_v_Crystal_Palace%2C_5_December_2021_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Daichi Kamada",
+                    "id": "219362",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/2022128173756_2022-05-08_Fussball_Eintracht_Frankfurt_vs_Borussia_M%C3%B6nchengladbach_-_Sven_-_1D_X_MK_II_-_0725_-_AK8I7460_%28Daichi_Kamada_cropped%29.jpg/120px-2022128173756_2022-05-08_Fussball_Eintracht_Frankfurt_vs_Borussia_M%C3%B6nchengladbach_-_Sven_-_1D_X_MK_II_-_0725_-_AK8I7460_%28Daichi_Kamada_cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "헐 시티",
+                "players": [
+                  {
+                    "name": "Mohamed Belloumi",
+                    "id": "320417",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Mohamed_Belloumi_2026.jpg/120px-Mohamed_Belloumi_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Oliver McBurnie",
+                    "id": "193010",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Oli_McBurnie_17102026_%283%29.jpg/120px-Oli_McBurnie_17102026_%283%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**크리스털 팰리스** — 리그 20위, 승점 7, 득실 -15.",
+              "**헐 시티** — 리그 11위, 승점 14, 득실 +2."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2017-05-14",
+                  "home": "크리스털 팰리스",
+                  "away": "헐 시티",
+                  "score": "4-0"
+                },
+                {
+                  "date": "2016-12-10",
+                  "home": "헐 시티",
+                  "away": "크리스털 팰리스",
+                  "score": "3-3"
+                },
+                {
+                  "date": "2015-04-25",
+                  "home": "크리스털 팰리스",
+                  "away": "헐 시티",
+                  "score": "0-2"
+                },
+                {
+                  "date": "2014-10-04",
+                  "home": "헐 시티",
+                  "away": "크리스털 팰리스",
+                  "score": "2-0"
+                },
+                {
+                  "date": "2014-01-28",
+                  "home": "크리스털 팰리스",
+                  "away": "헐 시티",
+                  "score": "1-0"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5795527,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-new-bha-20261129",
+          "espnId": "401879231",
+          "sport": "soccer",
+          "league": "EPL",
+          "leagueFull": "프리미어리그",
+          "source": "espn",
+          "start": "2026-11-29T23:05:00+09:00",
+          "venue": "American Express Stadium",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:41+09:00",
+            "moneyline": {
+              "away": 425,
+              "draw": 340,
+              "home": -180
+            },
+            "spread": {
+              "homeLine": "-0.5",
+              "awayLine": "+0.5",
+              "home": -195,
+              "away": 130
+            },
+            "total": {
+              "line": "3.5",
+              "over": 130,
+              "under": -170
+            },
+            "implied": {
+              "away": 18.0,
+              "draw": 21.5,
+              "home": 60.5
+            }
+          },
+          "away": {
+            "name": "뉴캐슬 유나이티드",
+            "abbr": "NEW",
+            "record": "3승 4무 4패",
+            "badges": [
+              {
+                "text": "리그 13위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "브라이턴",
+            "abbr": "BHA",
+            "record": "7승 1무 3패",
+            "badges": [
+              {
+                "text": "리그 2위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "EPL · 프리미어리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 6명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**브라이턴**(홈) 7승 1무 3패(리그 2위), 3연승, **뉴캐슬 유나이티드**(원정) 3승 4무 4패(리그 13위), 2경기 연속 무승부. 최근 맞대결은 2026.05.02에 열린 뉴캐슬 유나이티드 3-1 브라이턴 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **브라이턴**(홈) 2.4골 · **뉴캐슬 유나이티드**(원정) 1.4골, 평균 실점은 홈 0.8골 · 원정 1.6골. 해외 배당을 확률로 환산하면 브라이턴 승 60.5% · 무 21.5% · 뉴캐슬 유나이티드 승 18.0%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "NEW",
+                "name": "뉴캐슬 유나이티드",
+                "side": "away",
+                "record": "3승 4무 4패",
+                "venueRecord": "원정 2승 1무 2패",
+                "badges": [
+                  {
+                    "text": "리그 13위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "3승 4무 4패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "13위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "13"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-무-패-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.4골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.6골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  }
+                ],
+                "streak": "2경기 연속 무승부",
+                "last5": "1승 2무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "아스널",
+                    "ha": "홈",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "풀럼",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-02",
+                    "opp": "에버턴",
+                    "ha": "홈",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-29",
+                    "opp": "에버턴",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "카라바오컵"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "크리스털 팰리스",
+                    "ha": "원정",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 흐름은 2경기 연속 무승부입니다. 최근 5경기 1승 2무 2패입니다. 원정 2승 1무 2패입니다. 경기당 평균 1.4골을 넣고 1.6골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 아스널 2-2 무입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Joelinton",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Ewen Jaouen",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  }
+                ],
+                "injurySummary": "결장 2명"
+              },
+              {
+                "abbr": "BHA",
+                "name": "브라이턴",
+                "side": "home",
+                "record": "7승 1무 3패",
+                "venueRecord": "홈 4승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 2위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "7승 1무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "2위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "22"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+17"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-승-승-승-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.4골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+17"
+                  }
+                ],
+                "streak": "3연승",
+                "last5": "3승 0무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-08",
+                    "opp": "브렌트퍼드",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "헤타페",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "UECL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "맨체스터 시티",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "맨체스터 시티",
+                    "ha": "원정",
+                    "score": "2-2",
+                    "res": "패",
+                    "comp": "카라바오컵"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "리버풀",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 흐름은 3연승입니다. 최근 5경기 3승 0무 2패입니다. 홈 4승 1무 0패입니다. 경기당 평균 2.4골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 브렌트퍼드 2-0 승입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Zadok Yohanna",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  },
+                  {
+                    "player": "Evan Ferguson",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  },
+                  {
+                    "player": "Kaoru Mitoma",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Stefanos Tzimas",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  }
+                ],
+                "injurySummary": "결장 4명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "브라이턴",
+                "players": [
+                  {
+                    "name": "Pascal Gross",
+                    "id": "132659",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Pascal_Gross_Ecuador_v_Germany_25_June_2026-065.jpg/120px-Pascal_Gross_Ecuador_v_Germany_25_June_2026-065.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 4",
+                      "도움 4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "뉴캐슬 유나이티드",
+                "players": [
+                  {
+                    "name": "Harvey Barnes",
+                    "id": "243386",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Harvey_Barnes_and_Rodrigo_Muniz_24052026_%281%29.jpg/120px-Harvey_Barnes_and_Rodrigo_Muniz_24052026_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 3",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**브라이턴** — 리그 2위, 승점 22, 득실 +17.",
+              "**뉴캐슬 유나이티드** — 리그 13위, 승점 13, 득실 -3."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-05-02",
+                  "home": "뉴캐슬 유나이티드",
+                  "away": "브라이턴",
+                  "score": "3-1"
+                },
+                {
+                  "date": "2025-10-18",
+                  "home": "브라이턴",
+                  "away": "뉴캐슬 유나이티드",
+                  "score": "2-1"
+                },
+                {
+                  "date": "2025-05-04",
+                  "home": "브라이턴",
+                  "away": "뉴캐슬 유나이티드",
+                  "score": "1-1"
+                },
+                {
+                  "date": "2025-03-02",
+                  "home": "뉴캐슬 유나이티드",
+                  "away": "브라이턴",
+                  "score": "1-2"
+                },
+                {
+                  "date": "2024-10-19",
+                  "home": "뉴캐슬 유나이티드",
+                  "away": "브라이턴",
+                  "score": "0-1"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5795526,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-tot-sun-20261129",
+          "espnId": "401879224",
+          "sport": "soccer",
+          "league": "EPL",
+          "leagueFull": "프리미어리그",
+          "source": "espn",
+          "start": "2026-11-29T23:05:00+09:00",
+          "venue": "Stadium of Light",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:41+09:00",
+            "moneyline": {
+              "away": 115,
+              "draw": 235,
+              "home": 240
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -150,
+              "away": 105
+            },
+            "total": {
+              "line": "2.5",
+              "over": -110,
+              "under": -120
+            },
+            "implied": {
+              "away": 44.0,
+              "draw": 28.2,
+              "home": 27.8
+            }
+          },
+          "away": {
+            "name": "토트넘 홋스퍼",
+            "abbr": "TOT",
+            "record": "4승 3무 4패",
+            "badges": [
+              {
+                "text": "리그 9위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "선덜랜드",
+            "abbr": "SUN",
+            "record": "2승 3무 6패",
+            "badges": [
+              {
+                "text": "리그 18위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "EPL · 프리미어리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 10명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**선덜랜드**(홈) 2승 3무 6패(리그 18위), 최근 5경기 2승 1무 2패, **토트넘 홋스퍼**(원정) 4승 3무 4패(리그 9위), 최근 5경기 4승 0무 1패. 최근 맞대결은 2026.04.12에 열린 선덜랜드 1-0 토트넘 홋스퍼 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **선덜랜드**(홈) 0.7골 · **토트넘 홋스퍼**(원정) 1.1골, 평균 실점은 홈 1.5골 · 원정 1.0골. 해외 배당을 확률로 환산하면 선덜랜드 승 27.8% · 무 28.2% · 토트넘 홋스퍼 승 44.0%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "TOT",
+                "name": "토트넘 홋스퍼",
+                "side": "away",
+                "record": "4승 3무 4패",
+                "venueRecord": "원정 1승 2무 2패",
+                "badges": [
+                  {
+                    "text": "리그 9위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "4승 3무 4패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "9위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "15"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+1"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-패-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.1골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+1"
+                  }
+                ],
+                "streak": "최근 5경기 4승 0무 1패",
+                "last5": "4승 0무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "입스위치 타운",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "리즈 유나이티드",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "크리스털 팰리스",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-24",
+                    "opp": "첼시",
+                    "ha": "원정",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-19",
+                    "opp": "코번트리 시티",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "EPL"
+                  }
+                ],
+                "focus": "최근 5경기 4승 0무 1패입니다. 원정 1승 2무 2패입니다. 경기당 평균 1.1골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 입스위치 타운 2-0 승입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Tosin Adarabioyo",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Mathys Tel",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Mykhaylo Mudryk",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Xavi Simons",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 2월 초"
+                  },
+                  {
+                    "player": "Wilson Odobert",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 중순"
+                  }
+                ],
+                "injurySummary": "결장 5명"
+              },
+              {
+                "abbr": "SUN",
+                "name": "선덜랜드",
+                "side": "home",
+                "record": "2승 3무 6패",
+                "venueRecord": "홈 2승 1무 2패",
+                "badges": [
+                  {
+                    "text": "리그 18위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "2승 3무 6패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "18위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "9"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-9"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-승-패-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "0.7골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-9"
+                  }
+                ],
+                "streak": "최근 5경기 2승 1무 2패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "애스턴 빌라",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "첼시",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "Dinamo Zagreb",
+                    "ha": "홈",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "코번트리 시티",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "브렌트퍼드",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "카라바오컵"
+                  }
+                ],
+                "focus": "최근 5경기 2승 1무 2패입니다. 홈 2승 1무 2패입니다. 경기당 평균 0.7골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 애스턴 빌라 0-0 무입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Brian Brobbey",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Granit Xhaka",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Habib Diarra",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Daniel Ballard",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Romaine Mundle",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  }
+                ],
+                "injurySummary": "결장 5명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "선덜랜드",
+                "players": [
+                  {
+                    "name": "Enzo Le Fée",
+                    "id": "288340",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Enzo_Le_F%C3%A9e_SAFC_August_2025.jpg/120px-Enzo_Le_F%C3%A9e_SAFC_August_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 3",
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "토트넘 홋스퍼",
+                "players": [
+                  {
+                    "name": "Jan Paul van Hecke",
+                    "id": "282583",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F282583.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Mohammed Kudus",
+                    "id": "266599",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F266599.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**선덜랜드** — 리그 18위, 승점 9, 득실 -9.",
+              "**토트넘 홋스퍼** — 리그 9위, 승점 15, 득실 +1."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-04-12",
+                  "home": "선덜랜드",
+                  "away": "토트넘 홋스퍼",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2026-01-04",
+                  "home": "토트넘 홋스퍼",
+                  "away": "선덜랜드",
+                  "score": "1-1"
+                },
+                {
+                  "date": "2017-01-31",
+                  "home": "선덜랜드",
+                  "away": "토트넘 홋스퍼",
+                  "score": "0-0"
+                },
+                {
+                  "date": "2016-09-18",
+                  "home": "토트넘 홋스퍼",
+                  "away": "선덜랜드",
+                  "score": "1-0"
+                },
+                {
+                  "date": "2016-01-16",
+                  "home": "토트넘 홋스퍼",
+                  "away": "선덜랜드",
+                  "score": "4-1"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5795534,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-rbl-scf-20261129",
+          "espnId": "401884724",
+          "sport": "soccer",
+          "league": "BUNDES",
+          "leagueFull": "분데스리가",
+          "source": "espn",
+          "start": "2026-11-29T23:30:00+09:00",
+          "venue": "Europa-Park Stadion",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-23T06:13:52+09:00",
+            "moneyline": {
+              "away": 135,
+              "draw": 270,
+              "home": 150
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -190,
+              "away": 130
+            },
+            "total": {
+              "line": "3.5",
+              "over": 105,
+              "under": -140
+            },
+            "implied": {
+              "away": 38.8,
+              "draw": 24.7,
+              "home": 36.5
+            }
+          },
+          "away": {
+            "name": "RB 라이프치히",
+            "abbr": "RBL",
+            "record": "7승 0무 3패",
+            "badges": [
+              {
+                "text": "리그 4위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "프라이부르크",
+            "abbr": "SCF",
+            "record": "7승 1무 2패",
+            "badges": [
+              {
+                "text": "리그 3위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "BUNDES · 분데스리가",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 3명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**프라이부르크**(홈) 7승 1무 2패(리그 3위), 5연승, **RB 라이프치히**(원정) 7승 0무 3패(리그 4위), 최근 5경기 3승 0무 2패. 최근 맞대결은 2026.05.16에 열린 프라이부르크 4-1 RB 라이프치히 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **프라이부르크**(홈) 2.1골 · **RB 라이프치히**(원정) 3.2골, 평균 실점은 홈 1.0골 · 원정 1.4골. 해외 배당을 확률로 환산하면 프라이부르크 승 36.5% · 무 24.7% · RB 라이프치히 승 38.8%."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "RBL",
+                "name": "RB 라이프치히",
+                "side": "away",
+                "record": "7승 0무 3패",
+                "venueRecord": "원정 2승 0무 3패",
+                "badges": [
+                  {
+                    "text": "리그 4위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "7승 0무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "4위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "21"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+18"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-패-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "3.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.4골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+18"
+                  }
+                ],
+                "streak": "최근 5경기 3승 0무 2패",
+                "last5": "3승 0무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "우니온 베를린",
+                    "ha": "원정",
+                    "score": "5-1",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-12",
+                    "opp": "Mlada Boleslav",
+                    "ha": "홈",
+                    "score": "4-5",
+                    "res": "패",
+                    "comp": "2026 Club Friendly"
+                  },
+                  {
+                    "date": "2026-11-07",
+                    "opp": "아우크스부르크",
+                    "ha": "홈",
+                    "score": "5-2",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-04",
+                    "opp": "맨체스터 시티",
+                    "ha": "홈",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "UCL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "샬케 04",
+                    "ha": "원정",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  }
+                ],
+                "focus": "최근 5경기 3승 0무 2패입니다. 원정 2승 0무 3패입니다. 경기당 평균 3.2골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 우니온 베를린 5-1 승입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Marc Guiu",
+                    "status": "OUT",
+                    "line": "복귀 예상 몇 주"
+                  },
+                  {
+                    "player": "Assan Ouédraogo",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  }
+                ],
+                "injurySummary": "결장 2명"
+              },
+              {
+                "abbr": "SCF",
+                "name": "프라이부르크",
+                "side": "home",
+                "record": "7승 1무 2패",
+                "venueRecord": "홈 4승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 3위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "시즌 전적",
+                    "value": "7승 1무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "3위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "22"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+11"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.1골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+11"
+                  }
+                ],
+                "streak": "5연승",
+                "last5": "5승 0무 0패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "엘버스베르크",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "우니온 베를린",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "Trabzonspor",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "UECL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "아우크스부르크",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "VfL Wolfsburg",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "2026-27 German Cup"
+                  }
+                ],
+                "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 4승 0무 1패입니다. 경기당 평균 2.1골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 엘버스베르크 1-0 승입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-23 06:13) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Florent Muslija",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  }
+                ],
+                "injurySummary": "결장 1명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "프라이부르크",
+                "players": [
+                  {
+                    "name": "Igor Matanovic",
+                    "id": "310883",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Igor_Matanovic_Croatia_v_Portugal_2_July_2026-016.jpg/120px-Igor_Matanovic_Croatia_v_Portugal_2_July_2026-016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 5"
+                    ]
+                  },
+                  {
+                    "name": "Matthias Ginter",
+                    "id": "170209",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Matthias_Ginter_2019.jpg/120px-Matthias_Ginter_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "RB 라이프치히",
+                "players": [
+                  {
+                    "name": "Rômulo",
+                    "id": "324766",
+                    "stats": [
+                      "득점 6"
+                    ]
+                  },
+                  {
+                    "name": "Antonio Nusa",
+                    "id": "319368",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Antonio_Nusa_Morocco_v_Norway_7_June_2026-110_%28cropped%29.jpg/120px-Antonio_Nusa_Morocco_v_Norway_7_June_2026-110_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 7"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**프라이부르크** — 리그 3위, 승점 22, 득실 +11.",
+              "**RB 라이프치히** — 리그 4위, 승점 21, 득실 +18."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-23 06:13 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-23 06:13 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-05-16",
+                  "home": "프라이부르크",
+                  "away": "RB 라이프치히",
+                  "score": "4-1"
+                },
+                {
+                  "date": "2026-01-14",
+                  "home": "RB 라이프치히",
+                  "away": "프라이부르크",
+                  "score": "2-0"
+                },
+                {
+                  "date": "2025-03-08",
+                  "home": "프라이부르크",
+                  "away": "RB 라이프치히",
+                  "score": "0-0"
+                },
+                {
+                  "date": "2024-10-26",
+                  "home": "RB 라이프치히",
+                  "away": "프라이부르크",
+                  "score": "3-1"
+                },
+                {
+                  "date": "2024-04-06",
+                  "home": "프라이부르크",
+                  "away": "RB 라이프치히",
+                  "score": "1-4"
+                }
+              ],
+              "summary": "최근 5차례 맞대결"
+            },
+            "fotmobId": 5881235,
+            "fotmobSwapped": false
+          }
+        }
+        /* SOCCER-AUTO 2026-11-29 END */,
+
+        /* NBA-AUTO 2026-11-29 START */
+        {
+          "id": "nba-orl-was-20261129",
+          "espnId": "401910046",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-29T07:00:00+09:00",
+          "status": "scheduled",
+          "venue": "Capital One Arena",
+          "away": {
+            "name": "올랜도 매직",
+            "abbr": "ORL",
+            "record": "7승 8패",
+            "badges": [
+              {
+                "text": "원정 6승 3패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "워싱턴 위저즈",
+            "abbr": "WAS",
+            "record": "6승 11패",
+            "badges": [
+              {
+                "text": "홈 2승 5패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 7명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 109.6점 · 110.0점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**워싱턴 위저즈**(홈) 6승 11패(홈 2승 5패, 최근 5경기 2승 3패, 2연승), **올랜도 매직**(원정) 7승 8패(원정 6승 3패, 최근 5경기 4승 1패). 직전 경기(11.21) **올랜도 매직**은 브루클린 네츠에 113-111로 이겼고, Franz Wagner 35점·5리바운드·7어시스트, Desmond Bane 21점·2리바운드·3어시스트를 기록했습니다. 직전 경기(11.21) **워싱턴 위저즈**는 시카고 불스에 98-94로 이겼고, Anthony Davis 36점·11리바운드·3어시스트, AJ Dybantsa 20점·10리바운드·6어시스트를 기록했습니다."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "ORL",
+                "name": "올랜도 매직",
+                "side": "away",
+                "record": "7승 8패",
+                "venueRecord": "원정 6승 3패",
+                "last5": "4승 1패",
+                "lastGame": "113-111 승",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "브루클린 네츠",
+                    "ha": "원정",
+                    "score": "113-111",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-19",
+                    "opp": "필라델피아 세븐티식서스",
+                    "ha": "홈",
+                    "score": "116-121",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-17",
+                    "opp": "보스턴 셀틱스",
+                    "ha": "원정",
+                    "score": "115-105",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-14",
+                    "opp": "밀워키 벅스",
+                    "ha": "홈",
+                    "score": "107-99",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-12",
+                    "opp": "유타 재즈",
+                    "ha": "원정",
+                    "score": "123-108",
+                    "res": "승"
+                  }
+                ],
+                "ppg": 109.6,
+                "rpg": 42.6,
+                "tp": 35.8,
+                "players": [
+                  {
+                    "name": "Franz Wagner",
+                    "id": "4566434",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
+                    "pos": "F",
+                    "stat": "25.1점 · 6.8리바운드 · 8.4어시스트",
+                    "sub": "야투 47.5% · 3점 26.0% · 팀 내 1옵션",
+                    "last": "직전 36분 35점 5리바운드 7어시스트, 야투 13-25",
+                    "recent": "최근 5경기 31.2점 · 야투 52.2%"
+                  },
+                  {
+                    "name": "Paolo Banchero",
+                    "id": "4432573",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432573.png",
+                    "pos": "F",
+                    "stat": "24.5점 · 6.5리바운드 · 7.5어시스트",
+                    "sub": "야투 69.6% · 3점 50.0% · 팀 내 2옵션"
+                  },
+                  {
+                    "name": "Desmond Bane",
+                    "id": "4066320",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
+                    "pos": "G",
+                    "stat": "18.6점 · 4.1리바운드 · 2.7어시스트",
+                    "sub": "야투 42.5% · 3점 42.9% · 팀 내 3옵션",
+                    "last": "직전 31분 21점 2리바운드 3어시스트, 야투 7-17",
+                    "recent": "최근 5경기 21.2점 · 야투 52.9%"
+                  }
+                ],
+                "focus": "최근 5경기 Franz Wagner의 평균은 31.2점·야투 52.2%·3점 31.0%입니다. 결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Franz Wagner가 35점·5리바운드·7어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명",
+                "injuryOut": 4,
+                "injuryPpg": 24.5,
+                "injuries": [
+                  {
+                    "player": "Jonathan Isaac",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F"
+                  },
+                  {
+                    "player": "Izaiyah Nelson",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F"
+                  },
+                  {
+                    "player": "Noah Penda",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F"
+                  },
+                  {
+                    "player": "Paolo Banchero",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 2옵션 · 24.5점 · 6.5리바운드"
+                  }
+                ]
+              },
+              {
+                "abbr": "WAS",
+                "name": "워싱턴 위저즈",
+                "side": "home",
+                "record": "6승 11패",
+                "venueRecord": "홈 2승 5패",
+                "streak": "2연승",
+                "last5": "2승 3패",
+                "lastGame": "98-94 승",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "시카고 불스",
+                    "ha": "원정",
+                    "score": "98-94",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-19",
+                    "opp": "토론토 랩터스",
+                    "ha": "원정",
+                    "score": "103-99",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-17",
+                    "opp": "멤피스 그리즐리스",
+                    "ha": "홈",
+                    "score": "120-136",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-16",
+                    "opp": "휴스턴 로키츠",
+                    "ha": "홈",
+                    "score": "119-147",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-13",
+                    "opp": "디트로이트 피스턴스",
+                    "ha": "홈",
+                    "score": "140-144",
+                    "res": "패"
+                  }
+                ],
+                "ppg": 110.0,
+                "rpg": 42.5,
+                "tp": 31.9,
+                "players": [
+                  {
+                    "name": "Anthony Davis",
+                    "id": "6583",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
+                    "pos": "F",
+                    "stat": "25.3점 · 10.1리바운드 · 2.1어시스트",
+                    "sub": "야투 52.9% · 3점 34.4% · 팀 내 1옵션",
+                    "last": "직전 34분 36점 11리바운드 3어시스트, 야투 16-26",
+                    "recent": "최근 5경기 25.6점 · 야투 56.2%"
+                  },
+                  {
+                    "name": "Trae Young",
+                    "id": "4277905",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
+                    "pos": "G",
+                    "stat": "17.4점 · 2.7리바운드 · 8.6어시스트",
+                    "sub": "야투 36.7% · 3점 31.8% · 팀 내 3옵션",
+                    "last": "직전 35분 16점 2리바운드 5어시스트, 야투 4-13",
+                    "recent": "최근 5경기 15.4점 · 야투 28.3%"
+                  },
+                  {
+                    "name": "Kyshawn George",
+                    "id": "5174563",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
+                    "pos": "F",
+                    "stat": "17.4점 · 4.4리바운드 · 4.5어시스트",
+                    "sub": "야투 47.2% · 3점 40.0% · 팀 내 2옵션",
+                    "last": "직전 35분 11점 7리바운드 5어시스트, 야투 5-17",
+                    "recent": "최근 5경기 14.8점 · 야투 44.4%"
+                  }
+                ],
+                "focus": "최근 5경기 Anthony Davis의 평균은 25.6점·야투 56.2%·3점 40.0%입니다. 결장 3명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Anthony Davis가 36점·11리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명 · 출전 불투명 2명",
+                "injuryOut": 3,
+                "injuryPpg": 7.2,
+                "injuries": [
+                  {
+                    "player": "Bub Carrington",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 9옵션 · 4.8점 · 1.3리바운드"
+                  },
+                  {
+                    "player": "Deandre Ayton",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "C",
+                    "line": "팀 내 11옵션 · 3.8점 · 4.1리바운드"
+                  },
+                  {
+                    "player": "Tristan Vukcevic",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F"
+                  },
+                  {
+                    "player": "Reece Beekman",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 16옵션 · 0.0점 · 0.0리바운드"
+                  },
+                  {
+                    "player": "Justin Champagnie",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 7옵션 · 7.2점 · 7.5리바운드"
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "시즌 평균 득점은 **워싱턴 위저즈**(홈) 110.0점 · **올랜도 매직**(원정) 109.6점, 평균 리바운드는 홈 42.5개 · 원정 42.6개, 3점 성공률은 홈 31.9% · 원정 35.8%. 평균 득점 차가 0.4점으로 작고, 3점 성공률 차 3.9%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 올랜도 매직 승률 59.7%, 워싱턴 위저즈 40.3%.",
+              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-bkn-cha-20261129",
+          "espnId": "401910047",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-29T08:00:00+09:00",
+          "status": "scheduled",
+          "venue": "Spectrum Center",
+          "away": {
+            "name": "브루클린 네츠",
+            "abbr": "BKN",
+            "record": "3승 12패",
+            "badges": [
+              {
+                "text": "원정 2승 6패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "샬럿 호네츠",
+            "abbr": "CHA",
+            "record": "4승 11패",
+            "badges": [
+              {
+                "text": "홈 3승 4패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 3명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 110.9점 · 99.9점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**샬럿 호네츠**(홈) 4승 11패(홈 3승 4패, 최근 5경기 1승 4패, 4연패), **브루클린 네츠**(원정) 3승 12패(원정 2승 6패, 최근 5경기 1승 4패, 4연패). 직전 경기(11.21) **브루클린 네츠**는 올랜도 매직에 111-113로 졌고, Julius Randle 27점·9리바운드·6어시스트, Danny Wolf 20점·5리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **샬럿 호네츠**는 애틀랜타 호크스에 97-111로 졌고, Moussa Diabate 21점·15리바운드·2어시스트, Brandon Miller 19점·8리바운드·3어시스트를 기록했습니다."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "BKN",
+                "name": "브루클린 네츠",
+                "side": "away",
+                "record": "3승 12패",
+                "venueRecord": "원정 2승 6패",
+                "streak": "4연패",
+                "last5": "1승 4패",
+                "lastGame": "111-113 패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "올랜도 매직",
+                    "ha": "홈",
+                    "score": "111-113",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-19",
+                    "opp": "시카고 불스",
+                    "ha": "홈",
+                    "score": "107-137",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-17",
+                    "opp": "필라델피아 세븐티식서스",
+                    "ha": "홈",
+                    "score": "123-135",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-15",
+                    "opp": "멤피스 그리즐리스",
+                    "ha": "원정",
+                    "score": "110-129",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-12",
+                    "opp": "뉴올리언스 펠리컨스",
+                    "ha": "원정",
+                    "score": "145-111",
+                    "res": "승"
+                  }
+                ],
+                "ppg": 110.9,
+                "rpg": 41.3,
+                "tp": 36.0,
+                "players": [
+                  {
+                    "name": "Julius Randle",
+                    "id": "3064514",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
+                    "pos": "F",
+                    "stat": "21.1점 · 6.0리바운드 · 4.7어시스트",
+                    "sub": "야투 46.7% · 3점 33.8% · 팀 내 1옵션",
+                    "last": "직전 39분 27점 9리바운드 6어시스트, 야투 9-20",
+                    "recent": "최근 5경기 23.2점 · 야투 50.0%"
+                  },
+                  {
+                    "name": "Michael Porter Jr.",
+                    "id": "4278104",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278104.png",
+                    "pos": "F",
+                    "stat": "20.2점 · 6.9리바운드 · 1.6어시스트",
+                    "sub": "야투 44.9% · 3점 37.5% · 팀 내 2옵션",
+                    "last": "직전 34분 16점 4리바운드 5어시스트, 야투 6-14",
+                    "recent": "최근 4경기 17.0점 · 야투 44.0%"
+                  },
+                  {
+                    "name": "Nolan Traore",
+                    "id": "5279130",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5279130.png",
+                    "pos": "G",
+                    "stat": "12.9점 · 1.6리바운드 · 2.7어시스트",
+                    "sub": "야투 51.1% · 3점 40.4% · 팀 내 3옵션",
+                    "last": "직전 18분 4점 0리바운드 2어시스트, 야투 2-6",
+                    "recent": "최근 4경기 12.8점 · 야투 50.0%"
+                  }
+                ],
+                "focus": "최근 5경기 Julius Randle의 평균은 23.2점·야투 50.0%·3점 33.3%입니다. 결장 1명의 시즌 평균 득점 합계는 12.9점입니다. 직전 경기에서는 Julius Randle가 27점·9리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 3위) · 출전 불투명 1명",
+                "injuryOut": 1,
+                "injuryPpg": 12.9,
+                "injuries": [
+                  {
+                    "player": "Grant Nelson",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F"
+                  },
+                  {
+                    "player": "Nolan Traore",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 3옵션 · 12.9점 · 1.6리바운드"
+                  }
+                ]
+              },
+              {
+                "abbr": "CHA",
+                "name": "샬럿 호네츠",
+                "side": "home",
+                "record": "4승 11패",
+                "venueRecord": "홈 3승 4패",
+                "streak": "4연패",
+                "last5": "1승 4패",
+                "lastGame": "97-111 패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "애틀랜타 호크스",
+                    "ha": "원정",
+                    "score": "97-111",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-18",
+                    "opp": "LA 레이커스",
+                    "ha": "원정",
+                    "score": "114-118",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-15",
+                    "opp": "LA 클리퍼스",
+                    "ha": "원정",
+                    "score": "105-113",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-13",
+                    "opp": "피닉스 선즈",
+                    "ha": "원정",
+                    "score": "96-101",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-10",
+                    "opp": "클리블랜드 캐벌리어스",
+                    "ha": "홈",
+                    "score": "124-112",
+                    "res": "승"
+                  }
+                ],
+                "ppg": 99.9,
+                "rpg": 47.0,
+                "tp": 31.0,
+                "players": [
+                  {
+                    "name": "Brandon Miller",
+                    "id": "4433287",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433287.png",
+                    "pos": "F",
+                    "stat": "19.8점 · 4.8리바운드 · 2.5어시스트",
+                    "sub": "야투 36.1% · 3점 28.1% · 팀 내 1옵션",
+                    "last": "직전 33분 19점 8리바운드 3어시스트, 야투 7-18",
+                    "recent": "최근 3경기 17.3점 · 야투 38.3%"
+                  },
+                  {
+                    "name": "Naz Reid",
+                    "id": "4396971",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396971.png",
+                    "pos": "C",
+                    "stat": "17.3점 · 8.5리바운드 · 2.4어시스트",
+                    "sub": "야투 38.8% · 3점 33.6% · 팀 내 2옵션",
+                    "last": "직전 39분 12점 10리바운드 3어시스트, 야투 4-19",
+                    "recent": "최근 5경기 18.6점 · 야투 34.7%"
+                  },
+                  {
+                    "name": "Grayson Allen",
+                    "id": "3135045",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3135045.png",
+                    "pos": "G",
+                    "stat": "14.9점 · 3.1리바운드 · 3.3어시스트",
+                    "sub": "야투 44.8% · 3점 45.8% · 팀 내 3옵션",
+                    "recent": "최근 3경기 17.7점 · 야투 45.7%"
+                  }
+                ],
+                "focus": "최근 3경기 Brandon Miller의 평균은 17.3점·야투 38.3%·3점 35.5%입니다. 결장 2명의 시즌 평균 득점 합계는 13.2점입니다. 직전 경기에서는 Moussa Diabate가 21점·15리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명(팀 득점 6·13위) · 출전 불투명 2명",
+                "injuryOut": 2,
+                "injuryPpg": 13.2,
+                "injuries": [
+                  {
+                    "player": "Grant Williams",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 5옵션 · 11.3점 · 2.7리바운드"
+                  },
+                  {
+                    "player": "Grayson Allen",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 3옵션 · 14.9점 · 3.1리바운드"
+                  },
+                  {
+                    "player": "Kon Knueppel",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 13옵션 · 3.0점 · 0.0리바운드"
+                  },
+                  {
+                    "player": "Dennis Schroder",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 6옵션 · 10.2점 · 3.6리바운드"
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "시즌 평균 득점은 **샬럿 호네츠**(홈) 99.9점 · **브루클린 네츠**(원정) 110.9점, 평균 리바운드는 홈 47.0개 · 원정 41.3개, 3점 성공률은 홈 31.0% · 원정 36.0%. 평균 득점 차 11.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 브루클린 네츠 승률 37.8%, 샬럿 호네츠 62.3%.",
+              "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-ind-chi-20261129",
+          "espnId": "401910048",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-29T10:00:00+09:00",
+          "status": "scheduled",
+          "venue": "United Center",
+          "away": {
+            "name": "인디애나 페이서스",
+            "abbr": "IND",
+            "record": "5승 11패",
+            "badges": [
+              {
+                "text": "원정 3승 5패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "시카고 불스",
+            "abbr": "CHI",
+            "record": "4승 11패",
+            "badges": [
+              {
+                "text": "홈 1승 5패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 7명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 112.0점 · 114.7점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**시카고 불스**(홈) 4승 11패(홈 1승 5패, 최근 5경기 3승 2패), **인디애나 페이서스**(원정) 5승 11패(원정 3승 5패, 최근 5경기 2승 3패, 3연패). 직전 경기(11.21) **인디애나 페이서스**는 클리블랜드 캐벌리어스에 119-128로 졌고, Pascal Siakam 21점·7리바운드·2어시스트, Ivica Zubac 21점·10리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **시카고 불스**는 워싱턴 위저즈에 94-98로 졌고, Norman Powell 16점·3리바운드·2어시스트, Buddy Hield 15점·4리바운드·0어시스트를 기록했습니다."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "IND",
+                "name": "인디애나 페이서스",
+                "side": "away",
+                "record": "5승 11패",
+                "venueRecord": "원정 3승 5패",
+                "streak": "3연패",
+                "last5": "2승 3패",
+                "lastGame": "119-128 패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "클리블랜드 캐벌리어스",
+                    "ha": "원정",
+                    "score": "119-128",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-19",
+                    "opp": "휴스턴 로키츠",
+                    "ha": "홈",
+                    "score": "104-119",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-15",
+                    "opp": "필라델피아 세븐티식서스",
+                    "ha": "원정",
+                    "score": "124-131",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-14",
+                    "opp": "뉴욕 닉스",
+                    "ha": "홈",
+                    "score": "106-104",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-12",
+                    "opp": "워싱턴 위저즈",
+                    "ha": "홈",
+                    "score": "114-101",
+                    "res": "승"
+                  }
+                ],
+                "ppg": 112.0,
+                "rpg": 41.8,
+                "tp": 33.1,
+                "players": [
+                  {
+                    "name": "Pascal Siakam",
+                    "id": "3149673",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
+                    "pos": "F",
+                    "stat": "23.0점 · 6.1리바운드 · 3.8어시스트",
+                    "sub": "야투 51.6% · 3점 35.7% · 팀 내 1옵션",
+                    "last": "직전 30분 21점 7리바운드 2어시스트, 야투 8-17",
+                    "recent": "최근 5경기 24.6점 · 야투 50.6%"
+                  },
+                  {
+                    "name": "Tyrese Haliburton",
+                    "id": "4396993",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396993.png",
+                    "pos": "G",
+                    "stat": "21.8점 · 4.5리바운드 · 9.5어시스트",
+                    "sub": "야투 51.6% · 3점 37.0% · 팀 내 2옵션"
+                  },
+                  {
+                    "name": "Andrew Nembhard",
+                    "id": "4395712",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
+                    "pos": "G",
+                    "stat": "16.2점 · 2.3리바운드 · 7.7어시스트",
+                    "sub": "야투 43.6% · 3점 41.2% · 팀 내 3옵션",
+                    "last": "직전 26분 12점 3리바운드 8어시스트, 야투 3-10",
+                    "recent": "최근 3경기 13.7점 · 야투 37.1%"
+                  }
+                ],
+                "focus": "최근 5경기 Pascal Siakam의 평균은 24.6점·야투 50.6%·3점 36.4%입니다. 결장 4명의 시즌 평균 득점 합계는 31.8점입니다. 직전 경기에서는 Pascal Siakam가 21점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명 · 출전 불투명 1명",
+                "injuryOut": 4,
+                "injuryPpg": 31.8,
+                "injuries": [
+                  {
+                    "player": "T.J. McConnell",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 9옵션 · 7.0점 · 2.3리바운드"
+                  },
+                  {
+                    "player": "Pascal Siakam",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 1옵션 · 23.0점 · 6.1리바운드"
+                  },
+                  {
+                    "player": "Tyrese Haliburton",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 2옵션 · 21.8점 · 4.5리바운드"
+                  },
+                  {
+                    "player": "Johnny Furphy",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G"
+                  },
+                  {
+                    "player": "Ben Sheppard",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 16옵션 · 3.0점 · 1.0리바운드"
+                  }
+                ]
+              },
+              {
+                "abbr": "CHI",
+                "name": "시카고 불스",
+                "side": "home",
+                "record": "4승 11패",
+                "venueRecord": "홈 1승 5패",
+                "last5": "3승 2패",
+                "lastGame": "94-98 패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "워싱턴 위저즈",
+                    "ha": "홈",
+                    "score": "94-98",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-19",
+                    "opp": "브루클린 네츠",
+                    "ha": "원정",
+                    "score": "137-107",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-17",
+                    "opp": "클리블랜드 캐벌리어스",
+                    "ha": "원정",
+                    "score": "115-126",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-15",
+                    "opp": "미네소타 팀버울브스",
+                    "ha": "원정",
+                    "score": "117-106",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-14",
+                    "opp": "애틀랜타 호크스",
+                    "ha": "홈",
+                    "score": "125-117",
+                    "res": "승"
+                  }
+                ],
+                "ppg": 114.7,
+                "rpg": 43.8,
+                "tp": 31.8,
+                "players": [
+                  {
+                    "name": "Norman Powell",
+                    "id": "2595516",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2595516.png",
+                    "pos": "G",
+                    "stat": "20.8점 · 2.8리바운드 · 2.4어시스트",
+                    "sub": "야투 44.6% · 3점 34.1% · 팀 내 1옵션",
+                    "last": "직전 33분 16점 3리바운드 2어시스트, 야투 7-18",
+                    "recent": "최근 5경기 23.4점 · 야투 50.0%"
+                  },
+                  {
+                    "name": "Caleb Wilson",
+                    "id": "5095151",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5095151.png",
+                    "pos": "F",
+                    "stat": "18.9점 · 6.2리바운드 · 1.9어시스트",
+                    "sub": "야투 42.0% · 3점 32.4% · 팀 내 2옵션"
+                  },
+                  {
+                    "name": "Matas Buzelis",
+                    "id": "4711294",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
+                    "pos": "F",
+                    "stat": "14.7점 · 4.7리바운드 · 1.9어시스트",
+                    "sub": "야투 45.8% · 3점 36.6% · 팀 내 3옵션",
+                    "last": "직전 25분 9점 5리바운드 1어시스트, 야투 4-10",
+                    "recent": "최근 5경기 17.2점 · 야투 50.9%"
+                  }
+                ],
+                "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 1·2·7위) · 출전 불투명 2명",
+                "injuryOut": 3,
+                "injuryPpg": 49.0,
+                "injuries": [
+                  {
+                    "player": "Nic Claxton",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 7옵션 · 9.3점 · 4.8리바운드"
+                  },
+                  {
+                    "player": "Jalen Smith",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 4옵션 · 13.4점 · 7.9리바운드"
+                  },
+                  {
+                    "player": "Norman Powell",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
+                  },
+                  {
+                    "player": "Patrick Williams",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 10옵션 · 6.9점 · 2.9리바운드"
+                  },
+                  {
+                    "player": "Caleb Wilson",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 2옵션 · 18.9점 · 6.2리바운드"
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "시즌 평균 득점은 **시카고 불스**(홈) 114.7점 · **인디애나 페이서스**(원정) 112.0점, 평균 리바운드는 홈 43.8개 · 원정 41.8개, 3점 성공률은 홈 31.8% · 원정 33.1%. 평균 득점 차가 2.7점으로 작고, 3점 성공률 차 1.3%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 인디애나 페이서스 승률 42.2%, 시카고 불스 57.8%.",
+              "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-okc-mil-20261129",
+          "espnId": "401910049",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-29T10:00:00+09:00",
+          "status": "scheduled",
+          "venue": "Fiserv Forum",
+          "away": {
+            "name": "오클라호마시티 썬더",
+            "abbr": "OKC",
+            "record": "10승 6패",
+            "badges": [
+              {
+                "text": "원정 4승 5패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "밀워키 벅스",
+            "abbr": "MIL",
+            "record": "1승 16패",
+            "badges": [
+              {
+                "text": "홈 1승 8패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 5명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 113.0점 · 109.4점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**밀워키 벅스**(홈) 1승 16패(홈 1승 8패, 최근 5경기 0승 5패, 5연패), **오클라호마시티 썬더**(원정) 10승 6패(원정 4승 5패, 최근 5경기 2승 3패). 직전 경기(11.21) **오클라호마시티 썬더**는 뉴올리언스 펠리컨스에 126-120로 이겼고, Shai Gilgeous-Alexander 40점·3리바운드·8어시스트, Aday Mara 22점·16리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **밀워키 벅스**는 필라델피아 세븐티식서스에 129-132로 졌고, Tyler Herro 50점·11리바운드·7어시스트, Brayden Burries 26점·8리바운드·4어시스트를 기록했습니다."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "OKC",
+                "name": "오클라호마시티 썬더",
+                "side": "away",
+                "record": "10승 6패",
+                "venueRecord": "원정 4승 5패",
+                "last5": "2승 3패",
+                "lastGame": "126-120 승",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "뉴올리언스 펠리컨스",
+                    "ha": "홈",
+                    "score": "126-120",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-19",
+                    "opp": "애틀랜타 호크스",
+                    "ha": "홈",
+                    "score": "112-117",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-16",
+                    "opp": "새크라멘토 킹스",
+                    "ha": "원정",
+                    "score": "125-103",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-14",
+                    "opp": "LA 클리퍼스",
+                    "ha": "원정",
+                    "score": "112-113",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-12",
+                    "opp": "포틀랜드 트레일블레이저스",
+                    "ha": "원정",
+                    "score": "108-118",
+                    "res": "패"
+                  }
+                ],
+                "ppg": 113.0,
+                "rpg": 45.8,
+                "tp": 34.5,
+                "players": [
+                  {
+                    "name": "Shai Gilgeous-Alexander",
+                    "id": "4278073",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278073.png",
+                    "pos": "G",
+                    "stat": "31.7점 · 4.1리바운드 · 4.5어시스트",
+                    "sub": "야투 48.3% · 3점 37.3% · 팀 내 1옵션",
+                    "last": "직전 37분 40점 3리바운드 8어시스트, 야투 14-24",
+                    "recent": "최근 5경기 36.4점 · 야투 54.6%"
+                  },
+                  {
+                    "name": "Ajay Mitchell",
+                    "id": "4900671",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
+                    "pos": "G",
+                    "stat": "17.0점 · 3.6리바운드 · 3.6어시스트",
+                    "sub": "야투 49.5% · 3점 25.6% · 팀 내 2옵션",
+                    "last": "직전 31분 8점 2리바운드 4어시스트, 야투 3-12",
+                    "recent": "최근 3경기 11.7점 · 야투 37.8%"
+                  },
+                  {
+                    "name": "Jared McCain",
+                    "id": "4683778",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
+                    "pos": "G",
+                    "stat": "13.9점 · 3.4리바운드 · 1.7어시스트",
+                    "sub": "야투 41.5% · 3점 34.2% · 팀 내 3옵션",
+                    "last": "직전 30분 18점 3리바운드 0어시스트, 야투 7-14",
+                    "recent": "최근 5경기 16.2점 · 야투 39.4%"
+                  }
+                ],
+                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 36.4점·야투 54.6%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 13.0점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 40점·3리바운드·8어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명 · 출전 불투명 1명",
+                "injuryOut": 4,
+                "injuryPpg": 13.0,
+                "injuries": [
+                  {
+                    "player": "Shai Gilgeous-Alexander",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 1옵션 · 31.7점 · 4.1리바운드"
+                  },
+                  {
+                    "player": "Nikola Topic",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 15옵션 · 2.7점 · 1.3리바운드"
+                  },
+                  {
+                    "player": "Jaylin Williams",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 14옵션 · 2.9점 · 3.3리바운드"
+                  },
+                  {
+                    "player": "Alex Caruso",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 9옵션 · 7.4점 · 3.7리바운드"
+                  },
+                  {
+                    "player": "Thomas Sorber",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C"
+                  }
+                ]
+              },
+              {
+                "abbr": "MIL",
+                "name": "밀워키 벅스",
+                "side": "home",
+                "record": "1승 16패",
+                "venueRecord": "홈 1승 8패",
+                "streak": "5연패",
+                "last5": "0승 5패",
+                "lastGame": "129-132 패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "필라델피아 세븐티식서스",
+                    "ha": "원정",
+                    "score": "129-132",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-20",
+                    "opp": "포틀랜드 트레일블레이저스",
+                    "ha": "홈",
+                    "score": "114-124",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-19",
+                    "opp": "마이애미 히트",
+                    "ha": "원정",
+                    "score": "130-137",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-16",
+                    "opp": "애틀랜타 호크스",
+                    "ha": "홈",
+                    "score": "106-113",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-14",
+                    "opp": "올랜도 매직",
+                    "ha": "원정",
+                    "score": "99-107",
+                    "res": "패"
+                  }
+                ],
+                "ppg": 109.4,
+                "rpg": 44.7,
+                "tp": 34.5,
+                "players": [
+                  {
+                    "name": "Tyler Herro",
+                    "id": "4395725",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png",
+                    "pos": "G",
+                    "stat": "21.3점 · 4.4리바운드 · 4.3어시스트",
+                    "sub": "야투 45.0% · 3점 38.0% · 팀 내 1옵션",
+                    "last": "직전 40분 50점 11리바운드 7어시스트, 야투 15-23",
+                    "recent": "최근 5경기 20.0점 · 야투 42.9%"
+                  },
+                  {
+                    "name": "Jaime Jaquez Jr.",
+                    "id": "4432848",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png",
+                    "pos": "F",
+                    "stat": "14.6점 · 4.8리바운드 · 2.9어시스트",
+                    "sub": "야투 46.4% · 3점 42.5% · 팀 내 2옵션",
+                    "last": "직전 25분 9점 0리바운드 1어시스트, 야투 4-7",
+                    "recent": "최근 5경기 11.2점 · 야투 42.6%"
+                  },
+                  {
+                    "name": "Kyle Kuzma",
+                    "id": "3134907",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3134907.png",
+                    "pos": "F",
+                    "stat": "12.2점 · 5.2리바운드 · 2.3어시스트",
+                    "sub": "야투 44.1% · 3점 32.1% · 팀 내 3옵션",
+                    "last": "직전 33분 12점 5리바운드 1어시스트, 야투 4-16",
+                    "recent": "최근 4경기 16.5점 · 야투 40.4%"
+                  }
+                ],
+                "focus": "최근 5경기 Tyler Herro의 평균은 20.0점·야투 42.9%·3점 36.1%입니다. 결장 1명의 시즌 평균 득점 합계는 3.9점입니다. 직전 경기에서는 Tyler Herro가 50점·11리바운드·7어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 13위)",
+                "injuryOut": 1,
+                "injuryPpg": 3.9,
+                "injuries": [
+                  {
+                    "player": "Ousmane Dieng",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 13옵션 · 3.9점 · 1.2리바운드"
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "시즌 평균 득점은 **밀워키 벅스**(홈) 109.4점 · **오클라호마시티 썬더**(원정) 113.0점, 평균 리바운드는 홈 44.7개 · 원정 45.8개, 3점 성공률은 홈 34.5% · 원정 34.5%. 평균 득점 차 3.6점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 오클라호마시티 썬더 승률 84.8%, 밀워키 벅스 15.2%.",
+              "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        },
+        {
+          "id": "nba-phi-hou-20261129",
+          "espnId": "401910050",
+          "sport": "basketball",
+          "league": "NBA",
+          "source": "espn",
+          "start": "2026-11-29T10:30:00+09:00",
+          "status": "scheduled",
+          "venue": "Toyota Center (Houston)",
+          "away": {
+            "name": "필라델피아 세븐티식서스",
+            "abbr": "PHI",
+            "record": "14승 3패",
+            "badges": [
+              {
+                "text": "원정 7승 1패",
+                "tone": ""
+              }
+            ]
+          },
+          "home": {
+            "name": "휴스턴 로키츠",
+            "abbr": "HOU",
+            "record": "12승 5패",
+            "badges": [
+              {
+                "text": "홈 7승 1패",
+                "tone": ""
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "결장 3명",
+              "tone": "warn"
+            },
+            {
+              "text": "평균 115.5점 · 118.2점",
+              "tone": "info"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**휴스턴 로키츠**(홈) 12승 5패(홈 7승 1패, 최근 5경기 3승 2패), **필라델피아 세븐티식서스**(원정) 14승 3패(원정 7승 1패, 최근 5경기 5승 0패, 5연승). 직전 경기(11.21) **필라델피아 세븐티식서스**는 밀워키 벅스에 132-129로 이겼고, Joel Embiid 26점·17리바운드·9어시스트, LeBron James 21점·6리바운드·6어시스트를 기록했습니다. 직전 경기(11.21) **휴스턴 로키츠**는 덴버 너기츠에 124-133로 졌고, Alperen Sengun 28점·11리바운드·10어시스트, Fred VanVleet 25점·1리바운드·9어시스트를 기록했습니다."
+            }
+          ],
+          "details": {
+            "teams": [
+              {
+                "abbr": "PHI",
+                "name": "필라델피아 세븐티식서스",
+                "side": "away",
+                "record": "14승 3패",
+                "venueRecord": "원정 7승 1패",
+                "streak": "5연승",
+                "last5": "5승 0패",
+                "lastGame": "132-129 승",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "밀워키 벅스",
+                    "ha": "홈",
+                    "score": "132-129",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-19",
+                    "opp": "올랜도 매직",
+                    "ha": "원정",
+                    "score": "121-116",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-17",
+                    "opp": "브루클린 네츠",
+                    "ha": "원정",
+                    "score": "135-123",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-15",
+                    "opp": "인디애나 페이서스",
+                    "ha": "홈",
+                    "score": "131-124",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-13",
+                    "opp": "토론토 랩터스",
+                    "ha": "홈",
+                    "score": "123-112",
+                    "res": "승"
+                  }
+                ],
+                "ppg": 115.5,
+                "rpg": 42.8,
+                "tp": 35.3,
+                "players": [
+                  {
+                    "name": "Tyrese Maxey",
+                    "id": "4431678",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
+                    "pos": "G",
+                    "stat": "25.9점 · 3.3리바운드 · 5.7어시스트",
+                    "sub": "야투 49.5% · 3점 36.9% · 팀 내 1옵션",
+                    "last": "직전 36분 17점 4리바운드 4어시스트, 야투 4-11",
+                    "recent": "최근 4경기 23.8점 · 야투 50.9%"
+                  },
+                  {
+                    "name": "Jaylen Brown",
+                    "id": "3917376",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3917376.png",
+                    "pos": "G",
+                    "stat": "22.6점 · 6.6리바운드 · 3.6어시스트",
+                    "sub": "야투 49.4% · 3점 38.6% · 팀 내 2옵션",
+                    "recent": "최근 3경기 26.7점 · 야투 55.8%"
+                  },
+                  {
+                    "name": "Joel Embiid",
+                    "id": "3059318",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
+                    "pos": "C",
+                    "stat": "20.4점 · 8.9리바운드 · 4.1어시스트",
+                    "sub": "야투 40.0% · 3점 14.3% · 팀 내 3옵션",
+                    "last": "직전 34분 26점 17리바운드 9어시스트, 야투 7-17",
+                    "recent": "최근 4경기 27.2점 · 야투 45.9%"
+                  }
+                ],
+                "focus": "최근 4경기 Tyrese Maxey의 평균은 23.8점·야투 50.9%·3점 40.0%입니다. 결장 2명의 시즌 평균 득점 합계는 2.1점입니다. 직전 경기에서는 Joel Embiid가 26점·17리바운드·9어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 2명",
+                "injuryOut": 2,
+                "injuryPpg": 2.1,
+                "injuries": [
+                  {
+                    "player": "Dean Wade",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
+                  },
+                  {
+                    "player": "Jaylen Brown",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
+                  },
+                  {
+                    "player": "Adem Bona",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
+                  },
+                  {
+                    "player": "Ariel Hukporti",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C"
+                  }
+                ]
+              },
+              {
+                "abbr": "HOU",
+                "name": "휴스턴 로키츠",
+                "side": "home",
+                "record": "12승 5패",
+                "venueRecord": "홈 7승 1패",
+                "last5": "3승 2패",
+                "lastGame": "124-133 패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "덴버 너기츠",
+                    "ha": "원정",
+                    "score": "124-133",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-19",
+                    "opp": "인디애나 페이서스",
+                    "ha": "원정",
+                    "score": "119-104",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-17",
+                    "opp": "마이애미 히트",
+                    "ha": "원정",
+                    "score": "110-128",
+                    "res": "패"
+                  },
+                  {
+                    "date": "2026-11-16",
+                    "opp": "워싱턴 위저즈",
+                    "ha": "원정",
+                    "score": "147-119",
+                    "res": "승"
+                  },
+                  {
+                    "date": "2026-11-14",
+                    "opp": "유타 재즈",
+                    "ha": "홈",
+                    "score": "125-118",
+                    "res": "승"
+                  }
+                ],
+                "ppg": 118.2,
+                "rpg": 45.3,
+                "tp": 38.0,
+                "players": [
+                  {
+                    "name": "Alperen Sengun",
+                    "id": "4871144",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png",
+                    "pos": "C",
+                    "stat": "22.1점 · 9.3리바운드 · 7.0어시스트",
+                    "sub": "야투 54.7% · 3점 50.0% · 팀 내 1옵션",
+                    "last": "직전 36분 28점 11리바운드 10어시스트, 야투 9-16",
+                    "recent": "최근 5경기 24.0점 · 야투 60.9%"
+                  },
+                  {
+                    "name": "Kevin Durant",
+                    "id": "3202",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png",
+                    "pos": "F",
+                    "stat": "21.0점 · 5.2리바운드 · 3.8어시스트",
+                    "sub": "야투 50.5% · 3점 40.0% · 팀 내 2옵션",
+                    "last": "직전 35분 16점 4리바운드 4어시스트, 야투 6-9",
+                    "recent": "최근 5경기 21.2점 · 야투 53.1%"
+                  },
+                  {
+                    "name": "Amen Thompson",
+                    "id": "4684740",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684740.png",
+                    "pos": "G",
+                    "stat": "16.1점 · 7.1리바운드 · 3.1어시스트",
+                    "sub": "야투 55.6% · 3점 31.2% · 팀 내 3옵션",
+                    "last": "직전 26분 22점 6리바운드 0어시스트, 야투 10-12",
+                    "recent": "최근 4경기 18.8점 · 야투 69.0%"
+                  }
+                ],
+                "focus": "최근 5경기 Alperen Sengun의 평균은 24.0점·야투 60.9%·3점 55.6%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 28점·11리바운드·10어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 11위)",
+                "injuryOut": 1,
+                "injuryPpg": 3.2,
+                "injuries": [
+                  {
+                    "player": "Clint Capela",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 11옵션 · 3.2점 · 5.2리바운드"
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "시즌 평균 득점은 **휴스턴 로키츠**(홈) 118.2점 · **필라델피아 세븐티식서스**(원정) 115.5점, 평균 리바운드는 홈 45.3개 · 원정 42.8개, 3점 성공률은 홈 38.0% · 원정 35.3%. 평균 득점 차가 2.7점으로 작고, 3점 성공률 차 2.7%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 필라델피아 세븐티식서스 승률 31.3%, 휴스턴 로키츠 68.7%.",
+              "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+            ],
+            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+          }
+        }
+        /* NBA-AUTO 2026-11-29 END */
       ]
     }
   ]

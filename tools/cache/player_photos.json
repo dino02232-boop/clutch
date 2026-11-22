@@ -648,6 +648,15 @@
    "espnId": "318779",
    "checked": "2026-11-20T23:33:03+09:00"
   },
+  "igor matanovic": {
+   "name": "Igor Matanovic",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Igor_Matanovic_Croatia_v_Portugal_2_July_2026-016.jpg/120px-Igor_Matanovic_Croatia_v_Portugal_2_July_2026-016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Igor Matanović",
+   "espnId": "310883",
+   "checked": "2026-11-23T06:13:53+09:00"
+  },
   "igor thiago": {
    "name": "Igor Thiago",
    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Igor_Thiago_Brazil_V_Morocco_13_June_2026-120_%28cropped%29.jpg/120px-Igor_Thiago_Brazil_V_Morocco_13_June_2026-120_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
@@ -809,6 +818,15 @@
    "title": "Jon Ander Olasagasti",
    "espnId": "317784",
    "checked": "2026-11-20T23:31:32+09:00"
+  },
+  "jonathan burkardt": {
+   "name": "Jonathan Burkardt",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/6lgcz41759567686.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Jonathan Burkardt",
+   "espnId": "274887",
+   "checked": "2026-11-23T06:13:52+09:00"
   },
   "josh king": {
    "name": "Josh King",
@@ -1503,6 +1521,15 @@
    "espnId": "181946",
    "checked": "2026-11-20T23:32:11+09:00"
   },
+  "rômulo": {
+   "name": "Rômulo",
+   "photo": null,
+   "src": "none",
+   "conf": "",
+   "title": null,
+   "espnId": "324766",
+   "checked": "2026-11-23T06:13:55+09:00"
+  },
   "said el mala": {
    "name": "Said El Mala",
    "photo": null,
@@ -1665,6 +1692,15 @@
    "espnId": "235045",
    "checked": "2026-11-20T23:31:54+09:00"
   },
+  "tijjani noslin": {
+   "name": "Tijjani Noslin",
+   "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F323113.png&w=120&h=120&scale=crop",
+   "src": "espn",
+   "conf": "espn",
+   "title": null,
+   "espnId": "323113",
+   "checked": "2026-11-23T06:13:58+09:00"
+  },
   "tyrick mitchell": {
    "name": "Tyrick Mitchell",
    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Tyrick_Mitchell%2C_Manchester_United_v_Crystal_Palace%2C_5_December_2021_%28cropped%29.jpg/120px-Tyrick_Mitchell%2C_Manchester_United_v_Crystal_Palace%2C_5_December_2021_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
@@ -1783,5 +1819,5 @@
    "checked": "2026-11-20T23:22:31+09:00"
   }
  },
- "updatedAt": "2026-11-23T05:11:58+09:00"
+ "updatedAt": "2026-11-23T06:14:21+09:00"
 }
