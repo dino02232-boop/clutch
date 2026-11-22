@@ -213,6 +213,7 @@ def _date_list(ymd, refresh):
                 "utc": datetime.fromisoformat(utc.replace("Z", "+00:00")),
                 "home": ((m.get("home") or {}).get("name") or ""),
                 "away": ((m.get("away") or {}).get("name") or ""),
+                "finished": bool((m.get("status") or {}).get("finished")),
             })
     return out
 
@@ -244,6 +245,94 @@ def _note(kind, stamp):
     if kind == "no-lineup":
         return "%s에 이 경기 결장 명단이 아직 없습니다." % SOURCE_NAME
     return "결장 명단을 확인하지 못했습니다(%s 응답 없음)." % SOURCE_NAME
+
+
+# ── 선수 평점 (FotMob 0~10) ───────────────────────────────────────
+# 이름 유사도가 이 값 이상일 때만 같은 선수로 본다. 확신이 안 되면 비워 둔다.
+RATING_MATCH = 0.86
+
+
+def _rating_map(side):
+    """FotMob 라인업 한 팀 → {선수 이름: 이 경기 평점}. 평점 없는 선수는 넣지 않는다."""
+    out = {}
+    for group in ("starters", "subs"):
+        for p in (side or {}).get(group) or []:
+            rating = (p.get("performance") or {}).get("rating")
+            if rating is None:
+                continue
+            try:
+                rating = round(float(rating), 1)
+            except (TypeError, ValueError):
+                continue
+            if not 0 < rating <= 10:
+                continue
+            name = (p.get("name") or "").strip()
+            if name:
+                out[name] = rating
+    return out
+
+
+def _apply_ratings(game, home_side, away_side):
+    """이 경기 평점을 카드에 붙인다. 붙인 선수 수를 돌려준다.
+
+    · details.keyPlayers 가 있으면 그 선수(ESPN 시즌 기록으로 뽑힌 주요 선수)에 rating 만 붙인다.
+      이름이 충분히 비슷하지 않으면 그 선수는 그대로 두고 평점을 만들지 않는다.
+    · 끝난 경기는 ESPN 에 시즌 리더가 없어 keyPlayers 가 빈 경우가 많다. 그때는 팀 블록의
+      '주요 선수' 자리에 FotMob 이 경기 평점 상위 선수 3명을 넣는다(평점이 확인된 선수만).
+    """
+    details = game.get("details") or {}
+    maps = {"home": _rating_map(home_side), "away": _rating_map(away_side)}
+    if not maps["home"] and not maps["away"]:
+        return 0
+
+    groups = details.get("keyPlayers") or []
+    if groups:
+        filled = 0
+        for group in groups:
+            side = "home" if group.get("side") == "home" else "away"
+            table = maps[side]
+            if not table:
+                continue
+            for p in group.get("players") or []:
+                name = (p.get("name") or "").strip()
+                if not name:
+                    continue
+                best_name, best_score = None, 0.0
+                for cand in table:
+                    score = _sim(name, cand)
+                    if score > best_score:
+                        best_name, best_score = cand, score
+                if best_name is not None and best_score >= RATING_MATCH:
+                    p["rating"] = table[best_name]
+                    filled += 1
+        return filled
+
+    teams = {t.get("side"): t for t in details.get("teams") or [] if isinstance(t, dict)}
+    filled = 0
+    for side in ("home", "away"):
+        team, table = teams.get(side), maps[side]
+        if not team or not table:
+            continue
+        top = sorted(table.items(), key=lambda kv: kv[1], reverse=True)[:3]
+        team["players"] = [{"name": name, "rating": rating} for name, rating in top]
+        filled += len(top)
+    return filled
+
+
+def add_ratings(game, refresh=False):
+    """이미 끝난 경기의 평점을 details.fotmobId 로 받아 붙인다(결과 갱신 워크플로용)."""
+    details = game.get("details") or {}
+    match_id = details.get("fotmobId")
+    if not match_id:
+        return 0
+    det = _details(match_id, refresh)
+    lineup = ((det.get("content") or {}).get("lineup")) or {}
+    home_side, away_side = lineup.get("homeTeam"), lineup.get("awayTeam")
+    if not isinstance(home_side, dict) or not isinstance(away_side, dict):
+        return 0
+    swapped = bool(details.get("fotmobSwapped"))
+    return _apply_ratings(game, away_side if swapped else home_side,
+                          home_side if swapped else away_side)
 
 
 def _apply(game, home_rows, away_rows, stamp, kind):
@@ -286,12 +375,12 @@ def _apply(game, home_rows, away_rows, stamp, kind):
     if kind == "ok" and isinstance(note, str):
         details["note"] = note.replace(
             "부상·결장 정보는 ESPN 축구 데이터에 없습니다.",
-            "부상·결장 명단은 %s %s 기준입니다." % (SOURCE_NAME, stamp))
+            "부상·결장 명단과 선수 평점은 %s %s 기준입니다." % (SOURCE_NAME, stamp))
 
 
 def annotate(games, refresh=False, verbose=True):
     """경기 카드 목록에 FotMob 결장 명단을 채운다. 실패해도 예외를 밖으로 던지지 않는다."""
-    stats = {"total": 0, "matched": 0, "ok": 0, "empty": 0, "no_match": 0, "failed": 0}
+    stats = {"total": 0, "matched": 0, "ok": 0, "empty": 0, "no_match": 0, "failed": 0, "rated": 0}
     targets = [g for g in games if g.get("sport") == "soccer" and g.get("_en")]
     stats["total"] = len(targets)
     if not targets:
@@ -362,4 +451,13 @@ def annotate(games, refresh=False, verbose=True):
         else:
             stats["empty"] += 1
         _apply(g, rows_home, rows_away, stamp, "ok")
+
+        # 다음 결과 갱신에서도 같은 FotMob 경기를 찾을 수 있게 id 를 남긴다.
+        details = g.get("details") or {}
+        details["fotmobId"] = match["id"]
+        details["fotmobSwapped"] = swapped
+        # 평점은 끝난 경기에서만 붙인다(진행 중 평점은 경기가 끝나면서 바뀐다).
+        if match.get("finished"):
+            stats["rated"] += _apply_ratings(
+                g, away_side if swapped else home_side, home_side if swapped else away_side)
     return stats

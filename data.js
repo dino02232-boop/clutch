@@ -18,6 +18,7 @@
                      구간 표식 SOCCER-AUTO / 생성기 tools/fetch_soccer.py
                      부상·결장 명단은 ESPN 축구에 없어 FotMob 공개 엔드포인트에서 받아
                      details.teams[].injuries·injurySummary 로 넣습니다(생성기 tools/fotmob_injuries.py).
+                     끝난 경기는 같은 응답의 선수 평점(0~10)을 players[].rating 에 넣습니다(출처 FotMob).
                      무료·키 없이 접근하고, 받은 값이 없으면 "명단 없음"으로 표시합니다.
                      선수 얼굴 사진은 ESPN 축구 CDN 커버리지가 낮아 tools/photo_sources.py 가
                      위키백과 → 위키데이터 → TheSportsDB 순으로 확인해 채웁니다.
@@ -77,6 +78,8 @@
                        last5Detail:[{date,opp,ha,score,res}],  // 최근 5경기 상대·홈원정·스코어
                        ppg:117.8, rpg:45.7, tp:37.1,          // 시즌 평균 득점·리바운드·3점 성공률
                        players:[{name,pos,stat,sub,recent,last}], // 주요 선수 시즌 기록
+                       // 축구는 details.keyPlayers[].players[] 또는 details.teams[].players[] 에
+                       // rating(FotMob 이 경기 평점, 0~10)이 붙는다. 끝난 경기만, 평점이 확인된 선수만 넣는다.
                        focus:"관전 포인트 문장",                // 그 팀 기준 해석
                        injurySummary:"결장 2명(팀 득점 2·3위)",
                        injuries:[{ player,status,pos,line }] }] // 그 팀 부상자만
@@ -89,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-22T14:02:35+09:00",
+  updatedAt: "2026-11-22T14:08:14+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -16198,7 +16201,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 원정 1승 1무 4패입니다. 경기당 평균 1.1골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 리버풀 1-3 패입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Chadi Riad",
@@ -16221,7 +16224,21 @@ window.CLUTCH_DATA = {
                     "line": "징계 출장정지 · 복귀 예상 2026년 11월 말"
                   }
                 ],
-                "injurySummary": "결장 4명"
+                "injurySummary": "결장 4명",
+                "players": [
+                  {
+                    "name": "Yéremi Pino",
+                    "rating": 8.5
+                  },
+                  {
+                    "name": "Jørgen Strand Larsen",
+                    "rating": 8.1
+                  },
+                  {
+                    "name": "Quinten Timber",
+                    "rating": 7.1
+                  }
+                ]
               },
               {
                 "abbr": "COV",
@@ -16316,7 +16333,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 0무 3패입니다. 홈 3승 0무 3패입니다. 경기당 평균 1.2골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.06 원정 에버턴 1-3 패입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Caleb Yirenkyi",
@@ -16347,14 +16364,28 @@ window.CLUTCH_DATA = {
                     "line": "훈련 복귀"
                   }
                 ],
-                "injurySummary": "결장 4명 · 불확실 2명"
+                "injurySummary": "결장 4명 · 불확실 2명",
+                "players": [
+                  {
+                    "name": "Jack Rudoni",
+                    "rating": 8.7
+                  },
+                  {
+                    "name": "Tatsuhiro Sakamoto",
+                    "rating": 8.2
+                  },
+                  {
+                    "name": "Stephen Mfuni",
+                    "rating": 7.8
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**코번트리 시티** — 리그 13위, 승점 12, 득실 -8.",
               "**크리스털 팰리스** — 리그 20위, 승점 7, 득실 -15."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -16389,7 +16420,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5795519,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -16559,7 +16592,21 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 1승 2무 2패입니다. 원정 1승 1무 4패입니다. 경기당 평균 1.4골을 넣고 2.0골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 본머스 1-2 패입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
                 "injuryNote": "FotMob 결장 명단에 올라온 선수가 없습니다.",
-                "injuries": []
+                "injuries": [],
+                "players": [
+                  {
+                    "name": "Christian Walton",
+                    "rating": 8.9
+                  },
+                  {
+                    "name": "Saša Lukić",
+                    "rating": 7.6
+                  },
+                  {
+                    "name": "Abdoul Ouattara",
+                    "rating": 7.2
+                  }
+                ]
               },
               {
                 "abbr": "TOT",
@@ -16654,7 +16701,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 홈 3승 1무 2패입니다. 경기당 평균 1.1골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 리즈 유나이티드 0-1 패입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Tosin Adarabioyo",
@@ -16682,14 +16729,28 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 중순"
                   }
                 ],
-                "injurySummary": "결장 5명"
+                "injurySummary": "결장 5명",
+                "players": [
+                  {
+                    "name": "Pedro Porro",
+                    "rating": 8.3
+                  },
+                  {
+                    "name": "Antonín Kinský",
+                    "rating": 8.1
+                  },
+                  {
+                    "name": "Lucá Williams-Barnett",
+                    "rating": 8.1
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**토트넘 홋스퍼** — 리그 9위, 승점 15, 득실 +1.",
               "**입스위치 타운** — 리그 16위, 승점 11, 득실 -7."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -16724,7 +16785,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5795524,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -16893,7 +16956,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 2무 2패입니다. 원정 2승 2무 2패입니다. 경기당 평균 1.3골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 토트넘 홋스퍼 1-0 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Mateo Joseph",
@@ -16901,7 +16964,21 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 1명"
+                "injurySummary": "결장 1명",
+                "players": [
+                  {
+                    "name": "Noah Okafor",
+                    "rating": 9.0
+                  },
+                  {
+                    "name": "Dominic Calvert-Lewin",
+                    "rating": 8.8
+                  },
+                  {
+                    "name": "James Justin",
+                    "rating": 8.1
+                  }
+                ]
               },
               {
                 "abbr": "CHE",
@@ -16996,7 +17073,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 0무 3패입니다. 홈 3승 1무 2패입니다. 경기당 평균 1.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 선덜랜드 0-1 패입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jorrel Hato",
@@ -17024,14 +17101,28 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 11월 말"
                   }
                 ],
-                "injurySummary": "결장 5명"
+                "injurySummary": "결장 5명",
+                "players": [
+                  {
+                    "name": "Roméo Lavia",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Emanuel Emegha",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Wesley Fofana",
+                    "rating": 6.9
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**첼시** — 리그 8위, 승점 16, 득실 0.",
               "**리즈 유나이티드** — 리그 6위, 승점 17, 득실 +5."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -17066,7 +17157,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5795518,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -17235,7 +17328,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 원정 1승 2무 3패입니다. 경기당 평균 0.8골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 맨체스터 시티 3-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Nicolò Savona",
@@ -17252,7 +17345,21 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 중순"
                   }
                 ],
-                "injurySummary": "결장 2명 · 불확실 1명"
+                "injurySummary": "결장 2명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Matz Sels",
+                    "rating": 7.7
+                  },
+                  {
+                    "name": "Morgan Gibbs-White",
+                    "rating": 7.3
+                  },
+                  {
+                    "name": "Jair Cunha",
+                    "rating": 6.9
+                  }
+                ]
               },
               {
                 "abbr": "BOU",
@@ -17347,7 +17454,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 3승 2무 1패입니다. 경기당 평균 1.6골을 넣고 1.3골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 입스위치 타운 2-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Juanlu Sánchez",
@@ -17365,14 +17472,28 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 2월 초"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "James Hill",
+                    "rating": 8.5
+                  },
+                  {
+                    "name": "Marcus Tavernier",
+                    "rating": 8.4
+                  },
+                  {
+                    "name": "Justin Kluivert",
+                    "rating": 8.1
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**본머스** — 리그 4위, 승점 18, 득실 +4.",
               "**노팅엄 포리스트** — 리그 17위, 승점 9, 득실 -6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -17407,7 +17528,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5795515,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -17576,7 +17699,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 원정 0승 2무 4패입니다. 경기당 평균 0.7골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 첼시 1-0 승입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Daniel Ballard",
@@ -17604,7 +17727,21 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 5명"
+                "injurySummary": "결장 5명",
+                "players": [
+                  {
+                    "name": "Robin Roefs",
+                    "rating": 8.3
+                  },
+                  {
+                    "name": "Nordi Mukiele",
+                    "rating": 7.8
+                  },
+                  {
+                    "name": "Reinildo",
+                    "rating": 7.3
+                  }
+                ]
               },
               {
                 "abbr": "AVL",
@@ -17699,7 +17836,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 2무 2패입니다. 홈 1승 3무 2패입니다. 경기당 평균 1.3골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 맨체스터 유나이티드 4-4 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Matty Cash",
@@ -17717,14 +17854,28 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 4월 중순"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Aaron Wan-Bissaka",
+                    "rating": 8.3
+                  },
+                  {
+                    "name": "Pau Torres",
+                    "rating": 7.6
+                  },
+                  {
+                    "name": "Taylor Harwood-Bellis",
+                    "rating": 7.5
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**애스턴 빌라** — 리그 11위, 승점 14, 득실 -3.",
               "**선덜랜드** — 리그 18위, 승점 9, 득실 -9."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -17759,7 +17910,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5795516,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -17928,7 +18081,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 원정 3승 1무 2패입니다. 경기당 평균 0.7골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.10 원정 Tavernes de la Valldigna 6-0 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jesús Vázquez",
@@ -17951,7 +18104,21 @@ window.CLUTCH_DATA = {
                     "line": "훈련 복귀"
                   }
                 ],
-                "injurySummary": "결장 4명"
+                "injurySummary": "결장 4명",
+                "players": [
+                  {
+                    "name": "José Copete",
+                    "rating": 8.2
+                  },
+                  {
+                    "name": "Stole Dimitrievski",
+                    "rating": 8.0
+                  },
+                  {
+                    "name": "César Tárrega",
+                    "rating": 8.0
+                  }
+                ]
               },
               {
                 "abbr": "RAY",
@@ -18046,7 +18213,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 3승 1무 2패입니다. 경기당 평균 1.2골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 레알 소시에다드 0-1 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Augusto Batalla",
@@ -18064,14 +18231,28 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Unai López",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Jorge de Frutos",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Florian Lejeune",
+                    "rating": 7.2
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**라요 바예카노** — 리그 14위, 승점 12, 득실 -7.",
               "**발렌시아** — 리그 17위, 승점 12, 득실 -11."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -18106,7 +18287,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5868138,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -18275,7 +18458,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 원정 4승 2무 0패입니다. 경기당 평균 3.0골을 넣고 0.9골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 사수올로 3-0 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Devyne Rensch",
@@ -18288,7 +18471,21 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 2명"
+                "injurySummary": "결장 2명",
+                "players": [
+                  {
+                    "name": "Donyell Malen",
+                    "rating": 9.9
+                  },
+                  {
+                    "name": "Wesley",
+                    "rating": 8.3
+                  },
+                  {
+                    "name": "Rodrigo Mora",
+                    "rating": 8.1
+                  }
+                ]
               },
               {
                 "abbr": "PAR",
@@ -18383,7 +18580,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 홈 1승 2무 4패입니다. 경기당 평균 0.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 볼로냐 1-2 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Djibril Diallo",
@@ -18401,14 +18598,28 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 말"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Nesta Elphege",
+                    "rating": 7.5
+                  },
+                  {
+                    "name": "Emanuele Valeri",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Vincent Sierro",
+                    "rating": 6.7
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**파르마** — 리그 17위, 승점 8, 득실 -12.",
               "**AS 로마** — 리그 2위, 승점 30, 득실 +25."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -18443,7 +18654,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5749758,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -18612,7 +18825,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 4승 0무 1패입니다. 원정 4승 1무 1패입니다. 경기당 평균 1.5골을 넣고 0.6골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 헐 시티 1-0 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Martín Zubimendi",
@@ -18630,7 +18843,21 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 말"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Noni Madueke",
+                    "rating": 8.7
+                  },
+                  {
+                    "name": "Eberechi Eze",
+                    "rating": 8.1
+                  },
+                  {
+                    "name": "Kai Havertz",
+                    "rating": 7.4
+                  }
+                ]
               },
               {
                 "abbr": "NEW",
@@ -18725,7 +18952,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 홈 1승 3무 2패입니다. 경기당 평균 1.4골을 넣고 1.6골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 풀럼 1-1 무입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Ewen Jaouen",
@@ -18738,14 +18965,28 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 중순"
                   }
                 ],
-                "injurySummary": "결장 2명"
+                "injurySummary": "결장 2명",
+                "players": [
+                  {
+                    "name": "Malick Thiaw",
+                    "rating": 8.0
+                  },
+                  {
+                    "name": "Joseph Willock",
+                    "rating": 8.0
+                  },
+                  {
+                    "name": "Harvey Barnes",
+                    "rating": 8.0
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**뉴캐슬 유나이티드** — 리그 12위, 승점 13, 득실 -3.",
               "**아스널** — 리그 1위, 승점 28, 득실 +10."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -18780,7 +19021,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5795523,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -18949,7 +19192,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 3승 1무 1패입니다. 원정 3승 3무 1패입니다. 경기당 평균 1.6골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.12 원정 CD Artistico Navalcarnero 3-2 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "José Antonio Morante",
@@ -18962,7 +19205,21 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 2명"
+                "injurySummary": "결장 2명",
+                "players": [
+                  {
+                    "name": "Antony",
+                    "rating": 8.5
+                  },
+                  {
+                    "name": "Isco",
+                    "rating": 7.9
+                  },
+                  {
+                    "name": "Marc Roca",
+                    "rating": 7.2
+                  }
+                ]
               },
               {
                 "abbr": "SEV",
@@ -19057,7 +19314,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 3승 2무 2패입니다. 경기당 평균 1.4골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.06 홈 알라베스 0-0 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Marcão",
@@ -19079,14 +19336,28 @@ window.CLUTCH_DATA = {
                     "line": "훈련 복귀"
                   }
                 ],
-                "injurySummary": "결장 3명 · 불확실 1명"
+                "injurySummary": "결장 3명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Kike Salas",
+                    "rating": 8.5
+                  },
+                  {
+                    "name": "Andrés López",
+                    "rating": 7.7
+                  },
+                  {
+                    "name": "Gabriel Suazo",
+                    "rating": 7.5
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**세비야** — 리그 6위, 승점 19, 득실 -2.",
               "**레알 베티스** — 리그 4위, 승점 27, 득실 +5."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -19121,7 +19392,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5868140,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -19290,7 +19563,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 원정 2승 1무 3패입니다. 경기당 평균 1.5골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 베르더 브레멘 1-0 승입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Luca Jaquez",
@@ -19318,7 +19591,21 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 5명"
+                "injurySummary": "결장 5명",
+                "players": [
+                  {
+                    "name": "Dennis Seimen",
+                    "rating": 8.7
+                  },
+                  {
+                    "name": "Maximilian Mittelstädt",
+                    "rating": 8.5
+                  },
+                  {
+                    "name": "Finn Jeltsch",
+                    "rating": 7.5
+                  }
+                ]
               },
               {
                 "abbr": "S04",
@@ -19413,7 +19700,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연패입니다. 최근 5경기 0승 1무 4패입니다. 홈 0승 3무 2패입니다. 경기당 평균 0.5골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 호펜하임 1-2 패입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Timo Becker",
@@ -19436,14 +19723,28 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 말"
                   }
                 ],
-                "injurySummary": "결장 4명"
+                "injurySummary": "결장 4명",
+                "players": [
+                  {
+                    "name": "Loris Karius",
+                    "rating": 8.1
+                  },
+                  {
+                    "name": "Vitalie Becker",
+                    "rating": 7.9
+                  },
+                  {
+                    "name": "Dejan Ljubičić",
+                    "rating": 7.9
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**샬케 04** — 리그 16위, 승점 7, 득실 -6.",
               "**슈투트가르트** — 리그 8위, 승점 13, 득실 0."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -19478,7 +19779,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5881230,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -19648,7 +19951,21 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 원정 2승 1무 3패입니다. 경기당 평균 1.2골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 레체 1-1 무입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
                 "injuryNote": "FotMob 결장 명단에 올라온 선수가 없습니다.",
-                "injuries": []
+                "injuries": [],
+                "players": [
+                  {
+                    "name": "Lucas Perri",
+                    "rating": 8.1
+                  },
+                  {
+                    "name": "Ardian Ismajli",
+                    "rating": 7.8
+                  },
+                  {
+                    "name": "Rolando Mandragora",
+                    "rating": 7.4
+                  }
+                ]
               },
               {
                 "abbr": "NAP",
@@ -19743,7 +20060,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 2무 2패입니다. 홈 3승 2무 1패입니다. 경기당 평균 1.6골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 라치오 1-1 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Alex Meret",
@@ -19775,14 +20092,28 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 말"
                   }
                 ],
-                "injurySummary": "결장 5명 · 불확실 1명"
+                "injurySummary": "결장 5명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Scott McTominay",
+                    "rating": 8.8
+                  },
+                  {
+                    "name": "Billy Gilmour",
+                    "rating": 7.9
+                  },
+                  {
+                    "name": "Vanja Milinković-Savić",
+                    "rating": 7.7
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**나폴리** — 리그 8위, 승점 18, 득실 +5.",
               "**토리노** — 리그 12위, 승점 14, 득실 -3."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -19817,7 +20148,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5749757,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -19986,7 +20319,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 2무 2패입니다. 원정 0승 4무 2패입니다. 경기당 평균 0.8골을 넣고 0.9골을 실점했습니다. 직전 경기 기록은 2026.11.13 원정 Salamanca UDS 5-0 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Carl Starfelt",
@@ -20003,7 +20336,21 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 2명 · 불확실 1명"
+                "injurySummary": "결장 2명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Pablo Durán",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Williot Swedberg",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Javi Galán",
+                    "rating": 6.9
+                  }
+                ]
               },
               {
                 "abbr": "RMA",
@@ -20098,7 +20445,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 6승 0무 0패입니다. 경기당 평균 2.5골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 발렌시아 3-0 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Ferland Mendy",
@@ -20116,14 +20463,28 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Jude Bellingham",
+                    "rating": 8.5
+                  },
+                  {
+                    "name": "Arda Güler",
+                    "rating": 8.4
+                  },
+                  {
+                    "name": "Dean Huijsen",
+                    "rating": 8.0
+                  }
+                ]
               }
             ],
             "checkpoints": [
               "**레알 마드리드** — 리그 2위, 승점 33, 득실 +22.",
               "**셀타 비고** — 리그 13위, 승점 13, 득실 -1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -20158,7 +20519,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5868139,
+            "fotmobSwapped": false
           },
           "status": "final"
         },
@@ -20339,7 +20702,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 0무 3패입니다. 원정 0승 0무 5패입니다. 경기당 평균 0.7골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.06 홈 우디네세 2-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Thierry Correia",
@@ -20456,7 +20819,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 홈 3승 1무 1패입니다. 경기당 평균 1.4골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 피오렌티나 2-2 무입니다. FotMob 기준 결장 6명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Kamil Grabara",
@@ -20535,7 +20898,7 @@ window.CLUTCH_DATA = {
               "**유벤투스** — 리그 7위, 승점 18, 득실 +3.",
               "**베네치아** — 리그 19위, 승점 6, 득실 -13."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -20564,7 +20927,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 4차례 맞대결"
-            }
+            },
+            "fotmobId": 5749754,
+            "fotmobSwapped": false
           }
         },
         {
@@ -20744,7 +21109,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 원정 2승 2무 2패입니다. 경기당 평균 1.4골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 헤타페 2-0 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Gerard Moreno",
@@ -20862,7 +21227,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 3승 0무 2패입니다. 홈 5승 0무 1패입니다. 경기당 평균 4.0골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 아틀레티코 마드리드 2-1 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jordi Pesquer",
@@ -20938,7 +21303,7 @@ window.CLUTCH_DATA = {
               "**바르셀로나** — 리그 1위, 승점 33, 득실 +35.",
               "**비야레알** — 리그 9위, 승점 15, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -20973,7 +21338,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5868133,
+            "fotmobSwapped": false
           }
         },
         {
@@ -21153,7 +21520,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 3승 0무 2패입니다. 원정 3승 0무 2패입니다. 경기당 평균 2.6골을 넣고 0.7골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 브렌트퍼드 2-0 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Evan Ferguson",
@@ -21271,7 +21638,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5경기 무승입니다. 최근 5경기 0승 3무 2패입니다. 홈 1승 4무 0패입니다. 경기당 평균 1.1골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 아스널 0-1 패입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Charlie Hughes",
@@ -21345,7 +21712,7 @@ window.CLUTCH_DATA = {
               "**헐 시티** — 리그 14위, 승점 11, 득실 0.",
               "**브라이턴** — 리그 2위, 승점 22, 득실 +19."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -21380,7 +21747,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5795520,
+            "fotmobSwapped": false
           }
         },
         {
@@ -21656,7 +22025,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연패입니다. 최근 5경기 0승 0무 5패입니다. 홈 2승 1무 2패입니다. 경기당 평균 1.5골을 넣고 2.6골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 AS 로마 0-3 패입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Fedde Leysen",
@@ -21736,7 +22105,7 @@ window.CLUTCH_DATA = {
               "**사수올로** — 리그 16위, 승점 8, 득실 -13.",
               "**제노아** — 리그 13위, 승점 13, 득실 -5."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -21771,7 +22140,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5749759,
+            "fotmobSwapped": false
           }
         },
         {
@@ -21951,7 +22322,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 0승 1무 4패입니다. 원정 1승 1무 3패입니다. 경기당 평균 1.1골을 넣고 2.3골을 실점했습니다. 직전 경기 기록은 2026.11.06 원정 베네치아 1-2 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Nicolò Bertola",
@@ -22059,7 +22430,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연승입니다. 최근 5경기 4승 0무 1패입니다. 홈 1승 2무 2패입니다. 경기당 평균 1.5골을 넣고 1.3골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 파르마 2-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Oussama El Azzouzi",
@@ -22133,7 +22504,7 @@ window.CLUTCH_DATA = {
               "**볼로냐** — 리그 9위, 승점 17, 득실 +2.",
               "**우디네세** — 리그 20위, 승점 5, 득실 -13."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -22168,7 +22539,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5749752,
+            "fotmobSwapped": false
           }
         },
         {
@@ -22348,7 +22721,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연패입니다. 최근 5경기 1승 0무 4패입니다. 원정 3승 0무 1패입니다. 경기당 평균 2.0골을 넣고 2.1골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 바이에른 뮌헨 1-2 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Otto Ruoppi",
@@ -22461,7 +22834,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 1무 3패입니다. 홈 1승 3무 1패입니다. 경기당 평균 2.2골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 RB 라이프치히 2-5 패입니다. FotMob 기준 결장 8명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Han-Noah Massengo",
@@ -22557,7 +22930,7 @@ window.CLUTCH_DATA = {
               "**아우크스부르크** — 리그 15위, 승점 9, 득실 0.",
               "**마인츠** — 리그 12위, 승점 10, 득실 -1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -22592,7 +22965,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5881224,
+            "fotmobSwapped": false
           }
         }
         /* SOCCER-AUTO 2026-11-22 END */,
@@ -24961,7 +25336,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 원정 3승 0무 3패입니다. 경기당 평균 1.8골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 라요 바예카노 1-0 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Yangel Herrera",
@@ -25074,7 +25449,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 홈 3승 2무 1패입니다. 경기당 평균 1.4골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 말라가 2-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Álvaro Mantilla",
@@ -25145,7 +25520,7 @@ window.CLUTCH_DATA = {
               "**라싱 산탄데르** — 리그 12위, 승점 14, 득실 -13.",
               "**레알 소시에다드** — 리그 5위, 승점 22, 득실 +1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -25180,7 +25555,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5868137,
+            "fotmobSwapped": false
           }
         },
         {
@@ -25345,7 +25722,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 원정 1승 0무 4패입니다. 경기당 평균 1.1골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.15 홈 Hajduk Split 1-1 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jordan Torunarigha",
@@ -25468,7 +25845,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 3승 1무 0패입니다. 경기당 평균 1.9골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 슈투트가르트 0-1 패입니다. FotMob 기준 결장 7명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Mitchell Weiser",
@@ -25558,7 +25935,7 @@ window.CLUTCH_DATA = {
               "**베르더 브레멘** — 리그 6위, 승점 15, 득실 +2.",
               "**함부르크** — 리그 11위, 승점 12, 득실 -10."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -25593,7 +25970,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5881232,
+            "fotmobSwapped": false
           }
         },
         {
@@ -25773,7 +26152,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 원정 0승 3무 2패입니다. 경기당 평균 1.4골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 애스턴 빌라 4-4 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Ayden Heaven",
@@ -25902,7 +26281,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 홈 1승 2무 2패입니다. 경기당 평균 1.4골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 크리스털 팰리스 3-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Conor Bradley",
@@ -25973,7 +26352,7 @@ window.CLUTCH_DATA = {
               "**리버풀** — 리그 5위, 승점 18, 득실 +4.",
               "**맨체스터 유나이티드** — 리그 19위, 승점 8, 득실 -5."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -26008,7 +26387,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5795521,
+            "fotmobSwapped": false
           }
         },
         {
@@ -26188,7 +26569,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 원정 1승 2무 2패입니다. 경기당 평균 2.2골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 칼리아리 0-1 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Gabriele Bracaglia",
@@ -26300,7 +26681,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 홈 4승 0무 1패입니다. 경기당 평균 2.1골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 제노아 2-1 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Pietro Terracciano",
@@ -26376,7 +26757,7 @@ window.CLUTCH_DATA = {
               "**AC 밀란** — 리그 5위, 승점 24, 득실 +10.",
               "**프로시노네** — 리그 6위, 승점 20, 득실 +9."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -26411,7 +26792,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5749750,
+            "fotmobSwapped": false
           }
         },
         {
@@ -26591,7 +26974,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 1무 3패입니다. 원정 0승 2무 4패입니다. 경기당 평균 0.8골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 라싱 산탄데르 1-2 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Adam Aznou",
@@ -26703,7 +27086,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 2승 3무 1패입니다. 경기당 평균 1.0골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 아틀레틱 빌바오 1-1 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Rockson Yeboah",
@@ -26781,7 +27164,7 @@ window.CLUTCH_DATA = {
               "**오사수나** — 리그 16위, 승점 12, 득실 -11.",
               "**말라가** — 리그 20위, 승점 5, 득실 -14."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -26816,7 +27199,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5868136,
+            "fotmobSwapped": false
           }
         },
         {
@@ -26996,7 +27381,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 4승 0무 1패입니다. 원정 3승 1무 1패입니다. 경기당 평균 2.5골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 코모 2-0 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Piotr Zieliński",
@@ -27103,7 +27488,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 3무 1패입니다. 홈 3승 1무 2패입니다. 경기당 평균 1.5골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 몬차 1-0 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Thomas Pompei",
@@ -27172,7 +27557,7 @@ window.CLUTCH_DATA = {
               "**아탈란타** — 리그 11위, 승점 14, 득실 -3.",
               "**인터 밀란** — 리그 3위, 승점 28, 득실 +15."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -27207,7 +27592,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5749751,
+            "fotmobSwapped": false
           }
         },
         {
@@ -27387,7 +27774,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 원정 5승 0무 1패입니다. 경기당 평균 1.9골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 바르셀로나 1-2 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jorge Domínguez",
@@ -27504,7 +27891,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 0무 3패입니다. 홈 3승 3무 0패입니다. 경기당 평균 0.7골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 비야레알 0-2 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Nemanja Gudelj",
@@ -27561,7 +27948,7 @@ window.CLUTCH_DATA = {
               "**헤타페** — 리그 15위, 승점 12, 득실 -10.",
               "**아틀레티코 마드리드** — 리그 3위, 승점 28, 득실 +13."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -27596,7 +27983,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5868134,
+            "fotmobSwapped": false
           }
         }
         /* SOCCER-AUTO 2026-11-23 END */,
@@ -30377,7 +30766,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 2무 2패입니다. 원정 2승 0무 3패입니다. 경기당 평균 1.5골을 넣고 2.3골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 유벤투스 2-2 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Federico Croci",
@@ -30490,7 +30879,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연패입니다. 최근 5경기 1승 0무 4패입니다. 홈 2승 0무 3패입니다. 경기당 평균 1.5골을 넣고 2.3골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 아탈란타 0-1 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Yvan Kouadio Maye",
@@ -30561,7 +30950,7 @@ window.CLUTCH_DATA = {
               "**몬차** — 리그 18위, 승점 7, 득실 -8.",
               "**피오렌티나** — 리그 15위, 승점 9, 득실 -8."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -30596,7 +30985,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5749756,
+            "fotmobSwapped": false
           }
         },
         {
@@ -30776,7 +31167,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 원정 2승 3무 1패입니다. 경기당 평균 1.2골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 레알 베티스 0-2 패입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Marc Aguado",
@@ -30940,7 +31331,7 @@ window.CLUTCH_DATA = {
               "**레반테** — 리그 18위, 승점 11, 득실 -5.",
               "**엘체** — 리그 19위, 승점 10, 득실 -6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -30975,7 +31366,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5868135,
+            "fotmobSwapped": false
           }
         },
         {
@@ -31251,7 +31644,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 홈 3승 1무 1패입니다. 경기당 평균 1.6골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 브라이턴 0-2 패입니다. FotMob 기준 결장 6명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Nathan Collins",
@@ -31337,7 +31730,7 @@ window.CLUTCH_DATA = {
               "**브렌트퍼드** — 리그 10위, 승점 14, 득실 +5.",
               "**에버턴** — 리그 7위, 승점 16, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -31372,7 +31765,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5795517,
+            "fotmobSwapped": false
           }
         }
         /* SOCCER-AUTO 2026-11-24 END */,
@@ -34922,7 +35317,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2경기 연속 무승부입니다. 최근 5경기 0승 3무 2패입니다. 원정 1승 0무 1패입니다. 경기당 평균 3.0골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 선덜랜드 0-0 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Matty Cash",
@@ -35035,7 +35430,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 1승 0무 1패입니다. 경기당 평균 2.0골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Samsunspor 2-1 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Rafael Leão",
@@ -35096,7 +35491,9 @@ window.CLUTCH_DATA = {
               "**갈라타사라이** — 리그 18위, 승점 6, 득실 -1.",
               "**애스턴 빌라** — 리그 6위, 승점 9, 득실 +6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다."
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
+            "fotmobId": 6106339,
+            "fotmobSwapped": false
           }
         },
         {
@@ -35276,7 +35673,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연승입니다. 최근 5경기 4승 0무 1패입니다. 원정 1승 0무 1패입니다. 경기당 평균 2.5골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 TSV Hartberg 2-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "George Bello",
@@ -35384,7 +35781,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 3승 1무 1패입니다. 홈 1승 1무 0패입니다. 경기당 평균 1.0골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.20 원정 Molde 4-2 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Håkon Evjen",
@@ -35450,7 +35847,9 @@ window.CLUTCH_DATA = {
               "**보되/글림트** — 리그 25위, 승점 4, 득실 -5.",
               "**LASK 린츠** — 리그 16위, 승점 6, 득실 +1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다."
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
+            "fotmobId": 6106317,
+            "fotmobSwapped": false
           }
         },
         {
@@ -35630,7 +36029,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 3승 0무 2패입니다. 원정 0승 0무 2패입니다. 경기당 평균 1.2골을 넣고 2.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 Kalamata 1-0 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Zine",
@@ -35741,7 +36140,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 4승 0무 1패입니다. 홈 2승 0무 0패입니다. 경기당 평균 4.8골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 칼리아리 2-0 승입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Riccardo Cassano",
@@ -35814,7 +36213,9 @@ window.CLUTCH_DATA = {
               "**코모** — 리그 4위, 승점 9, 득실 +13.",
               "**AEK 아테네** — 리그 29위, 승점 3, 득실 -6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다."
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
+            "fotmobId": 6106412,
+            "fotmobSwapped": false
           }
         },
         {
@@ -35994,7 +36395,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 원정 1승 0무 1패입니다. 경기당 평균 2.0골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 세비야 1-1 무입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Dani Ceballos",
@@ -36102,7 +36503,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연패입니다. 최근 5경기 1승 0무 4패입니다. 홈 0승 0무 1패입니다. 경기당 평균 0.2골을 넣고 4.2골을 실점했습니다. 직전 경기 기록은 2026.11.03 원정 LASK 린츠 0-4 패입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Roman Čerepkai",
@@ -36162,7 +36563,9 @@ window.CLUTCH_DATA = {
               "**슬로반 브라티슬라바** — 리그 36위, 승점 0, 득실 -16.",
               "**레알 베티스** — 리그 11위, 승점 9, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다."
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
+            "fotmobId": 6106394,
+            "fotmobSwapped": false
           }
         },
         {
@@ -36342,7 +36745,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 4승 1무 0패입니다. 원정 1승 0무 1패입니다. 경기당 평균 1.8골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 묀헨글라트바흐 1-0 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Samuele Inácio",
@@ -36464,7 +36867,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 홈 1승 0무 0패입니다. 경기당 평균 2.0골을 넣고 0.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 뉴캐슬 유나이티드 2-2 무입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Martín Zubimendi",
@@ -36530,7 +36933,7 @@ window.CLUTCH_DATA = {
               "**아스널** — 리그 3위, 승점 10, 득실 +5.",
               "**도르트문트** — 리그 12위, 승점 9, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -36565,7 +36968,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 6106259,
+            "fotmobSwapped": false
           }
         },
         {
@@ -36745,7 +37150,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 원정 0승 0무 1패입니다. 경기당 평균 1.5골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.20 홈 Paredes 1-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Chris Smalling",
@@ -36858,7 +37263,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연패입니다. 최근 5경기 0승 2무 3패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 2.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Excelsior 2-3 패입니다. FotMob 기준 결장 6명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jakub Moder",
@@ -36944,7 +37349,7 @@ window.CLUTCH_DATA = {
               "**페예노르트** — 리그 32위, 승점 3, 득실 -7.",
               "**FC 포르투** — 리그 26위, 승점 3, 득실 -1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -36961,7 +37366,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 2차례 맞대결"
-            }
+            },
+            "fotmobId": 6106307,
+            "fotmobSwapped": false
           }
         },
         {
@@ -37141,7 +37548,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 원정 0승 0무 2패입니다. 경기당 평균 1.5골을 넣고 2.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 토리노 1-0 승입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Alex Meret",
@@ -37268,7 +37675,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 1승 0무 1패입니다. 경기당 평균 3.0골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 풀럼 1-1 무입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Antoine Semenyo",
@@ -37329,7 +37736,7 @@ window.CLUTCH_DATA = {
               "**맨체스터 시티** — 리그 7위, 승점 9, 득실 +5.",
               "**나폴리** — 리그 27위, 승점 3, 득실 -5."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -37364,7 +37771,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 6106256,
+            "fotmobSwapped": false
           }
         },
         {
@@ -37544,7 +37953,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 3승 1무 1패입니다. 원정 1승 0무 1패입니다. 경기당 평균 0.8골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 NEC Nijmegen 4-1 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Sami Ouaissa",
@@ -37662,7 +38071,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 2승 0무 0패입니다. 경기당 평균 3.2골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 셀타 비고 2-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Raúl Asencio",
@@ -37733,7 +38142,9 @@ window.CLUTCH_DATA = {
               "**레알 마드리드** — 리그 2위, 승점 12, 득실 +6.",
               "**PSV 에인트호번** — 리그 24위, 승점 4, 득실 -1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다."
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
+            "fotmobId": 6106243,
+            "fotmobSwapped": false
           }
         },
         {
@@ -37913,7 +38324,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 원정 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 4.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Toulouse 1-1 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Andrija Bulatović",
@@ -38026,7 +38437,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.2골을 넣고 2.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 우니온 베를린 5-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Marc Guiu",
@@ -38092,7 +38503,9 @@ window.CLUTCH_DATA = {
               "**RB 라이프치히** — 리그 30위, 승점 3, 득실 -6.",
               "**랑스** — 리그 33위, 승점 3, 득실 -12."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다."
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
+            "fotmobId": 6106325,
+            "fotmobSwapped": false
           }
         }
         /* SOCCER-AUTO 2026-11-25 END */,
@@ -39739,7 +40152,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 3승 0무 2패입니다. 원정 1승 0무 1패입니다. 경기당 평균 3.5골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 아틀레티코 마드리드 2-1 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jordi Pesquer",
@@ -39861,7 +40274,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 0무 3패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.04 원정 Viking FK 1-4 패입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Aden McCarthy",
@@ -39922,7 +40335,9 @@ window.CLUTCH_DATA = {
               "**Sabah FK** — 리그 31위, 승점 3, 득실 -6.",
               "**바르셀로나** — 리그 5위, 승점 9, 득실 +8."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다."
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
+            "fotmobId": 6106421,
+            "fotmobSwapped": false
           }
         },
         {
@@ -40102,7 +40517,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 원정 0승 0무 2패입니다. 경기당 평균 2.0골을 넣고 3.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 헤타페 2-0 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Juan Foyth",
@@ -40220,7 +40635,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5경기 무승입니다. 최근 5경기 0승 1무 4패입니다. 홈 0승 0무 2패입니다. 경기당 평균 1.2골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.04 홈 아스널 1-2 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Eliás Piták",
@@ -40288,7 +40703,7 @@ window.CLUTCH_DATA = {
               "**Slavia Prague** — 리그 34위, 승점 1, 득실 -4.",
               "**비야레알** — 리그 28위, 승점 3, 득실 -6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -40305,7 +40720,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 2차례 맞대결"
-            }
+            },
+            "fotmobId": 6106391,
+            "fotmobSwapped": false
           }
         },
         {
@@ -40485,7 +40902,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 원정 0승 0무 1패입니다. 경기당 평균 1.5골을 넣고 2.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 Kocaelispor 2-2 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Nathan Aké",
@@ -40602,7 +41019,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.03 홈 Sporting CP 0-1 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Pedrinho",
@@ -40664,7 +41081,7 @@ window.CLUTCH_DATA = {
               "**Shakhtar Donetsk** — 리그 21위, 승점 4, 득실 0.",
               "**Fenerbahce** — 리그 19위, 승점 5, 득실 -5."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -40687,7 +41104,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 3차례 맞대결"
-            }
+            },
+            "fotmobId": 6106336,
+            "fotmobSwapped": false
           }
         },
         {
@@ -40867,7 +41286,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 원정 1승 0무 1패입니다. 경기당 평균 3.5골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 원정 크리스털 팰리스 3-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Hugo Ekitiké",
@@ -40980,7 +41399,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 4승 1무 0패입니다. 홈 1승 0무 1패입니다. 경기당 평균 2.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 KV Mechelen 5-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jan Virgili",
@@ -41046,7 +41465,9 @@ window.CLUTCH_DATA = {
               "**Club Brugge** — 리그 9위, 승점 9, 득실 +4.",
               "**리버풀** — 리그 8위, 승점 9, 득실 +4."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다."
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
+            "fotmobId": 6106294,
+            "fotmobSwapped": false
           }
         },
         {
@@ -41226,7 +41647,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 원정 0승 0무 2패입니다. 경기당 평균 2.0골을 넣고 2.0골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 애스턴 빌라 4-4 무입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Ayden Heaven",
@@ -41359,7 +41780,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연승입니다. 최근 5경기 4승 0무 1패입니다. 홈 1승 0무 1패입니다. 경기당 평균 2.0골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Uniao da Serra 4-0 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Zeno Debast",
@@ -41425,7 +41846,7 @@ window.CLUTCH_DATA = {
               "**Sporting CP** — 리그 10위, 승점 9, 득실 +4.",
               "**맨체스터 유나이티드** — 리그 17위, 승점 6, 득실 0."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -41442,7 +41863,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 2차례 맞대결"
-            }
+            },
+            "fotmobId": 6106279,
+            "fotmobSwapped": false
           }
         },
         {
@@ -41622,7 +42045,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 2무 0패입니다. 원정 1승 1무 0패입니다. 경기당 평균 3.0골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.20 홈 쾰른 1-1 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Harry Kane",
@@ -41753,7 +42176,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 2무 1패입니다. 홈 0승 0무 2패입니다. 경기당 평균 1.0골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 Lyon 0-1 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Tiago Santos",
@@ -41812,7 +42235,7 @@ window.CLUTCH_DATA = {
               "**Lille** — 리그 35위, 승점 1, 득실 -6.",
               "**바이에른 뮌헨** — 리그 13위, 승점 8, 득실 +7."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -41829,7 +42252,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 2차례 맞대결"
-            }
+            },
+            "fotmobId": 6106310,
+            "fotmobSwapped": false
           }
         },
         {
@@ -42009,7 +42434,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 4승 0무 1패입니다. 원정 0승 1무 1패입니다. 경기당 평균 2.5골을 넣고 2.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 파르마 5-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Leonardo Balerdi",
@@ -42121,7 +42546,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5연승입니다. 최근 5경기 5승 0무 0패입니다. 홈 2승 0무 0패입니다. 경기당 평균 5.0골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 Nice 3-2 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Désiré Doué",
@@ -42180,7 +42605,7 @@ window.CLUTCH_DATA = {
               "**Paris Saint-Germain** — 리그 1위, 승점 12, 득실 +15.",
               "**AS 로마** — 리그 20위, 승점 4, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -42191,7 +42616,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 1차례 맞대결"
-            }
+            },
+            "fotmobId": 6106235,
+            "fotmobSwapped": false
           }
         },
         {
@@ -42371,7 +42798,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 원정 1승 0무 1패입니다. 경기당 평균 1.8골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 샬케 04 0-0 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Luca Jaquez",
@@ -42494,7 +42921,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연승입니다. 최근 5경기 4승 0무 1패입니다. 홈 1승 0무 1패입니다. 경기당 평균 2.0골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 코모 2-0 승입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Piotr Zieliński",
@@ -42559,7 +42986,9 @@ window.CLUTCH_DATA = {
               "**인터 밀란** — 리그 15위, 승점 6, 득실 +2.",
               "**슈투트가르트** — 리그 14위, 승점 7, 득실 +3."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다."
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
+            "fotmobId": 6106253,
+            "fotmobSwapped": false
           }
         },
         {
@@ -42739,7 +43168,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 원정 0승 0무 2패입니다. 경기당 평균 2.2골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 Tromso 2-3 패입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Sondre Bjørshol",
@@ -42857,7 +43286,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 1무 2패입니다. 홈 1승 0무 1패입니다. 경기당 평균 1.0골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.08 홈 바르셀로나 1-2 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jorge Domínguez",
@@ -42925,7 +43354,9 @@ window.CLUTCH_DATA = {
               "**아틀레티코 마드리드** — 리그 23위, 승점 4, 득실 -1.",
               "**Viking FK** — 리그 22위, 승점 4, 득실 -1."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다."
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:00 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
+            "fotmobId": 6106269,
+            "fotmobSwapped": false
           }
         }
         /* SOCCER-AUTO 2026-11-26 END */,
@@ -46807,7 +47238,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 원정 1승 0무 4패입니다. 경기당 평균 1.2골을 넣고 2.6골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 도르트문트 0-1 패입니다. FotMob 기준 결장 7명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Lukas Ullrich",
@@ -46944,7 +47375,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 3승 1무 0패입니다. 경기당 평균 1.9골을 넣고 1.7골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 슈투트가르트 0-1 패입니다. FotMob 기준 결장 7명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Mitchell Weiser",
@@ -47028,7 +47459,7 @@ window.CLUTCH_DATA = {
               "**베르더 브레멘** — 리그 6위, 승점 15, 득실 +2.",
               "**묀헨글라트바흐** — 리그 18위, 승점 4, 득실 -14."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -47063,7 +47494,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5881241,
+            "fotmobSwapped": false
           }
         },
         {
@@ -47243,7 +47676,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연승입니다. 최근 5경기 4승 0무 1패입니다. 원정 4승 0무 2패입니다. 경기당 평균 1.5골을 넣고 1.3골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 파르마 2-1 승입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Oussama El Azzouzi",
@@ -47359,7 +47792,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 2승 0무 3패입니다. 홈 2승 0무 4패입니다. 경기당 평균 0.7골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.06 홈 우디네세 2-1 승입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Toma Bašić",
@@ -47432,7 +47865,7 @@ window.CLUTCH_DATA = {
               "**베네치아** — 리그 19위, 승점 6, 득실 -13.",
               "**볼로냐** — 리그 9위, 승점 17, 득실 +2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -47461,7 +47894,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 4차례 맞대결"
-            }
+            },
+            "fotmobId": 5749769,
+            "fotmobSwapped": false
           }
         },
         {
@@ -47641,7 +48076,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 0무 4패입니다. 원정 2승 0무 3패입니다. 경기당 평균 1.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 리즈 유나이티드 1-4 패입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jorrel Hato",
@@ -47764,7 +48199,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 홈 1승 1무 3패입니다. 경기당 평균 0.8골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 본머스 0-2 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Callum Hudson-Odoi",
@@ -47834,7 +48269,7 @@ window.CLUTCH_DATA = {
               "**노팅엄 포리스트** — 리그 17위, 승점 9, 득실 -6.",
               "**첼시** — 리그 8위, 승점 16, 득실 0."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -47869,7 +48304,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5795533,
+            "fotmobSwapped": false
           }
         },
         {
@@ -48049,7 +48486,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 0무 2패입니다. 원정 1승 0무 5패입니다. 경기당 평균 1.4골을 넣고 2.5골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 말라가 2-1 승입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Maguette Gueye",
@@ -48216,7 +48653,7 @@ window.CLUTCH_DATA = {
               "**레반테** — 리그 18위, 승점 11, 득실 -5.",
               "**라싱 산탄데르** — 리그 12위, 승점 14, 득실 -13."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -48251,7 +48688,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5868146,
+            "fotmobSwapped": false
           }
         },
         {
@@ -48431,7 +48870,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 2승 0무 3패입니다. 원정 0승 2무 4패입니다. 경기당 평균 1.2골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 발렌시아 0-1 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Óscar Valentín",
@@ -48544,7 +48983,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 홈 5승 0무 1패입니다. 경기당 평균 1.6골을 넣고 1.2골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 세비야 1-1 무입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Antony",
@@ -48614,7 +49053,7 @@ window.CLUTCH_DATA = {
               "**레알 베티스** — 리그 4위, 승점 27, 득실 +5.",
               "**라요 바예카노** — 리그 14위, 승점 12, 득실 -7."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -48649,7 +49088,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5868141,
+            "fotmobSwapped": false
           }
         },
         {
@@ -48829,7 +49270,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 1무 3패입니다. 원정 1승 0무 4패입니다. 경기당 평균 0.8골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 AS 로마 1-5 패입니다. FotMob 기준 결장 2명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Djibril Diallo",
@@ -48937,7 +49378,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 1무 1패입니다. 홈 5승 0무 1패입니다. 경기당 평균 2.2골을 넣고 1.4골을 실점했습니다. 직전 경기 기록은 2026.11.07 원정 칼리아리 0-1 패입니다. FotMob 기준 결장 1명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Antonio Raimondo",
@@ -49000,7 +49441,7 @@ window.CLUTCH_DATA = {
               "**프로시노네** — 리그 6위, 승점 20, 득실 +9.",
               "**파르마** — 리그 17위, 승점 8, 득실 -12."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -49035,7 +49476,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5749763,
+            "fotmobSwapped": false
           }
         },
         {
@@ -49215,7 +49658,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 2연패입니다. 최근 5경기 1승 0무 4패입니다. 원정 1승 1무 3패입니다. 경기당 평균 1.7골을 넣고 1.9골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 프라이부르크 0-1 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Nicholas Mickelson",
@@ -49336,7 +49779,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 3무 1패입니다. 홈 2승 2무 1패입니다. 경기당 평균 1.1골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.20 원정 바이에른 뮌헨 1-1 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Imad Rondić",
@@ -49415,7 +49858,7 @@ window.CLUTCH_DATA = {
               "**쾰른** — 리그 13위, 승점 10, 득실 -4.",
               "**엘버스베르크** — 리그 9위, 승점 13, 득실 -2."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -49432,7 +49875,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 2차례 맞대결"
-            }
+            },
+            "fotmobId": 5881234,
+            "fotmobSwapped": false
           }
         },
         {
@@ -49612,7 +50057,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 3연패입니다. 최근 5경기 0승 1무 4패입니다. 원정 0승 1무 3패입니다. 경기당 평균 0.8골을 넣고 2.6골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 RB 라이프치히 1-5 패입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Livan Burcu",
@@ -49734,7 +50179,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 4연패입니다. 최근 5경기 1승 0무 4패입니다. 홈 0승 1무 4패입니다. 경기당 평균 2.0골을 넣고 2.1골을 실점했습니다. 직전 경기 기록은 2026.11.07 홈 바이에른 뮌헨 1-2 패입니다. FotMob 기준 결장 3명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Otto Ruoppi",
@@ -49805,7 +50250,7 @@ window.CLUTCH_DATA = {
               "**마인츠** — 리그 12위, 승점 10, 득실 -1.",
               "**우니온 베를린** — 리그 17위, 승점 7, 득실 -18."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -49840,7 +50285,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5881238,
+            "fotmobSwapped": false
           }
         },
         {
@@ -50005,7 +50452,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 3승 2무 0패입니다. 원정 3승 2무 0패입니다. 경기당 평균 3.0골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.20 홈 쾰른 1-1 무입니다. FotMob 기준 결장 6명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Harry Kane",
@@ -50137,7 +50584,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 1무 3패입니다. 홈 3승 0무 1패입니다. 경기당 평균 1.1골을 넣고 2.2골을 실점했습니다. 직전 경기 기록은 2026.11.15 홈 Hajduk Split 1-1 무입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Jordan Torunarigha",
@@ -50217,7 +50664,7 @@ window.CLUTCH_DATA = {
               "**함부르크** — 리그 11위, 승점 12, 득실 -10.",
               "**바이에른 뮌헨** — 리그 2위, 승점 22, 득실 +20."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -50252,7 +50699,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5881236,
+            "fotmobSwapped": false
           }
         },
         {
@@ -50432,7 +50881,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 흐름은 5경기 무승입니다. 최근 5경기 0승 2무 3패입니다. 원정 1승 1무 3패입니다. 경기당 평균 0.5골을 넣고 1.1골을 실점했습니다. 직전 경기 기록은 2026.11.21 홈 슈투트가르트 0-0 무입니다. FotMob 기준 결장 4명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Robin Gosens",
@@ -50554,7 +51003,7 @@ window.CLUTCH_DATA = {
                   }
                 ],
                 "focus": "최근 5경기 1승 2무 2패입니다. 홈 2승 1무 2패입니다. 경기당 평균 0.8골을 넣고 1.5골을 실점했습니다. 직전 경기 기록은 2026.11.21 원정 바이어 레버쿠젠 0-4 패입니다. FotMob 기준 결장 5명입니다.",
-                "injuryNote": "FotMob 결장 명단(2026-11-22 14:01) 기준입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-22 14:07) 기준입니다.",
                 "injuries": [
                   {
                     "player": "Tom Baack",
@@ -50643,7 +51092,7 @@ window.CLUTCH_DATA = {
               "**파더보른** — 리그 14위, 승점 10, 득실 -7.",
               "**샬케 04** — 리그 16위, 승점 7, 득실 -6."
             ],
-            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단은 FotMob 2026-11-22 14:01 기준입니다.",
+            "note": "일정·전적·순위는 ESPN 2026-11-22 14:01 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-22 14:07 기준입니다.",
             "h2h": {
               "games": [
                 {
@@ -50678,7 +51127,9 @@ window.CLUTCH_DATA = {
                 }
               ],
               "summary": "최근 5차례 맞대결"
-            }
+            },
+            "fotmobId": 5881239,
+            "fotmobSwapped": false
           }
         }
         /* SOCCER-AUTO 2026-11-28 END */,

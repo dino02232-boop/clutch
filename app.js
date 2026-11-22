@@ -747,6 +747,20 @@
     return t;
   }
 
+  // FotMob 이 경기 평점을 준 선수만 표시한다(0~10, 소수 한 자리). 값이 없으면 빈 문자열.
+  function ratingText(v) {
+    if (v == null || v === "") return "";
+    var n = Number(v);
+    if (!isFinite(n) || n <= 0 || n > 10) return "";
+    return (Math.round(n * 10) / 10).toFixed(1);
+  }
+
+  function ratingHTML(v, cls) {
+    var txt = ratingText(v);
+    if (!txt) return "";
+    return '<i class="' + (cls || "pl-rating") + '" title="FotMob 이 경기 평점">' + txt + "</i>";
+  }
+
   function keyPlayersFor(g, t) {
     var d = (g && g.details) || {};
     var groups = Array.isArray(d.keyPlayers) ? d.keyPlayers.filter(Boolean) : [];
@@ -759,12 +773,13 @@
       var nm = String((p && p.name) || "").trim();
       if (!nm) return;
       var st = Array.isArray(p.stats) ? p.stats : (p.stat ? [p.stat] : []);
-      if (!byName[nm]) { byName[nm] = { name: nm, photo: p.photo, stats: [] }; order.push(nm); }
+      if (!byName[nm]) { byName[nm] = { name: nm, photo: p.photo, stats: [], rating: p.rating }; order.push(nm); }
+      else if (byName[nm].rating == null && p.rating != null) { byName[nm].rating = p.rating; }
       st.forEach(function (x) { if (byName[nm].stats.indexOf(x) < 0) byName[nm].stats.push(x); });
     });
     return order.map(function (nm) {
       var p = byName[nm];
-      return { name: p.name, photo: p.photo, stat: p.stats.map(statKo).join(" · ") };
+      return { name: p.name, photo: p.photo, stat: p.stats.map(statKo).join(" · "), rating: p.rating };
     });
   }
 
@@ -823,7 +838,8 @@
           return '<li>' +
             '<span class="pl-top">' + faceHTML(p.name, p.photo) +
             '<b>' + esc(p.name) + "</b>" +
-            (p.pos ? '<i class="pl-pos">' + esc(p.pos) + "</i>" : "") + "</span>" +
+            (p.pos ? '<i class="pl-pos">' + esc(p.pos) + "</i>" : "") +
+            ratingHTML(p.rating) + "</span>" +
             (p.stat ? '<span class="pl-stat">' + esc(p.stat) + "</span>" : "") +
             (p.sub ? '<span class="pl-sub">' + esc(p.sub) + "</span>" : "") +
             (p.recent ? '<span class="pl-recent">' + esc(p.recent) + "</span>" : "") +
@@ -2378,6 +2394,7 @@
       var list = ps.map(function (p) {
         return '<li>' + faceHTML(p.name, p.photo) +
           '<b class="lu-pname">' + esc(p.name || "") + "</b>" +
+          ratingHTML(p.rating, "lu-rating") +
           (p.stat ? '<span class="lu-stat">' + esc(p.stat) + "</span>" : "") + "</li>";
       }).join("");
       return '<div class="lu-team"><span class="lu-side ' + side + '">' +

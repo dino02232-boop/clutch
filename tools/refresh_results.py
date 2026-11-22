@@ -27,6 +27,7 @@ from datetime import datetime, timedelta, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from photo_sources import load_cache as load_photo_cache, resolve as photo_resolve, save_cache as save_photo_cache  # noqa: E402
+from fotmob_injuries import add_ratings as add_fotmob_ratings  # noqa: E402
 
 ROOT = os.path.dirname(HERE)
 DATA_JS = os.environ.get("CLUTCH_DATA_JS") or os.path.join(ROOT, "data.js")
@@ -189,6 +190,14 @@ def main():
         if lines:
             res["lines"] = lines
         res["winner"] = "away" if a_sc > h_sc else ("home" if h_sc > a_sc else None)
+        # 끝난 축구 경기는 FotMob 이 경기 평점을 준다 — 주요 선수 옆에 붙인다(실패해도 결과는 남긴다).
+        if g["sport"] == "soccer":
+            try:
+                rated = add_fotmob_ratings(g)
+                if rated:
+                    print("  · 평점 %d명 (FotMob)" % rated)
+            except Exception as e:
+                print("  ! 평점 조회 실패: %s" % e)
         # 주요 선수 기록
         tops = []
         photo_cache = load_photo_cache() if g["sport"] == "soccer" else None

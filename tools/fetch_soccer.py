@@ -866,8 +866,8 @@ def main():
     # 부상·결장 명단 — ESPN 축구에는 없으므로 FotMob 에서 받아 팀 블록에 채운다.
     if not args.no_injuries:
         stats = annotate_injuries([g for gs in by_day.values() for g in gs], refresh=args.refresh)
-        print("· 부상·결장 명단(FotMob): %d경기 중 %d경기 짝짓기, %d경기 명단 있음, %d경기 비어 있음, %d경기 못 찾음" % (
-            stats["total"], stats["matched"], stats["ok"], stats["empty"], stats["no_match"]))
+        print("· 부상·결장 명단(FotMob): %d경기 중 %d경기 짝짓기, %d경기 명단 있음, %d경기 비어 있음, %d경기 못 찾음, 끝난 경기 선수 평점 %d개" % (
+            stats["total"], stats["matched"], stats["ok"], stats["empty"], stats["no_match"], stats["rated"]))
     for gs in by_day.values():
         for g in gs:
             g.pop("_en", None)
