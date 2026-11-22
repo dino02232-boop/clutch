@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-23T02:10:51+09:00
+   생성 시각(기준): 2026-11-23T03:04:42+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-23T02:10:51+09:00",
+  "updated": "2026-11-23T03:04:42+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -907,12 +907,12 @@ window.CLUTCH_STANDINGS = {
               "team": "레알 소시에다드",
               "abbr": "RSO",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/89.png",
-              "played": 12,
+              "played": 13,
               "win": 7,
               "draw": 1,
-              "loss": 4,
+              "loss": 5,
               "points": 22,
-              "diff": 1,
+              "diff": 0,
               "pct": null,
               "gb": null,
               "zone": {
@@ -942,6 +942,25 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 7,
+              "team": "라싱 산탄데르",
+              "abbr": "RAC",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/87.png",
+              "played": 13,
+              "win": 5,
+              "draw": 2,
+              "loss": 6,
+              "points": 17,
+              "diff": -12,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "컨퍼런스리그 예선",
+                "color": "#B2BFD0",
+                "src": "Conference League qualifying"
+              }
+            },
+            {
+              "rank": 8,
               "team": "아틀레틱 빌바오",
               "abbr": "ATH",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/93.png",
@@ -953,14 +972,10 @@ window.CLUTCH_STANDINGS = {
               "diff": 3,
               "pct": null,
               "gb": null,
-              "zone": {
-                "label": "컨퍼런스리그 예선",
-                "color": "#B2BFD0",
-                "src": "Conference League qualifying"
-              }
+              "zone": null
             },
             {
-              "rank": 8,
+              "rank": 9,
               "team": "알라베스",
               "abbr": "ALA",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/96.png",
@@ -975,7 +990,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 9,
+              "rank": 10,
               "team": "비야레알",
               "abbr": "VIL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png",
@@ -987,10 +1002,14 @@ window.CLUTCH_STANDINGS = {
               "diff": 1,
               "pct": null,
               "gb": null,
-              "zone": null
+              "zone": {
+                "label": "유로파리그",
+                "color": "#c6d1e0",
+                "src": "Europa League"
+              }
             },
             {
-              "rank": 10,
+              "rank": 11,
               "team": "에스파뇰",
               "abbr": "ESP",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/88.png",
@@ -1002,14 +1021,10 @@ window.CLUTCH_STANDINGS = {
               "diff": 0,
               "pct": null,
               "gb": null,
-              "zone": {
-                "label": "유로파리그",
-                "color": "#c6d1e0",
-                "src": "Europa League"
-              }
+              "zone": null
             },
             {
-              "rank": 11,
+              "rank": 12,
               "team": "데포르티보",
               "abbr": "DEP",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/90.png",
@@ -1019,21 +1034,6 @@ window.CLUTCH_STANDINGS = {
               "loss": 4,
               "points": 15,
               "diff": -1,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 12,
-              "team": "라싱 산탄데르",
-              "abbr": "RAC",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/87.png",
-              "played": 12,
-              "win": 4,
-              "draw": 2,
-              "loss": 6,
-              "points": 14,
-              "diff": -13,
               "pct": null,
               "gb": null,
               "zone": null
