@@ -755,10 +755,23 @@
     return (Math.round(n * 10) / 10).toFixed(1);
   }
 
+  // 평점 구간별 색 클래스 — 9.0↑ 진한 파랑, 8.x 파랑, 7.x 주황, 6.x 회색, 6.0 미만 붉은색.
+  // 표시되는 숫자(txt)를 기준으로 매겨 색과 숫자가 어긋나지 않게 한다.
+  function ratingBand(txt) {
+    var n = Number(txt);
+    if (!isFinite(n) || n <= 0) return "";
+    if (n >= 9) return " r9";
+    if (n >= 8) return " r8";
+    if (n >= 7) return " r7";
+    if (n >= 6) return " r6";
+    return " r5";
+  }
+
   function ratingHTML(v, cls) {
     var txt = ratingText(v);
     if (!txt) return "";
-    return '<i class="' + (cls || "pl-rating") + '" title="FotMob 이 경기 평점">' + txt + "</i>";
+    return '<i class="' + (cls || "pl-rating") + ratingBand(txt) +
+      '" title="FotMob 이 경기 평점">' + txt + "</i>";
   }
 
   function keyPlayersFor(g, t) {
@@ -2172,24 +2185,90 @@
     };
   }
 
-  // 접힌 판 맨 위의 '이 경기 평점' — 팀별로 이름과 평점 칩을 조밀하게 나열한다.
-  function soccerRatingBlockHTML(g) {
-    var boxes = [];
+  // '선수 기록 및 평점' 판 — 팀별 한 덩어리. FotMob 이 경기 평점(전원)과 ESPN 선수 기록을 이름으로
+  // 합쳐 같은 선수가 두 번 나오지 않게 한다. 평점 있는 선수 먼저(높은 순), 평점 없는 선수는 기록 순.
+  // 평점이 한 명도 없는 경기는 빈 문자열 — 부르는 쪽이 기존 기록표를 그대로 쓴다.
+  function soccerRosterHTML(g, board) {
+    var recs = { home: soccerTeamRatings(g, "home"), away: soccerTeamRatings(g, "away") };
+    if (!recs.home.rows.length && !recs.away.rows.length) return "";
+
+    // 이름 표기 차이(악센트·가운뎃점)를 없애 같은 선수를 잇는다. normalize 미지원 환경은 그대로 쓴다.
+    function foldName(s) {
+      s = String(s == null ? "" : s);
+      try { s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); } catch (e) {}
+      return s.toLowerCase().replace(/[^a-z0-9가-힣]+/g, " ").trim();
+    }
+    // 성(마지막 낱말)만 같고 그 성이 한 명뿐이면 같은 선수로 본다.
+    function matchIndex(list, name, used) {
+      var key = foldName(name), i;
+      for (i = 0; i < list.length; i++) {
+        if (!used[i] && foldName(list[i].name) === key) return i;
+      }
+      var last = key.split(" ").pop();
+      if (!last) return -1;
+      var hit = -1;
+      for (i = 0; i < list.length; i++) {
+        if (used[i]) continue;
+        if (foldName(list[i].name).split(" ").indexOf(last) >= 0) {
+          if (hit >= 0) return -1;
+          hit = i;
+        }
+      }
+      return hit;
+    }
+    // ESPN 기록을 statKo 표기 그대로 한 줄로: 골 · 도움 · 슈팅 · 유효 · 선방 · 파울(있는 값만).
+    function recText(p) {
+      if (!p) return "";
+      var bits = [];
+      if (p.g) bits.push(p.g + "골");
+      if (p.a) bits.push(p.a + "도움");
+      if (p.sh) bits.push("슈팅 " + p.sh);
+      if (p.sog) bits.push("유효 " + p.sog);
+      if (p.pos === "G" && p.sv) bits.push("선방 " + p.sv);
+      if (p.fc) bits.push("파울 " + p.fc);
+      return bits.join(" · ");
+    }
+
+    function rowsFor(side) {
+      var players = (board && board[side] && Array.isArray(board[side].players)) ? board[side].players : [];
+      var used = players.map(function () { return false; });
+      var out = [], seen = {};
+      recs[side].rows.forEach(function (r) {
+        var k = foldName(r.name);
+        if (seen[k]) return;
+        seen[k] = 1;
+        var i = matchIndex(players, r.name, used);
+        if (i >= 0) used[i] = true;
+        out.push({ name: r.name, rating: r.rating, p: i >= 0 ? players[i] : null });
+      });
+      // 평점은 없지만 ESPN 기록이 남은 선수는 뒤에 기록 기여 순으로 붙인다(자르지 않는다).
+      players.filter(function (p, i) { return !used[i] && p.name; })
+        .sort(function (a, b) {
+          return (b.prod || 0) - (a.prod || 0) || (b.sh || 0) - (a.sh || 0) ||
+            (a.name < b.name ? -1 : (a.name > b.name ? 1 : 0));
+        })
+        .forEach(function (p) { out.push({ name: p.name, rating: null, p: p }); });
+      return out;
+    }
+
+    var html = "";
     ["home", "away"].forEach(function (side) {
-      var rec = soccerTeamRatings(g, side);
-      if (!rec.rows.length) return;
-      boxes.push('<div class="pg-rt-team"><div class="lb-team-h">' +
-        '<span class="lbt-side ' + side + '">' + (side === "home" ? "홈" : "원정") + "</span>" +
-        "<b>" + esc(rec.name) + "</b>" +
-        (rec.abbr ? '<span class="lbt-abbr">' + esc(rec.abbr) + "</span>" : "") +
-        '<small class="pg-rt-cnt">' + rec.rows.length + "명</small></div>" +
-        '<ul class="pg-rt-list">' + rec.rows.map(function (p) {
-          return "<li><span>" + esc(p.name) + "</span>" +
-            '<i title="FotMob 이 경기 평점">' + ratingText(p.rating) + "</i></li>";
-        }).join("") + "</ul></div>");
+      var rows = rowsFor(side);
+      if (!rows.length) return;
+      var teamName = recs[side].name || ((g[side] && g[side].name) || "");
+      html += '<div class="lb-team-box"><div class="lb-team-h">' +
+        '<span class="lbt-side ' + side + '">' + (side === "away" ? "원정" : "홈") + "</span>" +
+        "<b>" + esc(teamName) + "</b>" +
+        '<small class="rt-cnt">' + rows.length + "명</small></div>" +
+        '<ul class="rt-list">' + rows.map(function (r) {
+          return "<li>" +
+            (ratingHTML(r.rating) || '<span class="rt-chip-none" aria-hidden="true"></span>') +
+            '<b class="rt-nm">' + esc(r.name) + "</b>" +
+            (recText(r.p) ? '<span class="rt-rec">' + esc(recText(r.p)) + "</span>" : "") +
+            "</li>";
+        }).join("") + "</ul></div>";
     });
-    if (!boxes.length) return "";
-    return '<div class="pg-rt"><h4 class="tb-sub">이 경기 평점</h4>' + boxes.join("") + "</div>";
+    return html;
   }
 
   // 득점 장면 한 줄: 시간(전반/후반 + ESPN 분 표기) · 팀 · 득점 · 도움.
@@ -2324,7 +2403,8 @@
     var board = soccerBoard(g, data);
     var verdict = board ? soccerVerdictText(g, board, false) : "";
     var plTable = board ? soccerPlayerTableHTML(g, board) : "";
-    var ratingBlock = soccerRatingBlockHTML(g);
+    // 평점이 있는 경기: 기록표와 '이 경기 평점' 목록을 팀별 한 표로 합친다(같은 선수 중복 없음).
+    var roster = soccerRosterHTML(g, board);
 
     var more = "";
     var goals = (data && Array.isArray(data.goals)) ? data.goals : [];
@@ -2341,19 +2421,21 @@
       }).join("") + "</div>";
     }
     var note = board
-      ? (ratingBlock
-        ? "선수 활약은 ESPN 공개 기록(골·도움·슈팅·유효슈팅·선방·파울)으로만 자동 요약합니다. 패스·태클은 ESPN이 제공하지 않아 쓰지 않고, 위 '이 경기 평점'은 FotMob 이 제공한 이 경기 평점만 표시합니다."
+      ? (roster
+        ? "선수 기록과 평점을 한 표로 합쳤습니다. 기록은 ESPN 공개 기록(골·도움·슈팅·유효슈팅·선방·파울)만 쓰고 패스·태클은 ESPN이 제공하지 않아 쓰지 않으며, 평점은 FotMob 이 경기 평점입니다."
         : "선수 활약은 ESPN 공개 기록(골·도움·슈팅·유효슈팅·선방·파울)으로만 자동 요약합니다. 패스·태클은 ESPN이 제공하지 않아 쓰지 않고, 선수 평점은 FotMob 이 이 경기 평점을 준 경기에서만 표시합니다.")
-      : "축구는 ESPN 공개 기록에 선수별 시즌 평균이 없어 개인 평가를 만들지 않습니다. 팀 지표와 득점 장면만 정리했습니다.";
+      : (roster
+        ? "이 경기는 ESPN 선수 기록을 받지 못해 FotMob 이 경기 평점만 표시합니다."
+        : "축구는 ESPN 공개 기록에 선수별 시즌 평균이 없어 개인 평가를 만들지 않습니다. 팀 지표와 득점 장면만 정리했습니다.");
 
     return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>승패 원인 · 활약</span></div>' +
       '<p class="pg-game-line">' + esc(out.join(" ")) + "</p>" +
       (verdict ? '<p class="pg-verdict">' + esc(verdict) + "</p>" : "") +
       '<div class="pg-why"><b>' + whyLabel + '</b><p>' + esc(why) + "</p></div>" +
-      ((more || plTable || ratingBlock) ? '<details class="pg-more"><summary>' +
-        (ratingBlock ? ((plTable || more) ? "선수 기록 및 평점" : "이 경기 평점")
+      ((more || plTable || roster) ? '<details class="pg-more"><summary>' +
+        (roster ? (board ? "선수 기록 및 평점" : "이 경기 평점")
           : (plTable ? "선수 기록 더 보기" : "득점 장면 더 보기")) + "</summary>" +
-        ratingBlock + plTable + more + "</details>" : "") +
+        (roster || plTable) + more + "</details>" : "") +
       '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
 

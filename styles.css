@@ -1005,24 +1005,21 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .pg-stat-row > span { min-width: 0; overflow-wrap: anywhere; }
 
 /* 접힌 판의 '이 경기 평점' — 팀별로 이름과 평점 칩을 조밀하게(자르지 않고 전원) */
-.pg-rt { margin: 2px 0 10px; padding: 8px 10px 9px; border-radius: 9px; background: #FBFCFE; border: 1px solid var(--line); }
-.pg-rt > .tb-sub { margin: 0 0 6px; }
-.pg-rt-team + .pg-rt-team { margin-top: 9px; }
-.pg-rt-cnt { margin-left: auto; flex: 0 0 auto; font-size: 9.5px; font-weight: 700; color: var(--text-3); font-variant-numeric: tabular-nums; }
-.pg-rt-list {
-  list-style: none; margin: 0; padding: 0;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 2px 10px;
+/* '선수 기록 및 평점' — 팀별 한 목록. 평점 칩(구간 색) + 선수 이름 + 이 경기 기록.
+   칸 너비를 32px로 고정해 평점 칩이 왼쪽 세로줄로 가지런히 서게 한다(평점 없으면 빈 칸). */
+.rt-cnt { margin-left: auto; flex: 0 0 auto; font-size: 9.5px; font-weight: 700; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.rt-list {
+  list-style: none; margin: 2px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1px 18px;
 }
-.pg-rt-list li {
-  display: flex; align-items: baseline; gap: 4px; min-width: 0;
-  font-size: 10.5px; line-height: 1.55; color: #1F2937;
+.rt-list li {
+  display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: baseline;
+  column-gap: 5px; padding: 2px 0; font-size: 10.5px; line-height: 1.55; color: #1F2937;
 }
-.pg-rt-list li > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.pg-rt-list li > i {
-  margin-left: auto; flex: 0 0 auto; font-style: normal; font-size: 9px; font-weight: 800; line-height: 1.5;
-  color: #92400E; background: #FEF3C7; border-radius: 4px; padding: 0 4px;
-  font-variant-numeric: tabular-nums;
-}
+.rt-list li > .pl-rating { justify-self: start; }
+.rt-nm { min-width: 0; font-weight: 600; color: #1F2937; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rt-rec { font-size: 9.5px; font-weight: 700; color: var(--text-3); font-variant-numeric: tabular-nums; text-align: right; }
+.rt-chip-none { display: inline-block; }
 .pg-goal { grid-template-columns: minmax(56px, auto) minmax(0, 1fr); }
 .pg-goal > i { white-space: nowrap; }
 .pg-goal > span { color: #1F2937; }
@@ -1313,6 +1310,15 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   color: #92400E; background: #FEF3C7; border-radius: 4px; padding: 0 4px;
   font-variant-numeric: tabular-nums; white-space: nowrap;
 }
+/* 평점 구간별 색 — 잘한 선수가 한눈에 보이게. 숫자 크기·굵기는 그대로 두고 색만 바꾼다.
+   9.0↑ 진한 파랑 · 8.x 파랑 · 7.x 주황 · 6.x 회색 · 6.0 미만 붉은색. */
+.pl-rating.r9, .lu-rating.r9 {
+  color: #12307A; background: #C9DDFC; box-shadow: inset 0 0 0 1px rgba(18, 48, 122, .30);
+}
+.pl-rating.r8, .lu-rating.r8 { color: #2563EB; background: #EDF3FE; }
+.pl-rating.r7, .lu-rating.r7 { color: #92400E; background: #FEF3C7; }
+.pl-rating.r6, .lu-rating.r6 { color: #4B5563; background: #F1F3F5; }
+.pl-rating.r5, .lu-rating.r5 { color: #B91C1C; background: #FEE4E4; }
 .pl-sub { font-size: 10px; color: var(--text-3); font-variant-numeric: tabular-nums; }
 .pl-recent { font-size: 10px; color: var(--info, #1D4ED8); font-variant-numeric: tabular-nums; }
 .pl-last { font-size: 10px; color: var(--text-3); font-variant-numeric: tabular-nums; }
