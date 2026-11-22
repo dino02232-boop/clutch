@@ -1000,7 +1000,6 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .pg-more > p { margin: 7px 0 0; font-size: 11px; line-height: 1.7; color: #4B5563; }
 @media (max-width: 380px) {
   .pg-more > summary { padding: 10px 11px; font-size: 12.5px; gap: 6px; }
-  .pg-more-hint { display: none; }
 }
 /* 축구 선수 기록표(접힌 '선수 기록 더 보기' 안) */
 .pg-pl { width: 100%; margin: 4px 0 2px; border-collapse: collapse; table-layout: fixed; font-size: 10.5px; font-variant-numeric: tabular-nums; }
