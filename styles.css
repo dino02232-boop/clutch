@@ -1020,6 +1020,13 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .rt-nm { min-width: 0; font-weight: 600; color: #1F2937; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rt-rec { font-size: 9.5px; font-weight: 700; color: var(--text-3); font-variant-numeric: tabular-nums; text-align: right; }
 .rt-chip-none { display: inline-block; }
+/* 좁은 화면(휴대폰)에서는 이름이 잘리지 않게 기록을 이름 아래 둘째 줄로 내린다. */
+@media (max-width: 560px) {
+  .rt-list li { grid-template-columns: 32px minmax(0, 1fr); grid-template-areas: "chip nm" ". rec"; }
+  .rt-list li > .pl-rating, .rt-list li > .rt-chip-none { grid-area: chip; }
+  .rt-nm { grid-area: nm; }
+  .rt-rec { grid-area: rec; text-align: left; }
+}
 .pg-goal { grid-template-columns: minmax(56px, auto) minmax(0, 1fr); }
 .pg-goal > i { white-space: nowrap; }
 .pg-goal > span { color: #1F2937; }
