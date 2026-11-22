@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-22T22:27:31+09:00
+   생성 시각(기준): 2026-11-23T00:12:11+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-22T22:27:31+09:00",
+  "updated": "2026-11-23T00:12:11+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -831,12 +831,12 @@ window.CLUTCH_STANDINGS = {
               "team": "바르셀로나",
               "abbr": "BAR",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/83.png",
-              "played": 12,
-              "win": 11,
+              "played": 13,
+              "win": 12,
               "draw": 0,
               "loss": 1,
-              "points": 33,
-              "diff": 35,
+              "points": 36,
+              "diff": 36,
               "pct": null,
               "gb": null,
               "zone": {
@@ -979,12 +979,12 @@ window.CLUTCH_STANDINGS = {
               "team": "비야레알",
               "abbr": "VIL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png",
-              "played": 12,
+              "played": 13,
               "win": 4,
               "draw": 3,
-              "loss": 5,
+              "loss": 6,
               "points": 15,
-              "diff": 2,
+              "diff": 1,
               "pct": null,
               "gb": null,
               "zone": null
@@ -5107,9 +5107,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
               "team": "새크라멘토 킹스",
               "teamAbbr": "SAC",
-              "value": 13.357142,
-              "display": "13.4리바운드",
-              "played": 14
+              "value": 13.6,
+              "display": "13.6리바운드",
+              "played": 15
             },
             {
               "rank": 3,
@@ -5129,9 +5129,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
               "team": "샌안토니오 스퍼스",
               "teamAbbr": "SA",
-              "value": 11.9375,
-              "display": "11.9리바운드",
-              "played": 16
+              "value": 12.294118,
+              "display": "12.3리바운드",
+              "played": 17
             },
             {
               "rank": 5,
@@ -5140,12 +5140,23 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032976.png",
               "team": "미네소타 팀버울브스",
               "teamAbbr": "MIN",
-              "value": 10.866667,
+              "value": 10.875,
               "display": "10.9리바운드",
-              "played": 15
+              "played": 16
             },
             {
               "rank": 6,
+              "name": "Donovan Clingan",
+              "id": "5105565",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5105565.png",
+              "team": "포틀랜드 트레일블레이저스",
+              "teamAbbr": "POR",
+              "value": 10.875,
+              "display": "10.9리바운드",
+              "played": 16
+            },
+            {
+              "rank": 7,
               "name": "Isaiah Hartenstein",
               "id": "4222252",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4222252.png",
@@ -5154,17 +5165,6 @@ window.CLUTCH_STANDINGS = {
               "value": 10.8125,
               "display": "10.8리바운드",
               "played": 16
-            },
-            {
-              "rank": 7,
-              "name": "Donovan Clingan",
-              "id": "5105565",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5105565.png",
-              "team": "포틀랜드 트레일블레이저스",
-              "teamAbbr": "POR",
-              "value": 10.733334,
-              "display": "10.7리바운드",
-              "played": 15
             },
             {
               "rank": 8,
@@ -5245,6 +5245,17 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 15,
+              "name": "Joel Embiid",
+              "id": "3059318",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
+              "team": "필라델피아 세븐티식서스",
+              "teamAbbr": "PHI",
+              "value": 8.928572,
+              "display": "8.9리바운드",
+              "played": 14
+            },
+            {
+              "rank": 16,
               "name": "Wendell Carter Jr.",
               "id": "4277847",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277847.png",
@@ -5255,7 +5266,7 @@ window.CLUTCH_STANDINGS = {
               "played": 15
             },
             {
-              "rank": 16,
+              "rank": 17,
               "name": "Jarrett Allen",
               "id": "4066328",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066328.png",
@@ -5266,7 +5277,7 @@ window.CLUTCH_STANDINGS = {
               "played": 14
             },
             {
-              "rank": 17,
+              "rank": 18,
               "name": "Naz Reid",
               "id": "4396971",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396971.png",
@@ -5277,7 +5288,7 @@ window.CLUTCH_STANDINGS = {
               "played": 15
             },
             {
-              "rank": 18,
+              "rank": 19,
               "name": "Ausar Thompson",
               "id": "4684742",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684742.png",
@@ -5286,17 +5297,6 @@ window.CLUTCH_STANDINGS = {
               "value": 8.357142,
               "display": "8.4리바운드",
               "played": 14
-            },
-            {
-              "rank": 19,
-              "name": "Joel Embiid",
-              "id": "3059318",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
-              "team": "필라델피아 세븐티식서스",
-              "teamAbbr": "PHI",
-              "value": 8.307693,
-              "display": "8.3리바운드",
-              "played": 13
             },
             {
               "rank": 20,

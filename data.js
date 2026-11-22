@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-22T23:19:49+09:00",
+  updatedAt: "2026-11-23T00:12:11+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -15780,7 +15780,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 23:19 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 00:11 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -16134,7 +16134,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, 흥국생명(원정) 2승 4패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 23:19 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 00:11 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -23040,7 +23040,7 @@ window.CLUTCH_DATA = {
           },
           "status": "final"
         },
-        {
+                {
           "id": "soccer-vil-bar-20261122",
           "espnId": "401882804",
           "sport": "soccer",
@@ -23122,6 +23122,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **바르셀로나**(홈) 4.0골 · **비야레알**(원정) 1.4골, 평균 실점은 홈 1.1골 · 원정 1.2골. 해외 배당을 확률로 환산하면 바르셀로나 승 81.2% · 무 12.0% · 비야레알 승 6.8%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 2,
+            "homeScore": 3,
+            "lines": {
+              "away": [
+                "2",
+                "0"
+              ],
+              "home": [
+                "0",
+                "3"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -23240,7 +23257,99 @@ window.CLUTCH_DATA = {
                     "line": "훈련 복귀"
                   }
                 ],
-                "injurySummary": "결장 4명"
+                "injurySummary": "결장 4명",
+                "players": [
+                  {
+                    "name": "Tani Oluwaseyi",
+                    "rating": 7.4,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Péter Gulácsi",
+                    "rating": 7.3,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alberto Moleiro",
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Tajon Buchanan",
+                    "rating": 7.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pape Gueye",
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sergi Cardona",
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Alex Freeman",
+                    "rating": 6.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Carlos Maciá",
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Carlos Romero",
+                    "rating": 6.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Georges Mikautadze",
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nicolas Pépé",
+                    "rating": 6.0,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Santi Comesaña",
+                    "rating": 6.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ayoze Pérez",
+                    "rating": 5.8,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Renato Veiga",
+                    "rating": 5.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pau Navarro",
+                    "rating": 3.8,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "BAR",
@@ -23358,7 +23467,87 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 2월 말"
                   }
                 ],
-                "injurySummary": "결장 4명"
+                "injurySummary": "결장 4명",
+                "players": [
+                  {
+                    "name": "Pedri",
+                    "rating": 9.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Lamine Yamal",
+                    "rating": 8.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Gerard Martín",
+                    "rating": 8.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "João Cancelo",
+                    "rating": 8.0,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Frenkie de Jong",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Marc Bernal",
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Eric García",
+                    "rating": 7.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Karim Adeyemi",
+                    "rating": 7.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Raphinha",
+                    "rating": 6.9,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Anthony Gordon",
+                    "rating": 6.8,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Fermín López",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Dani Olmo",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Joan García",
+                    "rating": 5.1,
+                    "pos": "GK",
+                    "starter": true
+                  }
+                ]
               }
             ],
             "keyPlayers": [
@@ -23372,7 +23561,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg/120px-Raphinha_Brazil_V_Morocco_13_June_2026-133_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 15"
-                    ]
+                    ],
+                    "rating": 6.9
                   },
                   {
                     "name": "Lamine Yamal",
@@ -23380,7 +23570,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Lamine_Yamal_France_v_Spain_7.24.26-142.jpg/120px-Lamine_Yamal_France_v_Spain_7.24.26-142.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 8"
-                    ]
+                    ],
+                    "rating": 8.2
                   }
                 ]
               },
@@ -23394,7 +23585,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Mikautadze_asse_ol_2425.png/120px-Mikautadze_asse_ol_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
-                    ]
+                    ],
+                    "rating": 6.1
                   },
                   {
                     "name": "Alberto Moleiro",
@@ -23402,7 +23594,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://r2.thesportsdb.com/images/media/player/thumb/j64kp01701093262.jpg",
                     "stats": [
                       "도움 4"
-                    ]
+                    ],
+                    "rating": 7.2
                   }
                 ]
               }
@@ -23449,7 +23642,8 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868133,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
         {
           "id": "soccer-bha-hul-20261122",
