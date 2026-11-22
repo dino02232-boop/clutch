@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-22T21:06:36+09:00",
+  updatedAt: "2026-11-22T22:27:32+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -7605,7 +7605,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 삼성화재(홈) 4승 2패·2위·승점 12, OK저축은행(원정) 1승 4패·6위·승점 4."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 21:06 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 22:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -7963,7 +7963,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 숲 스타디움에서 열립니다.",
               "**순위표** — SOOP(홈) 0승 6패·7위·승점 1, 정관장(원정) 3승 2패·4위·승점 8."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 21:06 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 22:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-21 END */,
@@ -15780,7 +15780,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 21:06 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 22:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -16134,7 +16134,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, 흥국생명(원정) 2승 4패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 21:06 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 22:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -22441,7 +22441,7 @@ window.CLUTCH_DATA = {
           },
           "status": "final"
         },
-        {
+                {
           "id": "soccer-ven-juv-20261122",
           "espnId": "401875008",
           "sport": "soccer",
@@ -22523,6 +22523,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **유벤투스**(홈) 1.4골 · **베네치아**(원정) 0.7골, 평균 실점은 홈 1.1골 · 원정 1.9골. 해외 배당을 확률로 환산하면 유벤투스 승 67.9% · 무 18.9% · 베네치아 승 13.2%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 4,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "0",
+                "4"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -22640,7 +22657,87 @@ window.CLUTCH_DATA = {
                     "line": "복귀 시점 미정"
                   }
                 ],
-                "injurySummary": "결장 3명 · 불확실 1명"
+                "injurySummary": "결장 3명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Antoine Hainaut",
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "John Yeboah",
+                    "rating": 6.7,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Simon Sohm",
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Gianluca Busio",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Juan Jesus",
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Lion Lauberbach",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Matteo Dagasso",
+                    "rating": 6.0,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Redouane Halhal",
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ridgeciano Haps",
+                    "rating": 5.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Akor Adams",
+                    "rating": 5.8,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Filip Stanković",
+                    "rating": 5.7,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Matías Moreno",
+                    "rating": 5.5,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Kike Pérez",
+                    "rating": 4.7,
+                    "pos": "MF",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "JUV",
@@ -22768,7 +22865,99 @@ window.CLUTCH_DATA = {
                     "line": "훈련 복귀"
                   }
                 ],
-                "injurySummary": "결장 6명"
+                "injurySummary": "결장 6명",
+                "players": [
+                  {
+                    "name": "Teun Koopmeiners",
+                    "rating": 8.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Edon Zhegrova",
+                    "rating": 8.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Gleison Bremer",
+                    "rating": 8.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Randal Kolo Muani",
+                    "rating": 8.3,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Juan Cabal",
+                    "rating": 8.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nick Woltemade",
+                    "rating": 7.9,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Douglas Luiz",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Guglielmo Vicario",
+                    "rating": 7.5,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Zeki Çelik",
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Lloyd Kelly",
+                    "rating": 7.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Weston McKennie",
+                    "rating": 7.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Kerim Alajbegović",
+                    "rating": 6.9,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pape Sarr",
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Andrea Cambiaso",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Federico Gatti",
+                    "rating": 6.2,
+                    "pos": "DF",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "keyPlayers": [
@@ -22790,7 +22979,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Randal_Kolo_Muani_2020.jpg/120px-Randal_Kolo_Muani_2020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
-                    ]
+                    ],
+                    "rating": 8.3
                   }
                 ]
               },
@@ -22805,7 +22995,8 @@ window.CLUTCH_DATA = {
                     "stats": [
                       "득점 2",
                       "도움 2"
-                    ]
+                    ],
+                    "rating": 6.9
                   }
                 ]
               }
@@ -22846,7 +23037,8 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5749754,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
         {
           "id": "soccer-vil-bar-20261122",

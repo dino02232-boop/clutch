@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-22T21:06:36+09:00
+   생성 시각(기준): 2026-11-22T22:27:31+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-22T21:06:36+09:00",
+  "updated": "2026-11-22T22:27:31+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -2523,15 +2523,15 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 6,
-              "team": "프로시노네",
-              "abbr": "FRO",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4057.png",
-              "played": 11,
+              "team": "유벤투스",
+              "abbr": "JUV",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/111.png",
+              "played": 12,
               "win": 6,
-              "draw": 2,
+              "draw": 3,
               "loss": 3,
-              "points": 20,
-              "diff": 9,
+              "points": 21,
+              "diff": 7,
               "pct": null,
               "gb": null,
               "zone": {
@@ -2542,15 +2542,15 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 7,
-              "team": "유벤투스",
-              "abbr": "JUV",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/111.png",
+              "team": "프로시노네",
+              "abbr": "FRO",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4057.png",
               "played": 11,
-              "win": 5,
-              "draw": 3,
+              "win": 6,
+              "draw": 2,
               "loss": 3,
-              "points": 18,
-              "diff": 3,
+              "points": 20,
+              "diff": 9,
               "pct": null,
               "gb": null,
               "zone": {
@@ -2733,12 +2733,12 @@ window.CLUTCH_STANDINGS = {
               "team": "베네치아",
               "abbr": "VEN",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17530.png",
-              "played": 11,
+              "played": 12,
               "win": 2,
               "draw": 0,
-              "loss": 9,
+              "loss": 10,
               "points": 6,
-              "diff": -13,
+              "diff": -17,
               "pct": null,
               "gb": null,
               "zone": {
@@ -4995,6 +4995,17 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 13,
+              "name": "Ty Jerome",
+              "id": "4065733",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png",
+              "team": "멤피스 그리즐리스",
+              "teamAbbr": "MEM",
+              "value": 24.75,
+              "display": "24.8점",
+              "played": 12
+            },
+            {
+              "rank": 14,
               "name": "Devin Booker",
               "id": "3136193",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png",
@@ -5005,7 +5016,7 @@ window.CLUTCH_STANDINGS = {
               "played": 15
             },
             {
-              "rank": 14,
+              "rank": 15,
               "name": "Austin Reaves",
               "id": "4066457",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066457.png",
@@ -5016,7 +5027,7 @@ window.CLUTCH_STANDINGS = {
               "played": 12
             },
             {
-              "rank": 15,
+              "rank": 16,
               "name": "Donovan Mitchell",
               "id": "3908809",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
@@ -5027,7 +5038,7 @@ window.CLUTCH_STANDINGS = {
               "played": 16
             },
             {
-              "rank": 16,
+              "rank": 17,
               "name": "Nikola Jokic",
               "id": "3112335",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
@@ -5038,7 +5049,7 @@ window.CLUTCH_STANDINGS = {
               "played": 14
             },
             {
-              "rank": 17,
+              "rank": 18,
               "name": "Cooper Flagg",
               "id": "5041939",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
@@ -5049,7 +5060,7 @@ window.CLUTCH_STANDINGS = {
               "played": 15
             },
             {
-              "rank": 18,
+              "rank": 19,
               "name": "Deni Avdija",
               "id": "4683021",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
@@ -5060,7 +5071,7 @@ window.CLUTCH_STANDINGS = {
               "played": 14
             },
             {
-              "rank": 19,
+              "rank": 20,
               "name": "Pascal Siakam",
               "id": "3149673",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
@@ -5069,17 +5080,6 @@ window.CLUTCH_STANDINGS = {
               "value": 23.0,
               "display": "23.0점",
               "played": 15
-            },
-            {
-              "rank": 20,
-              "name": "Jaylen Brown",
-              "id": "3917376",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3917376.png",
-              "team": "필라델피아 세븐티식서스",
-              "teamAbbr": "PHI",
-              "value": 22.571428,
-              "display": "22.6점",
-              "played": 14
             }
           ]
         },
@@ -5423,9 +5423,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
               "team": "새크라멘토 킹스",
               "teamAbbr": "SAC",
-              "value": 7.3333335,
-              "display": "7.3어시스트",
-              "played": 15
+              "value": 7.375,
+              "display": "7.4어시스트",
+              "played": 16
             },
             {
               "rank": 11,
@@ -5451,17 +5451,6 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 13,
-              "name": "LeBron James",
-              "id": "1966",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png",
-              "team": "필라델피아 세븐티식서스",
-              "teamAbbr": "PHI",
-              "value": 6.8333335,
-              "display": "6.8어시스트",
-              "played": 12
-            },
-            {
-              "rank": 14,
               "name": "Jayson Tatum",
               "id": "4065648",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
@@ -5472,18 +5461,18 @@ window.CLUTCH_STANDINGS = {
               "played": 14
             },
             {
-              "rank": 15,
-              "name": "Darius Garland",
-              "id": "4396907",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
-              "team": "LA 클리퍼스",
-              "teamAbbr": "LAC",
-              "value": 6.785714,
+              "rank": 14,
+              "name": "LeBron James",
+              "id": "1966",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png",
+              "team": "필라델피아 세븐티식서스",
+              "teamAbbr": "PHI",
+              "value": 6.769231,
               "display": "6.8어시스트",
-              "played": 14
+              "played": 13
             },
             {
-              "rank": 16,
+              "rank": 15,
               "name": "Draymond Green",
               "id": "6589",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6589.png",
@@ -5494,15 +5483,26 @@ window.CLUTCH_STANDINGS = {
               "played": 13
             },
             {
-              "rank": 17,
+              "rank": 16,
               "name": "Cooper Flagg",
               "id": "5041939",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
               "team": "댈러스 매버릭스",
               "teamAbbr": "DAL",
-              "value": 6.428571,
-              "display": "6.4어시스트",
-              "played": 14
+              "value": 6.5333333,
+              "display": "6.5어시스트",
+              "played": 15
+            },
+            {
+              "rank": 17,
+              "name": "Darius Garland",
+              "id": "4396907",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
+              "team": "LA 클리퍼스",
+              "teamAbbr": "LAC",
+              "value": 6.4666667,
+              "display": "6.5어시스트",
+              "played": 15
             },
             {
               "rank": 18,
@@ -5528,14 +5528,14 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 20,
-              "name": "Deni Avdija",
-              "id": "4683021",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
-              "team": "포틀랜드 트레일블레이저스",
-              "teamAbbr": "POR",
-              "value": 6.076923,
-              "display": "6.1어시스트",
-              "played": 13
+              "name": "Immanuel Quickley",
+              "id": "4395724",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395724.png",
+              "team": "토론토 랩터스",
+              "teamAbbr": "TOR",
+              "value": 6.0,
+              "display": "6.0어시스트",
+              "played": 14
             }
           ]
         }
