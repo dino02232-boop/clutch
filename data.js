@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-23T07:08:58+09:00",
+  updatedAt: "2026-11-23T08:09:28+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -10904,7 +10904,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 07:08 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 08:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -11258,7 +11258,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, 흥국생명(원정) 2승 4패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 07:08 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 08:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -27009,14 +27009,14 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-23 END */,
 
         /* NBA-AUTO 2026-11-23 START */
-        {
+                {
           "id": "nba-det-atl-20261123",
           "espnId": "401910029",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-23T05:30:00+09:00",
-          "status": "live",
+          "status": "final",
           "venue": "State Farm Arena",
           "away": {
             "name": "디트로이트 피스턴스",
@@ -27058,68 +27058,79 @@ window.CLUTCH_DATA = {
             }
           ],
           "result": {
-            "state": "live",
-            "detail": "11:04 - 2nd Quarter",
-            "awayScore": 28,
-            "homeScore": 33,
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 97,
+            "homeScore": 107,
             "lines": {
               "away": [
                 "26",
-                "2"
+                "26",
+                "33",
+                "12"
               ],
               "home": [
                 "29",
-                "4"
+                "22",
+                "23",
+                "33"
               ]
             },
+            "winner": "home",
             "top": [
-              {
-                "name": "Jalen Johnson",
-                "team": "ATL",
-                "min": "8",
-                "pts": 8,
-                "reb": "3",
-                "ast": "0"
-              },
               {
                 "name": "Nickeil Alexander-Walker",
                 "team": "ATL",
-                "min": "7",
-                "pts": 8,
-                "reb": "1",
-                "ast": "0"
+                "min": "28",
+                "pts": 27,
+                "reb": "2",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png"
               },
               {
-                "name": "Ausar Thompson",
+                "name": "Isaiah Joe",
                 "team": "DET",
-                "min": "8",
-                "pts": 6,
-                "reb": "1",
-                "ast": "1"
-              },
-              {
-                "name": "Corey Kispert",
-                "team": "ATL",
-                "min": "4",
-                "pts": 6,
-                "reb": "1",
-                "ast": "1"
+                "min": "26",
+                "pts": 19,
+                "reb": "2",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395702.png"
               },
               {
                 "name": "John Collins",
                 "team": "DET",
-                "min": "7",
-                "pts": 5,
-                "reb": "2",
-                "ast": "0"
+                "min": "22",
+                "pts": 18,
+                "reb": "6",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908845.png"
+              },
+              {
+                "name": "Ausar Thompson",
+                "team": "DET",
+                "min": "38",
+                "pts": 18,
+                "reb": "11",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684742.png"
+              },
+              {
+                "name": "Corey Kispert",
+                "team": "ATL",
+                "min": "19",
+                "pts": 18,
+                "reb": "4",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4280151.png"
               },
               {
                 "name": "Paul Reed",
                 "team": "DET",
-                "min": "5",
-                "pts": 5,
-                "reb": "1",
-                "ast": "0"
+                "min": "26",
+                "pts": 16,
+                "reb": "5",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278562.png"
               }
             ]
           },

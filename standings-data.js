@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-23T07:08:58+09:00
+   생성 시각(기준): 2026-11-23T08:09:28+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-23T07:08:58+09:00",
+  "updated": "2026-11-23T08:09:28+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4428,36 +4428,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 3,
-              "team": "디트로이트 피스턴스",
-              "abbr": "DET",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
-              "played": 15,
-              "win": 10,
+              "team": "애틀랜타 호크스",
+              "abbr": "ATL",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+              "played": 17,
+              "win": 11,
               "draw": null,
-              "loss": 5,
+              "loss": 6,
               "points": null,
-              "diff": 87,
-              "pct": ".667",
+              "diff": 53,
+              "pct": ".647",
               "gb": "3",
               "zone": null
             },
             {
               "rank": 4,
-              "team": "애틀랜타 호크스",
-              "abbr": "ATL",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
-              "played": 16,
-              "win": 10,
-              "draw": null,
-              "loss": 6,
-              "points": null,
-              "diff": 43,
-              "pct": ".625",
-              "gb": "3.5",
-              "zone": null
-            },
-            {
-              "rank": 5,
               "team": "뉴욕 닉스",
               "abbr": "NY",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
@@ -4467,6 +4452,21 @@ window.CLUTCH_STANDINGS = {
               "loss": 6,
               "points": null,
               "diff": 90,
+              "pct": ".625",
+              "gb": "3.5",
+              "zone": null
+            },
+            {
+              "rank": 5,
+              "team": "디트로이트 피스턴스",
+              "abbr": "DET",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
+              "played": 16,
+              "win": 10,
+              "draw": null,
+              "loss": 6,
+              "points": null,
+              "diff": 77,
               "pct": ".625",
               "gb": "3.5",
               "zone": null
