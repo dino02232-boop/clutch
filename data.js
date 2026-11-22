@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-22T14:12:19+09:00",
+  updatedAt: "2026-11-22T14:13:23+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -7605,7 +7605,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 삼성화재(홈) 4승 2패·2위·승점 12, OK저축은행(원정) 1승 4패·6위·승점 4."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 13:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -7963,7 +7963,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 숲 스타디움에서 열립니다.",
               "**순위표** — SOOP(홈) 0승 6패·7위·승점 1, 정관장(원정) 3승 2패·4위·승점 8."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 13:48 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-21 END */,
@@ -15726,7 +15726,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 2패·4위·승점 8, KB손해보험(원정) 0승 5패·7위·승점 0."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -16030,13 +16030,13 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 1승 4패·6위·승점 3, 흥국생명(원정) 2승 3패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
 
         /* SOCCER-AUTO 2026-11-22 START */
-        {
+                {
           "id": "soccer-cry-cov-20261122",
           "espnId": "401879235",
           "sport": "soccer",
@@ -16089,6 +16089,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **코번트리 시티**(홈) 1.2골 · **크리스털 팰리스**(원정) 1.1골, 평균 실점은 홈 1.9골 · 원정 2.5골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 2,
+            "homeScore": 3,
+            "lines": {
+              "away": [
+                "2",
+                "0"
+              ],
+              "home": [
+                "2",
+                "1"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -16406,9 +16423,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795519,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-ips-tot-20261122",
           "espnId": "401878754",
           "sport": "soccer",
@@ -16461,6 +16479,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **토트넘 홋스퍼**(홈) 1.1골 · **입스위치 타운**(원정) 1.4골, 평균 실점은 홈 1.0골 · 원정 2.0골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 2,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "1",
+                "1"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -16753,9 +16788,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795524,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-lee-che-20261122",
           "espnId": "401879236",
           "sport": "soccer",
@@ -16808,6 +16844,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **첼시**(홈) 1.8골 · **리즈 유나이티드**(원정) 1.3골, 평균 실점은 홈 1.8골 · 원정 0.8골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 4,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "1",
+                "3"
+              ],
+              "home": [
+                "1",
+                "0"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -17107,9 +17160,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795518,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-nfo-bou-20261122",
           "espnId": "401879238",
           "sport": "soccer",
@@ -17162,6 +17216,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **본머스**(홈) 1.6골 · **노팅엄 포리스트**(원정) 0.8골, 평균 실점은 홈 1.3골 · 원정 1.4골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 2,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "2",
+                "0"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -17460,9 +17531,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795515,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-sun-avl-20261122",
           "espnId": "401878756",
           "sport": "soccer",
@@ -17515,6 +17587,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **애스턴 빌라**(홈) 1.3골 · **선덜랜드**(원정) 0.7골, 평균 실점은 홈 1.5골 · 원정 1.5골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "0",
+                "0"
+              ]
+            },
+            "winner": null
+          },
           "details": {
             "teams": [
               {
@@ -17824,9 +17913,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795516,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-val-ray-20261122",
           "espnId": "401882799",
           "sport": "soccer",
@@ -17879,6 +17969,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **라요 바예카노**(홈) 1.2골 · **발렌시아**(원정) 0.7골, 평균 실점은 홈 1.8골 · 원정 1.5골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 1,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "1",
+                "0"
+              ],
+              "home": [
+                "0",
+                "0"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -18183,9 +18290,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868138,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-roma-par-20261122",
           "espnId": "401874967",
           "sport": "soccer",
@@ -18238,6 +18346,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **파르마**(홈) 0.8골 · **AS 로마**(원정) 3.0골, 평균 실점은 홈 1.8골 · 원정 0.9골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 5,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "1",
+                "4"
+              ],
+              "home": [
+                "0",
+                "1"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -18532,9 +18657,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5749758,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-ars-new-20261122",
           "espnId": "401879232",
           "sport": "soccer",
@@ -18587,6 +18713,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **뉴캐슬 유나이티드**(홈) 1.4골 · **아스널**(원정) 1.5골, 평균 실점은 홈 1.6골 · 원정 0.6골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 2,
+            "homeScore": 2,
+            "lines": {
+              "away": [
+                "1",
+                "1"
+              ],
+              "home": [
+                "0",
+                "2"
+              ]
+            },
+            "winner": null
+          },
           "details": {
             "teams": [
               {
@@ -18881,9 +19024,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795523,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-bet-sev-20261122",
           "espnId": "401882797",
           "sport": "soccer",
@@ -18936,6 +19080,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **세비야**(홈) 1.4골 · **레알 베티스**(원정) 1.6골, 평균 실점은 홈 1.5골 · 원정 1.2골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 1,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "0",
+                "1"
+              ],
+              "home": [
+                "0",
+                "1"
+              ]
+            },
+            "winner": null
+          },
           "details": {
             "teams": [
               {
@@ -19234,9 +19395,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868140,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-vfb-s04-20261122",
           "espnId": "401884729",
           "sport": "soccer",
@@ -19289,6 +19451,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **샬케 04**(홈) 0.5골 · **슈투트가르트**(원정) 1.5골, 평균 실점은 홈 1.1골 · 원정 1.5골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "0",
+                "0"
+              ]
+            },
+            "winner": null
+          },
           "details": {
             "teams": [
               {
@@ -19603,9 +19782,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5881230,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-tor-nap-20261122",
           "espnId": "401875067",
           "sport": "soccer",
@@ -19658,6 +19838,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **나폴리**(홈) 1.6골 · **토리노**(원정) 1.2골, 평균 실점은 홈 1.2골 · 원정 1.5골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "0",
+                "1"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -19954,9 +20151,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5749757,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-cel-rma-20261122",
           "espnId": "401882798",
           "sport": "soccer",
@@ -20009,6 +20207,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **레알 마드리드**(홈) 2.5골 · **셀타 비고**(원정) 0.8골, 평균 실점은 홈 0.8골 · 원정 0.9골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 1,
+            "homeScore": 2,
+            "lines": {
+              "away": [
+                "1",
+                "0"
+              ],
+              "home": [
+                "0",
+                "2"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -20307,7 +20522,8 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868139,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
         {
           "id": "soccer-ven-juv-20261122",
