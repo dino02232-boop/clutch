@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-22T14:13:23+09:00",
+  updatedAt: "2026-11-22T14:46:57+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -7605,7 +7605,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 삼성화재(홈) 4승 2패·2위·승점 12, OK저축은행(원정) 1승 4패·6위·승점 4."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -7963,7 +7963,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 숲 스타디움에서 열립니다.",
               "**순위표** — SOOP(홈) 0승 6패·7위·승점 1, 정관장(원정) 3승 2패·4위·승점 8."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-21 END */,
@@ -15430,6 +15430,7 @@ window.CLUTCH_DATA = {
           "leagueFull": "V리그 남자부",
           "source": "kovo",
           "start": "2026-11-22T14:00:00+09:00",
+          "status": "final",
           "venue": "서울장충체육관",
           "away": {
             "name": "KB손해보험",
@@ -15551,6 +15552,44 @@ window.CLUTCH_DATA = {
               "text": "세트 승리 수 차가 5입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 0,
+            "homeScore": 1,
+            "winner": "home",
+            "lines": {
+              "away": [
+                "22"
+              ],
+              "home": [
+                "25"
+              ]
+            },
+            "kovoNumber": "39",
+            "source": "kovo",
+            "players": [
+                  {"n": "리누스", "p": "OP", "s": "away", "pt": 9, "at": 15, "asn": 8, "ap": 53.3, "ep": 0.0, "bk": 1, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 1, "er": 4},
+                  {"n": "김형근", "p": "OH", "s": "home", "pt": 7, "at": 11, "asn": 5, "ap": 45.5, "ep": 0.0, "bk": 2, "sv": 0, "dg": 1, "rc": 2, "rt": 6, "set": 0, "er": 4},
+                  {"n": "홍상혁", "p": "OH", "s": "away", "pt": 6, "at": 8, "asn": 5, "ap": 62.5, "ep": 0.0, "bk": 1, "sv": 0, "dg": 1, "rc": 8, "rt": 16, "set": 2, "er": 1},
+                  {"n": "김동영", "p": "OP", "s": "home", "pt": 5, "at": 12, "asn": 4, "ap": 33.3, "ep": 0.0, "bk": 1, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 0, "er": 1},
+                  {"n": "마틴", "p": "MB", "s": "home", "pt": 5, "at": 5, "asn": 4, "ap": 80.0, "ep": 0.0, "bk": 1, "sv": 0, "dg": 0, "rc": 1, "rt": 1, "set": 0, "er": 1},
+                  {"n": "임동균", "p": "MB", "s": "away", "pt": 5, "at": 4, "asn": 3, "ap": 75.0, "ep": 0.0, "bk": 2, "sv": 0, "dg": 2, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "박진우", "p": "MB", "s": "home", "pt": 3, "at": 3, "asn": 3, "ap": 100.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "윤서진", "p": "OH", "s": "away", "pt": 3, "at": 7, "asn": 3, "ap": 42.9, "ep": 0.0, "bk": 0, "sv": 0, "dg": 5, "rc": 2, "rt": 10, "set": 0, "er": 5},
+                  {"n": "김지한", "p": "OH", "s": "home", "pt": 3, "at": 4, "asn": 2, "ap": 50.0, "ep": 0.0, "bk": 0, "sv": 1, "dg": 3, "rc": 3, "rt": 9, "set": 1, "er": 2},
+                  {"n": "차영석", "p": "MB", "s": "away", "pt": 2, "at": 6, "asn": 2, "ap": 33.3, "ep": 0.0, "bk": 0, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 0, "er": 1},
+                  {"n": "한태준", "p": "S", "s": "home", "pt": 1, "at": 1, "asn": 1, "ap": 100.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 17, "er": 2},
+                  {"n": "신승훈", "p": "S", "s": "away", "pt": 1, "at": 2, "asn": 1, "ap": 50.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 16, "er": 1},
+                  {"n": "장지원", "p": "L", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 4, "rc": 1, "rt": 1, "set": 2, "er": 0},
+                  {"n": "오재성", "p": "L", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 4, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "김영준", "p": "L", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 1, "rc": 3, "rt": 11, "set": 0, "er": 0},
+                  {"n": "이시몬", "p": "OH", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "이준영", "p": "MB", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "정성규", "p": "OH", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "손유민", "p": "MB", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 0, "set": 0, "er": 0}
+                ]
+          },
           "details": {
             "teams": [
               {
@@ -15726,7 +15765,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 2패·4위·승점 8, KB손해보험(원정) 0승 5패·7위·승점 0."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -15736,6 +15775,7 @@ window.CLUTCH_DATA = {
           "leagueFull": "V리그 여자부",
           "source": "kovo",
           "start": "2026-11-22T14:00:00+09:00",
+          "status": "final",
           "venue": "수원체육관",
           "away": {
             "name": "흥국생명",
@@ -15856,6 +15896,46 @@ window.CLUTCH_DATA = {
               "text": "리그 순위는 현대건설(홈) 6위·흥국생명(원정) 5위로 바로 옆, 승점 차가 3점, 세트 승리 수 차가 4입니다. 이 경기 결과가 순위표 승점에 바로 반영되는 구간입니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 0,
+            "homeScore": 1,
+            "winner": "home",
+            "lines": {
+              "away": [
+                "19"
+              ],
+              "home": [
+                "25"
+              ]
+            },
+            "kovoNumber": "40",
+            "source": "kovo",
+            "players": [
+                  {"n": "메가", "p": "OP", "s": "home", "pt": 12, "at": 20, "asn": 10, "ap": 50.0, "ep": 0.0, "bk": 2, "sv": 0, "dg": 6, "rc": 0, "rt": 0, "set": 1, "er": 0},
+                  {"n": "조던", "p": "OH", "s": "home", "pt": 10, "at": 18, "asn": 9, "ap": 50.0, "ep": 0.0, "bk": 0, "sv": 1, "dg": 2, "rc": 0, "rt": 3, "set": 0, "er": 2},
+                  {"n": "킨델란", "p": "OP", "s": "away", "pt": 10, "at": 24, "asn": 9, "ap": 37.5, "ep": 0.0, "bk": 1, "sv": 0, "dg": 3, "rc": 0, "rt": 0, "set": 0, "er": 2},
+                  {"n": "배유나", "p": "MB", "s": "home", "pt": 6, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 5, "sv": 1, "dg": 0, "rc": 0, "rt": 1, "set": 1, "er": 1},
+                  {"n": "이예림", "p": "OH", "s": "home", "pt": 3, "at": 5, "asn": 2, "ap": 40.0, "ep": 0.0, "bk": 1, "sv": 0, "dg": 6, "rc": 4, "rt": 10, "set": 2, "er": 0},
+                  {"n": "자스티스", "p": "OH", "s": "away", "pt": 3, "at": 12, "asn": 3, "ap": 25.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 1, "rc": 3, "rt": 14, "set": 2, "er": 1},
+                  {"n": "정윤주", "p": "OH", "s": "away", "pt": 3, "at": 5, "asn": 3, "ap": 60.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "박혜진", "p": "S", "s": "away", "pt": 2, "at": 2, "asn": 1, "ap": 50.0, "ep": 0.0, "bk": 0, "sv": 1, "dg": 8, "rc": 0, "rt": 0, "set": 12, "er": 2},
+                  {"n": "김희진", "p": "MB", "s": "home", "pt": 2, "at": 5, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 2, "sv": 0, "dg": 3, "rc": 1, "rt": 1, "set": 0, "er": 2},
+                  {"n": "정호영", "p": "MB", "s": "away", "pt": 2, "at": 4, "asn": 2, "ap": 50.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 3, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "표승주", "p": "OH", "s": "away", "pt": 1, "at": 2, "asn": 1, "ap": 50.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 3, "rc": 3, "rt": 9, "set": 0, "er": 0},
+                  {"n": "정지윤", "p": "OH", "s": "home", "pt": 1, "at": 4, "asn": 1, "ap": 25.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 0, "rc": 0, "rt": 2, "set": 1, "er": 1},
+                  {"n": "김다은", "p": "OH", "s": "away", "pt": 0, "at": 6, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 1, "rc": 3, "rt": 7, "set": 1, "er": 1},
+                  {"n": "김다인", "p": "S", "s": "home", "pt": 0, "at": 1, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 4, "rc": 0, "rt": 0, "set": 16, "er": 0},
+                  {"n": "신연경", "p": "L", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 2, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "이영주", "p": "L", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 2, "rc": 3, "rt": 6, "set": 1, "er": 0},
+                  {"n": "김연견", "p": "L", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 7, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "김수지", "p": "MB", "s": "away", "pt": 0, "at": 1, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 2, "rc": 0, "rt": 0, "set": 0, "er": 0},
+                  {"n": "고민지", "p": "L", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 5, "rc": 2, "rt": 6, "set": 0, "er": 0},
+                  {"n": "이채영", "p": "OH", "s": "home", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 2, "rc": 2, "rt": 2, "set": 0, "er": 0},
+                  {"n": "이나연", "p": "S", "s": "away", "pt": 0, "at": 0, "asn": 0, "ap": 0.0, "ep": 0.0, "bk": 0, "sv": 0, "dg": 1, "rc": 0, "rt": 0, "set": 3, "er": 0}
+                ]
+          },
           "details": {
             "teams": [
               {
@@ -16030,7 +16110,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 1승 4패·6위·승점 3, 흥국생명(원정) 2승 3패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-22 14:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -25780,14 +25860,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-22 14:10 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-bos-sac-20261122",
           "espnId": "401910028",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-22T12:00:00+09:00",
-          "status": "live",
+          "status": "final",
           "venue": "Golden 1 Center",
           "away": {
             "name": "보스턴 셀틱스",
@@ -25829,72 +25909,79 @@ window.CLUTCH_DATA = {
             }
           ],
           "result": {
-            "state": "live",
-            "detail": "8:34 - 4th Quarter",
-            "awayScore": 77,
-            "homeScore": 79,
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 96,
+            "homeScore": 97,
             "lines": {
               "away": [
                 "27",
                 "27",
                 "13",
-                "10"
+                "29"
               ],
               "home": [
                 "25",
                 "16",
                 "35",
-                "3"
+                "21"
               ]
             },
+            "winner": "home",
             "top": [
+              {
+                "name": "Darius Acuff Jr.",
+                "team": "SAC",
+                "min": "40",
+                "pts": 21,
+                "reb": "6",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png"
+              },
               {
                 "name": "De'Andre Hunter",
                 "team": "SAC",
-                "min": "32",
+                "min": "41",
                 "pts": 20,
                 "reb": "6",
-                "ast": "2"
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065732.png"
               },
               {
                 "name": "Paul George",
                 "team": "BOS",
-                "min": "29",
-                "pts": 16,
-                "reb": "5",
-                "ast": "5"
-              },
-              {
-                "name": "Domantas Sabonis",
-                "team": "SAC",
-                "min": "26",
-                "pts": 15,
-                "reb": "15",
-                "ast": "4"
-              },
-              {
-                "name": "Sam Hauser",
-                "team": "BOS",
-                "min": "25",
-                "pts": 14,
-                "reb": "4",
-                "ast": "2"
+                "min": "37",
+                "pts": 19,
+                "reb": "8",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png"
               },
               {
                 "name": "Mike Conley",
                 "team": "BOS",
-                "min": "10",
-                "pts": 13,
-                "reb": "2",
-                "ast": "2"
+                "min": "18",
+                "pts": 19,
+                "reb": "4",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3195.png"
               },
               {
-                "name": "Zach LaVine",
+                "name": "Neemias Queta",
+                "team": "BOS",
+                "min": "30",
+                "pts": 15,
+                "reb": "7",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397424.png"
+              },
+              {
+                "name": "Domantas Sabonis",
                 "team": "SAC",
-                "min": "21",
-                "pts": 12,
-                "reb": "3",
-                "ast": "0"
+                "min": "32",
+                "pts": 15,
+                "reb": "17",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png"
               }
             ]
           },

@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-22T12:44:05+09:00
+   생성 시각(기준): 2026-11-22T14:46:56+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-22T12:44:05+09:00",
+  "updated": "2026-11-22T14:46:56+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4416,14 +4416,14 @@ window.CLUTCH_STANDINGS = {
               "team": "보스턴 셀틱스",
               "abbr": "BOS",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
-              "played": 15,
+              "played": 16,
               "win": 11,
               "draw": null,
-              "loss": 4,
+              "loss": 5,
               "points": null,
-              "diff": 157,
-              "pct": ".733",
-              "gb": "2",
+              "diff": 156,
+              "pct": ".688",
+              "gb": "2.5",
               "zone": null
             },
             {
@@ -4841,14 +4841,14 @@ window.CLUTCH_STANDINGS = {
               "team": "새크라멘토 킹스",
               "abbr": "SAC",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
-              "played": 15,
-              "win": 1,
+              "played": 16,
+              "win": 2,
               "draw": null,
               "loss": 14,
               "points": null,
-              "diff": -198,
-              "pct": ".067",
-              "gb": "12",
+              "diff": -197,
+              "pct": ".125",
+              "gb": "11.5",
               "zone": null
             }
           ]
