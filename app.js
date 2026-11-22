@@ -391,6 +391,16 @@
     return esc(s).replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>");
   }
 
+  /* 경기 후 브리핑의 접었다 펴는 버튼. 제목 + '펼치기/접기' 안내 + 화살표를
+     한 줄에 두고, 상태에 따라 안내 글자와 화살표가 바뀐다(styles.css 의 .pg-more). */
+  function pgMoreHTML(label, body) {
+    return '<details class="pg-more"><summary>' +
+      '<span class="pg-more-label">' + esc(label) + "</span>" +
+      '<span class="pg-more-hint" aria-hidden="true"></span>' +
+      '<span class="pg-more-caret" aria-hidden="true">▾</span>' +
+      "</summary>" + body + "</details>";
+  }
+
   function toneClass(tone, allowed, fallback) {
     return allowed.indexOf(tone) >= 0 ? tone : fallback;
   }
@@ -1383,7 +1393,7 @@
       (vVerdict ? '<p class="pg-verdict">' + esc(vVerdict) + "</p>" : "") +
       (vWhy ? '<div class="pg-why"><b>승부가 갈린 이유</b><p>' + esc(vWhy) + "</p></div>" : "") +
       (extra ? '<p class="pg-game-line">' + esc(extra) + "</p>" : "") +
-      (vTable ? '<details class="pg-more"><summary>선수 기록 더 보기</summary>' + vTable + "</details>" : "") +
+      (vTable ? pgMoreHTML("선수 기록", vTable) : "") +
       '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
 
@@ -1938,7 +1948,7 @@
       (winSide ? '<p class="pg-verdict">' + esc(verdictLine(carry, low)) + "</p>" : "") +
       '<div class="pg-why"><b>승부가 갈린 이유</b><p>' + esc(whyText) + "</p></div>" +
       '<div class="pg-highlights">' + highlightHTML(carry, "up", "캐리한 선수") + highlightHTML(low, "down", "아쉬웠던 선수") + "</div>" +
-      (morePieces ? '<details class="pg-more"><summary>경기 흐름 · 팀 지표 더 보기</summary>' + morePieces + "</details>" : "") +
+      (morePieces ? pgMoreHTML("경기 흐름 · 팀 지표", morePieces) : "") +
       '<p class="postgame-note">선수 평가는 시즌 평균과 박스스코어(득점·리바운드·어시스트·야투·턴오버·±)를 바탕으로 한 자동 요약입니다. ±는 그 선수가 코트에 있던 동안의 팀 득실 마진입니다.</p></section>';
   }
 
@@ -2447,10 +2457,11 @@
       '<p class="pg-game-line">' + esc(out.join(" ")) + "</p>" +
       (verdict ? '<p class="pg-verdict">' + esc(verdict) + "</p>" : "") +
       '<div class="pg-why"><b>' + whyLabel + '</b><p>' + esc(why) + "</p></div>" +
-      ((more || plTable || roster) ? '<details class="pg-more"><summary>' +
-        (roster ? (board ? "선수 기록 및 평점" : "이 경기 평점")
-          : (plTable ? "선수 기록 더 보기" : "득점 장면 더 보기")) + "</summary>" +
-        (roster || plTable) + more + "</details>" : "") +
+      ((more || plTable || roster)
+        ? pgMoreHTML(roster ? (board ? "선수 기록 및 평점" : "이 경기 평점")
+          : (plTable ? "선수 기록" : "득점 장면"),
+          (roster || plTable) + more)
+        : "") +
       '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
 

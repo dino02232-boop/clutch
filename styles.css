@@ -970,16 +970,38 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .pg-why > b { display: block; font-size: 10.5px; font-weight: 800; color: #0B6B4A; }
 .pg-why > p { margin: 4px 0 0; font-size: 12px; line-height: 1.7; color: #1F2937; }
-.pg-more { margin-top: 10px; padding-top: 9px; border-top: 1px solid rgba(17, 24, 39, .08); }
+.pg-more { margin-top: 12px; }
 .pg-more > summary {
-  display: flex; align-items: center; gap: 5px;
+  display: flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 11px 13px;
+  border: 1px solid rgba(11, 138, 96, .30); border-radius: 12px;
+  background: #EDF9F3;
+  box-shadow: 0 1px 2px rgba(11, 81, 56, .07);
   cursor: pointer; list-style: none;
-  font-size: 10.5px; font-weight: 800; color: #0B6B4A;
+  font-size: 13px; line-height: 1.35; font-weight: 800; color: #0B5138;
+  transition: background .15s ease, border-color .15s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 .pg-more > summary::-webkit-details-marker { display: none; }
-.pg-more > summary::after { content: "▾"; font-size: 9px; opacity: .8; }
-.pg-more[open] > summary::after { content: "▴"; }
+.pg-more > summary:hover { background: #E3F5EC; border-color: rgba(11, 138, 96, .48); }
+.pg-more > summary:focus-visible { outline: 2px solid rgba(11, 138, 96, .55); outline-offset: 2px; }
+.pg-more-label { flex: 1 1 auto; min-width: 0; }
+.pg-more-hint { flex: 0 0 auto; font-size: 10.5px; font-weight: 700; color: #0B8A60; opacity: .9; }
+.pg-more-hint::after { content: "펼치기"; }
+.pg-more-caret {
+  flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(11, 138, 96, .15);
+  font-size: 10px; line-height: 1; transition: transform .2s ease;
+}
+.pg-more[open] > summary { background: #E4F6EE; margin-bottom: 6px; }
+.pg-more[open] .pg-more-hint::after { content: "접기"; }
+.pg-more[open] .pg-more-caret { transform: rotate(180deg); }
 .pg-more > p { margin: 7px 0 0; font-size: 11px; line-height: 1.7; color: #4B5563; }
+@media (max-width: 380px) {
+  .pg-more > summary { padding: 10px 11px; font-size: 12.5px; gap: 6px; }
+  .pg-more-hint { display: none; }
+}
 /* 축구 선수 기록표(접힌 '선수 기록 더 보기' 안) */
 .pg-pl { width: 100%; margin: 4px 0 2px; border-collapse: collapse; table-layout: fixed; font-size: 10.5px; font-variant-numeric: tabular-nums; }
 .pg-pl th, .pg-pl td { padding: 4px 2px; text-align: right; }
