@@ -1185,6 +1185,136 @@
     return s + (has ? withFinal : withoutFinal);
   }
 
+  /* ── 경기 전 예상 vs 결과 ─────────────────────────────────────
+     종료 카드에서 '경기 전에 짚어 둔 것'과 실제 결과를 나란히 보여 준다.
+     데이터에 있는 값만 쓴다 — 배당이 없으면 배당 줄을 만들지 않고, 경기 전 기록이
+     비어 있으면 그 줄도 건너뛴다. 어느 줄도 만들 수 없으면 블록 자체를 그리지 않는다. */
+  function pgNum(v) {
+    var m = String(v == null ? "" : v).replace(/,/g, "").match(/-?\d+(?:\.\d+)?/);
+    return m && isFinite(Number(m[0])) ? Number(m[0]) : null;
+  }
+  function pgTeamOf(g, side) {
+    var list = g && g.details && Array.isArray(g.details.teams) ? g.details.teams : [];
+    for (var i = 0; i < list.length; i++) if (list[i] && list[i].side === side) return list[i];
+    return null;
+  }
+  // 팀 카드의 숫자 하나 — 농구는 ppg·rpg·tp 키, 배구·축구는 nums[{label,value}]
+  function pgTeamNum(g, side, key, label) {
+    var t = pgTeamOf(g, side);
+    if (!t) return null;
+    if (key && t[key] != null) return pgNum(t[key]);
+    var nums = Array.isArray(t.nums) ? t.nums : [];
+    for (var i = 0; i < nums.length; i++) {
+      if (String((nums[i] && nums[i].label) || "").replace(/\s+/g, "") === label) return pgNum(nums[i].value);
+    }
+    return null;
+  }
+  // 미국식 배당 → 소수 배당
+  function pgDecimal(v) {
+    var n = Number(v);
+    if (v == null || v === "" || !isFinite(n) || n === 0) return null;
+    return n > 0 ? n / 100 + 1 : 100 / Math.abs(n) + 1;
+  }
+  function pgOne(v) { return Math.round(Number(v) * 10) / 10; }
+  // 1.06 · 2.8 · 21 처럼 뒤의 불필요한 0을 덜어 낸 배당 표기
+  function pgDecText(d) {
+    return d.toFixed(2).replace(/0+$/, "").replace(/\.$/, "");
+  }
+  // 배당이 있는 경기만: 팀별 소수 배당·내재 확률과 '가장 낮은 배당(우세)' 팀
+  function pgOddsOf(g) {
+    var ml = g && g.odds && g.odds.moneyline ? g.odds.moneyline : null;
+    if (!ml) return null;
+    var imp = (g.odds && g.odds.implied) || {};
+    var rows = [];
+    // 배당 판과 같은 순서(홈 → 무승부 → 원정)로 적는다.
+    ["home", "draw", "away"].forEach(function (side) {
+      var dec = pgDecimal(ml[side]);
+      if (dec == null) return;
+      var pct = imp[side] != null ? Number(imp[side]) : pgOne(100 / dec);
+      if (!isFinite(pct)) pct = pgOne(100 / dec);
+      var name = side === "draw" ? "무승부"
+        : (g[side] && g[side].name ? g[side].name : (side === "away" ? "원정" : "홈"));
+      rows.push({ side: side, name: name, dec: Math.round(dec * 100) / 100, pct: pgOne(pct) });
+    });
+    if (!rows.length) return null;
+    return { rows: rows, fav: rows.slice().sort(function (a, b) { return a.dec - b.dec; })[0] };
+  }
+
+  function pregVsResultHTML(g) {
+    if (!g || !g.result || g.result.state !== "final") return "";
+    var r = g.result;
+    var awayName = g.away && g.away.name ? g.away.name : "원정";
+    var homeName = g.home && g.home.name ? g.home.name : "홈";
+    var awayScore = pgNum(r.awayScore), homeScore = pgNum(r.homeScore);
+    var scored = awayScore != null && homeScore != null;
+    var items = [];
+
+    /* 1) 배당 — 경기 전에 누가 우세였는지와 실제 승자를 잇는다. 배당이 없으면 이 줄은 없다. */
+    var o = pgOddsOf(g);
+    if (o) {
+      var list = o.rows.map(function (x) {
+        return x.name + " " + pgDecText(x.dec) + "배(" + x.pct + "%)";
+      }).join(" · ");
+      var lead = "경기 전 배당은 " + list + "로 " + o.fav.name + " 우세였";
+      var text;
+      if (scored && awayScore === homeScore) {
+        text = lead + "지만, 실제로는 " + awayScore + "-" + homeScore + " 무승부로 끝났습니다.";
+      } else if (scored) {
+        var winSide = awayScore > homeScore ? "away" : "home";
+        var winName = winSide === "away" ? awayName : homeName;
+        var hi = Math.max(awayScore, homeScore), lo = Math.min(awayScore, homeScore);
+        // 배당이 본 우세와 실제 승자가 같으면 '예상대로', 다르면 '반대'로 잇는다.
+        var sameAsOdds = o.fav.side !== "draw" && o.fav.side === winSide;
+        text = lead + (sameAsOdds ? "고, 실제로도 " : "지만, 실제로는 ") +
+          pgJosa(winName, "이", "가") + " " + hi + "-" + lo + "로 이겼습니다.";
+      } else {
+        text = lead + "습니다.";
+      }
+      items.push({ k: "배당", t: text });
+    }
+
+    /* 2) 경기 전 관전 포인트·기록 — 실제 결과에서 대조할 수 있는 수치만 잇는다. */
+    if (scored) {
+      if (g.sport === "basketball") {
+        var aPpg = pgTeamNum(g, "away", "ppg"), hPpg = pgTeamNum(g, "home", "ppg");
+        if (aPpg != null && hPpg != null) {
+          items.push({ k: "관전 포인트",
+            t: "경기 전 기록의 시즌 평균 득점은 " + awayName + " " + aPpg + "점 · " + homeName + " " + hPpg +
+              "점이었고, 이 경기는 " + awayName + " " + awayScore + "점 · " + homeName + " " + homeScore + "점이었습니다." });
+        }
+      } else if (g.sport === "soccer") {
+        var aGf = pgTeamNum(g, "away", null, "평균득점"), hGf = pgTeamNum(g, "home", null, "평균득점");
+        var aGa = pgTeamNum(g, "away", null, "평균실점"), hGa = pgTeamNum(g, "home", null, "평균실점");
+        if (aGf != null && hGf != null) {
+          var sc = "경기 전 기록의 평균 득점은 " + awayName + " " + aGf + "골 · " + homeName + " " + hGf +
+            "골이었고, 이 경기는 " + awayName + " " + awayScore + "골 · " + homeName + " " + homeScore + "골이었습니다.";
+          if (aGa != null && hGa != null) {
+            sc += " 평균 실점은 " + awayName + " " + aGa + "골 · " + homeName + " " + hGa + "골이었습니다.";
+          }
+          items.push({ k: "관전 포인트", t: sc });
+        }
+      } else if (g.sport === "volleyball") {
+        var aPt = pgTeamNum(g, "away", null, "승점"), hPt = pgTeamNum(g, "home", null, "승점");
+        if (aPt != null && hPt != null) {
+          var sets = r.lines && Array.isArray(r.lines.away) && Array.isArray(r.lines.home)
+            ? Math.min(r.lines.away.length, r.lines.home.length) : 0;
+          var setText = sets >= 5 ? "5세트까지 간 " : (sets > 0 ? sets + "세트 만에 " : "");
+          items.push({ k: "순위표",
+            t: "경기 전 승점은 " + awayName + " " + aPt + " · " + homeName + " " + hPt + "로 " +
+              Math.abs(aPt - hPt) + "점 차였고, 이 경기는 " + setText +
+              Math.max(awayScore, homeScore) + "-" + Math.min(awayScore, homeScore) + "였습니다." });
+        }
+      }
+    }
+
+    if (!items.length) return "";
+    return '<div class="pg-cmp"><b class="pg-cmp-h">경기 전 예상 vs 결과</b>' +
+      '<ul class="pg-cmp-list">' + items.map(function (it) {
+        return '<li><span class="pg-cmp-k">' + esc(it.k) + "</span>" +
+          '<span class="pg-cmp-t">' + esc(it.t) + "</span></li>";
+      }).join("") + "</ul></div>";
+  }
+
   function postgameHTML(g) {
     if (!g || !g.result || g.result.state !== "final") return "";
     if (g.sport === "basketball") return pgBasketballHTML(g);
@@ -1393,6 +1523,7 @@
       (vVerdict ? '<p class="pg-verdict">' + esc(vVerdict) + "</p>" : "") +
       (vWhy ? '<div class="pg-why"><b>승부가 갈린 이유</b><p>' + esc(vWhy) + "</p></div>" : "") +
       (extra ? '<p class="pg-game-line">' + esc(extra) + "</p>" : "") +
+      pregVsResultHTML(g) +
       (vTable ? pgMoreHTML("선수 기록", vTable) : "") +
       '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
@@ -1403,6 +1534,7 @@
     var boxes = entry && entry.data && Array.isArray(entry.data.box) ? entry.data.box : [];
     if (!boxes.length) {
       return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b></div>' +
+        pregVsResultHTML(g) +
         '<p class="postgame-note">' +
         (entry && entry.err ? "선수별 박스스코어를 불러오지 못했습니다." : "최종 선수 기록을 불러오는 중입니다.") +
         "</p></section>";
@@ -1489,6 +1621,7 @@
 
     if (!cands.length) {
       return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b></div>' +
+        pregVsResultHTML(g) +
         '<p class="postgame-note">선수 기록은 받았지만 비교할 시즌 평균이 없어 개인 평가를 만들지 못했습니다.</p></section>';
     }
 
@@ -1948,6 +2081,7 @@
       (winSide ? '<p class="pg-verdict">' + esc(verdictLine(carry, low)) + "</p>" : "") +
       '<div class="pg-why"><b>승부가 갈린 이유</b><p>' + esc(whyText) + "</p></div>" +
       '<div class="pg-highlights">' + highlightHTML(carry, "up", "캐리한 선수") + highlightHTML(low, "down", "아쉬웠던 선수") + "</div>" +
+      pregVsResultHTML(g) +
       (morePieces ? pgMoreHTML("경기 흐름 · 팀 지표", morePieces) : "") +
       '<p class="postgame-note">선수 평가는 시즌 평균과 박스스코어(득점·리바운드·어시스트·야투·턴오버·±)를 바탕으로 한 자동 요약입니다. ±는 그 선수가 코트에 있던 동안의 팀 득실 마진입니다.</p></section>';
   }
@@ -2350,6 +2484,7 @@
     var boxes = data && Array.isArray(data.box) ? data.box : [];
     if (!boxes.length) {
       return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b></div>' +
+        pregVsResultHTML(g) +
         '<p class="postgame-note">' +
         (entry && entry.err ? "경기 기록을 불러오지 못했습니다." : "경기 기록을 불러오는 중입니다.") +
         "</p></section>";
@@ -2457,6 +2592,7 @@
       '<p class="pg-game-line">' + esc(out.join(" ")) + "</p>" +
       (verdict ? '<p class="pg-verdict">' + esc(verdict) + "</p>" : "") +
       '<div class="pg-why"><b>' + whyLabel + '</b><p>' + esc(why) + "</p></div>" +
+      pregVsResultHTML(g) +
       ((more || plTable || roster)
         ? pgMoreHTML(roster ? (board ? "선수 기록 및 평점" : "이 경기 평점")
           : (plTable ? "선수 기록" : "득점 장면"),
@@ -2607,7 +2743,7 @@
 
     // 경기 전 프리뷰(팀 상태·배당·맞대결·체크포인트)
     var preview = '<div class="box-head">' +
-      '<span class="ch-badge">경기 전 브리핑</span>' +
+      '<span class="ch-badge">' + (finalNow ? "경기 전 기록" : "경기 전 브리핑") + "</span>" +
       '<span class="ch-sub">' + (liveNow ? "경기 전 기준 정보 · 팀 비교 · 결장" :
         (finalNow ? "경기 당시 팀 정보 · 부상자 · 체크포인트" : "팀 비교 · 부상자 · 체크포인트")) + "</span>" +
       (g.venue ? '<span class="ch-venue">' + esc(g.venue) + "</span>" : "") +
@@ -2668,9 +2804,10 @@
     // 종료 후에는 결과를 위로 올린 뒤 경기 전 프리뷰를 아래에 보존한다.
     var body;
     if (liveNow) {
-      body = liveSectionHTML(g) + '<details class="pregame"><summary>경기 전 브리핑</summary><div class="pregame-body">' + preview + "</div></details>";
+      body = liveSectionHTML(g) + pgMoreHTML("경기 전 브리핑", '<div class="pregame-body">' + preview + "</div>");
     } else if (finalNow) {
-      body = resultHTML(g) + postgameHTML(g) + '<details class="pregame"><summary>경기 전 브리핑</summary><div class="pregame-body">' + preview + "</div></details>";
+      // 종료 카드에서는 '예상'이 아니라 '기록'이다 — 제목·버튼 모양을 경기 후 브리핑과 맞춘다.
+      body = resultHTML(g) + postgameHTML(g) + pgMoreHTML("경기 전 기록", '<div class="pregame-body">' + preview + "</div>");
     } else {
       body = preview + (more ? '<details class="more"><summary>팀 정보 · 부상 · 맞대결 더 보기</summary><div class="more-body">' + more + "</div></details>" : "");
     }
