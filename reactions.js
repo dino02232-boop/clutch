@@ -60,6 +60,90 @@ window.CLUTCH_REACTIONS = {
     handle: "OneSportsPHL",
     url: "https://x.com/OneSportsPHL/status/2123646541055623264",
     at: "2026-11-20T05:16:05Z"
+  },
+
+  /* 2026-11-20 멤피스 126 : 98 골든스테이트 — 웰스 야투 8-10 */
+  "nba-gsw-mem-20261120|Jaylen Wells": {
+    text: "Jaylen Wells scored 22 points on 8-of-10 shooting, including 4 threes.",
+    ko: "제일런 웰스가 야투 8-10, 3점 4개로 22점을 넣었다.",
+    author: "PropStreak",
+    handle: "PropStreak",
+    url: "https://x.com/PropStreak/status/2123631412532424977",
+    at: "2026-11-20T04:15:58Z"
+  },
+  /* 2026-11-20 뉴욕 102 : 99 미네소타 — 타운스 22점 12리바운드 */
+  "nba-nyk-min-20261120|Karl-Anthony Towns": {
+    text: "Karl-Anthony Towns scored 22 points + 12 rebounds, plus 3 blocks.",
+    ko: "칼앤서니 타운스가 22점 12리바운드에 블록 3개를 보탰다.",
+    author: "PropStreak",
+    handle: "PropStreak",
+    url: "https://x.com/PropStreak/status/2123631412532424977",
+    at: "2026-11-20T04:15:58Z"
+  },
+  /* 2026-11-20 샌안토니오 124 : 112 LA클리퍼스 — 웸반야마 32점 11리바운드 */
+  "nba-lac-sas-20261120|Victor Wembanyama": {
+    text: "Victor Wembanyama dropped 32 points + 11 rebounds on 13-of-26 shooting.",
+    ko: "빅터 웸반야마가 야투 13-26으로 32점 11리바운드를 기록했다.",
+    author: "PropStreak",
+    handle: "PropStreak",
+    url: "https://x.com/PropStreak/status/2123631412532424977",
+    at: "2026-11-20T04:15:58Z"
+  },
+
+  /* 2026-11-21 클리블랜드 128 : 119 인디애나 — 하든, 캐벌리어스 데뷔 후 최다 51점 */
+  "nba-ind-cle-20261121|James Harden": {
+    text: "🤯 James Harden: 51 points with 7 threes. He came in averaging 16.2 a game, and his previous season high was 32.",
+    ko: "제임스 하든, 3점 7개 포함 51점. 경기 전 평균은 16.2점이었고 직전 시즌 최고 기록은 32점이었다.",
+    author: "TheePlusSide",
+    handle: "TheePlusSide",
+    url: "https://x.com/TheePlusSide/status/2124362235221070065",
+    at: "2026-11-22T04:40:00Z"
+  },
+
+  /* 2026-11-22 샌안토니오 114 : 91 뉴올리언스 — 웸반야마 50점 19리바운드 5블록 */
+  "nba-nop-sas-20261122|Victor Wembanyama": {
+    text: "50 and 19 with 5 blocks.. Wemby was playing a different video game than the Pelicans 😂",
+    ko: "50점 19리바운드에 블록 5개.. 웸비는 펠리컨스와 다른 게임을 하는 것 같았다 😂",
+    author: "BIGDEALSPORTSx",
+    handle: "BIGDEALSPORTSx",
+    url: "https://x.com/BIGDEALSPORTSx/status/2124369588783837677",
+    at: "2026-11-22T05:09:13Z"
+  },
+  /* 2026-11-22 필라델피아 132 : 129 밀워키 — 엠비드 26점 17리바운드 9어시스트 */
+  "nba-mil-phi-20261122|Joel Embiid": {
+    text: "Joel Embiid scored 26 points, 17 rebounds & 9 assists.",
+    ko: "조엘 엠비드가 26점 17리바운드 9어시스트를 기록했다.",
+    author: "PropStreak",
+    handle: "PropStreak",
+    url: "https://x.com/PropStreak/status/2124359645129331002",
+    at: "2026-11-22T04:29:42Z"
+  },
+  /* 2026-11-22 뉴욕 97 : 96 포틀랜드 — 브런슨 30점, 브리지스 버저비터 */
+  "nba-por-nyk-20261122|Jalen Brunson": {
+    text: "Brunson playing on rookie mode",
+    ko: "브런슨이 루키 모드로 뛰고 있다.",
+    author: "BIGDEALSPORTSx",
+    handle: "BIGDEALSPORTSx",
+    url: "https://x.com/BIGDEALSPORTSx/status/2124314779829576138",
+    at: "2026-11-22T01:31:26Z"
+  },
+  /* 2026-11-22 댈러스 110 : 100 LA클리퍼스 — 어빙 4쿼터 12점 포함 25점 */
+  "nba-lac-dal-20261122|Kyrie Irving": {
+    text: "Kyrie Irving scored 25 points, 6 rebounds & 4 assists, including 12 in the fourth quarter.",
+    ko: "카이리 어빙이 25점 6리바운드 4어시스트, 4쿼터에만 12점을 넣었다.",
+    author: "PropStreak",
+    handle: "PropStreak",
+    url: "https://x.com/PropStreak/status/2124359645129331002",
+    at: "2026-11-22T04:29:42Z"
+  },
+  /* 2026-11-22 미네소타 104 : 95 멤피스 — 맥대니얼스 25점 */
+  "nba-mem-min-20261122|Jaden McDaniels": {
+    text: "Jaden McDaniels scored 25 points on 11-of-17 shooting.",
+    ko: "제이든 맥대니얼스가 야투 11-17로 25점을 넣었다.",
+    author: "PropStreak",
+    handle: "PropStreak",
+    url: "https://x.com/PropStreak/status/2124359645129331002",
+    at: "2026-11-22T04:29:42Z"
   }
 
 };
