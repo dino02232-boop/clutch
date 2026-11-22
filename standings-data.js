@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-22T15:51:33+09:00
+   생성 시각(기준): 2026-11-22T17:02:29+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-22T15:51:33+09:00",
+  "updated": "2026-11-22T17:02:29+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -5605,15 +5605,15 @@ window.CLUTCH_STANDINGS = {
               "team": "우리카드",
               "abbr": "WOO",
               "logo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-              "played": 5,
+              "played": 6,
               "win": 3,
               "draw": null,
-              "loss": 2,
+              "loss": 3,
               "diff": null,
-              "points": 8,
+              "points": 9,
               "pct": null,
               "gb": null,
-              "sets": "9-9",
+              "sets": "11-12",
               "zone": null
             },
             {
@@ -5653,15 +5653,15 @@ window.CLUTCH_STANDINGS = {
               "team": "KB손해보험",
               "abbr": "KB",
               "logo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-              "played": 5,
-              "win": 0,
+              "played": 6,
+              "win": 1,
               "draw": null,
               "loss": 5,
               "diff": null,
-              "points": 0,
+              "points": 2,
               "pct": null,
               "gb": null,
-              "sets": "4-15",
+              "sets": "7-17",
               "zone": null
             }
           ]
