@@ -774,6 +774,19 @@
       '" title="FotMob 이 경기 평점">' + txt + "</i>";
   }
 
+  // 선수 포지션 → 두 글자(GK/DF/MF/FW). 확인된 표기만 옮기고 그 밖의 값은 빈 값으로 둔다
+  // (데이터에 없는 포지션을 만들지 않는다). 한 글자는 ESPN 로스터 표기(G·D·M·F).
+  var POS_TXT = {
+    GK: "GK", G: "GK", GOALKEEPER: "GK",
+    DF: "DF", D: "DF", DEF: "DF", DEFENDER: "DF",
+    MF: "MF", M: "MF", MID: "MF", MIDFIELDER: "MF",
+    FW: "FW", F: "FW", FWD: "FW", FORWARD: "FW"
+  };
+  function posText(v) {
+    var s = String(v == null ? "" : v).trim().toUpperCase();
+    return POS_TXT[s] || "";
+  }
+
   function keyPlayersFor(g, t) {
     var d = (g && g.details) || {};
     var groups = Array.isArray(d.keyPlayers) ? d.keyPlayers.filter(Boolean) : [];
@@ -2162,7 +2175,7 @@
       var rt = ratingText(p && p.rating);
       if (!nm || !rt || seen[nm]) return;
       seen[nm] = 1;
-      rows.push({ name: nm, rating: Number(rt) });
+      rows.push({ name: nm, rating: Number(rt), pos: posText(p && p.pos) });
     });
     // 예전 카드처럼 팀 블록에 평점 목록이 없으면 주요 선수에 붙은 평점으로 대신한다.
     if (!rows.length) {
@@ -2172,7 +2185,7 @@
           var rt = ratingText(p.rating);
           if (!nm || !rt || seen[nm]) return;
           seen[nm] = 1;
-          rows.push({ name: nm, rating: Number(rt) });
+          rows.push({ name: nm, rating: Number(rt), pos: posText(p && p.pos) });
         });
     }
     rows.sort(function (a, b) {
@@ -2239,7 +2252,7 @@
         seen[k] = 1;
         var i = matchIndex(players, r.name, used);
         if (i >= 0) used[i] = true;
-        out.push({ name: r.name, rating: r.rating, p: i >= 0 ? players[i] : null });
+        out.push({ name: r.name, rating: r.rating, pos: r.pos, p: i >= 0 ? players[i] : null });
       });
       // 평점은 없지만 ESPN 기록이 남은 선수는 뒤에 기록 기여 순으로 붙인다(자르지 않는다).
       players.filter(function (p, i) { return !used[i] && p.name; })
@@ -2247,7 +2260,7 @@
           return (b.prod || 0) - (a.prod || 0) || (b.sh || 0) - (a.sh || 0) ||
             (a.name < b.name ? -1 : (a.name > b.name ? 1 : 0));
         })
-        .forEach(function (p) { out.push({ name: p.name, rating: null, p: p }); });
+        .forEach(function (p) { out.push({ name: p.name, rating: null, pos: posText(p.pos), p: p }); });
       return out;
     }
 
@@ -2263,7 +2276,9 @@
         '<ul class="rt-list">' + rows.map(function (r) {
           return "<li>" +
             (ratingHTML(r.rating) || '<span class="rt-chip-none" aria-hidden="true"></span>') +
-            '<b class="rt-nm">' + esc(r.name) + "</b>" +
+            '<b class="rt-nm">' +
+            (r.pos ? '<i class="rt-pos">' + esc(r.pos) + "</i>" : "") +
+            esc(r.name) + "</b>" +
             (recText(r.p) ? '<span class="rt-rec">' + esc(recText(r.p)) + "</span>" : "") +
             "</li>";
         }).join("") + "</ul></div>";

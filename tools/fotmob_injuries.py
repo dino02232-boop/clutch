@@ -252,10 +252,33 @@ def _note(kind, stamp):
 RATING_MATCH = 0.86
 
 
-def _rating_map(side):
-    """FotMob 라인업 한 팀 → {선수 이름: 이 경기 평점}. 평점 없는 선수는 넣지 않는다."""
+# FotMob 라인업 항목의 usualPlayingPositionId → 두 글자 포지션.
+# 0 골키퍼 · 1 수비수 · 2 미드필더 · 3 공격수 (라인업 전원의 usualPlayingPositionId 로 확인).
+# 경기 포지션 positionId 는 경기마다 11·32·64·85 처럼 값이 달라져 뜻을 고정할 수 없어 쓰지 않는다.
+POS_CODES = {0: "GK", 1: "DF", 2: "MF", 3: "FW"}
+
+
+def _pos_of(p, player_stats):
+    """라인업 항목 → GK/DF/MF/FW. 확인할 수 없으면 None(값을 만들지 않는다).
+
+    usualPlayingPositionId 가 비어 있는 선수는 matchDetails 의 같은 선수(playerStats[id])에
+    있는 usualPosition 으로 한 번 더 확인한다.
+    """
+    raw = p.get("usualPlayingPositionId")
+    if raw is None and player_stats:
+        stat = player_stats.get(str(p.get("id"))) or player_stats.get(p.get("id")) or {}
+        raw = (stat or {}).get("usualPosition")
+    try:
+        code = int(raw)
+    except (TypeError, ValueError):
+        return None
+    return POS_CODES.get(code)
+
+
+def _rating_map(side, player_stats=None):
+    """FotMob 라인업 한 팀 → {선수 이름: {rating, pos, starter}}. 평점 없는 선수는 넣지 않는다."""
     out = {}
-    for group in ("starters", "subs"):
+    for group, starter in (("starters", True), ("subs", False)):
         for p in (side or {}).get(group) or []:
             rating = (p.get("performance") or {}).get("rating")
             if rating is None:
@@ -268,20 +291,33 @@ def _rating_map(side):
                 continue
             name = (p.get("name") or "").strip()
             if name:
-                out[name] = rating
+                out[name] = {"rating": rating, "pos": _pos_of(p, player_stats), "starter": starter}
     return out
 
 
-def _apply_ratings(game, home_side, away_side):
+def _player_row(name, info):
+    """카드에 저장하는 선수 한 줄. name·rating 은 그대로, pos(GK/DF/MF/FW)는 확인된 것만,
+    starter 는 그 경기 선발 여부(화면은 아직 쓰지 않고 데이터로만 둔다)."""
+    row = {"name": name, "rating": info["rating"]}
+    if info.get("pos"):
+        row["pos"] = info["pos"]
+    row["starter"] = bool(info.get("starter"))
+    return row
+
+
+def _apply_ratings(game, home_side, away_side, player_stats=None):
     """이 경기 평점을 카드에 붙인다. 붙인 선수 수를 돌려준다.
 
     · details.teams[].players 에 그 경기 평점이 있는 선수를 **전원**(선발+후보, 평점 없는 선수 제외)
       평점 높은 순으로 넣는다. 화면은 이 목록으로 '이 경기 평점' 판을 그린다(자르지 않는다).
+      각 줄에 FotMob 라인업의 usualPlayingPositionId 로 확인한 포지션(pos: GK/DF/MF/FW)과
+      선발 여부(starter)를 함께 넣는다. 포지션을 확인하지 못한 선수는 pos 없이 둔다.
     · details.keyPlayers 가 있으면 그 선수(ESPN 시즌 기록으로 뽑힌 주요 선수)에도 rating 을 붙인다.
       이름이 충분히 비슷하지 않으면 그 선수는 그대로 두고 평점을 만들지 않는다.
     """
     details = game.get("details") or {}
-    maps = {"home": _rating_map(home_side), "away": _rating_map(away_side)}
+    maps = {"home": _rating_map(home_side, player_stats),
+            "away": _rating_map(away_side, player_stats)}
     if not maps["home"] and not maps["away"]:
         return 0
 
@@ -301,7 +337,7 @@ def _apply_ratings(game, home_side, away_side):
                 if score > best_score:
                     best_name, best_score = cand, score
             if best_name is not None and best_score >= RATING_MATCH:
-                p["rating"] = table[best_name]
+                p["rating"] = table[best_name]["rating"]
 
     # 팀 블록에는 평점이 확인된 선수를 모두 남긴다(평점 높은 순, 동점은 이름순).
     teams = {t.get("side"): t for t in details.get("teams") or [] if isinstance(t, dict)}
@@ -310,8 +346,8 @@ def _apply_ratings(game, home_side, away_side):
         team, table = teams.get(side), maps[side]
         if not team or not table:
             continue
-        ordered = sorted(table.items(), key=lambda kv: (-kv[1], kv[0]))
-        team["players"] = [{"name": name, "rating": rating} for name, rating in ordered]
+        ordered = sorted(table.items(), key=lambda kv: (-kv[1]["rating"], kv[0]))
+        team["players"] = [_player_row(name, info) for name, info in ordered]
         filled += len(ordered)
     return filled
 
@@ -329,7 +365,8 @@ def add_ratings(game, refresh=False):
         return 0
     swapped = bool(details.get("fotmobSwapped"))
     return _apply_ratings(game, away_side if swapped else home_side,
-                          home_side if swapped else away_side)
+                          home_side if swapped else away_side,
+                          (det.get("content") or {}).get("playerStats"))
 
 
 def _apply(game, home_rows, away_rows, stamp, kind):
@@ -456,5 +493,6 @@ def annotate(games, refresh=False, verbose=True):
         # 평점은 끝난 경기에서만 붙인다(진행 중 평점은 경기가 끝나면서 바뀐다).
         if match.get("finished"):
             stats["rated"] += _apply_ratings(
-                g, away_side if swapped else home_side, home_side if swapped else away_side)
+                g, away_side if swapped else home_side, home_side if swapped else away_side,
+                (det.get("content") or {}).get("playerStats"))
     return stats

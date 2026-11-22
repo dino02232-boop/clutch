@@ -16308,63 +16308,93 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Yéremi Pino",
-                    "rating": 8.5
+                    "rating": 8.5,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Jørgen Strand Larsen",
-                    "rating": 8.1
+                    "rating": 8.1,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Quinten Timber",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Daichi Kamada",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Chris Richards",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Axel Disasi",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Adam Wharton",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Dean Henderson",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Anan Khalaili",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Jaydee Canvot",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Evann Guessand",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Jefferson Lerma",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Tyrick Mitchell",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Edward Nketiah",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Dwight McNeil",
-                    "rating": 5.9
+                    "rating": 5.9,
+                    "pos": "FW",
+                    "starter": true
                   }
                 ]
               },
@@ -16496,63 +16526,93 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jack Rudoni",
-                    "rating": 8.7
+                    "rating": 8.7,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Tatsuhiro Sakamoto",
-                    "rating": 8.2
+                    "rating": 8.2,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Stephen Mfuni",
-                    "rating": 7.8
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Taiwo Awoniyi",
-                    "rating": 7.6
+                    "rating": 7.6,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Carl Rushworth",
-                    "rating": 7.3
+                    "rating": 7.3,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Matt Grimes",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Bobby Thomas",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Ethan Pinnock",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Victor Torp",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Yann Gboho",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Frank Onyeka",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Gustavo Hamer",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Brandon Thomas-Asante",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Milan van Ewijk",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Sidiki Cherif",
-                    "rating": 5.7
+                    "rating": 5.7,
+                    "pos": "FW",
+                    "starter": false
                   }
                 ]
               }
@@ -16772,63 +16832,93 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Christian Walton",
-                    "rating": 8.9
+                    "rating": 8.9,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Saša Lukić",
-                    "rating": 7.6
+                    "rating": 7.6,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Abdoul Ouattara",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Exequiel Palacios",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Leif Davis",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Florentino",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Zian Flemming",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Abdul Fatawu",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Julio Enciso",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Dara O'Shea",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Jack Clarke",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Daizen Maeda",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Emersonn",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Darnell Furlong",
-                    "rating": 5.9
+                    "rating": 5.9,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Issa Diop",
-                    "rating": 5.9
+                    "rating": 5.9,
+                    "pos": "DF",
+                    "starter": true
                   }
                 ]
               },
@@ -16957,63 +17047,93 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Pedro Porro",
-                    "rating": 8.3
+                    "rating": 8.3,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Antonín Kinský",
-                    "rating": 8.1
+                    "rating": 8.1,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Lucá Williams-Barnett",
-                    "rating": 8.1
+                    "rating": 8.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Dominic Solanke",
-                    "rating": 8.0
+                    "rating": 8.0,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Marcos Senesi",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Mateus Fernandes",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Mohammed Kudus",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Destiny Udogie",
-                    "rating": 7.6
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Jan Paul van Hecke",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "James Maddison",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Conor Gallagher",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Lucas Bergvall",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Omar Marmoush",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Andrew Robertson",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Sávio",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
                   }
                 ]
               }
@@ -17240,51 +17360,75 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Noah Okafor",
-                    "rating": 9.0
+                    "rating": 9.0,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Dominic Calvert-Lewin",
-                    "rating": 8.8
+                    "rating": 8.8,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "James Justin",
-                    "rating": 8.1
+                    "rating": 8.1,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Ethan Ampadu",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Brenden Aaronson",
-                    "rating": 7.6
+                    "rating": 7.6,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Ao Tanaka",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Nico Elvedi",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Jayden Bogle",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Sean Longstaff",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Gabriel Gudmundsson",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Tarik Muharemović",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "James Trafford",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "GK",
+                    "starter": true
                   }
                 ]
               },
@@ -17413,67 +17557,99 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Roméo Lavia",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Emanuel Emegha",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Wesley Fofana",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Estêvão",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Morgan Rogers",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Moisés Caicedo",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Cole Palmer",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Geovany Quenda",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Malo Gusto",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Pedro Neto",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Jordan Henderson",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Levi Colwill",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Danny Welbeck",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Pep Chavarría",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Josh Acheampong",
-                    "rating": 5.8
+                    "rating": 5.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Emiliano Martínez",
-                    "rating": 5.3
+                    "rating": 5.3,
+                    "pos": "GK",
+                    "starter": true
                   }
                 ]
               }
@@ -17709,63 +17885,93 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Matz Sels",
-                    "rating": 7.7
+                    "rating": 7.7,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Morgan Gibbs-White",
-                    "rating": 7.3
+                    "rating": 7.3,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Jair Cunha",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Neco Williams",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Igor Jesus",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Ryan Yates",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Xaver Schlager",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "James McAtee",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Nikola Milenković",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Luca Netz",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Daniel Muñoz",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Murillo",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Chris Wood",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Dan Ndoye",
-                    "rating": 5.6
+                    "rating": 5.6,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Liam Delap",
-                    "rating": 5.6
+                    "rating": 5.6,
+                    "pos": "FW",
+                    "starter": true
                   }
                 ]
               },
@@ -17884,59 +18090,87 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "James Hill",
-                    "rating": 8.5
+                    "rating": 8.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Marcus Tavernier",
-                    "rating": 8.4
+                    "rating": 8.4,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Justin Kluivert",
-                    "rating": 8.1
+                    "rating": 8.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "António Silva",
-                    "rating": 8.0
+                    "rating": 8.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Evanilson",
-                    "rating": 8.0
+                    "rating": 8.0,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Djordje Petrović",
-                    "rating": 7.7
+                    "rating": 7.7,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Adam Smith",
-                    "rating": 7.3
+                    "rating": 7.3,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Rayan",
-                    "rating": 7.3
+                    "rating": 7.3,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Ryan Christie",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Adrien Truffert",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Tyler Adams",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Alex Scott",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Junior Kroupi",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Lewis Cook",
-                    "rating": 5.9
+                    "rating": 5.9,
+                    "pos": "MF",
+                    "starter": false
                   }
                 ]
               }
@@ -18183,51 +18417,75 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Robin Roefs",
-                    "rating": 8.3
+                    "rating": 8.3,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Nordi Mukiele",
-                    "rating": 7.8
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Reinildo",
-                    "rating": 7.3
+                    "rating": 7.3,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Enzo Le Fée",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Thomas Meunier",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Jules Ahoka",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Luke O'Nien",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Noah Sadiki",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Trai Hume",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Chemsdine Talbi",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Wilson Isidor",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Nilson Angulo",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": false
                   }
                 ]
               },
@@ -18346,63 +18604,93 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Aaron Wan-Bissaka",
-                    "rating": 8.3
+                    "rating": 8.3,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Pau Torres",
-                    "rating": 7.6
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Boubacar Kamara",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Taylor Harwood-Bellis",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Ian Maatsen",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Zion Suzuki",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Emiliano Buendía",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "John McGinn",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Ibrahim Mbaye",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Alysson Edward",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Johan Manzambi",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Nicolas Jackson",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Leon Goretzka",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Ross Barkley",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Brian Madjo",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
                   }
                 ]
               }
@@ -18644,55 +18932,81 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "José Copete",
-                    "rating": 8.2
+                    "rating": 8.2,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "César Tárrega",
-                    "rating": 8.0
+                    "rating": 8.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Stole Dimitrievski",
-                    "rating": 8.0
+                    "rating": 8.0,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Javier Guerra",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Arnau Martínez",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Pablo Maffeo",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Pepelu",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Guido Rodríguez",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Luis Rioja",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Dani Raba",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Mouctar Diakhaby",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Filip Ugrinic",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Umar Sadiq",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
                   }
                 ]
               },
@@ -18811,67 +19125,99 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jorge de Frutos",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Unai López",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Florian Lejeune",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Mujaid Sadick",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Pathé Ciss",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Andrei Rațiu",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Pedro Díaz",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Giorgi Tsitaishvili",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Gnangoro Bouare",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Emil Audero",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Sergio Camello",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Alemão",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Isi Palazón",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Randy Nteka",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Adrià Pedrosa",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Álvaro García",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
                   }
                 ]
               }
@@ -19103,59 +19449,87 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Donyell Malen",
-                    "rating": 9.9
+                    "rating": 9.9,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Wesley",
-                    "rating": 8.3
+                    "rating": 8.3,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Rodrigo Mora",
-                    "rating": 8.1
+                    "rating": 8.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Bryan Cristante",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Emanuele Lulli",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Gianluca Mancini",
-                    "rating": 7.8
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Nahuel Molina",
-                    "rating": 7.6
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Mile Svilar",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Paulo Dybala",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Mario Hermoso",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Manu Koné",
-                    "rating": 7.3
+                    "rating": 7.3,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Evan N'Dicka",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Leonardo Balerdi",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Matías Soulé",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": false
                   }
                 ]
               },
@@ -19274,63 +19648,93 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Nesta Elphege",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Emanuele Valeri",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Vincent Sierro",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Christian Ordóñez",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Giovanni Fabbian",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Simone Lontani",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "El Bilal Touré",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Ousmane Diallo",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Hans Nicolussi Caviglia",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Sascha Britschgi",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Mandela Keita",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Giovanni Daffara",
-                    "rating": 5.6
+                    "rating": 5.6,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Mariano Troilo",
-                    "rating": 5.5
+                    "rating": 5.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Enrico Del Prato",
-                    "rating": 4.9
+                    "rating": 4.9,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Franco Carboni",
-                    "rating": 4.4
+                    "rating": 4.4,
+                    "pos": "DF",
+                    "starter": true
                   }
                 ]
               }
@@ -19567,59 +19971,87 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Noni Madueke",
-                    "rating": 8.7
+                    "rating": 8.7,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Eberechi Eze",
-                    "rating": 8.1
+                    "rating": 8.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Kai Havertz",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Declan Rice",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Martin Ødegaard",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Riccardo Calafiori",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Ezri Konsa",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Jurriën Timber",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Christos Tzolis",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Gabriel",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Bruno Guimarães",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Kepa Arrizabalaga",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "GK",
+                    "starter": false
                   },
                   {
                     "name": "Myles Lewis-Skelly",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "David Raya",
-                    "rating": 5.9
+                    "rating": 5.9,
+                    "pos": "GK",
+                    "starter": true
                   }
                 ]
               },
@@ -19733,59 +20165,87 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Harvey Barnes",
-                    "rating": 8.0
+                    "rating": 8.0,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Joseph Willock",
-                    "rating": 8.0
+                    "rating": 8.0,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Malick Thiaw",
-                    "rating": 8.0
+                    "rating": 8.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "William Osula",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Daniel Burn",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Lewis Miley",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Jacob Ramsey",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Valentino Livramento",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Anthony Elanga",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Jacob Murphy",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Lukás Hornícek",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Sean Steur",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Amar Dedić",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Lewis Hall",
-                    "rating": 4.8
+                    "rating": 4.8,
+                    "pos": "DF",
+                    "starter": true
                   }
                 ]
               }
@@ -20017,59 +20477,87 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Antony",
-                    "rating": 8.5
+                    "rating": 8.5,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Isco",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Marc Roca",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Héctor Bellerín",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Pablo Fornals",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Fran García",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Abdessamad Ezzalzouli",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Marc Bartra",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Natan",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Nelson Deossa",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Troy Parrott",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Álvaro Vallés",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Aitor Ruibal",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Rodrigo Riquelme",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
                   }
                 ]
               },
@@ -20192,67 +20680,99 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Kike Salas",
-                    "rating": 8.5
+                    "rating": 8.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Andrés López",
-                    "rating": 7.7
+                    "rating": 7.7,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Gabriel Suazo",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Youssouf Fofana",
-                    "rating": 7.3
+                    "rating": 7.3,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Chidera Ejuke",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Isaac Romero",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Lucien Agoumé",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Jon Guridi",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Juan Iglesias",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Lucas Stassin",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Rubén Vargas",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Félix Correia",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Giorgi Kochorashvili",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Odysseas Vlachodimos",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Peque Fernández",
-                    "rating": 5.8
+                    "rating": 5.8,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Robbie Ure",
-                    "rating": 5.7
+                    "rating": 5.7,
+                    "pos": "FW",
+                    "starter": false
                   }
                 ]
               }
@@ -20499,67 +21019,99 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Dennis Seimen",
-                    "rating": 8.7
+                    "rating": 8.7,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Maximilian Mittelstädt",
-                    "rating": 8.5
+                    "rating": 8.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Finn Jeltsch",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Ramon Hendriks",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Jeff Chabot",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Grischa Prömel",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Bilal El Khannouss",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Chris Führich",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Nikolas Nartey",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Jamie Leweling",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Josha Vagnoman",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Ermedin Demirović",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Tiago Tomás",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Deniz Undav",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Dženan Pejčinović",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Yanik Spalt",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": true
                   }
                 ]
               },
@@ -20683,51 +21235,75 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Loris Karius",
-                    "rating": 8.1
+                    "rating": 8.1,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Dejan Ljubičić",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Vitalie Becker",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Adil Aouchiche",
-                    "rating": 7.8
+                    "rating": 7.8,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Junior Dina Ebimbe",
-                    "rating": 7.8
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Soufian El-Faouzi",
-                    "rating": 7.8
+                    "rating": 7.8,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Hasan Kuruçay",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Nikola Katić",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Hwang Hee-Chan",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Chukwubuike Adamu",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Kenan Karaman",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Moussa Sylla",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": false
                   }
                 ]
               }
@@ -20947,67 +21523,99 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Lucas Perri",
-                    "rating": 8.1
+                    "rating": 8.1,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Ardian Ismajli",
-                    "rating": 7.8
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Rolando Mandragora",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Pietro Comuzzo",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Saúl Coco",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Ché Adams",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Alessio Cacciamani",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Gvidas Gineitis",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Eray Cömert",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Giovanni Simeone",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Nikola Vlašić",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Rafik Belghali",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Zakaria Aboukhlal",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Daniel Bragança",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Cesare Casadei",
-                    "rating": 5.9
+                    "rating": 5.9,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Duván Zapata",
-                    "rating": 5.7
+                    "rating": 5.7,
+                    "pos": "FW",
+                    "starter": false
                   }
                 ]
               },
@@ -21140,59 +21748,87 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Scott McTominay",
-                    "rating": 8.8
+                    "rating": 8.8,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Billy Gilmour",
-                    "rating": 7.9
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Vanja Milinković-Savić",
-                    "rating": 7.7
+                    "rating": 7.7,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Sam Beukema",
-                    "rating": 7.6
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Amir Rrahmani",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Matteo Politano",
-                    "rating": 7.4
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Kevin De Bruyne",
-                    "rating": 7.3
+                    "rating": 7.3,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Noa Lang",
-                    "rating": 7.3
+                    "rating": 7.3,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Rasmus Højlund",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Frank Anguissa",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Leonardo Spinazzola",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Mathías Olivera",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Rafa Marín",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Antonio Vergara",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": true
                   }
                 ]
               }
@@ -21428,67 +22064,99 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Pablo Durán",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Williot Swedberg",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Javi Galán",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Ionuț Radu",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Sergio Carreira",
-                    "rating": 6.8
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Hugo Burcio",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Ilaix Moriba",
-                    "rating": 6.5
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Marcos Alonso",
-                    "rating": 6.4
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Iago Aspas",
-                    "rating": 6.3
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Aleix Febas",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Javi Rueda",
-                    "rating": 6.2
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
                   },
                   {
                     "name": "Hugo Álvarez",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Yoel Lago",
-                    "rating": 6.1
+                    "rating": 6.1,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Couhaib Driouech",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Javi Rodríguez",
-                    "rating": 6.0
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Ferrán Jutglà",
-                    "rating": 5.9
+                    "rating": 5.9,
+                    "pos": "FW",
+                    "starter": false
                   }
                 ]
               },
@@ -21607,67 +22275,99 @@ window.CLUTCH_DATA = {
                 "players": [
                   {
                     "name": "Jude Bellingham",
-                    "rating": 8.5
+                    "rating": 8.5,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Arda Güler",
-                    "rating": 8.4
+                    "rating": 8.4,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Dean Huijsen",
-                    "rating": 8.0
+                    "rating": 8.0,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Kylian Mbappé",
-                    "rating": 7.8
+                    "rating": 7.8,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Eduardo Camavinga",
-                    "rating": 7.7
+                    "rating": 7.7,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Ibrahima Konaté",
-                    "rating": 7.7
+                    "rating": 7.7,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Trent Alexander-Arnold",
-                    "rating": 7.5
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Carlos Espí",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Thibaut Courtois",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "GK",
+                    "starter": true
                   },
                   {
                     "name": "Álvaro Carreras",
-                    "rating": 7.2
+                    "rating": 7.2,
+                    "pos": "DF",
+                    "starter": true
                   },
                   {
                     "name": "Yan Diomande",
-                    "rating": 7.1
+                    "rating": 7.1,
+                    "pos": "FW",
+                    "starter": true
                   },
                   {
                     "name": "Marc Cucurella",
-                    "rating": 7.0
+                    "rating": 7.0,
+                    "pos": "DF",
+                    "starter": false
                   },
                   {
                     "name": "Bernardo Silva",
-                    "rating": 6.9
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
                   },
                   {
                     "name": "Vinícius Júnior",
-                    "rating": 6.7
+                    "rating": 6.7,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Endrick",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": false
                   },
                   {
                     "name": "Federico Valverde",
-                    "rating": 6.6
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": false
                   }
                 ]
               }

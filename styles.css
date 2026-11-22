@@ -1018,6 +1018,14 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .rt-list li > .pl-rating { justify-self: start; }
 .rt-nm { min-width: 0; font-weight: 600; color: #1F2937; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* 이름 앞 포지션 칩(GK/DF/MF/FW) — 기존 pl-pos 와 같은 무채색 톤, 9px 안팎 굵은 글씨.
+   평점 칩 색(구간 색)과 섞이지 않게 배경을 옅게 두고, 이름이 길면 이름만 말줄임되게 앞에 붙인다. */
+.rt-nm .rt-pos {
+  display: inline-block; min-width: 15px; margin-right: 4px; padding: 0 3px;
+  font-style: normal; font-size: 8.5px; font-weight: 800; line-height: 1.4;
+  letter-spacing: .2px; text-align: center; vertical-align: 1px;
+  color: var(--text-3); background: #EEF1F6; border-radius: 4px;
+}
 .rt-rec { font-size: 9.5px; font-weight: 700; color: var(--text-3); font-variant-numeric: tabular-nums; text-align: right; }
 .rt-chip-none { display: inline-block; }
 /* 좁은 화면(휴대폰)에서는 이름이 잘리지 않게 기록을 이름 아래 둘째 줄로 내린다. */

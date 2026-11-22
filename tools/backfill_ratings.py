@@ -8,6 +8,7 @@
   · data.js 의 끝난(status=final) 축구 경기 중 details.fotmobId 가 있는 것을 골라
     FotMob matchDetails(캐시 우선)의 라인업에서 performance.rating 이 있는 선수를
     details.teams[].players 에 **전원**(선발+후보) 평점 높은 순으로 다시 넣습니다.
+    각 줄에 포지션(pos: GK/DF/MF/FW)과 선발 여부(starter)도 함께 넣습니다.
   · 예전에는 상위 3명만 저장했기 때문에, 이미 만들어진 카드를 새 규칙으로 맞추는 용도입니다.
     앞으로 새로 끝나는 경기는 tools/fotmob_injuries.py 가 처음부터 전원을 넣습니다.
   · 평점이 없는 선수는 넣지 않습니다(값을 만들지 않음).
@@ -115,7 +116,8 @@ def main():
         before = {t.get("side"): list(t.get("players") or [])
                   for t in details.get("teams") or [] if isinstance(t, dict)}
         filled = _apply_ratings(g, away_side if swapped else home_side,
-                                home_side if swapped else away_side)
+                                home_side if swapped else away_side,
+                                (det.get("content") or {}).get("playerStats"))
         if not filled:
             skipped.append((g.get("id"), "평점 없음"))
             continue
