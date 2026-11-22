@@ -1209,6 +1209,18 @@
     }
     return null;
   }
+  // 같은 항목의 화면 표기 그대로("1.0골" 등) — 숫자만 다시 만들어 반올림하지 않는다.
+  function pgTeamText(g, side, label) {
+    var t = pgTeamOf(g, side);
+    if (!t) return "";
+    var nums = Array.isArray(t.nums) ? t.nums : [];
+    for (var i = 0; i < nums.length; i++) {
+      if (String((nums[i] && nums[i].label) || "").replace(/\s+/g, "") === label) {
+        return String(nums[i].value == null ? "" : nums[i].value);
+      }
+    }
+    return "";
+  }
   // 미국식 배당 → 소수 배당
   function pgDecimal(v) {
     var n = Number(v);
@@ -1285,13 +1297,14 @@
               "점이었고, 이 경기에서는 " + aAb + " " + awayScore + "점 · " + hAb + " " + homeScore + "점이었습니다." });
         }
       } else if (g.sport === "soccer") {
-        var aGf = pgTeamNum(g, "away", null, "평균득점"), hGf = pgTeamNum(g, "home", null, "평균득점");
-        var aGa = pgTeamNum(g, "away", null, "평균실점"), hGa = pgTeamNum(g, "home", null, "평균실점");
-        if (aGf != null && hGf != null) {
-          var sc = "경기 전 기록의 평균 득점은 " + awayName + " " + aGf + "골 · " + homeName + " " + hGf +
-            "골이었고, 이 경기는 " + awayName + " " + awayScore + "골 · " + homeName + " " + homeScore + "골이었습니다.";
-          if (aGa != null && hGa != null) {
-            sc += " 평균 실점은 " + awayName + " " + aGa + "골 · " + homeName + " " + hGa + "골이었습니다.";
+        // 화면에 적힌 표기 그대로("1.1골")를 쓴다 — 숫자로 바꿨다가 1.0이 1이 되지 않게.
+        var aGf = pgTeamText(g, "away", "평균득점"), hGf = pgTeamText(g, "home", "평균득점");
+        var aGa = pgTeamText(g, "away", "평균실점"), hGa = pgTeamText(g, "home", "평균실점");
+        if (aGf && hGf) {
+          var sc = "경기 전 기록의 평균 득점은 " + awayName + " " + aGf + " · " + homeName + " " + hGf +
+            "이었고, 이 경기는 " + awayName + " " + awayScore + "골 · " + homeName + " " + homeScore + "골이었습니다.";
+          if (aGa && hGa) {
+            sc += " 평균 실점은 " + awayName + " " + aGa + " · " + homeName + " " + hGa + "이었습니다.";
           }
           items.push({ k: "관전 포인트", t: sc });
         }
