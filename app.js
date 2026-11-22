@@ -2341,7 +2341,9 @@
       }).join("") + "</div>";
     }
     var note = board
-      ? "선수 활약은 ESPN 공개 기록(골·도움·슈팅·유효슈팅·선방·파울)으로만 자동 요약합니다. 패스·태클은 ESPN이 제공하지 않아 쓰지 않고, 위 '이 경기 평점'은 FotMob 이 제공한 이 경기 평점만 표시합니다."
+      ? (ratingBlock
+        ? "선수 활약은 ESPN 공개 기록(골·도움·슈팅·유효슈팅·선방·파울)으로만 자동 요약합니다. 패스·태클은 ESPN이 제공하지 않아 쓰지 않고, 위 '이 경기 평점'은 FotMob 이 제공한 이 경기 평점만 표시합니다."
+        : "선수 활약은 ESPN 공개 기록(골·도움·슈팅·유효슈팅·선방·파울)으로만 자동 요약합니다. 패스·태클은 ESPN이 제공하지 않아 쓰지 않고, 선수 평점은 FotMob 이 이 경기 평점을 준 경기에서만 표시합니다.")
       : "축구는 ESPN 공개 기록에 선수별 시즌 평균이 없어 개인 평가를 만들지 않습니다. 팀 지표와 득점 장면만 정리했습니다.";
 
     return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>승패 원인 · 활약</span></div>' +
@@ -2349,7 +2351,8 @@
       (verdict ? '<p class="pg-verdict">' + esc(verdict) + "</p>" : "") +
       '<div class="pg-why"><b>' + whyLabel + '</b><p>' + esc(why) + "</p></div>" +
       ((more || plTable || ratingBlock) ? '<details class="pg-more"><summary>' +
-        (ratingBlock ? "선수 기록 및 평점" : (plTable ? "선수 기록 더 보기" : "득점 장면 더 보기")) + "</summary>" +
+        (ratingBlock ? ((plTable || more) ? "선수 기록 및 평점" : "이 경기 평점")
+          : (plTable ? "선수 기록 더 보기" : "득점 장면 더 보기")) + "</summary>" +
         ratingBlock + plTable + more + "</details>" : "") +
       '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
