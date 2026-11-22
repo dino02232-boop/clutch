@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-22T18:11:56+09:00
+   생성 시각(기준): 2026-11-22T21:06:36+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-22T18:11:56+09:00",
+  "updated": "2026-11-22T21:06:36+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4890,9 +4890,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
               "team": "샌안토니오 스퍼스",
               "teamAbbr": "SA",
-              "value": 28.625,
-              "display": "28.6점",
-              "played": 16
+              "value": 29.882353,
+              "display": "29.9점",
+              "played": 17
             },
             {
               "rank": 4,
@@ -4912,23 +4912,12 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
               "team": "뉴욕 닉스",
               "teamAbbr": "NY",
-              "value": 26.6,
-              "display": "26.6점",
-              "played": 15
+              "value": 26.8125,
+              "display": "26.8점",
+              "played": 16
             },
             {
               "rank": 6,
-              "name": "Tyrese Maxey",
-              "id": "4431678",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
-              "team": "필라델피아 세븐티식서스",
-              "teamAbbr": "PHI",
-              "value": 26.533333,
-              "display": "26.5점",
-              "played": 15
-            },
-            {
-              "rank": 7,
               "name": "Jayson Tatum",
               "id": "4065648",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
@@ -4939,18 +4928,18 @@ window.CLUTCH_STANDINGS = {
               "played": 14
             },
             {
-              "rank": 8,
-              "name": "Darius Acuff Jr.",
-              "id": "5142620",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
-              "team": "새크라멘토 킹스",
-              "teamAbbr": "SAC",
-              "value": 25.666666,
-              "display": "25.7점",
-              "played": 15
+              "rank": 7,
+              "name": "Tyrese Maxey",
+              "id": "4431678",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png",
+              "team": "필라델피아 세븐티식서스",
+              "teamAbbr": "PHI",
+              "value": 25.9375,
+              "display": "25.9점",
+              "played": 16
             },
             {
-              "rank": 9,
+              "rank": 8,
               "name": "Cade Cunningham",
               "id": "4432166",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
@@ -4959,6 +4948,17 @@ window.CLUTCH_STANDINGS = {
               "value": 25.571428,
               "display": "25.6점",
               "played": 14
+            },
+            {
+              "rank": 9,
+              "name": "Darius Acuff Jr.",
+              "id": "5142620",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
+              "team": "새크라멘토 킹스",
+              "teamAbbr": "SAC",
+              "value": 25.375,
+              "display": "25.4점",
+              "played": 16
             },
             {
               "rank": 10,
@@ -5044,9 +5044,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
               "team": "댈러스 매버릭스",
               "teamAbbr": "DAL",
-              "value": 24.214285,
-              "display": "24.2점",
-              "played": 14
+              "value": 24.066668,
+              "display": "24.1점",
+              "played": 15
             },
             {
               "rank": 18,
@@ -5055,9 +5055,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
               "team": "포틀랜드 트레일블레이저스",
               "teamAbbr": "POR",
-              "value": 24.153847,
-              "display": "24.2점",
-              "played": 13
+              "value": 23.857143,
+              "display": "23.9점",
+              "played": 14
             },
             {
               "rank": 19,
