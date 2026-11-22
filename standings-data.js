@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-23T05:12:11+09:00
+   생성 시각(기준): 2026-11-23T07:08:58+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-23T05:12:11+09:00",
+  "updated": "2026-11-23T07:08:58+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -869,12 +869,12 @@ window.CLUTCH_STANDINGS = {
               "team": "아틀레티코 마드리드",
               "abbr": "ATM",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
-              "played": 12,
-              "win": 9,
+              "played": 13,
+              "win": 10,
               "draw": 1,
               "loss": 2,
-              "points": 28,
-              "diff": 13,
+              "points": 31,
+              "diff": 16,
               "pct": null,
               "gb": null,
               "zone": {
@@ -1085,21 +1085,6 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 16,
-              "team": "헤타페",
-              "abbr": "GET",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2922.png",
-              "played": 12,
-              "win": 3,
-              "draw": 3,
-              "loss": 6,
-              "points": 12,
-              "diff": -10,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 17,
               "team": "발렌시아",
               "abbr": "VAL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/94.png",
@@ -1109,6 +1094,21 @@ window.CLUTCH_STANDINGS = {
               "loss": 7,
               "points": 12,
               "diff": -11,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 17,
+              "team": "헤타페",
+              "abbr": "GET",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2922.png",
+              "played": 13,
+              "win": 3,
+              "draw": 3,
+              "loss": 7,
+              "points": 12,
+              "diff": -13,
               "pct": null,
               "gb": null,
               "zone": null
@@ -2469,11 +2469,11 @@ window.CLUTCH_STANDINGS = {
               "team": "인터 밀란",
               "abbr": "INT",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
-              "played": 11,
+              "played": 12,
               "win": 9,
-              "draw": 1,
+              "draw": 2,
               "loss": 1,
-              "points": 28,
+              "points": 29,
               "diff": 15,
               "pct": null,
               "gb": null,
@@ -2624,11 +2624,11 @@ window.CLUTCH_STANDINGS = {
               "team": "아탈란타",
               "abbr": "ATA",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/105.png",
-              "played": 11,
+              "played": 12,
               "win": 4,
-              "draw": 2,
+              "draw": 3,
               "loss": 5,
-              "points": 14,
+              "points": 15,
               "diff": -3,
               "pct": null,
               "gb": null,

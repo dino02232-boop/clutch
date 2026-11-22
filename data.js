@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-23T06:14:32+09:00",
+  updatedAt: "2026-11-23T07:08:58+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -10904,7 +10904,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:11 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 07:08 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -11258,7 +11258,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, 흥국생명(원정) 2승 4패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 06:11 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 07:08 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -23237,7 +23237,7 @@ window.CLUTCH_DATA = {
       games: [
 
         /* SOCCER-AUTO 2026-11-23 START */
-        {
+                {
           "id": "soccer-rso-rac-20261123",
           "espnId": "401882800",
           "sport": "soccer",
@@ -23290,6 +23290,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **라싱 산탄데르**(홈) 1.5골 · **레알 소시에다드**(원정) 1.8골, 평균 실점은 홈 2.5골 · 원정 1.8골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 2,
+            "homeScore": 3,
+            "lines": {
+              "away": [
+                "1",
+                "1"
+              ],
+              "home": [
+                "2",
+                "1"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -23721,9 +23738,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868137,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-hsv-svw-20261123",
           "espnId": "401884730",
           "sport": "soccer",
@@ -23776,6 +23794,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **베르더 브레멘**(홈) 2.1골 · **함부르크**(원정) 1.0골, 평균 실점은 홈 1.5골 · 원정 2.4골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 4,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "0",
+                "4"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -24249,9 +24284,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5881232,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-man-liv-20261123",
           "espnId": "401878755",
           "sport": "soccer",
@@ -24304,6 +24340,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **리버풀**(홈) 1.6골 · **맨체스터 유나이티드**(원정) 1.3골, 평균 실점은 홈 0.9골 · 원정 2.1골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 4,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "2",
+                "2"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -24755,9 +24808,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795521,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-fro-mil-20261123",
           "espnId": "401874989",
           "sport": "soccer",
@@ -24810,6 +24864,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **AC 밀란**(홈) 2.3골 · **프로시노네**(원정) 2.1골, 평균 실점은 홈 1.2골 · 원정 1.7골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 1,
+            "homeScore": 5,
+            "lines": {
+              "away": [
+                "1",
+                "0"
+              ],
+              "home": [
+                "2",
+                "3"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -25282,9 +25353,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5749750,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-mcf-osa-20261123",
           "espnId": "401882801",
           "sport": "soccer",
@@ -25337,6 +25409,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **오사수나**(홈) 1.0골 · **말라가**(원정) 0.7골, 평균 실점은 홈 1.8골 · 원정 1.8골."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "1",
+                "0"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -25795,9 +25884,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868136,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-int-ata-20261123",
           "espnId": "401875001",
           "sport": "soccer",
@@ -25879,6 +25969,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **아탈란타**(홈) 1.5골 · **인터 밀란**(원정) 2.5골, 평균 실점은 홈 1.8골 · 원정 1.2골. 해외 배당을 확률로 환산하면 아탈란타 승 20.1% · 무 21.6% · 인터 밀란 승 58.3%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 4,
+            "homeScore": 4,
+            "lines": {
+              "away": [
+                "2",
+                "2"
+              ],
+              "home": [
+                "1",
+                "3"
+              ]
+            },
+            "winner": null
+          },
           "details": {
             "teams": [
               {
@@ -25986,7 +26093,105 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 1명 · 불확실 1명"
+                "injurySummary": "결장 1명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Francesco Pio Esposito",
+                    "rating": 9.6,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Marcus Thuram",
+                    "rating": 7.9,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Federico Dimarco",
+                    "rating": 7.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Petar Sučić",
+                    "rating": 7.8,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Djed Spence",
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Josep Martínez",
+                    "rating": 6.9,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Henrikh Mkhitaryan",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nicolò Barella",
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Hakan Çalhanoğlu",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Manuel Akanji",
+                    "rating": 6.5,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Carlos Augusto",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Curtis Jones",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Benjamin Pavard",
+                    "rating": 6.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Aleksandar Stanković",
+                    "rating": 6.0,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Lautaro Martínez",
+                    "rating": 5.8,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Alessandro Bastoni",
+                    "rating": 5.5,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "ATA",
@@ -26102,7 +26307,93 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 2명 · 불확실 2명"
+                "injurySummary": "결장 2명 · 불확실 2명",
+                "players": [
+                  {
+                    "name": "Charles De Ketelaere",
+                    "rating": 9.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nicola Zalewski",
+                    "rating": 8.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Franck Kessié",
+                    "rating": 8.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Eljif Elmas",
+                    "rating": 8.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jonathan Rowe",
+                    "rating": 7.4,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Éderson",
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Giorgio Scalvini",
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mario Pašalić",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Nikola Krstović",
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sead Kolašinac",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Giacomo Raspadori",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Raoul Bellanova",
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Marco Sportiello",
+                    "rating": 6.0,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Davide Zappacosta",
+                    "rating": 5.3,
+                    "pos": "MF",
+                    "starter": true
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -26147,9 +26438,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5749751,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-atm-get-20261123",
           "espnId": "401882803",
           "sport": "soccer",
@@ -26231,6 +26523,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **헤타페**(홈) 0.7골 · **아틀레티코 마드리드**(원정) 1.9골, 평균 실점은 홈 1.5골 · 원정 0.8골. 해외 배당을 확률로 환산하면 헤타페 승 14.7% · 무 24.2% · 아틀레티코 마드리드 승 61.2%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 3,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "2",
+                "1"
+              ],
+              "home": [
+                "0",
+                "0"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -26348,7 +26657,93 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 3명 · 불확실 1명"
+                "injurySummary": "결장 3명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Julián Álvarez",
+                    "rating": 8.9,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alejandro Grimaldo",
+                    "rating": 8.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Álex Baena",
+                    "rating": 8.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Johnny Cardoso",
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Koke",
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pablo Barrios",
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Marcos Llorente",
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Dávid Hancko",
+                    "rating": 7.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Giuliano Simeone",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Robin Le Normand",
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jan Oblak",
+                    "rating": 7.1,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Kang-In Lee",
+                    "rating": 6.9,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Alexander Sørloth",
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Rodrigo Mendoza",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
+                  }
+                ]
               },
               {
                 "abbr": "GET",
@@ -26471,7 +26866,99 @@ window.CLUTCH_DATA = {
                     "line": "복귀 시점 미정"
                   }
                 ],
-                "injurySummary": "결장 5명"
+                "injurySummary": "결장 5명",
+                "players": [
+                  {
+                    "name": "Andrés García",
+                    "rating": 7.7,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Zaid Abner Romero",
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "David Soria",
+                    "rating": 7.3,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Johan Mojica",
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Iván Azón",
+                    "rating": 6.7,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Kiko",
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Mario Martín",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Jean Ives Valou",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ramón Terrats",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Borja Mayoral",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Martín Satriano",
+                    "rating": 5.9,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Orel Mangala",
+                    "rating": 5.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Francho Serrano",
+                    "rating": 5.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Enes Ünal",
+                    "rating": 5.4,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Djené",
+                    "rating": 5.1,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -26516,7 +27003,8 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868134,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         }
         /* SOCCER-AUTO 2026-11-23 END */,
 
