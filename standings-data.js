@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-22T14:46:56+09:00
+   생성 시각(기준): 2026-11-22T15:51:33+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-22T14:46:56+09:00",
+  "updated": "2026-11-22T15:51:33+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -5738,15 +5738,15 @@ window.CLUTCH_STANDINGS = {
               "team": "흥국생명",
               "abbr": "HUN",
               "logo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-              "played": 5,
+              "played": 6,
               "win": 2,
               "draw": null,
-              "loss": 3,
+              "loss": 4,
               "diff": null,
               "points": 6,
               "pct": null,
               "gb": null,
-              "sets": "8-9",
+              "sets": "8-12",
               "zone": null
             },
             {
@@ -5754,15 +5754,15 @@ window.CLUTCH_STANDINGS = {
               "team": "현대건설",
               "abbr": "HDC",
               "logo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-              "played": 5,
-              "win": 1,
+              "played": 6,
+              "win": 2,
               "draw": null,
               "loss": 4,
               "diff": null,
-              "points": 3,
+              "points": 6,
               "pct": null,
               "gb": null,
-              "sets": "4-13",
+              "sets": "7-13",
               "zone": null
             },
             {
