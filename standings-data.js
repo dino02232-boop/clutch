@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-23T04:20:57+09:00
+   생성 시각(기준): 2026-11-23T05:12:11+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-23T04:20:57+09:00",
+  "updated": "2026-11-23T05:12:11+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -1040,6 +1040,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 13,
+              "team": "오사수나",
+              "abbr": "OSA",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/97.png",
+              "played": 13,
+              "win": 4,
+              "draw": 3,
+              "loss": 6,
+              "points": 15,
+              "diff": -10,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 14,
               "team": "셀타 비고",
               "abbr": "CEL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/85.png",
@@ -1054,7 +1069,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 14,
+              "rank": 15,
               "team": "라요 바예카노",
               "abbr": "RAY",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/101.png",
@@ -1069,7 +1084,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 15,
+              "rank": 16,
               "team": "헤타페",
               "abbr": "GET",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2922.png",
@@ -1079,21 +1094,6 @@ window.CLUTCH_STANDINGS = {
               "loss": 6,
               "points": 12,
               "diff": -10,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 16,
-              "team": "오사수나",
-              "abbr": "OSA",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/97.png",
-              "played": 12,
-              "win": 3,
-              "draw": 3,
-              "loss": 6,
-              "points": 12,
-              "diff": -11,
               "pct": null,
               "gb": null,
               "zone": null
@@ -1156,12 +1156,12 @@ window.CLUTCH_STANDINGS = {
               "team": "말라가",
               "abbr": "MCF",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/99.png",
-              "played": 12,
+              "played": 13,
               "win": 0,
               "draw": 5,
-              "loss": 7,
+              "loss": 8,
               "points": 5,
-              "diff": -14,
+              "diff": -15,
               "pct": null,
               "gb": null,
               "zone": {

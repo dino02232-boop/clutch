@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-23T04:20:57+09:00",
+  updatedAt: "2026-11-23T05:12:12+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -15780,7 +15780,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 04:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 05:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -16134,7 +16134,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, 흥국생명(원정) 2승 4패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 04:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 05:12 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -30529,7 +30529,7 @@ window.CLUTCH_DATA = {
           },
           "status": "final"
         },
-        {
+                {
           "id": "soccer-mcf-osa-20261123",
           "espnId": "401882801",
           "sport": "soccer",
@@ -30611,6 +30611,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **오사수나**(홈) 1.0골 · **말라가**(원정) 0.8골, 평균 실점은 홈 1.9골 · 원정 1.9골. 해외 배당을 확률로 환산하면 오사수나 승 52.0% · 무 26.4% · 말라가 승 21.6%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "1",
+                "0"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -30723,7 +30740,99 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 2명 · 불확실 1명"
+                "injurySummary": "결장 2명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Diego Murillo",
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Carlos Puga",
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Ángel Recio",
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Carlos Dotor",
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Dani Lorenzo",
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "José Salinas",
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pablo Martínez",
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Álex Pastor",
+                    "rating": 6.5,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "David Larrubia",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Joaquín Muñoz",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ramón Enríquez",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Adrián Niño",
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alfonso Herrero",
+                    "rating": 6.1,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Rafa Rodríguez",
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Chupe",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               },
               {
                 "abbr": "OSA",
@@ -30844,7 +30953,99 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 3명 · 불확실 2명"
+                "injurySummary": "결장 3명 · 불확실 2명",
+                "players": [
+                  {
+                    "name": "Valentin Rosier",
+                    "rating": 8.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ante Budimir",
+                    "rating": 8.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Moi Gómez",
+                    "rating": 7.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Diego Rico",
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Flavien Boyomo",
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Rubén García",
+                    "rating": 7.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Enrique Barja",
+                    "rating": 6.9,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jon Moncayola",
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Lucas Torró",
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Aimar Oroz",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sergio Herrera",
+                    "rating": 6.7,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Raúl Moro",
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Alejandro Catena",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Asier Osambela",
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Iker Muñoz",
+                    "rating": 6.0,
+                    "pos": "MF",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "keyPlayers": [
@@ -30858,7 +31059,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg/120px-Ante_Budimir_Croatia_v_Portugal_2_July_2026-034.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 8"
-                    ]
+                    ],
+                    "rating": 8.2
                   },
                   {
                     "name": "Moi Gómez",
@@ -30866,7 +31068,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Moi_G%C3%B3mez.jpg/120px-Moi_G%C3%B3mez.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
-                    ]
+                    ],
+                    "rating": 7.8
                   }
                 ]
               },
@@ -30880,14 +31083,16 @@ window.CLUTCH_DATA = {
                     "photo": "https://r2.thesportsdb.com/images/media/player/thumb/v6e47u1784904389.jpg",
                     "stats": [
                       "득점 5"
-                    ]
+                    ],
+                    "rating": 6.1
                   },
                   {
                     "name": "Pablo Martínez",
                     "id": "271151",
                     "stats": [
                       "도움 2"
-                    ]
+                    ],
+                    "rating": 6.6
                   }
                 ]
               }
@@ -30934,7 +31139,8 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868136,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
         {
           "id": "soccer-int-ata-20261123",
