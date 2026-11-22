@@ -1075,11 +1075,17 @@
                    → 그 선수가 코트에 있던 동안 팀이 팀 전체보다 얼마나 더 앞섰나
        clutch    = 4쿼터 마지막 5분·연장에서 그 선수가 넣은 점수
        influence = prod + 0.8×clamp(rel, -12, 12) + 1.2×clutch
-       cost      = max(0, -gap) + 0.8×max(0, -rel)   (진 팀 쪽 부정 영향)
+       cost      = 1.6×max(0, -rel) + 0.4×max(0, -gap)   (진 팀 쪽 부정 영향)
 
      · 이긴 팀 '캐리한 선수' = influence 최대(20분 이상 출전)
-     · 진 팀 '아쉬웠던 선수' = cost 최대(18분 이상, cost 5 미만이면 비워 둔다)
-     ±는 코트에 있던 동안의 팀 득실이라 같은 팀 안에서만 비교한다. */
+     · 진 팀 '아쉬웠던 선수' = cost 최대(22분 이상)
+     ±는 코트에 있던 동안의 팀 득실이라 같은 팀 안에서만 비교한다.
+
+     진 팀 쪽은 코트 마진을 1순위로 본다. 시즌 평균 대비(gap)는 '무엇을 해야 했나'를
+     말해 줄 뿐이고, 승패를 가른 건 그가 코트에 있던 동안의 득실 차이다.
+     진 팀에서 rel 은 pm + 팀 최종 마진이라, 같은 팀 안에서는 ± 순서와 같다.
+     경기별로 상수만큼 밀리므로 rel 에 고정 문턱(-8 등)을 두면 1점 차 경기에서는
+     거의 걸리지 않고 20점 차 경기에서는 자동으로 걸린다. 그래서 문턱 대신 점수로 비교한다. */
   function pgShot(v) {
     var m = String(v == null ? "" : v).match(/^(\d+)\s*[-/]\s*(\d+)$/);
     return m ? { m: Number(m[1]), a: Number(m[2]) } : null;
@@ -1108,6 +1114,17 @@
     return /[013678]/.test(d) ? withFinal : withoutFinal;
   }
   function pgNumCopula(n) { return pgNumJosa(n, "이었습니다", "였습니다"); }
+  // 숫자 뒤 '으로/로'. 한글로 읽었을 때 0(영)·3(삼)·6(육)만 받침이 있고,
+  // 1(일)·7(칠)·8(팔)은 ㄹ로 끝나 '로'를 쓴다(1로·7로·8로).
+  function pgNumRo(n) {
+    return /[036]/.test(String(Math.abs(Number(n) || 0)).slice(-1)) ? "으로" : "로";
+  }
+  // 같은 경기에서는 늘 같은 문장이 나오도록 경기 id 로 문장 틀을 고른다(무작위 아님).
+  function pgVariant(seed, n) {
+    var h = 0, s = String(seed || "");
+    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 100003;
+    return n > 0 ? h % n : 0;
+  }
   // 팀·선수 이름 뒤 조사(받침 유무). 예) 재즈 → 가 / 너기츠 → 가 / 썬더 → 가
   function pgJosa(word, withFinal, withoutFinal) {
     var s = String(word || "");
@@ -1192,20 +1209,22 @@
     return { win: win, lose: lose, carry: carry, low: low, lowWhy: lowWhy, wa: wa, la: la };
   }
 
-  // 한 줄 결론(농구·축구와 같은 틀)
+  // 한 줄 결론(농구·축구와 같은 틀): 근거를 괄호가 아니라 문장 안에 붙인다.
   function volleyVerdictText(g, pick) {
     if (!pick || !pick.carry) return "";
     var c = pick.carry, out = [];
-    var att = toNum(c.at), suc = toNum(c.asn);
-    out.push(pgJosa(g[pick.win].name, "은", "는") + " " + c.n + "(" + toNum(c.pt) + "득점" +
-      (att ? "·공격 " + att + "시도 " + suc + "성공 " + volleyPct(c.ap) : "") +
-      ") 덕분에 이겼습니다");
+    var att = toNum(c.at);
+    out.push(pgJosa(g[pick.win].name, "은", "는") + " " + c.n + "의 " +
+      pgTailRo(toNum(c.pt) + "득점" + (att ? "·공격 성공률 " + volleyPct(c.ap) : "")) + " 이겼습니다");
     var l = pick.low;
     if (l) {
-      var how = pick.lowWhy === "attack"
-        ? "공격 " + toNum(l.at) + "시도 " + toNum(l.asn) + "성공 " + volleyPct(l.ap)
-        : "범실 " + toNum(l.er) + "개";
-      out.push(pgJosa(g[pick.lose].name, "은", "는") + " " + l.n + "(" + how + ")에서 흐름이 끊겼습니다");
+      var loseName = pgJosa(g[pick.lose].name, "은", "는");
+      if (pick.lowWhy === "attack") {
+        out.push(loseName + " " + l.n + "의 공격이 " + toNum(l.at) + "시도 " + toNum(l.asn) + "성공 " +
+          volleyPct(l.ap) + "에 그쳤습니다");
+      } else {
+        out.push(loseName + " " + l.n + "의 범실 " + toNum(l.er) + "개로 흐름이 끊겼습니다");
+      }
     }
     return out.join(". ") + ".";
   }
@@ -1441,31 +1460,47 @@
     if (!carryPool.length) carryPool = cands.filter(function (p) { return p.isWin; });
     var carry = carryPool.slice().sort(function (a, b) { return influence(b) - influence(a); })[0] || null;
 
-    // ② 진 팀에서 가장 아쉬웠던 선수
-    //    ① 시즌 평균 대비 뚜렷하게 못한 선수 → ② 기록은 괜찮아도 그가 뛴 구간에 팀이 크게 밀린 선수
+    // ② 진 팀에서 가장 아쉬웠던 선수 — 코트 마진이 1순위, 시즌 평균은 보조.
+    //    ① ±(rel)로 팀보다 확실히 더 밀린 선수 → ② 마진이 고만고만하면 시즌 평균 대비로 못한 선수
     //    → ③ 22분 이상 뛰고도 생산이 아주 얇은 선수 순으로 찾는다. 셋 다 없으면 비워 둔다.
+    //    가중치 1.6 : 0.4 — ± 2점 차이를 시즌 평균 8점 차이와 같은 무게로 본다.
     function lowCost(p) {
-      return Math.max(0, -(p.gap == null ? 0 : p.gap)) + 0.8 * Math.max(0, -(p.rel == null ? 0 : p.rel));
+      return 1.6 * Math.max(0, -(p.rel == null ? 0 : p.rel)) + 0.4 * Math.max(0, -(p.gap == null ? 0 : p.gap));
     }
     var lowPool = cands.filter(function (p) { return !p.isWin && p.min >= 22; });
     var low = null;
-    var byGap = lowPool.filter(function (p) { return p.gap != null && p.gap <= -4; })
-      .sort(function (a, b) { return lowCost(b) - lowCost(a); });
-    if (byGap.length) { low = byGap[0]; low.kind = "gap"; }
-    if (!low) {
-      var byPm = lowPool.filter(function (p) { return p.rel != null && p.rel <= -8; })
-        .sort(function (a, b) { return a.rel - b.rel; });
-      if (byPm.length) { low = byPm[0]; low.kind = "pm"; }
+    // ① 코트 마진: 점수 4 이상(±로 2.5점 이상 더 밀린 선수)일 때만 마진을 근거로 삼는다
+    var byCost = lowPool.filter(function (p) { return p.rel != null; })
+      .sort(function (a, b) {
+        var d = lowCost(b) - lowCost(a);
+        if (d) return d;
+        return (a.gap == null ? 0 : a.gap) - (b.gap == null ? 0 : b.gap);
+      });
+    if (byCost.length && lowCost(byCost[0]) >= 4) {
+      low = byCost[0];
+      var rTerm = 1.6 * Math.max(0, -(low.rel || 0));
+      var gTerm = 0.4 * Math.max(0, -(low.gap == null ? 0 : low.gap));
+      low.kind = rTerm >= gTerm ? "pm" : "gap";
     }
+    // ② 마진이 고만고만한 경기: 시즌 평균 대비 뚜렷하게 못한 선수
+    if (!low) {
+      var byGap = lowPool.filter(function (p) { return p.gap != null && p.gap <= -4; })
+        .sort(function (a, b) { return lowCost(b) - lowCost(a); });
+      if (byGap.length) { low = byGap[0]; low.kind = "gap"; }
+    }
+    // ③ 22분 이상 뛰고도 생산이 아주 얇은 선수
     if (!low) {
       var byThin = lowPool.filter(function (p) { return p.prod <= 10; })
         .sort(function (a, b) { return a.prod - b.prod; });
       if (byThin.length) { low = byThin[0]; low.kind = "thin"; }
     }
 
-    // 화면 맨 위에 '누구 때문에 이겼고 누구 때문에 무너졌는지'를 한 줄로 쓴다
+    // 화면 맨 위 한 줄: 이 경기의 승패를 누가 갈랐는지.
+    // 진 팀 쪽 근거는 코트 마진(±)을 앞세우고, 시즌 평균은 그 뒤에 붙인다.
+    // 같은 문장 틀이 매 경기 반복되지 않도록 경기 id 로 틀을 고른다.
     function verdictLine(c, l) {
       var bits = [];
+      var v = pgVariant(g.id, 2);
       if (c) {
         // 그 선수를 '왜' 캐리로 뽑았는지가 한눈에 보이는 근거를 고른다
         var cHow;
@@ -1473,35 +1508,47 @@
           cHow = "트리플더블 " + c.pts + "점·" + c.reb + "리바운드·" + c.ast + "어시스트";
         } else if (c.pts >= 25) {
           cHow = c.pts + "점";
-        } else if (c.clutch >= 5) {
-          cHow = "4쿼터 " + c.clutch + "점";
+        } else if (c.pts >= 18 && c.clutch >= 5) {
+          cHow = c.pts + "점, 4쿼터 " + c.clutch + "점";
         } else if (c.ast >= 8) {
           cHow = c.pts + "점·" + c.ast + "어시스트";
         } else if (c.reb >= 12) {
           cHow = c.pts + "점·" + c.reb + "리바운드";
         } else if (c.pts >= 18) {
           cHow = c.pts + "점";
+        } else if (c.clutch >= 5) {
+          cHow = "4쿼터 " + c.clutch + "점";
+        } else if (c.pts >= 15 && c.reb >= 8) {
+          cHow = c.pts + "점·" + c.reb + "리바운드";
         } else if (c.pm != null && c.pm > 0) {
           cHow = "코트 마진 " + pgSigned(c.pm);
         } else {
           cHow = c.pts + "점";
         }
-        bits.push(pgJosa(winTeam.name, "은", "는") + " " + c.name + "(" + cHow + ") 덕분에 이겼습니다");
+        bits.push(v === 0
+          ? pgJosa(winTeam.name, "은", "는") + " " + c.name + "의 " + pgTailRo(cHow) + " 이겼습니다"
+          : c.name + "의 " + pgTailJosa(cHow, "이", "가") + " " + winTeam.name + " 승리를 갈랐습니다");
       }
       if (l) {
-        var lHow;
-        if (l.kind === "gap" && l.avgPts != null && l.pts <= l.avgPts - 4) {
-          lHow = "시즌 평균 " + l.avgPts.toFixed(1) + "점 → " + l.pts + "점";
+        var loseName = pgJosa(loseTeam.name, "은", "는");
+        var lName = pgJosa(l.name, "이", "가");
+        var lead = (l.kind === "pm" && l.pm != null && l.rel != null && l.rel < 0);
+        if (lead) {
+          // 코트 마진이 근거일 때: 팀 전체 마진보다 그가 뛴 시간이 얼마나 더 밀렸는지
+          if (v === 0) {
+            bits.push(loseName + " " + lName + " 뛴 " + l.min + "분에 팀 전체보다 " + Math.abs(l.rel) + "점 더 밀렸습니다");
+          } else {
+            bits.push(loseName + " " + lName + " 뛴 " + l.min + "분, 팀 전체 마진보다 " + Math.abs(l.rel) + "점 더 나쁜 구간이었습니다");
+          }
+        } else if (l.kind === "gap" && l.avgPts != null) {
+          bits.push(loseName + " 시즌 평균 " + l.avgPts.toFixed(1) + "점을 넣던 " + lName + " " + l.pts + "점에 그쳤습니다");
         } else if (l.kind === "thin") {
-          lHow = l.pts + "점·야투 " + (l.fg ? pgShotText(l.fg) : "-");
-        } else if (l.tov >= 4) {
-          lHow = "턴오버 " + l.tov + "개";
+          bits.push(loseName + " " + lName + " " + l.min + "분을 뛰고 " + l.pts + "점에 그쳤습니다");
         } else if (l.pm != null) {
-          lHow = "코트 마진 " + pgSigned(l.pm);
+          bits.push(loseName + " " + lName + " 뛴 " + l.min + "분 동안 팀 마진 " + pgSigned(l.pm) + "였습니다");
         } else {
-          lHow = l.pts + "점";
+          bits.push(loseName + " " + lName + " " + l.pts + "점에 그쳤습니다");
         }
-        bits.push(pgJosa(loseTeam.name, "은", "는") + " " + l.name + "(" + lHow + ")에서 흐름이 끊겼습니다");
       }
       return bits.length ? bits.join(". ") + "." : "";
     }
@@ -1512,36 +1559,40 @@
       if (p.ast > 0) bits.push(p.ast + "어시스트");
       return bits.join("·");
     }
-    function effText(p) {
-      var out = [];
-      if (p.fg) out.push("야투 " + pgShotText(p.fg));
-      if (p.tp && p.tp.a >= 3) out.push("3점 " + pgShotText(p.tp));
-      return out.join("·");
-    }
 
+    // 캐리한 선수 설명: 이 경기에서 한 일 → 시즌 평균과 견주기 → 코트 마진 → 클러치.
+    // 숫자는 근거로 남기되 한 문장에 몰아넣지 않고, 데이터에 없는 평가는 쓰지 않는다.
     function carryNote(p) {
       if (!p) return "이긴 팀 선수 기록을 확인하지 못했습니다.";
-      var line = statLine(p), eff = effText(p);
       var out = [];
       var bestPts = 0;
       cands.forEach(function (q) { if (q.side === p.side && q.pts > bestPts) bestPts = q.pts; });
-      if (p.avgPts != null) {
-        var head = p.name + ", " + (p.role ? "팀 내 " + p.role : "주요 선수") + "으로 시즌 평균 " +
-          p.avgPts.toFixed(1) + "점을 넣던 선수가 이 경기에서는 " + line + (eff ? "에 " + eff : "") + "로 ";
-        if (p.gap != null && p.gap >= 3) head += "기대 이상의 몫을 해냈습니다.";
-        else if (p.gap != null && p.gap <= -4) {
-          head += (p.pts >= bestPts ? "평균에는 못 미쳤지만 팀에서 가장 많은 " + p.pts + "점을 올렸습니다." : "평균에는 못 미쳤습니다.");
-        } else head += "제 몫을 해냈습니다.";
-        out.push(head);
+      if (p.pts >= 10 && p.reb >= 10 && p.ast >= 10) {
+        out.push("트리플더블(" + p.pts + "점·" + p.reb + "리바운드·" + p.ast + "어시스트)로 경기를 쥐었습니다.");
+      } else if (p.pts >= 25) {
+        out.push(p.pts + "점을 넣으며 팀 공격을 이끌었습니다.");
+      } else if (p.ast >= 9) {
+        out.push(p.pts + "점·" + p.ast + "어시스트로 동료 득점까지 만들었습니다.");
+      } else if (p.reb >= 12) {
+        out.push(p.pts + "점·" + p.reb + "리바운드로 골밑을 지켰습니다.");
+      } else if (p.pts >= 15) {
+        out.push(statLine(p) + "를 올렸습니다.");
       } else {
-        var verb = p.pts >= 20 ? "팀 공격을 이끌었습니다."
-          : (p.ast >= 8 ? "동료 득점을 만들며 흐름을 이끌었습니다."
-            : (p.reb >= 10 ? "골밑에서 힘을 보탰습니다." : "팀 흐름을 앞세웠습니다."));
-        out.push(p.name + ", 이 경기 " + line + (eff ? "(" + eff + ")" : "") + "로 " + verb);
+        out.push(p.pts + "점" + (p.reb > 0 ? "·" + p.reb + "리바운드" : "") + "로 제 몫을 했습니다.");
       }
-      if (p.pm != null && (p.pm > 0 || (p.rel != null && p.rel > 0))) {
-        out.push("팀이 " + margin + "점 이긴 경기에서 그가 코트에 있던 " + p.min + "분 동안 팀 마진은 " +
-          pgSigned(p.pm) + (p.pmBest ? "(팀 최고)" : "") + "이었습니다.");
+      if (p.avgPts != null) {
+        if (p.gap != null && p.gap >= 3) {
+          out.push("시즌 평균 " + p.avgPts.toFixed(1) + "점을 웃도는 하루였습니다.");
+        } else if (p.gap != null && p.gap <= -4) {
+          out.push("시즌 평균 " + p.avgPts.toFixed(1) + "점에는 못 미쳤습니다." +
+            (p.pts >= bestPts ? " 그래도 팀에서 가장 많은 득점이었습니다." : ""));
+        } else {
+          out.push("시즌 평균 " + p.avgPts.toFixed(1) + "점과 맞먹는 몫이었습니다.");
+        }
+      }
+      if (p.pm != null && p.pm > 0) {
+        out.push("그가 코트에 있던 " + p.min + "분 동안 팀은 " + p.pm + "점 차로 앞섰습니다" +
+          (p.pmBest ? "(팀에서 가장 좋은 ±)" : "") + ".");
       }
       if (p.clutch >= 5) {
         out.push("4쿼터 마지막 5분에 " + p.clutch + "점을 넣으며 승부를 닫았습니다.");
@@ -1549,34 +1600,63 @@
       return out.join(" ");
     }
 
+    // 아쉬웠던 선수 설명: 왜 뽑혔는지(kind)에 따라 첫 문장을 바꾼다.
+    //  · pm   — 코트 마진이 근거. 그가 뛴 시간에 팀이 얼마나 더 밀렸는지부터.
+    //  · gap  — 시즌 평균 대비가 근거. 평소 몇 점을 넣던 선수인지와 이 경기 기록을 나란히.
+    //  · thin — 22분 이상 뛰고도 생산이 얇았다는 것부터.
+    // 데이터에 없는 형용은 쓰지 않고, 실제 값(득점·야투·턴오버·±)만 재료로 쓴다.
     function lowNote(p) {
-      if (!p) return "이 경기 진 팀에서 기대를 크게 밑돈 선수는 없었습니다.";
-      var line = statLine(p), eff = effText(p);
+      if (!p) return "이 경기 진 팀에서 눈에 띄게 밀린 선수는 없었습니다.";
       var out = [];
-      var shortOfRole = p.gap != null && p.gap <= -4 && p.avgPts != null;
-      if (shortOfRole) {
-        out.push(p.name + ", " + (p.role ? "팀 내 " + p.role : "주요 선수") + "으로 시즌 평균 " +
-          p.avgPts.toFixed(1) + "점을 넣던 선수가 이 경기에서는 " + line + (eff ? "에 " + eff : "") + "로 " +
-          (p.gap <= -8 ? "기대에 크게 못 미쳤습니다." : "제 몫을 다하지 못했습니다."));
-      } else if (p.prod <= 10) {
-        out.push(p.name + ", " + p.min + "분을 뛰고 " + line + (eff ? "(" + eff + ")" : "") + "에 그쳤습니다.");
+      var rec = statLine(p) + (p.fg ? ", 야투 " + pgShotText(p.fg) : "");
+      var season = p.avgPts != null
+        ? ("시즌 평균 " + p.avgPts.toFixed(1) + "점" + (p.role ? "(팀 내 " + p.role + ")" : ""))
+        : "";
+      var saidSeason = false;
+      if (p.kind === "pm" && p.pm != null && p.rel != null) {
+        out.push("그가 코트에 있던 " + p.min + "분 동안 팀은 " + Math.abs(p.pm) + "점 차로 밀렸습니다.");
+        if (p.rel < 0) {
+          out.push("경기 전체로는 " + Math.abs(p.teamMargin) + "점 차였으니, 그가 뛴 시간대가 " +
+            Math.abs(p.rel) + "점 더 나빴습니다.");
+        }
+      } else if (p.kind === "gap" && p.avgPts != null) {
+        out.push(season + "을 넣던 선수가 이 경기에서는 " + rec + "였습니다.");
+        saidSeason = true;
+      } else if (p.kind === "thin") {
+        out.push(p.min + "분을 뛰고도 " + rec + "에 그쳤습니다.");
       } else {
-        out.push(p.name + ", 이 경기 " + line + (eff ? "(" + eff + ")" : "") + "로 기록 자체는 나쁘지 않았습니다.");
+        out.push("이 경기 " + rec + "였습니다.");
       }
-      var why = [];
-      if (p.pm != null && p.rel != null && p.rel < 0) {
-        why.push((shortOfRole ? "그가" : "그러나 그가") + " 코트에 있던 " + p.min + "분 동안 팀 마진은 " +
-          pgSigned(p.pm) + (p.pmWorst ? "(팀 최저)" : "") + "이었습니다.");
+      if (p.kind === "pm") {
+        // 마진이 근거일 때도, 시즌 평균이나 이 경기 기록을 한 줄 붙여 판단할 거리를 남긴다
+        if (p.avgPts != null) {
+          if (p.gap != null && p.gap <= -4) {
+            out.push(season + "에는 못 미쳤습니다" +
+              (p.avgPts - p.pts >= 3 ? "(득점만 " + (p.avgPts - p.pts).toFixed(1) + "점 적음)." : "."));
+          } else if (p.gap != null && p.gap >= 3) {
+            out.push("개인 기록은 오히려 평소(" + p.avgPts.toFixed(1) + "점)보다 나았습니다.");
+          } else {
+            out.push("시즌 평균 " + p.avgPts.toFixed(1) + "점과 비슷한 기록이었습니다.");
+          }
+        } else {
+          out.push("이날 " + statLine(p) + "를 기록했습니다.");
+        }
+        saidSeason = true;
+      }
+      if (!saidSeason && p.avgPts != null) {
+        if (p.gap != null && p.gap <= -4) {
+          out.push(season + "에는 못 미쳤습니다" +
+            (p.avgPts - p.pts >= 3 ? "(득점만 " + (p.avgPts - p.pts).toFixed(1) + "점 적음)." : "."));
+        } else if (p.gap != null && p.gap >= 3) {
+          out.push("개인 기록은 오히려 평소(" + p.avgPts.toFixed(1) + "점)보다 나았습니다.");
+        }
       }
       if (p.fg && p.avgFg != null && p.fg.a >= 8 && p.avgFg - p.fgPct >= 8) {
-        why.push("야투 성공률은 시즌 " + p.avgFg + "%에서 " + p.fgPct + "%로 떨어졌습니다.");
+        out.push("야투 성공률은 시즌 " + p.avgFg + "%에서 " + p.fgPct + "%로 떨어졌습니다.");
       } else if (p.tov >= 4) {
-        why.push("턴오버 " + p.tov + "개로 공격 기회를 잃었습니다.");
+        out.push("턴오버 " + p.tov + "개로 공격 기회를 잃었습니다.");
       }
-      if (!why.length && shortOfRole) {
-        why.push("득점·리바운드·어시스트를 합친 생산이 시즌 평균에 못 미쳤습니다.");
-      }
-      return out.concat(why.slice(0, 2)).join(" ");
+      return out.slice(0, 4).join(" ");
     }
 
     function chipsFor(p, under) {
@@ -1618,7 +1698,7 @@
       flowSentences.push("양 팀이 " + awayPts + "-" + homePts + "로 비겼습니다.");
     } else {
       flowSentences.push(pgJosa(winTeam.name, "이", "가") + " " + Math.max(awayPts, homePts) + "-" +
-        Math.min(awayPts, homePts) + pgNumJosa(Math.min(awayPts, homePts), "으로", "로") + " 이겼습니다.");
+        Math.min(awayPts, homePts) + pgNumRo(Math.min(awayPts, homePts)) + " 이겼습니다.");
     }
     var quarterRows = [];
     var ls = r.lines;
@@ -1640,17 +1720,17 @@
         var beforeOt = quarterRows.length > 4 ? quarterRows[quarterRows.length - 2] : null;
         if (otGame && beforeOt && beforeOt.wc === beforeOt.lc) {
           flowSentences.push((behind + 1) + "Q까지 " + quarterRows[behind].wc + "-" + quarterRows[behind].lc +
-            "로 뒤졌지만 4Q에서 " + beforeOt.w + "-" + beforeOt.l + pgNumJosa(beforeOt.l, "으로", "로") +
+            "로 뒤졌지만 4Q에서 " + beforeOt.w + "-" + beforeOt.l + pgNumRo(beforeOt.l) +
             " 따라붙어 연장으로 끌고 갔습니다.");
         } else if (behind >= 0 && behind < quarterRows.length - 1) {
           flowSentences.push((behind + 1) + "Q까지 " + quarterRows[behind].wc + "-" + quarterRows[behind].lc +
-            "로 뒤졌지만 " + (behind + 2) + "Q에서는 " + quarterRows[behind + 1].w + "-" + quarterRows[behind + 1].l +
-            pgNumJosa(quarterRows[behind + 1].l, "으로", "로") + " 뒤집었습니다.");
+            "로 끌려가던 경기를 " + (behind + 2) + "Q에 " + quarterRows[behind + 1].w + "-" + quarterRows[behind + 1].l +
+            pgNumRo(quarterRows[behind + 1].l) + " 뒤집었습니다.");
         } else {
           var q1 = quarterRows[0];
           flowSentences.push(q1.w === q1.l
             ? ("1Q를 " + q1.w + "-" + q1.l + "로 맞선 뒤 쿼터가 끝날 때마다 뒤지지 않았습니다.")
-            : ("1Q " + q1.w + "-" + q1.l + pgNumJosa(q1.l, "으로", "로") + " 앞선 뒤 쿼터가 끝날 때마다 뒤지지 않았습니다."));
+            : ("1Q를 " + q1.w + "-" + q1.l + pgNumRo(q1.l) + " 앞선 뒤 쿼터가 끝날 때마다 뒤지지 않았습니다."));
         }
       }
     }
@@ -1935,6 +2015,13 @@
     if (m) return text + pgNumJosa(Number(m[1]), withFinal, withoutFinal);
     return pgNameJosa(text, withFinal, withoutFinal);
   }
+  // 구절 끝에 '으로/로'를 붙인다. 끝이 숫자면 한글 읽는 소리(일·칠·팔 → 로)로,
+  // 숫자가 아니면 받침 유무로 고른다. 예) "유효슈팅 3" → 으로, "범실 7개" → 로, "무실점" → 으로
+  function pgTailRo(text) {
+    var m = String(text).match(/(\d+)$/);
+    if (m) return text + pgNumRo(Number(m[1]));
+    return pgNameJosa(text, "으로", "로");
+  }
 
   // 선수를 한 구절로: 골·도움·유효슈팅·선방 중 있는 값만
   function soccerFeat(p) {
@@ -1946,8 +2033,8 @@
   }
 
   // 한 줄 결론. 문장 틀은 농구와 같다:
-  //   "<이긴 팀>은 <선수>(근거) 덕분에 이겼습니다. <진 팀>은 <선수>(근거)에서 흐름이 끊겼습니다."
-  // live=true 면 진행 중 어투로 바꾼다.
+  //   "<이긴 팀>은 <선수>의 <근거>로 이겼습니다. <진 팀>은 <선수>의 <근거>로 흐름을 잇지 못했습니다."
+  // 근거를 괄호에 몰아넣지 않고 문장 안에 붙인다. live=true 면 진행 중 어투로 바꾼다.
   function soccerVerdictText(g, board, live) {
     var pick = soccerPick(g, board);
     var c = pick.carry, l = pick.low;
@@ -1962,8 +2049,8 @@
         if (!bits.length) bits.push("슈팅 " + (c.sh || 0) + "개");
         how = bits.join("·");
       }
-      parts.push(pgJosa(board[pick.lead].name, "은", "는") + " " + c.name + "(" + how + ")" +
-        (live ? " 덕분에 앞서고 있습니다" : " 덕분에 이겼습니다"));
+      parts.push(pgJosa(board[pick.lead].name, "은", "는") + " " + c.name + "의 " + pgTailRo(how) +
+        (live ? " 앞서고 있습니다" : " 이겼습니다"));
     } else if (pick.topAway || pick.topHome) {
       // 무승부: 양 팀에서 이름을 남긴 선수를 나란히. 0-0 이면 유효슈팅 합계로만 말한다.
       var aw = pick.topAway, hm = pick.topHome;
@@ -1981,11 +2068,13 @@
     }
 
     if (l) {
-      var lhow = l.pos === "G"
-        ? "선방 " + (l.sv || 0) + "·실점 " + (l.ga || 0)
-        : "슈팅 " + (l.sh || 0) + "·유효 " + (l.sog || 0);
-      parts.push(pgJosa(board[pick.trail].name, "은", "는") + " " + l.name + "(" + lhow + ")에서 " +
-        (live ? "흐름이 끊기고 있습니다" : "흐름이 끊겼습니다"));
+      var trail = pgJosa(board[pick.trail].name, "은", "는");
+      if (l.pos === "G") {
+        parts.push(trail + " 골문은 " + l.name + "가 선방 " + (l.sv || 0) + "개·실점 " + (l.ga || 0) + "개를 기록했습니다");
+      } else {
+        parts.push(trail + " " + l.name + "의 슈팅 " + (l.sh || 0) + "개 중 유효 " + (l.sog || 0) + "개로 " +
+          (live ? "흐름을 잇지 못하고 있습니다" : "흐름을 잇지 못했습니다"));
+      }
     } else if (pick.trail) {
       // 개인보다 팀 전체 마무리가 문제인 경기: 팀 슈팅·유효슈팅으로만 말한다(골이 없는 팀에 한해)
       var ts = board[pick.trail].stats || {};
@@ -2040,10 +2129,10 @@
     var out = [];
 
     if (!winSide) {
-      out.push("양 팀이 " + away + "-" + home + pgNumJosa(home, "으로", "로") + " 비겼습니다.");
+      out.push("양 팀이 " + away + "-" + home + pgNumRo(home) + " 비겼습니다.");
     } else {
       out.push(pgJosa(winTeam.name, "이", "가") + " " + Math.max(away, home) + "-" + Math.min(away, home) +
-        pgNumJosa(Math.min(away, home), "으로", "로") + " 이겼습니다.");
+        pgNumRo(Math.min(away, home)) + " 이겼습니다.");
     }
     var ls = r.lines;
     if (ls && ls.away && ls.home && ls.away.length) {
