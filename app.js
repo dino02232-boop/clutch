@@ -1508,8 +1508,6 @@
           cHow = "트리플더블 " + c.pts + "점·" + c.reb + "리바운드·" + c.ast + "어시스트";
         } else if (c.pts >= 25) {
           cHow = c.pts + "점";
-        } else if (c.pts >= 18 && c.clutch >= 5) {
-          cHow = c.pts + "점, 4쿼터 " + c.clutch + "점";
         } else if (c.ast >= 8) {
           cHow = c.pts + "점·" + c.ast + "어시스트";
         } else if (c.reb >= 12) {
@@ -1531,23 +1529,22 @@
       }
       if (l) {
         var loseName = pgJosa(loseTeam.name, "은", "는");
-        var lName = pgJosa(l.name, "이", "가");
         var lead = (l.kind === "pm" && l.pm != null && l.rel != null && l.rel < 0);
         if (lead) {
           // 코트 마진이 근거일 때: 팀 전체 마진보다 그가 뛴 시간이 얼마나 더 밀렸는지
           if (v === 0) {
-            bits.push(loseName + " " + lName + " 뛴 " + l.min + "분에 팀 전체보다 " + Math.abs(l.rel) + "점 더 밀렸습니다");
+            bits.push(loseName + " " + l.name + "의 " + l.min + "분 동안 팀 전체 마진보다 " + Math.abs(l.rel) + "점 더 밀렸습니다");
           } else {
-            bits.push(loseName + " " + lName + " 뛴 " + l.min + "분, 팀 전체 마진보다 " + Math.abs(l.rel) + "점 더 나쁜 구간이었습니다");
+            bits.push(loseName + " " + l.name + "의 코트 마진이 팀 전체보다 " + Math.abs(l.rel) + "점 더 나빴습니다");
           }
         } else if (l.kind === "gap" && l.avgPts != null) {
-          bits.push(loseName + " 시즌 평균 " + l.avgPts.toFixed(1) + "점을 넣던 " + lName + " " + l.pts + "점에 그쳤습니다");
+          bits.push(loseName + " 시즌 평균 " + l.avgPts.toFixed(1) + "점을 넣던 " + l.name + "의 득점이 " + l.pts + "점에 그친 경기였습니다");
         } else if (l.kind === "thin") {
-          bits.push(loseName + " " + lName + " " + l.min + "분을 뛰고 " + l.pts + "점에 그쳤습니다");
+          bits.push(loseName + " " + l.name + "의 " + l.min + "분 동안 " + l.pts + "점에 그쳤습니다");
         } else if (l.pm != null) {
-          bits.push(loseName + " " + lName + " 뛴 " + l.min + "분 동안 팀 마진 " + pgSigned(l.pm) + "였습니다");
+          bits.push(loseName + " " + l.name + "의 코트 마진 " + pgSigned(l.pm) + "로 흔들렸습니다");
         } else {
-          bits.push(loseName + " " + lName + " " + l.pts + "점에 그쳤습니다");
+          bits.push(loseName + " " + l.name + "의 " + l.pts + "점에 그쳤습니다");
         }
       }
       return bits.length ? bits.join(". ") + "." : "";
@@ -1592,7 +1589,7 @@
       }
       if (p.pm != null && p.pm > 0) {
         out.push("그가 코트에 있던 " + p.min + "분 동안 팀은 " + p.pm + "점 차로 앞섰습니다" +
-          (p.pmBest ? "(팀에서 가장 좋은 ±)" : "") + ".");
+          (p.pmBest ? ". 팀에서 가장 좋은 ±였습니다." : "."));
       }
       if (p.clutch >= 5) {
         out.push("4쿼터 마지막 5분에 " + p.clutch + "점을 넣으며 승부를 닫았습니다.");
@@ -2070,7 +2067,7 @@
     if (l) {
       var trail = pgJosa(board[pick.trail].name, "은", "는");
       if (l.pos === "G") {
-        parts.push(trail + " 골문은 " + l.name + "가 선방 " + (l.sv || 0) + "개·실점 " + (l.ga || 0) + "개를 기록했습니다");
+        parts.push(trail + " 골문은 " + l.name + "의 선방 " + (l.sv || 0) + "개·실점 " + (l.ga || 0) + "개였습니다");
       } else {
         parts.push(trail + " " + l.name + "의 슈팅 " + (l.sh || 0) + "개 중 유효 " + (l.sog || 0) + "개로 " +
           (live ? "흐름을 잇지 못하고 있습니다" : "흐름을 잇지 못했습니다"));
