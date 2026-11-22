@@ -62,6 +62,16 @@ window.CLUTCH_REACTIONS = {
     at: "2026-11-20T05:16:05Z"
   },
 
+  /* 2026-11-20 포틀랜드 124 : 114 밀워키 — 홀리데이, 브리핑이 꿈은 선수 */
+  "nba-por-mil-20261120|Jrue Holiday": {
+    text: "Jrue Holiday tallied 22 points, 7 assists & 4 steals.",
+    ko: "주루 홀리데이가 22점 7어시스트 4스틸을 기록했다.",
+    author: "PropStreak",
+    handle: "PropStreak",
+    url: "https://x.com/PropStreak/status/2123631412532424977",
+    at: "2026-11-20T04:15:58Z"
+  },
+
   /* 2026-11-20 멤피스 126 : 98 골든스테이트 — 웰스 야투 8-10 */
   "nba-gsw-mem-20261120|Jaylen Wells": {
     text: "Jaylen Wells scored 22 points on 8-of-10 shooting, including 4 threes.",
