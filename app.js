@@ -1278,7 +1278,7 @@
         // 배당이 본 우세와 실제 승자가 같으면 '예상대로', 다르면 '반대'로 잇는다.
         var sameAsOdds = o.fav.side !== "draw" && o.fav.side === winSide;
         text = lead + (sameAsOdds ? "고, 실제로도 " : "지만, 실제로는 ") +
-          pgJosa(winName, "이", "가") + " " + hi + "-" + lo + "로 이겼습니다.";
+          pgJosa(winName, "이", "가") + " " + hi + "-" + lo + pgNumRo(lo) + " 이겼습니다.";
       } else {
         text = lead + "습니다.";
       }
@@ -1314,8 +1314,9 @@
           var sets = r.lines && Array.isArray(r.lines.away) && Array.isArray(r.lines.home)
             ? Math.min(r.lines.away.length, r.lines.home.length) : 0;
           var score = Math.max(awayScore, homeScore) + "-" + Math.min(awayScore, homeScore);
-          var setText = sets >= 5 ? "이 경기는 5세트까지 가는 " + score + "로 끝났습니다."
-            : (sets > 0 ? "이 경기는 " + sets + "세트 만에 " + score + "로 끝났습니다." : "");
+          var scoreRo = score + pgNumRo(Math.min(awayScore, homeScore));
+          var setText = sets >= 5 ? "이 경기는 5세트까지 가는 " + scoreRo + " 끝났습니다."
+            : (sets > 0 ? "이 경기는 " + sets + "세트 만에 " + scoreRo + " 끝났습니다." : "");
           items.push({ k: "순위표",
             t: "경기 전 승점은 " + awayName + " " + aPt + "점, " + homeName + " " + hPt + "점으로 " +
               Math.abs(aPt - hPt) + "점 차였습니다." + (setText ? " " + setText : "") });
