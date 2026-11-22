@@ -127,10 +127,10 @@ window.CLUTCH_REACTIONS = {
     url: "https://x.com/BIGDEALSPORTSx/status/2124314779829576138",
     at: "2026-11-22T01:31:26Z"
   },
-  /* 2026-11-22 댈러스 110 : 100 LA클리퍼스 — 어빙 4쿼터 12점 포함 25점 */
-  "nba-lac-dal-20261122|Kyrie Irving": {
-    text: "Kyrie Irving scored 25 points, 6 rebounds & 4 assists, including 12 in the fourth quarter.",
-    ko: "카이리 어빙이 25점 6리바운드 4어시스트, 4쿼터에만 12점을 넣었다.",
+  /* 2026-11-22 댈러스 110 : 100 LA클리퍼스 — 프레그 22점 6리바운드 8어시스트 */
+  "nba-lac-dal-20261122|Cooper Flagg": {
+    text: "Cooper Flagg filled the box score with 22 points, 6 rebounds & 8 assists.",
+    ko: "쿠퍼 프레그가 22점 6리바운드 8어시스트로 기록지를 가득 채웠다.",
     author: "PropStreak",
     handle: "PropStreak",
     url: "https://x.com/PropStreak/status/2124359645129331002",
