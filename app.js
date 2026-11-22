@@ -2349,7 +2349,7 @@
       (verdict ? '<p class="pg-verdict">' + esc(verdict) + "</p>" : "") +
       '<div class="pg-why"><b>' + whyLabel + '</b><p>' + esc(why) + "</p></div>" +
       ((more || plTable || ratingBlock) ? '<details class="pg-more"><summary>' +
-        ((ratingBlock || plTable) ? "선수 기록 및 평점" : "득점 장면 더 보기") + "</summary>" +
+        (ratingBlock ? "선수 기록 및 평점" : (plTable ? "선수 기록 더 보기" : "득점 장면 더 보기")) + "</summary>" +
         ratingBlock + plTable + more + "</details>" : "") +
       '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
