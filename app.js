@@ -1278,9 +1278,11 @@
       if (g.sport === "basketball") {
         var aPpg = pgTeamNum(g, "away", "ppg"), hPpg = pgTeamNum(g, "home", "ppg");
         if (aPpg != null && hPpg != null) {
+          var aAb = (g.away && g.away.abbr) || awayName;
+          var hAb = (g.home && g.home.abbr) || homeName;
           items.push({ k: "관전 포인트",
             t: "경기 전 기록의 시즌 평균 득점은 " + awayName + " " + aPpg + "점 · " + homeName + " " + hPpg +
-              "점이었고, 이 경기는 " + awayName + " " + awayScore + "점 · " + homeName + " " + homeScore + "점이었습니다." });
+              "점이었고, 이 경기에서는 " + aAb + " " + awayScore + "점 · " + hAb + " " + homeScore + "점이었습니다." });
         }
       } else if (g.sport === "soccer") {
         var aGf = pgTeamNum(g, "away", null, "평균득점"), hGf = pgTeamNum(g, "home", null, "평균득점");
@@ -1298,11 +1300,12 @@
         if (aPt != null && hPt != null) {
           var sets = r.lines && Array.isArray(r.lines.away) && Array.isArray(r.lines.home)
             ? Math.min(r.lines.away.length, r.lines.home.length) : 0;
-          var setText = sets >= 5 ? "5세트까지 간 " : (sets > 0 ? sets + "세트 만에 " : "");
+          var score = Math.max(awayScore, homeScore) + "-" + Math.min(awayScore, homeScore);
+          var setText = sets >= 5 ? "이 경기는 5세트까지 가는 " + score + "로 끝났습니다."
+            : (sets > 0 ? "이 경기는 " + sets + "세트 만에 " + score + "로 끝났습니다." : "");
           items.push({ k: "순위표",
-            t: "경기 전 승점은 " + awayName + " " + aPt + " · " + homeName + " " + hPt + "로 " +
-              Math.abs(aPt - hPt) + "점 차였고, 이 경기는 " + setText +
-              Math.max(awayScore, homeScore) + "-" + Math.min(awayScore, homeScore) + "였습니다." });
+            t: "경기 전 승점은 " + awayName + " " + aPt + "점, " + homeName + " " + hPt + "점으로 " +
+              Math.abs(aPt - hPt) + "점 차였습니다." + (setText ? " " + setText : "") });
         }
       }
     }
