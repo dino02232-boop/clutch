@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-23T03:04:42+09:00",
+  updatedAt: "2026-11-23T04:20:57+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -15780,7 +15780,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 03:04 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 04:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -16134,7 +16134,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, 흥국생명(원정) 2승 4패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 03:04 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 04:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -28696,7 +28696,7 @@ window.CLUTCH_DATA = {
           },
           "status": "final"
         },
-        {
+                {
           "id": "soccer-hsv-svw-20261123",
           "espnId": "401884730",
           "sport": "soccer",
@@ -28763,6 +28763,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **베르더 브레멘**(홈) 1.9골 · **함부르크**(원정) 1.1골, 평균 실점은 홈 1.7골 · 원정 2.2골. 해외 배당을 확률로 환산하면 베르더 브레멘 승 59.6% · 무 21.6% · 함부르크 승 18.7%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 4,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "0",
+                "4"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -28886,7 +28903,99 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 6월 말"
                   }
                 ],
-                "injurySummary": "결장 5명"
+                "injurySummary": "결장 5명",
+                "players": [
+                  {
+                    "name": "Martin Adeline",
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Kofi Amoako",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Otto Stange",
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Albert Grønbæk",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alexander Røssing",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "David Møller Wolfe",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Fábio Vieira",
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Patson Daka",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Terem Moffi",
+                    "rating": 5.9,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Zakaria El Ouahdi",
+                    "rating": 5.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Miro Muheim",
+                    "rating": 5.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nicolás Capaldo",
+                    "rating": 5.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sebastiaan Bornauw",
+                    "rating": 5.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Warmed Omari",
+                    "rating": 5.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Daniel Heuer Fernandes",
+                    "rating": 4.7,
+                    "pos": "GK",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "SVW",
@@ -29019,7 +29128,87 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 7명"
+                "injurySummary": "결장 7명",
+                "players": [
+                  {
+                    "name": "Justin Njinmah",
+                    "rating": 9.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Niclas Füllkrug",
+                    "rating": 9.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Marco Friedl",
+                    "rating": 8.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ludovit Reis",
+                    "rating": 8.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Olivier Deman",
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Karl Hein",
+                    "rating": 7.5,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Youri Regeer",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Chuki",
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Amos Pieper",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Arthur",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Eren Dinkçi",
+                    "rating": 6.8,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Dariusz Stalmach",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Paul Erevbenagie",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "keyPlayers": [
@@ -29033,7 +29222,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/NiclasF%C3%BCllkrug_%28cropped%29.jpg/120px-NiclasF%C3%BCllkrug_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 9"
-                    ]
+                    ],
+                    "rating": 9.0
                   },
                   {
                     "name": "Marco Grüll",
@@ -29055,14 +29245,16 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/2025-05-16_Hamburger_SV_Miro_Muheim_%28cropped%29.jpg/120px-2025-05-16_Hamburger_SV_Miro_Muheim_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
-                    ]
+                    ],
+                    "rating": 5.8
                   },
                   {
                     "name": "Albert Grønbaek",
                     "id": "297750",
                     "stats": [
                       "도움 4"
-                    ]
+                    ],
+                    "rating": 6.3
                   }
                 ]
               }
@@ -29109,9 +29301,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5881232,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-man-liv-20261123",
           "espnId": "401878755",
           "sport": "soccer",
@@ -29193,6 +29386,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **리버풀**(홈) 1.4골 · **맨체스터 유나이티드**(원정) 1.4골, 평균 실점은 홈 1.0골 · 원정 1.9골. 해외 배당을 확률로 환산하면 리버풀 승 56.0% · 무 22.3% · 맨체스터 유나이티드 승 21.8%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 4,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "2",
+                "2"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -29322,7 +29532,93 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 3명 · 불확실 4명"
+                "injurySummary": "결장 3명 · 불확실 4명",
+                "players": [
+                  {
+                    "name": "Bruno Fernandes",
+                    "rating": 8.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Harry Maguire",
+                    "rating": 6.9,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Youri Tielemans",
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Joshua Zirkzee",
+                    "rating": 6.7,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Patrick Dorgu",
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Senne Lammens",
+                    "rating": 6.6,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Kobbie Mainoo",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mason Mount",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Bryan Mbeumo",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Matheus Cunha",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Noussair Mazraoui",
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Diogo Dalot",
+                    "rating": 5.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Matthijs de Ligt",
+                    "rating": 5.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Lisandro Martínez",
+                    "rating": 4.6,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "LIV",
@@ -29435,7 +29731,93 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Florian Wirtz",
+                    "rating": 9.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Rio Ngumoha",
+                    "rating": 9.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Dominik Szoboszlai",
+                    "rating": 8.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alexis Mac Allister",
+                    "rating": 8.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alisson Becker",
+                    "rating": 7.9,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Virgil van Dijk",
+                    "rating": 7.9,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Bradley Barcola",
+                    "rating": 7.8,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Miloš Kerkez",
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alexander Isak",
+                    "rating": 7.7,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ronald Araujo",
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Víctor Muñoz",
+                    "rating": 7.5,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Jérémy Jacquet",
+                    "rating": 7.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Trey Nyoni",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Jeremie Frimpong",
+                    "rating": 6.1,
+                    "pos": "DF",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "keyPlayers": [
@@ -29449,7 +29831,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg/120px-Alexander_Isak_-_Sweden_-_Greece21_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 7"
-                    ]
+                    ],
+                    "rating": 7.7
                   },
                   {
                     "name": "Florian Wirtz",
@@ -29457,7 +29840,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg/120px-Florian_Wirtz_Ecuador_v_Germany_25_June_2026-181_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
-                    ]
+                    ],
+                    "rating": 9.4
                   }
                 ]
               },
@@ -29471,7 +29855,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bryan_Mbeumo_00-02-31.18.png/120px-Bryan_Mbeumo_00-02-31.18.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
-                    ]
+                    ],
+                    "rating": 6.0
                   },
                   {
                     "name": "Matheus Cunha",
@@ -29479,7 +29864,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg/120px-Matheus_Cunha_Brazil_V_Morocco_13_June_2026-178_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
-                    ]
+                    ],
+                    "rating": 6.0
                   }
                 ]
               }
@@ -29526,9 +29912,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795521,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-fro-mil-20261123",
           "espnId": "401874989",
           "sport": "soccer",
@@ -29610,6 +29997,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **AC 밀란**(홈) 2.1골 · **프로시노네**(원정) 2.2골, 평균 실점은 홈 1.2골 · 원정 1.4골. 해외 배당을 확률로 환산하면 AC 밀란 승 59.8% · 무 21.4% · 프로시노네 승 18.8%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 1,
+            "homeScore": 5,
+            "lines": {
+              "away": [
+                "1",
+                "0"
+              ],
+              "home": [
+                "2",
+                "3"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -29722,7 +30126,104 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 말"
                   }
                 ],
-                "injurySummary": "결장 2명 · 불확실 1명"
+                "injurySummary": "결장 2명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Patrizio Masini",
+                    "rating": 7.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Farès Ghedjemis",
+                    "rating": 7.4,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Giorgi Kvernadze",
+                    "rating": 6.9,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Romano Schmid",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Wisdom Amey",
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Giorgio Cittadini",
+                    "rating": 6.6,
+                    "starter": true
+                  },
+                  {
+                    "name": "Anouar El Azzouzi",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Anthony Oyono",
+                    "rating": 6.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Enzo Tchato",
+                    "rating": 6.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Lorenzo Palmisani",
+                    "rating": 6.2,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alessio Zerbin",
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Daniel Bîrligea",
+                    "rating": 5.7,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Aleksa Terzić",
+                    "rating": 5.6,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Giacomo Calò",
+                    "rating": 5.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ilario Monterisi",
+                    "rating": 5.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Gabriele Calvani",
+                    "rating": 3.9,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "MIL",
@@ -29848,7 +30349,99 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 중순"
                   }
                 ],
-                "injurySummary": "결장 4명 · 불확실 2명"
+                "injurySummary": "결장 4명 · 불확실 2명",
+                "players": [
+                  {
+                    "name": "Adrien Rabiot",
+                    "rating": 8.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Christian Pulisic",
+                    "rating": 8.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Diego Moreira",
+                    "rating": 8.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mario Gila",
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Gonçalo Ramos",
+                    "rating": 7.6,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ardon Jashari",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Luka Modrić",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Yunus Musah",
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mike Maignan",
+                    "rating": 7.1,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sankhoun Diawara",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alphadjo Cissè",
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Davide Bartesaghi",
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Koni De Winter",
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pervis Estupiñán",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Strahinja Pavlović",
+                    "rating": 6.2,
+                    "pos": "DF",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "keyPlayers": [
@@ -29863,7 +30456,8 @@ window.CLUTCH_DATA = {
                     "stats": [
                       "득점 5",
                       "도움 4"
-                    ]
+                    ],
+                    "rating": 8.5
                   }
                 ]
               },
@@ -29884,7 +30478,8 @@ window.CLUTCH_DATA = {
                     "id": "360714",
                     "stats": [
                       "도움 4"
-                    ]
+                    ],
+                    "rating": 6.9
                   }
                 ]
               }
@@ -29931,7 +30526,8 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5749750,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
         {
           "id": "soccer-mcf-osa-20261123",
