@@ -16,8 +16,9 @@ data.js 의 SOCCER-AUTO 구간을 날짜별로 다시 채웁니다.
   · summary     site.api.espn.com/apis/site/v2/sports/soccer/{league}/summary?event={id}
       최근 5경기·맞대결 + leaders(팀별 시즌 득점·도움 1위 선수) → details.keyPlayers
 
-ESPN 축구 응답에는 신뢰할 만한 부상·결장 명단이 없습니다. 그래서 축구 카드는
-부상 정보를 만들지 않고 "부상 정보 없음"으로 표시합니다(지어내지 않음).
+ESPN 축구 응답에는 부상·결장 명단이 없습니다(빈 배열). 그래서 결장 명단은
+FotMob 공개 엔드포인트에서 따로 받아 tools/fotmob_injuries.py 로 채웁니다.
+키·가입·결제 없는 소스만 쓰고, 받은 값이 없으면 "명단 없음"으로 정직하게 남깁니다.
 K리그(kor.1)는 ESPN 에 없어서 다루지 않습니다.
 """
 
@@ -32,6 +33,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetch_nba import CACHE, KST, get_json, kst_date, weekday_ko  # 공용 유틸
 from odds_common import cache_at, implied, odds_of  # 배당(odds) 추출
 from photo_sources import load_cache as load_photo_cache, resolve as photo_resolve, save_cache as save_photo_cache
+from fotmob_injuries import annotate as annotate_injuries
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -600,12 +602,13 @@ def build_team(comp, side, table, league_short, summary, league, refresh=False):
         r0 = out["last5Detail"][0]
         fs.append("직전 경기 기록은 %s %s %s %s %s입니다." % (r0.get("date", "").replace("-", "."),
                    r0.get("ha", ""), r0.get("opp", ""), r0.get("score", ""), r0.get("res", "")))
-    fs.append("부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.")
+    fs.append("결장 명단은 경기 전 확정 발표로 확인해야 합니다.")
     if fs:
         out["focus"] = " ".join(fs)
 
-    # ESPN 축구 데이터에는 부상·결장 명단이 없다.
-    out["injuryNote"] = "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+    # 결장 명단은 FotMob 에서 받아 fotmob_injuries.annotate() 가 덮어쓴다.
+    # 여기 남는 문구는 그 단계가 실패했을 때 그대로 화면에 나간다.
+    out["injuryNote"] = "결장 명단을 확인하지 못했습니다."
     return out, st
 
 
@@ -702,11 +705,15 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
         det["keyPlayers"] = key_players
     det["checkpoints"] = checks
     det["note"] = "일정·전적·순위는 ESPN %s 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다." % updated_at.strftime("%Y-%m-%d %H:%M")
+    # 위 문장은 fotmob_injuries.annotate() 가 "부상·결장 명단은 FotMob … 기준입니다"로 바꾼다.
     if h2h:
         det["h2h"] = h2h
     game = {
         "id": gid,
         "espnId": str(event.get("id") or ""),
+        # FotMob 경기를 짝지을 때만 쓰는 임시 키. data.js 에 쓰기 전에 지운다.
+        "_en": {"away": ((sides["away"].get("team") or {}).get("displayName") or ""),
+                "home": ((sides["home"].get("team") or {}).get("displayName") or ""),},
         "sport": "soccer",
         "league": league_short,
         "leagueFull": league_full,
@@ -789,6 +796,8 @@ def main():
                     help="ESPN 리그 코드(쉼표). 기본: " + ",".join(DEFAULT_LEAGUES))
     ap.add_argument("--write", action="store_true", help="data.js 를 고친다")
     ap.add_argument("--refresh", action="store_true", help="캐시를 무시하고 다시 받는다")
+    ap.add_argument("--no-injuries", dest="no_injuries", action="store_true",
+                    help="FotMob 결장 명단 조회를 건너뛴다")
     args = ap.parse_args()
 
     if args.dfrom or args.dto:
@@ -853,6 +862,15 @@ def main():
 
     for day in days:
         by_day[day].sort(key=lambda g: (g["start"], g["id"]))
+
+    # 부상·결장 명단 — ESPN 축구에는 없으므로 FotMob 에서 받아 팀 블록에 채운다.
+    if not args.no_injuries:
+        stats = annotate_injuries([g for gs in by_day.values() for g in gs], refresh=args.refresh)
+        print("· 부상·결장 명단(FotMob): %d경기 중 %d경기 짝짓기, %d경기 명단 있음, %d경기 비어 있음, %d경기 못 찾음" % (
+            stats["total"], stats["matched"], stats["ok"], stats["empty"], stats["no_match"]))
+    for gs in by_day.values():
+        for g in gs:
+            g.pop("_en", None)
 
     dump = {day: games for day, games in by_day.items() if games}
     with open(OUT_JSON, "w", encoding="utf-8") as f:
