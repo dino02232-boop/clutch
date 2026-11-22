@@ -2133,6 +2133,87 @@
     return html;
   }
 
+  // '이 경기 평점' — details.teams[].players 에 저장된 FotMob 경기 평점을 팀별로 전부 모은다.
+  // 평점이 없는 선수는 빼고, 평점 높은 순으로 정렬한다. 자르지 않는다(선발+후보 전원).
+  function soccerTeamRatings(g, side) {
+    var d = (g && g.details) || {};
+    var teams = Array.isArray(d.teams) ? d.teams : [];
+    var team = null;
+    for (var i = 0; i < teams.length; i++) {
+      if (teams[i] && teams[i].side === side) { team = teams[i]; break; }
+    }
+    var rows = [], seen = {};
+    var src = (team && Array.isArray(team.players)) ? team.players : [];
+    src.forEach(function (p) {
+      var nm = String((p && p.name) || "").trim();
+      var rt = ratingText(p && p.rating);
+      if (!nm || !rt || seen[nm]) return;
+      seen[nm] = 1;
+      rows.push({ name: nm, rating: Number(rt) });
+    });
+    // 예전 카드처럼 팀 블록에 평점 목록이 없으면 주요 선수에 붙은 평점으로 대신한다.
+    if (!rows.length) {
+      keyPlayersFor(g, { side: side, name: (team && team.name) || ((g[side] || {}).name || "") })
+        .forEach(function (p) {
+          var nm = String(p.name || "").trim();
+          var rt = ratingText(p.rating);
+          if (!nm || !rt || seen[nm]) return;
+          seen[nm] = 1;
+          rows.push({ name: nm, rating: Number(rt) });
+        });
+    }
+    rows.sort(function (a, b) {
+      return b.rating - a.rating || (a.name < b.name ? -1 : (a.name > b.name ? 1 : 0));
+    });
+    return {
+      name: (team && team.name) || ((g[side] || {}).name || ""),
+      abbr: String(((g[side] || {}).abbr) || ((team && team.abbr) || "")),
+      rows: rows
+    };
+  }
+
+  // 접힌 판 맨 위의 '이 경기 평점' — 팀별로 이름과 평점 칩을 조밀하게 나열한다.
+  function soccerRatingBlockHTML(g) {
+    var boxes = [];
+    ["home", "away"].forEach(function (side) {
+      var rec = soccerTeamRatings(g, side);
+      if (!rec.rows.length) return;
+      boxes.push('<div class="pg-rt-team"><div class="lb-team-h">' +
+        '<span class="lbt-side ' + side + '">' + (side === "home" ? "홈" : "원정") + "</span>" +
+        "<b>" + esc(rec.name) + "</b>" +
+        (rec.abbr ? '<span class="lbt-abbr">' + esc(rec.abbr) + "</span>" : "") +
+        '<small class="pg-rt-cnt">' + rec.rows.length + "명</small></div>" +
+        '<ul class="pg-rt-list">' + rec.rows.map(function (p) {
+          return "<li><span>" + esc(p.name) + "</span>" +
+            '<i title="FotMob 이 경기 평점">' + ratingText(p.rating) + "</i></li>";
+        }).join("") + "</ul></div>");
+    });
+    if (!boxes.length) return "";
+    return '<div class="pg-rt"><h4 class="tb-sub">이 경기 평점</h4>' + boxes.join("") + "</div>";
+  }
+
+  // 득점 장면 한 줄: 시간(전반/후반 + ESPN 분 표기) · 팀 · 득점 · 도움.
+  // ESPN keyEvents 의 값만 쓴다(이름·분을 새로 만들지 않는다). 자책골·PK는 종류를 붙인다.
+  function soccerGoalRowHTML(x, koTeam) {
+    var ko = (koTeam && x.teamId && koTeam[x.teamId]) || "";
+    var team = ko || x.teamName || "";
+    var per = x.period === 1 ? "전반" : (x.period === 2 ? "후반" :
+      (x.period === 3 ? "연장 전반" : (x.period === 4 ? "연장 후반" : "")));
+    var when = ((per ? per + " " : "") + String(x.minute || "").trim()).trim();
+    var bits = [];
+    if (team) bits.push(team);
+    if (x.kind === "own") {
+      bits.push(x.scorer ? "자책골 " + x.scorer : "자책골");
+    } else {
+      if (x.kind === "pk") bits.push("PK");
+      if (x.scorer) bits.push("득점 " + x.scorer);
+      if (x.assist) bits.push("도움 " + x.assist);
+    }
+    if (!x.scorer) bits.push(x.text || "득점");
+    return '<div class="pg-stat-row pg-goal"><i>' + esc(when) + "</i><span>" +
+      bits.map(esc).join(" · ") + "</span></div>";
+  }
+
   /* ── 축구: 결과·흐름 + 승패 원인(점유율·슈팅·선방) + 선수 활약 + 득점 장면 ── */
   function pgSoccerHTML(g) {
     var r = g.result;
@@ -2243,6 +2324,7 @@
     var board = soccerBoard(g, data);
     var verdict = board ? soccerVerdictText(g, board, false) : "";
     var plTable = board ? soccerPlayerTableHTML(g, board) : "";
+    var ratingBlock = soccerRatingBlockHTML(g);
 
     var more = "";
     var goals = (data && Array.isArray(data.goals)) ? data.goals : [];
@@ -2255,23 +2337,20 @@
         if (side) koTeam[String(b.id || "")] = g[side].name;
       });
       more = '<div class="pg-stat-grid">' + goals.map(function (x) {
-        var text = x.text;
-        var ko = koTeam[x.teamId];
-        if (ko && x.teamName) text = text.replace("(" + x.teamName + ")", "(" + ko + ")");
-        return '<div class="pg-stat-row"><i>' + esc(x.minute) + '</i><span>' + esc(text) + "</span></div>";
+        return soccerGoalRowHTML(x, koTeam);
       }).join("") + "</div>";
     }
     var note = board
-      ? "선수 활약은 ESPN 공개 기록(골·도움·슈팅·유효슈팅·선방·파울)으로만 자동 요약합니다. 패스·태클은 ESPN이 제공하지 않아 쓰지 않고, 선수 평점은 FotMob 이 제공한 이 경기 평점만 표시합니다."
+      ? "선수 활약은 ESPN 공개 기록(골·도움·슈팅·유효슈팅·선방·파울)으로만 자동 요약합니다. 패스·태클은 ESPN이 제공하지 않아 쓰지 않고, 위 '이 경기 평점'은 FotMob 이 제공한 이 경기 평점만 표시합니다."
       : "축구는 ESPN 공개 기록에 선수별 시즌 평균이 없어 개인 평가를 만들지 않습니다. 팀 지표와 득점 장면만 정리했습니다.";
 
     return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>승패 원인 · 활약</span></div>' +
       '<p class="pg-game-line">' + esc(out.join(" ")) + "</p>" +
       (verdict ? '<p class="pg-verdict">' + esc(verdict) + "</p>" : "") +
       '<div class="pg-why"><b>' + whyLabel + '</b><p>' + esc(why) + "</p></div>" +
-      ((more || plTable) ? '<details class="pg-more"><summary>' +
-        (plTable && more ? "선수 기록 · 득점 장면 더 보기" : (plTable ? "선수 기록 더 보기" : "득점 장면 더 보기")) + "</summary>" +
-        plTable + more + "</details>" : "") +
+      ((more || plTable || ratingBlock) ? '<details class="pg-more"><summary>' +
+        ((ratingBlock || plTable) ? "선수 기록 및 평점" : "득점 장면 더 보기") + "</summary>" +
+        ratingBlock + plTable + more + "</details>" : "") +
       '<p class="postgame-note">' + esc(note) + "</p></section>";
   }
 
@@ -4063,9 +4142,13 @@
       var team = (e.team && e.team.displayName) || "";
       var teamId = String((e.team && e.team.id) || "");
       var clock = (e.clock && e.clock.displayValue) || "";
+      var ttype = String((e.type && e.type.text) || "");
+      var kind = /own/i.test(ttype) ? "own" : (/penalty/i.test(ttype) ? "pk" : "goal");
+      var period = (e.period && e.period.number) ? Number(e.period.number) : null;
       var text = scorer ? scorer + "(" + team + ")" : String(e.shortText || "");
       if (assist) text += " · " + assist + " 어시스트";
-      return { minute: clock, text: text, teamId: teamId, teamName: team };
+      return { minute: clock, period: period, scorer: scorer, assist: assist, kind: kind,
+               text: text, teamId: teamId, teamName: team };
     }).filter(function (x) { return !!x.text; });
 
     // 홈·원정 방향과 팀 이름 — 헤더 competitors 가 기준(로스터·박스 순서는 대회마다 다르다)

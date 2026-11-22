@@ -16237,6 +16237,54 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Quinten Timber",
                     "rating": 7.1
+                  },
+                  {
+                    "name": "Daichi Kamada",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Chris Richards",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Axel Disasi",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Adam Wharton",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Dean Henderson",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Anan Khalaili",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Jaydee Canvot",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Evann Guessand",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Jefferson Lerma",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Tyrick Mitchell",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Edward Nketiah",
+                    "rating": 6.0
+                  },
+                  {
+                    "name": "Dwight McNeil",
+                    "rating": 5.9
                   }
                 ]
               },
@@ -16377,6 +16425,54 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Stephen Mfuni",
                     "rating": 7.8
+                  },
+                  {
+                    "name": "Taiwo Awoniyi",
+                    "rating": 7.6
+                  },
+                  {
+                    "name": "Carl Rushworth",
+                    "rating": 7.3
+                  },
+                  {
+                    "name": "Matt Grimes",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Bobby Thomas",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Ethan Pinnock",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Victor Torp",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Yann Gboho",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Frank Onyeka",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Gustavo Hamer",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Brandon Thomas-Asante",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Milan van Ewijk",
+                    "rating": 6.0
+                  },
+                  {
+                    "name": "Sidiki Cherif",
+                    "rating": 5.7
                   }
                 ]
               }
@@ -16605,6 +16701,54 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Abdoul Ouattara",
                     "rating": 7.2
+                  },
+                  {
+                    "name": "Exequiel Palacios",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Leif Davis",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Florentino",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Zian Flemming",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Abdul Fatawu",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Julio Enciso",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Dara O'Shea",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Jack Clarke",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Daizen Maeda",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Emersonn",
+                    "rating": 6.0
+                  },
+                  {
+                    "name": "Darnell Furlong",
+                    "rating": 5.9
+                  },
+                  {
+                    "name": "Issa Diop",
+                    "rating": 5.9
                   }
                 ]
               },
@@ -16742,6 +16886,54 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Lucá Williams-Barnett",
                     "rating": 8.1
+                  },
+                  {
+                    "name": "Dominic Solanke",
+                    "rating": 8.0
+                  },
+                  {
+                    "name": "Marcos Senesi",
+                    "rating": 7.9
+                  },
+                  {
+                    "name": "Mateus Fernandes",
+                    "rating": 7.9
+                  },
+                  {
+                    "name": "Mohammed Kudus",
+                    "rating": 7.9
+                  },
+                  {
+                    "name": "Destiny Udogie",
+                    "rating": 7.6
+                  },
+                  {
+                    "name": "Jan Paul van Hecke",
+                    "rating": 7.5
+                  },
+                  {
+                    "name": "James Maddison",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Conor Gallagher",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Lucas Bergvall",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Omar Marmoush",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Andrew Robertson",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Sávio",
+                    "rating": 6.0
                   }
                 ]
               }
@@ -16977,6 +17169,42 @@ window.CLUTCH_DATA = {
                   {
                     "name": "James Justin",
                     "rating": 8.1
+                  },
+                  {
+                    "name": "Ethan Ampadu",
+                    "rating": 7.9
+                  },
+                  {
+                    "name": "Brenden Aaronson",
+                    "rating": 7.6
+                  },
+                  {
+                    "name": "Ao Tanaka",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Nico Elvedi",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Jayden Bogle",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Sean Longstaff",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Gabriel Gudmundsson",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Tarik Muharemović",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "James Trafford",
+                    "rating": 6.7
                   }
                 ]
               },
@@ -17114,6 +17342,58 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Wesley Fofana",
                     "rating": 6.9
+                  },
+                  {
+                    "name": "Estêvão",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Morgan Rogers",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Moisés Caicedo",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Cole Palmer",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Geovany Quenda",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Malo Gusto",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Pedro Neto",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Jordan Henderson",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Levi Colwill",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Danny Welbeck",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Pep Chavarría",
+                    "rating": 6.0
+                  },
+                  {
+                    "name": "Josh Acheampong",
+                    "rating": 5.8
+                  },
+                  {
+                    "name": "Emiliano Martínez",
+                    "rating": 5.3
                   }
                 ]
               }
@@ -17358,6 +17638,54 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Jair Cunha",
                     "rating": 6.9
+                  },
+                  {
+                    "name": "Neco Williams",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Igor Jesus",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Ryan Yates",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Xaver Schlager",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "James McAtee",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Nikola Milenković",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Luca Netz",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Daniel Muñoz",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Murillo",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Chris Wood",
+                    "rating": 6.0
+                  },
+                  {
+                    "name": "Dan Ndoye",
+                    "rating": 5.6
+                  },
+                  {
+                    "name": "Liam Delap",
+                    "rating": 5.6
                   }
                 ]
               },
@@ -17485,6 +17813,50 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Justin Kluivert",
                     "rating": 8.1
+                  },
+                  {
+                    "name": "António Silva",
+                    "rating": 8.0
+                  },
+                  {
+                    "name": "Evanilson",
+                    "rating": 8.0
+                  },
+                  {
+                    "name": "Djordje Petrović",
+                    "rating": 7.7
+                  },
+                  {
+                    "name": "Adam Smith",
+                    "rating": 7.3
+                  },
+                  {
+                    "name": "Rayan",
+                    "rating": 7.3
+                  },
+                  {
+                    "name": "Ryan Christie",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Adrien Truffert",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Tyler Adams",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Alex Scott",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Junior Kroupi",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Lewis Cook",
+                    "rating": 5.9
                   }
                 ]
               }
@@ -17740,6 +18112,42 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Reinildo",
                     "rating": 7.3
+                  },
+                  {
+                    "name": "Enzo Le Fée",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Thomas Meunier",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Jules Ahoka",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Luke O'Nien",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Noah Sadiki",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Trai Hume",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Chemsdine Talbi",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Wilson Isidor",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Nilson Angulo",
+                    "rating": 6.1
                   }
                 ]
               },
@@ -17865,8 +18273,56 @@ window.CLUTCH_DATA = {
                     "rating": 7.6
                   },
                   {
+                    "name": "Boubacar Kamara",
+                    "rating": 7.5
+                  },
+                  {
                     "name": "Taylor Harwood-Bellis",
                     "rating": 7.5
+                  },
+                  {
+                    "name": "Ian Maatsen",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Zion Suzuki",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Emiliano Buendía",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "John McGinn",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Ibrahim Mbaye",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Alysson Edward",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Johan Manzambi",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Nicolas Jackson",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Leon Goretzka",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Ross Barkley",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Brian Madjo",
+                    "rating": 6.0
                   }
                 ]
               }
@@ -18111,12 +18567,52 @@ window.CLUTCH_DATA = {
                     "rating": 8.2
                   },
                   {
+                    "name": "César Tárrega",
+                    "rating": 8.0
+                  },
+                  {
                     "name": "Stole Dimitrievski",
                     "rating": 8.0
                   },
                   {
-                    "name": "César Tárrega",
-                    "rating": 8.0
+                    "name": "Javier Guerra",
+                    "rating": 7.9
+                  },
+                  {
+                    "name": "Arnau Martínez",
+                    "rating": 7.5
+                  },
+                  {
+                    "name": "Pablo Maffeo",
+                    "rating": 7.5
+                  },
+                  {
+                    "name": "Pepelu",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Guido Rodríguez",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Luis Rioja",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Dani Raba",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Mouctar Diakhaby",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Filip Ugrinic",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Umar Sadiq",
+                    "rating": 6.1
                   }
                 ]
               },
@@ -18234,16 +18730,68 @@ window.CLUTCH_DATA = {
                 "injurySummary": "결장 3명",
                 "players": [
                   {
-                    "name": "Unai López",
+                    "name": "Jorge de Frutos",
                     "rating": 7.4
                   },
                   {
-                    "name": "Jorge de Frutos",
+                    "name": "Unai López",
                     "rating": 7.4
                   },
                   {
                     "name": "Florian Lejeune",
                     "rating": 7.2
+                  },
+                  {
+                    "name": "Mujaid Sadick",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Pathé Ciss",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Andrei Rațiu",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Pedro Díaz",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Giorgi Tsitaishvili",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Gnangoro Bouare",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Emil Audero",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Sergio Camello",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Alemão",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Isi Palazón",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Randy Nteka",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Adrià Pedrosa",
+                    "rating": 6.0
+                  },
+                  {
+                    "name": "Álvaro García",
+                    "rating": 6.0
                   }
                 ]
               }
@@ -18484,6 +19032,50 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Rodrigo Mora",
                     "rating": 8.1
+                  },
+                  {
+                    "name": "Bryan Cristante",
+                    "rating": 7.9
+                  },
+                  {
+                    "name": "Emanuele Lulli",
+                    "rating": 7.9
+                  },
+                  {
+                    "name": "Gianluca Mancini",
+                    "rating": 7.8
+                  },
+                  {
+                    "name": "Nahuel Molina",
+                    "rating": 7.6
+                  },
+                  {
+                    "name": "Mile Svilar",
+                    "rating": 7.5
+                  },
+                  {
+                    "name": "Paulo Dybala",
+                    "rating": 7.5
+                  },
+                  {
+                    "name": "Mario Hermoso",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Manu Koné",
+                    "rating": 7.3
+                  },
+                  {
+                    "name": "Evan N'Dicka",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Leonardo Balerdi",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Matías Soulé",
+                    "rating": 6.7
                   }
                 ]
               },
@@ -18611,6 +19203,54 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Vincent Sierro",
                     "rating": 6.7
+                  },
+                  {
+                    "name": "Christian Ordóñez",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Giovanni Fabbian",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Simone Lontani",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "El Bilal Touré",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Ousmane Diallo",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Hans Nicolussi Caviglia",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Sascha Britschgi",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Mandela Keita",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Giovanni Daffara",
+                    "rating": 5.6
+                  },
+                  {
+                    "name": "Mariano Troilo",
+                    "rating": 5.5
+                  },
+                  {
+                    "name": "Enrico Del Prato",
+                    "rating": 4.9
+                  },
+                  {
+                    "name": "Franco Carboni",
+                    "rating": 4.4
                   }
                 ]
               }
@@ -18856,6 +19496,50 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Kai Havertz",
                     "rating": 7.4
+                  },
+                  {
+                    "name": "Declan Rice",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Martin Ødegaard",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Riccardo Calafiori",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Ezri Konsa",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Jurriën Timber",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Christos Tzolis",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Gabriel",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Bruno Guimarães",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Kepa Arrizabalaga",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Myles Lewis-Skelly",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "David Raya",
+                    "rating": 5.9
                   }
                 ]
               },
@@ -18968,7 +19652,7 @@ window.CLUTCH_DATA = {
                 "injurySummary": "결장 2명",
                 "players": [
                   {
-                    "name": "Malick Thiaw",
+                    "name": "Harvey Barnes",
                     "rating": 8.0
                   },
                   {
@@ -18976,8 +19660,52 @@ window.CLUTCH_DATA = {
                     "rating": 8.0
                   },
                   {
-                    "name": "Harvey Barnes",
+                    "name": "Malick Thiaw",
                     "rating": 8.0
+                  },
+                  {
+                    "name": "William Osula",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Daniel Burn",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Lewis Miley",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Jacob Ramsey",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Valentino Livramento",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Anthony Elanga",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Jacob Murphy",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Lukás Hornícek",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Sean Steur",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Amar Dedić",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Lewis Hall",
+                    "rating": 4.8
                   }
                 ]
               }
@@ -19218,6 +19946,50 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Marc Roca",
                     "rating": 7.2
+                  },
+                  {
+                    "name": "Héctor Bellerín",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Pablo Fornals",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Fran García",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Abdessamad Ezzalzouli",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Marc Bartra",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Natan",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Nelson Deossa",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Troy Parrott",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Álvaro Vallés",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Aitor Ruibal",
+                    "rating": 6.0
+                  },
+                  {
+                    "name": "Rodrigo Riquelme",
+                    "rating": 6.0
                   }
                 ]
               },
@@ -19349,6 +20121,58 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Gabriel Suazo",
                     "rating": 7.5
+                  },
+                  {
+                    "name": "Youssouf Fofana",
+                    "rating": 7.3
+                  },
+                  {
+                    "name": "Chidera Ejuke",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Isaac Romero",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Lucien Agoumé",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Jon Guridi",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Juan Iglesias",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Lucas Stassin",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Rubén Vargas",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Félix Correia",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Giorgi Kochorashvili",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Odysseas Vlachodimos",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Peque Fernández",
+                    "rating": 5.8
+                  },
+                  {
+                    "name": "Robbie Ure",
+                    "rating": 5.7
                   }
                 ]
               }
@@ -19604,6 +20428,58 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Finn Jeltsch",
                     "rating": 7.5
+                  },
+                  {
+                    "name": "Ramon Hendriks",
+                    "rating": 7.5
+                  },
+                  {
+                    "name": "Jeff Chabot",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Grischa Prömel",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Bilal El Khannouss",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Chris Führich",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Nikolas Nartey",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Jamie Leweling",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Josha Vagnoman",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Ermedin Demirović",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Tiago Tomás",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Deniz Undav",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Dženan Pejčinović",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Yanik Spalt",
+                    "rating": 6.1
                   }
                 ]
               },
@@ -19730,12 +20606,48 @@ window.CLUTCH_DATA = {
                     "rating": 8.1
                   },
                   {
+                    "name": "Dejan Ljubičić",
+                    "rating": 7.9
+                  },
+                  {
                     "name": "Vitalie Becker",
                     "rating": 7.9
                   },
                   {
-                    "name": "Dejan Ljubičić",
-                    "rating": 7.9
+                    "name": "Adil Aouchiche",
+                    "rating": 7.8
+                  },
+                  {
+                    "name": "Junior Dina Ebimbe",
+                    "rating": 7.8
+                  },
+                  {
+                    "name": "Soufian El-Faouzi",
+                    "rating": 7.8
+                  },
+                  {
+                    "name": "Hasan Kuruçay",
+                    "rating": 7.5
+                  },
+                  {
+                    "name": "Nikola Katić",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Hwang Hee-Chan",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Chukwubuike Adamu",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Kenan Karaman",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Moussa Sylla",
+                    "rating": 6.4
                   }
                 ]
               }
@@ -19964,6 +20876,58 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Rolando Mandragora",
                     "rating": 7.4
+                  },
+                  {
+                    "name": "Pietro Comuzzo",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Saúl Coco",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Ché Adams",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Alessio Cacciamani",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Gvidas Gineitis",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Eray Cömert",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Giovanni Simeone",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Nikola Vlašić",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Rafik Belghali",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Zakaria Aboukhlal",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Daniel Bragança",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Cesare Casadei",
+                    "rating": 5.9
+                  },
+                  {
+                    "name": "Duván Zapata",
+                    "rating": 5.7
                   }
                 ]
               },
@@ -20105,6 +21069,50 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Vanja Milinković-Savić",
                     "rating": 7.7
+                  },
+                  {
+                    "name": "Sam Beukema",
+                    "rating": 7.6
+                  },
+                  {
+                    "name": "Amir Rrahmani",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Matteo Politano",
+                    "rating": 7.4
+                  },
+                  {
+                    "name": "Kevin De Bruyne",
+                    "rating": 7.3
+                  },
+                  {
+                    "name": "Noa Lang",
+                    "rating": 7.3
+                  },
+                  {
+                    "name": "Rasmus Højlund",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Frank Anguissa",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Leonardo Spinazzola",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Mathías Olivera",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Rafa Marín",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Antonio Vergara",
+                    "rating": 6.1
                   }
                 ]
               }
@@ -20349,6 +21357,58 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Javi Galán",
                     "rating": 6.9
+                  },
+                  {
+                    "name": "Ionuț Radu",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Sergio Carreira",
+                    "rating": 6.8
+                  },
+                  {
+                    "name": "Hugo Burcio",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Ilaix Moriba",
+                    "rating": 6.5
+                  },
+                  {
+                    "name": "Marcos Alonso",
+                    "rating": 6.4
+                  },
+                  {
+                    "name": "Iago Aspas",
+                    "rating": 6.3
+                  },
+                  {
+                    "name": "Aleix Febas",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Javi Rueda",
+                    "rating": 6.2
+                  },
+                  {
+                    "name": "Hugo Álvarez",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Yoel Lago",
+                    "rating": 6.1
+                  },
+                  {
+                    "name": "Couhaib Driouech",
+                    "rating": 6.0
+                  },
+                  {
+                    "name": "Javi Rodríguez",
+                    "rating": 6.0
+                  },
+                  {
+                    "name": "Ferrán Jutglà",
+                    "rating": 5.9
                   }
                 ]
               },
@@ -20476,6 +21536,58 @@ window.CLUTCH_DATA = {
                   {
                     "name": "Dean Huijsen",
                     "rating": 8.0
+                  },
+                  {
+                    "name": "Kylian Mbappé",
+                    "rating": 7.8
+                  },
+                  {
+                    "name": "Eduardo Camavinga",
+                    "rating": 7.7
+                  },
+                  {
+                    "name": "Ibrahima Konaté",
+                    "rating": 7.7
+                  },
+                  {
+                    "name": "Trent Alexander-Arnold",
+                    "rating": 7.5
+                  },
+                  {
+                    "name": "Carlos Espí",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Thibaut Courtois",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Álvaro Carreras",
+                    "rating": 7.2
+                  },
+                  {
+                    "name": "Yan Diomande",
+                    "rating": 7.1
+                  },
+                  {
+                    "name": "Marc Cucurella",
+                    "rating": 7.0
+                  },
+                  {
+                    "name": "Bernardo Silva",
+                    "rating": 6.9
+                  },
+                  {
+                    "name": "Vinícius Júnior",
+                    "rating": 6.7
+                  },
+                  {
+                    "name": "Endrick",
+                    "rating": 6.6
+                  },
+                  {
+                    "name": "Federico Valverde",
+                    "rating": 6.6
                   }
                 ]
               }

@@ -1003,6 +1003,29 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .pg-stat-row > i { font-style: normal; font-weight: 800; color: #111827; }
 .pg-stat-row > span { min-width: 0; overflow-wrap: anywhere; }
+
+/* 접힌 판의 '이 경기 평점' — 팀별로 이름과 평점 칩을 조밀하게(자르지 않고 전원) */
+.pg-rt { margin: 2px 0 10px; padding: 8px 10px 9px; border-radius: 9px; background: #FBFCFE; border: 1px solid var(--line); }
+.pg-rt > .tb-sub { margin: 0 0 6px; }
+.pg-rt-team + .pg-rt-team { margin-top: 9px; }
+.pg-rt-cnt { margin-left: auto; flex: 0 0 auto; font-size: 9.5px; font-weight: 700; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.pg-rt-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 2px 10px;
+}
+.pg-rt-list li {
+  display: flex; align-items: baseline; gap: 4px; min-width: 0;
+  font-size: 10.5px; line-height: 1.55; color: #1F2937;
+}
+.pg-rt-list li > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pg-rt-list li > i {
+  margin-left: auto; flex: 0 0 auto; font-style: normal; font-size: 9px; font-weight: 800; line-height: 1.5;
+  color: #92400E; background: #FEF3C7; border-radius: 4px; padding: 0 4px;
+  font-variant-numeric: tabular-nums;
+}
+.pg-goal { grid-template-columns: minmax(56px, auto) minmax(0, 1fr); }
+.pg-goal > i { white-space: nowrap; }
+.pg-goal > span { color: #1F2937; }
 .pg-facts .pg-pm.up { color: #0B7A52; background: #E7F7EF; font-weight: 800; }
 .pg-facts .pg-pm.down { color: #B42318; background: #FDECEC; font-weight: 800; }
 .pg-facts .pg-pm.zero { color: #4B5563; font-weight: 800; }

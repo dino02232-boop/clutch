@@ -275,47 +275,44 @@ def _rating_map(side):
 def _apply_ratings(game, home_side, away_side):
     """이 경기 평점을 카드에 붙인다. 붙인 선수 수를 돌려준다.
 
-    · details.keyPlayers 가 있으면 그 선수(ESPN 시즌 기록으로 뽑힌 주요 선수)에 rating 만 붙인다.
+    · details.teams[].players 에 그 경기 평점이 있는 선수를 **전원**(선발+후보, 평점 없는 선수 제외)
+      평점 높은 순으로 넣는다. 화면은 이 목록으로 '이 경기 평점' 판을 그린다(자르지 않는다).
+    · details.keyPlayers 가 있으면 그 선수(ESPN 시즌 기록으로 뽑힌 주요 선수)에도 rating 을 붙인다.
       이름이 충분히 비슷하지 않으면 그 선수는 그대로 두고 평점을 만들지 않는다.
-    · 끝난 경기는 ESPN 에 시즌 리더가 없어 keyPlayers 가 빈 경우가 많다. 그때는 팀 블록의
-      '주요 선수' 자리에 FotMob 이 경기 평점 상위 선수 3명을 넣는다(평점이 확인된 선수만).
     """
     details = game.get("details") or {}
     maps = {"home": _rating_map(home_side), "away": _rating_map(away_side)}
     if not maps["home"] and not maps["away"]:
         return 0
 
-    groups = details.get("keyPlayers") or []
-    if groups:
-        filled = 0
-        for group in groups:
-            side = "home" if group.get("side") == "home" else "away"
-            table = maps[side]
-            if not table:
+    # 주요 선수(경기 전 카드의 선수)에 이름이 맞는 평점만 붙인다.
+    for group in details.get("keyPlayers") or []:
+        side = "home" if group.get("side") == "home" else "away"
+        table = maps[side]
+        if not table:
+            continue
+        for p in group.get("players") or []:
+            name = (p.get("name") or "").strip()
+            if not name:
                 continue
-            for p in group.get("players") or []:
-                name = (p.get("name") or "").strip()
-                if not name:
-                    continue
-                best_name, best_score = None, 0.0
-                for cand in table:
-                    score = _sim(name, cand)
-                    if score > best_score:
-                        best_name, best_score = cand, score
-                if best_name is not None and best_score >= RATING_MATCH:
-                    p["rating"] = table[best_name]
-                    filled += 1
-        return filled
+            best_name, best_score = None, 0.0
+            for cand in table:
+                score = _sim(name, cand)
+                if score > best_score:
+                    best_name, best_score = cand, score
+            if best_name is not None and best_score >= RATING_MATCH:
+                p["rating"] = table[best_name]
 
+    # 팀 블록에는 평점이 확인된 선수를 모두 남긴다(평점 높은 순, 동점은 이름순).
     teams = {t.get("side"): t for t in details.get("teams") or [] if isinstance(t, dict)}
     filled = 0
     for side in ("home", "away"):
         team, table = teams.get(side), maps[side]
         if not team or not table:
             continue
-        top = sorted(table.items(), key=lambda kv: kv[1], reverse=True)[:3]
-        team["players"] = [{"name": name, "rating": rating} for name, rating in top]
-        filled += len(top)
+        ordered = sorted(table.items(), key=lambda kv: (-kv[1], kv[0]))
+        team["players"] = [{"name": name, "rating": rating} for name, rating in ordered]
+        filled += len(ordered)
     return filled
 
 
