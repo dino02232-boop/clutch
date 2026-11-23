@@ -679,12 +679,37 @@
   }
 
   /* ── 경기 박스 내용 (펼쳤을 때만 DOM 에 들어간다) ─────── */
+  // 농구는 생성기 배지에 리그 순위가 없어 순위표(CLUTCH_STANDINGS)에서 직접 찾아 붙인다.
+  var NBA_RANK_CACHE = null;
+  function nbaRankBadge(sport, abbr) {
+    if (sport !== "basketball" || !abbr) return "";
+    if (NBA_RANK_CACHE === null) {
+      NBA_RANK_CACHE = {};
+      var S = window.CLUTCH_STANDINGS;
+      var league = S && S.leagues ? S.leagues.filter(function (l) { return l.key === "NBA"; })[0] : null;
+      if (league) {
+        (league.groups || []).forEach(function (grp) {
+          (grp.rows || []).forEach(function (r) {
+            if (r.abbr && NBA_RANK_CACHE[r.abbr] == null) {
+              NBA_RANK_CACHE[r.abbr] = (grp.name ? grp.name + " " : "") + r.rank + "위";
+            }
+          });
+        });
+      }
+    }
+    var label = NBA_RANK_CACHE[abbr];
+    return label ? '<span class="badge rank">' + esc(label) + "</span>" : "";
+  }
+
   // 박스 안 두 팀 한 줄: 원정/홈 · 팀명 · 전적 · 배지
   function formRow(side, team, g) {
     if (!team) return "";
     var badges = (team.badges || []).map(function (b) {
       return '<span class="badge ' + toneClass(b.tone, ["hot", "rank"], "") + '">' + esc(b.text) + "</span>";
     }).join("");
+    if (!(team.badges || []).some(function (b) { return b && b.tone === "rank"; })) {
+      badges += nbaRankBadge(g && g.sport, team.abbr);
+    }
     return "<li>" +
       '<span class="f-side ' + side + '">' + (side === "home" ? "홈" : "원정") + "</span>" +
       (g ? favoriteButtonHTML(g.sport, team.name) : "") +

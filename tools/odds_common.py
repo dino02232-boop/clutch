@@ -206,3 +206,65 @@ if __name__ == "__main__":
         for ev in (d.get("events") or [])[:20]:
             comp = (ev.get("competitions") or [{}])[0]
             print(ev.get("id"), ev.get("name"), "→", describe(odds_of(comp)))
+
+def pickcenter_odds(summary, at_iso=None):
+    """NBA summary 의 pickcenter → 화면용 odds dict (없으면 None).
+
+    NBA scoreboard 에는 odds 가 실리지 않고 summary.pickcenter 에만 있어서
+    (Draft Kings: moneyLine / spread / overUnder / overOdds / underOdds) 그걸 옮긴다.
+    """
+    pc = summary.get("pickcenter") or []
+    if not pc:
+        return None
+    o = pc[0] or {}
+    prov = o.get("provider") or {}
+    provider = prov.get("displayName") or prov.get("name")
+    away = o.get("awayTeamOdds") or {}
+    home = o.get("homeTeamOdds") or {}
+
+    out = {}
+    if provider:
+        out["provider"] = provider
+    if at_iso:
+        out["at"] = at_iso
+
+    a_ml = _num(away.get("moneyLine"))
+    h_ml = _num(home.get("moneyLine"))
+    if a_ml is not None or h_ml is not None:
+        out["moneyline"] = {"away": a_ml, "draw": None, "home": h_ml}
+
+    mag = None
+    if o.get("spread") is not None:
+        try:
+            mag = abs(float(o.get("spread")))
+        except (TypeError, ValueError):
+            mag = None
+    if mag:
+        line = "%g" % mag
+        if away.get("favorite"):
+            a_line, h_line = "-" + line, "+" + line
+        elif home.get("favorite"):
+            a_line, h_line = "+" + line, "-" + line
+        else:
+            a_line = h_line = None
+        if a_line:
+            out["spread"] = {
+                "homeLine": h_line,
+                "awayLine": a_line,
+                "home": _num(home.get("spreadOdds")),
+                "away": _num(away.get("spreadOdds")),
+            }
+
+    if o.get("overUnder") is not None:
+        try:
+            line = "%g" % float(o.get("overUnder"))
+        except (TypeError, ValueError):
+            line = None
+        if line:
+            out["total"] = {
+                "line": line,
+                "over": _num(o.get("overOdds")),
+                "under": _num(o.get("underOdds")),
+            }
+
+    return out or None

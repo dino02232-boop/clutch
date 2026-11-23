@@ -34,7 +34,7 @@ NBA_HEADSHOT = "https://a.espncdn.com/i/headshots/nba/players/full/%s.png"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from odds_common import cache_at, implied as odds_implied, odds_of  # 배당(odds) 추출
+from odds_common import cache_at, implied as odds_implied, odds_of, pickcenter_odds  # 배당(odds) 추출
 import players as plmod  # 선수 시즌 스탯·직전 경기 기록
 ROOT = os.path.dirname(HERE)
 # CI(GitHub Actions)에서는 data.js 와 캐시 위치를 환경변수로 바꿔 씁니다.
@@ -571,7 +571,7 @@ def build_game(event, day):
     eid = event["id"]
     summary = get_json(SUM.format(e=eid), "summary-%s" % eid)
     # ESPN 이 이 경기에 실어 보낸 해외 배당(없으면 None → 화면은 "배당 정보 없음")을
-    odds = odds_of(comp, event.get("_oddsAt"))
+    odds = odds_of(comp, event.get("_oddsAt")) or pickcenter_odds(summary, event.get("_oddsAt"))
     if odds:
         imp = odds_implied(odds)
         if imp:
