@@ -731,6 +731,8 @@ def build_game(event, day):
     except (TypeError, ValueError):
         pass
 
+    # 시즌 맞대결 — 체크포인트와 별개로 카드의 '맞대결' 칸에도 넣는다.
+    h2h = None
     for ser in summary.get("seasonseries") or []:
         if ser.get("type") != "season":
             continue
@@ -738,11 +740,13 @@ def build_game(event, day):
         total = ser.get("totalCompetitions")
         if score in ("0-0", ""):
             if total:
-                checks.append("**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 %d경기 중 첫 경기입니다." % int(total))
+                msg = "이번 시즌 첫 맞대결입니다. 정규시즌 %d경기 중 첫 경기입니다." % int(total)
             else:
-                checks.append("**시즌 맞대결** — 이번 시즌 첫 맞대결입니다.")
+                msg = "이번 시즌 첫 맞대결입니다."
         else:
-            checks.append("**시즌 맞대결** — 이번 시즌 상대 전적 %s." % score)
+            msg = "이번 시즌 상대 전적 %s." % score
+        checks.append("**시즌 맞대결** — " + msg)
+        h2h = {"summary": msg}
         break
 
     start_iso = comp.get("date") or event.get("date")
@@ -764,6 +768,7 @@ def build_game(event, day):
         "details": {
             "teams": [away_b, home_b],
             "checkpoints": checks,
+            **({"h2h": h2h} if h2h else {}),
             "note": inj_note(inj_at),
         },
     }
