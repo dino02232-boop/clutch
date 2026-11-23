@@ -1004,7 +1004,6 @@
       "</div>" +
       (rows ? '<ul class="o-list">' + rows + "</ul>" : "") +
       (lines.length ? lines.map(function (l) { return '<div class="o-line o-select-lines">' + l + "</div>"; }).join("") : "") +
-      '<p class="o-note">소수 배당이에요. 1만원을 걸면 그 배당만큼 돌려받습니다(1.67배 → 1만 6,700원). 해외 배당이라 국내 배트맨·프로토와 다를 수 있어요.</p>' +
       "</section>";
   }
 
