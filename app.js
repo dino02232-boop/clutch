@@ -3005,7 +3005,7 @@
     var league = g.league || sm.name;
     var away = g.away ? g.away.name : "—";
     var home = g.home ? g.home.name : "—";
-    var label = sm.name + " " + when + " " + p.hh + ":" + p.mm + ", 원정 " + away + " 대 홈 " + home +
+    var label = sm.name + " " + when + " " + p.hh + ":" + p.mm + ", 홈 " + home + " 대 원정 " + away +
       " — VERSUS 보기";
 
     var oddsChip = g.odds ? '<span class="mchip odds">배당</span>' : "";
@@ -3024,9 +3024,9 @@
           '<path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
         "</button>" +
         '<span class="mtms">' +
-          '<span class="tm away">' + favoriteButtonHTML(g.sport, away) + '<button class="team-link" type="button" data-team-focus="' + esc(away) + '" aria-label="' + esc(away + " 팀 현황 보기") + '">' + crestHTML(g, "away") + '<span class="tm-name">' + esc(away) + "</span></button></span>" +
-          '<span class="mslot" data-slot="' + esc(g.id) + '">' + scoreSlotHTML(g) + "</span>" +
           '<span class="tm home">' + favoriteButtonHTML(g.sport, home) + '<button class="team-link" type="button" data-team-focus="' + esc(home) + '" aria-label="' + esc(home + " 팀 현황 보기") + '">' + crestHTML(g, "home") + '<span class="tm-name">' + esc(home) + "</span></button></span>" +
+          '<span class="mslot" data-slot="' + esc(g.id) + '">' + scoreSlotHTML(g) + "</span>" +
+          '<span class="tm away">' + favoriteButtonHTML(g.sport, away) + '<button class="team-link" type="button" data-team-focus="' + esc(away) + '" aria-label="' + esc(away + " 팀 현황 보기") + '">' + crestHTML(g, "away") + '<span class="tm-name">' + esc(away) + "</span></button></span>" +
         "</span>" +
       "</div>" +
       '<div class="cbox-wrap" id="box-' + esc(g.id) + '"></div>' +
@@ -3038,9 +3038,9 @@
     var r = g.result;
     if (r && (r.state === "final" || r.state === "live")) {
       return '<span class="mscore ' + (r.state === "final" ? "final" : "live") + '">' +
-        "<b>" + esc(String(r.awayScore != null ? r.awayScore : "-")) + "</b>" +
-        "<i>:</i>" +
         "<b>" + esc(String(r.homeScore != null ? r.homeScore : "-")) + "</b>" +
+        "<i>:</i>" +
+        "<b>" + esc(String(r.awayScore != null ? r.awayScore : "-")) + "</b>" +
         "</span>";
     }
     return '<span class="vs" aria-hidden="true">vs</span>';
