@@ -31,7 +31,7 @@
       document.body.appendChild(n);
     }
     if (!document.getElementById('betNav')) {
-      var nav=document.createElement('nav'); nav.id='betNav'; nav.className='bet-nav'; nav.innerHTML='<span id="betBalance"></span><a href="ranking.html">🏆 랭킹</a><a href="board.html">💬 자유게시판</a><button id="betShare">bet 공유</button><button id="betLogin">Google 로그인</button><button id="betSupport" hidden>1,000P 지원</button>';
+      var nav=document.createElement('nav'); nav.id='betNav'; nav.className='bet-nav'; nav.innerHTML='<span id="betBalance"></span><a href="ranking.html">🏆 랭킹</a><a href="board.html">💬 자유게시판</a><button id="betShare">BET 공유</button><button id="betLogin">Google 로그인</button><button id="betSupport" hidden>1,000P 지원</button>';
       document.querySelector('.top')?.appendChild(nav);
     }
     document.body.addEventListener('click', function (e) {
