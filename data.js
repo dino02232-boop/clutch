@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-23T21:56:37+09:00",
+  updatedAt: "2026-11-23T22:08:42+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -27009,7 +27009,7 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-23 END */,
 
         /* NBA-AUTO 2026-11-23 START */
-                {
+        {
           "id": "nba-det-atl-20261123",
           "espnId": "401910029",
           "sport": "basketball",
@@ -27018,6 +27018,30 @@ window.CLUTCH_DATA = {
           "start": "2026-11-23T05:30:00+09:00",
           "status": "final",
           "venue": "State Farm Arena",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:41+09:00",
+            "moneyline": {
+              "away": -135,
+              "draw": null,
+              "home": 114
+            },
+            "spread": {
+              "homeLine": "+2.5",
+              "awayLine": "-2.5",
+              "home": -114,
+              "away": -106
+            },
+            "total": {
+              "line": "224.5",
+              "over": -113,
+              "under": -107
+            },
+            "implied": {
+              "away": 55.2,
+              "home": 44.8
+            }
+          },
           "away": {
             "name": "디트로이트 피스턴스",
             "abbr": "DET",
@@ -27042,12 +27066,8 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 9명",
+              "text": "결장 8명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 28.0점 · 33.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -27076,7 +27096,6 @@ window.CLUTCH_DATA = {
                 "33"
               ]
             },
-            "winner": "home",
             "top": [
               {
                 "name": "Nickeil Alexander-Walker",
@@ -27084,8 +27103,7 @@ window.CLUTCH_DATA = {
                 "min": "28",
                 "pts": 27,
                 "reb": "2",
-                "ast": "1",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png"
+                "ast": "1"
               },
               {
                 "name": "Isaiah Joe",
@@ -27093,8 +27111,7 @@ window.CLUTCH_DATA = {
                 "min": "26",
                 "pts": 19,
                 "reb": "2",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395702.png"
+                "ast": "3"
               },
               {
                 "name": "John Collins",
@@ -27102,8 +27119,7 @@ window.CLUTCH_DATA = {
                 "min": "22",
                 "pts": 18,
                 "reb": "6",
-                "ast": "0",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908845.png"
+                "ast": "0"
               },
               {
                 "name": "Ausar Thompson",
@@ -27111,8 +27127,7 @@ window.CLUTCH_DATA = {
                 "min": "38",
                 "pts": 18,
                 "reb": "11",
-                "ast": "5",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684742.png"
+                "ast": "5"
               },
               {
                 "name": "Corey Kispert",
@@ -27120,8 +27135,7 @@ window.CLUTCH_DATA = {
                 "min": "19",
                 "pts": 18,
                 "reb": "4",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4280151.png"
+                "ast": "3"
               },
               {
                 "name": "Paul Reed",
@@ -27129,10 +27143,10 @@ window.CLUTCH_DATA = {
                 "min": "26",
                 "pts": 16,
                 "reb": "5",
-                "ast": "2",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278562.png"
+                "ast": "2"
               }
-            ]
+            ],
+            "winner": "home"
           },
           "details": {
             "teams": [
@@ -27181,17 +27195,14 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 28.0,
-                "rpg": 10.0,
-                "tp": 23.1,
                 "players": [
                   {
                     "name": "Cade Cunningham",
                     "id": "4432166",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
                     "pos": "G",
-                    "stat": "25.6점 · 5.1리바운드 · 7.9어시스트",
-                    "sub": "야투 47.5% · 3점 31.5% · 팀 내 1옵션",
+                    "stat": "24.2점 · 5.1리바운드 · 8.3어시스트",
+                    "sub": "야투 46.7% · 3점 31.5% · 팀 내 1옵션",
                     "last": "직전 36분 23점 5리바운드 9어시스트, 야투 10-22",
                     "recent": "최근 4경기 33.8점 · 야투 50.0%"
                   },
@@ -27209,21 +27220,21 @@ window.CLUTCH_DATA = {
                     "id": "5107199",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
                     "pos": "G",
-                    "stat": "14.3점 · 3.7리바운드 · 4.5어시스트",
-                    "sub": "야투 44.4% · 3점 44.0% · 팀 내 3옵션",
+                    "stat": "14.1점 · 3.8리바운드 · 4.4어시스트",
+                    "sub": "야투 43.6% · 3점 42.0% · 팀 내 3옵션",
                     "last": "직전 39분 14점 4리바운드 1어시스트, 야투 5-14",
                     "recent": "최근 5경기 17.4점 · 야투 43.4%"
                   }
                 ],
-                "focus": "최근 4경기 Cade Cunningham의 평균은 33.8점·야투 50.0%·3점 37.5%입니다. 결장 4명의 시즌 평균 득점 합계는 34.6점입니다. 직전 경기에서는 Cade Cunningham가 23점·5리바운드·9어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명(팀 득점 2·4·13·15위)",
-                "injuryOut": 4,
-                "injuryPpg": 34.6,
+                "focus": "최근 4경기 Cade Cunningham의 평균은 33.8점·야투 50.0%·3점 37.5%입니다. 결장 3명의 시즌 평균 득점 합계는 32.4점입니다. 직전 경기에서는 Cade Cunningham가 23점·5리바운드·9어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 2·4·15위) · 출전 불투명 1명",
+                "injuryOut": 3,
+                "injuryPpg": 32.4,
                 "injuries": [
                   {
                     "player": "Ebuka Okorie",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "G",
                     "line": "팀 내 13옵션 · 2.2점 · 0.4리바운드"
                   },
@@ -27296,17 +27307,14 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 33.0,
-                "rpg": 18.0,
-                "tp": 21.4,
                 "players": [
                   {
                     "name": "Nickeil Alexander-Walker",
                     "id": "4278039",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png",
                     "pos": "G",
-                    "stat": "20.9점 · 3.6리바운드 · 3.0어시스트",
-                    "sub": "야투 41.2% · 3점 34.4% · 팀 내 1옵션",
+                    "stat": "21.3점 · 3.5리바운드 · 2.9어시스트",
+                    "sub": "야투 41.4% · 3점 35.9% · 팀 내 1옵션",
                     "last": "직전 32분 17점 4리바운드 3어시스트, 야투 7-20",
                     "recent": "최근 5경기 18.4점 · 야투 38.2%"
                   },
@@ -27315,8 +27323,8 @@ window.CLUTCH_DATA = {
                     "id": "4701230",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png",
                     "pos": "F",
-                    "stat": "19.7점 · 9.0리바운드 · 7.5어시스트",
-                    "sub": "야투 44.9% · 3점 22.2% · 팀 내 2옵션",
+                    "stat": "19.1점 · 9.1리바운드 · 6.9어시스트",
+                    "sub": "야투 44.7% · 3점 21.1% · 팀 내 2옵션",
                     "last": "직전 36분 26점 6리바운드 6어시스트, 야투 10-15",
                     "recent": "최근 5경기 19.6점 · 야투 44.6%"
                   },
@@ -27325,8 +27333,8 @@ window.CLUTCH_DATA = {
                     "id": "4431680",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431680.png",
                     "pos": "F",
-                    "stat": "15.1점 · 8.1리바운드 · 2.4어시스트",
-                    "sub": "야투 50.5% · 3점 33.7% · 팀 내 3옵션",
+                    "stat": "14.5점 · 8.2리바운드 · 2.4어시스트",
+                    "sub": "야투 49.2% · 3점 33.3% · 팀 내 3옵션",
                     "last": "직전 34분 16점 7리바운드 1어시스트, 야투 6-10",
                     "recent": "최근 5경기 18.6점 · 야투 53.7%"
                   }
@@ -27373,13 +27381,16 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **애틀랜타 호크스**(홈) 33.0점 · **디트로이트 피스턴스**(원정) 28.0점, 평균 리바운드는 홈 18.0개 · 원정 10.0개, 3점 성공률은 홈 21.4% · 원정 23.1%. 평균 득점 차 5.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+              "해외 배당을 확률로 환산하면 디트로이트 피스턴스 승 55.2% · 애틀랜타 호크스 승 44.8%입니다.",
+              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-                {
+        {
           "id": "nba-okc-mia-20261123",
           "espnId": "401910030",
           "sport": "basketball",
@@ -27389,27 +27400,27 @@ window.CLUTCH_DATA = {
           "status": "final",
           "venue": "Kaseya Center",
           "odds": {
-            "provider": "DraftKings",
-            "at": "2026-11-23T06:13:11+09:00",
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:41+09:00",
             "moneyline": {
-              "away": 146,
+              "away": 154,
               "draw": null,
-              "home": -173
+              "home": -184
             },
             "spread": {
-              "homeLine": "-3.5",
-              "awayLine": "+3.5",
-              "home": -116,
-              "away": -104
+              "homeLine": "-4.5",
+              "awayLine": "+4.5",
+              "home": -114,
+              "away": -106
             },
             "total": {
-              "line": "231.5",
-              "over": -107,
-              "under": -113
+              "line": "225.5",
+              "over": -112,
+              "under": -108
             },
             "implied": {
-              "away": 39.1,
-              "home": 60.9
+              "away": 37.7,
+              "home": 62.3
             }
           },
           "away": {
@@ -27436,12 +27447,8 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 6명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 113.0점 · 120.5점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -27470,7 +27477,6 @@ window.CLUTCH_DATA = {
                 "28"
               ]
             },
-            "winner": "home",
             "top": [
               {
                 "name": "Bam Adebayo",
@@ -27478,8 +27484,7 @@ window.CLUTCH_DATA = {
                 "min": "37",
                 "pts": 24,
                 "reb": "15",
-                "ast": "12",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png"
+                "ast": "12"
               },
               {
                 "name": "Bennett Stirtz",
@@ -27487,8 +27492,7 @@ window.CLUTCH_DATA = {
                 "min": "32",
                 "pts": 21,
                 "reb": "3",
-                "ast": "5",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5241364.png"
+                "ast": "5"
               },
               {
                 "name": "Pelle Larsson",
@@ -27496,8 +27500,7 @@ window.CLUTCH_DATA = {
                 "min": "30",
                 "pts": 21,
                 "reb": "3",
-                "ast": "5",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4601025.png"
+                "ast": "5"
               },
               {
                 "name": "Jared McCain",
@@ -27505,8 +27508,7 @@ window.CLUTCH_DATA = {
                 "min": "29",
                 "pts": 20,
                 "reb": "2",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png"
+                "ast": "3"
               },
               {
                 "name": "Ajay Mitchell",
@@ -27514,8 +27516,7 @@ window.CLUTCH_DATA = {
                 "min": "22",
                 "pts": 17,
                 "reb": "3",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png"
+                "ast": "3"
               },
               {
                 "name": "Nikola Jovic",
@@ -27523,10 +27524,10 @@ window.CLUTCH_DATA = {
                 "min": "19",
                 "pts": 15,
                 "reb": "8",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4997528.png"
+                "ast": "3"
               }
-            ]
+            ],
+            "winner": "home"
           },
           "details": {
             "teams": [
@@ -27575,9 +27576,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 113.0,
-                "rpg": 45.8,
-                "tp": 34.5,
                 "players": [
                   {
                     "name": "Shai Gilgeous-Alexander",
@@ -27595,7 +27593,7 @@ window.CLUTCH_DATA = {
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
                     "pos": "G",
                     "stat": "17.0점 · 3.6리바운드 · 3.6어시스트",
-                    "sub": "야투 49.5% · 3점 25.6% · 팀 내 2옵션",
+                    "sub": "야투 48.3% · 3점 28.3% · 팀 내 2옵션",
                     "last": "직전 31분 8점 2리바운드 4어시스트, 야투 3-12",
                     "recent": "최근 3경기 11.7점 · 야투 37.8%"
                   },
@@ -27604,21 +27602,28 @@ window.CLUTCH_DATA = {
                     "id": "4683778",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
                     "pos": "G",
-                    "stat": "13.9점 · 3.4리바운드 · 1.7어시스트",
-                    "sub": "야투 41.5% · 3점 34.2% · 팀 내 3옵션",
+                    "stat": "14.3점 · 3.3리바운드 · 1.8어시스트",
+                    "sub": "야투 41.4% · 3점 33.9% · 팀 내 3옵션",
                     "last": "직전 30분 18점 3리바운드 0어시스트, 야투 7-14",
                     "recent": "최근 5경기 16.2점 · 야투 39.4%"
                   }
                 ],
-                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 36.4점·야투 54.6%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 13.0점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 40점·3리바운드·8어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
-                "injuryOut": 4,
-                "injuryPpg": 13.0,
+                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 36.4점·야투 54.6%·3점 37.9%입니다. 결장 5명의 시즌 평균 득점 합계는 54.7점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 40점·3리바운드·8어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명(팀 득점 1·6·10·15·16위)",
+                "injuryOut": 5,
+                "injuryPpg": 54.7,
                 "injuries": [
                   {
+                    "player": "Aday Mara",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 6옵션 · 10.0점 · 7.1리바운드"
+                  },
+                  {
                     "player": "Shai Gilgeous-Alexander",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "G",
                     "line": "팀 내 1옵션 · 31.7점 · 4.1리바운드"
                   },
@@ -27627,27 +27632,21 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
-                    "line": "팀 내 15옵션 · 2.7점 · 1.3리바운드"
+                    "line": "팀 내 16옵션 · 2.7점 · 1.3리바운드"
                   },
                   {
                     "player": "Jaylin Williams",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 14옵션 · 2.9점 · 3.3리바운드"
+                    "line": "팀 내 15옵션 · 2.9점 · 3.3리바운드"
                   },
                   {
                     "player": "Alex Caruso",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
-                    "line": "팀 내 9옵션 · 7.4점 · 3.7리바운드"
-                  },
-                  {
-                    "player": "Thomas Sorber",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
+                    "line": "팀 내 10옵션 · 7.4점 · 3.7리바운드"
                   }
                 ]
               },
@@ -27697,9 +27696,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 120.5,
-                "rpg": 42.2,
-                "tp": 35.2,
                 "players": [
                   {
                     "name": "Giannis Antetokounmpo",
@@ -27716,8 +27712,8 @@ window.CLUTCH_DATA = {
                     "id": "4066261",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png",
                     "pos": "C",
-                    "stat": "18.9점 · 7.7리바운드 · 3.1어시스트",
-                    "sub": "야투 52.4% · 3점 24.5% · 팀 내 2옵션",
+                    "stat": "19.2점 · 8.2리바운드 · 3.7어시스트",
+                    "sub": "야투 53.6% · 3점 24.5% · 팀 내 2옵션",
                     "last": "직전 30분 26점 4리바운드 2어시스트, 야투 7-15",
                     "recent": "최근 5경기 19.6점 · 야투 50.9%"
                   },
@@ -27726,26 +27722,21 @@ window.CLUTCH_DATA = {
                     "id": "4278053",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
                     "pos": "G",
-                    "stat": "17.2점 · 2.4리바운드 · 9.0어시스트",
-                    "sub": "야투 51.1% · 3점 43.7% · 팀 내 3옵션",
+                    "stat": "17.0점 · 2.5리바운드 · 8.6어시스트",
+                    "sub": "야투 51.0% · 3점 43.3% · 팀 내 3옵션",
                     "last": "직전 36분 24점 2리바운드 6어시스트, 야투 8-11",
                     "recent": "최근 5경기 19.2점 · 야투 51.7%"
                   }
                 ],
-                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 29.6점·야투 68.8%·3점 37.5%입니다. 직전 경기에서는 Giannis Antetokounmpo가 27점·14리바운드·9어시스트를 기록했습니다. 이어서 Bam Adebayo, Davion Mitchell가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음 · 출전 불투명 2명",
+                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 29.6점·야투 68.8%·3점 37.5%입니다. 결장 1명의 시즌 평균 득점 합계는 28.2점입니다. 직전 경기에서는 Giannis Antetokounmpo가 27점·14리바운드·9어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 1위)",
+                "injuryOut": 1,
+                "injuryPpg": 28.2,
                 "injuries": [
                   {
-                    "player": "Myron Gardner",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 11옵션 · 3.0점 · 2.3리바운드"
-                  },
-                  {
                     "player": "Giannis Antetokounmpo",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "F",
                     "line": "팀 내 1옵션 · 28.2점 · 12.6리바운드"
                   }
@@ -27753,15 +27744,16 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 오클라호마시티 썬더 승 39.1% · 마이애미 히트 승 60.9%입니다.",
-              "시즌 평균 득점은 **마이애미 히트**(홈) 120.5점 · **오클라호마시티 썬더**(원정) 113.0점, 평균 리바운드는 홈 42.2개 · 원정 45.8개, 3점 성공률은 홈 35.2% · 원정 34.5%. 평균 득점 차 7.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 오클라호마시티 썬더 승률 50.4%, 마이애미 히트 49.6%.",
-              "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+              "해외 배당을 확률로 환산하면 오클라호마시티 썬더 승 37.7% · 마이애미 히트 승 62.3%입니다.",
+              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-                {
+        {
           "id": "nba-orl-was-20261123",
           "espnId": "401910031",
           "sport": "basketball",
@@ -27771,18 +27763,18 @@ window.CLUTCH_DATA = {
           "status": "final",
           "venue": "Capital One Arena",
           "odds": {
-            "provider": "DraftKings",
-            "at": "2026-11-23T06:13:11+09:00",
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:41+09:00",
             "moneyline": {
-              "away": -197,
+              "away": -196,
               "draw": null,
-              "home": 165
+              "home": 164
             },
             "spread": {
               "homeLine": "+4.5",
               "awayLine": "-4.5",
-              "home": -105,
-              "away": -115
+              "home": -108,
+              "away": -112
             },
             "total": {
               "line": "220.5",
@@ -27790,8 +27782,8 @@ window.CLUTCH_DATA = {
               "under": -112
             },
             "implied": {
-              "away": 63.7,
-              "home": 36.3
+              "away": 63.6,
+              "home": 36.4
             }
           },
           "away": {
@@ -27818,12 +27810,8 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 7명",
+              "text": "결장 8명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 109.6점 · 110.0점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -27852,7 +27840,6 @@ window.CLUTCH_DATA = {
                 "19"
               ]
             },
-            "winner": "home",
             "top": [
               {
                 "name": "Kyshawn George",
@@ -27860,8 +27847,7 @@ window.CLUTCH_DATA = {
                 "min": "36",
                 "pts": 24,
                 "reb": "3",
-                "ast": "4",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png"
+                "ast": "4"
               },
               {
                 "name": "Anthony Davis",
@@ -27869,8 +27855,7 @@ window.CLUTCH_DATA = {
                 "min": "33",
                 "pts": 22,
                 "reb": "7",
-                "ast": "1",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png"
+                "ast": "1"
               },
               {
                 "name": "Tristan da Silva",
@@ -27878,8 +27863,7 @@ window.CLUTCH_DATA = {
                 "min": "27",
                 "pts": 18,
                 "reb": "3",
-                "ast": "0",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4702382.png"
+                "ast": "0"
               },
               {
                 "name": "Desmond Bane",
@@ -27887,8 +27871,7 @@ window.CLUTCH_DATA = {
                 "min": "33",
                 "pts": 17,
                 "reb": "1",
-                "ast": "5",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png"
+                "ast": "5"
               },
               {
                 "name": "Franz Wagner",
@@ -27896,8 +27879,7 @@ window.CLUTCH_DATA = {
                 "min": "32",
                 "pts": 16,
                 "reb": "8",
-                "ast": "6",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png"
+                "ast": "6"
               },
               {
                 "name": "AJ Dybantsa",
@@ -27905,10 +27887,10 @@ window.CLUTCH_DATA = {
                 "min": "33",
                 "pts": 16,
                 "reb": "8",
-                "ast": "6",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142718.png"
+                "ast": "6"
               }
-            ]
+            ],
+            "winner": "home"
           },
           "details": {
             "teams": [
@@ -27957,17 +27939,14 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 109.6,
-                "rpg": 42.6,
-                "tp": 35.8,
                 "players": [
                   {
                     "name": "Franz Wagner",
                     "id": "4566434",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
                     "pos": "F",
-                    "stat": "25.1점 · 6.8리바운드 · 8.4어시스트",
-                    "sub": "야투 47.5% · 3점 26.0% · 팀 내 1옵션",
+                    "stat": "24.5점 · 6.9리바운드 · 8.2어시스트",
+                    "sub": "야투 47.0% · 3점 25.0% · 팀 내 1옵션",
                     "last": "직전 36분 35점 5리바운드 7어시스트, 야투 13-25",
                     "recent": "최근 5경기 31.2점 · 야투 52.2%"
                   },
@@ -27984,8 +27963,8 @@ window.CLUTCH_DATA = {
                     "id": "4066320",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
                     "pos": "G",
-                    "stat": "18.6점 · 4.1리바운드 · 2.7어시스트",
-                    "sub": "야투 42.5% · 3점 42.9% · 팀 내 3옵션",
+                    "stat": "18.5점 · 3.9리바운드 · 2.9어시스트",
+                    "sub": "야투 43.0% · 3점 42.6% · 팀 내 3옵션",
                     "last": "직전 31분 21점 2리바운드 3어시스트, 야투 7-17",
                     "recent": "최근 5경기 21.2점 · 야투 52.9%"
                   }
@@ -28068,60 +28047,43 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 110.0,
-                "rpg": 42.5,
-                "tp": 31.9,
                 "players": [
                   {
                     "name": "Anthony Davis",
                     "id": "6583",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
                     "pos": "F",
-                    "stat": "25.3점 · 10.1리바운드 · 2.1어시스트",
-                    "sub": "야투 52.9% · 3점 34.4% · 팀 내 1옵션",
+                    "stat": "25.1점 · 9.9리바운드 · 2.1어시스트",
+                    "sub": "야투 53.3% · 3점 35.1% · 팀 내 1옵션",
                     "last": "직전 34분 36점 11리바운드 3어시스트, 야투 16-26",
                     "recent": "최근 5경기 25.6점 · 야투 56.2%"
-                  },
-                  {
-                    "name": "Trae Young",
-                    "id": "4277905",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
-                    "pos": "G",
-                    "stat": "17.4점 · 2.7리바운드 · 8.6어시스트",
-                    "sub": "야투 36.7% · 3점 31.8% · 팀 내 3옵션",
-                    "last": "직전 35분 16점 2리바운드 5어시스트, 야투 4-13",
-                    "recent": "최근 5경기 15.4점 · 야투 28.3%"
                   },
                   {
                     "name": "Kyshawn George",
                     "id": "5174563",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
                     "pos": "F",
-                    "stat": "17.4점 · 4.4리바운드 · 4.5어시스트",
-                    "sub": "야투 47.2% · 3점 40.0% · 팀 내 2옵션",
+                    "stat": "17.8점 · 4.3리바운드 · 4.4어시스트",
+                    "sub": "야투 47.6% · 3점 41.4% · 팀 내 2옵션",
                     "last": "직전 35분 11점 7리바운드 5어시스트, 야투 5-17",
                     "recent": "최근 5경기 14.8점 · 야투 44.4%"
+                  },
+                  {
+                    "name": "Trae Young",
+                    "id": "4277905",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
+                    "pos": "G",
+                    "stat": "17.1점 · 2.8리바운드 · 8.8어시스트",
+                    "sub": "야투 36.4% · 3점 32.5% · 팀 내 3옵션",
+                    "last": "직전 35분 16점 2리바운드 5어시스트, 야투 4-13",
+                    "recent": "최근 5경기 15.4점 · 야투 28.3%"
                   }
                 ],
-                "focus": "최근 5경기 Anthony Davis의 평균은 25.6점·야투 56.2%·3점 40.0%입니다. 결장 3명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Anthony Davis가 36점·11리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명 · 출전 불투명 2명",
-                "injuryOut": 3,
+                "focus": "최근 5경기 Anthony Davis의 평균은 25.6점·야투 56.2%·3점 40.0%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Anthony Davis가 36점·11리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명",
+                "injuryOut": 4,
                 "injuryPpg": 7.2,
                 "injuries": [
-                  {
-                    "player": "Bub Carrington",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 9옵션 · 4.8점 · 1.3리바운드"
-                  },
-                  {
-                    "player": "Deandre Ayton",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "C",
-                    "line": "팀 내 11옵션 · 3.8점 · 4.1리바운드"
-                  },
                   {
                     "player": "Tristan Vukcevic",
                     "status": "OUT",
@@ -28141,20 +28103,27 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 7옵션 · 7.2점 · 7.5리바운드"
+                  },
+                  {
+                    "player": "Jamir Watkins",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 올랜도 매직 승 63.7% · 워싱턴 위저즈 승 36.3%입니다.",
-              "시즌 평균 득점은 **워싱턴 위저즈**(홈) 110.0점 · **올랜도 매직**(원정) 109.6점, 평균 리바운드는 홈 42.5개 · 원정 42.6개, 3점 성공률은 홈 31.9% · 원정 35.8%. 평균 득점 차가 0.4점으로 작고, 3점 성공률 차 3.9%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 올랜도 매직 승률 61.5%, 워싱턴 위저즈 38.5%.",
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
+              "해외 배당을 확률로 환산하면 올랜도 매직 승 63.6% · 워싱턴 위저즈 승 36.4%입니다.",
+              "**시즌 맞대결** — 이번 시즌 상대 전적 2-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 2-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-                {
+        {
           "id": "nba-den-chi-20261123",
           "espnId": "401910032",
           "sport": "basketball",
@@ -28164,27 +28133,27 @@ window.CLUTCH_DATA = {
           "status": "final",
           "venue": "United Center",
           "odds": {
-            "provider": "DraftKings",
-            "at": "2026-11-23T06:13:11+09:00",
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:41+09:00",
             "moneyline": {
-              "away": -437,
+              "away": -419,
               "draw": null,
-              "home": 340
+              "home": 328
             },
             "spread": {
               "homeLine": "+9.5",
               "awayLine": "-9.5",
-              "home": -105,
-              "away": -115
+              "home": -104,
+              "away": -117
             },
             "total": {
-              "line": "235.5",
-              "over": -108,
-              "under": -112
+              "line": "237.5",
+              "over": -112,
+              "under": -108
             },
             "implied": {
-              "away": 78.2,
-              "home": 21.8
+              "away": 77.5,
+              "home": 22.5
             }
           },
           "away": {
@@ -28193,7 +28162,7 @@ window.CLUTCH_DATA = {
             "record": "9승 5패",
             "badges": [
               {
-                "text": "원정 4승 2패",
+                "text": "원정 5승 2패",
                 "tone": ""
               }
             ]
@@ -28213,17 +28182,13 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 4명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 114.6점 · 114.7점",
-              "tone": "info"
             }
           ],
           "rows": [
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**시카고 불스**(홈) 4승 11패(홈 1승 5패, 최근 5경기 3승 2패), **덴버 너기츠**(원정) 9승 5패(원정 4승 2패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.21) **덴버 너기츠**는 휴스턴 로키츠에 133-124로 이겼고, Nikola Jokic 26점·7리바운드·11어시스트, Cameron Johnson 19점·3리바운드·6어시스트를 기록했습니다. 직전 경기(11.21) **시카고 불스**는 워싱턴 위저즈에 94-98로 졌고, Norman Powell 16점·3리바운드·2어시스트, Buddy Hield 15점·4리바운드·0어시스트를 기록했습니다."
+              "text": "**시카고 불스**(홈) 4승 11패(홈 1승 5패, 최근 5경기 3승 2패), **덴버 너기츠**(원정) 9승 5패(원정 5승 2패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.21) **덴버 너기츠**는 휴스턴 로키츠에 133-124로 이겼고, Nikola Jokic 26점·7리바운드·11어시스트, Cameron Johnson 19점·3리바운드·6어시스트를 기록했습니다. 직전 경기(11.21) **시카고 불스**는 워싱턴 위저즈에 94-98로 졌고, Norman Powell 16점·3리바운드·2어시스트, Buddy Hield 15점·4리바운드·0어시스트를 기록했습니다."
             }
           ],
           "result": {
@@ -28247,7 +28212,6 @@ window.CLUTCH_DATA = {
                 "14"
               ]
             },
-            "winner": "away",
             "top": [
               {
                 "name": "Jamal Murray",
@@ -28255,8 +28219,7 @@ window.CLUTCH_DATA = {
                 "min": "45",
                 "pts": 45,
                 "reb": "5",
-                "ast": "7",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png"
+                "ast": "7"
               },
               {
                 "name": "Nikola Jokic",
@@ -28264,8 +28227,7 @@ window.CLUTCH_DATA = {
                 "min": "42",
                 "pts": 37,
                 "reb": "18",
-                "ast": "11",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png"
+                "ast": "11"
               },
               {
                 "name": "Buddy Hield",
@@ -28273,8 +28235,7 @@ window.CLUTCH_DATA = {
                 "min": "40",
                 "pts": 33,
                 "reb": "7",
-                "ast": "6",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2990984.png"
+                "ast": "6"
               },
               {
                 "name": "Jalen Smith",
@@ -28282,8 +28243,7 @@ window.CLUTCH_DATA = {
                 "min": "34",
                 "pts": 26,
                 "reb": "4",
-                "ast": "1",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397189.png"
+                "ast": "1"
               },
               {
                 "name": "Josh Giddey",
@@ -28291,8 +28251,7 @@ window.CLUTCH_DATA = {
                 "min": "41",
                 "pts": 23,
                 "reb": "14",
-                "ast": "22",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871145.png"
+                "ast": "22"
               },
               {
                 "name": "Christian Braun",
@@ -28300,10 +28259,10 @@ window.CLUTCH_DATA = {
                 "min": "38",
                 "pts": 21,
                 "reb": "8",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png"
+                "ast": "3"
               }
-            ]
+            ],
+            "winner": "away"
           },
           "details": {
             "teams": [
@@ -28312,7 +28271,7 @@ window.CLUTCH_DATA = {
                 "name": "덴버 너기츠",
                 "side": "away",
                 "record": "9승 5패",
-                "venueRecord": "원정 4승 2패",
+                "venueRecord": "원정 5승 2패",
                 "streak": "2연승",
                 "last5": "4승 1패",
                 "lastGame": "133-124 승",
@@ -28353,17 +28312,14 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 114.6,
-                "rpg": 41.6,
-                "tp": 34.3,
                 "players": [
                   {
                     "name": "Jamal Murray",
                     "id": "3936299",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
                     "pos": "G",
-                    "stat": "24.9점 · 5.0리바운드 · 5.8어시스트",
-                    "sub": "야투 50.2% · 3점 46.3% · 팀 내 1옵션",
+                    "stat": "26.2점 · 5.0리바운드 · 5.9어시스트",
+                    "sub": "야투 51.0% · 3점 47.2% · 팀 내 1옵션",
                     "last": "직전 36분 14점 2리바운드 7어시스트, 야투 4-10",
                     "recent": "최근 5경기 23.2점 · 야투 51.9%"
                   },
@@ -28372,8 +28328,8 @@ window.CLUTCH_DATA = {
                     "id": "3112335",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
                     "pos": "C",
-                    "stat": "24.2점 · 10.4리바운드 · 9.1어시스트",
-                    "sub": "야투 52.6% · 3점 30.0% · 팀 내 2옵션",
+                    "stat": "25.1점 · 10.9리바운드 · 9.2어시스트",
+                    "sub": "야투 53.5% · 3점 30.2% · 팀 내 2옵션",
                     "last": "직전 38분 26점 7리바운드 11어시스트, 야투 10-15",
                     "recent": "최근 5경기 26.2점 · 야투 60.2%"
                   },
@@ -28382,8 +28338,8 @@ window.CLUTCH_DATA = {
                     "id": "4431767",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png",
                     "pos": "G",
-                    "stat": "13.2점 · 4.4리바운드 · 2.4어시스트",
-                    "sub": "야투 48.6% · 3점 33.8% · 팀 내 3옵션",
+                    "stat": "13.7점 · 4.6리바운드 · 2.5어시스트",
+                    "sub": "야투 49.4% · 3점 35.1% · 팀 내 3옵션",
                     "last": "직전 31분 19점 5리바운드 3어시스트, 야투 7-10",
                     "recent": "최근 5경기 14.6점 · 야투 46.7%"
                   }
@@ -28445,9 +28401,6 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 114.7,
-                "rpg": 43.8,
-                "tp": 31.8,
                 "players": [
                   {
                     "name": "Norman Powell",
@@ -28472,14 +28425,14 @@ window.CLUTCH_DATA = {
                     "id": "4711294",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                     "pos": "F",
-                    "stat": "14.7점 · 4.7리바운드 · 1.9어시스트",
-                    "sub": "야투 45.8% · 3점 36.6% · 팀 내 3옵션",
+                    "stat": "15.1점 · 4.8리바운드 · 2.0어시스트",
+                    "sub": "야투 45.3% · 3점 36.2% · 팀 내 3옵션",
                     "last": "직전 25분 9점 5리바운드 1어시스트, 야투 4-10",
                     "recent": "최근 5경기 17.2점 · 야투 50.9%"
                   }
                 ],
                 "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명(팀 득점 1·2·7위) · 출전 불투명 2명",
+                "injurySummary": "결장 3명(팀 득점 1·2·8위)",
                 "injuryOut": 3,
                 "injuryPpg": 49.0,
                 "injuries": [
@@ -28488,14 +28441,7 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "C",
-                    "line": "팀 내 7옵션 · 9.3점 · 4.8리바운드"
-                  },
-                  {
-                    "player": "Jalen Smith",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 4옵션 · 13.4점 · 7.9리바운드"
+                    "line": "팀 내 8옵션 · 9.3점 · 4.8리바운드"
                   },
                   {
                     "player": "Norman Powell",
@@ -28503,13 +28449,6 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
-                  },
-                  {
-                    "player": "Patrick Williams",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 10옵션 · 6.9점 · 2.9리바운드"
                   },
                   {
                     "player": "Caleb Wilson",
@@ -28522,15 +28461,16 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 덴버 너기츠 승 78.2% · 시카고 불스 승 21.8%입니다.",
-              "시즌 평균 득점은 **시카고 불스**(홈) 114.7점 · **덴버 너기츠**(원정) 114.6점, 평균 리바운드는 홈 43.8개 · 원정 41.6개, 3점 성공률은 홈 31.8% · 원정 34.3%. 평균 득점 차가 0.1점으로 작고, 3점 성공률 차 2.5%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 덴버 너기츠 승률 75.5%, 시카고 불스 24.5%.",
-              "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+              "해외 배당을 확률로 환산하면 덴버 너기츠 승 77.5% · 시카고 불스 승 22.5%입니다.",
+              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-                {
+        {
           "id": "nba-dal-utah-20261123",
           "espnId": "401910033",
           "sport": "basketball",
@@ -28540,8 +28480,8 @@ window.CLUTCH_DATA = {
           "status": "final",
           "venue": "Delta Center",
           "odds": {
-            "provider": "DraftKings",
-            "at": "2026-11-23T06:13:11+09:00",
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:41+09:00",
             "moneyline": {
               "away": -135,
               "draw": null,
@@ -28555,8 +28495,8 @@ window.CLUTCH_DATA = {
             },
             "total": {
               "line": "225.5",
-              "over": -113,
-              "under": -107
+              "over": -112,
+              "under": -108
             },
             "implied": {
               "away": 55.2,
@@ -28587,12 +28527,8 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 6명",
+              "text": "결장 9명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 112.2점 · 108.3점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -28621,7 +28557,6 @@ window.CLUTCH_DATA = {
                 "40"
               ]
             },
-            "winner": "away",
             "top": [
               {
                 "name": "Svi Mykhailiuk",
@@ -28629,8 +28564,7 @@ window.CLUTCH_DATA = {
                 "min": "32",
                 "pts": 39,
                 "reb": "5",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3133602.png"
+                "ast": "3"
               },
               {
                 "name": "Cooper Flagg",
@@ -28638,8 +28572,7 @@ window.CLUTCH_DATA = {
                 "min": "31",
                 "pts": 28,
                 "reb": "3",
-                "ast": "4",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png"
+                "ast": "4"
               },
               {
                 "name": "Kyrie Irving",
@@ -28647,8 +28580,7 @@ window.CLUTCH_DATA = {
                 "min": "27",
                 "pts": 16,
                 "reb": "1",
-                "ast": "8",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png"
+                "ast": "8"
               },
               {
                 "name": "Ace Bailey",
@@ -28656,8 +28588,7 @@ window.CLUTCH_DATA = {
                 "min": "33",
                 "pts": 16,
                 "reb": "5",
-                "ast": "2",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4873138.png"
+                "ast": "2"
               },
               {
                 "name": "Zaccharie Risacher",
@@ -28665,8 +28596,7 @@ window.CLUTCH_DATA = {
                 "min": "28",
                 "pts": 15,
                 "reb": "8",
-                "ast": "2",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5211175.png"
+                "ast": "2"
               },
               {
                 "name": "Keyonte George",
@@ -28674,10 +28604,10 @@ window.CLUTCH_DATA = {
                 "min": "26",
                 "pts": 15,
                 "reb": "5",
-                "ast": "7",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png"
+                "ast": "7"
               }
-            ]
+            ],
+            "winner": "away"
           },
           "details": {
             "teams": [
@@ -28707,16 +28637,16 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "date": "2026-11-15",
-                    "opp": "보스턴 셀틱스",
+                    "opp": "클리블랜드 캐벌리어스",
                     "ha": "원정",
-                    "score": "94-131",
+                    "score": "117-127",
                     "res": "패"
                   },
                   {
                     "date": "2026-11-15",
-                    "opp": "클리블랜드 캐벌리어스",
+                    "opp": "보스턴 셀틱스",
                     "ha": "원정",
-                    "score": "117-127",
+                    "score": "94-131",
                     "res": "패"
                   },
                   {
@@ -28727,17 +28657,14 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 112.2,
-                "rpg": 43.8,
-                "tp": 34.4,
                 "players": [
                   {
                     "name": "Cooper Flagg",
                     "id": "5041939",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                     "pos": "F",
-                    "stat": "24.1점 · 6.5리바운드 · 6.5어시스트",
-                    "sub": "야투 47.9% · 3점 31.5% · 팀 내 1옵션",
+                    "stat": "24.3점 · 6.3리바운드 · 6.4어시스트",
+                    "sub": "야투 47.8% · 3점 32.5% · 팀 내 1옵션",
                     "last": "직전 36분 22점 6리바운드 8어시스트, 야투 6-16",
                     "recent": "최근 5경기 20.4점 · 야투 42.9%"
                   },
@@ -28746,8 +28673,8 @@ window.CLUTCH_DATA = {
                     "id": "6442",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                     "pos": "G",
-                    "stat": "22.5점 · 3.8리바운드 · 4.4어시스트",
-                    "sub": "야투 45.9% · 3점 37.4% · 팀 내 2옵션",
+                    "stat": "22.0점 · 3.6리바운드 · 4.6어시스트",
+                    "sub": "야투 45.9% · 3점 38.2% · 팀 내 2옵션",
                     "last": "직전 35분 25점 6리바운드 4어시스트, 야투 8-24",
                     "recent": "최근 4경기 21.5점 · 야투 40.0%"
                   },
@@ -28761,24 +28688,17 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 12.2점 · 야투 45.9%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 20.4점·야투 42.9%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 6.6점입니다. 직전 경기에서는 Kyrie Irving가 25점·6리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명 · 출전 불투명 2명",
-                "injuryOut": 3,
-                "injuryPpg": 6.6,
+                "focus": "최근 5경기 Cooper Flagg의 평균은 20.4점·야투 42.9%·3점 36.0%입니다. 결장 5명의 시즌 평균 득점 합계는 20.6점입니다. 직전 경기에서는 Kyrie Irving가 25점·6리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명",
+                "injuryOut": 5,
+                "injuryPpg": 20.6,
                 "injuries": [
                   {
                     "player": "P.J. Washington",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "F",
                     "line": "팀 내 3옵션 · 14.0점 · 6.7리바운드"
-                  },
-                  {
-                    "player": "Walter Clayton Jr.",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 7옵션 · 7.7점 · 3.1리바운드"
                   },
                   {
                     "player": "Tobi Lawal",
@@ -28799,6 +28719,12 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 12옵션 · 5.2점 · 2.0리바운드"
+                  },
+                  {
+                    "player": "Tarik Biberovic",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F"
                   }
                 ]
               },
@@ -28847,17 +28773,14 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 108.3,
-                "rpg": 44.8,
-                "tp": 34.7,
                 "players": [
                   {
                     "name": "Keyonte George",
                     "id": "4433627",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
                     "pos": "G",
-                    "stat": "21.1점 · 3.9리바운드 · 7.1어시스트",
-                    "sub": "야투 42.7% · 3점 32.4% · 팀 내 1옵션",
+                    "stat": "20.8점 · 4.0리바운드 · 7.1어시스트",
+                    "sub": "야투 42.8% · 3점 32.4% · 팀 내 1옵션",
                     "last": "직전 36분 14점 2리바운드 6어시스트, 야투 4-17",
                     "recent": "최근 5경기 22.8점 · 야투 41.9%"
                   },
@@ -28870,21 +28793,26 @@ window.CLUTCH_DATA = {
                     "sub": "야투 38.9% · 3점 39.7% · 팀 내 2옵션"
                   },
                   {
-                    "name": "Darryn Peterson",
-                    "id": "5041955",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png",
-                    "pos": "G",
-                    "stat": "16.7점 · 4.5리바운드 · 3.9어시스트",
-                    "sub": "야투 40.0% · 3점 33.7% · 팀 내 3옵션",
-                    "last": "직전 32분 20점 10리바운드 8어시스트, 야투 7-20",
-                    "recent": "최근 5경기 17.8점 · 야투 38.7%"
+                    "name": "Jaren Jackson Jr.",
+                    "id": "4277961",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277961.png",
+                    "pos": "F",
+                    "stat": "16.2점 · 5.0리바운드 · 2.0어시스트",
+                    "sub": "야투 50.0% · 3점 35.7% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 5경기 Keyonte George의 평균은 22.8점·야투 41.9%·3점 36.8%입니다. 결장 3명의 시즌 평균 득점 합계는 34.2점입니다. 직전 경기에서는 Darryn Peterson가 20점·10리바운드·8어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명",
-                "injuryOut": 3,
-                "injuryPpg": 34.2,
+                "focus": "최근 5경기 Keyonte George의 평균은 22.8점·야투 41.9%·3점 36.8%입니다. 결장 4명의 시즌 평균 득점 합계는 43.4점입니다. 직전 경기에서는 Darryn Peterson가 20점·10리바운드·8어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명",
+                "injuryOut": 4,
+                "injuryPpg": 43.4,
                 "injuries": [
+                  {
+                    "player": "Jaxson Hayes",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 7옵션 · 9.2점 · 6.4리바운드"
+                  },
                   {
                     "player": "Jusuf Nurkic",
                     "status": "OUT",
@@ -28903,21 +28831,22 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 4옵션 · 16.2점 · 5.0리바운드"
+                    "line": "팀 내 3옵션 · 16.2점 · 5.0리바운드"
                   }
                 ]
               }
             ],
             "checkpoints": [
               "해외 배당을 확률로 환산하면 댈러스 매버릭스 승 55.2% · 유타 재즈 승 44.8%입니다.",
-              "시즌 평균 득점은 **유타 재즈**(홈) 108.3점 · **댈러스 매버릭스**(원정) 112.2점, 평균 리바운드는 홈 44.8개 · 원정 43.8개, 3점 성공률은 홈 34.7% · 원정 34.4%. 평균 득점 차 3.9점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 58.1%, 유타 재즈 41.9%.",
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
+              "**시즌 맞대결** — 이번 시즌 상대 전적 2-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 2-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:07 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-                {
+        {
           "id": "nba-ind-nyk-20261123",
           "espnId": "401910034",
           "sport": "basketball",
@@ -28927,27 +28856,27 @@ window.CLUTCH_DATA = {
           "status": "final",
           "venue": "Madison Square Garden",
           "odds": {
-            "provider": "DraftKings",
-            "at": "2026-11-23T06:13:11+09:00",
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:41+09:00",
             "moneyline": {
-              "away": 240,
+              "away": 196,
               "draw": null,
-              "home": -296
+              "home": -237
             },
             "spread": {
-              "homeLine": "-7.5",
-              "awayLine": "+7.5",
-              "home": -110,
-              "away": -110
+              "homeLine": "-6.5",
+              "awayLine": "+6.5",
+              "home": -105,
+              "away": -116
             },
             "total": {
-              "line": "213.5",
-              "over": -106,
-              "under": -114
+              "line": "215.5",
+              "over": -105,
+              "under": -115
             },
             "implied": {
-              "away": 28.3,
-              "home": 71.7
+              "away": 32.4,
+              "home": 67.6
             }
           },
           "away": {
@@ -28974,12 +28903,8 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 6명",
+              "text": "결장 7명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 112.0점 · 108.7점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -29008,7 +28933,6 @@ window.CLUTCH_DATA = {
                 "24"
               ]
             },
-            "winner": "home",
             "top": [
               {
                 "name": "Karl-Anthony Towns",
@@ -29016,8 +28940,7 @@ window.CLUTCH_DATA = {
                 "min": "29",
                 "pts": 30,
                 "reb": "13",
-                "ast": "5",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png"
+                "ast": "5"
               },
               {
                 "name": "Pascal Siakam",
@@ -29025,8 +28948,7 @@ window.CLUTCH_DATA = {
                 "min": "33",
                 "pts": 25,
                 "reb": "6",
-                "ast": "1",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png"
+                "ast": "1"
               },
               {
                 "name": "Jalen Brunson",
@@ -29034,8 +28956,7 @@ window.CLUTCH_DATA = {
                 "min": "32",
                 "pts": 22,
                 "reb": "3",
-                "ast": "7",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png"
+                "ast": "7"
               },
               {
                 "name": "Landry Shamet",
@@ -29043,8 +28964,7 @@ window.CLUTCH_DATA = {
                 "min": "32",
                 "pts": 17,
                 "reb": "2",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3914044.png"
+                "ast": "3"
               },
               {
                 "name": "Andrew Nembhard",
@@ -29052,8 +28972,7 @@ window.CLUTCH_DATA = {
                 "min": "32",
                 "pts": 16,
                 "reb": "2",
-                "ast": "8",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png"
+                "ast": "8"
               },
               {
                 "name": "Kelly Oubre Jr.",
@@ -29061,10 +28980,10 @@ window.CLUTCH_DATA = {
                 "min": "27",
                 "pts": 15,
                 "reb": "5",
-                "ast": "0",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3133603.png"
+                "ast": "0"
               }
-            ]
+            ],
+            "winner": "home"
           },
           "details": {
             "teams": [
@@ -29114,17 +29033,14 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 112.0,
-                "rpg": 41.8,
-                "tp": 33.1,
                 "players": [
                   {
                     "name": "Pascal Siakam",
                     "id": "3149673",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
                     "pos": "F",
-                    "stat": "23.0점 · 6.1리바운드 · 3.8어시스트",
-                    "sub": "야투 51.6% · 3점 35.7% · 팀 내 1옵션",
+                    "stat": "23.1점 · 6.1리바운드 · 3.6어시스트",
+                    "sub": "야투 50.7% · 3점 36.8% · 팀 내 1옵션",
                     "last": "직전 30분 21점 7리바운드 2어시스트, 야투 8-17",
                     "recent": "최근 5경기 24.6점 · 야투 50.6%"
                   },
@@ -29142,13 +29058,13 @@ window.CLUTCH_DATA = {
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
                     "pos": "G",
                     "stat": "16.2점 · 2.3리바운드 · 7.7어시스트",
-                    "sub": "야투 43.6% · 3점 41.2% · 팀 내 3옵션",
+                    "sub": "야투 43.2% · 3점 42.3% · 팀 내 3옵션",
                     "last": "직전 26분 12점 3리바운드 8어시스트, 야투 3-10",
                     "recent": "최근 3경기 13.7점 · 야투 37.1%"
                   }
                 ],
                 "focus": "최근 5경기 Pascal Siakam의 평균은 24.6점·야투 50.6%·3점 36.4%입니다. 결장 4명의 시즌 평균 득점 합계는 31.8점입니다. 직전 경기에서는 Pascal Siakam가 21점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
+                "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 31.8,
                 "injuries": [
@@ -29158,13 +29074,6 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 9옵션 · 7.0점 · 2.3리바운드"
-                  },
-                  {
-                    "player": "Pascal Siakam",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 1옵션 · 23.0점 · 6.1리바운드"
                   },
                   {
                     "player": "Tyrese Haliburton",
@@ -29234,17 +29143,14 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 108.7,
-                "rpg": 46.7,
-                "tp": 37.0,
                 "players": [
                   {
                     "name": "Jalen Brunson",
                     "id": "3934672",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
-                    "stat": "26.8점 · 3.1리바운드 · 5.9어시스트",
-                    "sub": "야투 43.6% · 3점 41.7% · 팀 내 1옵션",
+                    "stat": "26.5점 · 3.1리바운드 · 5.9어시스트",
+                    "sub": "야투 43.7% · 3점 40.5% · 팀 내 1옵션",
                     "last": "직전 36분 30점 7리바운드 5어시스트, 야투 11-23",
                     "recent": "최근 5경기 28.6점 · 야투 45.0%"
                   },
@@ -29253,8 +29159,8 @@ window.CLUTCH_DATA = {
                     "id": "3136195",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
                     "pos": "C",
-                    "stat": "21.3점 · 13.9리바운드 · 3.9어시스트",
-                    "sub": "야투 53.7% · 3점 38.5% · 팀 내 2옵션",
+                    "stat": "21.8점 · 13.9리바운드 · 4.0어시스트",
+                    "sub": "야투 54.3% · 3점 41.5% · 팀 내 2옵션",
                     "recent": "최근 4경기 22.2점 · 야투 50.7%"
                   },
                   {
@@ -29267,24 +29173,24 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 15.8점 · 야투 43.8%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 28.6점·야투 45.0%·3점 51.2%입니다. 결장 2명의 시즌 평균 득점 합계는 21.2점입니다. 직전 경기에서는 Donovan Clingan가 22점·13리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 3·8위) · 출전 불투명 1명",
-                "injuryOut": 2,
-                "injuryPpg": 21.2,
+                "focus": "최근 5경기 Jalen Brunson의 평균은 28.6점·야투 45.0%·3점 51.2%입니다. 결장 3명의 시즌 평균 득점 합계는 28.0점입니다. 직전 경기에서는 Donovan Clingan가 22점·13리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 3·6·8위)",
+                "injuryOut": 3,
+                "injuryPpg": 28.0,
                 "injuries": [
+                  {
+                    "player": "Miles McBride",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 6옵션 · 6.8점 · 1.2리바운드"
+                  },
                   {
                     "player": "OG Anunoby",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 3옵션 · 16.3점 · 5.4리바운드"
-                  },
-                  {
-                    "player": "Karl-Anthony Towns",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "C",
-                    "line": "팀 내 2옵션 · 21.3점 · 13.9리바운드"
                   },
                   {
                     "player": "Jordan Clarkson",
@@ -29297,15 +29203,16 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 인디애나 페이서스 승 28.3% · 뉴욕 닉스 승 71.7%입니다.",
-              "시즌 평균 득점은 **뉴욕 닉스**(홈) 108.7점 · **인디애나 페이서스**(원정) 112.0점, 평균 리바운드는 홈 46.7개 · 원정 41.8개, 3점 성공률은 홈 37.0% · 원정 33.1%. 평균 득점 차 3.3점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 인디애나 페이서스 승률 18.2%, 뉴욕 닉스 81.8%.",
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
+              "해외 배당을 확률로 환산하면 인디애나 페이서스 승 32.4% · 뉴욕 닉스 승 67.6%입니다.",
+              "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-1."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-                {
+        {
           "id": "nba-bos-gsw-20261123",
           "espnId": "401910035",
           "sport": "basketball",
@@ -29315,27 +29222,27 @@ window.CLUTCH_DATA = {
           "status": "final",
           "venue": "Chase Center",
           "odds": {
-            "provider": "DraftKings",
-            "at": "2026-11-23T06:13:11+09:00",
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:41+09:00",
             "moneyline": {
-              "away": -304,
+              "away": -336,
               "draw": null,
-              "home": 247
+              "home": 270
             },
             "spread": {
-              "homeLine": "+7.5",
-              "awayLine": "-7.5",
-              "home": -108,
-              "away": -112
+              "homeLine": "+8.5",
+              "awayLine": "-8.5",
+              "home": -114,
+              "away": -106
             },
             "total": {
-              "line": "209.5",
-              "over": -110,
-              "under": -110
+              "line": "211.5",
+              "over": -112,
+              "under": -108
             },
             "implied": {
-              "away": 72.3,
-              "home": 27.7
+              "away": 74.0,
+              "home": 26.0
             }
           },
           "away": {
@@ -29364,10 +29271,6 @@ window.CLUTCH_DATA = {
             {
               "text": "결장 7명",
               "tone": "warn"
-            },
-            {
-              "text": "평균 112.8점 · 112.7점",
-              "tone": "info"
             }
           ],
           "rows": [
@@ -29396,7 +29299,6 @@ window.CLUTCH_DATA = {
                 "19"
               ]
             },
-            "winner": "home",
             "top": [
               {
                 "name": "Jayson Tatum",
@@ -29404,8 +29306,7 @@ window.CLUTCH_DATA = {
                 "min": "38",
                 "pts": 27,
                 "reb": "10",
-                "ast": "6",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png"
+                "ast": "6"
               },
               {
                 "name": "Brandin Podziemski",
@@ -29413,8 +29314,7 @@ window.CLUTCH_DATA = {
                 "min": "38",
                 "pts": 18,
                 "reb": "7",
-                "ast": "2",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png"
+                "ast": "2"
               },
               {
                 "name": "Derrick White",
@@ -29422,8 +29322,7 @@ window.CLUTCH_DATA = {
                 "min": "32",
                 "pts": 14,
                 "reb": "3",
-                "ast": "5",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3078576.png"
+                "ast": "5"
               },
               {
                 "name": "Charles Bassey",
@@ -29431,8 +29330,7 @@ window.CLUTCH_DATA = {
                 "min": "26",
                 "pts": 13,
                 "reb": "9",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397886.png"
+                "ast": "3"
               },
               {
                 "name": "Gui Santos",
@@ -29440,8 +29338,7 @@ window.CLUTCH_DATA = {
                 "min": "23",
                 "pts": 13,
                 "reb": "5",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4997536.png"
+                "ast": "3"
               },
               {
                 "name": "Yaxel Lendeborg",
@@ -29449,10 +29346,10 @@ window.CLUTCH_DATA = {
                 "min": "34",
                 "pts": 12,
                 "reb": "8",
-                "ast": "3",
-                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png"
+                "ast": "3"
               }
-            ]
+            ],
+            "winner": "home"
           },
           "details": {
             "teams": [
@@ -29502,17 +29399,14 @@ window.CLUTCH_DATA = {
                     "res": "승"
                   }
                 ],
-                "ppg": 112.8,
-                "rpg": 45.4,
-                "tp": 36.1,
                 "players": [
                   {
                     "name": "Jayson Tatum",
                     "id": "4065648",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
                     "pos": "F",
-                    "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
-                    "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
+                    "stat": "26.4점 · 6.9리바운드 · 6.7어시스트",
+                    "sub": "야투 42.6% · 3점 33.6% · 팀 내 1옵션",
                     "recent": "최근 4경기 26.0점 · 야투 42.9%"
                   },
                   {
@@ -29530,8 +29424,8 @@ window.CLUTCH_DATA = {
                     "id": "4066354",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
-                    "stat": "13.4점 · 3.2리바운드 · 4.1어시스트",
-                    "sub": "야투 40.7% · 3점 34.3% · 팀 내 3옵션",
+                    "stat": "12.9점 · 3.1리바운드 · 4.1어시스트",
+                    "sub": "야투 40.0% · 3점 33.9% · 팀 내 3옵션",
                     "last": "직전 34분 9점 6리바운드 8어시스트, 야투 4-17",
                     "recent": "최근 5경기 13.8점 · 야투 39.4%"
                   }
@@ -29603,9 +29497,6 @@ window.CLUTCH_DATA = {
                     "res": "패"
                   }
                 ],
-                "ppg": 112.7,
-                "rpg": 44.1,
-                "tp": 36.4,
                 "players": [
                   {
                     "name": "Stephen Curry",
@@ -29621,8 +29512,8 @@ window.CLUTCH_DATA = {
                     "id": "5175737",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
                     "pos": "F",
-                    "stat": "19.7점 · 7.3리바운드 · 3.7어시스트",
-                    "sub": "야투 45.5% · 3점 37.2% · 팀 내 2옵션",
+                    "stat": "19.2점 · 7.4리바운드 · 3.6어시스트",
+                    "sub": "야투 45.2% · 3점 36.7% · 팀 내 2옵션",
                     "last": "직전 33분 11점 8리바운드 7어시스트, 야투 3-11",
                     "recent": "최근 5경기 16.0점 · 야투 33.3%"
                   },
@@ -29631,8 +29522,8 @@ window.CLUTCH_DATA = {
                     "id": "4709138",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
                     "pos": "G",
-                    "stat": "15.8점 · 4.7리바운드 · 3.6어시스트",
-                    "sub": "야투 44.8% · 3점 35.8% · 팀 내 3옵션",
+                    "stat": "15.9점 · 4.9리바운드 · 3.5어시스트",
+                    "sub": "야투 44.1% · 3점 36.2% · 팀 내 3옵션",
                     "last": "직전 32분 15점 3리바운드 2어시스트, 야투 5-12",
                     "recent": "최근 5경기 14.0점 · 야투 37.9%"
                   }
@@ -29678,12 +29569,13 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "해외 배당을 확률로 환산하면 보스턴 셀틱스 승 72.3% · 골든스테이트 워리어스 승 27.7%입니다.",
-              "시즌 평균 득점은 **골든스테이트 워리어스**(홈) 112.7점 · **보스턴 셀틱스**(원정) 112.8점, 평균 리바운드는 홈 44.1개 · 원정 45.4개, 3점 성공률은 홈 36.4% · 원정 36.1%. 평균 득점 차가 0.1점으로 작고, 3점 성공률 차 0.3%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 보스턴 셀틱스 승률 76.2%, 골든스테이트 워리어스 23.8%.",
-              "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+              "해외 배당을 확률로 환산하면 보스턴 셀틱스 승 74.0% · 골든스테이트 워리어스 승 26.0%입니다.",
+              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-23 END */
@@ -31505,6 +31397,30 @@ window.CLUTCH_DATA = {
           "start": "2026-11-24T09:00:00+09:00",
           "status": "scheduled",
           "venue": "Spectrum Center",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:42+09:00",
+            "moneyline": {
+              "away": -162,
+              "draw": null,
+              "home": 136
+            },
+            "spread": {
+              "homeLine": "+3.5",
+              "awayLine": "-3.5",
+              "home": -111,
+              "away": -109
+            },
+            "total": {
+              "line": "214.5",
+              "over": -108,
+              "under": -112
+            },
+            "implied": {
+              "away": 59.3,
+              "home": 40.7
+            }
+          },
           "away": {
             "name": "멤피스 그리즐리스",
             "abbr": "MEM",
@@ -31529,7 +31445,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 9명",
               "tone": "warn"
             },
             {
@@ -31625,31 +31541,24 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 20.6점 · 야투 54.7%"
                   }
                 ],
-                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 2명의 시즌 평균 득점 합계는 13.1점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 11·12위) · 출전 불투명 3명",
-                "injuryOut": 2,
-                "injuryPpg": 13.1,
+                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 5명의 시즌 평균 득점 합계는 40.3점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명",
+                "injuryOut": 5,
+                "injuryPpg": 40.3,
                 "injuries": [
                   {
-                    "player": "Javon Small",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 8옵션 · 9.6점 · 3.1리바운드"
+                    "player": "Jerami Grant",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 6옵션 · 10.6점 · 1.7리바운드"
                   },
                   {
                     "player": "Cameron Boozer",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "F",
                     "line": "팀 내 2옵션 · 16.6점 · 9.2리바운드"
-                  },
-                  {
-                    "player": "Jerami Grant",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 6옵션 · 10.6점 · 1.7리바운드"
                   },
                   {
                     "player": "GG Jackson",
@@ -31664,6 +31573,12 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 12옵션 · 6.4점 · 2.2리바운드"
+                  },
+                  {
+                    "player": "Richie Saunders",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G"
                   }
                 ]
               },
@@ -31747,24 +31662,31 @@ window.CLUTCH_DATA = {
                     "recent": "최근 3경기 17.7점 · 야투 45.7%"
                   }
                 ],
-                "focus": "최근 3경기 Brandon Miller의 평균은 17.3점·야투 38.3%·3점 35.5%입니다. 결장 2명의 시즌 평균 득점 합계는 13.2점입니다. 직전 경기에서는 Moussa Diabate가 21점·15리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 6·13위) · 출전 불투명 2명",
-                "injuryOut": 2,
-                "injuryPpg": 13.2,
+                "focus": "최근 3경기 Brandon Miller의 평균은 17.3점·야투 38.3%·3점 35.5%입니다. 결장 4명의 시즌 평균 득점 합계는 39.4점입니다. 직전 경기에서는 Moussa Diabate가 21점·15리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명(팀 득점 3·5·6·13위) · 출전 불투명 1명",
+                "injuryOut": 4,
+                "injuryPpg": 39.4,
                 "injuries": [
                   {
-                    "player": "Grant Williams",
+                    "player": "Grayson Allen",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 3옵션 · 14.9점 · 3.1리바운드"
+                  },
+                  {
+                    "player": "Brandon Miller",
                     "status": "DAY-TO-DAY",
                     "note": "당일 체크",
                     "pos": "F",
-                    "line": "팀 내 5옵션 · 11.3점 · 2.7리바운드"
+                    "line": "팀 내 1옵션 · 19.8점 · 4.8리바운드"
                   },
                   {
-                    "player": "Grayson Allen",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 3옵션 · 14.9점 · 3.1리바운드"
+                    "player": "Grant Williams",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 5옵션 · 11.3점 · 2.7리바운드"
                   },
                   {
                     "player": "Kon Knueppel",
@@ -31784,11 +31706,15 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
+              "해외 배당을 확률로 환산하면 멤피스 그리즐리스 승 59.3% · 샬럿 호네츠 승 40.7%입니다.",
               "시즌 평균 득점은 **샬럿 호네츠**(홈) 99.9점 · **멤피스 그리즐리스**(원정) 120.5점, 평균 리바운드는 홈 47.0개 · 원정 45.6개, 3점 성공률은 홈 31.0% · 원정 39.1%. 평균 득점 차 20.6점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 멤피스 그리즐리스 승률 65.1%, 샬럿 호네츠 34.9%.",
+              "**ESPN 매치업 예측** — 멤피스 그리즐리스 승률 65.8%, 샬럿 호네츠 34.2%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -31800,6 +31726,30 @@ window.CLUTCH_DATA = {
           "start": "2026-11-24T09:00:00+09:00",
           "status": "scheduled",
           "venue": "Xfinity Mobile Arena",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:42+09:00",
+            "moneyline": {
+              "away": 139,
+              "draw": null,
+              "home": -166
+            },
+            "spread": {
+              "homeLine": "-3.5",
+              "awayLine": "+3.5",
+              "home": -113,
+              "away": -107
+            },
+            "total": {
+              "line": "229.5",
+              "over": -113,
+              "under": -107
+            },
+            "implied": {
+              "away": 40.1,
+              "home": 59.9
+            }
+          },
           "away": {
             "name": "포틀랜드 트레일블레이저스",
             "abbr": "POR",
@@ -32039,11 +31989,11 @@ window.CLUTCH_DATA = {
                 "injuryPpg": 2.1,
                 "injuries": [
                   {
-                    "player": "Dean Wade",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
+                    "player": "Adem Bona",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
                   },
                   {
                     "player": "Jaylen Brown",
@@ -32053,11 +32003,11 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
                   },
                   {
-                    "player": "Adem Bona",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
+                    "player": "Dean Wade",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
                   },
                   {
                     "player": "Ariel Hukporti",
@@ -32069,11 +32019,15 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
+              "해외 배당을 확률로 환산하면 포틀랜드 트레일블레이저스 승 40.1% · 필라델피아 세븐티식서스 승 59.9%입니다.",
               "시즌 평균 득점은 **필라델피아 세븐티식서스**(홈) 115.5점 · **포틀랜드 트레일블레이저스**(원정) 116.1점, 평균 리바운드는 홈 42.8개 · 원정 44.9개, 3점 성공률은 홈 35.3% · 원정 35.8%. 평균 득점 차가 0.6점으로 작고, 3점 성공률 차 0.5%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 포틀랜드 트레일블레이저스 승률 42.4%, 필라델피아 세븐티식서스 57.6%.",
+              "**ESPN 매치업 예측** — 포틀랜드 트레일블레이저스 승률 42.2%, 필라델피아 세븐티식서스 57.8%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -32085,13 +32039,37 @@ window.CLUTCH_DATA = {
           "start": "2026-11-24T09:30:00+09:00",
           "status": "scheduled",
           "venue": "Gainbridge Fieldhouse",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:42+09:00",
+            "moneyline": {
+              "away": -191,
+              "draw": null,
+              "home": 160
+            },
+            "spread": {
+              "homeLine": "+5.5",
+              "awayLine": "-5.5",
+              "home": -117,
+              "away": -103
+            },
+            "total": {
+              "line": "222.5",
+              "over": -110,
+              "under": -110
+            },
+            "implied": {
+              "away": 63.1,
+              "home": 36.9
+            }
+          },
           "away": {
             "name": "오클라호마시티 썬더",
             "abbr": "OKC",
-            "record": "10승 6패",
+            "record": "10승 7패",
             "badges": [
               {
-                "text": "원정 4승 5패",
+                "text": "원정 4승 6패",
                 "tone": ""
               }
             ]
@@ -32099,7 +32077,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "인디애나 페이서스",
             "abbr": "IND",
-            "record": "5승 11패",
+            "record": "5승 12패",
             "badges": [
               {
                 "text": "홈 2승 5패",
@@ -32109,11 +32087,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 9명",
               "tone": "warn"
             },
             {
-              "text": "평균 113.0점 · 112.0점",
+              "text": "평균 113.0점 · 111.6점",
               "tone": "info"
             }
           ],
@@ -32121,7 +32099,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**인디애나 페이서스**(홈) 5승 11패(홈 2승 5패, 최근 5경기 2승 3패, 3연패), **오클라호마시티 썬더**(원정) 10승 6패(원정 4승 5패, 최근 5경기 2승 3패). 직전 경기(11.21) **오클라호마시티 썬더**는 뉴올리언스 펠리컨스에 126-120로 이겼고, Shai Gilgeous-Alexander 40점·3리바운드·8어시스트, Aday Mara 22점·16리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **인디애나 페이서스**는 클리블랜드 캐벌리어스에 119-128로 졌고, Pascal Siakam 21점·7리바운드·2어시스트, Ivica Zubac 21점·10리바운드·2어시스트를 기록했습니다."
+              "text": "**인디애나 페이서스**(홈) 5승 12패(홈 2승 5패, 최근 5경기 1승 4패, 4연패), **오클라호마시티 썬더**(원정) 10승 7패(원정 4승 6패, 최근 5경기 2승 3패). 직전 경기(11.22) **오클라호마시티 썬더**는 마이애미 히트에 113-123로 졌고, Bennett Stirtz 21점·3리바운드·5어시스트, Jared McCain 20점·2리바운드·3어시스트를 기록했습니다. 직전 경기(11.23) **인디애나 페이서스**는 뉴욕 닉스에 106-113로 졌고, Pascal Siakam 25점·6리바운드·1어시스트, Andrew Nembhard 16점·2리바운드·8어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -32130,11 +32108,18 @@ window.CLUTCH_DATA = {
                 "abbr": "OKC",
                 "name": "오클라호마시티 썬더",
                 "side": "away",
-                "record": "10승 6패",
-                "venueRecord": "원정 4승 5패",
+                "record": "10승 7패",
+                "venueRecord": "원정 4승 6패",
                 "last5": "2승 3패",
-                "lastGame": "126-120 승",
+                "lastGame": "113-123 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "마이애미 히트",
+                    "ha": "원정",
+                    "score": "113-123",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "뉴올리언스 펠리컨스",
@@ -32162,18 +32147,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "112-113",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "포틀랜드 트레일블레이저스",
-                    "ha": "원정",
-                    "score": "108-118",
-                    "res": "패"
                   }
                 ],
                 "ppg": 113.0,
-                "rpg": 45.8,
-                "tp": 34.5,
+                "rpg": 45.4,
+                "tp": 35.2,
                 "players": [
                   {
                     "name": "Shai Gilgeous-Alexander",
@@ -32182,8 +32160,7 @@ window.CLUTCH_DATA = {
                     "pos": "G",
                     "stat": "31.7점 · 4.1리바운드 · 4.5어시스트",
                     "sub": "야투 48.3% · 3점 37.3% · 팀 내 1옵션",
-                    "last": "직전 37분 40점 3리바운드 8어시스트, 야투 14-24",
-                    "recent": "최근 5경기 36.4점 · 야투 54.6%"
+                    "recent": "최근 4경기 37.8점 · 야투 56.6%"
                   },
                   {
                     "name": "Ajay Mitchell",
@@ -32191,30 +32168,37 @@ window.CLUTCH_DATA = {
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
                     "pos": "G",
                     "stat": "17.0점 · 3.6리바운드 · 3.6어시스트",
-                    "sub": "야투 49.5% · 3점 25.6% · 팀 내 2옵션",
-                    "last": "직전 31분 8점 2리바운드 4어시스트, 야투 3-12",
-                    "recent": "최근 3경기 11.7점 · 야투 37.8%"
+                    "sub": "야투 48.3% · 3점 28.3% · 팀 내 2옵션",
+                    "last": "직전 22분 17점 3리바운드 3어시스트, 야투 6-17",
+                    "recent": "최근 4경기 13.0점 · 야투 37.0%"
                   },
                   {
                     "name": "Jared McCain",
                     "id": "4683778",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
                     "pos": "G",
-                    "stat": "13.9점 · 3.4리바운드 · 1.7어시스트",
-                    "sub": "야투 41.5% · 3점 34.2% · 팀 내 3옵션",
-                    "last": "직전 30분 18점 3리바운드 0어시스트, 야투 7-14",
-                    "recent": "최근 5경기 16.2점 · 야투 39.4%"
+                    "stat": "14.3점 · 3.3리바운드 · 1.8어시스트",
+                    "sub": "야투 41.4% · 3점 33.9% · 팀 내 3옵션",
+                    "last": "직전 29분 20점 2리바운드 3어시스트, 야투 7-17",
+                    "recent": "최근 5경기 18.2점 · 야투 43.2%"
                   }
                 ],
-                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 36.4점·야투 54.6%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 13.0점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 40점·3리바운드·8어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
-                "injuryOut": 4,
-                "injuryPpg": 13.0,
+                "focus": "최근 4경기 Shai Gilgeous-Alexander의 평균은 37.8점·야투 56.6%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 54.7점입니다. 직전 경기에서는 Bennett Stirtz가 21점·3리바운드·5어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명(팀 득점 1·6·10·15·16위)",
+                "injuryOut": 5,
+                "injuryPpg": 54.7,
                 "injuries": [
                   {
+                    "player": "Aday Mara",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 6옵션 · 10.0점 · 7.1리바운드"
+                  },
+                  {
                     "player": "Shai Gilgeous-Alexander",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "G",
                     "line": "팀 내 1옵션 · 31.7점 · 4.1리바운드"
                   },
@@ -32223,27 +32207,21 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
-                    "line": "팀 내 15옵션 · 2.7점 · 1.3리바운드"
+                    "line": "팀 내 16옵션 · 2.7점 · 1.3리바운드"
                   },
                   {
                     "player": "Jaylin Williams",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 14옵션 · 2.9점 · 3.3리바운드"
+                    "line": "팀 내 15옵션 · 2.9점 · 3.3리바운드"
                   },
                   {
                     "player": "Alex Caruso",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
-                    "line": "팀 내 9옵션 · 7.4점 · 3.7리바운드"
-                  },
-                  {
-                    "player": "Thomas Sorber",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
+                    "line": "팀 내 10옵션 · 7.4점 · 3.7리바운드"
                   }
                 ]
               },
@@ -32251,12 +32229,19 @@ window.CLUTCH_DATA = {
                 "abbr": "IND",
                 "name": "인디애나 페이서스",
                 "side": "home",
-                "record": "5승 11패",
+                "record": "5승 12패",
                 "venueRecord": "홈 2승 5패",
-                "streak": "3연패",
-                "last5": "2승 3패",
-                "lastGame": "119-128 패",
+                "streak": "4연패",
+                "last5": "1승 4패",
+                "lastGame": "106-113 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "뉴욕 닉스",
+                    "ha": "원정",
+                    "score": "106-113",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "클리블랜드 캐벌리어스",
@@ -32284,28 +32269,21 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "106-104",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "홈",
-                    "score": "114-101",
-                    "res": "승"
                   }
                 ],
-                "ppg": 112.0,
+                "ppg": 111.6,
                 "rpg": 41.8,
-                "tp": 33.1,
+                "tp": 32.8,
                 "players": [
                   {
                     "name": "Pascal Siakam",
                     "id": "3149673",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
                     "pos": "F",
-                    "stat": "23.0점 · 6.1리바운드 · 3.8어시스트",
-                    "sub": "야투 51.6% · 3점 35.7% · 팀 내 1옵션",
-                    "last": "직전 30분 21점 7리바운드 2어시스트, 야투 8-17",
-                    "recent": "최근 5경기 24.6점 · 야투 50.6%"
+                    "stat": "23.1점 · 6.1리바운드 · 3.6어시스트",
+                    "sub": "야투 50.7% · 3점 36.8% · 팀 내 1옵션",
+                    "last": "직전 33분 25점 6리바운드 1어시스트, 야투 9-22",
+                    "recent": "최근 5경기 24.0점 · 야투 50.0%"
                   },
                   {
                     "name": "Tyrese Haliburton",
@@ -32321,13 +32299,13 @@ window.CLUTCH_DATA = {
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
                     "pos": "G",
                     "stat": "16.2점 · 2.3리바운드 · 7.7어시스트",
-                    "sub": "야투 43.6% · 3점 41.2% · 팀 내 3옵션",
-                    "last": "직전 26분 12점 3리바운드 8어시스트, 야투 3-10",
-                    "recent": "최근 3경기 13.7점 · 야투 37.1%"
+                    "sub": "야투 43.2% · 3점 42.3% · 팀 내 3옵션",
+                    "last": "직전 32분 16점 2리바운드 8어시스트, 야투 5-13",
+                    "recent": "최근 3경기 13.3점 · 야투 32.4%"
                   }
                 ],
-                "focus": "최근 5경기 Pascal Siakam의 평균은 24.6점·야투 50.6%·3점 36.4%입니다. 결장 4명의 시즌 평균 득점 합계는 31.8점입니다. 직전 경기에서는 Pascal Siakam가 21점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
+                "focus": "최근 5경기 Pascal Siakam의 평균은 24.0점·야투 50.0%·3점 42.9%입니다. 결장 4명의 시즌 평균 득점 합계는 31.8점입니다. 직전 경기에서는 Pascal Siakam가 25점·6리바운드·1어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 31.8,
                 "injuries": [
@@ -32337,13 +32315,6 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 9옵션 · 7.0점 · 2.3리바운드"
-                  },
-                  {
-                    "player": "Pascal Siakam",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 1옵션 · 23.0점 · 6.1리바운드"
                   },
                   {
                     "player": "Tyrese Haliburton",
@@ -32369,11 +32340,15 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **인디애나 페이서스**(홈) 112.0점 · **오클라호마시티 썬더**(원정) 113.0점, 평균 리바운드는 홈 41.8개 · 원정 45.8개, 3점 성공률은 홈 33.1% · 원정 34.5%. 평균 득점 차가 1.0점으로 작고, 3점 성공률 차 1.4%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 오클라호마시티 썬더 승률 73.6%, 인디애나 페이서스 26.4%.",
+              "해외 배당을 확률로 환산하면 오클라호마시티 썬더 승 63.1% · 인디애나 페이서스 승 36.9%입니다.",
+              "시즌 평균 득점은 **인디애나 페이서스**(홈) 111.6점 · **오클라호마시티 썬더**(원정) 113.0점, 평균 리바운드는 홈 41.8개 · 원정 45.4개, 3점 성공률은 홈 32.8% · 원정 35.2%. 평균 득점 차가 1.4점으로 작고, 3점 성공률 차 2.4%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 오클라호마시티 썬더 승률 65.7%, 인디애나 페이서스 34.3%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -32385,6 +32360,30 @@ window.CLUTCH_DATA = {
           "start": "2026-11-24T09:30:00+09:00",
           "status": "scheduled",
           "venue": "Scotiabank Arena",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:42+09:00",
+            "moneyline": {
+              "away": 378,
+              "draw": null,
+              "home": -494
+            },
+            "spread": {
+              "homeLine": "-10.5",
+              "awayLine": "+10.5",
+              "home": -113,
+              "away": -107
+            },
+            "total": {
+              "line": "223.5",
+              "over": -105,
+              "under": -115
+            },
+            "implied": {
+              "away": 20.1,
+              "home": 79.9
+            }
+          },
           "away": {
             "name": "밀워키 벅스",
             "abbr": "MIL",
@@ -32611,6 +32610,12 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 6옵션 · 9.3점 · 4.6리바운드"
                   },
                   {
+                    "player": "Nate Bittle",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C"
+                  },
+                  {
                     "player": "Kawhi Leonard",
                     "status": "OUT",
                     "note": "결장",
@@ -32623,22 +32628,20 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 2옵션 · 20.9점 · 6.4리바운드"
-                  },
-                  {
-                    "player": "Nate Bittle",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
                   }
                 ]
               }
             ],
             "checkpoints": [
+              "해외 배당을 확률로 환산하면 밀워키 벅스 승 20.1% · 토론토 랩터스 승 79.9%입니다.",
               "시즌 평균 득점은 **토론토 랩터스**(홈) 111.6점 · **밀워키 벅스**(원정) 109.4점, 평균 리바운드는 홈 40.6개 · 원정 44.7개, 3점 성공률은 홈 33.6% · 원정 34.5%. 평균 득점 차가 2.2점으로 작고, 3점 성공률 차 0.9%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
               "**ESPN 매치업 예측** — 밀워키 벅스 승률 25.3%, 토론토 랩터스 74.7%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -32650,6 +32653,30 @@ window.CLUTCH_DATA = {
           "start": "2026-11-24T09:30:00+09:00",
           "status": "scheduled",
           "venue": "Target Center",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:42+09:00",
+            "moneyline": {
+              "away": 455,
+              "draw": null,
+              "home": -620
+            },
+            "spread": {
+              "homeLine": "-11.5",
+              "awayLine": "+11.5",
+              "home": -115,
+              "away": -106
+            },
+            "total": {
+              "line": "224.5",
+              "over": -105,
+              "under": -115
+            },
+            "implied": {
+              "away": 17.3,
+              "home": 82.7
+            }
+          },
           "away": {
             "name": "브루클린 네츠",
             "abbr": "BKN",
@@ -32899,11 +32926,15 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
+              "해외 배당을 확률로 환산하면 브루클린 네츠 승 17.3% · 미네소타 팀버울브스 승 82.7%입니다.",
               "시즌 평균 득점은 **미네소타 팀버울브스**(홈) 114.9점 · **브루클린 네츠**(원정) 110.9점, 평균 리바운드는 홈 47.5개 · 원정 41.3개, 3점 성공률은 홈 37.2% · 원정 36.0%. 평균 득점 차 4.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 브루클린 네츠 승률 14.3%, 미네소타 팀버울브스 85.7%.",
+              "**ESPN 매치업 예측** — 브루클린 네츠 승률 14.1%, 미네소타 팀버울브스 85.9%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -32915,6 +32946,30 @@ window.CLUTCH_DATA = {
           "start": "2026-11-24T10:00:00+09:00",
           "status": "scheduled",
           "venue": "United Center",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:42+09:00",
+            "moneyline": {
+              "away": -336,
+              "draw": null,
+              "home": 270
+            },
+            "spread": {
+              "homeLine": "+8.5",
+              "awayLine": "-8.5",
+              "home": -110,
+              "away": -110
+            },
+            "total": {
+              "line": "240.5",
+              "over": -108,
+              "under": -112
+            },
+            "implied": {
+              "away": 74.0,
+              "home": 26.0
+            }
+          },
           "away": {
             "name": "클리블랜드 캐벌리어스",
             "abbr": "CLE",
@@ -32929,10 +32984,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "시카고 불스",
             "abbr": "CHI",
-            "record": "4승 11패",
+            "record": "4승 12패",
             "badges": [
               {
-                "text": "홈 1승 5패",
+                "text": "홈 1승 6패",
                 "tone": ""
               }
             ]
@@ -32943,7 +32998,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 118.8점 · 114.7점",
+              "text": "평균 118.8점 · 116.6점",
               "tone": "info"
             }
           ],
@@ -32951,7 +33006,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**시카고 불스**(홈) 4승 11패(홈 1승 5패, 최근 5경기 3승 2패), **클리블랜드 캐벌리어스**(원정) 9승 8패(원정 2승 5패, 최근 5경기 3승 2패). 직전 경기(11.21) **클리블랜드 캐벌리어스**는 인디애나 페이서스에 128-119로 이겼고, James Harden 51점·6리바운드·6어시스트, Donovan Mitchell 20점·3리바운드·3어시스트를 기록했습니다. 직전 경기(11.21) **시카고 불스**는 워싱턴 위저즈에 94-98로 졌고, Norman Powell 16점·3리바운드·2어시스트, Buddy Hield 15점·4리바운드·0어시스트를 기록했습니다."
+              "text": "**시카고 불스**(홈) 4승 12패(홈 1승 6패, 최근 5경기 2승 3패, 2연패), **클리블랜드 캐벌리어스**(원정) 9승 8패(원정 2승 5패, 최근 5경기 3승 2패). 직전 경기(11.21) **클리블랜드 캐벌리어스**는 인디애나 페이서스에 128-119로 이겼고, James Harden 51점·6리바운드·6어시스트, Donovan Mitchell 20점·3리바운드·3어시스트를 기록했습니다. 직전 경기(11.23) **시카고 불스**는 덴버 너기츠에 145-151로 졌고, Buddy Hield 33점·7리바운드·6어시스트, Jalen Smith 26점·4리바운드·1어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -33065,11 +33120,19 @@ window.CLUTCH_DATA = {
                 "abbr": "CHI",
                 "name": "시카고 불스",
                 "side": "home",
-                "record": "4승 11패",
-                "venueRecord": "홈 1승 5패",
-                "last5": "3승 2패",
-                "lastGame": "94-98 패",
+                "record": "4승 12패",
+                "venueRecord": "홈 1승 6패",
+                "streak": "2연패",
+                "last5": "2승 3패",
+                "lastGame": "145-151 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "덴버 너기츠",
+                    "ha": "홈",
+                    "score": "145-151",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "워싱턴 위저즈",
@@ -33097,18 +33160,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "117-106",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "애틀랜타 호크스",
-                    "ha": "홈",
-                    "score": "125-117",
-                    "res": "승"
                   }
                 ],
-                "ppg": 114.7,
-                "rpg": 43.8,
-                "tp": 31.8,
+                "ppg": 116.6,
+                "rpg": 43.6,
+                "tp": 32.9,
                 "players": [
                   {
                     "name": "Norman Powell",
@@ -33117,8 +33173,7 @@ window.CLUTCH_DATA = {
                     "pos": "G",
                     "stat": "20.8점 · 2.8리바운드 · 2.4어시스트",
                     "sub": "야투 44.6% · 3점 34.1% · 팀 내 1옵션",
-                    "last": "직전 33분 16점 3리바운드 2어시스트, 야투 7-18",
-                    "recent": "최근 5경기 23.4점 · 야투 50.0%"
+                    "recent": "최근 4경기 21.0점 · 야투 46.5%"
                   },
                   {
                     "name": "Caleb Wilson",
@@ -33133,14 +33188,14 @@ window.CLUTCH_DATA = {
                     "id": "4711294",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                     "pos": "F",
-                    "stat": "14.7점 · 4.7리바운드 · 1.9어시스트",
-                    "sub": "야투 45.8% · 3점 36.6% · 팀 내 3옵션",
-                    "last": "직전 25분 9점 5리바운드 1어시스트, 야투 4-10",
-                    "recent": "최근 5경기 17.2점 · 야투 50.9%"
+                    "stat": "15.1점 · 4.8리바운드 · 2.0어시스트",
+                    "sub": "야투 45.3% · 3점 36.2% · 팀 내 3옵션",
+                    "last": "직전 38분 21점 5리바운드 3어시스트, 야투 7-17",
+                    "recent": "최근 5경기 19.2점 · 야투 50.0%"
                   }
                 ],
-                "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명(팀 득점 1·2·7위) · 출전 불투명 2명",
+                "focus": "최근 4경기 Norman Powell의 평균은 21.0점·야투 46.5%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Buddy Hield가 33점·7리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 1·2·8위)",
                 "injuryOut": 3,
                 "injuryPpg": 49.0,
                 "injuries": [
@@ -33149,14 +33204,7 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "C",
-                    "line": "팀 내 7옵션 · 9.3점 · 4.8리바운드"
-                  },
-                  {
-                    "player": "Jalen Smith",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 4옵션 · 13.4점 · 7.9리바운드"
+                    "line": "팀 내 8옵션 · 9.3점 · 4.8리바운드"
                   },
                   {
                     "player": "Norman Powell",
@@ -33164,13 +33212,6 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
-                  },
-                  {
-                    "player": "Patrick Williams",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 10옵션 · 6.9점 · 2.9리바운드"
                   },
                   {
                     "player": "Caleb Wilson",
@@ -33183,11 +33224,15 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **시카고 불스**(홈) 114.7점 · **클리블랜드 캐벌리어스**(원정) 118.8점, 평균 리바운드는 홈 43.8개 · 원정 45.6개, 3점 성공률은 홈 31.8% · 원정 37.1%. 평균 득점 차 4.1점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 클리블랜드 캐벌리어스 승률 78.6%, 시카고 불스 21.4%.",
+              "해외 배당을 확률로 환산하면 클리블랜드 캐벌리어스 승 74.0% · 시카고 불스 승 26.0%입니다.",
+              "시즌 평균 득점은 **시카고 불스**(홈) 116.6점 · **클리블랜드 캐벌리어스**(원정) 118.8점, 평균 리바운드는 홈 43.6개 · 원정 45.6개, 3점 성공률은 홈 32.9% · 원정 37.1%. 평균 득점 차가 2.2점으로 작고, 3점 성공률 차 4.2%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 클리블랜드 캐벌리어스 승률 76.4%, 시카고 불스 23.6%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -33199,6 +33244,30 @@ window.CLUTCH_DATA = {
           "start": "2026-11-24T10:00:00+09:00",
           "status": "scheduled",
           "venue": "Smoothie King Center",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:42+09:00",
+            "moneyline": {
+              "away": -155,
+              "draw": null,
+              "home": 131
+            },
+            "spread": {
+              "homeLine": "+3.5",
+              "awayLine": "-3.5",
+              "home": -115,
+              "away": -105
+            },
+            "total": {
+              "line": "232.5",
+              "over": -113,
+              "under": -107
+            },
+            "implied": {
+              "away": 58.3,
+              "home": 41.7
+            }
+          },
           "away": {
             "name": "피닉스 선즈",
             "abbr": "PHX",
@@ -33426,6 +33495,13 @@ window.CLUTCH_DATA = {
                 "injuryPpg": 16.4,
                 "injuries": [
                   {
+                    "player": "Trey Murphy III",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 4옵션 · 15.7점 · 4.7리바운드"
+                  },
+                  {
                     "player": "Bryce McGowens",
                     "status": "OUT",
                     "note": "결장",
@@ -33438,13 +33514,6 @@ window.CLUTCH_DATA = {
                     "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 1옵션 · 21.7점 · 5.4리바운드"
-                  },
-                  {
-                    "player": "Trey Murphy III",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 4옵션 · 15.7점 · 4.7리바운드"
                   },
                   {
                     "player": "Trendon Watford",
@@ -33464,11 +33533,15 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
+              "해외 배당을 확률로 환산하면 피닉스 선즈 승 58.3% · 뉴올리언스 펠리컨스 승 41.7%입니다.",
               "시즌 평균 득점은 **뉴올리언스 펠리컨스**(홈) 114.3점 · **피닉스 선즈**(원정) 113.9점, 평균 리바운드는 홈 42.5개 · 원정 40.8개, 3점 성공률은 홈 33.6% · 원정 36.6%. 평균 득점 차가 0.4점으로 작고, 3점 성공률 차 3.0%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 피닉스 선즈 승률 75.5%, 뉴올리언스 펠리컨스 24.5%.",
+              "**ESPN 매치업 예측** — 피닉스 선즈 승률 74.5%, 뉴올리언스 펠리컨스 25.5%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -33480,6 +33553,30 @@ window.CLUTCH_DATA = {
           "start": "2026-11-24T10:30:00+09:00",
           "status": "scheduled",
           "venue": "Toyota Center (Houston)",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:42+09:00",
+            "moneyline": {
+              "away": 470,
+              "draw": null,
+              "home": -650
+            },
+            "spread": {
+              "homeLine": "-12.5",
+              "awayLine": "+12.5",
+              "home": -110,
+              "away": -110
+            },
+            "total": {
+              "line": "224.5",
+              "over": -110,
+              "under": -110
+            },
+            "implied": {
+              "away": 16.8,
+              "home": 83.2
+            }
+          },
           "away": {
             "name": "LA 클리퍼스",
             "abbr": "LAC",
@@ -33504,7 +33601,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 2명",
               "tone": "warn"
             },
             {
@@ -33602,16 +33699,10 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.4점 · 야투 49.0%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Garland의 평균은 22.0점·야투 46.8%·3점 36.1%입니다. 결장 3명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 21점·6리바운드·0어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명",
-                "injuryOut": 3,
+                "focus": "최근 5경기 Darius Garland의 평균은 22.0점·야투 46.8%·3점 36.1%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 21점·6리바운드·0어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명",
+                "injuryOut": 2,
                 "injuries": [
-                  {
-                    "player": "Brandon Ingram",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
                   {
                     "player": "Bradley Beal",
                     "status": "OUT",
@@ -33706,27 +33797,21 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 18.8점 · 야투 69.0%"
                   }
                 ],
-                "focus": "최근 5경기 Alperen Sengun의 평균은 24.0점·야투 60.9%·3점 55.6%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 28점·11리바운드·10어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명(팀 득점 11위)",
-                "injuryOut": 1,
-                "injuryPpg": 3.2,
-                "injuries": [
-                  {
-                    "player": "Clint Capela",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 11옵션 · 3.2점 · 5.2리바운드"
-                  }
-                ]
+                "focus": "최근 5경기 Alperen Sengun의 평균은 24.0점·야투 60.9%·3점 55.6%입니다. 직전 경기에서는 Alperen Sengun가 28점·11리바운드·10어시스트를 기록했습니다. 이어서 Kevin Durant, Amen Thompson가 뒤를 받칩니다.",
+                "injurySummary": "결장 없음",
+                "injuries": []
               }
             ],
             "checkpoints": [
+              "해외 배당을 확률로 환산하면 LA 클리퍼스 승 16.8% · 휴스턴 로키츠 승 83.2%입니다.",
               "시즌 평균 득점은 **휴스턴 로키츠**(홈) 118.2점 · **LA 클리퍼스**(원정) 111.1점, 평균 리바운드는 홈 45.3개 · 원정 40.0개, 3점 성공률은 홈 38.0% · 원정 38.7%. 평균 득점 차 7.1점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — LA 클리퍼스 승률 13.1%, 휴스턴 로키츠 86.9%.",
+              "**ESPN 매치업 예측** — LA 클리퍼스 승률 14.4%, 휴스턴 로키츠 85.6%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -33738,10 +33823,34 @@ window.CLUTCH_DATA = {
           "start": "2026-11-24T12:00:00+09:00",
           "status": "scheduled",
           "venue": "crypto.com Arena",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:42+09:00",
+            "moneyline": {
+              "away": 554,
+              "draw": null,
+              "home": -790
+            },
+            "spread": {
+              "homeLine": "-13.5",
+              "awayLine": "+13.5",
+              "home": -110,
+              "away": -110
+            },
+            "total": {
+              "line": "226.5",
+              "over": -110,
+              "under": -110
+            },
+            "implied": {
+              "away": 14.7,
+              "home": 85.3
+            }
+          },
           "away": {
             "name": "유타 재즈",
             "abbr": "UTAH",
-            "record": "3승 14패",
+            "record": "3승 15패",
             "badges": [
               {
                 "text": "원정 2승 6패",
@@ -33762,11 +33871,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 5명",
               "tone": "warn"
             },
             {
-              "text": "평균 108.3점 · 120.0점",
+              "text": "평균 108.6점 · 120.0점",
               "tone": "info"
             }
           ],
@@ -33774,7 +33883,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**LA 레이커스**(홈) 14승 3패(홈 7승 2패, 최근 5경기 4승 1패), **유타 재즈**(원정) 3승 14패(원정 2승 6패, 최근 5경기 2승 3패). 직전 경기(11.21) **유타 재즈**는 피닉스 선즈에 101-111로 졌고, Darryn Peterson 20점·10리바운드·8어시스트, Jaxson Hayes 18점·14리바운드·0어시스트를 기록했습니다. 직전 경기(11.21) **LA 레이커스**는 새크라멘토 킹스에 106-104로 이겼고, Luka Doncic 25점·4리바운드·8어시스트, Walker Kessler 15점·7리바운드·2어시스트를 기록했습니다."
+              "text": "**LA 레이커스**(홈) 14승 3패(홈 7승 2패, 최근 5경기 4승 1패), **유타 재즈**(원정) 3승 15패(원정 2승 6패, 최근 5경기 2승 3패, 2연패). 직전 경기(11.23) **유타 재즈**는 댈러스 매버릭스에 114-116로 졌고, Svi Mykhailiuk 39점·5리바운드·3어시스트, Ace Bailey 16점·5리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **LA 레이커스**는 새크라멘토 킹스에 106-104로 이겼고, Luka Doncic 25점·4리바운드·8어시스트, Walker Kessler 15점·7리바운드·2어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -33783,11 +33892,19 @@ window.CLUTCH_DATA = {
                 "abbr": "UTAH",
                 "name": "유타 재즈",
                 "side": "away",
-                "record": "3승 14패",
+                "record": "3승 15패",
                 "venueRecord": "원정 2승 6패",
+                "streak": "2연패",
                 "last5": "2승 3패",
-                "lastGame": "101-111 패",
+                "lastGame": "114-116 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "댈러스 매버릭스",
+                    "ha": "홈",
+                    "score": "114-116",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "피닉스 선즈",
@@ -33815,28 +33932,21 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "102-110",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "휴스턴 로키츠",
-                    "ha": "원정",
-                    "score": "118-125",
-                    "res": "패"
                   }
                 ],
-                "ppg": 108.3,
-                "rpg": 44.8,
-                "tp": 34.7,
+                "ppg": 108.6,
+                "rpg": 45.1,
+                "tp": 35.0,
                 "players": [
                   {
                     "name": "Keyonte George",
                     "id": "4433627",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
                     "pos": "G",
-                    "stat": "21.1점 · 3.9리바운드 · 7.1어시스트",
-                    "sub": "야투 42.7% · 3점 32.4% · 팀 내 1옵션",
-                    "last": "직전 36분 14점 2리바운드 6어시스트, 야투 4-17",
-                    "recent": "최근 5경기 22.8점 · 야투 41.9%"
+                    "stat": "20.8점 · 4.0리바운드 · 7.1어시스트",
+                    "sub": "야투 42.8% · 3점 32.4% · 팀 내 1옵션",
+                    "last": "직전 26분 15점 5리바운드 7어시스트, 야투 4-9",
+                    "recent": "최근 5경기 20.4점 · 야투 41.6%"
                   },
                   {
                     "name": "Lauri Markkanen",
@@ -33847,21 +33957,26 @@ window.CLUTCH_DATA = {
                     "sub": "야투 38.9% · 3점 39.7% · 팀 내 2옵션"
                   },
                   {
-                    "name": "Darryn Peterson",
-                    "id": "5041955",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png",
-                    "pos": "G",
-                    "stat": "16.7점 · 4.5리바운드 · 3.9어시스트",
-                    "sub": "야투 40.0% · 3점 33.7% · 팀 내 3옵션",
-                    "last": "직전 32분 20점 10리바운드 8어시스트, 야투 7-20",
-                    "recent": "최근 5경기 17.8점 · 야투 38.7%"
+                    "name": "Jaren Jackson Jr.",
+                    "id": "4277961",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277961.png",
+                    "pos": "F",
+                    "stat": "16.2점 · 5.0리바운드 · 2.0어시스트",
+                    "sub": "야투 50.0% · 3점 35.7% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 5경기 Keyonte George의 평균은 22.8점·야투 41.9%·3점 36.8%입니다. 결장 3명의 시즌 평균 득점 합계는 34.2점입니다. 직전 경기에서는 Darryn Peterson가 20점·10리바운드·8어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명",
-                "injuryOut": 3,
-                "injuryPpg": 34.2,
+                "focus": "최근 5경기 Keyonte George의 평균은 20.4점·야투 41.6%·3점 32.4%입니다. 결장 4명의 시즌 평균 득점 합계는 43.4점입니다. 직전 경기에서는 Svi Mykhailiuk가 39점·5리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명",
+                "injuryOut": 4,
+                "injuryPpg": 43.4,
                 "injuries": [
+                  {
+                    "player": "Jaxson Hayes",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 7옵션 · 9.2점 · 6.4리바운드"
+                  },
                   {
                     "player": "Jusuf Nurkic",
                     "status": "OUT",
@@ -33880,7 +33995,7 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 4옵션 · 16.2점 · 5.0리바운드"
+                    "line": "팀 내 3옵션 · 16.2점 · 5.0리바운드"
                   }
                 ]
               },
@@ -33979,11 +34094,15 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **LA 레이커스**(홈) 120.0점 · **유타 재즈**(원정) 108.3점, 평균 리바운드는 홈 41.1개 · 원정 44.8개, 3점 성공률은 홈 37.1% · 원정 34.7%. 평균 득점 차 11.7점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 유타 재즈 승률 18.9%, LA 레이커스 81.1%.",
+              "해외 배당을 확률로 환산하면 유타 재즈 승 14.7% · LA 레이커스 승 85.3%입니다.",
+              "시즌 평균 득점은 **LA 레이커스**(홈) 120.0점 · **유타 재즈**(원정) 108.6점, 평균 리바운드는 홈 41.1개 · 원정 45.1개, 3점 성공률은 홈 37.1% · 원정 35.0%. 평균 득점 차 11.4점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 유타 재즈 승률 19.0%, LA 레이커스 81.0%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-1."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -33995,6 +34114,30 @@ window.CLUTCH_DATA = {
           "start": "2026-11-24T12:00:00+09:00",
           "status": "scheduled",
           "venue": "Golden 1 Center",
+          "odds": {
+            "provider": "Draft Kings",
+            "at": "2026-11-23T22:07:42+09:00",
+            "moneyline": {
+              "away": -484,
+              "draw": null,
+              "home": 371
+            },
+            "spread": {
+              "homeLine": "+10.5",
+              "awayLine": "-10.5",
+              "home": -105,
+              "away": -115
+            },
+            "total": {
+              "line": "223.5",
+              "over": -110,
+              "under": -110
+            },
+            "implied": {
+              "away": 79.6,
+              "home": 20.4
+            }
+          },
           "away": {
             "name": "샌안토니오 스퍼스",
             "abbr": "SAS",
@@ -34019,7 +34162,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 5명",
+              "text": "결장 4명",
               "tone": "warn"
             },
             {
@@ -34116,11 +34259,32 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 20.4점 · 야투 54.7%"
                   }
                 ],
-                "focus": "최근 5경기 Victor Wembanyama의 평균은 29.0점·야투 53.6%·3점 30.0%입니다. 결장 3명의 시즌 평균 득점 합계는 18.4점입니다. 직전 경기에서는 Jeremiah Fears가 29점·5리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명",
-                "injuryOut": 3,
+                "focus": "최근 5경기 Victor Wembanyama의 평균은 29.0점·야투 53.6%·3점 30.0%입니다. 결장 2명의 시즌 평균 득점 합계는 18.4점입니다. 직전 경기에서는 Jeremiah Fears가 29점·5리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 3명",
+                "injuryOut": 2,
                 "injuryPpg": 18.4,
                 "injuries": [
+                  {
+                    "player": "Victor Wembanyama",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 1옵션 · 29.9점 · 12.3리바운드"
+                  },
+                  {
+                    "player": "De'Aaron Fox",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 4옵션 · 12.4점 · 3.9리바운드"
+                  },
+                  {
+                    "player": "Jordan McLaughlin",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 12옵션 · 2.5점 · 1.7리바운드"
+                  },
                   {
                     "player": "Dylan Harper",
                     "status": "OUT",
@@ -34130,12 +34294,6 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "player": "Tobias Harris",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
-                  {
-                    "player": "Jayden Quaintance",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F"
@@ -34242,11 +34400,15 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
+              "해외 배당을 확률로 환산하면 샌안토니오 스퍼스 승 79.6% · 새크라멘토 킹스 승 20.4%입니다.",
               "시즌 평균 득점은 **새크라멘토 킹스**(홈) 106.8점 · **샌안토니오 스퍼스**(원정) 117.3점, 평균 리바운드는 홈 40.8개 · 원정 47.8개, 3점 성공률은 홈 34.1% · 원정 33.7%. 평균 득점 차 10.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 샌안토니오 스퍼스 승률 90.6%, 새크라멘토 킹스 9.4%.",
+              "**ESPN 매치업 예측** — 샌안토니오 스퍼스 승률 85.7%, 새크라멘토 킹스 14.3%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 2-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 2-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-24 END */
@@ -38254,10 +38416,10 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "디트로이트 피스턴스",
             "abbr": "DET",
-            "record": "10승 5패",
+            "record": "10승 6패",
             "badges": [
               {
-                "text": "원정 7승 2패",
+                "text": "원정 7승 3패",
                 "tone": ""
               }
             ]
@@ -38265,7 +38427,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "올랜도 매직",
             "abbr": "ORL",
-            "record": "7승 8패",
+            "record": "7승 9패",
             "badges": [
               {
                 "text": "홈 1승 5패",
@@ -38275,11 +38437,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 8명",
+              "text": "결장 7명",
               "tone": "warn"
             },
             {
-              "text": "평균 114.5점 · 109.6점",
+              "text": "평균 113.4점 · 108.8점",
               "tone": "info"
             }
           ],
@@ -38287,7 +38449,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**올랜도 매직**(홈) 7승 8패(홈 1승 5패, 최근 5경기 4승 1패), **디트로이트 피스턴스**(원정) 10승 5패(원정 7승 2패, 최근 5경기 3승 2패). 직전 경기(11.21) **디트로이트 피스턴스**는 토론토 랩터스에 102-105로 졌고, Cade Cunningham 23점·5리바운드·9어시스트, Kevin Huerter 20점·3리바운드·3어시스트를 기록했습니다. 직전 경기(11.21) **올랜도 매직**은 브루클린 네츠에 113-111로 이겼고, Franz Wagner 35점·5리바운드·7어시스트, Desmond Bane 21점·2리바운드·3어시스트를 기록했습니다."
+              "text": "**올랜도 매직**(홈) 7승 9패(홈 1승 5패, 최근 5경기 3승 2패), **디트로이트 피스턴스**(원정) 10승 6패(원정 7승 3패, 최근 5경기 2승 3패, 2연패). 직전 경기(11.22) **디트로이트 피스턴스**는 애틀랜타 호크스에 97-107로 졌고, Isaiah Joe 19점·2리바운드·3어시스트, John Collins 18점·6리바운드·0어시스트를 기록했습니다. 직전 경기(11.23) **올랜도 매직**은 워싱턴 위저즈에 96-116로 졌고, Tristan da Silva 18점·3리바운드·0어시스트, Desmond Bane 17점·1리바운드·5어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -38296,11 +38458,19 @@ window.CLUTCH_DATA = {
                 "abbr": "DET",
                 "name": "디트로이트 피스턴스",
                 "side": "away",
-                "record": "10승 5패",
-                "venueRecord": "원정 7승 2패",
-                "last5": "3승 2패",
-                "lastGame": "102-105 패",
+                "record": "10승 6패",
+                "venueRecord": "원정 7승 3패",
+                "streak": "2연패",
+                "last5": "2승 3패",
+                "lastGame": "97-107 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "애틀랜타 호크스",
+                    "ha": "원정",
+                    "score": "97-107",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "토론토 랩터스",
@@ -38328,28 +38498,21 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "117-137",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "원정",
-                    "score": "144-140",
-                    "res": "승"
                   }
                 ],
-                "ppg": 114.5,
+                "ppg": 113.4,
                 "rpg": 43.1,
-                "tp": 37.0,
+                "tp": 36.9,
                 "players": [
                   {
                     "name": "Cade Cunningham",
                     "id": "4432166",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
                     "pos": "G",
-                    "stat": "25.6점 · 5.1리바운드 · 7.9어시스트",
-                    "sub": "야투 47.5% · 3점 31.5% · 팀 내 1옵션",
-                    "last": "직전 36분 23점 5리바운드 9어시스트, 야투 10-22",
-                    "recent": "최근 4경기 33.8점 · 야투 50.0%"
+                    "stat": "24.2점 · 5.1리바운드 · 8.3어시스트",
+                    "sub": "야투 46.7% · 3점 31.5% · 팀 내 1옵션",
+                    "last": "직전 33분 5점 4리바운드 15어시스트, 야투 2-9",
+                    "recent": "최근 4경기 22.0점 · 야투 42.1%"
                   },
                   {
                     "name": "Duncan Robinson",
@@ -38358,28 +38521,28 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "17.4점 · 1.8리바운드 · 2.1어시스트",
                     "sub": "야투 45.0% · 3점 43.1% · 팀 내 2옵션",
-                    "recent": "최근 2경기 11.5점 · 야투 36.4%"
+                    "recent": "최근 1경기 10.0점 · 야투 37.5%"
                   },
                   {
                     "name": "Daniss Jenkins",
                     "id": "5107199",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
                     "pos": "G",
-                    "stat": "14.3점 · 3.7리바운드 · 4.5어시스트",
-                    "sub": "야투 44.4% · 3점 44.0% · 팀 내 3옵션",
-                    "last": "직전 39분 14점 4리바운드 1어시스트, 야투 5-14",
-                    "recent": "최근 5경기 17.4점 · 야투 43.4%"
+                    "stat": "14.1점 · 3.8리바운드 · 4.4어시스트",
+                    "sub": "야투 43.6% · 3점 42.0% · 팀 내 3옵션",
+                    "last": "직전 38분 11점 5리바운드 3어시스트, 야투 4-12",
+                    "recent": "최근 5경기 15.4점 · 야투 40.3%"
                   }
                 ],
-                "focus": "최근 4경기 Cade Cunningham의 평균은 33.8점·야투 50.0%·3점 37.5%입니다. 결장 4명의 시즌 평균 득점 합계는 34.6점입니다. 직전 경기에서는 Cade Cunningham가 23점·5리바운드·9어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명(팀 득점 2·4·13·15위)",
-                "injuryOut": 4,
-                "injuryPpg": 34.6,
+                "focus": "최근 4경기 Cade Cunningham의 평균은 22.0점·야투 42.1%·3점 31.8%입니다. 결장 3명의 시즌 평균 득점 합계는 32.4점입니다. 직전 경기에서는 Isaiah Joe가 19점·2리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 2·4·15위) · 출전 불투명 1명",
+                "injuryOut": 3,
+                "injuryPpg": 32.4,
                 "injuries": [
                   {
                     "player": "Ebuka Okorie",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "G",
                     "line": "팀 내 13옵션 · 2.2점 · 0.4리바운드"
                   },
@@ -38410,11 +38573,18 @@ window.CLUTCH_DATA = {
                 "abbr": "ORL",
                 "name": "올랜도 매직",
                 "side": "home",
-                "record": "7승 8패",
+                "record": "7승 9패",
                 "venueRecord": "홈 1승 5패",
-                "last5": "4승 1패",
-                "lastGame": "113-111 승",
+                "last5": "3승 2패",
+                "lastGame": "96-116 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "워싱턴 위저즈",
+                    "ha": "원정",
+                    "score": "96-116",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "브루클린 네츠",
@@ -38442,28 +38612,21 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "107-99",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "유타 재즈",
-                    "ha": "원정",
-                    "score": "123-108",
-                    "res": "승"
                   }
                 ],
-                "ppg": 109.6,
-                "rpg": 42.6,
-                "tp": 35.8,
+                "ppg": 108.8,
+                "rpg": 42.4,
+                "tp": 35.4,
                 "players": [
                   {
                     "name": "Franz Wagner",
                     "id": "4566434",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
                     "pos": "F",
-                    "stat": "25.1점 · 6.8리바운드 · 8.4어시스트",
-                    "sub": "야투 47.5% · 3점 26.0% · 팀 내 1옵션",
-                    "last": "직전 36분 35점 5리바운드 7어시스트, 야투 13-25",
-                    "recent": "최근 5경기 31.2점 · 야투 52.2%"
+                    "stat": "24.5점 · 6.9리바운드 · 8.2어시스트",
+                    "sub": "야투 47.0% · 3점 25.0% · 팀 내 1옵션",
+                    "last": "직전 32분 16점 8리바운드 6어시스트, 야투 7-18",
+                    "recent": "최근 5경기 26.8점 · 야투 49.1%"
                   },
                   {
                     "name": "Paolo Banchero",
@@ -38478,13 +38641,13 @@ window.CLUTCH_DATA = {
                     "id": "4066320",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
                     "pos": "G",
-                    "stat": "18.6점 · 4.1리바운드 · 2.7어시스트",
-                    "sub": "야투 42.5% · 3점 42.9% · 팀 내 3옵션",
-                    "last": "직전 31분 21점 2리바운드 3어시스트, 야투 7-17",
-                    "recent": "최근 5경기 21.2점 · 야투 52.9%"
+                    "stat": "18.5점 · 3.9리바운드 · 2.9어시스트",
+                    "sub": "야투 43.0% · 3점 42.6% · 팀 내 3옵션",
+                    "last": "직전 33분 17점 1리바운드 5어시스트, 야투 7-14",
+                    "recent": "최근 5경기 19.6점 · 야투 51.5%"
                   }
                 ],
-                "focus": "최근 5경기 Franz Wagner의 평균은 31.2점·야투 52.2%·3점 31.0%입니다. 결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Franz Wagner가 35점·5리바운드·7어시스트를 기록했습니다.",
+                "focus": "최근 5경기 Franz Wagner의 평균은 26.8점·야투 49.1%·3점 25.0%입니다. 결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Tristan da Silva가 18점·3리바운드·0어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.5,
@@ -38518,11 +38681,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **올랜도 매직**(홈) 109.6점 · **디트로이트 피스턴스**(원정) 114.5점, 평균 리바운드는 홈 42.6개 · 원정 43.1개, 3점 성공률은 홈 35.8% · 원정 37.0%. 평균 득점 차 4.9점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 디트로이트 피스턴스 승률 57.5%, 올랜도 매직 42.5%.",
+              "시즌 평균 득점은 **올랜도 매직**(홈) 108.8점 · **디트로이트 피스턴스**(원정) 113.4점, 평균 리바운드는 홈 42.4개 · 원정 43.1개, 3점 성공률은 홈 35.4% · 원정 36.9%. 평균 득점 차 4.6점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 디트로이트 피스턴스 승률 60.4%, 올랜도 매직 39.6%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -38537,10 +38703,10 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "보스턴 셀틱스",
             "abbr": "BOS",
-            "record": "11승 5패",
+            "record": "11승 6패",
             "badges": [
               {
-                "text": "원정 5승 4패",
+                "text": "원정 5승 5패",
                 "tone": ""
               }
             ]
@@ -38548,21 +38714,21 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "워싱턴 위저즈",
             "abbr": "WAS",
-            "record": "6승 11패",
+            "record": "7승 11패",
             "badges": [
               {
-                "text": "홈 2승 5패",
+                "text": "홈 3승 5패",
                 "tone": ""
               }
             ]
           },
           "tags": [
             {
-              "text": "결장 5명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
-              "text": "평균 112.8점 · 110.0점",
+              "text": "평균 111.2점 · 110.3점",
               "tone": "info"
             }
           ],
@@ -38570,7 +38736,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**워싱턴 위저즈**(홈) 6승 11패(홈 2승 5패, 최근 5경기 2승 3패, 2연승), **보스턴 셀틱스**(원정) 11승 5패(원정 5승 4패, 최근 5경기 2승 3패, 3연패). 직전 경기(11.22) **보스턴 셀틱스**는 새크라멘토 킹스에 96-97로 졌고, Paul George 19점·8리바운드·5어시스트, Mike Conley 19점·4리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **워싱턴 위저즈**는 시카고 불스에 98-94로 이겼고, Anthony Davis 36점·11리바운드·3어시스트, AJ Dybantsa 20점·10리바운드·6어시스트를 기록했습니다."
+              "text": "**워싱턴 위저즈**(홈) 7승 11패(홈 3승 5패, 최근 5경기 3승 2패, 3연승), **보스턴 셀틱스**(원정) 11승 6패(원정 5승 5패, 최근 5경기 1승 4패, 4연패). 직전 경기(11.23) **보스턴 셀틱스**는 골든스테이트 워리어스에 87-88로 졌고, Jayson Tatum 27점·10리바운드·6어시스트, Derrick White 14점·3리바운드·5어시스트를 기록했습니다. 직전 경기(11.23) **워싱턴 위저즈**는 워싱턴 위저즈에 96-116로 졌고, Tristan da Silva 18점·3리바운드·0어시스트, Desmond Bane 17점·1리바운드·5어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -38579,12 +38745,19 @@ window.CLUTCH_DATA = {
                 "abbr": "BOS",
                 "name": "보스턴 셀틱스",
                 "side": "away",
-                "record": "11승 5패",
-                "venueRecord": "원정 5승 4패",
-                "streak": "3연패",
-                "last5": "2승 3패",
-                "lastGame": "96-97 패",
+                "record": "11승 6패",
+                "venueRecord": "원정 5승 5패",
+                "streak": "4연패",
+                "last5": "1승 4패",
+                "lastGame": "87-88 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "골든스테이트 워리어스",
+                    "ha": "원정",
+                    "score": "87-88",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-22",
                     "opp": "새크라멘토 킹스",
@@ -38612,27 +38785,21 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "131-94",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "토론토 랩터스",
-                    "ha": "원정",
-                    "score": "98-93",
-                    "res": "승"
                   }
                 ],
-                "ppg": 112.8,
-                "rpg": 45.4,
-                "tp": 36.1,
+                "ppg": 111.2,
+                "rpg": 45.2,
+                "tp": 35.7,
                 "players": [
                   {
                     "name": "Jayson Tatum",
                     "id": "4065648",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
                     "pos": "F",
-                    "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
-                    "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
-                    "recent": "최근 4경기 26.0점 · 야투 42.9%"
+                    "stat": "26.4점 · 6.9리바운드 · 6.7어시스트",
+                    "sub": "야투 42.6% · 3점 33.6% · 팀 내 1옵션",
+                    "last": "직전 38분 27점 10리바운드 6어시스트, 야투 8-20",
+                    "recent": "최근 4경기 26.8점 · 야투 45.8%"
                   },
                   {
                     "name": "Paul George",
@@ -38641,7 +38808,6 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "19.9점 · 5.6리바운드 · 3.8어시스트",
                     "sub": "야투 44.8% · 3점 40.7% · 팀 내 2옵션",
-                    "last": "직전 37분 19점 8리바운드 5어시스트, 야투 6-21",
                     "recent": "최근 4경기 14.5점 · 야투 33.3%"
                   },
                   {
@@ -38649,13 +38815,13 @@ window.CLUTCH_DATA = {
                     "id": "4066354",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
-                    "stat": "13.4점 · 3.2리바운드 · 4.1어시스트",
-                    "sub": "야투 40.7% · 3점 34.3% · 팀 내 3옵션",
-                    "last": "직전 34분 9점 6리바운드 8어시스트, 야투 4-17",
-                    "recent": "최근 5경기 13.8점 · 야투 39.4%"
+                    "stat": "12.9점 · 3.1리바운드 · 4.1어시스트",
+                    "sub": "야투 40.0% · 3점 33.9% · 팀 내 3옵션",
+                    "last": "직전 28분 5점 1리바운드 4어시스트, 야투 2-8",
+                    "recent": "최근 5경기 12.0점 · 야투 37.7%"
                   }
                 ],
-                "focus": "최근 4경기 Jayson Tatum의 평균은 26.0점·야투 42.9%·3점 35.1%입니다. 결장 2명의 시즌 평균 득점 합계는 25.0점입니다. 직전 경기에서는 Paul George가 19점·8리바운드·5어시스트를 기록했습니다.",
+                "focus": "최근 4경기 Jayson Tatum의 평균은 26.8점·야투 45.8%·3점 40.5%입니다. 결장 2명의 시즌 평균 득점 합계는 25.0점입니다. 직전 경기에서는 Jayson Tatum가 27점·10리바운드·6어시스트를 기록했습니다.",
                 "injurySummary": "결장 2명(팀 득점 2·10위)",
                 "injuryOut": 2,
                 "injuryPpg": 25.0,
@@ -38680,12 +38846,19 @@ window.CLUTCH_DATA = {
                 "abbr": "WAS",
                 "name": "워싱턴 위저즈",
                 "side": "home",
-                "record": "6승 11패",
-                "venueRecord": "홈 2승 5패",
-                "streak": "2연승",
-                "last5": "2승 3패",
-                "lastGame": "98-94 승",
+                "record": "7승 11패",
+                "venueRecord": "홈 3승 5패",
+                "streak": "3연승",
+                "last5": "3승 2패",
+                "lastGame": "116-96 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "올랜도 매직",
+                    "ha": "홈",
+                    "score": "116-96",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "시카고 불스",
@@ -38713,69 +38886,48 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "119-147",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "디트로이트 피스턴스",
-                    "ha": "홈",
-                    "score": "140-144",
-                    "res": "패"
                   }
                 ],
-                "ppg": 110.0,
-                "rpg": 42.5,
-                "tp": 31.9,
+                "ppg": 110.3,
+                "rpg": 42.7,
+                "tp": 33.6,
                 "players": [
                   {
                     "name": "Anthony Davis",
                     "id": "6583",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
                     "pos": "F",
-                    "stat": "25.3점 · 10.1리바운드 · 2.1어시스트",
-                    "sub": "야투 52.9% · 3점 34.4% · 팀 내 1옵션",
-                    "last": "직전 34분 36점 11리바운드 3어시스트, 야투 16-26",
-                    "recent": "최근 5경기 25.6점 · 야투 56.2%"
-                  },
-                  {
-                    "name": "Trae Young",
-                    "id": "4277905",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
-                    "pos": "G",
-                    "stat": "17.4점 · 2.7리바운드 · 8.6어시스트",
-                    "sub": "야투 36.7% · 3점 31.8% · 팀 내 3옵션",
-                    "last": "직전 35분 16점 2리바운드 5어시스트, 야투 4-13",
-                    "recent": "최근 5경기 15.4점 · 야투 28.3%"
+                    "stat": "25.1점 · 9.9리바운드 · 2.1어시스트",
+                    "sub": "야투 53.3% · 3점 35.1% · 팀 내 1옵션",
+                    "last": "직전 33분 22점 7리바운드 1어시스트, 야투 8-13",
+                    "recent": "최근 5경기 24.0점 · 야투 55.6%"
                   },
                   {
                     "name": "Kyshawn George",
                     "id": "5174563",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
                     "pos": "F",
-                    "stat": "17.4점 · 4.4리바운드 · 4.5어시스트",
-                    "sub": "야투 47.2% · 3점 40.0% · 팀 내 2옵션",
-                    "last": "직전 35분 11점 7리바운드 5어시스트, 야투 5-17",
-                    "recent": "최근 5경기 14.8점 · 야투 44.4%"
+                    "stat": "17.8점 · 4.3리바운드 · 4.4어시스트",
+                    "sub": "야투 47.6% · 3점 41.4% · 팀 내 2옵션",
+                    "last": "직전 36분 24점 3리바운드 4어시스트, 야투 9-17",
+                    "recent": "최근 5경기 16.8점 · 야투 43.8%"
+                  },
+                  {
+                    "name": "Trae Young",
+                    "id": "4277905",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
+                    "pos": "G",
+                    "stat": "17.1점 · 2.8리바운드 · 8.8어시스트",
+                    "sub": "야투 36.4% · 3점 32.5% · 팀 내 3옵션",
+                    "last": "직전 28분 11점 4리바운드 11어시스트, 야투 3-10",
+                    "recent": "최근 5경기 10.2점 · 야투 25.5%"
                   }
                 ],
-                "focus": "최근 5경기 Anthony Davis의 평균은 25.6점·야투 56.2%·3점 40.0%입니다. 결장 3명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Anthony Davis가 36점·11리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명 · 출전 불투명 2명",
-                "injuryOut": 3,
+                "focus": "최근 5경기 Anthony Davis의 평균은 24.0점·야투 55.6%·3점 44.4%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Tristan da Silva가 18점·3리바운드·0어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명",
+                "injuryOut": 4,
                 "injuryPpg": 7.2,
                 "injuries": [
-                  {
-                    "player": "Bub Carrington",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 9옵션 · 4.8점 · 1.3리바운드"
-                  },
-                  {
-                    "player": "Deandre Ayton",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "C",
-                    "line": "팀 내 11옵션 · 3.8점 · 4.1리바운드"
-                  },
                   {
                     "player": "Tristan Vukcevic",
                     "status": "OUT",
@@ -38795,16 +38947,25 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 7옵션 · 7.2점 · 7.5리바운드"
+                  },
+                  {
+                    "player": "Jamir Watkins",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **워싱턴 위저즈**(홈) 110.0점 · **보스턴 셀틱스**(원정) 112.8점, 평균 리바운드는 홈 42.5개 · 원정 45.4개, 3점 성공률은 홈 31.9% · 원정 36.1%. 평균 득점 차가 2.8점으로 작고, 3점 성공률 차 4.2%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 보스턴 셀틱스 승률 79.5%, 워싱턴 위저즈 20.5%.",
+              "시즌 평균 득점은 **워싱턴 위저즈**(홈) 110.3점 · **보스턴 셀틱스**(원정) 111.2점, 평균 리바운드는 홈 42.7개 · 원정 45.2개, 3점 성공률은 홈 33.6% · 원정 35.7%. 평균 득점 차가 0.9점으로 작고, 3점 성공률 차 2.1%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 보스턴 셀틱스 승률 76.7%, 워싱턴 위저즈 23.3%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -38819,10 +38980,10 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "댈러스 매버릭스",
             "abbr": "DAL",
-            "record": "9승 7패",
+            "record": "10승 7패",
             "badges": [
               {
-                "text": "원정 2승 5패",
+                "text": "원정 3승 5패",
                 "tone": ""
               }
             ]
@@ -38830,7 +38991,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "덴버 너기츠",
             "abbr": "DEN",
-            "record": "9승 5패",
+            "record": "10승 5패",
             "badges": [
               {
                 "text": "홈 4승 3패",
@@ -38840,11 +39001,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
-              "text": "평균 112.2점 · 114.6점",
+              "text": "평균 112.4점 · 117.0점",
               "tone": "info"
             }
           ],
@@ -38852,7 +39013,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**덴버 너기츠**(홈) 9승 5패(홈 4승 3패, 최근 5경기 4승 1패, 2연승), **댈러스 매버릭스**(원정) 9승 7패(원정 2승 5패, 최근 5경기 2승 3패, 2연승). 직전 경기(11.22) **댈러스 매버릭스**는 LA 클리퍼스에 110-100로 이겼고, Kyrie Irving 25점·6리바운드·4어시스트, Cooper Flagg 22점·6리바운드·8어시스트를 기록했습니다. 직전 경기(11.21) **덴버 너기츠**는 휴스턴 로키츠에 133-124로 이겼고, Nikola Jokic 26점·7리바운드·11어시스트, Cameron Johnson 19점·3리바운드·6어시스트를 기록했습니다."
+              "text": "**덴버 너기츠**(홈) 10승 5패(홈 4승 3패, 최근 5경기 4승 1패, 3연승), **댈러스 매버릭스**(원정) 10승 7패(원정 3승 5패, 최근 5경기 3승 2패, 3연승). 직전 경기(11.23) **댈러스 매버릭스**는 유타 재즈에 116-114로 이겼고, Cooper Flagg 28점·3리바운드·4어시스트, Kyrie Irving 16점·1리바운드·8어시스트를 기록했습니다. 직전 경기(11.23) **덴버 너기츠**는 시카고 불스에 151-145로 이겼고, Jamal Murray 45점·5리바운드·7어시스트, Nikola Jokic 37점·18리바운드·11어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -38861,12 +39022,19 @@ window.CLUTCH_DATA = {
                 "abbr": "DAL",
                 "name": "댈러스 매버릭스",
                 "side": "away",
-                "record": "9승 7패",
-                "venueRecord": "원정 2승 5패",
-                "streak": "2연승",
-                "last5": "2승 3패",
-                "lastGame": "110-100 승",
+                "record": "10승 7패",
+                "venueRecord": "원정 3승 5패",
+                "streak": "3연승",
+                "last5": "3승 2패",
+                "lastGame": "116-114 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "유타 재즈",
+                    "ha": "원정",
+                    "score": "116-114",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-22",
                     "opp": "LA 클리퍼스",
@@ -38894,38 +39062,31 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "117-127",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "미네소타 팀버울브스",
-                    "ha": "원정",
-                    "score": "94-133",
-                    "res": "패"
                   }
                 ],
-                "ppg": 112.2,
-                "rpg": 43.8,
-                "tp": 34.4,
+                "ppg": 112.4,
+                "rpg": 43.2,
+                "tp": 34.6,
                 "players": [
                   {
                     "name": "Cooper Flagg",
                     "id": "5041939",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                     "pos": "F",
-                    "stat": "24.1점 · 6.5리바운드 · 6.5어시스트",
-                    "sub": "야투 47.9% · 3점 31.5% · 팀 내 1옵션",
-                    "last": "직전 36분 22점 6리바운드 8어시스트, 야투 6-16",
-                    "recent": "최근 5경기 20.4점 · 야투 42.9%"
+                    "stat": "24.3점 · 6.3리바운드 · 6.4어시스트",
+                    "sub": "야투 47.8% · 3점 32.5% · 팀 내 1옵션",
+                    "last": "직전 31분 28점 3리바운드 4어시스트, 야투 8-17",
+                    "recent": "최근 5경기 23.6점 · 야투 43.9%"
                   },
                   {
                     "name": "Kyrie Irving",
                     "id": "6442",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                     "pos": "G",
-                    "stat": "22.5점 · 3.8리바운드 · 4.4어시스트",
-                    "sub": "야투 45.9% · 3점 37.4% · 팀 내 2옵션",
-                    "last": "직전 35분 25점 6리바운드 4어시스트, 야투 8-24",
-                    "recent": "최근 4경기 21.5점 · 야투 40.0%"
+                    "stat": "22.0점 · 3.6리바운드 · 4.6어시스트",
+                    "sub": "야투 45.9% · 3점 38.2% · 팀 내 2옵션",
+                    "last": "직전 27분 16점 1리바운드 8어시스트, 야투 6-13",
+                    "recent": "최근 4경기 23.0점 · 야투 41.6%"
                   },
                   {
                     "name": "P.J. Washington",
@@ -38934,27 +39095,20 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "14.0점 · 6.7리바운드 · 1.3어시스트",
                     "sub": "야투 42.1% · 3점 36.2% · 팀 내 3옵션",
-                    "recent": "최근 4경기 12.2점 · 야투 45.9%"
+                    "recent": "최근 3경기 13.0점 · 야투 43.3%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 20.4점·야투 42.9%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 6.6점입니다. 직전 경기에서는 Kyrie Irving가 25점·6리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명 · 출전 불투명 2명",
-                "injuryOut": 3,
-                "injuryPpg": 6.6,
+                "focus": "최근 5경기 Cooper Flagg의 평균은 23.6점·야투 43.9%·3점 36.7%입니다. 결장 5명의 시즌 평균 득점 합계는 20.6점입니다. 직전 경기에서는 Cooper Flagg가 28점·3리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명",
+                "injuryOut": 5,
+                "injuryPpg": 20.6,
                 "injuries": [
                   {
                     "player": "P.J. Washington",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "F",
                     "line": "팀 내 3옵션 · 14.0점 · 6.7리바운드"
-                  },
-                  {
-                    "player": "Walter Clayton Jr.",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 7옵션 · 7.7점 · 3.1리바운드"
                   },
                   {
                     "player": "Tobi Lawal",
@@ -38975,6 +39129,12 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 12옵션 · 5.2점 · 2.0리바운드"
+                  },
+                  {
+                    "player": "Tarik Biberovic",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F"
                   }
                 ]
               },
@@ -38982,12 +39142,19 @@ window.CLUTCH_DATA = {
                 "abbr": "DEN",
                 "name": "덴버 너기츠",
                 "side": "home",
-                "record": "9승 5패",
+                "record": "10승 5패",
                 "venueRecord": "홈 4승 3패",
-                "streak": "2연승",
+                "streak": "3연승",
                 "last5": "4승 1패",
-                "lastGame": "133-124 승",
+                "lastGame": "151-145 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "시카고 불스",
+                    "ha": "원정",
+                    "score": "151-145",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "휴스턴 로키츠",
@@ -39015,51 +39182,44 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "116-108",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "멤피스 그리즐리스",
-                    "ha": "원정",
-                    "score": "123-118",
-                    "res": "승"
                   }
                 ],
-                "ppg": 114.6,
-                "rpg": 41.6,
-                "tp": 34.3,
+                "ppg": 117.0,
+                "rpg": 41.9,
+                "tp": 35.3,
                 "players": [
                   {
                     "name": "Jamal Murray",
                     "id": "3936299",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
                     "pos": "G",
-                    "stat": "24.9점 · 5.0리바운드 · 5.8어시스트",
-                    "sub": "야투 50.2% · 3점 46.3% · 팀 내 1옵션",
-                    "last": "직전 36분 14점 2리바운드 7어시스트, 야투 4-10",
-                    "recent": "최근 5경기 23.2점 · 야투 51.9%"
+                    "stat": "26.2점 · 5.0리바운드 · 5.9어시스트",
+                    "sub": "야투 51.0% · 3점 47.2% · 팀 내 1옵션",
+                    "last": "직전 45분 45점 5리바운드 7어시스트, 야투 13-22",
+                    "recent": "최근 5경기 26.2점 · 야투 51.2%"
                   },
                   {
                     "name": "Nikola Jokic",
                     "id": "3112335",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
                     "pos": "C",
-                    "stat": "24.2점 · 10.4리바운드 · 9.1어시스트",
-                    "sub": "야투 52.6% · 3점 30.0% · 팀 내 2옵션",
-                    "last": "직전 38분 26점 7리바운드 11어시스트, 야투 10-15",
-                    "recent": "최근 5경기 26.2점 · 야투 60.2%"
+                    "stat": "25.1점 · 10.9리바운드 · 9.2어시스트",
+                    "sub": "야투 53.5% · 3점 30.2% · 팀 내 2옵션",
+                    "last": "직전 42분 37점 18리바운드 11어시스트, 야투 14-22",
+                    "recent": "최근 5경기 28.2점 · 야투 60.7%"
                   },
                   {
                     "name": "Christian Braun",
                     "id": "4431767",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png",
                     "pos": "G",
-                    "stat": "13.2점 · 4.4리바운드 · 2.4어시스트",
-                    "sub": "야투 48.6% · 3점 33.8% · 팀 내 3옵션",
-                    "last": "직전 31분 19점 5리바운드 3어시스트, 야투 7-10",
-                    "recent": "최근 5경기 14.6점 · 야투 46.7%"
+                    "stat": "13.7점 · 4.6리바운드 · 2.5어시스트",
+                    "sub": "야투 49.4% · 3점 35.1% · 팀 내 3옵션",
+                    "last": "직전 38분 21점 8리바운드 3어시스트, 야투 8-14",
+                    "recent": "최근 5경기 16.4점 · 야투 50.8%"
                   }
                 ],
-                "focus": "최근 5경기 Jamal Murray의 평균은 23.2점·야투 51.9%·3점 33.3%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 26점·7리바운드·11어시스트를 기록했습니다.",
+                "focus": "최근 5경기 Jamal Murray의 평균은 26.2점·야투 51.2%·3점 35.7%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Jamal Murray가 45점·5리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -39073,11 +39233,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **덴버 너기츠**(홈) 114.6점 · **댈러스 매버릭스**(원정) 112.2점, 평균 리바운드는 홈 41.6개 · 원정 43.8개, 3점 성공률은 홈 34.3% · 원정 34.4%. 평균 득점 차가 2.4점으로 작고, 3점 성공률 차 0.1%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 30.6%, 덴버 너기츠 69.4%.",
+              "시즌 평균 득점은 **덴버 너기츠**(홈) 117.0점 · **댈러스 매버릭스**(원정) 112.4점, 평균 리바운드는 홈 41.9개 · 원정 43.2개, 3점 성공률은 홈 35.3% · 원정 34.6%. 평균 득점 차 4.6점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 30.8%, 덴버 너기츠 69.2%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-25 END */
@@ -43084,7 +43247,7 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "마이애미 히트",
             "abbr": "MIA",
-            "record": "9승 6패",
+            "record": "10승 6패",
             "badges": [
               {
                 "text": "원정 4승 3패",
@@ -43105,11 +43268,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 2명",
+              "text": "결장 3명",
               "tone": "warn"
             },
             {
-              "text": "평균 120.5점 · 115.5점",
+              "text": "평균 120.7점 · 115.5점",
               "tone": "info"
             }
           ],
@@ -43117,7 +43280,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**필라델피아 세븐티식서스**(홈) 14승 3패(홈 7승 2패, 최근 5경기 5승 0패, 5연승), **마이애미 히트**(원정) 9승 6패(원정 4승 3패, 최근 5경기 5승 0패, 5연승). 직전 경기(11.19) **마이애미 히트**는 밀워키 벅스에 137-130로 이겼고, Giannis Antetokounmpo 27점·14리바운드·9어시스트, Bam Adebayo 26점·4리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **필라델피아 세븐티식서스**는 밀워키 벅스에 132-129로 이겼고, Joel Embiid 26점·17리바운드·9어시스트, LeBron James 21점·6리바운드·6어시스트를 기록했습니다."
+              "text": "**필라델피아 세븐티식서스**(홈) 14승 3패(홈 7승 2패, 최근 5경기 5승 0패, 5연승), **마이애미 히트**(원정) 10승 6패(원정 4승 3패, 최근 5경기 5승 0패, 5연승). 직전 경기(11.22) **마이애미 히트**는 오클라호마시티 썬더에 123-113로 이겼고, Bam Adebayo 24점·15리바운드·12어시스트, Pelle Larsson 21점·3리바운드·5어시스트를 기록했습니다. 직전 경기(11.21) **필라델피아 세븐티식서스**는 밀워키 벅스에 132-129로 이겼고, Joel Embiid 26점·17리바운드·9어시스트, LeBron James 21점·6리바운드·6어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -43126,12 +43289,19 @@ window.CLUTCH_DATA = {
                 "abbr": "MIA",
                 "name": "마이애미 히트",
                 "side": "away",
-                "record": "9승 6패",
+                "record": "10승 6패",
                 "venueRecord": "원정 4승 3패",
                 "streak": "5연승",
                 "last5": "5승 0패",
-                "lastGame": "137-130 승",
+                "lastGame": "123-113 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "오클라호마시티 썬더",
+                    "ha": "홈",
+                    "score": "123-113",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-19",
                     "opp": "밀워키 벅스",
@@ -43159,18 +43329,11 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "133-121",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "유타 재즈",
-                    "ha": "원정",
-                    "score": "115-109",
-                    "res": "승"
                   }
                 ],
-                "ppg": 120.5,
-                "rpg": 42.2,
-                "tp": 35.2,
+                "ppg": 120.7,
+                "rpg": 42.6,
+                "tp": 35.4,
                 "players": [
                   {
                     "name": "Giannis Antetokounmpo",
@@ -43179,44 +43342,38 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "28.2점 · 12.6리바운드 · 5.5어시스트",
                     "sub": "야투 60.2% · 3점 24.2% · 팀 내 1옵션",
-                    "last": "직전 32분 27점 14리바운드 9어시스트, 야투 7-11",
-                    "recent": "최근 5경기 29.6점 · 야투 68.8%"
+                    "recent": "최근 4경기 29.5점 · 야투 72.9%"
                   },
                   {
                     "name": "Bam Adebayo",
                     "id": "4066261",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png",
                     "pos": "C",
-                    "stat": "18.9점 · 7.7리바운드 · 3.1어시스트",
-                    "sub": "야투 52.4% · 3점 24.5% · 팀 내 2옵션",
-                    "last": "직전 30분 26점 4리바운드 2어시스트, 야투 7-15",
-                    "recent": "최근 5경기 19.6점 · 야투 50.9%"
+                    "stat": "19.2점 · 8.2리바운드 · 3.7어시스트",
+                    "sub": "야투 53.6% · 3점 24.5% · 팀 내 2옵션",
+                    "last": "직전 37분 24점 15리바운드 12어시스트, 야투 8-11",
+                    "recent": "최근 5경기 22.2점 · 야투 60.7%"
                   },
                   {
                     "name": "Davion Mitchell",
                     "id": "4278053",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
                     "pos": "G",
-                    "stat": "17.2점 · 2.4리바운드 · 9.0어시스트",
-                    "sub": "야투 51.1% · 3점 43.7% · 팀 내 3옵션",
-                    "last": "직전 36분 24점 2리바운드 6어시스트, 야투 8-11",
-                    "recent": "최근 5경기 19.2점 · 야투 51.7%"
+                    "stat": "17.0점 · 2.5리바운드 · 8.6어시스트",
+                    "sub": "야투 51.0% · 3점 43.3% · 팀 내 3옵션",
+                    "last": "직전 34분 14점 4리바운드 3어시스트, 야투 5-10",
+                    "recent": "최근 5경기 18.2점 · 야투 54.4%"
                   }
                 ],
-                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 29.6점·야투 68.8%·3점 37.5%입니다. 직전 경기에서는 Giannis Antetokounmpo가 27점·14리바운드·9어시스트를 기록했습니다. 이어서 Bam Adebayo, Davion Mitchell가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음 · 출전 불투명 2명",
+                "focus": "최근 4경기 Giannis Antetokounmpo의 평균은 29.5점·야투 72.9%·3점 33.3%입니다. 결장 1명의 시즌 평균 득점 합계는 28.2점입니다. 직전 경기에서는 Bam Adebayo가 24점·15리바운드·12어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 1위)",
+                "injuryOut": 1,
+                "injuryPpg": 28.2,
                 "injuries": [
                   {
-                    "player": "Myron Gardner",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 11옵션 · 3.0점 · 2.3리바운드"
-                  },
-                  {
                     "player": "Giannis Antetokounmpo",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "F",
                     "line": "팀 내 1옵션 · 28.2점 · 12.6리바운드"
                   }
@@ -43308,11 +43465,11 @@ window.CLUTCH_DATA = {
                 "injuryPpg": 2.1,
                 "injuries": [
                   {
-                    "player": "Dean Wade",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
+                    "player": "Adem Bona",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
                   },
                   {
                     "player": "Jaylen Brown",
@@ -43322,11 +43479,11 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
                   },
                   {
-                    "player": "Adem Bona",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
+                    "player": "Dean Wade",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
                   },
                   {
                     "player": "Ariel Hukporti",
@@ -43338,11 +43495,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **필라델피아 세븐티식서스**(홈) 115.5점 · **마이애미 히트**(원정) 120.5점, 평균 리바운드는 홈 42.8개 · 원정 42.2개, 3점 성공률은 홈 35.3% · 원정 35.2%. 평균 득점 차 5.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 마이애미 히트 승률 39.8%, 필라델피아 세븐티식서스 60.2%.",
+              "시즌 평균 득점은 **필라델피아 세븐티식서스**(홈) 115.5점 · **마이애미 히트**(원정) 120.7점, 평균 리바운드는 홈 42.8개 · 원정 42.6개, 3점 성공률은 홈 35.3% · 원정 35.4%. 평균 득점 차 5.2점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 마이애미 히트 승률 33.6%, 필라델피아 세븐티식서스 66.5%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -43357,7 +43517,7 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "시카고 불스",
             "abbr": "CHI",
-            "record": "4승 11패",
+            "record": "4승 12패",
             "badges": [
               {
                 "text": "원정 3승 6패",
@@ -43378,11 +43538,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 5명",
+              "text": "결장 7명",
               "tone": "warn"
             },
             {
-              "text": "평균 114.7점 · 99.9점",
+              "text": "평균 116.6점 · 99.9점",
               "tone": "info"
             }
           ],
@@ -43390,7 +43550,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**샬럿 호네츠**(홈) 4승 11패(홈 3승 4패, 최근 5경기 1승 4패, 4연패), **시카고 불스**(원정) 4승 11패(원정 3승 6패, 최근 5경기 3승 2패). 직전 경기(11.21) **시카고 불스**는 워싱턴 위저즈에 94-98로 졌고, Norman Powell 16점·3리바운드·2어시스트, Buddy Hield 15점·4리바운드·0어시스트를 기록했습니다. 직전 경기(11.21) **샬럿 호네츠**는 애틀랜타 호크스에 97-111로 졌고, Moussa Diabate 21점·15리바운드·2어시스트, Brandon Miller 19점·8리바운드·3어시스트를 기록했습니다."
+              "text": "**샬럿 호네츠**(홈) 4승 11패(홈 3승 4패, 최근 5경기 1승 4패, 4연패), **시카고 불스**(원정) 4승 12패(원정 3승 6패, 최근 5경기 2승 3패, 2연패). 직전 경기(11.23) **시카고 불스**는 덴버 너기츠에 145-151로 졌고, Buddy Hield 33점·7리바운드·6어시스트, Jalen Smith 26점·4리바운드·1어시스트를 기록했습니다. 직전 경기(11.21) **샬럿 호네츠**는 애틀랜타 호크스에 97-111로 졌고, Moussa Diabate 21점·15리바운드·2어시스트, Brandon Miller 19점·8리바운드·3어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -43399,11 +43559,19 @@ window.CLUTCH_DATA = {
                 "abbr": "CHI",
                 "name": "시카고 불스",
                 "side": "away",
-                "record": "4승 11패",
+                "record": "4승 12패",
                 "venueRecord": "원정 3승 6패",
-                "last5": "3승 2패",
-                "lastGame": "94-98 패",
+                "streak": "2연패",
+                "last5": "2승 3패",
+                "lastGame": "145-151 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "덴버 너기츠",
+                    "ha": "홈",
+                    "score": "145-151",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "워싱턴 위저즈",
@@ -43431,18 +43599,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "117-106",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "애틀랜타 호크스",
-                    "ha": "홈",
-                    "score": "125-117",
-                    "res": "승"
                   }
                 ],
-                "ppg": 114.7,
-                "rpg": 43.8,
-                "tp": 31.8,
+                "ppg": 116.6,
+                "rpg": 43.6,
+                "tp": 32.9,
                 "players": [
                   {
                     "name": "Norman Powell",
@@ -43451,8 +43612,7 @@ window.CLUTCH_DATA = {
                     "pos": "G",
                     "stat": "20.8점 · 2.8리바운드 · 2.4어시스트",
                     "sub": "야투 44.6% · 3점 34.1% · 팀 내 1옵션",
-                    "last": "직전 33분 16점 3리바운드 2어시스트, 야투 7-18",
-                    "recent": "최근 5경기 23.4점 · 야투 50.0%"
+                    "recent": "최근 4경기 21.0점 · 야투 46.5%"
                   },
                   {
                     "name": "Caleb Wilson",
@@ -43467,14 +43627,14 @@ window.CLUTCH_DATA = {
                     "id": "4711294",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                     "pos": "F",
-                    "stat": "14.7점 · 4.7리바운드 · 1.9어시스트",
-                    "sub": "야투 45.8% · 3점 36.6% · 팀 내 3옵션",
-                    "last": "직전 25분 9점 5리바운드 1어시스트, 야투 4-10",
-                    "recent": "최근 5경기 17.2점 · 야투 50.9%"
+                    "stat": "15.1점 · 4.8리바운드 · 2.0어시스트",
+                    "sub": "야투 45.3% · 3점 36.2% · 팀 내 3옵션",
+                    "last": "직전 38분 21점 5리바운드 3어시스트, 야투 7-17",
+                    "recent": "최근 5경기 19.2점 · 야투 50.0%"
                   }
                 ],
-                "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명(팀 득점 1·2·7위) · 출전 불투명 2명",
+                "focus": "최근 4경기 Norman Powell의 평균은 21.0점·야투 46.5%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Buddy Hield가 33점·7리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 1·2·8위)",
                 "injuryOut": 3,
                 "injuryPpg": 49.0,
                 "injuries": [
@@ -43483,14 +43643,7 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "C",
-                    "line": "팀 내 7옵션 · 9.3점 · 4.8리바운드"
-                  },
-                  {
-                    "player": "Jalen Smith",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 4옵션 · 13.4점 · 7.9리바운드"
+                    "line": "팀 내 8옵션 · 9.3점 · 4.8리바운드"
                   },
                   {
                     "player": "Norman Powell",
@@ -43498,13 +43651,6 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
-                  },
-                  {
-                    "player": "Patrick Williams",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 10옵션 · 6.9점 · 2.9리바운드"
                   },
                   {
                     "player": "Caleb Wilson",
@@ -43595,24 +43741,31 @@ window.CLUTCH_DATA = {
                     "recent": "최근 3경기 17.7점 · 야투 45.7%"
                   }
                 ],
-                "focus": "최근 3경기 Brandon Miller의 평균은 17.3점·야투 38.3%·3점 35.5%입니다. 결장 2명의 시즌 평균 득점 합계는 13.2점입니다. 직전 경기에서는 Moussa Diabate가 21점·15리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 6·13위) · 출전 불투명 2명",
-                "injuryOut": 2,
-                "injuryPpg": 13.2,
+                "focus": "최근 3경기 Brandon Miller의 평균은 17.3점·야투 38.3%·3점 35.5%입니다. 결장 4명의 시즌 평균 득점 합계는 39.4점입니다. 직전 경기에서는 Moussa Diabate가 21점·15리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명(팀 득점 3·5·6·13위) · 출전 불투명 1명",
+                "injuryOut": 4,
+                "injuryPpg": 39.4,
                 "injuries": [
                   {
-                    "player": "Grant Williams",
+                    "player": "Grayson Allen",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 3옵션 · 14.9점 · 3.1리바운드"
+                  },
+                  {
+                    "player": "Brandon Miller",
                     "status": "DAY-TO-DAY",
                     "note": "당일 체크",
                     "pos": "F",
-                    "line": "팀 내 5옵션 · 11.3점 · 2.7리바운드"
+                    "line": "팀 내 1옵션 · 19.8점 · 4.8리바운드"
                   },
                   {
-                    "player": "Grayson Allen",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 3옵션 · 14.9점 · 3.1리바운드"
+                    "player": "Grant Williams",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 5옵션 · 11.3점 · 2.7리바운드"
                   },
                   {
                     "player": "Kon Knueppel",
@@ -43632,11 +43785,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **샬럿 호네츠**(홈) 99.9점 · **시카고 불스**(원정) 114.7점, 평균 리바운드는 홈 47.0개 · 원정 43.8개, 3점 성공률은 홈 31.0% · 원정 31.8%. 평균 득점 차 14.8점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 시카고 불스 승률 44.2%, 샬럿 호네츠 55.8%.",
+              "시즌 평균 득점은 **샬럿 호네츠**(홈) 99.9점 · **시카고 불스**(원정) 116.6점, 평균 리바운드는 홈 47.0개 · 원정 43.6개, 3점 성공률은 홈 31.0% · 원정 32.9%. 평균 득점 차 16.7점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 시카고 불스 승률 45.9%, 샬럿 호네츠 54.1%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -43662,21 +43818,21 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "뉴욕 닉스",
             "abbr": "NYK",
-            "record": "10승 6패",
+            "record": "11승 6패",
             "badges": [
               {
-                "text": "홈 5승 3패",
+                "text": "홈 6승 3패",
                 "tone": ""
               }
             ]
           },
           "tags": [
             {
-              "text": "결장 5명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
-              "text": "평균 118.8점 · 108.7점",
+              "text": "평균 118.8점 · 108.9점",
               "tone": "info"
             }
           ],
@@ -43684,7 +43840,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**뉴욕 닉스**(홈) 10승 6패(홈 5승 3패, 최근 5경기 4승 1패, 4연승), **클리블랜드 캐벌리어스**(원정) 9승 8패(원정 2승 5패, 최근 5경기 3승 2패). 직전 경기(11.21) **클리블랜드 캐벌리어스**는 인디애나 페이서스에 128-119로 이겼고, James Harden 51점·6리바운드·6어시스트, Donovan Mitchell 20점·3리바운드·3어시스트를 기록했습니다. 직전 경기(11.22) **뉴욕 닉스**는 뉴욕 닉스에 96-97로 졌고, Donovan Clingan 22점·13리바운드·4어시스트, Deni Avdija 20점·9리바운드·5어시스트를 기록했습니다."
+              "text": "**뉴욕 닉스**(홈) 11승 6패(홈 6승 3패, 최근 5경기 5승 0패, 5연승), **클리블랜드 캐벌리어스**(원정) 9승 8패(원정 2승 5패, 최근 5경기 3승 2패). 직전 경기(11.21) **클리블랜드 캐벌리어스**는 인디애나 페이서스에 128-119로 이겼고, James Harden 51점·6리바운드·6어시스트, Donovan Mitchell 20점·3리바운드·3어시스트를 기록했습니다. 직전 경기(11.23) **뉴욕 닉스**는 뉴욕 닉스에 106-113로 졌고, Pascal Siakam 25점·6리바운드·1어시스트, Andrew Nembhard 16점·2리바운드·8어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -43798,12 +43954,19 @@ window.CLUTCH_DATA = {
                 "abbr": "NYK",
                 "name": "뉴욕 닉스",
                 "side": "home",
-                "record": "10승 6패",
-                "venueRecord": "홈 5승 3패",
-                "streak": "4연승",
-                "last5": "4승 1패",
-                "lastGame": "97-96 승",
+                "record": "11승 6패",
+                "venueRecord": "홈 6승 3패",
+                "streak": "5연승",
+                "last5": "5승 0패",
+                "lastGame": "113-106 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "인디애나 페이서스",
+                    "ha": "홈",
+                    "score": "113-106",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-22",
                     "opp": "포틀랜드 트레일블레이저스",
@@ -43831,37 +43994,31 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "112-108",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "인디애나 페이서스",
-                    "ha": "원정",
-                    "score": "104-106",
-                    "res": "패"
                   }
                 ],
-                "ppg": 108.7,
-                "rpg": 46.7,
-                "tp": 37.0,
+                "ppg": 108.9,
+                "rpg": 46.9,
+                "tp": 36.9,
                 "players": [
                   {
                     "name": "Jalen Brunson",
                     "id": "3934672",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
-                    "stat": "26.8점 · 3.1리바운드 · 5.9어시스트",
-                    "sub": "야투 43.6% · 3점 41.7% · 팀 내 1옵션",
-                    "last": "직전 36분 30점 7리바운드 5어시스트, 야투 11-23",
-                    "recent": "최근 5경기 28.6점 · 야투 45.0%"
+                    "stat": "26.5점 · 3.1리바운드 · 5.9어시스트",
+                    "sub": "야투 43.7% · 3점 40.5% · 팀 내 1옵션",
+                    "last": "직전 32분 22점 3리바운드 7어시스트, 야투 8-18",
+                    "recent": "최근 5경기 26.4점 · 야투 43.8%"
                   },
                   {
                     "name": "Karl-Anthony Towns",
                     "id": "3136195",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
                     "pos": "C",
-                    "stat": "21.3점 · 13.9리바운드 · 3.9어시스트",
-                    "sub": "야투 53.7% · 3점 38.5% · 팀 내 2옵션",
-                    "recent": "최근 4경기 22.2점 · 야투 50.7%"
+                    "stat": "21.8점 · 13.9리바운드 · 4.0어시스트",
+                    "sub": "야투 54.3% · 3점 41.5% · 팀 내 2옵션",
+                    "last": "직전 29분 30점 13리바운드 5어시스트, 야투 9-14",
+                    "recent": "최근 4경기 24.0점 · 야투 54.7%"
                   },
                   {
                     "name": "OG Anunoby",
@@ -43870,27 +44027,27 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "16.3점 · 5.4리바운드 · 2.0어시스트",
                     "sub": "야투 40.1% · 3점 32.3% · 팀 내 3옵션",
-                    "recent": "최근 4경기 15.8점 · 야투 43.8%"
+                    "recent": "최근 3경기 17.3점 · 야투 48.6%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 28.6점·야투 45.0%·3점 51.2%입니다. 결장 2명의 시즌 평균 득점 합계는 21.2점입니다. 직전 경기에서는 Donovan Clingan가 22점·13리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 3·8위) · 출전 불투명 1명",
-                "injuryOut": 2,
-                "injuryPpg": 21.2,
+                "focus": "최근 5경기 Jalen Brunson의 평균은 26.4점·야투 43.8%·3점 47.4%입니다. 결장 3명의 시즌 평균 득점 합계는 28.0점입니다. 직전 경기에서는 Pascal Siakam가 25점·6리바운드·1어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 3·6·8위)",
+                "injuryOut": 3,
+                "injuryPpg": 28.0,
                 "injuries": [
+                  {
+                    "player": "Miles McBride",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 6옵션 · 6.8점 · 1.2리바운드"
+                  },
                   {
                     "player": "OG Anunoby",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 3옵션 · 16.3점 · 5.4리바운드"
-                  },
-                  {
-                    "player": "Karl-Anthony Towns",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "C",
-                    "line": "팀 내 2옵션 · 21.3점 · 13.9리바운드"
                   },
                   {
                     "player": "Jordan Clarkson",
@@ -43903,11 +44060,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **뉴욕 닉스**(홈) 108.7점 · **클리블랜드 캐벌리어스**(원정) 118.8점, 평균 리바운드는 홈 46.7개 · 원정 45.6개, 3점 성공률은 홈 37.0% · 원정 37.1%. 평균 득점 차 10.1점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 클리블랜드 캐벌리어스 승률 37.7%, 뉴욕 닉스 62.3%.",
+              "시즌 평균 득점은 **뉴욕 닉스**(홈) 108.9점 · **클리블랜드 캐벌리어스**(원정) 118.8점, 평균 리바운드는 홈 46.9개 · 원정 45.6개, 3점 성공률은 홈 36.9% · 원정 37.1%. 평균 득점 차 9.9점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 클리블랜드 캐벌리어스 승률 35.6%, 뉴욕 닉스 64.4%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-1."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -43933,7 +44093,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "오클라호마시티 썬더",
             "abbr": "OKC",
-            "record": "10승 6패",
+            "record": "10승 7패",
             "badges": [
               {
                 "text": "홈 6승 1패",
@@ -43943,7 +44103,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 7명",
+              "text": "결장 8명",
               "tone": "warn"
             },
             {
@@ -43955,7 +44115,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**오클라호마시티 썬더**(홈) 10승 6패(홈 6승 1패, 최근 5경기 2승 3패), **미네소타 팀버울브스**(원정) 12승 5패(원정 4승 2패, 최근 5경기 3승 2패). 직전 경기(11.22) **미네소타 팀버울브스**는 멤피스 그리즐리스에 104-95로 이겼고, Jaden McDaniels 25점·5리바운드·4어시스트, Ayo Dosunmu 19점·2리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **오클라호마시티 썬더**는 뉴올리언스 펠리컨스에 126-120로 이겼고, Shai Gilgeous-Alexander 40점·3리바운드·8어시스트, Aday Mara 22점·16리바운드·2어시스트를 기록했습니다."
+              "text": "**오클라호마시티 썬더**(홈) 10승 7패(홈 6승 1패, 최근 5경기 2승 3패), **미네소타 팀버울브스**(원정) 12승 5패(원정 4승 2패, 최근 5경기 3승 2패). 직전 경기(11.22) **미네소타 팀버울브스**는 멤피스 그리즐리스에 104-95로 이겼고, Jaden McDaniels 25점·5리바운드·4어시스트, Ayo Dosunmu 19점·2리바운드·2어시스트를 기록했습니다. 직전 경기(11.22) **오클라호마시티 썬더**는 마이애미 히트에 113-123로 졌고, Bennett Stirtz 21점·3리바운드·5어시스트, Jared McCain 20점·2리바운드·3어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -44069,11 +44229,18 @@ window.CLUTCH_DATA = {
                 "abbr": "OKC",
                 "name": "오클라호마시티 썬더",
                 "side": "home",
-                "record": "10승 6패",
+                "record": "10승 7패",
                 "venueRecord": "홈 6승 1패",
                 "last5": "2승 3패",
-                "lastGame": "126-120 승",
+                "lastGame": "113-123 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "마이애미 히트",
+                    "ha": "원정",
+                    "score": "113-123",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "뉴올리언스 펠리컨스",
@@ -44101,18 +44268,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "112-113",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "포틀랜드 트레일블레이저스",
-                    "ha": "원정",
-                    "score": "108-118",
-                    "res": "패"
                   }
                 ],
                 "ppg": 113.0,
-                "rpg": 45.8,
-                "tp": 34.5,
+                "rpg": 45.4,
+                "tp": 35.2,
                 "players": [
                   {
                     "name": "Shai Gilgeous-Alexander",
@@ -44121,8 +44281,7 @@ window.CLUTCH_DATA = {
                     "pos": "G",
                     "stat": "31.7점 · 4.1리바운드 · 4.5어시스트",
                     "sub": "야투 48.3% · 3점 37.3% · 팀 내 1옵션",
-                    "last": "직전 37분 40점 3리바운드 8어시스트, 야투 14-24",
-                    "recent": "최근 5경기 36.4점 · 야투 54.6%"
+                    "recent": "최근 4경기 37.8점 · 야투 56.6%"
                   },
                   {
                     "name": "Ajay Mitchell",
@@ -44130,30 +44289,37 @@ window.CLUTCH_DATA = {
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
                     "pos": "G",
                     "stat": "17.0점 · 3.6리바운드 · 3.6어시스트",
-                    "sub": "야투 49.5% · 3점 25.6% · 팀 내 2옵션",
-                    "last": "직전 31분 8점 2리바운드 4어시스트, 야투 3-12",
-                    "recent": "최근 3경기 11.7점 · 야투 37.8%"
+                    "sub": "야투 48.3% · 3점 28.3% · 팀 내 2옵션",
+                    "last": "직전 22분 17점 3리바운드 3어시스트, 야투 6-17",
+                    "recent": "최근 4경기 13.0점 · 야투 37.0%"
                   },
                   {
                     "name": "Jared McCain",
                     "id": "4683778",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
                     "pos": "G",
-                    "stat": "13.9점 · 3.4리바운드 · 1.7어시스트",
-                    "sub": "야투 41.5% · 3점 34.2% · 팀 내 3옵션",
-                    "last": "직전 30분 18점 3리바운드 0어시스트, 야투 7-14",
-                    "recent": "최근 5경기 16.2점 · 야투 39.4%"
+                    "stat": "14.3점 · 3.3리바운드 · 1.8어시스트",
+                    "sub": "야투 41.4% · 3점 33.9% · 팀 내 3옵션",
+                    "last": "직전 29분 20점 2리바운드 3어시스트, 야투 7-17",
+                    "recent": "최근 5경기 18.2점 · 야투 43.2%"
                   }
                 ],
-                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 36.4점·야투 54.6%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 13.0점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 40점·3리바운드·8어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
-                "injuryOut": 4,
-                "injuryPpg": 13.0,
+                "focus": "최근 4경기 Shai Gilgeous-Alexander의 평균은 37.8점·야투 56.6%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 54.7점입니다. 직전 경기에서는 Bennett Stirtz가 21점·3리바운드·5어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명(팀 득점 1·6·10·15·16위)",
+                "injuryOut": 5,
+                "injuryPpg": 54.7,
                 "injuries": [
                   {
+                    "player": "Aday Mara",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 6옵션 · 10.0점 · 7.1리바운드"
+                  },
+                  {
                     "player": "Shai Gilgeous-Alexander",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "G",
                     "line": "팀 내 1옵션 · 31.7점 · 4.1리바운드"
                   },
@@ -44162,37 +44328,34 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
-                    "line": "팀 내 15옵션 · 2.7점 · 1.3리바운드"
+                    "line": "팀 내 16옵션 · 2.7점 · 1.3리바운드"
                   },
                   {
                     "player": "Jaylin Williams",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 14옵션 · 2.9점 · 3.3리바운드"
+                    "line": "팀 내 15옵션 · 2.9점 · 3.3리바운드"
                   },
                   {
                     "player": "Alex Caruso",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
-                    "line": "팀 내 9옵션 · 7.4점 · 3.7리바운드"
-                  },
-                  {
-                    "player": "Thomas Sorber",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
+                    "line": "팀 내 10옵션 · 7.4점 · 3.7리바운드"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **오클라호마시티 썬더**(홈) 113.0점 · **미네소타 팀버울브스**(원정) 114.9점, 평균 리바운드는 홈 45.8개 · 원정 47.5개, 3점 성공률은 홈 34.5% · 원정 37.2%. 평균 득점 차가 1.9점으로 작고, 3점 성공률 차 2.7%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 미네소타 팀버울브스 승률 44.6%, 오클라호마시티 썬더 55.4%.",
+              "시즌 평균 득점은 **오클라호마시티 썬더**(홈) 113.0점 · **미네소타 팀버울브스**(원정) 114.9점, 평균 리바운드는 홈 45.4개 · 원정 47.5개, 3점 성공률은 홈 35.2% · 원정 37.2%. 평균 득점 차가 1.9점으로 작고, 3점 성공률 차 2.0%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 미네소타 팀버울브스 승률 45.7%, 오클라호마시티 썬더 54.3%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -44228,7 +44391,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 5명",
+              "text": "결장 7명",
               "tone": "warn"
             },
             {
@@ -44326,16 +44489,10 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.4점 · 야투 49.0%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Garland의 평균은 22.0점·야투 46.8%·3점 36.1%입니다. 결장 3명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 21점·6리바운드·0어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명",
-                "injuryOut": 3,
+                "focus": "최근 5경기 Darius Garland의 평균은 22.0점·야투 46.8%·3점 36.1%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 21점·6리바운드·0어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명",
+                "injuryOut": 2,
                 "injuries": [
-                  {
-                    "player": "Brandon Ingram",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
                   {
                     "player": "Bradley Beal",
                     "status": "OUT",
@@ -44429,31 +44586,24 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 20.6점 · 야투 54.7%"
                   }
                 ],
-                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 2명의 시즌 평균 득점 합계는 13.1점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 11·12위) · 출전 불투명 3명",
-                "injuryOut": 2,
-                "injuryPpg": 13.1,
+                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 5명의 시즌 평균 득점 합계는 40.3점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명",
+                "injuryOut": 5,
+                "injuryPpg": 40.3,
                 "injuries": [
                   {
-                    "player": "Javon Small",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 8옵션 · 9.6점 · 3.1리바운드"
+                    "player": "Jerami Grant",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 6옵션 · 10.6점 · 1.7리바운드"
                   },
                   {
                     "player": "Cameron Boozer",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "F",
                     "line": "팀 내 2옵션 · 16.6점 · 9.2리바운드"
-                  },
-                  {
-                    "player": "Jerami Grant",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 6옵션 · 10.6점 · 1.7리바운드"
                   },
                   {
                     "player": "GG Jackson",
@@ -44468,16 +44618,25 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 12옵션 · 6.4점 · 2.2리바운드"
+                  },
+                  {
+                    "player": "Richie Saunders",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G"
                   }
                 ]
               }
             ],
             "checkpoints": [
               "시즌 평균 득점은 **멤피스 그리즐리스**(홈) 120.5점 · **LA 클리퍼스**(원정) 111.1점, 평균 리바운드는 홈 45.6개 · 원정 40.0개, 3점 성공률은 홈 39.1% · 원정 38.7%. 평균 득점 차 9.4점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — LA 클리퍼스 승률 24.2%, 멤피스 그리즐리스 75.8%.",
+              "**ESPN 매치업 예측** — LA 클리퍼스 승률 25.3%, 멤피스 그리즐리스 74.7%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -44732,7 +44891,10 @@ window.CLUTCH_DATA = {
               "**ESPN 매치업 예측** — 브루클린 네츠 승률 47.2%, 밀워키 벅스 52.8%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -44768,7 +44930,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 2명",
+              "text": "결장 1명",
               "tone": "warn"
             },
             {
@@ -44965,27 +45127,20 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 18.8점 · 야투 69.0%"
                   }
                 ],
-                "focus": "최근 5경기 Alperen Sengun의 평균은 24.0점·야투 60.9%·3점 55.6%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 28점·11리바운드·10어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명(팀 득점 11위)",
-                "injuryOut": 1,
-                "injuryPpg": 3.2,
-                "injuries": [
-                  {
-                    "player": "Clint Capela",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 11옵션 · 3.2점 · 5.2리바운드"
-                  }
-                ]
+                "focus": "최근 5경기 Alperen Sengun의 평균은 24.0점·야투 60.9%·3점 55.6%입니다. 직전 경기에서는 Alperen Sengun가 28점·11리바운드·10어시스트를 기록했습니다. 이어서 Kevin Durant, Amen Thompson가 뒤를 받칩니다.",
+                "injurySummary": "결장 없음",
+                "injuries": []
               }
             ],
             "checkpoints": [
               "시즌 평균 득점은 **휴스턴 로키츠**(홈) 118.2점 · **피닉스 선즈**(원정) 113.9점, 평균 리바운드는 홈 45.3개 · 원정 40.8개, 3점 성공률은 홈 38.0% · 원정 36.6%. 평균 득점 차 4.3점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 피닉스 선즈 승률 27.0%, 휴스턴 로키츠 73.0%.",
+              "**ESPN 매치업 예측** — 피닉스 선즈 승률 26.0%, 휴스턴 로키츠 74.0%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -45011,10 +45166,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "골든스테이트 워리어스",
             "abbr": "GSW",
-            "record": "8승 8패",
+            "record": "9승 8패",
             "badges": [
               {
-                "text": "홈 6승 1패",
+                "text": "홈 7승 1패",
                 "tone": ""
               }
             ]
@@ -45025,7 +45180,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 106.8점 · 112.7점",
+              "text": "평균 106.8점 · 111.2점",
               "tone": "info"
             }
           ],
@@ -45033,7 +45188,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**골든스테이트 워리어스**(홈) 8승 8패(홈 6승 1패, 최근 5경기 0승 5패, 5연패), **새크라멘토 킹스**(원정) 2승 14패(원정 1승 5패, 최근 5경기 1승 4패). 직전 경기(11.22) **새크라멘토 킹스**는 보스턴 셀틱스에 97-96로 이겼고, Darius Acuff Jr. 21점·6리바운드·8어시스트, De'Andre Hunter 20점·6리바운드·2어시스트를 기록했습니다. 직전 경기(11.20) **골든스테이트 워리어스**는 멤피스 그리즐리스에 98-126로 졌고, Charles Bassey 16점·13리바운드·1어시스트, Brandin Podziemski 15점·3리바운드·2어시스트를 기록했습니다."
+              "text": "**골든스테이트 워리어스**(홈) 9승 8패(홈 7승 1패, 최근 5경기 1승 4패), **새크라멘토 킹스**(원정) 2승 14패(원정 1승 5패, 최근 5경기 1승 4패). 직전 경기(11.22) **새크라멘토 킹스**는 보스턴 셀틱스에 97-96로 이겼고, Darius Acuff Jr. 21점·6리바운드·8어시스트, De'Andre Hunter 20점·6리바운드·2어시스트를 기록했습니다. 직전 경기(11.23) **골든스테이트 워리어스**는 골든스테이트 워리어스에 87-88로 졌고, Jayson Tatum 27점·10리바운드·6어시스트, Derrick White 14점·3리바운드·5어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -45140,12 +45295,18 @@ window.CLUTCH_DATA = {
                 "abbr": "GSW",
                 "name": "골든스테이트 워리어스",
                 "side": "home",
-                "record": "8승 8패",
-                "venueRecord": "홈 6승 1패",
-                "streak": "5연패",
-                "last5": "0승 5패",
-                "lastGame": "98-126 패",
+                "record": "9승 8패",
+                "venueRecord": "홈 7승 1패",
+                "last5": "1승 4패",
+                "lastGame": "88-87 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "보스턴 셀틱스",
+                    "ha": "홈",
+                    "score": "88-87",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-20",
                     "opp": "멤피스 그리즐리스",
@@ -45173,18 +45334,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "85-123",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "휴스턴 로키츠",
-                    "ha": "원정",
-                    "score": "108-115",
-                    "res": "패"
                   }
                 ],
-                "ppg": 112.7,
+                "ppg": 111.2,
                 "rpg": 44.1,
-                "tp": 36.4,
+                "tp": 36.1,
                 "players": [
                   {
                     "name": "Stephen Curry",
@@ -45192,31 +45346,30 @@ window.CLUTCH_DATA = {
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3975.png",
                     "pos": "G",
                     "stat": "27.8점 · 3.7리바운드 · 3.9어시스트",
-                    "sub": "야투 50.0% · 3점 45.7% · 팀 내 1옵션",
-                    "recent": "최근 1경기 3.0점 · 야투 33.3%"
+                    "sub": "야투 50.0% · 3점 45.7% · 팀 내 1옵션"
                   },
                   {
                     "name": "Yaxel Lendeborg",
                     "id": "5175737",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
                     "pos": "F",
-                    "stat": "19.7점 · 7.3리바운드 · 3.7어시스트",
-                    "sub": "야투 45.5% · 3점 37.2% · 팀 내 2옵션",
-                    "last": "직전 33분 11점 8리바운드 7어시스트, 야투 3-11",
-                    "recent": "최근 5경기 16.0점 · 야투 33.3%"
+                    "stat": "19.2점 · 7.4리바운드 · 3.6어시스트",
+                    "sub": "야투 45.2% · 3점 36.7% · 팀 내 2옵션",
+                    "last": "직전 34분 12점 8리바운드 3어시스트, 야투 5-13",
+                    "recent": "최근 5경기 13.4점 · 야투 30.8%"
                   },
                   {
                     "name": "Brandin Podziemski",
                     "id": "4709138",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
                     "pos": "G",
-                    "stat": "15.8점 · 4.7리바운드 · 3.6어시스트",
-                    "sub": "야투 44.8% · 3점 35.8% · 팀 내 3옵션",
-                    "last": "직전 32분 15점 3리바운드 2어시스트, 야투 5-12",
-                    "recent": "최근 5경기 14.0점 · 야투 37.9%"
+                    "stat": "15.9점 · 4.9리바운드 · 3.5어시스트",
+                    "sub": "야투 44.1% · 3점 36.2% · 팀 내 3옵션",
+                    "last": "직전 38분 18점 7리바운드 2어시스트, 야투 5-14",
+                    "recent": "최근 5경기 13.2점 · 야투 35.1%"
                   }
                 ],
-                "focus": "최근 1경기 Stephen Curry의 평균은 3.0점·야투 33.3%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Charles Bassey가 16점·13리바운드·1어시스트를 기록했습니다.",
+                "focus": "결장 5명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Jayson Tatum가 27점·10리바운드·6어시스트를 기록했습니다. 이어서 Yaxel Lendeborg, Brandin Podziemski가 뒤를 받칩니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 38.2,
@@ -45257,11 +45410,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **골든스테이트 워리어스**(홈) 112.7점 · **새크라멘토 킹스**(원정) 106.8점, 평균 리바운드는 홈 44.1개 · 원정 40.8개, 3점 성공률은 홈 36.4% · 원정 34.1%. 평균 득점 차 5.9점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 새크라멘토 킹스 승률 27.6%, 골든스테이트 워리어스 72.4%.",
+              "시즌 평균 득점은 **골든스테이트 워리어스**(홈) 111.2점 · **새크라멘토 킹스**(원정) 106.8점, 평균 리바운드는 홈 44.1개 · 원정 40.8개, 3점 성공률은 홈 36.1% · 원정 34.1%. 평균 득점 차 4.4점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 새크라멘토 킹스 승률 27.2%, 골든스테이트 워리어스 72.8%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -45297,7 +45453,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 7명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
@@ -45394,11 +45550,32 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 20.4점 · 야투 54.7%"
                   }
                 ],
-                "focus": "최근 5경기 Victor Wembanyama의 평균은 29.0점·야투 53.6%·3점 30.0%입니다. 결장 3명의 시즌 평균 득점 합계는 18.4점입니다. 직전 경기에서는 Jeremiah Fears가 29점·5리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명",
-                "injuryOut": 3,
+                "focus": "최근 5경기 Victor Wembanyama의 평균은 29.0점·야투 53.6%·3점 30.0%입니다. 결장 2명의 시즌 평균 득점 합계는 18.4점입니다. 직전 경기에서는 Jeremiah Fears가 29점·5리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 3명",
+                "injuryOut": 2,
                 "injuryPpg": 18.4,
                 "injuries": [
+                  {
+                    "player": "Victor Wembanyama",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 1옵션 · 29.9점 · 12.3리바운드"
+                  },
+                  {
+                    "player": "De'Aaron Fox",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 4옵션 · 12.4점 · 3.9리바운드"
+                  },
+                  {
+                    "player": "Jordan McLaughlin",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 12옵션 · 2.5점 · 1.7리바운드"
+                  },
                   {
                     "player": "Dylan Harper",
                     "status": "OUT",
@@ -45408,12 +45585,6 @@ window.CLUTCH_DATA = {
                   },
                   {
                     "player": "Tobias Harris",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
-                  {
-                    "player": "Jayden Quaintance",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F"
@@ -45535,10 +45706,13 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **포틀랜드 트레일블레이저스**(홈) 116.1점 · **샌안토니오 스퍼스**(원정) 117.3점, 평균 리바운드는 홈 44.9개 · 원정 47.8개, 3점 성공률은 홈 35.8% · 원정 33.7%. 평균 득점 차가 1.2점으로 작고, 3점 성공률 차 2.1%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 샌안토니오 스퍼스 승률 60.6%, 포틀랜드 트레일블레이저스 39.4%.",
+              "**ESPN 매치업 예측** — 샌안토니오 스퍼스 승률 54.7%, 포틀랜드 트레일블레이저스 45.3%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-26 END */
@@ -50839,7 +51013,7 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "마이애미 히트",
             "abbr": "MIA",
-            "record": "9승 6패",
+            "record": "10승 6패",
             "badges": [
               {
                 "text": "원정 4승 3패",
@@ -50850,21 +51024,21 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "뉴욕 닉스",
             "abbr": "NYK",
-            "record": "10승 6패",
+            "record": "11승 6패",
             "badges": [
               {
-                "text": "홈 5승 3패",
+                "text": "홈 6승 3패",
                 "tone": ""
               }
             ]
           },
           "tags": [
             {
-              "text": "결장 2명",
+              "text": "결장 4명",
               "tone": "warn"
             },
             {
-              "text": "평균 120.5점 · 108.7점",
+              "text": "평균 120.7점 · 108.9점",
               "tone": "info"
             }
           ],
@@ -50872,7 +51046,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**뉴욕 닉스**(홈) 10승 6패(홈 5승 3패, 최근 5경기 4승 1패, 4연승), **마이애미 히트**(원정) 9승 6패(원정 4승 3패, 최근 5경기 5승 0패, 5연승). 직전 경기(11.19) **마이애미 히트**는 밀워키 벅스에 137-130로 이겼고, Giannis Antetokounmpo 27점·14리바운드·9어시스트, Bam Adebayo 26점·4리바운드·2어시스트를 기록했습니다. 직전 경기(11.22) **뉴욕 닉스**는 뉴욕 닉스에 96-97로 졌고, Donovan Clingan 22점·13리바운드·4어시스트, Deni Avdija 20점·9리바운드·5어시스트를 기록했습니다."
+              "text": "**뉴욕 닉스**(홈) 11승 6패(홈 6승 3패, 최근 5경기 5승 0패, 5연승), **마이애미 히트**(원정) 10승 6패(원정 4승 3패, 최근 5경기 5승 0패, 5연승). 직전 경기(11.22) **마이애미 히트**는 오클라호마시티 썬더에 123-113로 이겼고, Bam Adebayo 24점·15리바운드·12어시스트, Pelle Larsson 21점·3리바운드·5어시스트를 기록했습니다. 직전 경기(11.23) **뉴욕 닉스**는 뉴욕 닉스에 106-113로 졌고, Pascal Siakam 25점·6리바운드·1어시스트, Andrew Nembhard 16점·2리바운드·8어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -50881,12 +51055,19 @@ window.CLUTCH_DATA = {
                 "abbr": "MIA",
                 "name": "마이애미 히트",
                 "side": "away",
-                "record": "9승 6패",
+                "record": "10승 6패",
                 "venueRecord": "원정 4승 3패",
                 "streak": "5연승",
                 "last5": "5승 0패",
-                "lastGame": "137-130 승",
+                "lastGame": "123-113 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "오클라호마시티 썬더",
+                    "ha": "홈",
+                    "score": "123-113",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-19",
                     "opp": "밀워키 벅스",
@@ -50914,18 +51095,11 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "133-121",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-11",
-                    "opp": "유타 재즈",
-                    "ha": "원정",
-                    "score": "115-109",
-                    "res": "승"
                   }
                 ],
-                "ppg": 120.5,
-                "rpg": 42.2,
-                "tp": 35.2,
+                "ppg": 120.7,
+                "rpg": 42.6,
+                "tp": 35.4,
                 "players": [
                   {
                     "name": "Giannis Antetokounmpo",
@@ -50934,44 +51108,38 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "28.2점 · 12.6리바운드 · 5.5어시스트",
                     "sub": "야투 60.2% · 3점 24.2% · 팀 내 1옵션",
-                    "last": "직전 32분 27점 14리바운드 9어시스트, 야투 7-11",
-                    "recent": "최근 5경기 29.6점 · 야투 68.8%"
+                    "recent": "최근 4경기 29.5점 · 야투 72.9%"
                   },
                   {
                     "name": "Bam Adebayo",
                     "id": "4066261",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png",
                     "pos": "C",
-                    "stat": "18.9점 · 7.7리바운드 · 3.1어시스트",
-                    "sub": "야투 52.4% · 3점 24.5% · 팀 내 2옵션",
-                    "last": "직전 30분 26점 4리바운드 2어시스트, 야투 7-15",
-                    "recent": "최근 5경기 19.6점 · 야투 50.9%"
+                    "stat": "19.2점 · 8.2리바운드 · 3.7어시스트",
+                    "sub": "야투 53.6% · 3점 24.5% · 팀 내 2옵션",
+                    "last": "직전 37분 24점 15리바운드 12어시스트, 야투 8-11",
+                    "recent": "최근 5경기 22.2점 · 야투 60.7%"
                   },
                   {
                     "name": "Davion Mitchell",
                     "id": "4278053",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png",
                     "pos": "G",
-                    "stat": "17.2점 · 2.4리바운드 · 9.0어시스트",
-                    "sub": "야투 51.1% · 3점 43.7% · 팀 내 3옵션",
-                    "last": "직전 36분 24점 2리바운드 6어시스트, 야투 8-11",
-                    "recent": "최근 5경기 19.2점 · 야투 51.7%"
+                    "stat": "17.0점 · 2.5리바운드 · 8.6어시스트",
+                    "sub": "야투 51.0% · 3점 43.3% · 팀 내 3옵션",
+                    "last": "직전 34분 14점 4리바운드 3어시스트, 야투 5-10",
+                    "recent": "최근 5경기 18.2점 · 야투 54.4%"
                   }
                 ],
-                "focus": "최근 5경기 Giannis Antetokounmpo의 평균은 29.6점·야투 68.8%·3점 37.5%입니다. 직전 경기에서는 Giannis Antetokounmpo가 27점·14리바운드·9어시스트를 기록했습니다. 이어서 Bam Adebayo, Davion Mitchell가 뒤를 받칩니다.",
-                "injurySummary": "결장 없음 · 출전 불투명 2명",
+                "focus": "최근 4경기 Giannis Antetokounmpo의 평균은 29.5점·야투 72.9%·3점 33.3%입니다. 결장 1명의 시즌 평균 득점 합계는 28.2점입니다. 직전 경기에서는 Bam Adebayo가 24점·15리바운드·12어시스트를 기록했습니다.",
+                "injurySummary": "결장 1명(팀 득점 1위)",
+                "injuryOut": 1,
+                "injuryPpg": 28.2,
                 "injuries": [
                   {
-                    "player": "Myron Gardner",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 11옵션 · 3.0점 · 2.3리바운드"
-                  },
-                  {
                     "player": "Giannis Antetokounmpo",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "F",
                     "line": "팀 내 1옵션 · 28.2점 · 12.6리바운드"
                   }
@@ -50981,12 +51149,19 @@ window.CLUTCH_DATA = {
                 "abbr": "NYK",
                 "name": "뉴욕 닉스",
                 "side": "home",
-                "record": "10승 6패",
-                "venueRecord": "홈 5승 3패",
-                "streak": "4연승",
-                "last5": "4승 1패",
-                "lastGame": "97-96 승",
+                "record": "11승 6패",
+                "venueRecord": "홈 6승 3패",
+                "streak": "5연승",
+                "last5": "5승 0패",
+                "lastGame": "113-106 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "인디애나 페이서스",
+                    "ha": "홈",
+                    "score": "113-106",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-22",
                     "opp": "포틀랜드 트레일블레이저스",
@@ -51014,37 +51189,31 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "112-108",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "인디애나 페이서스",
-                    "ha": "원정",
-                    "score": "104-106",
-                    "res": "패"
                   }
                 ],
-                "ppg": 108.7,
-                "rpg": 46.7,
-                "tp": 37.0,
+                "ppg": 108.9,
+                "rpg": 46.9,
+                "tp": 36.9,
                 "players": [
                   {
                     "name": "Jalen Brunson",
                     "id": "3934672",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
                     "pos": "G",
-                    "stat": "26.8점 · 3.1리바운드 · 5.9어시스트",
-                    "sub": "야투 43.6% · 3점 41.7% · 팀 내 1옵션",
-                    "last": "직전 36분 30점 7리바운드 5어시스트, 야투 11-23",
-                    "recent": "최근 5경기 28.6점 · 야투 45.0%"
+                    "stat": "26.5점 · 3.1리바운드 · 5.9어시스트",
+                    "sub": "야투 43.7% · 3점 40.5% · 팀 내 1옵션",
+                    "last": "직전 32분 22점 3리바운드 7어시스트, 야투 8-18",
+                    "recent": "최근 5경기 26.4점 · 야투 43.8%"
                   },
                   {
                     "name": "Karl-Anthony Towns",
                     "id": "3136195",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
                     "pos": "C",
-                    "stat": "21.3점 · 13.9리바운드 · 3.9어시스트",
-                    "sub": "야투 53.7% · 3점 38.5% · 팀 내 2옵션",
-                    "recent": "최근 4경기 22.2점 · 야투 50.7%"
+                    "stat": "21.8점 · 13.9리바운드 · 4.0어시스트",
+                    "sub": "야투 54.3% · 3점 41.5% · 팀 내 2옵션",
+                    "last": "직전 29분 30점 13리바운드 5어시스트, 야투 9-14",
+                    "recent": "최근 4경기 24.0점 · 야투 54.7%"
                   },
                   {
                     "name": "OG Anunoby",
@@ -51053,27 +51222,27 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "16.3점 · 5.4리바운드 · 2.0어시스트",
                     "sub": "야투 40.1% · 3점 32.3% · 팀 내 3옵션",
-                    "recent": "최근 4경기 15.8점 · 야투 43.8%"
+                    "recent": "최근 3경기 17.3점 · 야투 48.6%"
                   }
                 ],
-                "focus": "최근 5경기 Jalen Brunson의 평균은 28.6점·야투 45.0%·3점 51.2%입니다. 결장 2명의 시즌 평균 득점 합계는 21.2점입니다. 직전 경기에서는 Donovan Clingan가 22점·13리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 3·8위) · 출전 불투명 1명",
-                "injuryOut": 2,
-                "injuryPpg": 21.2,
+                "focus": "최근 5경기 Jalen Brunson의 평균은 26.4점·야투 43.8%·3점 47.4%입니다. 결장 3명의 시즌 평균 득점 합계는 28.0점입니다. 직전 경기에서는 Pascal Siakam가 25점·6리바운드·1어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 3·6·8위)",
+                "injuryOut": 3,
+                "injuryPpg": 28.0,
                 "injuries": [
+                  {
+                    "player": "Miles McBride",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 6옵션 · 6.8점 · 1.2리바운드"
+                  },
                   {
                     "player": "OG Anunoby",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 3옵션 · 16.3점 · 5.4리바운드"
-                  },
-                  {
-                    "player": "Karl-Anthony Towns",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "C",
-                    "line": "팀 내 2옵션 · 21.3점 · 13.9리바운드"
                   },
                   {
                     "player": "Jordan Clarkson",
@@ -51086,11 +51255,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **뉴욕 닉스**(홈) 108.7점 · **마이애미 히트**(원정) 120.5점, 평균 리바운드는 홈 46.7개 · 원정 42.2개, 3점 성공률은 홈 37.0% · 원정 35.2%. 평균 득점 차 11.8점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 마이애미 히트 승률 30.4%, 뉴욕 닉스 69.6%.",
+              "시즌 평균 득점은 **뉴욕 닉스**(홈) 108.9점 · **마이애미 히트**(원정) 120.7점, 평균 리바운드는 홈 46.9개 · 원정 42.6개, 3점 성공률은 홈 36.9% · 원정 35.4%. 평균 득점 차 11.8점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 마이애미 히트 승률 27.9%, 뉴욕 닉스 72.1%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -51116,7 +51288,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "디트로이트 피스턴스",
             "abbr": "DET",
-            "record": "10승 5패",
+            "record": "10승 6패",
             "badges": [
               {
                 "text": "홈 3승 3패",
@@ -51126,11 +51298,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 5명",
+              "text": "결장 4명",
               "tone": "warn"
             },
             {
-              "text": "평균 109.4점 · 114.5점",
+              "text": "평균 109.4점 · 113.4점",
               "tone": "info"
             }
           ],
@@ -51138,7 +51310,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**디트로이트 피스턴스**(홈) 10승 5패(홈 3승 3패, 최근 5경기 3승 2패), **밀워키 벅스**(원정) 1승 16패(원정 0승 8패, 최근 5경기 0승 5패, 5연패). 직전 경기(11.21) **밀워키 벅스**는 필라델피아 세븐티식서스에 129-132로 졌고, Tyler Herro 50점·11리바운드·7어시스트, Brayden Burries 26점·8리바운드·4어시스트를 기록했습니다. 직전 경기(11.21) **디트로이트 피스턴스**는 토론토 랩터스에 102-105로 졌고, Cade Cunningham 23점·5리바운드·9어시스트, Kevin Huerter 20점·3리바운드·3어시스트를 기록했습니다."
+              "text": "**디트로이트 피스턴스**(홈) 10승 6패(홈 3승 3패, 최근 5경기 2승 3패, 2연패), **밀워키 벅스**(원정) 1승 16패(원정 0승 8패, 최근 5경기 0승 5패, 5연패). 직전 경기(11.21) **밀워키 벅스**는 필라델피아 세븐티식서스에 129-132로 졌고, Tyler Herro 50점·11리바운드·7어시스트, Brayden Burries 26점·8리바운드·4어시스트를 기록했습니다. 직전 경기(11.22) **디트로이트 피스턴스**는 애틀랜타 호크스에 97-107로 졌고, Isaiah Joe 19점·2리바운드·3어시스트, John Collins 18점·6리바운드·0어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -51242,11 +51414,19 @@ window.CLUTCH_DATA = {
                 "abbr": "DET",
                 "name": "디트로이트 피스턴스",
                 "side": "home",
-                "record": "10승 5패",
+                "record": "10승 6패",
                 "venueRecord": "홈 3승 3패",
-                "last5": "3승 2패",
-                "lastGame": "102-105 패",
+                "streak": "2연패",
+                "last5": "2승 3패",
+                "lastGame": "97-107 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "애틀랜타 호크스",
+                    "ha": "원정",
+                    "score": "97-107",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "토론토 랩터스",
@@ -51274,28 +51454,21 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "117-137",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "원정",
-                    "score": "144-140",
-                    "res": "승"
                   }
                 ],
-                "ppg": 114.5,
+                "ppg": 113.4,
                 "rpg": 43.1,
-                "tp": 37.0,
+                "tp": 36.9,
                 "players": [
                   {
                     "name": "Cade Cunningham",
                     "id": "4432166",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
                     "pos": "G",
-                    "stat": "25.6점 · 5.1리바운드 · 7.9어시스트",
-                    "sub": "야투 47.5% · 3점 31.5% · 팀 내 1옵션",
-                    "last": "직전 36분 23점 5리바운드 9어시스트, 야투 10-22",
-                    "recent": "최근 4경기 33.8점 · 야투 50.0%"
+                    "stat": "24.2점 · 5.1리바운드 · 8.3어시스트",
+                    "sub": "야투 46.7% · 3점 31.5% · 팀 내 1옵션",
+                    "last": "직전 33분 5점 4리바운드 15어시스트, 야투 2-9",
+                    "recent": "최근 4경기 22.0점 · 야투 42.1%"
                   },
                   {
                     "name": "Duncan Robinson",
@@ -51304,28 +51477,28 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "17.4점 · 1.8리바운드 · 2.1어시스트",
                     "sub": "야투 45.0% · 3점 43.1% · 팀 내 2옵션",
-                    "recent": "최근 2경기 11.5점 · 야투 36.4%"
+                    "recent": "최근 1경기 10.0점 · 야투 37.5%"
                   },
                   {
                     "name": "Daniss Jenkins",
                     "id": "5107199",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png",
                     "pos": "G",
-                    "stat": "14.3점 · 3.7리바운드 · 4.5어시스트",
-                    "sub": "야투 44.4% · 3점 44.0% · 팀 내 3옵션",
-                    "last": "직전 39분 14점 4리바운드 1어시스트, 야투 5-14",
-                    "recent": "최근 5경기 17.4점 · 야투 43.4%"
+                    "stat": "14.1점 · 3.8리바운드 · 4.4어시스트",
+                    "sub": "야투 43.6% · 3점 42.0% · 팀 내 3옵션",
+                    "last": "직전 38분 11점 5리바운드 3어시스트, 야투 4-12",
+                    "recent": "최근 5경기 15.4점 · 야투 40.3%"
                   }
                 ],
-                "focus": "최근 4경기 Cade Cunningham의 평균은 33.8점·야투 50.0%·3점 37.5%입니다. 결장 4명의 시즌 평균 득점 합계는 34.6점입니다. 직전 경기에서는 Cade Cunningham가 23점·5리바운드·9어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명(팀 득점 2·4·13·15위)",
-                "injuryOut": 4,
-                "injuryPpg": 34.6,
+                "focus": "최근 4경기 Cade Cunningham의 평균은 22.0점·야투 42.1%·3점 31.8%입니다. 결장 3명의 시즌 평균 득점 합계는 32.4점입니다. 직전 경기에서는 Isaiah Joe가 19점·2리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 2·4·15위) · 출전 불투명 1명",
+                "injuryOut": 3,
+                "injuryPpg": 32.4,
                 "injuries": [
                   {
                     "player": "Ebuka Okorie",
-                    "status": "OUT",
-                    "note": "결장",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
                     "pos": "G",
                     "line": "팀 내 13옵션 · 2.2점 · 0.4리바운드"
                   },
@@ -51354,11 +51527,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **디트로이트 피스턴스**(홈) 114.5점 · **밀워키 벅스**(원정) 109.4점, 평균 리바운드는 홈 43.1개 · 원정 44.7개, 3점 성공률은 홈 37.0% · 원정 34.5%. 평균 득점 차 5.1점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 밀워키 벅스 승률 11.6%, 디트로이트 피스턴스 88.4%.",
+              "시즌 평균 득점은 **디트로이트 피스턴스**(홈) 113.4점 · **밀워키 벅스**(원정) 109.4점, 평균 리바운드는 홈 43.1개 · 원정 44.7개, 3점 성공률은 홈 36.9% · 원정 34.5%. 평균 득점 차 4.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 밀워키 벅스 승률 11.1%, 디트로이트 피스턴스 88.9%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -51384,7 +51560,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "인디애나 페이서스",
             "abbr": "IND",
-            "record": "5승 11패",
+            "record": "5승 12패",
             "badges": [
               {
                 "text": "홈 2승 5패",
@@ -51398,7 +51574,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 115.5점 · 112.0점",
+              "text": "평균 115.5점 · 111.6점",
               "tone": "info"
             }
           ],
@@ -51406,7 +51582,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**인디애나 페이서스**(홈) 5승 11패(홈 2승 5패, 최근 5경기 2승 3패, 3연패), **필라델피아 세븐티식서스**(원정) 14승 3패(원정 7승 1패, 최근 5경기 5승 0패, 5연승). 직전 경기(11.21) **필라델피아 세븐티식서스**는 밀워키 벅스에 132-129로 이겼고, Joel Embiid 26점·17리바운드·9어시스트, LeBron James 21점·6리바운드·6어시스트를 기록했습니다. 직전 경기(11.21) **인디애나 페이서스**는 클리블랜드 캐벌리어스에 119-128로 졌고, Pascal Siakam 21점·7리바운드·2어시스트, Ivica Zubac 21점·10리바운드·2어시스트를 기록했습니다."
+              "text": "**인디애나 페이서스**(홈) 5승 12패(홈 2승 5패, 최근 5경기 1승 4패, 4연패), **필라델피아 세븐티식서스**(원정) 14승 3패(원정 7승 1패, 최근 5경기 5승 0패, 5연승). 직전 경기(11.21) **필라델피아 세븐티식서스**는 밀워키 벅스에 132-129로 이겼고, Joel Embiid 26점·17리바운드·9어시스트, LeBron James 21점·6리바운드·6어시스트를 기록했습니다. 직전 경기(11.23) **인디애나 페이서스**는 뉴욕 닉스에 106-113로 졌고, Pascal Siakam 25점·6리바운드·1어시스트, Andrew Nembhard 16점·2리바운드·8어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -51497,11 +51673,11 @@ window.CLUTCH_DATA = {
                 "injuryPpg": 2.1,
                 "injuries": [
                   {
-                    "player": "Dean Wade",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
+                    "player": "Adem Bona",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
                   },
                   {
                     "player": "Jaylen Brown",
@@ -51511,11 +51687,11 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
                   },
                   {
-                    "player": "Adem Bona",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
+                    "player": "Dean Wade",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
                   },
                   {
                     "player": "Ariel Hukporti",
@@ -51529,12 +51705,19 @@ window.CLUTCH_DATA = {
                 "abbr": "IND",
                 "name": "인디애나 페이서스",
                 "side": "home",
-                "record": "5승 11패",
+                "record": "5승 12패",
                 "venueRecord": "홈 2승 5패",
-                "streak": "3연패",
-                "last5": "2승 3패",
-                "lastGame": "119-128 패",
+                "streak": "4연패",
+                "last5": "1승 4패",
+                "lastGame": "106-113 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "뉴욕 닉스",
+                    "ha": "원정",
+                    "score": "106-113",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "클리블랜드 캐벌리어스",
@@ -51562,28 +51745,21 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "106-104",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "홈",
-                    "score": "114-101",
-                    "res": "승"
                   }
                 ],
-                "ppg": 112.0,
+                "ppg": 111.6,
                 "rpg": 41.8,
-                "tp": 33.1,
+                "tp": 32.8,
                 "players": [
                   {
                     "name": "Pascal Siakam",
                     "id": "3149673",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
                     "pos": "F",
-                    "stat": "23.0점 · 6.1리바운드 · 3.8어시스트",
-                    "sub": "야투 51.6% · 3점 35.7% · 팀 내 1옵션",
-                    "last": "직전 30분 21점 7리바운드 2어시스트, 야투 8-17",
-                    "recent": "최근 5경기 24.6점 · 야투 50.6%"
+                    "stat": "23.1점 · 6.1리바운드 · 3.6어시스트",
+                    "sub": "야투 50.7% · 3점 36.8% · 팀 내 1옵션",
+                    "last": "직전 33분 25점 6리바운드 1어시스트, 야투 9-22",
+                    "recent": "최근 5경기 24.0점 · 야투 50.0%"
                   },
                   {
                     "name": "Tyrese Haliburton",
@@ -51599,13 +51775,13 @@ window.CLUTCH_DATA = {
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
                     "pos": "G",
                     "stat": "16.2점 · 2.3리바운드 · 7.7어시스트",
-                    "sub": "야투 43.6% · 3점 41.2% · 팀 내 3옵션",
-                    "last": "직전 26분 12점 3리바운드 8어시스트, 야투 3-10",
-                    "recent": "최근 3경기 13.7점 · 야투 37.1%"
+                    "sub": "야투 43.2% · 3점 42.3% · 팀 내 3옵션",
+                    "last": "직전 32분 16점 2리바운드 8어시스트, 야투 5-13",
+                    "recent": "최근 3경기 13.3점 · 야투 32.4%"
                   }
                 ],
-                "focus": "최근 5경기 Pascal Siakam의 평균은 24.6점·야투 50.6%·3점 36.4%입니다. 결장 4명의 시즌 평균 득점 합계는 31.8점입니다. 직전 경기에서는 Pascal Siakam가 21점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
+                "focus": "최근 5경기 Pascal Siakam의 평균은 24.0점·야투 50.0%·3점 42.9%입니다. 결장 4명의 시즌 평균 득점 합계는 31.8점입니다. 직전 경기에서는 Pascal Siakam가 25점·6리바운드·1어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 31.8,
                 "injuries": [
@@ -51615,13 +51791,6 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 9옵션 · 7.0점 · 2.3리바운드"
-                  },
-                  {
-                    "player": "Pascal Siakam",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 1옵션 · 23.0점 · 6.1리바운드"
                   },
                   {
                     "player": "Tyrese Haliburton",
@@ -51647,11 +51816,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **인디애나 페이서스**(홈) 112.0점 · **필라델피아 세븐티식서스**(원정) 115.5점, 평균 리바운드는 홈 41.8개 · 원정 42.8개, 3점 성공률은 홈 33.1% · 원정 35.3%. 평균 득점 차 3.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 필라델피아 세븐티식서스 승률 66.8%, 인디애나 페이서스 33.2%.",
+              "시즌 평균 득점은 **인디애나 페이서스**(홈) 111.6점 · **필라델피아 세븐티식서스**(원정) 115.5점, 평균 리바운드는 홈 41.8개 · 원정 42.8개, 3점 성공률은 홈 32.8% · 원정 35.3%. 평균 득점 차 3.9점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 필라델피아 세븐티식서스 승률 64.8%, 인디애나 페이서스 35.2%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 2-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 2-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -51895,6 +52067,12 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 6옵션 · 9.3점 · 4.6리바운드"
                   },
                   {
+                    "player": "Nate Bittle",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C"
+                  },
+                  {
                     "player": "Kawhi Leonard",
                     "status": "OUT",
                     "note": "결장",
@@ -51907,22 +52085,19 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 2옵션 · 20.9점 · 6.4리바운드"
-                  },
-                  {
-                    "player": "Nate Bittle",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
                   }
                 ]
               }
             ],
             "checkpoints": [
               "시즌 평균 득점은 **토론토 랩터스**(홈) 111.6점 · **브루클린 네츠**(원정) 110.9점, 평균 리바운드는 홈 40.6개 · 원정 41.3개, 3점 성공률은 홈 33.6% · 원정 36.0%. 평균 득점 차가 0.7점으로 작고, 3점 성공률 차 2.4%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 브루클린 네츠 승률 26.3%, 토론토 랩터스 73.7%.",
+              "**ESPN 매치업 예측** — 브루클린 네츠 승률 26.6%, 토론토 랩터스 73.4%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -51937,7 +52112,7 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "애틀랜타 호크스",
             "abbr": "ATL",
-            "record": "10승 6패",
+            "record": "11승 6패",
             "badges": [
               {
                 "text": "원정 6승 3패",
@@ -51948,7 +52123,7 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "보스턴 셀틱스",
             "abbr": "BOS",
-            "record": "11승 5패",
+            "record": "11승 6패",
             "badges": [
               {
                 "text": "홈 6승 1패",
@@ -51962,7 +52137,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 117.3점 · 112.8점",
+              "text": "평균 116.7점 · 111.2점",
               "tone": "info"
             }
           ],
@@ -51970,7 +52145,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**보스턴 셀틱스**(홈) 11승 5패(홈 6승 1패, 최근 5경기 2승 3패, 3연패), **애틀랜타 호크스**(원정) 10승 6패(원정 6승 3패, 최근 5경기 3승 2패, 3연승). 직전 경기(11.21) **애틀랜타 호크스**는 샬럿 호네츠에 111-97로 이겼고, Jalen Johnson 26점·6리바운드·6어시스트, Aaron Wiggins 19점·2리바운드·3어시스트를 기록했습니다. 직전 경기(11.22) **보스턴 셀틱스**는 새크라멘토 킹스에 96-97로 졌고, Paul George 19점·8리바운드·5어시스트, Mike Conley 19점·4리바운드·2어시스트를 기록했습니다."
+              "text": "**보스턴 셀틱스**(홈) 11승 6패(홈 6승 1패, 최근 5경기 1승 4패, 4연패), **애틀랜타 호크스**(원정) 11승 6패(원정 6승 3패, 최근 5경기 4승 1패, 4연승). 직전 경기(11.22) **애틀랜타 호크스**는 디트로이트 피스턴스에 107-97로 이겼고, Nickeil Alexander-Walker 27점·2리바운드·1어시스트, Corey Kispert 18점·4리바운드·3어시스트를 기록했습니다. 직전 경기(11.23) **보스턴 셀틱스**는 골든스테이트 워리어스에 87-88로 졌고, Jayson Tatum 27점·10리바운드·6어시스트, Derrick White 14점·3리바운드·5어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -51979,12 +52154,19 @@ window.CLUTCH_DATA = {
                 "abbr": "ATL",
                 "name": "애틀랜타 호크스",
                 "side": "away",
-                "record": "10승 6패",
+                "record": "11승 6패",
                 "venueRecord": "원정 6승 3패",
-                "streak": "3연승",
-                "last5": "3승 2패",
-                "lastGame": "111-97 승",
+                "streak": "4연승",
+                "last5": "4승 1패",
+                "lastGame": "107-97 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "디트로이트 피스턴스",
+                    "ha": "홈",
+                    "score": "107-97",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "샬럿 호네츠",
@@ -52012,51 +52194,44 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "117-125",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-10",
-                    "opp": "LA 레이커스",
-                    "ha": "홈",
-                    "score": "114-124",
-                    "res": "패"
                   }
                 ],
-                "ppg": 117.3,
-                "rpg": 44.7,
-                "tp": 34.5,
+                "ppg": 116.7,
+                "rpg": 45.7,
+                "tp": 34.2,
                 "players": [
                   {
                     "name": "Nickeil Alexander-Walker",
                     "id": "4278039",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png",
                     "pos": "G",
-                    "stat": "20.9점 · 3.6리바운드 · 3.0어시스트",
-                    "sub": "야투 41.2% · 3점 34.4% · 팀 내 1옵션",
-                    "last": "직전 32분 17점 4리바운드 3어시스트, 야투 7-20",
-                    "recent": "최근 5경기 18.4점 · 야투 38.2%"
+                    "stat": "21.3점 · 3.5리바운드 · 2.9어시스트",
+                    "sub": "야투 41.4% · 3점 35.9% · 팀 내 1옵션",
+                    "last": "직전 28분 27점 2리바운드 1어시스트, 야투 8-18",
+                    "recent": "최근 5경기 19.8점 · 야투 40.9%"
                   },
                   {
                     "name": "Jalen Johnson",
                     "id": "4701230",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png",
                     "pos": "F",
-                    "stat": "19.7점 · 9.0리바운드 · 7.5어시스트",
-                    "sub": "야투 44.9% · 3점 22.2% · 팀 내 2옵션",
-                    "last": "직전 36분 26점 6리바운드 6어시스트, 야투 10-15",
-                    "recent": "최근 5경기 19.6점 · 야투 44.6%"
+                    "stat": "19.1점 · 9.1리바운드 · 6.9어시스트",
+                    "sub": "야투 44.7% · 3점 21.1% · 팀 내 2옵션",
+                    "last": "직전 30분 12점 11리바운드 0어시스트, 야투 4-10",
+                    "recent": "최근 5경기 19.0점 · 야투 44.3%"
                   },
                   {
                     "name": "Onyeka Okongwu",
                     "id": "4431680",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431680.png",
                     "pos": "F",
-                    "stat": "15.1점 · 8.1리바운드 · 2.4어시스트",
-                    "sub": "야투 50.5% · 3점 33.7% · 팀 내 3옵션",
-                    "last": "직전 34분 16점 7리바운드 1어시스트, 야투 6-10",
-                    "recent": "최근 5경기 18.6점 · 야투 53.7%"
+                    "stat": "14.5점 · 8.2리바운드 · 2.4어시스트",
+                    "sub": "야투 49.2% · 3점 33.3% · 팀 내 3옵션",
+                    "last": "직전 29분 6점 9리바운드 2어시스트, 야투 2-9",
+                    "recent": "최근 5경기 16.6점 · 야투 49.2%"
                   }
                 ],
-                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 18.4점·야투 38.2%·3점 25.0%입니다. 결장 5명의 시즌 평균 득점 합계는 24.9점입니다. 직전 경기에서는 Jalen Johnson가 26점·6리바운드·6어시스트를 기록했습니다.",
+                "focus": "최근 5경기 Nickeil Alexander-Walker의 평균은 19.8점·야투 40.9%·3점 31.8%입니다. 결장 5명의 시즌 평균 득점 합계는 24.9점입니다. 직전 경기에서는 Nickeil Alexander-Walker가 27점·2리바운드·1어시스트를 기록했습니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 24.9,
@@ -52100,12 +52275,19 @@ window.CLUTCH_DATA = {
                 "abbr": "BOS",
                 "name": "보스턴 셀틱스",
                 "side": "home",
-                "record": "11승 5패",
+                "record": "11승 6패",
                 "venueRecord": "홈 6승 1패",
-                "streak": "3연패",
-                "last5": "2승 3패",
-                "lastGame": "96-97 패",
+                "streak": "4연패",
+                "last5": "1승 4패",
+                "lastGame": "87-88 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "골든스테이트 워리어스",
+                    "ha": "원정",
+                    "score": "87-88",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-22",
                     "opp": "새크라멘토 킹스",
@@ -52133,27 +52315,21 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "131-94",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "토론토 랩터스",
-                    "ha": "원정",
-                    "score": "98-93",
-                    "res": "승"
                   }
                 ],
-                "ppg": 112.8,
-                "rpg": 45.4,
-                "tp": 36.1,
+                "ppg": 111.2,
+                "rpg": 45.2,
+                "tp": 35.7,
                 "players": [
                   {
                     "name": "Jayson Tatum",
                     "id": "4065648",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
                     "pos": "F",
-                    "stat": "26.4점 · 6.6리바운드 · 6.8어시스트",
-                    "sub": "야투 42.8% · 3점 33.3% · 팀 내 1옵션",
-                    "recent": "최근 4경기 26.0점 · 야투 42.9%"
+                    "stat": "26.4점 · 6.9리바운드 · 6.7어시스트",
+                    "sub": "야투 42.6% · 3점 33.6% · 팀 내 1옵션",
+                    "last": "직전 38분 27점 10리바운드 6어시스트, 야투 8-20",
+                    "recent": "최근 4경기 26.8점 · 야투 45.8%"
                   },
                   {
                     "name": "Paul George",
@@ -52162,7 +52338,6 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "19.9점 · 5.6리바운드 · 3.8어시스트",
                     "sub": "야투 44.8% · 3점 40.7% · 팀 내 2옵션",
-                    "last": "직전 37분 19점 8리바운드 5어시스트, 야투 6-21",
                     "recent": "최근 4경기 14.5점 · 야투 33.3%"
                   },
                   {
@@ -52170,13 +52345,13 @@ window.CLUTCH_DATA = {
                     "id": "4066354",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066354.png",
                     "pos": "G",
-                    "stat": "13.4점 · 3.2리바운드 · 4.1어시스트",
-                    "sub": "야투 40.7% · 3점 34.3% · 팀 내 3옵션",
-                    "last": "직전 34분 9점 6리바운드 8어시스트, 야투 4-17",
-                    "recent": "최근 5경기 13.8점 · 야투 39.4%"
+                    "stat": "12.9점 · 3.1리바운드 · 4.1어시스트",
+                    "sub": "야투 40.0% · 3점 33.9% · 팀 내 3옵션",
+                    "last": "직전 28분 5점 1리바운드 4어시스트, 야투 2-8",
+                    "recent": "최근 5경기 12.0점 · 야투 37.7%"
                   }
                 ],
-                "focus": "최근 4경기 Jayson Tatum의 평균은 26.0점·야투 42.9%·3점 35.1%입니다. 결장 2명의 시즌 평균 득점 합계는 25.0점입니다. 직전 경기에서는 Paul George가 19점·8리바운드·5어시스트를 기록했습니다.",
+                "focus": "최근 4경기 Jayson Tatum의 평균은 26.8점·야투 45.8%·3점 40.5%입니다. 결장 2명의 시즌 평균 득점 합계는 25.0점입니다. 직전 경기에서는 Jayson Tatum가 27점·10리바운드·6어시스트를 기록했습니다.",
                 "injurySummary": "결장 2명(팀 득점 2·10위)",
                 "injuryOut": 2,
                 "injuryPpg": 25.0,
@@ -52199,11 +52374,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **보스턴 셀틱스**(홈) 112.8점 · **애틀랜타 호크스**(원정) 117.3점, 평균 리바운드는 홈 45.4개 · 원정 44.7개, 3점 성공률은 홈 36.1% · 원정 34.5%. 평균 득점 차 4.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 애틀랜타 호크스 승률 28.8%, 보스턴 셀틱스 71.2%.",
+              "시즌 평균 득점은 **보스턴 셀틱스**(홈) 111.2점 · **애틀랜타 호크스**(원정) 116.7점, 평균 리바운드는 홈 45.2개 · 원정 45.7개, 3점 성공률은 홈 35.7% · 원정 34.2%. 평균 득점 차 5.5점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 애틀랜타 호크스 승률 29.6%, 보스턴 셀틱스 70.4%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -52239,7 +52417,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 5명",
+              "text": "결장 8명",
               "tone": "warn"
             },
             {
@@ -52335,31 +52513,24 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 20.6점 · 야투 54.7%"
                   }
                 ],
-                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 2명의 시즌 평균 득점 합계는 13.1점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 11·12위) · 출전 불투명 3명",
-                "injuryOut": 2,
-                "injuryPpg": 13.1,
+                "focus": "최근 1경기 Ty Jerome의 평균은 18.0점·야투 41.2%·3점 33.3%입니다. 결장 5명의 시즌 평균 득점 합계는 40.3점입니다. 직전 경기에서는 Cedric Coward가 23점·7리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명",
+                "injuryOut": 5,
+                "injuryPpg": 40.3,
                 "injuries": [
                   {
-                    "player": "Javon Small",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 8옵션 · 9.6점 · 3.1리바운드"
+                    "player": "Jerami Grant",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 6옵션 · 10.6점 · 1.7리바운드"
                   },
                   {
                     "player": "Cameron Boozer",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "F",
                     "line": "팀 내 2옵션 · 16.6점 · 9.2리바운드"
-                  },
-                  {
-                    "player": "Jerami Grant",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 6옵션 · 10.6점 · 1.7리바운드"
                   },
                   {
                     "player": "GG Jackson",
@@ -52374,6 +52545,12 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 12옵션 · 6.4점 · 2.2리바운드"
+                  },
+                  {
+                    "player": "Richie Saunders",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G"
                   }
                 ]
               },
@@ -52485,10 +52662,13 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **미네소타 팀버울브스**(홈) 114.9점 · **멤피스 그리즐리스**(원정) 120.5점, 평균 리바운드는 홈 47.5개 · 원정 45.6개, 3점 성공률은 홈 37.2% · 원정 39.1%. 평균 득점 차 5.6점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 멤피스 그리즐리스 승률 31.4%, 미네소타 팀버울브스 68.6%.",
+              "**ESPN 매치업 예측** — 멤피스 그리즐리스 승률 30.7%, 미네소타 팀버울브스 69.3%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -52503,10 +52683,10 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "댈러스 매버릭스",
             "abbr": "DAL",
-            "record": "9승 7패",
+            "record": "10승 7패",
             "badges": [
               {
-                "text": "원정 2승 5패",
+                "text": "원정 3승 5패",
                 "tone": ""
               }
             ]
@@ -52524,11 +52704,11 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
-              "text": "평균 112.2점 · 113.9점",
+              "text": "평균 112.4점 · 113.9점",
               "tone": "info"
             }
           ],
@@ -52536,7 +52716,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**피닉스 선즈**(홈) 8승 7패(홈 5승 4패, 최근 5경기 4승 1패, 3연승), **댈러스 매버릭스**(원정) 9승 7패(원정 2승 5패, 최근 5경기 2승 3패, 2연승). 직전 경기(11.22) **댈러스 매버릭스**는 LA 클리퍼스에 110-100로 이겼고, Kyrie Irving 25점·6리바운드·4어시스트, Cooper Flagg 22점·6리바운드·8어시스트를 기록했습니다. 직전 경기(11.21) **피닉스 선즈**는 유타 재즈에 111-101로 이겼고, Devin Booker 23점·2리바운드·3어시스트, Dillon Brooks 18점·3리바운드·3어시스트를 기록했습니다."
+              "text": "**피닉스 선즈**(홈) 8승 7패(홈 5승 4패, 최근 5경기 4승 1패, 3연승), **댈러스 매버릭스**(원정) 10승 7패(원정 3승 5패, 최근 5경기 3승 2패, 3연승). 직전 경기(11.23) **댈러스 매버릭스**는 유타 재즈에 116-114로 이겼고, Cooper Flagg 28점·3리바운드·4어시스트, Kyrie Irving 16점·1리바운드·8어시스트를 기록했습니다. 직전 경기(11.21) **피닉스 선즈**는 유타 재즈에 111-101로 이겼고, Devin Booker 23점·2리바운드·3어시스트, Dillon Brooks 18점·3리바운드·3어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -52545,12 +52725,19 @@ window.CLUTCH_DATA = {
                 "abbr": "DAL",
                 "name": "댈러스 매버릭스",
                 "side": "away",
-                "record": "9승 7패",
-                "venueRecord": "원정 2승 5패",
-                "streak": "2연승",
-                "last5": "2승 3패",
-                "lastGame": "110-100 승",
+                "record": "10승 7패",
+                "venueRecord": "원정 3승 5패",
+                "streak": "3연승",
+                "last5": "3승 2패",
+                "lastGame": "116-114 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "유타 재즈",
+                    "ha": "원정",
+                    "score": "116-114",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-22",
                     "opp": "LA 클리퍼스",
@@ -52578,38 +52765,31 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "117-127",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "미네소타 팀버울브스",
-                    "ha": "원정",
-                    "score": "94-133",
-                    "res": "패"
                   }
                 ],
-                "ppg": 112.2,
-                "rpg": 43.8,
-                "tp": 34.4,
+                "ppg": 112.4,
+                "rpg": 43.2,
+                "tp": 34.6,
                 "players": [
                   {
                     "name": "Cooper Flagg",
                     "id": "5041939",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
                     "pos": "F",
-                    "stat": "24.1점 · 6.5리바운드 · 6.5어시스트",
-                    "sub": "야투 47.9% · 3점 31.5% · 팀 내 1옵션",
-                    "last": "직전 36분 22점 6리바운드 8어시스트, 야투 6-16",
-                    "recent": "최근 5경기 20.4점 · 야투 42.9%"
+                    "stat": "24.3점 · 6.3리바운드 · 6.4어시스트",
+                    "sub": "야투 47.8% · 3점 32.5% · 팀 내 1옵션",
+                    "last": "직전 31분 28점 3리바운드 4어시스트, 야투 8-17",
+                    "recent": "최근 5경기 23.6점 · 야투 43.9%"
                   },
                   {
                     "name": "Kyrie Irving",
                     "id": "6442",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png",
                     "pos": "G",
-                    "stat": "22.5점 · 3.8리바운드 · 4.4어시스트",
-                    "sub": "야투 45.9% · 3점 37.4% · 팀 내 2옵션",
-                    "last": "직전 35분 25점 6리바운드 4어시스트, 야투 8-24",
-                    "recent": "최근 4경기 21.5점 · 야투 40.0%"
+                    "stat": "22.0점 · 3.6리바운드 · 4.6어시스트",
+                    "sub": "야투 45.9% · 3점 38.2% · 팀 내 2옵션",
+                    "last": "직전 27분 16점 1리바운드 8어시스트, 야투 6-13",
+                    "recent": "최근 4경기 23.0점 · 야투 41.6%"
                   },
                   {
                     "name": "P.J. Washington",
@@ -52618,27 +52798,20 @@ window.CLUTCH_DATA = {
                     "pos": "F",
                     "stat": "14.0점 · 6.7리바운드 · 1.3어시스트",
                     "sub": "야투 42.1% · 3점 36.2% · 팀 내 3옵션",
-                    "recent": "최근 4경기 12.2점 · 야투 45.9%"
+                    "recent": "최근 3경기 13.0점 · 야투 43.3%"
                   }
                 ],
-                "focus": "최근 5경기 Cooper Flagg의 평균은 20.4점·야투 42.9%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 6.6점입니다. 직전 경기에서는 Kyrie Irving가 25점·6리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명 · 출전 불투명 2명",
-                "injuryOut": 3,
-                "injuryPpg": 6.6,
+                "focus": "최근 5경기 Cooper Flagg의 평균은 23.6점·야투 43.9%·3점 36.7%입니다. 결장 5명의 시즌 평균 득점 합계는 20.6점입니다. 직전 경기에서는 Cooper Flagg가 28점·3리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명",
+                "injuryOut": 5,
+                "injuryPpg": 20.6,
                 "injuries": [
                   {
                     "player": "P.J. Washington",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "F",
                     "line": "팀 내 3옵션 · 14.0점 · 6.7리바운드"
-                  },
-                  {
-                    "player": "Walter Clayton Jr.",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 7옵션 · 7.7점 · 3.1리바운드"
                   },
                   {
                     "player": "Tobi Lawal",
@@ -52659,6 +52832,12 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 12옵션 · 5.2점 · 2.0리바운드"
+                  },
+                  {
+                    "player": "Tarik Biberovic",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F"
                   }
                 ]
               },
@@ -52764,11 +52943,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **피닉스 선즈**(홈) 113.9점 · **댈러스 매버릭스**(원정) 112.2점, 평균 리바운드는 홈 40.8개 · 원정 43.8개, 3점 성공률은 홈 36.6% · 원정 34.4%. 평균 득점 차가 1.7점으로 작고, 3점 성공률 차 2.2%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 42.4%, 피닉스 선즈 57.6%.",
+              "시즌 평균 득점은 **피닉스 선즈**(홈) 113.9점 · **댈러스 매버릭스**(원정) 112.4점, 평균 리바운드는 홈 40.8개 · 원정 43.2개, 3점 성공률은 홈 36.6% · 원정 34.6%. 평균 득점 차가 1.5점으로 작고, 3점 성공률 차 2.0%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 댈러스 매버릭스 승률 42.7%, 피닉스 선즈 57.3%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -52804,7 +52986,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 3명",
               "tone": "warn"
             },
             {
@@ -52994,11 +53176,32 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 20.4점 · 야투 54.7%"
                   }
                 ],
-                "focus": "최근 5경기 Victor Wembanyama의 평균은 29.0점·야투 53.6%·3점 30.0%입니다. 결장 3명의 시즌 평균 득점 합계는 18.4점입니다. 직전 경기에서는 Jeremiah Fears가 29점·5리바운드·4어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명",
-                "injuryOut": 3,
+                "focus": "최근 5경기 Victor Wembanyama의 평균은 29.0점·야투 53.6%·3점 30.0%입니다. 결장 2명의 시즌 평균 득점 합계는 18.4점입니다. 직전 경기에서는 Jeremiah Fears가 29점·5리바운드·4어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명 · 출전 불투명 3명",
+                "injuryOut": 2,
                 "injuryPpg": 18.4,
                 "injuries": [
+                  {
+                    "player": "Victor Wembanyama",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 1옵션 · 29.9점 · 12.3리바운드"
+                  },
+                  {
+                    "player": "De'Aaron Fox",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 4옵션 · 12.4점 · 3.9리바운드"
+                  },
+                  {
+                    "player": "Jordan McLaughlin",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "G",
+                    "line": "팀 내 12옵션 · 2.5점 · 1.7리바운드"
+                  },
                   {
                     "player": "Dylan Harper",
                     "status": "OUT",
@@ -53011,22 +53214,19 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F"
-                  },
-                  {
-                    "player": "Jayden Quaintance",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
                   }
                 ]
               }
             ],
             "checkpoints": [
               "시즌 평균 득점은 **샌안토니오 스퍼스**(홈) 117.3점 · **LA 레이커스**(원정) 120.0점, 평균 리바운드는 홈 47.8개 · 원정 41.1개, 3점 성공률은 홈 33.7% · 원정 37.1%. 평균 득점 차가 2.7점으로 작고, 3점 성공률 차 3.4%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — LA 레이커스 승률 31.2%, 샌안토니오 스퍼스 68.8%.",
+              "**ESPN 매치업 예측** — LA 레이커스 승률 30.1%, 샌안토니오 스퍼스 69.9%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 3경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -53041,10 +53241,10 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "덴버 너기츠",
             "abbr": "DEN",
-            "record": "9승 5패",
+            "record": "10승 5패",
             "badges": [
               {
-                "text": "원정 4승 2패",
+                "text": "원정 5승 2패",
                 "tone": ""
               }
             ]
@@ -53052,21 +53252,21 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "유타 재즈",
             "abbr": "UTAH",
-            "record": "3승 14패",
+            "record": "3승 15패",
             "badges": [
               {
-                "text": "홈 1승 8패",
+                "text": "홈 1승 9패",
                 "tone": ""
               }
             ]
           },
           "tags": [
             {
-              "text": "결장 4명",
+              "text": "결장 5명",
               "tone": "warn"
             },
             {
-              "text": "평균 114.6점 · 108.3점",
+              "text": "평균 117.0점 · 108.6점",
               "tone": "info"
             }
           ],
@@ -53074,7 +53274,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**유타 재즈**(홈) 3승 14패(홈 1승 8패, 최근 5경기 2승 3패), **덴버 너기츠**(원정) 9승 5패(원정 4승 2패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.21) **덴버 너기츠**는 휴스턴 로키츠에 133-124로 이겼고, Nikola Jokic 26점·7리바운드·11어시스트, Cameron Johnson 19점·3리바운드·6어시스트를 기록했습니다. 직전 경기(11.21) **유타 재즈**는 피닉스 선즈에 101-111로 졌고, Darryn Peterson 20점·10리바운드·8어시스트, Jaxson Hayes 18점·14리바운드·0어시스트를 기록했습니다."
+              "text": "**유타 재즈**(홈) 3승 15패(홈 1승 9패, 최근 5경기 2승 3패, 2연패), **덴버 너기츠**(원정) 10승 5패(원정 5승 2패, 최근 5경기 4승 1패, 3연승). 직전 경기(11.23) **덴버 너기츠**는 시카고 불스에 151-145로 이겼고, Jamal Murray 45점·5리바운드·7어시스트, Nikola Jokic 37점·18리바운드·11어시스트를 기록했습니다. 직전 경기(11.23) **유타 재즈**는 댈러스 매버릭스에 114-116로 졌고, Svi Mykhailiuk 39점·5리바운드·3어시스트, Ace Bailey 16점·5리바운드·2어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -53083,12 +53283,19 @@ window.CLUTCH_DATA = {
                 "abbr": "DEN",
                 "name": "덴버 너기츠",
                 "side": "away",
-                "record": "9승 5패",
-                "venueRecord": "원정 4승 2패",
-                "streak": "2연승",
+                "record": "10승 5패",
+                "venueRecord": "원정 5승 2패",
+                "streak": "3연승",
                 "last5": "4승 1패",
-                "lastGame": "133-124 승",
+                "lastGame": "151-145 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "시카고 불스",
+                    "ha": "원정",
+                    "score": "151-145",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "휴스턴 로키츠",
@@ -53116,51 +53323,44 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "116-108",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "멤피스 그리즐리스",
-                    "ha": "원정",
-                    "score": "123-118",
-                    "res": "승"
                   }
                 ],
-                "ppg": 114.6,
-                "rpg": 41.6,
-                "tp": 34.3,
+                "ppg": 117.0,
+                "rpg": 41.9,
+                "tp": 35.3,
                 "players": [
                   {
                     "name": "Jamal Murray",
                     "id": "3936299",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
                     "pos": "G",
-                    "stat": "24.9점 · 5.0리바운드 · 5.8어시스트",
-                    "sub": "야투 50.2% · 3점 46.3% · 팀 내 1옵션",
-                    "last": "직전 36분 14점 2리바운드 7어시스트, 야투 4-10",
-                    "recent": "최근 5경기 23.2점 · 야투 51.9%"
+                    "stat": "26.2점 · 5.0리바운드 · 5.9어시스트",
+                    "sub": "야투 51.0% · 3점 47.2% · 팀 내 1옵션",
+                    "last": "직전 45분 45점 5리바운드 7어시스트, 야투 13-22",
+                    "recent": "최근 5경기 26.2점 · 야투 51.2%"
                   },
                   {
                     "name": "Nikola Jokic",
                     "id": "3112335",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
                     "pos": "C",
-                    "stat": "24.2점 · 10.4리바운드 · 9.1어시스트",
-                    "sub": "야투 52.6% · 3점 30.0% · 팀 내 2옵션",
-                    "last": "직전 38분 26점 7리바운드 11어시스트, 야투 10-15",
-                    "recent": "최근 5경기 26.2점 · 야투 60.2%"
+                    "stat": "25.1점 · 10.9리바운드 · 9.2어시스트",
+                    "sub": "야투 53.5% · 3점 30.2% · 팀 내 2옵션",
+                    "last": "직전 42분 37점 18리바운드 11어시스트, 야투 14-22",
+                    "recent": "최근 5경기 28.2점 · 야투 60.7%"
                   },
                   {
                     "name": "Christian Braun",
                     "id": "4431767",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png",
                     "pos": "G",
-                    "stat": "13.2점 · 4.4리바운드 · 2.4어시스트",
-                    "sub": "야투 48.6% · 3점 33.8% · 팀 내 3옵션",
-                    "last": "직전 31분 19점 5리바운드 3어시스트, 야투 7-10",
-                    "recent": "최근 5경기 14.6점 · 야투 46.7%"
+                    "stat": "13.7점 · 4.6리바운드 · 2.5어시스트",
+                    "sub": "야투 49.4% · 3점 35.1% · 팀 내 3옵션",
+                    "last": "직전 38분 21점 8리바운드 3어시스트, 야투 8-14",
+                    "recent": "최근 5경기 16.4점 · 야투 50.8%"
                   }
                 ],
-                "focus": "최근 5경기 Jamal Murray의 평균은 23.2점·야투 51.9%·3점 33.3%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Nikola Jokic가 26점·7리바운드·11어시스트를 기록했습니다.",
+                "focus": "최근 5경기 Jamal Murray의 평균은 26.2점·야투 51.2%·3점 35.7%입니다. 결장 1명이 명단에서 빠집니다. 직전 경기에서는 Jamal Murray가 45점·5리바운드·7어시스트를 기록했습니다.",
                 "injurySummary": "결장 1명",
                 "injuryOut": 1,
                 "injuries": [
@@ -53176,11 +53376,19 @@ window.CLUTCH_DATA = {
                 "abbr": "UTAH",
                 "name": "유타 재즈",
                 "side": "home",
-                "record": "3승 14패",
-                "venueRecord": "홈 1승 8패",
+                "record": "3승 15패",
+                "venueRecord": "홈 1승 9패",
+                "streak": "2연패",
                 "last5": "2승 3패",
-                "lastGame": "101-111 패",
+                "lastGame": "114-116 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "댈러스 매버릭스",
+                    "ha": "홈",
+                    "score": "114-116",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "피닉스 선즈",
@@ -53208,28 +53416,21 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "102-110",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "휴스턴 로키츠",
-                    "ha": "원정",
-                    "score": "118-125",
-                    "res": "패"
                   }
                 ],
-                "ppg": 108.3,
-                "rpg": 44.8,
-                "tp": 34.7,
+                "ppg": 108.6,
+                "rpg": 45.1,
+                "tp": 35.0,
                 "players": [
                   {
                     "name": "Keyonte George",
                     "id": "4433627",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
                     "pos": "G",
-                    "stat": "21.1점 · 3.9리바운드 · 7.1어시스트",
-                    "sub": "야투 42.7% · 3점 32.4% · 팀 내 1옵션",
-                    "last": "직전 36분 14점 2리바운드 6어시스트, 야투 4-17",
-                    "recent": "최근 5경기 22.8점 · 야투 41.9%"
+                    "stat": "20.8점 · 4.0리바운드 · 7.1어시스트",
+                    "sub": "야투 42.8% · 3점 32.4% · 팀 내 1옵션",
+                    "last": "직전 26분 15점 5리바운드 7어시스트, 야투 4-9",
+                    "recent": "최근 5경기 20.4점 · 야투 41.6%"
                   },
                   {
                     "name": "Lauri Markkanen",
@@ -53240,21 +53441,26 @@ window.CLUTCH_DATA = {
                     "sub": "야투 38.9% · 3점 39.7% · 팀 내 2옵션"
                   },
                   {
-                    "name": "Darryn Peterson",
-                    "id": "5041955",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png",
-                    "pos": "G",
-                    "stat": "16.7점 · 4.5리바운드 · 3.9어시스트",
-                    "sub": "야투 40.0% · 3점 33.7% · 팀 내 3옵션",
-                    "last": "직전 32분 20점 10리바운드 8어시스트, 야투 7-20",
-                    "recent": "최근 5경기 17.8점 · 야투 38.7%"
+                    "name": "Jaren Jackson Jr.",
+                    "id": "4277961",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277961.png",
+                    "pos": "F",
+                    "stat": "16.2점 · 5.0리바운드 · 2.0어시스트",
+                    "sub": "야투 50.0% · 3점 35.7% · 팀 내 3옵션"
                   }
                 ],
-                "focus": "최근 5경기 Keyonte George의 평균은 22.8점·야투 41.9%·3점 36.8%입니다. 결장 3명의 시즌 평균 득점 합계는 34.2점입니다. 직전 경기에서는 Darryn Peterson가 20점·10리바운드·8어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명",
-                "injuryOut": 3,
-                "injuryPpg": 34.2,
+                "focus": "최근 5경기 Keyonte George의 평균은 20.4점·야투 41.6%·3점 32.4%입니다. 결장 4명의 시즌 평균 득점 합계는 43.4점입니다. 직전 경기에서는 Svi Mykhailiuk가 39점·5리바운드·3어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명",
+                "injuryOut": 4,
+                "injuryPpg": 43.4,
                 "injuries": [
+                  {
+                    "player": "Jaxson Hayes",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 7옵션 · 9.2점 · 6.4리바운드"
+                  },
                   {
                     "player": "Jusuf Nurkic",
                     "status": "OUT",
@@ -53273,17 +53479,20 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 4옵션 · 16.2점 · 5.0리바운드"
+                    "line": "팀 내 3옵션 · 16.2점 · 5.0리바운드"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **유타 재즈**(홈) 108.3점 · **덴버 너기츠**(원정) 114.6점, 평균 리바운드는 홈 44.8개 · 원정 41.6개, 3점 성공률은 홈 34.7% · 원정 34.3%. 평균 득점 차 6.3점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 덴버 너기츠 승률 71.5%, 유타 재즈 28.5%.",
+              "시즌 평균 득점은 **유타 재즈**(홈) 108.6점 · **덴버 너기츠**(원정) 117.0점, 평균 리바운드는 홈 45.1개 · 원정 41.9개, 3점 성공률은 홈 35.0% · 원정 35.3%. 평균 득점 차 8.4점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 덴버 너기츠 승률 70.4%, 유타 재즈 29.6%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -53319,7 +53528,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 6명",
+              "text": "결장 5명",
               "tone": "warn"
             },
             {
@@ -53422,6 +53631,13 @@ window.CLUTCH_DATA = {
                 "injuryPpg": 16.4,
                 "injuries": [
                   {
+                    "player": "Trey Murphy III",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 4옵션 · 15.7점 · 4.7리바운드"
+                  },
+                  {
                     "player": "Bryce McGowens",
                     "status": "OUT",
                     "note": "결장",
@@ -53434,13 +53650,6 @@ window.CLUTCH_DATA = {
                     "note": "당일 체크",
                     "pos": "F",
                     "line": "팀 내 1옵션 · 21.7점 · 5.4리바운드"
-                  },
-                  {
-                    "player": "Trey Murphy III",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 4옵션 · 15.7점 · 4.7리바운드"
                   },
                   {
                     "player": "Trendon Watford",
@@ -53539,16 +53748,10 @@ window.CLUTCH_DATA = {
                     "recent": "최근 5경기 13.4점 · 야투 49.0%"
                   }
                 ],
-                "focus": "최근 5경기 Darius Garland의 평균은 22.0점·야투 46.8%·3점 36.1%입니다. 결장 3명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 21점·6리바운드·0어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명",
-                "injuryOut": 3,
+                "focus": "최근 5경기 Darius Garland의 평균은 22.0점·야투 46.8%·3점 36.1%입니다. 결장 2명이 명단에서 빠집니다. 직전 경기에서는 Brook Lopez가 21점·6리바운드·0어시스트를 기록했습니다.",
+                "injurySummary": "결장 2명",
+                "injuryOut": 2,
                 "injuries": [
-                  {
-                    "player": "Brandon Ingram",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "F"
-                  },
                   {
                     "player": "Bradley Beal",
                     "status": "OUT",
@@ -53566,10 +53769,13 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **LA 클리퍼스**(홈) 111.1점 · **뉴올리언스 펠리컨스**(원정) 114.3점, 평균 리바운드는 홈 40.0개 · 원정 42.5개, 3점 성공률은 홈 38.7% · 원정 33.6%. 평균 득점 차 3.2점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 뉴올리언스 펠리컨스 승률 42.4%, LA 클리퍼스 57.6%.",
+              "**ESPN 매치업 예측** — 뉴올리언스 펠리컨스 승률 40.3%, LA 클리퍼스 59.7%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -53584,7 +53790,7 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "골든스테이트 워리어스",
             "abbr": "GSW",
-            "record": "8승 8패",
+            "record": "9승 8패",
             "badges": [
               {
                 "text": "원정 2승 7패",
@@ -53609,7 +53815,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 112.7점 · 116.1점",
+              "text": "평균 111.2점 · 116.1점",
               "tone": "info"
             }
           ],
@@ -53617,7 +53823,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**포틀랜드 트레일블레이저스**(홈) 10승 6패(홈 3승 2패, 최근 5경기 2승 3패), **골든스테이트 워리어스**(원정) 8승 8패(원정 2승 7패, 최근 5경기 0승 5패, 5연패). 직전 경기(11.20) **골든스테이트 워리어스**는 멤피스 그리즐리스에 98-126로 졌고, Charles Bassey 16점·13리바운드·1어시스트, Brandin Podziemski 15점·3리바운드·2어시스트를 기록했습니다. 직전 경기(11.22) **포틀랜드 트레일블레이저스**는 뉴욕 닉스에 96-97로 졌고, Donovan Clingan 22점·13리바운드·4어시스트, Deni Avdija 20점·9리바운드·5어시스트를 기록했습니다."
+              "text": "**포틀랜드 트레일블레이저스**(홈) 10승 6패(홈 3승 2패, 최근 5경기 2승 3패), **골든스테이트 워리어스**(원정) 9승 8패(원정 2승 7패, 최근 5경기 1승 4패). 직전 경기(11.23) **골든스테이트 워리어스**는 골든스테이트 워리어스에 87-88로 졌고, Jayson Tatum 27점·10리바운드·6어시스트, Derrick White 14점·3리바운드·5어시스트를 기록했습니다. 직전 경기(11.22) **포틀랜드 트레일블레이저스**는 뉴욕 닉스에 96-97로 졌고, Donovan Clingan 22점·13리바운드·4어시스트, Deni Avdija 20점·9리바운드·5어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -53626,12 +53832,18 @@ window.CLUTCH_DATA = {
                 "abbr": "GSW",
                 "name": "골든스테이트 워리어스",
                 "side": "away",
-                "record": "8승 8패",
+                "record": "9승 8패",
                 "venueRecord": "원정 2승 7패",
-                "streak": "5연패",
-                "last5": "0승 5패",
-                "lastGame": "98-126 패",
+                "last5": "1승 4패",
+                "lastGame": "88-87 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "보스턴 셀틱스",
+                    "ha": "홈",
+                    "score": "88-87",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-20",
                     "opp": "멤피스 그리즐리스",
@@ -53659,18 +53871,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "85-123",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "휴스턴 로키츠",
-                    "ha": "원정",
-                    "score": "108-115",
-                    "res": "패"
                   }
                 ],
-                "ppg": 112.7,
+                "ppg": 111.2,
                 "rpg": 44.1,
-                "tp": 36.4,
+                "tp": 36.1,
                 "players": [
                   {
                     "name": "Stephen Curry",
@@ -53678,31 +53883,30 @@ window.CLUTCH_DATA = {
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3975.png",
                     "pos": "G",
                     "stat": "27.8점 · 3.7리바운드 · 3.9어시스트",
-                    "sub": "야투 50.0% · 3점 45.7% · 팀 내 1옵션",
-                    "recent": "최근 1경기 3.0점 · 야투 33.3%"
+                    "sub": "야투 50.0% · 3점 45.7% · 팀 내 1옵션"
                   },
                   {
                     "name": "Yaxel Lendeborg",
                     "id": "5175737",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png",
                     "pos": "F",
-                    "stat": "19.7점 · 7.3리바운드 · 3.7어시스트",
-                    "sub": "야투 45.5% · 3점 37.2% · 팀 내 2옵션",
-                    "last": "직전 33분 11점 8리바운드 7어시스트, 야투 3-11",
-                    "recent": "최근 5경기 16.0점 · 야투 33.3%"
+                    "stat": "19.2점 · 7.4리바운드 · 3.6어시스트",
+                    "sub": "야투 45.2% · 3점 36.7% · 팀 내 2옵션",
+                    "last": "직전 34분 12점 8리바운드 3어시스트, 야투 5-13",
+                    "recent": "최근 5경기 13.4점 · 야투 30.8%"
                   },
                   {
                     "name": "Brandin Podziemski",
                     "id": "4709138",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png",
                     "pos": "G",
-                    "stat": "15.8점 · 4.7리바운드 · 3.6어시스트",
-                    "sub": "야투 44.8% · 3점 35.8% · 팀 내 3옵션",
-                    "last": "직전 32분 15점 3리바운드 2어시스트, 야투 5-12",
-                    "recent": "최근 5경기 14.0점 · 야투 37.9%"
+                    "stat": "15.9점 · 4.9리바운드 · 3.5어시스트",
+                    "sub": "야투 44.1% · 3점 36.2% · 팀 내 3옵션",
+                    "last": "직전 38분 18점 7리바운드 2어시스트, 야투 5-14",
+                    "recent": "최근 5경기 13.2점 · 야투 35.1%"
                   }
                 ],
-                "focus": "최근 1경기 Stephen Curry의 평균은 3.0점·야투 33.3%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Charles Bassey가 16점·13리바운드·1어시스트를 기록했습니다.",
+                "focus": "결장 5명의 시즌 평균 득점 합계는 38.2점입니다. 직전 경기에서는 Jayson Tatum가 27점·10리바운드·6어시스트를 기록했습니다. 이어서 Yaxel Lendeborg, Brandin Podziemski가 뒤를 받칩니다.",
                 "injurySummary": "결장 5명",
                 "injuryOut": 5,
                 "injuryPpg": 38.2,
@@ -53855,11 +54059,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **포틀랜드 트레일블레이저스**(홈) 116.1점 · **골든스테이트 워리어스**(원정) 112.7점, 평균 리바운드는 홈 44.9개 · 원정 44.1개, 3점 성공률은 홈 35.8% · 원정 36.4%. 평균 득점 차 3.4점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 골든스테이트 워리어스 승률 19.6%, 포틀랜드 트레일블레이저스 80.4%.",
+              "시즌 평균 득점은 **포틀랜드 트레일블레이저스**(홈) 116.1점 · **골든스테이트 워리어스**(원정) 111.2점, 평균 리바운드는 홈 44.9개 · 원정 44.1개, 3점 성공률은 홈 35.8% · 원정 36.1%. 평균 득점 차 4.9점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 골든스테이트 워리어스 승률 19.1%, 포틀랜드 트레일블레이저스 80.9%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-28 END */
@@ -61721,10 +61928,10 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "올랜도 매직",
             "abbr": "ORL",
-            "record": "7승 8패",
+            "record": "7승 9패",
             "badges": [
               {
-                "text": "원정 6승 3패",
+                "text": "원정 6승 4패",
                 "tone": ""
               }
             ]
@@ -61732,21 +61939,21 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "워싱턴 위저즈",
             "abbr": "WAS",
-            "record": "6승 11패",
+            "record": "7승 11패",
             "badges": [
               {
-                "text": "홈 2승 5패",
+                "text": "홈 3승 5패",
                 "tone": ""
               }
             ]
           },
           "tags": [
             {
-              "text": "결장 7명",
+              "text": "결장 8명",
               "tone": "warn"
             },
             {
-              "text": "평균 109.6점 · 110.0점",
+              "text": "평균 108.8점 · 110.3점",
               "tone": "info"
             }
           ],
@@ -61754,7 +61961,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**워싱턴 위저즈**(홈) 6승 11패(홈 2승 5패, 최근 5경기 2승 3패, 2연승), **올랜도 매직**(원정) 7승 8패(원정 6승 3패, 최근 5경기 4승 1패). 직전 경기(11.21) **올랜도 매직**은 브루클린 네츠에 113-111로 이겼고, Franz Wagner 35점·5리바운드·7어시스트, Desmond Bane 21점·2리바운드·3어시스트를 기록했습니다. 직전 경기(11.21) **워싱턴 위저즈**는 시카고 불스에 98-94로 이겼고, Anthony Davis 36점·11리바운드·3어시스트, AJ Dybantsa 20점·10리바운드·6어시스트를 기록했습니다."
+              "text": "**워싱턴 위저즈**(홈) 7승 11패(홈 3승 5패, 최근 5경기 3승 2패, 3연승), **올랜도 매직**(원정) 7승 9패(원정 6승 4패, 최근 5경기 3승 2패). 직전 경기(11.23) **올랜도 매직**은 워싱턴 위저즈에 96-116로 졌고, Tristan da Silva 18점·3리바운드·0어시스트, Desmond Bane 17점·1리바운드·5어시스트를 기록했습니다. 직전 경기(11.23) **워싱턴 위저즈**는 워싱턴 위저즈에 96-116로 졌고, Tristan da Silva 18점·3리바운드·0어시스트, Desmond Bane 17점·1리바운드·5어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -61763,11 +61970,18 @@ window.CLUTCH_DATA = {
                 "abbr": "ORL",
                 "name": "올랜도 매직",
                 "side": "away",
-                "record": "7승 8패",
-                "venueRecord": "원정 6승 3패",
-                "last5": "4승 1패",
-                "lastGame": "113-111 승",
+                "record": "7승 9패",
+                "venueRecord": "원정 6승 4패",
+                "last5": "3승 2패",
+                "lastGame": "96-116 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "워싱턴 위저즈",
+                    "ha": "원정",
+                    "score": "96-116",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "브루클린 네츠",
@@ -61795,28 +62009,21 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "107-99",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "유타 재즈",
-                    "ha": "원정",
-                    "score": "123-108",
-                    "res": "승"
                   }
                 ],
-                "ppg": 109.6,
-                "rpg": 42.6,
-                "tp": 35.8,
+                "ppg": 108.8,
+                "rpg": 42.4,
+                "tp": 35.4,
                 "players": [
                   {
                     "name": "Franz Wagner",
                     "id": "4566434",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
                     "pos": "F",
-                    "stat": "25.1점 · 6.8리바운드 · 8.4어시스트",
-                    "sub": "야투 47.5% · 3점 26.0% · 팀 내 1옵션",
-                    "last": "직전 36분 35점 5리바운드 7어시스트, 야투 13-25",
-                    "recent": "최근 5경기 31.2점 · 야투 52.2%"
+                    "stat": "24.5점 · 6.9리바운드 · 8.2어시스트",
+                    "sub": "야투 47.0% · 3점 25.0% · 팀 내 1옵션",
+                    "last": "직전 32분 16점 8리바운드 6어시스트, 야투 7-18",
+                    "recent": "최근 5경기 26.8점 · 야투 49.1%"
                   },
                   {
                     "name": "Paolo Banchero",
@@ -61831,13 +62038,13 @@ window.CLUTCH_DATA = {
                     "id": "4066320",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png",
                     "pos": "G",
-                    "stat": "18.6점 · 4.1리바운드 · 2.7어시스트",
-                    "sub": "야투 42.5% · 3점 42.9% · 팀 내 3옵션",
-                    "last": "직전 31분 21점 2리바운드 3어시스트, 야투 7-17",
-                    "recent": "최근 5경기 21.2점 · 야투 52.9%"
+                    "stat": "18.5점 · 3.9리바운드 · 2.9어시스트",
+                    "sub": "야투 43.0% · 3점 42.6% · 팀 내 3옵션",
+                    "last": "직전 33분 17점 1리바운드 5어시스트, 야투 7-14",
+                    "recent": "최근 5경기 19.6점 · 야투 51.5%"
                   }
                 ],
-                "focus": "최근 5경기 Franz Wagner의 평균은 31.2점·야투 52.2%·3점 31.0%입니다. 결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Franz Wagner가 35점·5리바운드·7어시스트를 기록했습니다.",
+                "focus": "최근 5경기 Franz Wagner의 평균은 26.8점·야투 49.1%·3점 25.0%입니다. 결장 4명의 시즌 평균 득점 합계는 24.5점입니다. 직전 경기에서는 Tristan da Silva가 18점·3리바운드·0어시스트를 기록했습니다.",
                 "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 24.5,
@@ -61873,12 +62080,19 @@ window.CLUTCH_DATA = {
                 "abbr": "WAS",
                 "name": "워싱턴 위저즈",
                 "side": "home",
-                "record": "6승 11패",
-                "venueRecord": "홈 2승 5패",
-                "streak": "2연승",
-                "last5": "2승 3패",
-                "lastGame": "98-94 승",
+                "record": "7승 11패",
+                "venueRecord": "홈 3승 5패",
+                "streak": "3연승",
+                "last5": "3승 2패",
+                "lastGame": "116-96 승",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "올랜도 매직",
+                    "ha": "홈",
+                    "score": "116-96",
+                    "res": "승"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "시카고 불스",
@@ -61906,69 +62120,48 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "119-147",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-13",
-                    "opp": "디트로이트 피스턴스",
-                    "ha": "홈",
-                    "score": "140-144",
-                    "res": "패"
                   }
                 ],
-                "ppg": 110.0,
-                "rpg": 42.5,
-                "tp": 31.9,
+                "ppg": 110.3,
+                "rpg": 42.7,
+                "tp": 33.6,
                 "players": [
                   {
                     "name": "Anthony Davis",
                     "id": "6583",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
                     "pos": "F",
-                    "stat": "25.3점 · 10.1리바운드 · 2.1어시스트",
-                    "sub": "야투 52.9% · 3점 34.4% · 팀 내 1옵션",
-                    "last": "직전 34분 36점 11리바운드 3어시스트, 야투 16-26",
-                    "recent": "최근 5경기 25.6점 · 야투 56.2%"
-                  },
-                  {
-                    "name": "Trae Young",
-                    "id": "4277905",
-                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
-                    "pos": "G",
-                    "stat": "17.4점 · 2.7리바운드 · 8.6어시스트",
-                    "sub": "야투 36.7% · 3점 31.8% · 팀 내 3옵션",
-                    "last": "직전 35분 16점 2리바운드 5어시스트, 야투 4-13",
-                    "recent": "최근 5경기 15.4점 · 야투 28.3%"
+                    "stat": "25.1점 · 9.9리바운드 · 2.1어시스트",
+                    "sub": "야투 53.3% · 3점 35.1% · 팀 내 1옵션",
+                    "last": "직전 33분 22점 7리바운드 1어시스트, 야투 8-13",
+                    "recent": "최근 5경기 24.0점 · 야투 55.6%"
                   },
                   {
                     "name": "Kyshawn George",
                     "id": "5174563",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png",
                     "pos": "F",
-                    "stat": "17.4점 · 4.4리바운드 · 4.5어시스트",
-                    "sub": "야투 47.2% · 3점 40.0% · 팀 내 2옵션",
-                    "last": "직전 35분 11점 7리바운드 5어시스트, 야투 5-17",
-                    "recent": "최근 5경기 14.8점 · 야투 44.4%"
+                    "stat": "17.8점 · 4.3리바운드 · 4.4어시스트",
+                    "sub": "야투 47.6% · 3점 41.4% · 팀 내 2옵션",
+                    "last": "직전 36분 24점 3리바운드 4어시스트, 야투 9-17",
+                    "recent": "최근 5경기 16.8점 · 야투 43.8%"
+                  },
+                  {
+                    "name": "Trae Young",
+                    "id": "4277905",
+                    "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
+                    "pos": "G",
+                    "stat": "17.1점 · 2.8리바운드 · 8.8어시스트",
+                    "sub": "야투 36.4% · 3점 32.5% · 팀 내 3옵션",
+                    "last": "직전 28분 11점 4리바운드 11어시스트, 야투 3-10",
+                    "recent": "최근 5경기 10.2점 · 야투 25.5%"
                   }
                 ],
-                "focus": "최근 5경기 Anthony Davis의 평균은 25.6점·야투 56.2%·3점 40.0%입니다. 결장 3명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Anthony Davis가 36점·11리바운드·3어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명 · 출전 불투명 2명",
-                "injuryOut": 3,
+                "focus": "최근 5경기 Anthony Davis의 평균은 24.0점·야투 55.6%·3점 44.4%입니다. 결장 4명의 시즌 평균 득점 합계는 7.2점입니다. 직전 경기에서는 Tristan da Silva가 18점·3리바운드·0어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명",
+                "injuryOut": 4,
                 "injuryPpg": 7.2,
                 "injuries": [
-                  {
-                    "player": "Bub Carrington",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 9옵션 · 4.8점 · 1.3리바운드"
-                  },
-                  {
-                    "player": "Deandre Ayton",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "C",
-                    "line": "팀 내 11옵션 · 3.8점 · 4.1리바운드"
-                  },
                   {
                     "player": "Tristan Vukcevic",
                     "status": "OUT",
@@ -61988,16 +62181,25 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "F",
                     "line": "팀 내 7옵션 · 7.2점 · 7.5리바운드"
+                  },
+                  {
+                    "player": "Jamir Watkins",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G"
                   }
                 ]
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **워싱턴 위저즈**(홈) 110.0점 · **올랜도 매직**(원정) 109.6점, 평균 리바운드는 홈 42.5개 · 원정 42.6개, 3점 성공률은 홈 31.9% · 원정 35.8%. 평균 득점 차가 0.4점으로 작고, 3점 성공률 차 3.9%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 올랜도 매직 승률 59.7%, 워싱턴 위저즈 40.3%.",
-              "**시즌 맞대결** — 이번 시즌 상대 전적 1-0."
+              "시즌 평균 득점은 **워싱턴 위저즈**(홈) 110.3점 · **올랜도 매직**(원정) 108.8점, 평균 리바운드는 홈 42.7개 · 원정 42.4개, 3점 성공률은 홈 33.6% · 원정 35.4%. 평균 득점 차가 1.5점으로 작고, 3점 성공률 차 1.8%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 올랜도 매직 승률 55.2%, 워싱턴 위저즈 44.8%.",
+              "**시즌 맞대결** — 이번 시즌 상대 전적 2-0."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 2-0."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -62033,7 +62235,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 3명",
+              "text": "결장 5명",
               "tone": "warn"
             },
             {
@@ -62231,24 +62433,31 @@ window.CLUTCH_DATA = {
                     "recent": "최근 3경기 17.7점 · 야투 45.7%"
                   }
                 ],
-                "focus": "최근 3경기 Brandon Miller의 평균은 17.3점·야투 38.3%·3점 35.5%입니다. 결장 2명의 시즌 평균 득점 합계는 13.2점입니다. 직전 경기에서는 Moussa Diabate가 21점·15리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 2명(팀 득점 6·13위) · 출전 불투명 2명",
-                "injuryOut": 2,
-                "injuryPpg": 13.2,
+                "focus": "최근 3경기 Brandon Miller의 평균은 17.3점·야투 38.3%·3점 35.5%입니다. 결장 4명의 시즌 평균 득점 합계는 39.4점입니다. 직전 경기에서는 Moussa Diabate가 21점·15리바운드·2어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명(팀 득점 3·5·6·13위) · 출전 불투명 1명",
+                "injuryOut": 4,
+                "injuryPpg": 39.4,
                 "injuries": [
                   {
-                    "player": "Grant Williams",
+                    "player": "Grayson Allen",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "G",
+                    "line": "팀 내 3옵션 · 14.9점 · 3.1리바운드"
+                  },
+                  {
+                    "player": "Brandon Miller",
                     "status": "DAY-TO-DAY",
                     "note": "당일 체크",
                     "pos": "F",
-                    "line": "팀 내 5옵션 · 11.3점 · 2.7리바운드"
+                    "line": "팀 내 1옵션 · 19.8점 · 4.8리바운드"
                   },
                   {
-                    "player": "Grayson Allen",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "G",
-                    "line": "팀 내 3옵션 · 14.9점 · 3.1리바운드"
+                    "player": "Grant Williams",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "F",
+                    "line": "팀 내 5옵션 · 11.3점 · 2.7리바운드"
                   },
                   {
                     "player": "Kon Knueppel",
@@ -62269,10 +62478,13 @@ window.CLUTCH_DATA = {
             ],
             "checkpoints": [
               "시즌 평균 득점은 **샬럿 호네츠**(홈) 99.9점 · **브루클린 네츠**(원정) 110.9점, 평균 리바운드는 홈 47.0개 · 원정 41.3개, 3점 성공률은 홈 31.0% · 원정 36.0%. 평균 득점 차 11.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 브루클린 네츠 승률 37.8%, 샬럿 호네츠 62.3%.",
+              "**ESPN 매치업 예측** — 브루클린 네츠 승률 37.7%, 샬럿 호네츠 62.3%.",
               "**시즌 맞대결** — 이번 시즌 상대 전적 1-1."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 상대 전적 1-1."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -62287,10 +62499,10 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "인디애나 페이서스",
             "abbr": "IND",
-            "record": "5승 11패",
+            "record": "5승 12패",
             "badges": [
               {
-                "text": "원정 3승 5패",
+                "text": "원정 3승 6패",
                 "tone": ""
               }
             ]
@@ -62298,10 +62510,10 @@ window.CLUTCH_DATA = {
           "home": {
             "name": "시카고 불스",
             "abbr": "CHI",
-            "record": "4승 11패",
+            "record": "4승 12패",
             "badges": [
               {
-                "text": "홈 1승 5패",
+                "text": "홈 1승 6패",
                 "tone": ""
               }
             ]
@@ -62312,7 +62524,7 @@ window.CLUTCH_DATA = {
               "tone": "warn"
             },
             {
-              "text": "평균 112.0점 · 114.7점",
+              "text": "평균 111.6점 · 116.6점",
               "tone": "info"
             }
           ],
@@ -62320,7 +62532,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**시카고 불스**(홈) 4승 11패(홈 1승 5패, 최근 5경기 3승 2패), **인디애나 페이서스**(원정) 5승 11패(원정 3승 5패, 최근 5경기 2승 3패, 3연패). 직전 경기(11.21) **인디애나 페이서스**는 클리블랜드 캐벌리어스에 119-128로 졌고, Pascal Siakam 21점·7리바운드·2어시스트, Ivica Zubac 21점·10리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **시카고 불스**는 워싱턴 위저즈에 94-98로 졌고, Norman Powell 16점·3리바운드·2어시스트, Buddy Hield 15점·4리바운드·0어시스트를 기록했습니다."
+              "text": "**시카고 불스**(홈) 4승 12패(홈 1승 6패, 최근 5경기 2승 3패, 2연패), **인디애나 페이서스**(원정) 5승 12패(원정 3승 6패, 최근 5경기 1승 4패, 4연패). 직전 경기(11.23) **인디애나 페이서스**는 뉴욕 닉스에 106-113로 졌고, Pascal Siakam 25점·6리바운드·1어시스트, Andrew Nembhard 16점·2리바운드·8어시스트를 기록했습니다. 직전 경기(11.23) **시카고 불스**는 덴버 너기츠에 145-151로 졌고, Buddy Hield 33점·7리바운드·6어시스트, Jalen Smith 26점·4리바운드·1어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -62329,12 +62541,19 @@ window.CLUTCH_DATA = {
                 "abbr": "IND",
                 "name": "인디애나 페이서스",
                 "side": "away",
-                "record": "5승 11패",
-                "venueRecord": "원정 3승 5패",
-                "streak": "3연패",
-                "last5": "2승 3패",
-                "lastGame": "119-128 패",
+                "record": "5승 12패",
+                "venueRecord": "원정 3승 6패",
+                "streak": "4연패",
+                "last5": "1승 4패",
+                "lastGame": "106-113 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "뉴욕 닉스",
+                    "ha": "원정",
+                    "score": "106-113",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "클리블랜드 캐벌리어스",
@@ -62362,28 +62581,21 @@ window.CLUTCH_DATA = {
                     "ha": "홈",
                     "score": "106-104",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "워싱턴 위저즈",
-                    "ha": "홈",
-                    "score": "114-101",
-                    "res": "승"
                   }
                 ],
-                "ppg": 112.0,
+                "ppg": 111.6,
                 "rpg": 41.8,
-                "tp": 33.1,
+                "tp": 32.8,
                 "players": [
                   {
                     "name": "Pascal Siakam",
                     "id": "3149673",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png",
                     "pos": "F",
-                    "stat": "23.0점 · 6.1리바운드 · 3.8어시스트",
-                    "sub": "야투 51.6% · 3점 35.7% · 팀 내 1옵션",
-                    "last": "직전 30분 21점 7리바운드 2어시스트, 야투 8-17",
-                    "recent": "최근 5경기 24.6점 · 야투 50.6%"
+                    "stat": "23.1점 · 6.1리바운드 · 3.6어시스트",
+                    "sub": "야투 50.7% · 3점 36.8% · 팀 내 1옵션",
+                    "last": "직전 33분 25점 6리바운드 1어시스트, 야투 9-22",
+                    "recent": "최근 5경기 24.0점 · 야투 50.0%"
                   },
                   {
                     "name": "Tyrese Haliburton",
@@ -62399,13 +62611,13 @@ window.CLUTCH_DATA = {
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
                     "pos": "G",
                     "stat": "16.2점 · 2.3리바운드 · 7.7어시스트",
-                    "sub": "야투 43.6% · 3점 41.2% · 팀 내 3옵션",
-                    "last": "직전 26분 12점 3리바운드 8어시스트, 야투 3-10",
-                    "recent": "최근 3경기 13.7점 · 야투 37.1%"
+                    "sub": "야투 43.2% · 3점 42.3% · 팀 내 3옵션",
+                    "last": "직전 32분 16점 2리바운드 8어시스트, 야투 5-13",
+                    "recent": "최근 3경기 13.3점 · 야투 32.4%"
                   }
                 ],
-                "focus": "최근 5경기 Pascal Siakam의 평균은 24.6점·야투 50.6%·3점 36.4%입니다. 결장 4명의 시즌 평균 득점 합계는 31.8점입니다. 직전 경기에서는 Pascal Siakam가 21점·7리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
+                "focus": "최근 5경기 Pascal Siakam의 평균은 24.0점·야투 50.0%·3점 42.9%입니다. 결장 4명의 시즌 평균 득점 합계는 31.8점입니다. 직전 경기에서는 Pascal Siakam가 25점·6리바운드·1어시스트를 기록했습니다.",
+                "injurySummary": "결장 4명",
                 "injuryOut": 4,
                 "injuryPpg": 31.8,
                 "injuries": [
@@ -62415,13 +62627,6 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 9옵션 · 7.0점 · 2.3리바운드"
-                  },
-                  {
-                    "player": "Pascal Siakam",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 1옵션 · 23.0점 · 6.1리바운드"
                   },
                   {
                     "player": "Tyrese Haliburton",
@@ -62449,11 +62654,19 @@ window.CLUTCH_DATA = {
                 "abbr": "CHI",
                 "name": "시카고 불스",
                 "side": "home",
-                "record": "4승 11패",
-                "venueRecord": "홈 1승 5패",
-                "last5": "3승 2패",
-                "lastGame": "94-98 패",
+                "record": "4승 12패",
+                "venueRecord": "홈 1승 6패",
+                "streak": "2연패",
+                "last5": "2승 3패",
+                "lastGame": "145-151 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-23",
+                    "opp": "덴버 너기츠",
+                    "ha": "홈",
+                    "score": "145-151",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "워싱턴 위저즈",
@@ -62481,18 +62694,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "117-106",
                     "res": "승"
-                  },
-                  {
-                    "date": "2026-11-14",
-                    "opp": "애틀랜타 호크스",
-                    "ha": "홈",
-                    "score": "125-117",
-                    "res": "승"
                   }
                 ],
-                "ppg": 114.7,
-                "rpg": 43.8,
-                "tp": 31.8,
+                "ppg": 116.6,
+                "rpg": 43.6,
+                "tp": 32.9,
                 "players": [
                   {
                     "name": "Norman Powell",
@@ -62501,8 +62707,7 @@ window.CLUTCH_DATA = {
                     "pos": "G",
                     "stat": "20.8점 · 2.8리바운드 · 2.4어시스트",
                     "sub": "야투 44.6% · 3점 34.1% · 팀 내 1옵션",
-                    "last": "직전 33분 16점 3리바운드 2어시스트, 야투 7-18",
-                    "recent": "최근 5경기 23.4점 · 야투 50.0%"
+                    "recent": "최근 4경기 21.0점 · 야투 46.5%"
                   },
                   {
                     "name": "Caleb Wilson",
@@ -62517,14 +62722,14 @@ window.CLUTCH_DATA = {
                     "id": "4711294",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4711294.png",
                     "pos": "F",
-                    "stat": "14.7점 · 4.7리바운드 · 1.9어시스트",
-                    "sub": "야투 45.8% · 3점 36.6% · 팀 내 3옵션",
-                    "last": "직전 25분 9점 5리바운드 1어시스트, 야투 4-10",
-                    "recent": "최근 5경기 17.2점 · 야투 50.9%"
+                    "stat": "15.1점 · 4.8리바운드 · 2.0어시스트",
+                    "sub": "야투 45.3% · 3점 36.2% · 팀 내 3옵션",
+                    "last": "직전 38분 21점 5리바운드 3어시스트, 야투 7-17",
+                    "recent": "최근 5경기 19.2점 · 야투 50.0%"
                   }
                 ],
-                "focus": "최근 5경기 Norman Powell의 평균은 23.4점·야투 50.0%·3점 39.4%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Norman Powell가 16점·3리바운드·2어시스트를 기록했습니다.",
-                "injurySummary": "결장 3명(팀 득점 1·2·7위) · 출전 불투명 2명",
+                "focus": "최근 4경기 Norman Powell의 평균은 21.0점·야투 46.5%·3점 36.0%입니다. 결장 3명의 시즌 평균 득점 합계는 49.0점입니다. 직전 경기에서는 Buddy Hield가 33점·7리바운드·6어시스트를 기록했습니다.",
+                "injurySummary": "결장 3명(팀 득점 1·2·8위)",
                 "injuryOut": 3,
                 "injuryPpg": 49.0,
                 "injuries": [
@@ -62533,14 +62738,7 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "C",
-                    "line": "팀 내 7옵션 · 9.3점 · 4.8리바운드"
-                  },
-                  {
-                    "player": "Jalen Smith",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 4옵션 · 13.4점 · 7.9리바운드"
+                    "line": "팀 내 8옵션 · 9.3점 · 4.8리바운드"
                   },
                   {
                     "player": "Norman Powell",
@@ -62548,13 +62746,6 @@ window.CLUTCH_DATA = {
                     "note": "결장",
                     "pos": "G",
                     "line": "팀 내 1옵션 · 20.8점 · 2.8리바운드"
-                  },
-                  {
-                    "player": "Patrick Williams",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 10옵션 · 6.9점 · 2.9리바운드"
                   },
                   {
                     "player": "Caleb Wilson",
@@ -62567,11 +62758,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **시카고 불스**(홈) 114.7점 · **인디애나 페이서스**(원정) 112.0점, 평균 리바운드는 홈 43.8개 · 원정 41.8개, 3점 성공률은 홈 31.8% · 원정 33.1%. 평균 득점 차가 2.7점으로 작고, 3점 성공률 차 1.3%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 인디애나 페이서스 승률 42.2%, 시카고 불스 57.8%.",
+              "시즌 평균 득점은 **시카고 불스**(홈) 116.6점 · **인디애나 페이서스**(원정) 111.6점, 평균 리바운드는 홈 43.6개 · 원정 41.8개, 3점 성공률은 홈 32.9% · 원정 32.8%. 평균 득점 차 5.0점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 인디애나 페이서스 승률 41.5%, 시카고 불스 58.5%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 4경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -62586,10 +62780,10 @@ window.CLUTCH_DATA = {
           "away": {
             "name": "오클라호마시티 썬더",
             "abbr": "OKC",
-            "record": "10승 6패",
+            "record": "10승 7패",
             "badges": [
               {
-                "text": "원정 4승 5패",
+                "text": "원정 4승 6패",
                 "tone": ""
               }
             ]
@@ -62607,7 +62801,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 5명",
+              "text": "결장 6명",
               "tone": "warn"
             },
             {
@@ -62619,7 +62813,7 @@ window.CLUTCH_DATA = {
             {
               "kind": "flow",
               "label": "흐름",
-              "text": "**밀워키 벅스**(홈) 1승 16패(홈 1승 8패, 최근 5경기 0승 5패, 5연패), **오클라호마시티 썬더**(원정) 10승 6패(원정 4승 5패, 최근 5경기 2승 3패). 직전 경기(11.21) **오클라호마시티 썬더**는 뉴올리언스 펠리컨스에 126-120로 이겼고, Shai Gilgeous-Alexander 40점·3리바운드·8어시스트, Aday Mara 22점·16리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **밀워키 벅스**는 필라델피아 세븐티식서스에 129-132로 졌고, Tyler Herro 50점·11리바운드·7어시스트, Brayden Burries 26점·8리바운드·4어시스트를 기록했습니다."
+              "text": "**밀워키 벅스**(홈) 1승 16패(홈 1승 8패, 최근 5경기 0승 5패, 5연패), **오클라호마시티 썬더**(원정) 10승 7패(원정 4승 6패, 최근 5경기 2승 3패). 직전 경기(11.22) **오클라호마시티 썬더**는 마이애미 히트에 113-123로 졌고, Bennett Stirtz 21점·3리바운드·5어시스트, Jared McCain 20점·2리바운드·3어시스트를 기록했습니다. 직전 경기(11.21) **밀워키 벅스**는 필라델피아 세븐티식서스에 129-132로 졌고, Tyler Herro 50점·11리바운드·7어시스트, Brayden Burries 26점·8리바운드·4어시스트를 기록했습니다."
             }
           ],
           "details": {
@@ -62628,11 +62822,18 @@ window.CLUTCH_DATA = {
                 "abbr": "OKC",
                 "name": "오클라호마시티 썬더",
                 "side": "away",
-                "record": "10승 6패",
-                "venueRecord": "원정 4승 5패",
+                "record": "10승 7패",
+                "venueRecord": "원정 4승 6패",
                 "last5": "2승 3패",
-                "lastGame": "126-120 승",
+                "lastGame": "113-123 패",
                 "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "마이애미 히트",
+                    "ha": "원정",
+                    "score": "113-123",
+                    "res": "패"
+                  },
                   {
                     "date": "2026-11-21",
                     "opp": "뉴올리언스 펠리컨스",
@@ -62660,18 +62861,11 @@ window.CLUTCH_DATA = {
                     "ha": "원정",
                     "score": "112-113",
                     "res": "패"
-                  },
-                  {
-                    "date": "2026-11-12",
-                    "opp": "포틀랜드 트레일블레이저스",
-                    "ha": "원정",
-                    "score": "108-118",
-                    "res": "패"
                   }
                 ],
                 "ppg": 113.0,
-                "rpg": 45.8,
-                "tp": 34.5,
+                "rpg": 45.4,
+                "tp": 35.2,
                 "players": [
                   {
                     "name": "Shai Gilgeous-Alexander",
@@ -62680,8 +62874,7 @@ window.CLUTCH_DATA = {
                     "pos": "G",
                     "stat": "31.7점 · 4.1리바운드 · 4.5어시스트",
                     "sub": "야투 48.3% · 3점 37.3% · 팀 내 1옵션",
-                    "last": "직전 37분 40점 3리바운드 8어시스트, 야투 14-24",
-                    "recent": "최근 5경기 36.4점 · 야투 54.6%"
+                    "recent": "최근 4경기 37.8점 · 야투 56.6%"
                   },
                   {
                     "name": "Ajay Mitchell",
@@ -62689,30 +62882,37 @@ window.CLUTCH_DATA = {
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png",
                     "pos": "G",
                     "stat": "17.0점 · 3.6리바운드 · 3.6어시스트",
-                    "sub": "야투 49.5% · 3점 25.6% · 팀 내 2옵션",
-                    "last": "직전 31분 8점 2리바운드 4어시스트, 야투 3-12",
-                    "recent": "최근 3경기 11.7점 · 야투 37.8%"
+                    "sub": "야투 48.3% · 3점 28.3% · 팀 내 2옵션",
+                    "last": "직전 22분 17점 3리바운드 3어시스트, 야투 6-17",
+                    "recent": "최근 4경기 13.0점 · 야투 37.0%"
                   },
                   {
                     "name": "Jared McCain",
                     "id": "4683778",
                     "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png",
                     "pos": "G",
-                    "stat": "13.9점 · 3.4리바운드 · 1.7어시스트",
-                    "sub": "야투 41.5% · 3점 34.2% · 팀 내 3옵션",
-                    "last": "직전 30분 18점 3리바운드 0어시스트, 야투 7-14",
-                    "recent": "최근 5경기 16.2점 · 야투 39.4%"
+                    "stat": "14.3점 · 3.3리바운드 · 1.8어시스트",
+                    "sub": "야투 41.4% · 3점 33.9% · 팀 내 3옵션",
+                    "last": "직전 29분 20점 2리바운드 3어시스트, 야투 7-17",
+                    "recent": "최근 5경기 18.2점 · 야투 43.2%"
                   }
                 ],
-                "focus": "최근 5경기 Shai Gilgeous-Alexander의 평균은 36.4점·야투 54.6%·3점 37.9%입니다. 결장 4명의 시즌 평균 득점 합계는 13.0점입니다. 직전 경기에서는 Shai Gilgeous-Alexander가 40점·3리바운드·8어시스트를 기록했습니다.",
-                "injurySummary": "결장 4명 · 출전 불투명 1명",
-                "injuryOut": 4,
-                "injuryPpg": 13.0,
+                "focus": "최근 4경기 Shai Gilgeous-Alexander의 평균은 37.8점·야투 56.6%·3점 50.0%입니다. 결장 5명의 시즌 평균 득점 합계는 54.7점입니다. 직전 경기에서는 Bennett Stirtz가 21점·3리바운드·5어시스트를 기록했습니다.",
+                "injurySummary": "결장 5명(팀 득점 1·6·10·15·16위)",
+                "injuryOut": 5,
+                "injuryPpg": 54.7,
                 "injuries": [
                   {
+                    "player": "Aday Mara",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 6옵션 · 10.0점 · 7.1리바운드"
+                  },
+                  {
                     "player": "Shai Gilgeous-Alexander",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
+                    "status": "OUT",
+                    "note": "결장",
                     "pos": "G",
                     "line": "팀 내 1옵션 · 31.7점 · 4.1리바운드"
                   },
@@ -62721,27 +62921,21 @@ window.CLUTCH_DATA = {
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
-                    "line": "팀 내 15옵션 · 2.7점 · 1.3리바운드"
+                    "line": "팀 내 16옵션 · 2.7점 · 1.3리바운드"
                   },
                   {
                     "player": "Jaylin Williams",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "F",
-                    "line": "팀 내 14옵션 · 2.9점 · 3.3리바운드"
+                    "line": "팀 내 15옵션 · 2.9점 · 3.3리바운드"
                   },
                   {
                     "player": "Alex Caruso",
                     "status": "OUT",
                     "note": "결장",
                     "pos": "G",
-                    "line": "팀 내 9옵션 · 7.4점 · 3.7리바운드"
-                  },
-                  {
-                    "player": "Thomas Sorber",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C"
+                    "line": "팀 내 10옵션 · 7.4점 · 3.7리바운드"
                   }
                 ]
               },
@@ -62842,11 +63036,14 @@ window.CLUTCH_DATA = {
               }
             ],
             "checkpoints": [
-              "시즌 평균 득점은 **밀워키 벅스**(홈) 109.4점 · **오클라호마시티 썬더**(원정) 113.0점, 평균 리바운드는 홈 44.7개 · 원정 45.8개, 3점 성공률은 홈 34.5% · 원정 34.5%. 평균 득점 차 3.6점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 오클라호마시티 썬더 승률 84.8%, 밀워키 벅스 15.2%.",
+              "시즌 평균 득점은 **밀워키 벅스**(홈) 109.4점 · **오클라호마시티 썬더**(원정) 113.0점, 평균 리바운드는 홈 44.7개 · 원정 45.4개, 3점 성공률은 홈 34.5% · 원정 35.2%. 평균 득점 차 3.6점이 실제 경기 템포로 이어지는지가 관전 포인트입니다.",
+              "**ESPN 매치업 예측** — 오클라호마시티 썬더 승률 84.2%, 밀워키 벅스 15.8%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
         {
@@ -62882,7 +63079,7 @@ window.CLUTCH_DATA = {
           },
           "tags": [
             {
-              "text": "결장 3명",
+              "text": "결장 2명",
               "tone": "warn"
             },
             {
@@ -62985,11 +63182,11 @@ window.CLUTCH_DATA = {
                 "injuryPpg": 2.1,
                 "injuries": [
                   {
-                    "player": "Dean Wade",
-                    "status": "DAY-TO-DAY",
-                    "note": "당일 체크",
-                    "pos": "F",
-                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
+                    "player": "Adem Bona",
+                    "status": "OUT",
+                    "note": "결장",
+                    "pos": "C",
+                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
                   },
                   {
                     "player": "Jaylen Brown",
@@ -62999,11 +63196,11 @@ window.CLUTCH_DATA = {
                     "line": "팀 내 2옵션 · 22.6점 · 6.6리바운드"
                   },
                   {
-                    "player": "Adem Bona",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 12옵션 · 2.1점 · 3.9리바운드"
+                    "player": "Dean Wade",
+                    "status": "DAY-TO-DAY",
+                    "note": "당일 체크",
+                    "pos": "F",
+                    "line": "팀 내 10옵션 · 4.8점 · 4.6리바운드"
                   },
                   {
                     "player": "Ariel Hukporti",
@@ -63093,27 +63290,20 @@ window.CLUTCH_DATA = {
                     "recent": "최근 4경기 18.8점 · 야투 69.0%"
                   }
                 ],
-                "focus": "최근 5경기 Alperen Sengun의 평균은 24.0점·야투 60.9%·3점 55.6%입니다. 결장 1명의 시즌 평균 득점 합계는 3.2점입니다. 직전 경기에서는 Alperen Sengun가 28점·11리바운드·10어시스트를 기록했습니다.",
-                "injurySummary": "결장 1명(팀 득점 11위)",
-                "injuryOut": 1,
-                "injuryPpg": 3.2,
-                "injuries": [
-                  {
-                    "player": "Clint Capela",
-                    "status": "OUT",
-                    "note": "결장",
-                    "pos": "C",
-                    "line": "팀 내 11옵션 · 3.2점 · 5.2리바운드"
-                  }
-                ]
+                "focus": "최근 5경기 Alperen Sengun의 평균은 24.0점·야투 60.9%·3점 55.6%입니다. 직전 경기에서는 Alperen Sengun가 28점·11리바운드·10어시스트를 기록했습니다. 이어서 Kevin Durant, Amen Thompson가 뒤를 받칩니다.",
+                "injurySummary": "결장 없음",
+                "injuries": []
               }
             ],
             "checkpoints": [
               "시즌 평균 득점은 **휴스턴 로키츠**(홈) 118.2점 · **필라델피아 세븐티식서스**(원정) 115.5점, 평균 리바운드는 홈 45.3개 · 원정 42.8개, 3점 성공률은 홈 38.0% · 원정 35.3%. 평균 득점 차가 2.7점으로 작고, 3점 성공률 차 2.7%p가 외곽 승부를 가르는지가 관전 포인트입니다.",
-              "**ESPN 매치업 예측** — 필라델피아 세븐티식서스 승률 31.3%, 휴스턴 로키츠 68.7%.",
+              "**ESPN 매치업 예측** — 필라델피아 세븐티식서스 승률 31.1%, 휴스턴 로키츠 68.9%.",
               "**시즌 맞대결** — 이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
             ],
-            "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
+            "h2h": {
+              "summary": "이번 시즌 첫 맞대결입니다. 정규시즌 2경기 중 첫 경기입니다."
+            },
+            "note": "출전 여부는 ESPN 2026-11-23 22:08 기준이며 경기 전까지 변동될 수 있습니다."
           }
         }
         /* NBA-AUTO 2026-11-29 END */
