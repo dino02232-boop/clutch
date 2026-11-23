@@ -2748,6 +2748,138 @@
     return '<h4 class="tb-sub">주요 선수</h4><div class="lu-teams">' + blocks.join("") + "</div>";
   }
 
+  /* ── 선발 라인업 ────────────────────────────────────────────────
+     ESPN summary 의 공식 발표만 쓴다. 발표 전이면 과거 라인업으로 메우지 않고
+     사실대로 적는다(축구 보통 킥오프 1시간 전, NBA 보통 팁오프 30분 전).
+     배구(KOVO)는 공개 기록에 선발 명단이 없어 그 사실만 적는다.
+
+     컨테이너(`.startbox[data-lineup]`)는 카드가 열려 있는 동안 paintStarters 가
+     통째로 다시 그린다(값이 같으면 건드리지 않는다). */
+  var LINE_ORDER = ["GK", "DF", "MF", "FW"];
+  var LINE_KO = { GK: "GK", DF: "수비", MF: "미드필드", FW: "공격" };
+  var SOCCER_POS_LINE = {
+    G: "GK", GK: "GK",
+    D: "DF", CB: "DF", CD: "DF", "CD-L": "DF", "CD-R": "DF", LCB: "DF", RCB: "DF",
+    LB: "DF", RB: "DF", LWB: "DF", RWB: "DF", SW: "DF", FB: "DF",
+    M: "MF", MF: "MF", CM: "MF", "CM-L": "MF", "CM-R": "MF", CDM: "MF", DM: "MF",
+    CAM: "MF", AM: "MF", LM: "MF", RM: "MF",
+    F: "FW", FW: "FW", CF: "FW", ST: "FW", LF: "FW", RF: "FW",
+    LCF: "FW", RCF: "FW", LW: "FW", RW: "FW", W: "FW"
+  };
+
+  // ESPN 축구 포지션 약어 → GK/DF/MF/FW. 모르는 표기는 빈 값(기타 칸으로).
+  function soccerLineOf(pos) {
+    var p = String(pos || "").toUpperCase().trim();
+    if (!p) return "";
+    if (SOCCER_POS_LINE[p]) return SOCCER_POS_LINE[p];
+    var base = p.replace(/-[LR]$/, "");
+    return SOCCER_POS_LINE[base] || "";
+  }
+
+  function startersOf(g) {
+    var s = summaryEntry(g);
+    var lu = s && s.data && s.data.lineups;
+    if (!lu) return null;
+    var has = ["home", "away"].some(function (sd) {
+      return lu[sd] && Array.isArray(lu[sd].players) && lu[sd].players.length;
+    });
+    return has ? lu : null;
+  }
+
+  function playerChipHTML(p, withPos) {
+    return "<span>" + (withPos && p.pos ? '<em class="lu-pp">' + esc(p.pos) + "</em>" : "") +
+      (p.num ? "<i>" + esc(p.num) + "</i>" : "") + esc(p.name) + "</span>";
+  }
+
+  function startersBodyHTML(g) {
+    if (g.sport === "volleyball") {
+      return '<p class="lu-wait"><b>선발 라인업</b>KOVO 공개 기록에는 선발 명단이 없어 표시하지 않습니다. 경기 기록지의 출전 선수·포지션으로만 확인됩니다.</p>';
+    }
+    if (g.sport !== "soccer" && g.sport !== "basketball") return "";
+
+    var lu = startersOf(g);
+    if (!lu) {
+      var s = summaryEntry(g);
+      if (g.sport === "soccer" || g.sport === "basketball") {
+        if (!liveTargetOf(g)) {
+          return '<p class="lu-wait"><b>선발 라인업</b>이 경기는 ESPN 연결 정보가 없어 선발 명단을 확인하지 못했습니다.</p>';
+        }
+        if (!s) return '<p class="lu-wait"><b>선발 라인업</b>확인 중…</p>';
+        if (s.err) return '<p class="lu-wait"><b>선발 라인업</b>ESPN에서 받지 못했습니다. 잠시 뒤 새로고침을 눌러 주세요.</p>';
+      }
+      var state = g.result && g.result.state;
+      if (state === "live" || state === "final") {
+        return '<p class="lu-wait"><b>선발 라인업</b>ESPN 응답에 선발 명단이 없습니다.</p>';
+      }
+      var when = g.sport === "soccer" ? "보통 킥오프 1시간 전" : "보통 팁오프 30분 전";
+      return '<p class="lu-wait"><b>선발 라인업</b>발표 전 · ' + when + "에 공개됩니다.</p>";
+    }
+
+    // 항상 홈 팀 먼저, 원정 팀 다음.
+    var sides = ["home", "away"].filter(function (sd) {
+      return lu[sd] && Array.isArray(lu[sd].players) && lu[sd].players.length;
+    });
+    var blocks = sides.map(function (sd) {
+      var t = (sd === "home" ? g.home : g.away) || {};
+      var team = lu[sd];
+      var rows = "";
+      if (g.sport === "soccer") {
+        var groups = { GK: [], DF: [], MF: [], FW: [], "": [] };
+        team.players.forEach(function (p) { groups[soccerLineOf(p.pos)].push(p); });
+        rows = LINE_ORDER.map(function (k) {
+          if (!groups[k].length) return "";
+          return '<div class="lu-row"><span class="lu-pos">' + LINE_KO[k] + '</span>' +
+            '<span class="lu-names">' + groups[k].map(function (p) { return playerChipHTML(p, false); }).join("") +
+            "</span></div>";
+        }).join("") + (groups[""].length
+          ? '<div class="lu-row"><span class="lu-pos">기타</span><span class="lu-names">' +
+            groups[""].map(function (p) { return playerChipHTML(p, false); }).join("") + "</span></div>"
+          : "");
+      } else {
+        rows = '<div class="lu-row"><span class="lu-pos">선발</span><span class="lu-names">' +
+          team.players.map(function (p) { return playerChipHTML(p, true); }).join("") + "</span></div>";
+      }
+      return '<div class="lu-block">' +
+        '<div class="lu-bhead"><span class="lu-side ' + sd + '">' + (sd === "home" ? "홈" : "원정") + "</span>" +
+        '<b class="lu-bname">' + esc(t.name || "") + "</b>" +
+        (team.formation ? '<span class="lu-form">' + esc(team.formation) + "</span>" : "") +
+        "</div>" + rows + "</div>";
+    }).join("");
+
+    // 두 팀 포메이션이 같으면 접힌 줄에 한 번만 적는다.
+    var fm = sides.map(function (sd) { return lu[sd].formation; }).filter(Boolean);
+    var sameFm = fm.length === 2 && fm[0] === fm[1] ? fm[0] : "";
+    return '<details class="pg-more lu-start"><summary>' +
+      '<span class="pg-more-label">선발 라인업' +
+        (sameFm ? ' <span class="lu-form">' + esc(sameFm) + "</span>" : "") + "</span>" +
+      '<span class="pg-more-hint" aria-hidden="true"></span>' +
+      '<span class="pg-more-caret" aria-hidden="true">▾</span>' +
+      '</summary><div class="lu-blocks">' + blocks + "</div></details>";
+  }
+
+  function startBoxHTML(g) {
+    if (!g || g.sport === "baseball") return "";
+    var body = startersBodyHTML(g);
+    return body ? '<div class="startbox" data-lineup="1">' + body + "</div>" : "";
+  }
+
+  // 열어 둔 카드의 선발 라인업 칸만 다시 그린다. 펼쳐 둔 상태는 그대로 둔다.
+  function paintStarters(item, g) {
+    if (!item || !g) return;
+    var boxes = item.querySelectorAll(".startbox[data-lineup]");
+    Array.prototype.forEach.call(boxes, function (box) {
+      var body = startersBodyHTML(g);
+      if (!body || box._line === body) return;
+      var wasOpen = !!box.querySelector("details[open]");
+      box.innerHTML = body;
+      box._line = body;
+      if (wasOpen) {
+        var d = box.querySelector("details");
+        if (d) d.open = true;
+      }
+    });
+  }
+
   function boxHTML(g) {
     var d = g.details || {};
     var injuries = Array.isArray(d.injuries) ? d.injuries : [];
@@ -2820,13 +2952,14 @@
     // 경기 전에는 프리뷰만 보여준다. 진행 중에는 라이브 상황을 위에 두고,
     // 종료 후에는 결과를 위로 올린 뒤 경기 전 프리뷰를 아래에 보존한다.
     var body;
+    var lineup = startBoxHTML(g);
     if (liveNow) {
-      body = liveSectionHTML(g) + pgMoreHTML("경기 전 브리핑", '<div class="pregame-body">' + preview + "</div>");
+      body = liveSectionHTML(g) + lineup + pgMoreHTML("경기 전 브리핑", '<div class="pregame-body">' + preview + "</div>");
     } else if (finalNow) {
       // 종료 카드에서는 '예상'이 아니라 '기록'이다 — 제목·버튼 모양을 경기 후 브리핑과 맞춘다.
-      body = resultHTML(g) + postgameHTML(g) + pgMoreHTML("경기 전 기록", '<div class="pregame-body">' + preview + "</div>");
+      body = resultHTML(g) + postgameHTML(g) + lineup + pgMoreHTML("경기 전 기록", '<div class="pregame-body">' + preview + "</div>");
     } else {
-      body = preview + (more ? '<details class="more"><summary>팀 정보 · 부상 · 맞대결 더 보기</summary><div class="more-body">' + more + "</div></details>" : "");
+      body = preview + lineup + (more ? '<details class="more"><summary>팀 정보 · 부상 · 맞대결 더 보기</summary><div class="more-body">' + more + "</div></details>" : "");
     }
 
     return '<div class="cbox-outer"><div class="cbox">' + body + "</div></div>";
@@ -2915,6 +3048,10 @@
     if (entry.g.result && entry.g.result.state === "live") refreshLiveSummary(item, entry.g, false);
     else if (entry.g.result && entry.g.result.state === "final" &&
       (entry.g.sport === "basketball" || entry.g.sport === "soccer")) refreshPostgameSummary(item, entry.g, false);
+    // 경기 전 카드도 열 때 ESPN summary 를 한 번 받아, 공식 선발이 이미 떴으면 바로 채운다
+    if (entry.g.sport === "soccer" || entry.g.sport === "basketball") {
+      loadLiveSummary(entry.g, false, function () { paintStarters(item, entry.g); });
+    }
     item.classList.add("open");
     btn.setAttribute("aria-expanded", "true");
     label.textContent = "접기";
@@ -4582,6 +4719,75 @@
         });
       }
     }
+    /* ── 선발 라인업 ─────────────────────────────────────────────
+       ESPN summary 의 공식 선발만 담는다. 발표 전에는 값이 비어 오므로
+       여기서 추측해 채우지 않는다(화면은 '발표 전'으로 적는다).
+         · 축구: rosters[].roster[] 의 starter·position·jersey + 팀 formation
+         · 농구: boxscore.players[].statistics[].athletes[] 의 starter 5명
+       팀 방향은 header competitors 의 team id 로 맞춘다(NBA boxscore 는
+       homeAway 값이 비어 오고, 로스터 순서도 대회마다 다르다). */
+    out.lineups = {};
+    var sideById = {};
+    ["home", "away"].forEach(function (sd) {
+      if (out.sides[sd] && out.sides[sd].id) sideById[String(out.sides[sd].id)] = sd;
+    });
+    function lineupSideOf(t) {
+      var hw = String((t && t.homeAway) || "");
+      if (hw === "home" || hw === "away") return hw;
+      var tid = String((t && t.team && t.team.id) || "");
+      if (tid && sideById[tid]) return sideById[tid];
+      var ab = String((t && t.team && t.team.abbreviation) || "").toUpperCase();
+      if (!ab) return "";
+      for (var k in out.sides) {
+        if (String(out.sides[k].abbr || "").toUpperCase() === ab) return k;
+      }
+      return "";
+    }
+    function putLineup(side, formation, players) {
+      if (!side || !players.length) return;
+      out.lineups[side] = { formation: String(formation || ""), players: players };
+    }
+    var lineRosters = j && Array.isArray(j.rosters) ? j.rosters : [];
+    lineRosters.forEach(function (t) {
+      var players = [];
+      (t.roster || []).forEach(function (pl) {
+        if (!pl || !pl.athlete || !pl.starter) return;
+        var at = pl.athlete;
+        var num = pl.jersey != null ? pl.jersey : at.jersey;
+        var nm = at.displayName || at.fullName || at.shortName || "";
+        if (!nm) return;
+        players.push({
+          num: num != null ? String(num) : "",
+          name: nm,
+          pos: String((pl.position && pl.position.abbreviation) ||
+            (at.position && at.position.abbreviation) || "")
+        });
+      });
+      putLineup(lineupSideOf(t), t.formation, players);
+    });
+    if (!out.lineups.home && !out.lineups.away) {
+      var boxTeams = (j && j.boxscore && j.boxscore.players) || [];
+      boxTeams.forEach(function (t) {
+        var players = [], seen = {};
+        (t.statistics || []).forEach(function (st) {
+          (st.athletes || []).forEach(function (a) {
+            if (!a || !a.starter || a.didNotPlay) return;
+            var at = a.athlete || {};
+            var nm = at.displayName || at.shortName || "";
+            if (!nm || seen[nm]) return;
+            seen[nm] = 1;
+            var num = a.jersey != null ? a.jersey : at.jersey;
+            players.push({
+              num: num != null ? String(num) : "",
+              name: nm,
+              pos: String((at.position && at.position.abbreviation) ||
+                (a.position && a.position.abbreviation) || "")
+            });
+          });
+        });
+        putLineup(lineupSideOf(t), "", players);
+      });
+    }
     return out;
   }
 
@@ -4915,7 +5121,23 @@
       var tpl = document.createElement("div");
       tpl.innerHTML = liveSectionHTML(g);
       if (tpl.firstChild) box.parentNode.replaceChild(tpl.firstChild, box);
+      paintStarters(it, g);
     });
+  }
+
+  // 경기 전 카드: 공식 선발이 보통 나오는 시각대에만 summary 를 다시 확인한다.
+  //  · 축구는 킥오프 3시간 전부터, NBA 는 2시간 전부터 시작 30분 뒤까지(30초 갱신에 맞춰 2분에 한 번)
+  function maybeFetchStarters(g, item) {
+    if (!g || (g.sport !== "soccer" && g.sport !== "basketball")) return;
+    if (g.result) return;                       // 진행 중·종료는 다른 경로가 갱신한다
+    var t = new Date(g.start).getTime();
+    if (!isFinite(t)) return;
+    var now = Date.now();
+    var lead = g.sport === "soccer" ? 3 * 60 * 60 * 1000 : 2 * 60 * 60 * 1000;
+    if (now < t - lead || now > t + 30 * 60 * 1000) return;
+    var s = summaryEntry(g);
+    if (s && now - s.at < 120000) return;
+    loadLiveSummary(g, false, function () { paintStarters(item, g); });
   }
 
   function refreshPostgameSummary(item, g, force) {
@@ -4927,6 +5149,7 @@
       var tpl = document.createElement("div");
       tpl.innerHTML = postgameHTML(g);
       if (tpl.firstChild) old.parentNode.replaceChild(tpl.firstChild, old);
+      paintStarters(it, g);
     });
   }
 
@@ -5127,6 +5350,10 @@
             if (tpl.firstChild) old.parentNode.replaceChild(tpl.firstChild, old);
           }
         }
+        // 선발 라인업 칸은 lbox·rbox 밖에 있어 위 재구성에 지워지지 않는다.
+        // 경기 전에 열어 둔 카드는 발표 시각대에 다시 확인하고, 값이 오면 그 자리만 다시 그린다.
+        if (!oeLive && !(oe.g.result && oe.g.result.state === "final")) maybeFetchStarters(oe.g, open);
+        paintStarters(open, oe.g);
         // 펼쳐 둔 진행 중 경기는 선수 기록·최근 플레이도 30초마다 새로 받는다
         if (oeLive) refreshLiveSummary(open, oe.g, true);
         else if (oe.g.result && oe.g.result.state === "final" && (oe.g.sport === "basketball" || oe.g.sport === "soccer")) {
