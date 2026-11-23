@@ -704,10 +704,15 @@
   // 박스 안 두 팀 한 줄: 원정/홈 · 팀명 · 전적 · 배지
   function formRow(side, team, g) {
     if (!team) return "";
-    var badges = (team.badges || []).map(function (b) {
+    // 농구는 홈/원정 전적 배지를 빼고 시즌 전적 + 리그 순위만 남긴다(전적은 팀 정보 안에 있다).
+    var rawBadges = (team.badges || []).filter(function (b) {
+      if (!b) return false;
+      return !(g && g.sport === "basketball" && /^(홈|원정)\s/.test(String(b.text || "")));
+    });
+    var badges = rawBadges.map(function (b) {
       return '<span class="badge ' + toneClass(b.tone, ["hot", "rank"], "") + '">' + esc(b.text) + "</span>";
     }).join("");
-    if (!(team.badges || []).some(function (b) { return b && b.tone === "rank"; })) {
+    if (!rawBadges.some(function (b) { return b && b.tone === "rank"; })) {
       badges += nbaRankBadge(g && g.sport, team.abbr);
     }
     return "<li>" +
