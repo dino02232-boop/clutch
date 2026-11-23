@@ -17,7 +17,7 @@
     if (!dock || !btn) return;
     var min = dock.classList.contains('is-min');
     btn.textContent = min ? '펼치기 ⌃' : '접기 ⌄';
-    btn.setAttribute('aria-label', min ? '배팅 펼치기' : '배팅 접기');
+    btn.setAttribute('aria-label', min ? 'bet 펼치기' : 'bet 접기');
     btn.setAttribute('aria-expanded', min ? 'false' : 'true');
   }
   function toggleDock() {
@@ -27,11 +27,11 @@
   function mount() {
     if (!document.getElementById('betDock')) {
       var n = document.createElement('aside'); n.id='betDock'; n.className='bet-dock is-min';
-      n.innerHTML='<div class="bet-dock-head"><b id="betDockTitle" role="button" tabindex="0">🧾 배팅</b><span id="betAuthState">로그인하면 10,000P 지급</span><button type="button" id="betDockToggle" class="bet-dock-toggle" aria-label="배팅 펼치기">펼치기</button></div><div id="betPicks"></div><div class="bet-stake"><label for="betStake">베팅 금액</label><input id="betStake" type="number" min="100" step="100" value="1000"><button id="betHalf">50%</button><button id="betAll">올인</button></div><div class="bet-total"><span>총 배당</span><b id="betOdds">1.00배</b><span>예상 획득</span><b id="betReturn">0P</b></div><button id="betSubmit" class="bet-submit">로그인 후 베팅 확정</button><p id="betNotice" aria-live="polite"></p></aside>';
+      n.innerHTML='<div class="bet-dock-head"><b id="betDockTitle" role="button" tabindex="0">🧾 bet</b><span id="betAuthState">로그인하면 10,000P 지급</span><button type="button" id="betDockToggle" class="bet-dock-toggle" aria-label="bet 펼치기">펼치기</button></div><div id="betPicks"></div><div class="bet-stake"><label for="betStake">베팅 금액</label><input id="betStake" type="number" min="100" step="100" value="1000"><button id="betHalf">50%</button><button id="betAll">올인</button></div><div class="bet-total"><span>총 배당</span><b id="betOdds">1.00배</b><span>예상 획득</span><b id="betReturn">0P</b></div><button id="betSubmit" class="bet-submit">로그인 후 베팅 확정</button><p id="betNotice" aria-live="polite"></p></aside>';
       document.body.appendChild(n);
     }
     if (!document.getElementById('betNav')) {
-      var nav=document.createElement('nav'); nav.id='betNav'; nav.className='bet-nav'; nav.innerHTML='<span id="betBalance"></span><a href="ranking.html">🏆 랭킹</a><a href="board.html">💬 자유게시판</a><button id="betShare">배팅 공유</button><button id="betLogin">Google 로그인</button><button id="betSupport" hidden>1,000P 지원</button>';
+      var nav=document.createElement('nav'); nav.id='betNav'; nav.className='bet-nav'; nav.innerHTML='<span id="betBalance"></span><a href="ranking.html">🏆 랭킹</a><a href="board.html">💬 자유게시판</a><button id="betShare">bet 공유</button><button id="betLogin">Google 로그인</button><button id="betSupport" hidden>1,000P 지원</button>';
       document.querySelector('.top')?.appendChild(nav);
     }
     document.body.addEventListener('click', function (e) {
@@ -67,7 +67,7 @@
     if(el('betBalance'))el('betBalance').textContent=me?((window.clutchNickname||me.displayName||'회원')+' · '+fmt(balance)+'P'):'';
     if(el('betSupport'))el('betSupport').hidden=!(me&&balance<100);
     var submit=el('betSubmit'); if(submit)submit.textContent=me?'베팅 확정':'로그인 후 베팅 확정';
-    if(el('betDockTitle'))el('betDockTitle').textContent='🧾 배팅'+(slip.length?' ('+slip.length+')':'');
+    if(el('betDockTitle'))el('betDockTitle').textContent='🧾 bet'+(slip.length?' ('+slip.length+')':'');
     var authstate=el('betAuthState'); if(authstate)authstate.textContent=me?((window.clutchNickname||me.displayName||'회원'))+' · '+fmt(balance)+'P':'로그인하면 10,000P 지급';
     var loginBtn=el('betLogin'); if(loginBtn)loginBtn.hidden=!!me;
     var bal=el('betBalance'); if(bal){bal.title=me?'닉네임 변경':'로그인';bal.style.cursor=me?'pointer':'';bal.style.marginLeft='0';}
