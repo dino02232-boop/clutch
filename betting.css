@@ -31,3 +31,9 @@
 .bet-nav a,.bet-nav button{background:transparent;padding:2px 0;border-radius:0;font-size:12px;font-weight:600;color:var(--text-2)}
 .bet-nav a:hover,.bet-nav button:hover{color:var(--text)}
 @media(max-width:600px){.bet-nav{gap:11px;margin:8px 2px 0;padding:0}.bet-nav a,.bet-nav button{font-size:11.5px;padding:2px 0}.bet-nav span#betBalance{font-size:11px;padding:4px 9px;max-width:130px}}
+.bet-dock-head{grid-template-columns:1fr auto auto;align-items:center}
+.bet-dock-toggle{border:1px solid var(--line-2);background:#fff;color:var(--text-2);font:inherit;font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.bet-dock-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.bet-dock.is-min{display:flex;align-items:center;gap:8px}
+.bet-dock.is-min .bet-dock-head{flex:1 1 auto;gap:8px}
+.bet-dock.is-min .bet-dock-head b{margin-right:auto}
