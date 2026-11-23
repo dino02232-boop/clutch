@@ -2910,7 +2910,7 @@
         return '<div class="srow ' + kind + '"><dt>' + esc(r.label) + "</dt><dd>" + md(r.text) + "</dd></div>";
       }).join("") + "</dl>";
     }
-    rows.filter(function (r) { return r.kind === "flow"; }).forEach(function (r) { preview += flowRowHTML(r, g); });
+
 
     // 축구 핵심 선수는 각 팀 블록 안 '주요 선수'로 들어간다.
     // 접히지 않는 위쪽에는 팀별 주요 선수만 한 줄로 보여 준다.
