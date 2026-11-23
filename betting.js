@@ -54,7 +54,10 @@
       if(e.target.id==='betHalf'&&el('betStake')) el('betStake').value=Math.max(100,Math.floor(balance/2/100)*100);
       if(e.target.id==='betAll'&&el('betStake')) el('betStake').value=balance;
     });
-    document.addEventListener('input',function(e){if(e.target.id==='betStake')paint();});
+    // 금액 칸은 input·change·keyup·blur 어느 쪽으로 들어와도 다시 계산한다(아이폰에서 input 이 안 올 때가 있음).
+    ['input','change','keyup','blur'].forEach(function(ev){
+      document.addEventListener(ev,function(e){if(e.target&&e.target.id==='betStake')paint();},true);
+    });
     if(auth) auth.onAuthStateChanged(onUser);
     syncDock();
     paint();
