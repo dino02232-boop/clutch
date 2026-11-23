@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-23T11:47:59+09:00",
+  updatedAt: "2026-11-23T12:51:54+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -10904,7 +10904,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 11:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 12:51 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -11258,7 +11258,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, 흥국생명(원정) 2승 4패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 11:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 12:51 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -28917,14 +28917,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-ind-nyk-20261123",
           "espnId": "401910034",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-23T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Madison Square Garden",
           "odds": {
             "provider": "DraftKings",
@@ -28989,6 +28989,83 @@ window.CLUTCH_DATA = {
               "text": "**뉴욕 닉스**(홈) 10승 6패(홈 5승 3패, 최근 5경기 4승 1패, 4연승), **인디애나 페이서스**(원정) 5승 11패(원정 3승 5패, 최근 5경기 2승 3패, 3연패). 직전 경기(11.21) **인디애나 페이서스**는 클리블랜드 캐벌리어스에 119-128로 졌고, Pascal Siakam 21점·7리바운드·2어시스트, Ivica Zubac 21점·10리바운드·2어시스트를 기록했습니다. 직전 경기(11.22) **뉴욕 닉스**는 뉴욕 닉스에 96-97로 졌고, Donovan Clingan 22점·13리바운드·4어시스트, Deni Avdija 20점·9리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 106,
+            "homeScore": 113,
+            "lines": {
+              "away": [
+                "26",
+                "25",
+                "27",
+                "28"
+              ],
+              "home": [
+                "26",
+                "29",
+                "34",
+                "24"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Karl-Anthony Towns",
+                "team": "NY",
+                "min": "29",
+                "pts": 30,
+                "reb": "13",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png"
+              },
+              {
+                "name": "Pascal Siakam",
+                "team": "IND",
+                "min": "33",
+                "pts": 25,
+                "reb": "6",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3149673.png"
+              },
+              {
+                "name": "Jalen Brunson",
+                "team": "NY",
+                "min": "32",
+                "pts": 22,
+                "reb": "3",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png"
+              },
+              {
+                "name": "Landry Shamet",
+                "team": "NY",
+                "min": "32",
+                "pts": 17,
+                "reb": "2",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3914044.png"
+              },
+              {
+                "name": "Andrew Nembhard",
+                "team": "IND",
+                "min": "32",
+                "pts": 16,
+                "reb": "2",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png"
+              },
+              {
+                "name": "Kelly Oubre Jr.",
+                "team": "IND",
+                "min": "27",
+                "pts": 15,
+                "reb": "5",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3133603.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
