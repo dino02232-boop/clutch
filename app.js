@@ -471,6 +471,8 @@
      주차 규칙: 그 달 1일이 들어 있는 7일 묶음(1~7일)을 1주차로 센다.
        예) 2026-11-01(일) → 11/1~11/7 = 1주차, 11/16~11/22 = 3주차, 11/23~11/29 = 4주차
      스트립은 월요일부터 7칸이라, 셋째 주 칸은 11/16(월)~11/22(일) 입니다. */
+  var VS_MARK = '<span class="vmark-v">V</span><span class="vmark-rest">ERSUS</span>';
+
   var WEEKDAY_LABELS = ["월", "화", "수", "목", "금", "토", "일"];
   var WEEK_ORDINAL = ["첫째", "둘째", "셋째", "넷째", "다섯째"];
 
@@ -2976,7 +2978,7 @@
     var away = g.away ? g.away.name : "—";
     var home = g.home ? g.home.name : "—";
     var label = sm.name + " " + when + " " + p.hh + ":" + p.mm + ", 원정 " + away + " 대 홈 " + home +
-      " — VS 상황 보기";
+      " — VERSUS 보기";
 
     var oddsChip = g.odds ? '<span class="mchip odds">배당</span>' : "";
 
@@ -2989,7 +2991,7 @@
         "</span>" +
         '<button class="cbtn" type="button" aria-expanded="false" aria-controls="box-' + esc(g.id) + '"' +
         ' aria-label="' + esc(label) + '" data-id="' + esc(g.id) + '">' +
-          '<span class="cbtn-label">VS 상황</span>' +
+          '<span class="cbtn-label">' + VS_MARK + '</span>' +
           '<svg class="chev" width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">' +
           '<path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
         "</button>" +
@@ -3073,7 +3075,7 @@
 
     item.classList.remove("open");
     btn.setAttribute("aria-expanded", "false");
-    label.textContent = "VS 상황";
+    label.innerHTML = VS_MARK;
 
     window.clearTimeout(wrap._timer);
     if (!wrap.firstChild) { wrap.style.height = "0px"; wrap.style.opacity = "0"; return; }
@@ -3437,7 +3439,7 @@
 
     elEmpty.hidden = true;
     elList.innerHTML = chips +
-      '<p class="list-hint">경기 줄 오른쪽 <b>VS 상황</b>을 누르면 그 경기의 브리핑이 열립니다.</p>' +
+      '<p class="list-hint">경기 줄 오른쪽 <b>VERSUS</b>를 누르면 그 경기의 브리핑이 열립니다.</p>' +
       '<ul class="rows">' + games.map(rowHTML).join("") + "</ul>";
     bindLeagueChips();
     bindRows();

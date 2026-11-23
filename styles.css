@@ -1990,3 +1990,6 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
   /* 홈 안내·LIVE 줄이 넓어진 폭에서 한 줄로 길게 늘어지지 않게 읽기 폭을 살짝 좁힌다 */
   .home-lead .hl-title, .home-lead .hl-sub { max-width: 620px; }
 }
+.cbtn-label{display:inline-flex;align-items:baseline;gap:0;letter-spacing:.4px}
+.vmark-v{font-weight:900;font-size:13px;line-height:1}
+.vmark-rest{font-weight:700;font-size:9.5px;letter-spacing:.7px;margin-left:1px}
