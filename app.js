@@ -685,12 +685,6 @@
     var badges = (team.badges || []).map(function (b) {
       return '<span class="badge ' + toneClass(b.tone, ["hot", "rank"], "") + '">' + esc(b.text) + "</span>";
     }).join("");
-    // 그 팀 승리 배당을 리그 순위 배지 옆에 붙인다.
-    var ml2 = (g && g.odds && g.odds.moneyline) || {};
-    var tOdds = side === "home" ? ml2.home : ml2.away;
-    if (tOdds != null && isFinite(Number(tOdds))) {
-      badges += '<span class="badge odds">배당 ' + decText(tOdds) + "</span>";
-    }
     return "<li>" +
       '<span class="f-side ' + side + '">' + (side === "home" ? "홈" : "원정") + "</span>" +
       (g ? favoriteButtonHTML(g.sport, team.name) : "") +
