@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-23T10:48:01+09:00",
+  updatedAt: "2026-11-23T11:47:59+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -10904,7 +10904,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 10:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 11:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -11258,7 +11258,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, 흥국생명(원정) 2승 4패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 10:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 11:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -27761,14 +27761,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-orl-was-20261123",
           "espnId": "401910031",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-23T09:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Capital One Arena",
           "odds": {
             "provider": "DraftKings",
@@ -27833,6 +27833,83 @@ window.CLUTCH_DATA = {
               "text": "**워싱턴 위저즈**(홈) 6승 11패(홈 2승 5패, 최근 5경기 2승 3패, 2연승), **올랜도 매직**(원정) 7승 8패(원정 6승 3패, 최근 5경기 4승 1패). 직전 경기(11.21) **올랜도 매직**은 브루클린 네츠에 113-111로 이겼고, Franz Wagner 35점·5리바운드·7어시스트, Desmond Bane 21점·2리바운드·3어시스트를 기록했습니다. 직전 경기(11.21) **워싱턴 위저즈**는 시카고 불스에 98-94로 이겼고, Anthony Davis 36점·11리바운드·3어시스트, AJ Dybantsa 20점·10리바운드·6어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 96,
+            "homeScore": 116,
+            "lines": {
+              "away": [
+                "21",
+                "30",
+                "26",
+                "19"
+              ],
+              "home": [
+                "38",
+                "25",
+                "34",
+                "19"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Kyshawn George",
+                "team": "WSH",
+                "min": "36",
+                "pts": 24,
+                "reb": "3",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png"
+              },
+              {
+                "name": "Anthony Davis",
+                "team": "WSH",
+                "min": "33",
+                "pts": 22,
+                "reb": "7",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png"
+              },
+              {
+                "name": "Tristan da Silva",
+                "team": "ORL",
+                "min": "27",
+                "pts": 18,
+                "reb": "3",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4702382.png"
+              },
+              {
+                "name": "Desmond Bane",
+                "team": "ORL",
+                "min": "33",
+                "pts": 17,
+                "reb": "1",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png"
+              },
+              {
+                "name": "Franz Wagner",
+                "team": "ORL",
+                "min": "32",
+                "pts": 16,
+                "reb": "8",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png"
+              },
+              {
+                "name": "AJ Dybantsa",
+                "team": "WSH",
+                "min": "33",
+                "pts": 16,
+                "reb": "8",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142718.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -28077,14 +28154,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-den-chi-20261123",
           "espnId": "401910032",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-23T09:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "United Center",
           "odds": {
             "provider": "DraftKings",
@@ -28149,6 +28226,85 @@ window.CLUTCH_DATA = {
               "text": "**시카고 불스**(홈) 4승 11패(홈 1승 5패, 최근 5경기 3승 2패), **덴버 너기츠**(원정) 9승 5패(원정 4승 2패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.21) **덴버 너기츠**는 휴스턴 로키츠에 133-124로 이겼고, Nikola Jokic 26점·7리바운드·11어시스트, Cameron Johnson 19점·3리바운드·6어시스트를 기록했습니다. 직전 경기(11.21) **시카고 불스**는 워싱턴 위저즈에 94-98로 졌고, Norman Powell 16점·3리바운드·2어시스트, Buddy Hield 15점·4리바운드·0어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final/OT",
+            "awayScore": 151,
+            "homeScore": 145,
+            "lines": {
+              "away": [
+                "33",
+                "39",
+                "33",
+                "26",
+                "20"
+              ],
+              "home": [
+                "31",
+                "39",
+                "25",
+                "36",
+                "14"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Jamal Murray",
+                "team": "DEN",
+                "min": "45",
+                "pts": 45,
+                "reb": "5",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png"
+              },
+              {
+                "name": "Nikola Jokic",
+                "team": "DEN",
+                "min": "42",
+                "pts": 37,
+                "reb": "18",
+                "ast": "11",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png"
+              },
+              {
+                "name": "Buddy Hield",
+                "team": "CHI",
+                "min": "40",
+                "pts": 33,
+                "reb": "7",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2990984.png"
+              },
+              {
+                "name": "Jalen Smith",
+                "team": "CHI",
+                "min": "34",
+                "pts": 26,
+                "reb": "4",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397189.png"
+              },
+              {
+                "name": "Josh Giddey",
+                "team": "CHI",
+                "min": "41",
+                "pts": 23,
+                "reb": "14",
+                "ast": "22",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871145.png"
+              },
+              {
+                "name": "Christian Braun",
+                "team": "DEN",
+                "min": "38",
+                "pts": 21,
+                "reb": "8",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -28374,14 +28530,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-dal-utah-20261123",
           "espnId": "401910033",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-23T09:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Delta Center",
           "odds": {
             "provider": "DraftKings",
@@ -28446,6 +28602,83 @@ window.CLUTCH_DATA = {
               "text": "**유타 재즈**(홈) 3승 14패(홈 1승 8패, 최근 5경기 2승 3패), **댈러스 매버릭스**(원정) 9승 7패(원정 2승 5패, 최근 5경기 2승 3패, 2연승). 직전 경기(11.22) **댈러스 매버릭스**는 LA 클리퍼스에 110-100로 이겼고, Kyrie Irving 25점·6리바운드·4어시스트, Cooper Flagg 22점·6리바운드·8어시스트를 기록했습니다. 직전 경기(11.21) **유타 재즈**는 피닉스 선즈에 101-111로 졌고, Darryn Peterson 20점·10리바운드·8어시스트, Jaxson Hayes 18점·14리바운드·0어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 116,
+            "homeScore": 114,
+            "lines": {
+              "away": [
+                "33",
+                "31",
+                "27",
+                "25"
+              ],
+              "home": [
+                "35",
+                "22",
+                "17",
+                "40"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Svi Mykhailiuk",
+                "team": "UTAH",
+                "min": "32",
+                "pts": 39,
+                "reb": "5",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3133602.png"
+              },
+              {
+                "name": "Cooper Flagg",
+                "team": "DAL",
+                "min": "31",
+                "pts": 28,
+                "reb": "3",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png"
+              },
+              {
+                "name": "Kyrie Irving",
+                "team": "DAL",
+                "min": "27",
+                "pts": 16,
+                "reb": "1",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6442.png"
+              },
+              {
+                "name": "Ace Bailey",
+                "team": "UTAH",
+                "min": "33",
+                "pts": 16,
+                "reb": "5",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4873138.png"
+              },
+              {
+                "name": "Zaccharie Risacher",
+                "team": "DAL",
+                "min": "28",
+                "pts": 15,
+                "reb": "8",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5211175.png"
+              },
+              {
+                "name": "Keyonte George",
+                "team": "UTAH",
+                "min": "26",
+                "pts": 15,
+                "reb": "5",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {

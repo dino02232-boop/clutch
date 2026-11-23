@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-23T10:48:01+09:00
+   생성 시각(기준): 2026-11-23T11:47:59+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-23T10:48:01+09:00",
+  "updated": "2026-11-23T11:47:59+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4506,18 +4506,33 @@ window.CLUTCH_STANDINGS = {
               "team": "올랜도 매직",
               "abbr": "ORL",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
-              "played": 15,
+              "played": 16,
               "win": 7,
               "draw": null,
-              "loss": 8,
+              "loss": 9,
               "points": null,
-              "diff": -46,
-              "pct": ".467",
-              "gb": "6",
+              "diff": -66,
+              "pct": ".438",
+              "gb": "6.5",
               "zone": null
             },
             {
               "rank": 9,
+              "team": "워싱턴 위저즈",
+              "abbr": "WSH",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+              "played": 18,
+              "win": 7,
+              "draw": null,
+              "loss": 11,
+              "points": null,
+              "diff": -91,
+              "pct": ".389",
+              "gb": "7.5",
+              "zone": null
+            },
+            {
+              "rank": 10,
               "team": "토론토 랩터스",
               "abbr": "TOR",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
@@ -4529,21 +4544,6 @@ window.CLUTCH_STANDINGS = {
               "diff": 3,
               "pct": ".375",
               "gb": "7.5",
-              "zone": null
-            },
-            {
-              "rank": 10,
-              "team": "워싱턴 위저즈",
-              "abbr": "WSH",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
-              "played": 17,
-              "win": 6,
-              "draw": null,
-              "loss": 11,
-              "points": null,
-              "diff": -111,
-              "pct": ".353",
-              "gb": "8",
               "zone": null
             },
             {
@@ -4581,14 +4581,14 @@ window.CLUTCH_STANDINGS = {
               "team": "시카고 불스",
               "abbr": "CHI",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
-              "played": 15,
+              "played": 16,
               "win": 4,
               "draw": null,
-              "loss": 11,
+              "loss": 12,
               "points": null,
-              "diff": -121,
-              "pct": ".267",
-              "gb": "9",
+              "diff": -127,
+              "pct": ".250",
+              "gb": "9.5",
               "zone": null
             },
             {
@@ -4706,14 +4706,14 @@ window.CLUTCH_STANDINGS = {
               "team": "덴버 너기츠",
               "abbr": "DEN",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
-              "played": 14,
-              "win": 9,
+              "played": 15,
+              "win": 10,
               "draw": null,
               "loss": 5,
               "points": null,
-              "diff": 21,
-              "pct": ".643",
-              "gb": "3.5",
+              "diff": 27,
+              "pct": ".667",
+              "gb": "3",
               "zone": null
             },
             {
@@ -4733,6 +4733,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 8,
+              "team": "댈러스 매버릭스",
+              "abbr": "DAL",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+              "played": 17,
+              "win": 10,
+              "draw": null,
+              "loss": 7,
+              "points": null,
+              "diff": -1,
+              "pct": ".588",
+              "gb": "4",
+              "zone": null
+            },
+            {
+              "rank": 9,
               "team": "오클라호마시티 썬더",
               "abbr": "OKC",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
@@ -4744,21 +4759,6 @@ window.CLUTCH_STANDINGS = {
               "diff": 62,
               "pct": ".588",
               "gb": "4",
-              "zone": null
-            },
-            {
-              "rank": 9,
-              "team": "댈러스 매버릭스",
-              "abbr": "DAL",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
-              "played": 16,
-              "win": 9,
-              "draw": null,
-              "loss": 7,
-              "points": null,
-              "diff": -3,
-              "pct": ".563",
-              "gb": "4.5",
               "zone": null
             },
             {
@@ -4826,14 +4826,14 @@ window.CLUTCH_STANDINGS = {
               "team": "유타 재즈",
               "abbr": "UTAH",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
-              "played": 17,
+              "played": 18,
               "win": 3,
               "draw": null,
-              "loss": 14,
+              "loss": 15,
               "points": null,
-              "diff": -126,
-              "pct": ".176",
-              "gb": "11",
+              "diff": -128,
+              "pct": ".167",
+              "gb": "11.5",
               "zone": null
             },
             {
