@@ -39,6 +39,6 @@
 .bet-dock-head #betDockTitle{order:1}
 .bet-dock-head #betAuthState{order:2;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bet-dock-head .bet-dock-toggle{order:3;margin-left:auto}
-.bet-dock-toggle{border:1px solid var(--line-2);background:#fff;color:var(--text-2);font:inherit;font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.bet-dock-toggle{border:1px solid var(--line-2);background:#fff;color:var(--text-2);font:inherit;font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:999px;cursor:pointer;white-space:nowrap;word-spacing:3px}
 .bet-dock-toggle:hover{border-color:var(--accent);color:var(--accent)}
 .bet-dock.is-min{display:block}
