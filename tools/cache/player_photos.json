@@ -45,6 +45,15 @@
    "espnId": "373542",
    "checked": "2026-11-20T23:29:05+09:00"
   },
+  "akor adams": {
+   "name": "Akor Adams",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Akor_Adams_December_2024.png/120px-Akor_Adams_December_2024.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Akor Adams",
+   "espnId": "288472",
+   "checked": "2026-11-24T06:17:00+09:00"
+  },
   "albert grønbaek": {
    "name": "Albert Grønbaek",
    "photo": null,
@@ -395,6 +404,15 @@
    "title": "Eberechi Eze",
    "espnId": "251400",
    "checked": "2026-11-20T23:31:56+09:00"
+  },
+  "edon zhegrova": {
+   "name": "Edon Zhegrova",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Zhegrova_asselosc_2425_%28cropped%29.jpg/120px-Zhegrova_asselosc_2425_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Edon Zhegrova",
+   "espnId": "260300",
+   "checked": "2026-11-24T06:17:09+09:00"
   },
   "emmanuel dennis ayaosi": {
    "name": "Emmanuel Dennis Ayaosi",
@@ -1359,6 +1377,15 @@
    "espnId": "193010",
    "checked": "2026-11-20T23:26:51+09:00"
   },
+  "pablo durán": {
+   "name": "Pablo Durán",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Fot_pablito.jpg/120px-Fot_pablito.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Pablo Durán",
+   "espnId": "138448",
+   "checked": "2026-11-24T06:16:55+09:00"
+  },
   "pablo martínez": {
    "name": "Pablo Martínez",
    "photo": null,
@@ -1430,6 +1457,15 @@
    "title": "Pierre-Emerick Aubameyang",
    "espnId": "122260",
    "checked": "2026-11-20T23:22:41+09:00"
+  },
+  "pio esposito": {
+   "name": "Pio Esposito",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Francesco_Pio_Esposito_a_La_Spezia_%28cropped%29.jpg/120px-Francesco_Pio_Esposito_a_La_Spezia_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Pio Esposito",
+   "espnId": "362674",
+   "checked": "2026-11-24T06:17:01+09:00"
   },
   "rafik belghali": {
    "name": "Rafik Belghali",
@@ -1746,6 +1782,24 @@
    "espnId": "258906",
    "checked": "2026-11-20T23:31:57+09:00"
   },
+  "wesley": {
+   "name": "Wesley",
+   "photo": null,
+   "src": "none",
+   "conf": "",
+   "title": null,
+   "espnId": "332354",
+   "checked": "2026-11-24T06:17:05+09:00"
+  },
+  "yan couto": {
+   "name": "Yan Couto",
+   "photo": "https://r2.thesportsdb.com/images/media/player/thumb/fg52xa1716706821.jpg",
+   "src": "thesportsdb",
+   "conf": "club",
+   "title": "Yan Couto",
+   "espnId": "297084",
+   "checked": "2026-11-24T06:17:08+09:00"
+  },
   "yassir zabiri": {
    "name": "Yassir Zabiri",
    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Yassir_Zabiri_%28cropped%29.jpg/120px-Yassir_Zabiri_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
@@ -1819,5 +1873,5 @@
    "checked": "2026-11-20T23:22:31+09:00"
   }
  },
- "updatedAt": "2026-11-23T07:08:40+09:00"
+ "updatedAt": "2026-11-24T06:17:30+09:00"
 }
