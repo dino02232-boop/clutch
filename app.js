@@ -370,9 +370,7 @@
   /* ── 상태 ──────────────────────────────────────────── */
   var today = todayStr();
   var state = {
-    // 기본 날짜: 오늘 브리핑이 있으면 오늘, 없으면 가장 가까운(첫) 브리핑 날짜
-    day: DAYS.filter(function (d) { return d.date >= today; })[0] ?
-      DAYS.filter(function (d) { return d.date >= today; })[0].date : DAYS[DAYS.length - 1].date,
+    day: defaultDay(),
     sport: null,   // 종목 미선택 상태에서 홈 또는 전체 경기 목록을 표시
     favorites: false,
     allSports: false,
@@ -635,6 +633,13 @@
     window.scrollTo(0, 0);
   }
 
+  // 기본 날짜: 오늘 브리핑이 있으면 오늘, 없으면 가장 가까운(첫) 브리핑 날짜
+  function defaultDay() {
+    var t = todayStr();
+    var up = DAYS.filter(function (d) { return d.date >= t; })[0];
+    return up ? up.date : DAYS[DAYS.length - 1].date;
+  }
+
   function goHome() {
     var same = state.sport === null && !state.favorites && !state.allSports;
     state.sport = null;
@@ -642,6 +647,9 @@
     state.allSports = false;
     state.league = null;
     state.openId = null;
+    // 홈으로 돌아오면 보던 날짜가 아니라 오늘(가장 가까운 브리핑 날)로 돌아간다.
+    state.day = defaultDay();
+    state.weekStart = mondayOf(state.day);
     if (!same) writeHash("", false);
     render();
     window.scrollTo(0, 0);
