@@ -2918,9 +2918,6 @@
       more += '<h3 class="p-title">부상 리포트</h3><ul class="inj-list">' + injRowsHTML(injuries, true) + "</ul>";
     }
 
-    var lineupInline = lineupHTML(g, d);
-    if (lineupInline) more += lineupInline;
-
     preview += oddsHTML(g);
 
     if (d.h2h && (d.h2h.summary || (d.h2h.games && d.h2h.games.length))) {
