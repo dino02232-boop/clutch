@@ -506,7 +506,15 @@
 
     Array.prototype.forEach.call(elDates.querySelectorAll(".day-cell"), function (btn) {
       btn.addEventListener("click", function () {
-        if (state.day === btn.dataset.date && state.allSports && !state.favorites) return;
+        // 지금 보고 있는 날짜를 다시 누르면 펼친 경기를 접고 목록 맨 위로 돌아간다.
+        if (state.day === btn.dataset.date && state.allSports && !state.favorites) {
+          if (!state.openId) return;
+          state.openId = null;
+          writeHash("all", true);
+          render();
+          try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch (err) { window.scrollTo(0, 0); }
+          return;
+        }
         state.day = btn.dataset.date;
         state.weekStart = mondayOf(state.day);
         state.sport = null;
