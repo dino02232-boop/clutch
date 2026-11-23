@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-24T06:17:42+09:00",
+  updatedAt: "2026-11-24T06:41:06+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -27620,7 +27620,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 4패·6위·승점 4, 대한항공(원정) 2승 3패·5위·승점 7."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 06:17 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 06:40 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27926,13 +27926,13 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 2패·4위·승점 8, GS칼텍스(원정) 4승 1패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 06:17 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 06:40 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
 
         /* SOCCER-AUTO 2026-11-24 START */
-        {
+                {
           "id": "soccer-fio-mon-20261124",
           "espnId": "401875009",
           "sport": "soccer",
@@ -28014,6 +28014,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **몬차**(홈) 1.5골 · **피오렌티나**(원정) 1.5골, 평균 실점은 홈 2.3골 · 원정 2.3골. 해외 배당을 확률로 환산하면 몬차 승 26.1% · 무 25.4% · 피오렌티나 승 48.5%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 3,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "1",
+                "2"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -28127,7 +28144,99 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Álex Jiménez",
+                    "rating": 8.4,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "João Mário",
+                    "rating": 7.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Cher Ndour",
+                    "rating": 7.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Luca Ranieri",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Radu Drăgușin",
+                    "rating": 7.0,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Wilfried Gnonto",
+                    "rating": 6.8,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Christ Inao Oulaï",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Beto",
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Alieu Njie",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Valde",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Franco Mastantuono",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mateo Pellegrino",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pote",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "David de Gea",
+                    "rating": 5.9,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Viery",
+                    "rating": 5.8,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "MON",
@@ -28240,7 +28349,93 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Demba Thiam",
+                    "rating": 9.0,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Gustavo Varela",
+                    "rating": 8.8,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Matteo Pessina",
+                    "rating": 8.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Andrea Carboni",
+                    "rating": 8.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jay Robinson",
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ricardo Mangas",
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Saba Goglichidze",
+                    "rating": 7.9,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Leonardo Colombo",
+                    "rating": 7.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Samuele Birindelli",
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Eddy Kouadio",
+                    "rating": 7.0,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ebenezer Akinsanmiro",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Foe Ondoa",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Jan Ziólkowski",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Dany Mota",
+                    "rating": 5.9,
+                    "pos": "MF",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -28285,7 +28480,8 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5749756,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
         {
           "id": "soccer-elc-lev-20261124",

@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-24T00:32:33+09:00
+   생성 시각(기준): 2026-11-24T06:41:06+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-24T00:32:33+09:00",
+  "updated": "2026-11-24T06:41:06+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -2651,6 +2651,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 14,
+              "team": "몬차",
+              "abbr": "MON",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4007.png",
+              "played": 12,
+              "win": 3,
+              "draw": 1,
+              "loss": 8,
+              "points": 10,
+              "diff": -5,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 15,
               "team": "레체",
               "abbr": "LEC",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/113.png",
@@ -2665,22 +2680,22 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 15,
+              "rank": 16,
               "team": "피오렌티나",
               "abbr": "FIO",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/109.png",
-              "played": 11,
+              "played": 12,
               "win": 2,
               "draw": 3,
-              "loss": 6,
+              "loss": 7,
               "points": 9,
-              "diff": -8,
+              "diff": -11,
               "pct": null,
               "gb": null,
               "zone": null
             },
             {
-              "rank": 16,
+              "rank": 17,
               "team": "파르마",
               "abbr": "PAR",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/115.png",
@@ -2695,7 +2710,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 17,
+              "rank": 18,
               "team": "사수올로",
               "abbr": "SAS",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3997.png",
@@ -2705,21 +2720,6 @@ window.CLUTCH_STANDINGS = {
               "loss": 8,
               "points": 8,
               "diff": -15,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 18,
-              "team": "몬차",
-              "abbr": "MON",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4007.png",
-              "played": 11,
-              "win": 2,
-              "draw": 1,
-              "loss": 8,
-              "points": 7,
-              "diff": -8,
               "pct": null,
               "gb": null,
               "zone": {
