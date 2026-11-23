@@ -13,8 +13,8 @@
   function say(text) { var n = el('betNotice'); if (n) n.textContent = text; }
   function mount() {
     if (!document.getElementById('betDock')) {
-      var n = document.createElement('aside'); n.id='betDock'; n.className='bet-dock';
-      n.innerHTML='<div class="bet-dock-head"><b>베팅 슬립</b><span id="betAuthState">로그인하면 10,000P 지급</span></div><div id="betPicks"></div><div class="bet-stake"><label for="betStake">베팅 금액</label><input id="betStake" type="number" min="100" step="100" value="1000"><button id="betHalf">50%</button><button id="betAll">올인</button></div><div class="bet-total"><span>총 배당</span><b id="betOdds">1.00배</b><span>예상 획득</span><b id="betReturn">0P</b></div><button id="betSubmit" class="bet-submit">로그인 후 베팅 확정</button><p id="betNotice" aria-live="polite"></p></aside>';
+      var n = document.createElement('aside'); n.id='betDock'; n.className='bet-dock is-min';
+      n.innerHTML='<div class="bet-dock-head"><b id="betDockTitle" role="button" tabindex="0">🧾 베팅 슬립</b><span id="betAuthState">로그인하면 10,000P 지급</span></div><div id="betPicks"></div><div class="bet-stake"><label for="betStake">베팅 금액</label><input id="betStake" type="number" min="100" step="100" value="1000"><button id="betHalf">50%</button><button id="betAll">올인</button></div><div class="bet-total"><span>총 배당</span><b id="betOdds">1.00배</b><span>예상 획득</span><b id="betReturn">0P</b></div><button id="betSubmit" class="bet-submit">로그인 후 베팅 확정</button><p id="betNotice" aria-live="polite"></p></aside>';
       document.body.appendChild(n);
     }
     if (!document.getElementById('betNav')) {
@@ -26,9 +26,10 @@
       var g=gameMap()[b.dataset.betGame]; if (!g) return;
       if (Date.parse(g.start)<=Date.now()) { say('경기가 시작되어 선택할 수 없습니다.'); return; }
       var item={gameId:g.id, date:g.date, sport:g.sport, league:g.league, start:g.start, away:g.away.name, home:g.home.name, market:b.dataset.betMarket, pick:b.dataset.betPick, line:b.dataset.betLine||'', odds:Number(b.dataset.betOdds), decimal:Number(dec(b.dataset.betOdds).toFixed(4))};
-      var ix=slip.findIndex(function(x){return x.gameId===item.gameId;}); if(ix>=0) slip[ix]=item; else slip.push(item); paint();
+      var ix=slip.findIndex(function(x){return x.gameId===item.gameId;}); if(ix>=0) slip[ix]=item; else slip.push(item); el('betDock')?.classList.remove('is-min'); paint();
     });
     document.addEventListener('click', function(e){
+      if(e.target.id==='betDockTitle'){el('betDock')?.classList.toggle('is-min');}
       if(e.target.id==='betLogin') login();
       if(e.target.id==='betSubmit') submitBet();
       if(e.target.id==='betSupport') support();
@@ -51,6 +52,7 @@
     if(el('betBalance'))el('betBalance').textContent=me?fmt(balance)+'P':'';
     if(el('betSupport'))el('betSupport').hidden=!(me&&balance<100);
     var submit=el('betSubmit'); if(submit)submit.textContent=me?'베팅 확정':'로그인 후 베팅 확정';
+    if(el('betDockTitle'))el('betDockTitle').textContent='🧾 베팅 슬립'+(slip.length?' ('+slip.length+')':'');
     var authstate=el('betAuthState'); if(authstate)authstate.textContent=me?(me.displayName||'회원')+' · '+fmt(balance)+'P':'로그인하면 10,000P 지급';
   }
   async function login(){if(!auth)return say('Firebase 연결을 확인해 주세요.');try{var p=new firebase.auth.GoogleAuthProvider();await auth.signInWithPopup(p);}catch(e){say('로그인에 실패했습니다: '+e.message);}}
