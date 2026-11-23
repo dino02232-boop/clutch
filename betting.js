@@ -17,7 +17,7 @@
     if (!dock || !btn) return;
     var min = dock.classList.contains('is-min');
     btn.textContent = min ? '펼치기 ⌃' : '접기 ⌄';
-    btn.setAttribute('aria-label', min ? '베팅 슬립 펼치기' : '베팅 슬립 접기');
+    btn.setAttribute('aria-label', min ? '배팅 펼치기' : '배팅 접기');
     btn.setAttribute('aria-expanded', min ? 'false' : 'true');
   }
   function toggleDock() {
@@ -27,7 +27,7 @@
   function mount() {
     if (!document.getElementById('betDock')) {
       var n = document.createElement('aside'); n.id='betDock'; n.className='bet-dock is-min';
-      n.innerHTML='<div class="bet-dock-head"><b id="betDockTitle" role="button" tabindex="0">🧾 베팅 슬립</b><span id="betAuthState">로그인하면 10,000P 지급</span><button type="button" id="betDockToggle" class="bet-dock-toggle" aria-label="베팅 슬립 펼치기">펼치기</button></div><div id="betPicks"></div><div class="bet-stake"><label for="betStake">베팅 금액</label><input id="betStake" type="number" min="100" step="100" value="1000"><button id="betHalf">50%</button><button id="betAll">올인</button></div><div class="bet-total"><span>총 배당</span><b id="betOdds">1.00배</b><span>예상 획득</span><b id="betReturn">0P</b></div><button id="betSubmit" class="bet-submit">로그인 후 베팅 확정</button><p id="betNotice" aria-live="polite"></p></aside>';
+      n.innerHTML='<div class="bet-dock-head"><b id="betDockTitle" role="button" tabindex="0">🧾 배팅</b><span id="betAuthState">로그인하면 10,000P 지급</span><button type="button" id="betDockToggle" class="bet-dock-toggle" aria-label="배팅 펼치기">펼치기</button></div><div id="betPicks"></div><div class="bet-stake"><label for="betStake">베팅 금액</label><input id="betStake" type="number" min="100" step="100" value="1000"><button id="betHalf">50%</button><button id="betAll">올인</button></div><div class="bet-total"><span>총 배당</span><b id="betOdds">1.00배</b><span>예상 획득</span><b id="betReturn">0P</b></div><button id="betSubmit" class="bet-submit">로그인 후 베팅 확정</button><p id="betNotice" aria-live="polite"></p></aside>';
       document.body.appendChild(n);
     }
     if (!document.getElementById('betNav')) {
