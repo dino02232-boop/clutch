@@ -987,9 +987,10 @@
     var d = n > 0 ? (n / 100 + 1) : (100 / Math.abs(n) + 1);
     return d.toFixed(2);
   }
-  function oddsRowHTML(label, ml, game, market, pick, line) {
+  function oddsRowHTML(label, ml, game, market, pick, line, team) {
     if (ml == null) return '';
     return '<li><button type="button" class="o-pick" data-bet-game="' + esc(game.id) + '" data-bet-market="' + market + '" data-bet-pick="' + pick + '" data-bet-line="' + esc(line || '') + '" data-bet-odds="' + esc(String(ml)) + '"><span class="o-lab">' + esc(label) + "</span>" +
+      (team ? '<span class="o-team">' + esc(team) + "</span>" : "") +
       '<span class="o-val"><b>' + decText(ml) + "배</b></span></button></li>";
   }
   function oddsHTML(g) {
@@ -1008,9 +1009,9 @@
     var lines = [];
     if (ml.away != null || ml.home != null || ml.draw != null) {
       // 홈을 먼저, 그다음 무승부, 원정 순. 핸디캡·언오버와 같은 칸 모양으로 맞춘다.
-      var mlRows = oddsRowHTML("홈 승", ml.home, g, "moneyline", "home");
+      var mlRows = oddsRowHTML("홈 승", ml.home, g, "moneyline", "home", "", (g.home && g.home.name) || "");
       if (ml.draw != null) mlRows += oddsRowHTML("무승부", ml.draw, g, "moneyline", "draw");
-      mlRows += oddsRowHTML("원정 승", ml.away, g, "moneyline", "away");
+      mlRows += oddsRowHTML("원정 승", ml.away, g, "moneyline", "away", "", (g.away && g.away.name) || "");
       lines.push('<span>승부식</span><ul class="o-list">' + mlRows + '</ul>');
     }
     if (o.spread && (o.spread.homeLine || o.spread.awayLine)) {
