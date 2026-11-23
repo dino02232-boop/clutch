@@ -9,7 +9,7 @@
   function rankRows(target, snap, metric) {
     $(target).innerHTML = snap.docs.map(function (doc, i) {
       var x = doc.data();
-      return `<div class="rank-row"><b>#${i + 1}</b><b>${esc(x.displayName || '회원')}</b><span>${fmt(metric === 'week' ? x.weekProfit : x.points)}P</span><span>적중 ${Number(x.winRate || 0).toFixed(1)}%</span><span>최고 ${Number(x.maxOdds || 0).toFixed(2)}배</span></div>`;
+      return `<div class="rank-row"><b>#${i + 1}</b><b>${esc(x.nickname || x.displayName || '회원')}</b><span>${fmt(metric === 'week' ? x.weekProfit : x.points)}P</span><span>적중 ${Number(x.winRate || 0).toFixed(1)}%</span><span>최고 ${Number(x.maxOdds || 0).toFixed(2)}배</span></div>`;
     }).join('') || '<p>아직 랭킹 데이터가 없습니다.</p>';
   }
   function loadRanks() {
@@ -44,14 +44,14 @@
     var title = $('postTitle').value.trim(), body = $('postBody').value.trim();
     if (!title || !body) return say('제목과 내용을 입력해 주세요.');
     try {
-      await db.collection('posts').add({uid:user.uid, displayName:user.displayName || '회원', title:title, body:body, slip:shared.slice(0,20), createdAt:firebase.firestore.FieldValue.serverTimestamp()});
+      await db.collection('posts').add({uid:user.uid, displayName:(window.clutchNickname || user.displayName || '회원'), title:title, body:body, slip:shared.slice(0,20), createdAt:firebase.firestore.FieldValue.serverTimestamp()});
       $('postTitle').value = ''; $('postBody').value = ''; shared = []; sessionStorage.removeItem('clutchSlipShare'); drawShare(); say('게시글을 등록했습니다.');
     } catch (e) { say('등록 실패: ' + e.message); }
   }
   async function addComment(id) {
     if (!user) return say('댓글은 Google 로그인 후 작성할 수 있습니다.');
     var input = $('comment-' + id), body = input.value.trim(); if (!body) return;
-    try { await db.collection('posts').doc(id).collection('comments').add({uid:user.uid, displayName:user.displayName || '회원', body:body, createdAt:firebase.firestore.FieldValue.serverTimestamp()}); input.value = ''; }
+    try { await db.collection('posts').doc(id).collection('comments').add({uid:user.uid, displayName:(window.clutchNickname || user.displayName || '회원'), body:body, createdAt:firebase.firestore.FieldValue.serverTimestamp()}); input.value = ''; }
     catch (e) { say('댓글 등록 실패: ' + e.message); }
   }
   function myBets(u) {
@@ -64,7 +64,7 @@
   if (auth) auth.onAuthStateChanged(function (u) {
     user = u; if (!u) return;
     var ref = db.collection('users').doc(u.uid);
-    ref.get().then(function (d) { if (!d.exists) return ref.set({uid:u.uid, displayName:u.displayName || '회원', photoURL:u.photoURL || '', points:10000, createdAt:firebase.firestore.FieldValue.serverTimestamp(), weekProfit:0, totalProfit:0, winRate:0, maxOdds:0}); });
+    ref.get().then(function (d) { var v=d.exists?d.data():{}; window.clutchNickname=v.nickname||''; if (!d.exists) return ref.set({uid:u.uid, displayName:u.displayName || '회원', photoURL:u.photoURL || '', points:10000, createdAt:firebase.firestore.FieldValue.serverTimestamp(), weekProfit:0, totalProfit:0, winRate:0, maxOdds:0}); });
     if ($('myBets')) {
       ref.onSnapshot(function (d) { var x = d.data() || {}; $('myStats').textContent = '잔액 ' + fmt(x.points) + 'P · 적중률 ' + Number(x.winRate || 0).toFixed(1) + '% · 최고 배당 ' + Number(x.maxOdds || 0).toFixed(2) + '배'; });
       myBets(u);

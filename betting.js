@@ -18,7 +18,7 @@
       document.body.appendChild(n);
     }
     if (!document.getElementById('betNav')) {
-      var nav=document.createElement('nav'); nav.id='betNav'; nav.className='bet-nav'; nav.innerHTML='<a href="ranking.html">🏆 랭킹</a><a href="board.html">💬 자유게시판</a><button id="betShare">슬립 공유</button><button id="betLogin">Google 로그인</button><button id="betSupport" hidden>1,000P 지원</button><span id="betBalance"></span>';
+      var nav=document.createElement('nav'); nav.id='betNav'; nav.className='bet-nav'; nav.innerHTML='<a href="ranking.html">🏆 랭킹</a><a href="board.html">💬 자유게시판</a><button id="betShare">슬립 공유</button><button id="betNick" hidden>닉네임</button><button id="betLogin">Google 로그인</button><button id="betSupport" hidden>1,000P 지원</button><span id="betBalance"></span>';
       document.querySelector('.top')?.appendChild(nav);
     }
     document.body.addEventListener('click', function (e) {
@@ -30,6 +30,7 @@
     });
     document.addEventListener('click', function(e){
       if(e.target.id==='betDockTitle'){el('betDock')?.classList.toggle('is-min');}
+      if(e.target.id==='betNick') nick();
       if(e.target.id==='betLogin') login();
       if(e.target.id==='betSubmit') submitBet();
       if(e.target.id==='betSupport') support();
@@ -53,10 +54,24 @@
     if(el('betSupport'))el('betSupport').hidden=!(me&&balance<100);
     var submit=el('betSubmit'); if(submit)submit.textContent=me?'베팅 확정':'로그인 후 베팅 확정';
     if(el('betDockTitle'))el('betDockTitle').textContent='🧾 베팅 슬립'+(slip.length?' ('+slip.length+')':'');
-    var authstate=el('betAuthState'); if(authstate)authstate.textContent=me?(me.displayName||'회원')+' · '+fmt(balance)+'P':'로그인하면 10,000P 지급';
+    var authstate=el('betAuthState'); if(authstate)authstate.textContent=me?((window.clutchNickname||me.displayName||'회원'))+' · '+fmt(balance)+'P':'로그인하면 10,000P 지급';
+    var nickBtn=el('betNick'); if(nickBtn){nickBtn.hidden=!me;nickBtn.textContent=window.clutchNickname?'닉네임 ('+window.clutchNickname+')':'닉네임 설정';}
   }
   async function login(){if(!auth)return say('Firebase 연결을 확인해 주세요.');try{var p=new firebase.auth.GoogleAuthProvider();await auth.signInWithPopup(p);}catch(e){say('로그인에 실패했습니다: '+e.message);}}
-  async function onUser(user){me=user;if(!user){balance=0;paint();return;}var ref=db.collection('users').doc(user.uid);try{await db.runTransaction(async function(tx){var d=await tx.get(ref);if(!d.exists)tx.set(ref,{uid:user.uid,displayName:user.displayName||'회원',photoURL:user.photoURL||'',points:10000,createdAt:firebase.firestore.FieldValue.serverTimestamp(),weekProfit:0,totalProfit:0,winRate:0,maxOdds:0});});}catch(e){say('회원 정보를 불러오지 못했습니다: '+e.message);}ref.onSnapshot(function(d){if(d.exists){balance=Number(d.data().points)||0;paint();}});paint();}
+  async function onUser(user){me=user;if(!user){balance=0;window.clutchNickname='';paint();return;}var ref=db.collection('users').doc(user.uid);try{await db.runTransaction(async function(tx){var d=await tx.get(ref);if(!d.exists)tx.set(ref,{uid:user.uid,displayName:user.displayName||'회원',photoURL:user.photoURL||'',points:10000,createdAt:firebase.firestore.FieldValue.serverTimestamp(),weekProfit:0,totalProfit:0,winRate:0,maxOdds:0});});}catch(e){say('회원 정보를 불러오지 못했습니다: '+e.message);}ref.onSnapshot(function(d){if(d.exists){var v=d.data()||{};balance=Number(v.points)||0;window.clutchNickname=v.nickname||'';if(!v.nickname&&me&&!document.getElementById('nickModal'))openNick();paint();}});paint();}
+  function openNick(){
+    if(!me)return; var wrap=document.createElement('div'); wrap.id='nickModal'; wrap.className='nick-modal';
+    wrap.innerHTML='<div class="nick-box"><h2>닉네임 정하기</h2><p>랭킹과 게시판에 이 이름으로 보입니다.</p><input id="nickInput" maxlength="20" placeholder="2~20자"><p id="nickNotice" class="nick-notice"></p><div class="nick-actions"><button id="nickSave">저장</button><button id="nickClose">나중에</button></div></div>';
+    document.body.appendChild(wrap);
+    el('nickInput').value=window.clutchNickname||'';
+    el('nickSave').addEventListener('click',async function(){
+      var v=(el('nickInput').value||'').trim();
+      if(v.length<2)return (el('nickNotice').textContent='2자 이상 입력해 주세요.');
+      try{ await db.collection('users').doc(me.uid).update({nickname:v}); window.clutchNickname=v; wrap.remove(); paint(); }catch(e){ el('nickNotice').textContent='저장 실패: '+e.message; }
+    });
+    el('nickClose').addEventListener('click',function(){wrap.remove();});
+  }
+  function nick(){ if(!me)return login(); if(document.getElementById('nickModal'))return; openNick(); }
   async function submitBet(){
     if(!me){await login();return;} if(!slip.length)return say('먼저 경기 배당을 선택해 주세요.');
     var stake=Number(el('betStake').value), now=Date.now(), gm=gameMap();

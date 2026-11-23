@@ -5,7 +5,7 @@ service cloud.firestore {
     function owner(uid) { return signedIn() && request.auth.uid == uid; }
     function validUserCreate(uid) {
       return owner(uid)
-        && request.resource.data.keys().hasOnly(['uid','displayName','photoURL','points','createdAt','weekProfit','totalProfit','winRate','maxOdds'])
+        && request.resource.data.keys().hasOnly(['uid','displayName','nickname','photoURL','points','createdAt','weekProfit','totalProfit','winRate','maxOdds'])
         && request.resource.data.uid == uid
         && request.resource.data.points == 10000
         && request.resource.data.weekProfit == 0
@@ -35,6 +35,10 @@ service cloud.firestore {
           && request.resource.data.points == resource.data.points + 1000
           && request.resource.data.supportAt == request.time
           && (!('supportAt' in resource.data) || resource.data.supportAt <= request.time - duration.value(24, 'h')))
+        || (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['nickname'])
+          && request.resource.data.nickname is string
+          && request.resource.data.nickname.size() >= 2
+          && request.resource.data.nickname.size() <= 20)
         || (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName','photoURL'])
           && request.resource.data.displayName is string
           && request.resource.data.displayName.size() <= 80)

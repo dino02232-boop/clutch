@@ -6,3 +6,12 @@
 .bet-dock.is-min .bet-dock-head{grid-template-columns:auto;gap:0}
 .bet-dock.is-min .bet-dock-head span{display:none}
 .bet-dock-head b{cursor:pointer;user-select:none}
+.nick-modal{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;background:rgba(17,24,39,.45);padding:18px}
+.nick-box{width:min(360px,100%);background:#fff;border-radius:16px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.28)}
+.nick-box h2{font-size:19px;margin:0 0 6px}
+.nick-box p{font-size:13px;color:var(--text-2);margin:0 0 10px}
+.nick-box input{width:100%;box-sizing:border-box;padding:11px;border:1px solid var(--line-2);border-radius:9px;font:inherit}
+.nick-notice{min-height:16px;color:var(--warn);font-size:12px;margin:8px 0}
+.nick-actions{display:flex;gap:8px;justify-content:flex-end}
+.nick-actions button{padding:10px 16px;border:0;border-radius:9px;font-weight:800;cursor:pointer;background:var(--accent);color:#fff}
+.nick-actions #nickClose{background:#edf1f3;color:#333}
