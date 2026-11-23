@@ -2977,10 +2977,10 @@
     var body;
     var lineup = startBoxHTML(g);
     if (liveNow) {
-      body = liveSectionHTML(g) + lineup + pgMoreHTML("경기 전 브리핑", '<div class="pregame-body">' + preview + "</div>");
+      body = liveSectionHTML(g) + lineup + pgMoreHTML("경기 전 브리핑", '<div class="pregame-body">' + preview + more + "</div>");
     } else if (finalNow) {
       // 종료 카드에서는 '예상'이 아니라 '기록'이다 — 제목·버튼 모양을 경기 후 브리핑과 맞춘다.
-      body = resultHTML(g) + postgameHTML(g) + lineup + pgMoreHTML("경기 전 기록", '<div class="pregame-body">' + preview + "</div>");
+      body = resultHTML(g) + postgameHTML(g) + lineup + pgMoreHTML("경기 전 기록", '<div class="pregame-body">' + preview + more + "</div>");
     } else {
       body = preview + lineup + (more ? '<details class="more"><summary>팀 정보 · 부상 · 맞대결</summary><div class="more-body">' + more + "</div></details>" : "");
     }
