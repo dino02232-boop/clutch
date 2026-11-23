@@ -2793,7 +2793,7 @@
 
   function startersBodyHTML(g) {
     if (g.sport === "volleyball") {
-      return '<p class="lu-wait"><b>선발 라인업</b>KOVO 공개 기록에는 선발 명단이 없어 표시하지 않습니다. 경기 기록지의 출전 선수·포지션으로만 확인됩니다.</p>';
+      return '<p class="lu-wait"><b>선발 라인업</b> KOVO 공개 기록에는 선발 명단이 없어 표시하지 않습니다. 경기 기록지의 출전 선수·포지션으로만 확인됩니다.</p>';
     }
     if (g.sport !== "soccer" && g.sport !== "basketball") return "";
 
@@ -2802,17 +2802,17 @@
       var s = summaryEntry(g);
       if (g.sport === "soccer" || g.sport === "basketball") {
         if (!liveTargetOf(g)) {
-          return '<p class="lu-wait"><b>선발 라인업</b>이 경기는 ESPN 연결 정보가 없어 선발 명단을 확인하지 못했습니다.</p>';
+          return '<p class="lu-wait"><b>선발 라인업</b> 이 경기는 ESPN 연결 정보가 없어 선발 명단을 확인하지 못했습니다.</p>';
         }
-        if (!s) return '<p class="lu-wait"><b>선발 라인업</b>확인 중…</p>';
-        if (s.err) return '<p class="lu-wait"><b>선발 라인업</b>ESPN에서 받지 못했습니다. 잠시 뒤 새로고침을 눌러 주세요.</p>';
+        if (!s) return '<p class="lu-wait"><b>선발 라인업</b> 확인 중…</p>';
+        if (s.err) return '<p class="lu-wait"><b>선발 라인업</b> ESPN에서 받지 못했습니다. 잠시 뒤 새로고침을 눌러 주세요.</p>';
       }
       var state = g.result && g.result.state;
       if (state === "live" || state === "final") {
-        return '<p class="lu-wait"><b>선발 라인업</b>ESPN 응답에 선발 명단이 없습니다.</p>';
+        return '<p class="lu-wait"><b>선발 라인업</b> ESPN 응답에 선발 명단이 없습니다.</p>';
       }
       var when = g.sport === "soccer" ? "보통 킥오프 1시간 전" : "보통 팁오프 30분 전";
-      return '<p class="lu-wait"><b>선발 라인업</b>발표 전 · ' + when + "에 공개됩니다.</p>";
+      return '<p class="lu-wait"><b>선발 라인업</b> 발표 전 · ' + when + "에 공개됩니다.</p>";
     }
 
     // 항상 홈 팀 먼저, 원정 팀 다음.
