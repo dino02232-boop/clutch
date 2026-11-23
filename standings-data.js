@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-23T08:09:28+09:00
+   생성 시각(기준): 2026-11-23T10:48:01+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-23T08:09:28+09:00",
+  "updated": "2026-11-23T10:48:01+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4443,21 +4443,6 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 4,
-              "team": "뉴욕 닉스",
-              "abbr": "NY",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
-              "played": 16,
-              "win": 10,
-              "draw": null,
-              "loss": 6,
-              "points": null,
-              "diff": 90,
-              "pct": ".625",
-              "gb": "3.5",
-              "zone": null
-            },
-            {
-              "rank": 5,
               "team": "디트로이트 피스턴스",
               "abbr": "DET",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
@@ -4472,18 +4457,33 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 6,
+              "rank": 5,
               "team": "마이애미 히트",
               "abbr": "MIA",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
-              "played": 15,
-              "win": 9,
+              "played": 16,
+              "win": 10,
               "draw": null,
               "loss": 6,
               "points": null,
-              "diff": 10,
-              "pct": ".600",
-              "gb": "4",
+              "diff": 20,
+              "pct": ".625",
+              "gb": "3.5",
+              "zone": null
+            },
+            {
+              "rank": 6,
+              "team": "뉴욕 닉스",
+              "abbr": "NY",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+              "played": 16,
+              "win": 10,
+              "draw": null,
+              "loss": 6,
+              "points": null,
+              "diff": 90,
+              "pct": ".625",
+              "gb": "3.5",
               "zone": null
             },
             {
@@ -4736,14 +4736,14 @@ window.CLUTCH_STANDINGS = {
               "team": "오클라호마시티 썬더",
               "abbr": "OKC",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
-              "played": 16,
+              "played": 17,
               "win": 10,
               "draw": null,
-              "loss": 6,
+              "loss": 7,
               "points": null,
-              "diff": 72,
-              "pct": ".625",
-              "gb": "3.5",
+              "diff": 62,
+              "pct": ".588",
+              "gb": "4",
               "zone": null
             },
             {

@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-23T09:08:19+09:00",
+  updatedAt: "2026-11-23T10:48:01+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -10904,7 +10904,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 09:08 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 10:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -11258,7 +11258,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, 흥국생명(원정) 2승 4패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 09:08 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 10:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -27379,14 +27379,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-okc-mia-20261123",
           "espnId": "401910030",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-23T08:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Kaseya Center",
           "odds": {
             "provider": "DraftKings",
@@ -27451,6 +27451,83 @@ window.CLUTCH_DATA = {
               "text": "**마이애미 히트**(홈) 9승 6패(홈 5승 3패, 최근 5경기 5승 0패, 5연승), **오클라호마시티 썬더**(원정) 10승 6패(원정 4승 5패, 최근 5경기 2승 3패). 직전 경기(11.21) **오클라호마시티 썬더**는 뉴올리언스 펠리컨스에 126-120로 이겼고, Shai Gilgeous-Alexander 40점·3리바운드·8어시스트, Aday Mara 22점·16리바운드·2어시스트를 기록했습니다. 직전 경기(11.19) **마이애미 히트**는 밀워키 벅스에 137-130로 이겼고, Giannis Antetokounmpo 27점·14리바운드·9어시스트, Bam Adebayo 26점·4리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 113,
+            "homeScore": 123,
+            "lines": {
+              "away": [
+                "24",
+                "30",
+                "26",
+                "33"
+              ],
+              "home": [
+                "36",
+                "31",
+                "28",
+                "28"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Bam Adebayo",
+                "team": "MIA",
+                "min": "37",
+                "pts": 24,
+                "reb": "15",
+                "ast": "12",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png"
+              },
+              {
+                "name": "Bennett Stirtz",
+                "team": "OKC",
+                "min": "32",
+                "pts": 21,
+                "reb": "3",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5241364.png"
+              },
+              {
+                "name": "Pelle Larsson",
+                "team": "MIA",
+                "min": "30",
+                "pts": 21,
+                "reb": "3",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4601025.png"
+              },
+              {
+                "name": "Jared McCain",
+                "team": "OKC",
+                "min": "29",
+                "pts": 20,
+                "reb": "2",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683778.png"
+              },
+              {
+                "name": "Ajay Mitchell",
+                "team": "OKC",
+                "min": "22",
+                "pts": 17,
+                "reb": "3",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4900671.png"
+              },
+              {
+                "name": "Nikola Jovic",
+                "team": "MIA",
+                "min": "19",
+                "pts": 15,
+                "reb": "8",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4997528.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
