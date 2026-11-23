@@ -67,7 +67,7 @@
     if(el('betBalance'))el('betBalance').textContent=me?((window.clutchNickname||me.displayName||'회원')+' · '+fmt(balance)+'P'):'';
     if(el('betSupport'))el('betSupport').hidden=!(me&&balance<100);
     var submit=el('betSubmit'); if(submit)submit.textContent=me?'베팅 확정':'로그인 후 베팅 확정';
-    if(el('betDockTitle'))el('betDockTitle').textContent='🧾 베팅 슬립'+(slip.length?' ('+slip.length+')':'');
+    if(el('betDockTitle'))el('betDockTitle').textContent='🧾 배팅'+(slip.length?' ('+slip.length+')':'');
     var authstate=el('betAuthState'); if(authstate)authstate.textContent=me?((window.clutchNickname||me.displayName||'회원'))+' · '+fmt(balance)+'P':'로그인하면 10,000P 지급';
     var loginBtn=el('betLogin'); if(loginBtn)loginBtn.hidden=!!me;
     var bal=el('betBalance'); if(bal){bal.title=me?'닉네임 변경':'로그인';bal.style.cursor=me?'pointer':'';bal.style.marginLeft='0';}
@@ -92,7 +92,7 @@
     if(!me){await login();return;} if(!slip.length)return say('먼저 경기 배당을 선택해 주세요.');
     var stake=Number(el('betStake').value), now=Date.now(), gm=gameMap();
     if(!Number.isInteger(stake)||stake<100)return say('베팅 금액은 100P 이상 정수로 입력해 주세요.');
-    if(slip.some(function(x){return !gm[x.gameId]||Date.parse(gm[x.gameId].start)<=now;}))return say('경기가 시작된 선택이 있어 베팅할 수 없습니다. 슬립을 확인해 주세요.');
+    if(slip.some(function(x){return !gm[x.gameId]||Date.parse(gm[x.gameId].start)<=now;}))return say('경기가 시작된 선택이 있어 베팅할 수 없습니다. 배팅을 확인해 주세요.');
     if(stake>balance)return say('보유 포인트가 부족합니다.');
     var id=db.collection('bets').doc(me.uid).collection('items').doc().id, userRef=db.collection('users').doc(me.uid), betRef=db.collection('bets').doc(me.uid).collection('items').doc(id);
     var picks=slip.map(function(x){return {gameId:x.gameId,date:x.date,sport:x.sport,league:x.league,start:x.start,away:x.away,home:x.home,market:x.market,pick:x.pick,line:x.line,odds:x.odds,decimal:x.decimal};});
