@@ -981,10 +981,7 @@
     }
     var lines = [];
     if (o.spread && (o.spread.homeLine || o.spread.awayLine)) {
-      var sp = "핸디캡 홈 " + (o.spread.homeLine || "—") +
-        (o.spread.home != null ? " " + decText(o.spread.home) + "배" : "") +
-        " · 원정 " + (o.spread.awayLine || "—") +
-        (o.spread.away != null ? " " + decText(o.spread.away) + "배" : "");
+      var sp = "핸디캡";
       lines.push('<span>' + esc(sp) + '</span><ul class="o-list">' + oddsRowHTML("홈 " + o.spread.homeLine, o.spread.home, g, "spread", "home", o.spread.homeLine) + oddsRowHTML("원정 " + o.spread.awayLine, o.spread.away, g, "spread", "away", o.spread.awayLine) + '</ul>');
     }
     if (o.total && (o.total.line || o.total.over != null)) {

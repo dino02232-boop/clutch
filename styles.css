@@ -1993,3 +1993,11 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .cbtn-label{display:inline-flex;align-items:baseline;gap:0;letter-spacing:.4px}
 .vmark-v{font-weight:900;font-size:13px;line-height:1}
 .vmark-rest{font-weight:700;font-size:9.5px;letter-spacing:.7px;margin-left:1px}
+/* 배당 칸 축소 */
+.obox{margin:10px 0 2px;padding:8px 9px 7px}
+.o-list{margin:5px 0 0}
+.o-list li{padding:3px 0}
+.o-pick{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:2px 4px;margin:-2px -4px;border:0;background:transparent;border-radius:6px;cursor:pointer;font:inherit;text-align:left}
+.o-pick:hover{background:rgba(14,159,110,.08)}
+.o-lab{font-size:10.5px}
+.o-val b{font-size:12px}
