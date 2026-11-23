@@ -2912,11 +2912,7 @@
     }
 
 
-    // 축구 핵심 선수는 각 팀 블록 안 '주요 선수'로 들어간다.
-    // 접히지 않는 위쪽에는 팀별 주요 선수만 한 줄로 보여 준다.
-    preview += lineupHTML(g, d);
-
-    // 접어 두는 아래쪽: 팀 블록·맞대결·체크포인트
+    // 축구 핵심 선수는 더보기 안, 팀 블록 다음에 둔다.
     var more = "";
 
     // 팀별 정보: 원정 먼저, 홈 다음. 두 블록 사이는 넉넉히 띄운다.
@@ -2931,6 +2927,9 @@
     } else if (injuries.length) {
       more += '<h3 class="p-title">부상 리포트</h3><ul class="inj-list">' + injRowsHTML(injuries, true) + "</ul>";
     }
+
+    var lineupInline = lineupHTML(g, d);
+    if (lineupInline) more += lineupInline;
 
     preview += oddsHTML(g);
 
