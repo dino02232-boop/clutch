@@ -2876,7 +2876,7 @@
   function boxHTML(g) {
     var d = g.details || {};
     var injuries = Array.isArray(d.injuries) ? d.injuries : [];
-    var checks = Array.isArray(d.checkpoints) ? d.checkpoints : [];
+
     var rows = Array.isArray(g.rows) ? g.rows : [];
     var tags = gameTagsHTML(g);
 
@@ -2930,11 +2930,6 @@
         (hg ? '<ul class="h-list">' + hg + "</ul>" : "");
     }
 
-    if (checks.length) {
-      more += '<h3 class="p-title">체크포인트</h3><ol class="checks">' +
-        checks.map(function (c) { return "<li>" + md(c) + "</li>"; }).join("") + "</ol>";
-    }
-
     if (d.note) more += '<p class="note">' + esc(d.note) + "</p>";
 
     // 경기 전에는 프리뷰만 보여준다. 진행 중에는 라이브 상황을 위에 두고,
@@ -2947,7 +2942,7 @@
       // 종료 카드에서는 '예상'이 아니라 '기록'이다 — 제목·버튼 모양을 경기 후 브리핑과 맞춘다.
       body = resultHTML(g) + postgameHTML(g) + lineup + pgMoreHTML("경기 전 기록", '<div class="pregame-body">' + preview + "</div>");
     } else {
-      body = preview + lineup + (more ? '<details class="more"><summary>팀 정보 · 부상 · 맞대결 더 보기</summary><div class="more-body">' + more + "</div></details>" : "");
+      body = preview + lineup + (more ? '<details class="more"><summary>팀 정보 · 부상 · 맞대결</summary><div class="more-body">' + more + "</div></details>" : "");
     }
 
     return '<div class="cbox-outer"><div class="cbox">' + body + "</div></div>";
