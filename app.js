@@ -59,6 +59,8 @@
     { id: "basketball", name: "농구", icon: "🏀" },
     { id: "volleyball", name: "배구", icon: "🏐" }
   ];
+  // 비시즌 종목은 홈에서 마지막에 둡니다.
+  SPORTS.sort(function (a, b) { return (a.id === "baseball" ? 1 : 0) - (b.id === "baseball" ? 1 : 0); });
 
   var DAYS = DATA.days.slice().sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
 
@@ -746,9 +748,10 @@
     var d = n > 0 ? (n / 100 + 1) : (100 / Math.abs(n) + 1);
     return d.toFixed(2);
   }
-  function oddsRowHTML(label, ml) {
-    return '<li><span class="o-lab">' + esc(label) + "</span>" +
-      '<span class="o-val"><b>' + decText(ml) + "</b><i>" + amText(ml) + "</i></span></li>";
+  function oddsRowHTML(label, ml, game, market, pick, line) {
+    if (ml == null) return '';
+    return '<li><button type="button" class="o-pick" data-bet-game="' + esc(game.id) + '" data-bet-market="' + market + '" data-bet-pick="' + pick + '" data-bet-line="' + esc(line || '') + '" data-bet-odds="' + esc(String(ml)) + '"><span class="o-lab">' + esc(label) + "</span>" +
+      '<span class="o-val"><b>' + decText(ml) + "</b><i>" + amText(ml) + "</i></span></button></li>";
   }
   function oddsHTML(g) {
     var o = g.odds;
@@ -764,9 +767,9 @@
     var ml = o.moneyline || {};
     var rows = "";
     if (ml.away != null || ml.home != null || ml.draw != null) {
-      rows += oddsRowHTML("원정 승" + (g.away ? " · " + g.away.abbr : ""), ml.away);
-      if (ml.draw != null) rows += oddsRowHTML("무승부", ml.draw);
-      rows += oddsRowHTML("홈 승" + (g.home ? " · " + g.home.abbr : ""), ml.home);
+      rows += oddsRowHTML("원정 승" + (g.away ? " · " + g.away.abbr : ""), ml.away, g, "moneyline", "away");
+      if (ml.draw != null) rows += oddsRowHTML("무승부", ml.draw, g, "moneyline", "draw");
+      rows += oddsRowHTML("홈 승" + (g.home ? " · " + g.home.abbr : ""), ml.home, g, "moneyline", "home");
     }
     var lines = [];
     if (o.spread && (o.spread.homeLine || o.spread.awayLine)) {
@@ -774,12 +777,10 @@
         (o.spread.home != null ? " (" + amText(o.spread.home) + ")" : "") +
         " · 원정 " + (o.spread.awayLine || "—") +
         (o.spread.away != null ? " (" + amText(o.spread.away) + ")" : "");
-      lines.push(sp);
+      lines.push('<span>' + esc(sp) + '</span><ul class="o-list">' + oddsRowHTML("홈 " + o.spread.homeLine, o.spread.home, g, "spread", "home", o.spread.homeLine) + oddsRowHTML("원정 " + o.spread.awayLine, o.spread.away, g, "spread", "away", o.spread.awayLine) + '</ul>');
     }
     if (o.total && (o.total.line || o.total.over != null)) {
-      lines.push("총점 " + (o.total.line || "—") +
-        (o.total.over != null ? " · 오버 " + amText(o.total.over) : "") +
-        (o.total.under != null ? " / 언더 " + amText(o.total.under) : ""));
+      lines.push('<span>언오버 ' + esc(o.total.line || '—') + '</span><ul class="o-list">' + oddsRowHTML("오버 " + o.total.line, o.total.over, g, "total", "over", o.total.line) + oddsRowHTML("언더 " + o.total.line, o.total.under, g, "total", "under", o.total.line) + '</ul>');
     }
     var imp = o.implied;
     var impLine = "";
@@ -797,7 +798,7 @@
         (at ? '<span class="o-at">' + esc(at) + " 기준</span>" : "") +
       "</div>" +
       (rows ? '<ul class="o-list">' + rows + "</ul>" : "") +
-      (lines.length ? lines.map(function (l) { return '<p class="o-line">' + esc(l) + "</p>"; }).join("") : "") +
+      (lines.length ? lines.map(function (l) { return '<div class="o-line o-select-lines">' + l + "</div>"; }).join("") : "") +
       impLine +
       '<p class="o-note">해외 배당이며 국내 배트맨·프로토 배당과 다를 수 있습니다. 소수 배당은 미국식 배당을 환산한 값입니다.</p>' +
       "</section>";

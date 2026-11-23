@@ -1,0 +1,90 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function owner(uid) { return signedIn() && request.auth.uid == uid; }
+    function validUserCreate(uid) {
+      return owner(uid)
+        && request.resource.data.keys().hasOnly(['uid','displayName','photoURL','points','createdAt','weekProfit','totalProfit','winRate','maxOdds'])
+        && request.resource.data.uid == uid
+        && request.resource.data.points == 10000
+        && request.resource.data.weekProfit == 0
+        && request.resource.data.totalProfit == 0
+        && request.resource.data.winRate == 0
+        && request.resource.data.maxOdds == 0;
+    }
+    function matchingNewBet(uid) {
+      let bet = getAfter(/databases/$(database)/documents/bets/$(uid)/items/$(request.resource.data.lastBetId));
+      return request.resource.data.lastBetId is string
+        && bet.data.uid == uid
+        && bet.data.status == 'open'
+        && !exists(/databases/$(database)/documents/bets/$(uid)/items/$(request.resource.data.lastBetId))
+        && bet.data.stake == request.resource.data.lastStake
+        && request.resource.data.lastStake is int
+        && request.resource.data.lastStake >= 100
+        && request.resource.data.points == resource.data.points - request.resource.data.lastStake;
+    }
+    match /users/{uid} {
+      allow read: if true;
+      allow create: if validUserCreate(uid);
+      allow update: if owner(uid) && (
+        (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['points','lastBetId','lastStake'])
+          && matchingNewBet(uid))
+        || (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['points','supportAt'])
+          && resource.data.points < 100
+          && request.resource.data.points == resource.data.points + 1000
+          && request.resource.data.supportAt == request.time
+          && (!('supportAt' in resource.data) || resource.data.supportAt <= request.time - duration.value(24, 'h')))
+        || (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName','photoURL'])
+          && request.resource.data.displayName is string
+          && request.resource.data.displayName.size() <= 80)
+      );
+      allow delete: if false;
+    }
+    match /bets/{uid}/items/{betId} {
+      allow read: if owner(uid);
+      allow create: if owner(uid)
+        && request.resource.data.uid == uid
+        && request.resource.data.status == 'open'
+        && request.resource.data.stake is int
+        && request.resource.data.stake >= 100
+        && request.resource.data.picks is list
+        && request.resource.data.picks.size() >= 1
+        && request.resource.data.picks.size() <= 20
+        && request.resource.data.potential is int
+        && request.resource.data.combinedOdds is number
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.weekKey is string
+        && request.resource.data.keys().hasOnly(['uid','stake','picks','combinedOdds','potential','status','createdAt','weekKey'])
+        && !exists(/databases/$(database)/documents/bets/$(uid)/items/$(betId))
+        && getAfter(/databases/$(database)/documents/users/$(uid)).data.points == get(/databases/$(database)/documents/users/$(uid)).data.points - request.resource.data.stake
+        && getAfter(/databases/$(database)/documents/users/$(uid)).data.lastBetId == betId;
+      allow update, delete: if false;
+    }
+    match /posts/{postId} {
+      allow read: if true;
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.title is string
+        && request.resource.data.title.size() > 0
+        && request.resource.data.title.size() <= 100
+        && request.resource.data.body is string
+        && request.resource.data.body.size() > 0
+        && request.resource.data.body.size() <= 3000
+        && request.resource.data.slip is list
+        && request.resource.data.slip.size() <= 20
+        && request.resource.data.keys().hasOnly(['uid','displayName','title','body','slip','createdAt']);
+      allow update, delete: if false;
+      match /comments/{commentId} {
+        allow read: if true;
+        allow create: if signedIn()
+          && request.resource.data.uid == request.auth.uid
+          && request.resource.data.body is string
+          && request.resource.data.body.size() > 0
+          && request.resource.data.body.size() <= 1000
+          && request.resource.data.keys().hasOnly(['uid','displayName','body','createdAt']);
+        allow update, delete: if false;
+      }
+    }
+  }
+}
