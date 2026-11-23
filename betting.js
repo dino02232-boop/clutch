@@ -10,6 +10,8 @@
     return m;
   }
   function dec(a) { a = Number(a); return a > 0 ? 1 + a / 100 : 1 + 100 / Math.abs(a); }
+  // 화면에 보이는 배당(소수 둘째 자리)과 예상 획득을 같은 값으로 계산한다.
+  function payout(stake, mult) { var m = Math.round(mult * 100) / 100; return Math.floor(stake * m + 1e-9); }
   function say(text) { var n = el('betNotice'); if (n) n.textContent = text; }
   // 접힘/펼침 상태를 버튼 문구와 aria-label 로도 알려 준다.
   function syncDock() {
@@ -63,7 +65,7 @@
     picks.innerHTML=slip.length?slip.map(function(x,i){return '<div class="bet-pick"><button data-slip-remove="'+i+'" aria-label="선택 삭제">×</button><b>'+esc(x.away)+' vs '+esc(x.home)+'</b><span>'+esc(({moneyline:'승무패',spread:'핸디캡',total:'언오버'})[x.market])+' · '+esc(({away:'원정',home:'홈',draw:'무승부',over:'오버',under:'언더'})[x.pick])+(x.line?' '+esc(x.line):'')+' · '+x.decimal.toFixed(2)+'배</span></div>';}).join(''):'<p class="bet-empty">경기에서 배당을 선택하세요.</p>';
     if(el('betOdds'))el('betOdds').textContent=mult.toFixed(2)+'배';
     var stake=Number(el('betStake')&&el('betStake').value)||0;
-    if(el('betReturn'))el('betReturn').textContent=fmt(Math.floor(stake*mult))+'P';
+    if(el('betReturn'))el('betReturn').textContent=fmt(payout(stake,mult))+'P';
     if(el('betBalance'))el('betBalance').textContent=me?((window.clutchNickname||me.displayName||'회원')+' · '+fmt(balance)+'P'):'';
     if(el('betSupport'))el('betSupport').hidden=!(me&&balance<100);
     var submit=el('betSubmit'); if(submit)submit.textContent=me?'베팅 확정':'로그인 후 베팅 확정';
@@ -96,7 +98,7 @@
     if(stake>balance)return say('보유 포인트가 부족합니다.');
     var id=db.collection('bets').doc(me.uid).collection('items').doc().id, userRef=db.collection('users').doc(me.uid), betRef=db.collection('bets').doc(me.uid).collection('items').doc(id);
     var picks=slip.map(function(x){return {gameId:x.gameId,date:x.date,sport:x.sport,league:x.league,start:x.start,away:x.away,home:x.home,market:x.market,pick:x.pick,line:x.line,odds:x.odds,decimal:x.decimal};});
-    try{await db.runTransaction(async function(tx){var u=await tx.get(userRef);var p=Number(u.data().points)||0;if(p<stake)throw Error('포인트가 부족합니다.');if(picks.some(function(x){return Date.parse(x.start)<=Date.now();}))throw Error('경기가 시작됐습니다.');tx.update(userRef,{points:p-stake,lastBetId:id,lastStake:stake});tx.set(betRef,{uid:me.uid,stake:stake,picks:picks,combinedOdds:Number(picks.reduce(function(a,x){return a*x.decimal;},1).toFixed(4)),potential:Math.floor(stake*picks.reduce(function(a,x){return a*x.decimal;},1)),status:'open',createdAt:firebase.firestore.FieldValue.serverTimestamp(),weekKey:new Date().toISOString().slice(0,10)});});slip=[];paint();say('베팅이 확정되었습니다.');}catch(e){say('베팅을 확정하지 못했습니다: '+e.message);}
+    try{await db.runTransaction(async function(tx){var u=await tx.get(userRef);var p=Number(u.data().points)||0;if(p<stake)throw Error('포인트가 부족합니다.');if(picks.some(function(x){return Date.parse(x.start)<=Date.now();}))throw Error('경기가 시작됐습니다.');tx.update(userRef,{points:p-stake,lastBetId:id,lastStake:stake});tx.set(betRef,{uid:me.uid,stake:stake,picks:picks,combinedOdds:Number(picks.reduce(function(a,x){return a*x.decimal;},1).toFixed(4)),potential:payout(stake,picks.reduce(function(a,x){return a*x.decimal;},1)),status:'open',createdAt:firebase.firestore.FieldValue.serverTimestamp(),weekKey:new Date().toISOString().slice(0,10)});});slip=[];paint();say('베팅이 확정되었습니다.');}catch(e){say('베팅을 확정하지 못했습니다: '+e.message);}
   }
   async function support(){if(!me||balance>=100)return;var ref=db.collection('users').doc(me.uid);try{await db.runTransaction(async function(tx){var d=await tx.get(ref),v=d.data(),now=Date.now();if(Number(v.points)>=100)throw Error('잔고가 100P 이상입니다.');if(v.supportAt&&now-v.supportAt.toMillis()<86400000)throw Error('지원금은 24시간에 한 번 받을 수 있습니다.');tx.update(ref,{points:Number(v.points)+1000,supportAt:firebase.firestore.FieldValue.serverTimestamp()});});say('1,000P 지원금을 받았습니다.');}catch(e){say(e.message);}}
   window.clutchSlipShare=function(){return slip.map(function(x){return {gameId:x.gameId,away:x.away,home:x.home,market:x.market,pick:x.pick,line:x.line,decimal:x.decimal};});};
