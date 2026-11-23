@@ -2001,3 +2001,6 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .o-pick:hover{background:rgba(14,159,110,.08)}
 .o-lab{font-size:10.5px}
 .o-val b{font-size:12px}
+/* 핸디캡·언오버 목록은 세로 flex라 flex-basis(120px)가 행 높이로 잡히지 않게 */
+.o-select-lines .o-list li{flex:0 0 auto}
+.o-select-lines .o-list{gap:0}
