@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-24T06:41:06+09:00",
+  updatedAt: "2026-11-24T07:42:22+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -27620,7 +27620,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 4패·6위·승점 4, 대한항공(원정) 2승 3패·5위·승점 7."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 06:40 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 07:42 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27926,7 +27926,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 2패·4위·승점 8, GS칼텍스(원정) 4승 1패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 06:40 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 07:42 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
@@ -28483,7 +28483,7 @@ window.CLUTCH_DATA = {
           },
           "status": "final"
         },
-        {
+                {
           "id": "soccer-elc-lev-20261124",
           "espnId": "401882802",
           "sport": "soccer",
@@ -28565,6 +28565,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **레반테**(홈) 1.3골 · **엘체**(원정) 1.2골, 평균 실점은 홈 1.8골 · 원정 1.7골. 해외 배당을 확률로 환산하면 레반테 승 47.5% · 무 26.0% · 엘체 승 26.4%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 1,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "0",
+                "1"
+              ],
+              "home": [
+                "0",
+                "1"
+              ]
+            },
+            "winner": null
+          },
           "details": {
             "teams": [
               {
@@ -28676,7 +28693,87 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 1명 · 불확실 2명"
+                "injurySummary": "결장 1명 · 불확실 2명",
+                "players": [
+                  {
+                    "name": "Roy Revivo",
+                    "rating": 8.0,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Buba Sangaré",
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Víctor Chust",
+                    "rating": 7.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Federico Redondo",
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Germán Valera",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Fer Niño",
+                    "rating": 7.3,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Javi Morcillo",
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Martim Neto",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Gonzalo Villar",
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Matías Dituro",
+                    "rating": 6.6,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Abiel Osorio",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Lucas Cepeda",
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Thomas Lemar",
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": false
+                  }
+                ]
               },
               {
                 "abbr": "LEV",
@@ -28772,7 +28869,99 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 5경기 2승 1무 2패입니다. 홈 2승 1무 2패입니다. 경기당 평균 1.3골을 넣고 1.8골을 실점했습니다. 직전 경기 기록은 2026.11.12 원정 CD Tarancon 2-1 승입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
                 "injuryNote": "FotMob 결장 명단에 올라온 선수가 없습니다.",
-                "injuries": []
+                "injuries": [],
+                "players": [
+                  {
+                    "name": "Dani Requena",
+                    "rating": 8.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jon Olasagasti",
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Adrián De La Fuente",
+                    "rating": 7.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Aïssa Mandi",
+                    "rating": 7.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Iván Romero",
+                    "rating": 7.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Thiago Fernández",
+                    "rating": 7.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Roger Brugué",
+                    "rating": 6.9,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Manuel Sánchez",
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nacho Pérez",
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Oriol Rey",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Marc Santos",
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Mathew Ryan",
+                    "rating": 6.3,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Petar Ratkov",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Etta Eyong",
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Jeremy Toljan",
+                    "rating": 6.1,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -28817,9 +29006,10 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868135,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-eve-bre-20261124",
           "espnId": "401879237",
           "sport": "soccer",
@@ -28901,6 +29091,23 @@ window.CLUTCH_DATA = {
               "text": "두 팀 평균 득점은 **브렌트퍼드**(홈) 1.6골 · **에버턴**(원정) 1.2골, 평균 실점은 홈 1.1골 · 원정 1.0골. 해외 배당을 확률로 환산하면 브렌트퍼드 승 45.3% · 무 27.6% · 에버턴 승 27.2%."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 4,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "2",
+                "2"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -28997,7 +29204,99 @@ window.CLUTCH_DATA = {
                 ],
                 "focus": "최근 흐름은 3연승입니다. 최근 5경기 3승 0무 2패입니다. 원정 1승 3무 1패입니다. 경기당 평균 1.2골을 넣고 1.0골을 실점했습니다. 직전 경기 기록은 2026.11.06 홈 코번트리 시티 3-1 승입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
                 "injuryNote": "FotMob 결장 명단에 올라온 선수가 없습니다.",
-                "injuries": []
+                "injuries": [],
+                "players": [
+                  {
+                    "name": "James Garner",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jack Grealish",
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Merlin Röhl",
+                    "rating": 6.5,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Michael Keane",
+                    "rating": 6.5,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Kiernan Dewsbury-Hall",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Harrison Armstrong",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Hayden Hackney",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Tyrique George",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Thierno Barry",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Brennan Johnson",
+                    "rating": 5.9,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Jake O'Brien",
+                    "rating": 5.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jarrad Branthwaite",
+                    "rating": 5.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Vitaliy Mykolenko",
+                    "rating": 5.5,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jordan Pickford",
+                    "rating": 5.4,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "James Tarkowski",
+                    "rating": 4.8,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "BRE",
@@ -29125,7 +29424,93 @@ window.CLUTCH_DATA = {
                     "line": "징계 출장정지 · 복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 6명"
+                "injurySummary": "결장 6명",
+                "players": [
+                  {
+                    "name": "Keane Lewis-Potter",
+                    "rating": 9.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jaidon Anthony",
+                    "rating": 8.6,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Vitaly Janelt",
+                    "rating": 8.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mikkel Damsgaard",
+                    "rating": 8.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Yehor Yarmoliuk",
+                    "rating": 8.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sepp van den Berg",
+                    "rating": 7.9,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Caoimhín Kelleher",
+                    "rating": 7.5,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mathias Jensen",
+                    "rating": 7.3,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Kristoffer Ajer",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Michael Kayode",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Dango Ouattara",
+                    "rating": 6.9,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Callum Wilson",
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Malick Diouf",
+                    "rating": 6.5,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Kevin Schade",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -29170,7 +29555,8 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795517,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         }
         /* SOCCER-AUTO 2026-11-24 END */,
 
