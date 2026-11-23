@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# data.js 가 실제로 바뀐 경우에만 커밋하고 main 으로 푸시합니다.
+# data.js / standings-data.js 가 실제로 바뀐 경우에만 커밋하고 main 으로 푸시합니다.
 #   ./tools/commit_data.sh results|daily
 # push 직전에 최신 main 으로 rebase 하고, 충돌하면 최신 main 에서 갱신을 다시 만들어 재시도합니다.
 set -u
@@ -10,17 +10,26 @@ git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
 msg() {
+  local stamp standings=""
+  stamp="$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST')"
+  if ! git diff --cached --quiet -- standings-data.js 2>/dev/null; then
+    standings="·순위표"
+  fi
   if [ "$MODE" = "daily" ]; then
-    echo "chore(data): 경기 일정·프리뷰 일일 자동 갱신 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST')"
+    echo "chore(data): 경기 일정·프리뷰 일일 자동 갱신 $stamp"
   else
-    echo "chore(data): 경기 결과 자동 갱신 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST')"
+    echo "chore(data): 경기 결과${standings} 자동 갱신 $stamp"
   fi
 }
 
 commit_if_changed() {
   git add data.js
-  if git diff --cached --quiet -- data.js; then
-    echo "data.js 변경 없음 — 커밋하지 않습니다."
+  # 순위표도 같은 주기(results)에 갱신된다. 없으면 무시.
+  git add standings-data.js 2>/dev/null || true
+  # 선수 사진 캐시도 함께 남겨 다음 갱신에서 같은 조회를 반복하지 않게 한다(없으면 무시).
+  git add tools/cache/player_photos.json 2>/dev/null || true
+  if git diff --cached --quiet -- data.js standings-data.js; then
+    echo "data.js·standings-data.js 변경 없음 — 커밋하지 않습니다."
     return 1
   fi
   git commit -q -m "$(msg)"

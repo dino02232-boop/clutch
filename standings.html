@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light">
+<title>VERSUS — 리그 순위표</title>
+<meta name="description" content="프리미어리그·라리가·분데스리가·세리에A·UCL·NBA 팀 순위와 득점·도움·리바운드·어시스트 개인 순위.">
+<meta property="og:title" content="VERSUS — 리그 순위표">
+<meta property="og:description" content="리그별 팀 순위와 개인 순위를 ESPN 공개 데이터로 정리합니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<link rel="icon" type="image/png" sizes="512x512" href="icon.png?v=20261122-vs2">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20261122-vs2">
+<meta property="og:image" content="https://dino02232-boop.github.io/clutch/icon.png">
+<link rel="stylesheet" href="styles.css?v=20261123-lineup2">
+<link rel="stylesheet" href="standings.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="top-row">
+      <a class="brand" href="index.html" aria-label="VERSUS — 오늘의 브리핑으로 이동">
+        <span class="mark" aria-hidden="true"></span>
+        <span class="brand-txt">
+          <span class="brand-name" aria-hidden="true"><span class="bn-v">V</span><span class="bn-rest">ERSUS</span></span>
+          <span class="brand-sub">리그 순위표 · 팀 · 개인</span>
+        </span>
+      </a>
+      <div class="brand-date">
+        <b id="stSeason">—</b>
+        ESPN 기준
+      </div>
+    </div>
+
+    <div class="tabs" id="stLeagues" role="tablist" aria-label="리그 선택"></div>
+
+    <div class="st-seg" id="stMode" role="tablist" aria-label="순위 종류">
+      <button type="button" role="tab" data-mode="team" aria-selected="true">팀 순위</button>
+      <button type="button" role="tab" data-mode="player" aria-selected="false">개인 순위</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="listhead">
+      <div class="lh-left">
+        <a class="back-chip" href="index.html">오늘의 브리핑</a>
+        <h1 id="stTitle">—</h1>
+      </div>
+      <div class="src">
+        <span id="stUpdated">데이터 기준 —</span><br>
+        <span class="sample-chip real" id="stChip">ESPN 실제 값</span>
+      </div>
+    </div>
+
+    <div id="stPanel" role="tabpanel" aria-live="polite"></div>
+
+    <footer class="foot">
+      <div class="foot-brand">VERSUS</div>
+      <p class="strong">리그 순위와 개인 기록은 ESPN(축구·NBA)·KOVO(V리그) 공개 데이터를 그대로 옮깁니다. 순위 예측은 제공하지 않습니다.</p>
+      <p>팀 순위 = 리그가 정한 순위표(경기·승·무·패·득실·승점), 개인 순위 = ESPN 리더보드 상위 20명입니다. 축구 개인 기록은 시즌 누적, NBA 개인 기록은 경기당 값입니다. V리그는 팀 순위만 제공하고 개인 순위는 넣지 않습니다.</p>
+      <p>표 아래 옅은 색 띠는 ESPN이 표시한 순위 구간(챔피언스리그·유로파리그·강등 등)을 같은 색으로 옮긴 것입니다. ESPN이 표시하지 않는 리그(NBA)는 띠를 그리지 않습니다.</p>
+      <p>순위표는 경기 결과가 들어오는 주기(30분)마다 ESPN·KOVO에서 자동으로 다시 받아 갱신합니다(값이 바뀐 경우에만 반영). 손으로 돌릴 때는 <code>python3 tools/fetch_standings.py</code> 입니다. 값이 비어 있으면 <b>—</b> 로 표시하며, 없는 값을 채워 넣지 않습니다.</p>
+    </footer>
+  </main>
+</div>
+
+<script src="standings-data.js"></script>
+<script src="standings.js"></script>
+</body>
+</html>

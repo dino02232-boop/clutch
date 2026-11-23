@@ -13,9 +13,12 @@ data.js 의 SOCCER-AUTO 구간을 날짜별로 다시 채웁니다.
       경기·킥오프(UTC)·경기장·양 팀 전적(승-무-패)·최근 폼(form)·오버언더(odds[].overUnder)
   · standings   site.api.espn.com/apis/v2/sports/soccer/{league}/standings
       팀별 순위(rank)·경기 수·득점(pointsFor)·실점(pointsAgainst)·득실차
+  · summary     site.api.espn.com/apis/site/v2/sports/soccer/{league}/summary?event={id}
+      최근 5경기·맞대결 + leaders(팀별 시즌 득점·도움 1위 선수) → details.keyPlayers
 
-ESPN 축구 응답에는 신뢰할 만한 부상·결장 명단이 없습니다. 그래서 축구 카드는
-부상 정보를 만들지 않고 "부상 정보 없음"으로 표시합니다(지어내지 않음).
+ESPN 축구 응답에는 부상·결장 명단이 없습니다(빈 배열). 그래서 결장 명단은
+FotMob 공개 엔드포인트에서 따로 받아 tools/fotmob_injuries.py 로 채웁니다.
+키·가입·결제 없는 소스만 쓰고, 받은 값이 없으면 "명단 없음"으로 정직하게 남깁니다.
 K리그(kor.1)는 ESPN 에 없어서 다루지 않습니다.
 """
 
@@ -29,6 +32,8 @@ from datetime import datetime, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetch_nba import CACHE, KST, get_json, kst_date, weekday_ko  # 공용 유틸
 from odds_common import cache_at, implied, odds_of  # 배당(odds) 추출
+from photo_sources import load_cache as load_photo_cache, resolve as photo_resolve, save_cache as save_photo_cache
+from fotmob_injuries import annotate as annotate_injuries
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -39,6 +44,19 @@ SB = "https://site.api.espn.com/apis/site/v2/sports/soccer/%s/scoreboard?dates=%
 ST = "https://site.api.espn.com/apis/v2/sports/soccer/%s/standings"
 SBSCHED = "https://site.api.espn.com/apis/site/v2/sports/soccer/%s/teams/%s/schedule"
 SUMM = "https://site.api.espn.com/apis/site/v2/sports/soccer/%s/summary?event=%s"
+# ESPN 선수 얼굴 사진 CDN. 축구 응답에는 headshot 필드가 없어 id 로 경로를 만든다.
+# 일부 선수만 이미지가 있고 나머지는 404 → 화면에서 이니셜로 대체한다.
+HEADSHOT = "https://a.espncdn.com/i/headshots/soccer/players/full/%s.png"
+
+# 선수 사진 캐시는 한 번만 읽고, 생성이 끝날 때 한 번만 쓴다.
+_PHOTO_CACHE = None
+
+
+def _photo_cache():
+    global _PHOTO_CACHE
+    if _PHOTO_CACHE is None:
+        _PHOTO_CACHE = load_photo_cache()
+    return _PHOTO_CACHE
 
 # 리그 코드 → (짧은 표기, 한글 리그명)
 LEAGUES = {
@@ -48,48 +66,71 @@ LEAGUES = {
     "ita.1": ("SERIEA", "세리에 A"),
     "ger.1": ("BUNDES", "분데스리가"),
 }
-DEFAULT_LEAGUES = ["uefa.champions", "eng.1", "esp.1"]
+DEFAULT_LEAGUES = ["uefa.champions", "eng.1", "esp.1", "ger.1", "ita.1"]
 
 # ESPN 영문 팀명 → 한국어 표기. 확실한 팀만 적고, 없으면 영문명을 그대로 씁니다.
 TEAM_KO = {
+    "1. FC Union Berlin": "우니온 베를린",
+    "AC Milan": "AC 밀란",
     "AEK Athens": "AEK 아테네",
     "AFC Bournemouth": "본머스",
+    "AS Roma": "AS 로마",
     "Alavés": "알라베스",
     "Arsenal": "아스널",
     "Aston Villa": "애스턴 빌라",
+    "Atalanta": "아탈란타",
     "Athletic Club": "아틀레틱 빌바오",
     "Atlético Madrid": "아틀레티코 마드리드",
     "Barcelona": "바르셀로나",
+    "Bayer Leverkusen": "바이어 레버쿠젠",
+    "Bayern Munich": "바이에른 뮌헨",
     "Bodo/Glimt": "보되/글림트",
+    "Bologna": "볼로냐",
     "Borussia Dortmund": "도르트문트",
+    "Borussia Mönchengladbach": "묀헨글라트바흐",
     "Brentford": "브렌트퍼드",
     "Brighton & Hove Albion": "브라이턴",
+    "Cagliari": "칼리아리",
     "Celta Vigo": "셀타 비고",
     "Chelsea": "첼시",
     "Como": "코모",
     "Coventry City": "코번트리 시티",
     "Crystal Palace": "크리스털 팰리스",
     "Deportivo": "데포르티보",
+    "FC Augsburg": "아우크스부르크",
+    "FC Cologne": "쾰른",
+    "FC Porto": "FC 포르투",
+    "Fiorentina": "피오렌티나",
+    "Frosinone": "프로시노네",
+    "Genoa": "제노아",
     "Elche": "엘체",
+    "Eintracht Frankfurt": "아인트라흐트 프랑크푸르트",
     "Espanyol": "에스파뇰",
     "Everton": "에버턴",
-    "FC Porto": "FC 포르투",
     "Feyenoord Rotterdam": "페예노르트",
     "Fulham": "풀럼",
     "Galatasaray": "갈라타사라이",
     "Getafe": "헤타페",
+    "Hamburg SV": "함부르크",
     "Hull City": "헐 시티",
+    "Internazionale": "인터 밀란",
     "Ipswich Town": "입스위치 타운",
+    "Juventus": "유벤투스",
     "LASK Linz": "LASK 린츠",
+    "Lazio": "라치오",
+    "Lecce": "레체",
     "Leeds United": "리즈 유나이티드",
     "Lens": "랑스",
     "Levante": "레반테",
     "Liverpool": "리버풀",
     "Manchester City": "맨체스터 시티",
     "Manchester United": "맨체스터 유나이티드",
+    "Mainz": "마인츠",
+    "Monza": "몬차",
     "Málaga": "말라가",
     "Napoli": "나폴리",
     "Newcastle United": "뉴캐슬 유나이티드",
+    "Parma": "파르마",
     "Nottingham Forest": "노팅엄 포리스트",
     "Osasuna": "오사수나",
     "PSV Eindhoven": "PSV 에인트호번",
@@ -99,12 +140,23 @@ TEAM_KO = {
     "Real Betis": "레알 베티스",
     "Real Madrid": "레알 마드리드",
     "Real Sociedad": "레알 소시에다드",
+    "SC Freiburg": "프라이부르크",
+    "SC Paderborn 07": "파더보른",
+    "Sassuolo": "사수올로",
+    "Schalke 04": "샬케 04",
     "Sevilla": "세비야",
     "Slovan Bratislava": "슬로반 브라티슬라바",
     "Sunderland": "선덜랜드",
+    "SV Elversberg": "엘버스베르크",
+    "TSG Hoffenheim": "호펜하임",
+    "Torino": "토리노",
     "Tottenham Hotspur": "토트넘 홋스퍼",
+    "Udinese": "우디네세",
     "Valencia": "발렌시아",
+    "Venezia": "베네치아",
+    "VfB Stuttgart": "슈투트가르트",
     "Villarreal": "비야레알",
+    "Werder Bremen": "베르더 브레멘",
 }
 
 
@@ -195,6 +247,37 @@ RES_KO = {"W": "승", "D": "무", "L": "패"}
 HA_KO = {"vs": "홈", "@": "원정"}
 
 
+def side_ko(side):
+    return "홈" if side == "home" else "원정"
+
+
+def flow_team_text(name, side, record=None, rank=None, streak=None):
+    """흐름 줄의 팀 한 칸 — 팀 이름에 홈/원정 라벨을 붙이고 전적·순위·최근 흐름을 잇는다.
+
+    숫자만 나열해 어느 팀 값인지 알 수 없는 문장을 만들지 않기 위해,
+    팀을 가리키는 모든 문장은 이 함수를 거친다.
+    """
+    s = "**%s**(%s)" % (name, side_ko(side))
+    if record:
+        s += " " + str(record)
+    if rank:
+        s += "(리그 %s위)" % rank
+    if streak:
+        s += ", " + str(streak)
+    return s
+
+
+def goals_compare_text(home, away, h_gf, a_gf, h_ga, a_ga):
+    """평균 득점·실점 대비 — 홈 팀을 앞에 두고 팀 이름과 홈/원정을 문장마다 붙인다.
+
+    '0.8골 대 2.6골'처럼 숫자만 늘어놓으면 어느 쪽이 홈인지 알 수 없어서,
+    같은 팀 이름을 실점 쪽에도 다시 적는다(생략하지 않는다).
+    """
+    return ("두 팀 평균 득점은 **%s**(홈) %s골 · **%s**(원정) %s골, "
+            "평균 실점은 홈 %s골 · 원정 %s골"
+            % (home, h_gf, away, a_gf, h_ga, a_ga))
+
+
 def streak_text(results):
     """최근 경기 목록(최신이 앞) → '3연승' / '4경기 무승' / '최근 5경기 1승 3패 1무'."""
     if not results:
@@ -218,8 +301,36 @@ def streak_text(results):
     return None
 
 
+def last5_score(e, team_id):
+    """lastFiveGames 의 한 경기 → '내 팀-상대' 점수 문자열.
+
+    ESPN 의 events[].score 는 홈·원정 순서도, 우리 팀 순서도 아니고 **이긴 팀 점수가 앞**으로 온다
+    (예: 1-2 로 진 경기가 '2-1'). 그래서 지는 경기는 방향이 뒤집혀 승/패와 어긋난다.
+    homeTeamScore/awayTeamScore 로 우리 팀 기준을 계산하고, 그 값이 없을 때만 원래 score 를 쓴다.
+    """
+    try:
+        hs, as_ = int(float(e.get("homeTeamScore"))), int(float(e.get("awayTeamScore")))
+    except (TypeError, ValueError):
+        # 팀별 점수가 없는 응답 — 원래 score 는 이긴 팀이 앞이므로 진 경기만 뒤집는다
+        raw = str(e.get("score") or "")
+        m = re.match(r"^(\d+)-(\d+)$", raw.strip())
+        if m and str(e.get("gameResult") or "").upper() == "L" and int(m.group(1)) > int(m.group(2)):
+            return "%s-%s" % (m.group(2), m.group(1)), None, None
+        return raw, None, None
+    if str(e.get("homeTeamId") or "") == str(team_id):
+        mine, theirs = hs, as_
+    elif str(e.get("awayTeamId") or "") == str(team_id):
+        mine, theirs = as_, hs
+    else:  # 팀 id 가 없는 응답 — atVs 로 우리 쪽을 고른다
+        mine, theirs = (hs, as_) if e.get("atVs") == "vs" else (as_, hs)
+    return "%d-%d" % (mine, theirs), mine, theirs
+
+
 def last5_detail(summary, team_id):
-    """ESPN summary 의 lastFiveGames → [{date, opp, ha, score, res, comp}] (최신이 앞)."""
+    """ESPN summary 의 lastFiveGames → [{date, opp, ha, score, res, comp}] (최신이 앞).
+
+    score 는 최근 경기 목록·팀 페이지 경기 목록과 같은 '내 팀-상대' 순서다.
+    """
     for blk in summary.get("lastFiveGames") or []:
         t = blk.get("team") or {}
         if str(t.get("id")) != str(team_id):
@@ -228,12 +339,16 @@ def last5_detail(summary, team_id):
         for e in blk.get("events") or []:
             opp = (e.get("opponent") or {}).get("displayName") or ""
             date = (e.get("gameDate") or "")[:10]
+            score, mine, theirs = last5_score(e, team_id)
+            res = RES_KO.get(str(e.get("gameResult") or "").upper(), "")
+            if not res and mine is not None and theirs is not None:
+                res = "승" if mine > theirs else ("패" if mine < theirs else "무")
             out.append({
                 "date": date,
                 "opp": ko(opp) if opp else "",
                 "ha": HA_KO.get(e.get("atVs") or "vs", "홈"),
-                "score": e.get("score") or "",
-                "res": RES_KO.get(str(e.get("gameResult") or "").upper(), ""),
+                "score": score,
+                "res": res,
                 "comp": short_comp(e.get("competitionName")),
             })
         out.sort(key=lambda r: r["date"], reverse=True)
@@ -315,6 +430,63 @@ def team_results(league, team_id, refresh=False):
         })
     out.sort(key=lambda r: r["date"], reverse=True)
     return out
+
+
+def season_leaders(summary, team_id):
+    """summary 의 leaders 에서 그 팀의 시즌 득점 1위·도움 1위 선수.
+
+    응답 예) leaders[].leaders[].{name: goalsLeaders|assistsLeaders,
+                                   leaders: [{athlete:{id,displayName}, statistics:[...]}]}
+    한 선수가 득점·도움 1위를 모두 하면 한 줄로 합쳐 stats 에 둘 다 적는다.
+    값이 0인 항목(아직 득점 없음)은 표시하지 않는다.
+    """
+    for blk in summary.get("leaders") or []:
+        if str((blk.get("team") or {}).get("id")) != str(team_id):
+            continue
+        team_en = (blk.get("team") or {}).get("displayName") or ""
+        groups = {g.get("name"): g for g in blk.get("leaders") or []}
+        out, seen = [], {}
+        for gname, label in (("goalsLeaders", "득점"), ("assistsLeaders", "도움")):
+            rows = (groups.get(gname) or {}).get("leaders") or []
+            if not rows:
+                continue
+            top = rows[0]
+            ath = top.get("athlete") or {}
+            name = ath.get("displayName") or ath.get("fullName") or ""
+            val = None
+            for s in top.get("statistics") or []:
+                if s.get("name") in ("totalGoals", "goalAssists"):
+                    try:
+                        val = int(float(s.get("value")))
+                    except (TypeError, ValueError):
+                        val = None
+                    break
+            if val is None:  # 통계 배열이 비어 있는 응답 대비 → 'Goals: 6' 표기에서 읽는다
+                m = re.search(r"(?:Goals|Assists):\s*(\d+)", str(top.get("displayValue") or ""))
+                if m:
+                    val = int(m.group(1))
+            if not name or not val:
+                continue
+            aid = str(ath.get("id") or "")
+            key = aid or name
+            text = "%s %d" % (label, val)
+            if key in seen:
+                seen[key]["stats"].append(text)
+                continue
+            item = {"name": name}
+            if aid:
+                item["id"] = aid
+            # 사진: ESPN 이 살아 있으면 그것, 아니면 위키백과/위키데이터/TheSportsDB.
+            # 확인된 얼굴만 넣고, 못 찾으면 photo 키를 빼서 화면이 이니셜로 대체하게 둔다.
+            ph = photo_resolve(name, espn_photo=(HEADSHOT % aid) if aid else "",
+                               club=team_en, cache=_photo_cache())
+            if ph.get("photo"):
+                item["photo"] = ph["photo"]
+            item["stats"] = [text]
+            seen[key] = item
+            out.append(item)
+        return out
+    return []
 
 
 def h2h_block(summary):
@@ -428,14 +600,15 @@ def build_team(comp, side, table, league_short, summary, league, refresh=False):
         fs.append("경기당 평균 %s골을 넣고 %s골을 실점했습니다." % (gf, ga))
     if out.get("last5Detail"):
         r0 = out["last5Detail"][0]
-        fs.append("직전 경기 기록은 %s %s %s %s입니다." % (r0.get("date", "").replace("-", "."),
-                   r0.get("ha", ""), r0.get("opp", ""), r0.get("score", "")))
-    fs.append("부상·결장 명단은 ESPN 축구 데이터에 없어 출전 명단은 경기 전 공식 발표로 확인해야 합니다.")
+        fs.append("직전 경기 기록은 %s %s %s %s %s입니다." % (r0.get("date", "").replace("-", "."),
+                   r0.get("ha", ""), r0.get("opp", ""), r0.get("score", ""), r0.get("res", "")))
+    fs.append("결장 명단은 경기 전 확정 발표로 확인해야 합니다.")
     if fs:
         out["focus"] = " ".join(fs)
 
-    # ESPN 축구 데이터에는 부상·결장 명단이 없다.
-    out["injuryNote"] = "ESPN 축구 데이터에는 부상·결장 명단이 없습니다. 출전 명단은 경기 전 공식 발표를 확인하세요."
+    # 결장 명단은 FotMob 에서 받아 fotmob_injuries.annotate() 가 덮어쓴다.
+    # 여기 남는 문구는 그 단계가 실패했을 때 그대로 화면에 나간다.
+    out["injuryNote"] = "결장 명단을 확인하지 못했습니다."
     return out, st
 
 
@@ -456,7 +629,7 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
             odds["implied"] = imp
     ou = None
     for o in comp.get("odds") or []:
-        if o.get("overUnder") is not None:
+        if o and o.get("overUnder") is not None:
             ou = o["overUnder"]
             break
 
@@ -466,18 +639,10 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
 
     h2h = h2h_block(summary)
 
-    # 흐름 — 실제 전적·순위·최근 흐름·맞대결만
-    def flow_part(t, st):
-        s = "**%s**" % t["name"]
-        if t.get("record"):
-            s += " " + t["record"]
-        if st.get("rank"):
-            s += "(리그 %d위)" % st["rank"]
-        if t.get("streak"):
-            s += ", " + t["streak"]
-        return s
-
-    flow = "%s, %s." % (flow_part(away, away_st), flow_part(home, home_st))
+    # 흐름 — 실제 전적·순위·최근 흐름·맞대결만. 홈 팀을 앞에 두고 홈/원정 라벨을 붙인다.
+    flow = "%s, %s." % (
+        flow_team_text(home["name"], "home", home.get("record"), home_st.get("rank"), home.get("streak")),
+        flow_team_text(away["name"], "away", away.get("record"), away_st.get("rank"), away.get("streak")))
     if h2h and h2h.get("games"):
         g0 = h2h["games"][0]
         flow += " 최근 맞대결은 %s에 열린 %s %s-%s %s 경기입니다." % (
@@ -489,18 +654,18 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
     h_gf, h_ga = per_game(home_st.get("gf"), home_st.get("played")), per_game(home_st.get("ga"), home_st.get("played"))
     bits = []
     if None not in (a_gf, a_ga, h_gf, h_ga):
-        bits.append("두 팀 평균 득점 **%s골 대 %s골**, 평균 실점 %s골 대 %s골" % (a_gf, h_gf, a_ga, h_ga))
+        bits.append(goals_compare_text(home["name"], away["name"], h_gf, a_gf, h_ga, a_ga))
     if h2h and h2h.get("score"):
         bits.append("최근 맞대결 %s" % h2h["score"])
     if odds and odds.get("implied"):
         imp = odds["implied"]
         p = []
-        if imp.get("away") is not None:
-            p.append("%s 승 %s%%" % (away["name"], imp["away"]))
-        if imp.get("draw") is not None:
-            p.append("무 %s%%" % imp["draw"])
         if imp.get("home") is not None:
             p.append("%s 승 %s%%" % (home["name"], imp["home"]))
+        if imp.get("draw") is not None:
+            p.append("무 %s%%" % imp["draw"])
+        if imp.get("away") is not None:
+            p.append("%s 승 %s%%" % (away["name"], imp["away"]))
         bits.append("해외 배당을 확률로 환산하면 " + " · ".join(p))
     if bits:
         watch = ". ".join(bits) + "."
@@ -527,16 +692,28 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
 
     kick = datetime.fromisoformat(start_iso.replace("Z", "+00:00")).astimezone(KST)
     gid = "soccer-%s-%s-%s" % (away["abbr"].lower(), home["abbr"].lower(), day.replace("-", ""))
-    det = {
-        "teams": [away, home],
-        "checkpoints": checks,
-        "note": "일정·전적·순위는 ESPN %s 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다." % updated_at.strftime("%Y-%m-%d %H:%M"),
-    }
+    # 핵심 선수 — 팀별 시즌 득점·도움 1위. 데이터가 없으면 아예 넣지 않는다.
+    key_players = []
+    for side_key, team_obj in (("home", home), ("away", away)):
+        tid = str(((sides[side_key].get("team") or {}).get("id")) or "")
+        plist = season_leaders(summary, tid) if tid else []
+        if plist:
+            key_players.append({"side": side_key, "team": team_obj["name"], "players": plist})
+
+    det = {"teams": [away, home]}
+    if key_players:  # 홈 팀 먼저
+        det["keyPlayers"] = key_players
+    det["checkpoints"] = checks
+    det["note"] = "일정·전적·순위는 ESPN %s 기준입니다. 부상·결장 정보는 ESPN 축구 데이터에 없습니다." % updated_at.strftime("%Y-%m-%d %H:%M")
+    # 위 문장은 fotmob_injuries.annotate() 가 "부상·결장 명단은 FotMob … 기준입니다"로 바꾼다.
     if h2h:
         det["h2h"] = h2h
     game = {
         "id": gid,
         "espnId": str(event.get("id") or ""),
+        # FotMob 경기를 짝지을 때만 쓰는 임시 키. data.js 에 쓰기 전에 지운다.
+        "_en": {"away": ((sides["away"].get("team") or {}).get("displayName") or ""),
+                "home": ((sides["home"].get("team") or {}).get("displayName") or ""),},
         "sport": "soccer",
         "league": league_short,
         "leagueFull": league_full,
@@ -619,6 +796,8 @@ def main():
                     help="ESPN 리그 코드(쉼표). 기본: " + ",".join(DEFAULT_LEAGUES))
     ap.add_argument("--write", action="store_true", help="data.js 를 고친다")
     ap.add_argument("--refresh", action="store_true", help="캐시를 무시하고 다시 받는다")
+    ap.add_argument("--no-injuries", dest="no_injuries", action="store_true",
+                    help="FotMob 결장 명단 조회를 건너뛴다")
     args = ap.parse_args()
 
     if args.dfrom or args.dto:
@@ -684,6 +863,15 @@ def main():
     for day in days:
         by_day[day].sort(key=lambda g: (g["start"], g["id"]))
 
+    # 부상·결장 명단 — ESPN 축구에는 없으므로 FotMob 에서 받아 팀 블록에 채운다.
+    if not args.no_injuries:
+        stats = annotate_injuries([g for gs in by_day.values() for g in gs], refresh=args.refresh)
+        print("· 부상·결장 명단(FotMob): %d경기 중 %d경기 짝짓기, %d경기 명단 있음, %d경기 비어 있음, %d경기 못 찾음, 끝난 경기 선수 평점 %d개" % (
+            stats["total"], stats["matched"], stats["ok"], stats["empty"], stats["no_match"], stats["rated"]))
+    for gs in by_day.values():
+        for g in gs:
+            g.pop("_en", None)
+
     dump = {day: games for day, games in by_day.items() if games}
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump({"generatedAt": now.isoformat(timespec="seconds"),
@@ -721,6 +909,8 @@ def main():
     print("data.js 저장 완료 (축구 %d경기, 기준 %s KST)%s" % (
         sum(len(v) for v in by_day.values()), now.strftime("%Y-%m-%d %H:%M"),
         (", 날짜 블록 추가: " + ", ".join(added)) if added else ""))
+    if _PHOTO_CACHE is not None:
+        save_photo_cache(_PHOTO_CACHE)
 
 
 if __name__ == "__main__":

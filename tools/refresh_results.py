@@ -9,7 +9,7 @@
     ESPN summary 를 다시 받아 상태·최종 스코어·쿼터 스코어·주요 선수 기록을 갱신합니다.
   · 경기 전 분석(흐름·전적·결장·관전 포인트·배당)은 건드리지 않습니다.
   · 배구(V리그)는 KOVO 일정 응답에 결과가 함께 오므로 이 스크립트는 손대지 않습니다.
-    (필요하면 fetch_volley.py 로 다시 생성)
+    (fetch_volley.py 가 끝난 경기의 스코어·세트 스코어를 함께 넣습니다)
 
 소요 시간: 경기 1건당 요청 1회(캐시 없을 때). 경기 10건이면 20초 안팎입니다.
 푸시: data.js 가 바뀌므로 git commit + push 가 필요합니다(자동 푸시는 하지 않습니다).
@@ -25,9 +25,32 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from photo_sources import load_cache as load_photo_cache, resolve as photo_resolve, save_cache as save_photo_cache  # noqa: E402
+from fotmob_injuries import add_ratings as add_fotmob_ratings  # noqa: E402
+
 ROOT = os.path.dirname(HERE)
 DATA_JS = os.environ.get("CLUTCH_DATA_JS") or os.path.join(ROOT, "data.js")
 RETRIES = int(os.environ.get("CLUTCH_RETRIES") or 3)
+NBA_HEADSHOT = "https://a.espncdn.com/i/headshots/nba/players/full/%s.png"
+
+
+def _headshot(ath, sport="basketball", club="", cache=None):
+    """박스스코어 선수 객체 → 얼굴 사진 URL.
+
+    농구는 ESPN headshot(없으면 CDN 경로), 축구는 ESPN 축구 CDN 이 대부분 404 라
+    photo_sources 로 위키백과/위키데이터/TheSportsDB 까지 확인해 쓴다.
+    """
+    a = (ath or {}).get("athlete") or {}
+    if sport == "soccer":
+        name = a.get("displayName") or a.get("fullName") or ""
+        if not name:
+            return ""
+        return photo_resolve(name, club=club, cache=cache).get("photo") or ""
+    href = (a.get("headshot") or {}).get("href")
+    if href:
+        return href
+    return NBA_HEADSHOT % a["id"] if a.get("id") else ""
 KST = timezone(timedelta(hours=9))
 
 SUM = {
@@ -167,10 +190,20 @@ def main():
         if lines:
             res["lines"] = lines
         res["winner"] = "away" if a_sc > h_sc else ("home" if h_sc > a_sc else None)
+        # 끝난 축구 경기는 FotMob 이 경기 평점을 준다 — 주요 선수 옆에 붙인다(실패해도 결과는 남긴다).
+        if g["sport"] == "soccer":
+            try:
+                rated = add_fotmob_ratings(g)
+                if rated:
+                    print("  · 평점 %d명 (FotMob)" % rated)
+            except Exception as e:
+                print("  ! 평점 조회 실패: %s" % e)
         # 주요 선수 기록
         tops = []
+        photo_cache = load_photo_cache() if g["sport"] == "soccer" else None
         for team in ((d.get("boxscore") or {}).get("players") or []):
             abbr = ((team.get("team") or {}).get("abbreviation")) or ""
+            team_name = ((team.get("team") or {}).get("displayName")) or ""
             for stt in team.get("statistics") or []:
                 labels = stt.get("labels") or []
                 for ath in stt.get("athletes") or []:
@@ -181,10 +214,14 @@ def main():
                         pts = 0
                     if pts <= 0:
                         continue
+                    photo = _headshot(ath, g["sport"], team_name, photo_cache)
                     tops.append({"name": ((ath.get("athlete") or {}).get("displayName") or ""),
                                  "team": abbr, "min": stats.get("MIN"), "pts": pts,
-                                 "reb": stats.get("REB"), "ast": stats.get("AST")})
+                                 "reb": stats.get("REB"), "ast": stats.get("AST"),
+                                 **({"photo": photo} if photo else {})})
         tops.sort(key=lambda x: x["pts"], reverse=True)
+        if photo_cache is not None:
+            save_photo_cache(photo_cache)
         if tops:
             res["top"] = tops[:6]
         # details 앞에 결과를 넣는다(키 순서 유지)

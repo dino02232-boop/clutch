@@ -1,0 +1,233 @@
+/* =============================================================
+   CLUTCH — standings.html 전용 스타일
+   색·여백·폰트는 styles.css 의 변수(--bg, --card, --line, --accent …)를 그대로 씁니다.
+   390px 기준, 320px 까지 가로 스크롤 없이 읽히게 맞췄습니다.
+   ============================================================= */
+
+/* 팀 순위 / 개인 순위 전환 — 헤더 안의 2분할 세그먼트 */
+.st-seg {
+  display: flex;
+  gap: 3px;
+  margin-top: 8px;
+  padding: 3px;
+  background: rgba(17, 24, 39, .055);
+  border-radius: 999px;
+}
+.st-seg button {
+  appearance: none;
+  flex: 1 1 0;
+  min-width: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  padding: 7px 0;
+  cursor: pointer;
+  transition: background .18s, color .18s, transform .15s;
+}
+.st-seg button[aria-selected="true"] { background: #111827; color: #FFFFFF; }
+.st-seg button:active { transform: scale(.97); }
+.st-seg button[disabled] { color: rgba(17, 24, 39, .32); cursor: default; }
+.st-seg button:focus-visible { outline: 2px solid rgba(14, 159, 110, .7); outline-offset: 2px; }
+
+/* 순위표 블록 */
+.st-block { margin: 4px 0 20px; }
+.st-block:last-child { margin-bottom: 6px; }
+
+.st-block-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 6px;
+  min-width: 0;
+}
+.st-block-head h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--text);
+}
+.st-block-head .st-meta {
+  flex: 0 0 auto;
+  font-size: 10px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 표 — table-layout:fixed 로 열 폭을 고정해 320px 에서도 넘치지 않게 */
+.st-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+.st-table caption { caption-side: top; text-align: left; }
+.st-table th {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--text-3);
+  letter-spacing: -.01em;
+  padding: 5px 2px 6px;
+  text-align: right;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--line);
+}
+.st-table th.rk, .st-table th.c-rk { text-align: right; }
+.st-table th.l { text-align: left; }
+.st-table td {
+  padding: 8px 2px;
+  font-size: 12px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid rgba(17, 24, 39, .055);
+}
+.st-table tbody tr:last-child td { border-bottom: 0; }
+.st-table td.num { text-align: right; color: var(--text-2); }
+.st-table td.rk {
+  width: 26px;
+  text-align: right;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--text-3);
+}
+.st-table td.rk.top { color: var(--accent); }
+.st-table td.pt { font-weight: 800; color: var(--text); }
+
+/* ESPN 순위 구간 띠 — 왼쪽 3px 색 + 아주 옅은 바탕(색은 JS 가 넣는다) */
+.st-table tr.zone > td:first-child { box-shadow: inset 3px 0 0 var(--zc, transparent); }
+
+/* 팀 칸 */
+.st-team { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.st-team b {
+  min-width: 0;
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tlogo {
+  position: relative;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(17, 24, 39, .06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 6.5px;
+  font-weight: 800;
+  color: var(--text-3);
+  line-height: 1;
+  user-select: none;
+}
+.tlogo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #FFFFFF;
+}
+
+/* 개인 순위 — 선수(얼굴 + 이름 + 소속팀) 한 칸 */
+.st-lb td.rec {
+  width: 72px;
+  text-align: right;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.pl-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.pl-row .pl-face { flex: 0 0 26px; }
+.pl-nm { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+.pl-nm b {
+  font-size: 12.5px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pl-nm small {
+  margin-top: 2px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 순위 구간 범례 */
+.st-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  margin: -10px 0 16px;
+  font-size: 10px;
+  color: var(--text-3);
+}
+.st-legend .lg { display: inline-flex; align-items: center; gap: 4px; }
+.st-legend .lg i {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* 열 폭 — 숫자 열은 px 로 고정, 팀/선수 열이 남는 폭을 가져간다
+   (표 클래스는 st-tbl-team: .st-team 은 팀 칸 flex 라 이름을 나눴다) */
+.st-tbl-team .c-rk { width: 26px; }
+.st-tbl-team .c-gp { width: 26px; }
+.st-tbl-team .c-w,
+.st-tbl-team .c-d,
+.st-tbl-team .c-l { width: 21px; }
+.st-tbl-team .c-gd { width: 32px; }
+.st-tbl-team .c-pt { width: 31px; }
+/* NBA 득실은 +157·-207 처럼 네 자리라 조금 더 넓게 (넘치면 …로 잘린다) */
+.st-tbl-team .c-pct { width: 42px; }
+.st-tbl-team .c-set { width: 44px; }
+.st-tbl-team .c-gd.nba,
+.st-tbl-team.is-nba .c-gd { width: 38px; }
+.st-lb .c-rk { width: 24px; }
+.st-lb .c-rec { width: 72px; }
+
+/* 좁은 화면 — 살짝 줄여 320px 에서도 팀명이 두 글자 이상 보이게 */
+@media (max-width: 360px) {
+  .st-table th { font-size: 9px; }
+  .st-table td { font-size: 11.5px; padding: 7px 1px; }
+  .st-table td.rk { width: 22px; font-size: 11px; }
+  .st-team b { font-size: 11.5px; }
+  .st-tbl-team .c-rk { width: 22px; }
+  .st-tbl-team .c-gp { width: 24px; }
+  .st-tbl-team .c-w,
+  .st-tbl-team .c-d,
+  .st-tbl-team .c-l { width: 19px; }
+  .st-tbl-team .c-gd { width: 28px; }
+  .st-tbl-team .c-pt { width: 28px; }
+  .st-tbl-team .c-pct { width: 36px; }
+  .st-tbl-team .c-set { width: 40px; }
+  .st-tbl-team.is-nba .c-gd { width: 34px; }
+  .st-lb .c-rk { width: 22px; }
+  /* '13.9리바운드' 가 …로 잘리지 않게 */
+  .st-lb .c-rec { width: 74px; }
+  .tlogo { flex-basis: 16px; width: 16px; height: 16px; }
+  .pl-row .pl-face { flex-basis: 24px; }
+}
+
+/* 헤더의 순위 링크(index.html)와 같은 톤 — 이 페이지의 목록 제목 */
+.listhead h1 { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
