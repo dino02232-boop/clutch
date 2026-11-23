@@ -3108,6 +3108,19 @@
   }
 
   // 한 번에 한 경기만 펼친다.
+  // 펼친 경기의 맨 윗줄이 화면 위쪽에 오게 맞춘다(위 카드가 접히는 애니메이션 뒤에 한 번 더).
+  function scrollRowToTop(item) {
+    var go = function () {
+      if (!item.classList.contains("open")) return;
+      var head = document.querySelector("header.top");
+      var offset = (head ? head.getBoundingClientRect().height : 60) + 6;
+      var top = item.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo(0, Math.max(0, top));
+    };
+    window.requestAnimationFrame(go);
+    window.setTimeout(go, 400);
+  }
+
   function toggleItem(item) {
     var id = item.dataset.id;
     var willOpen = !item.classList.contains("open");
@@ -3118,6 +3131,7 @@
 
     if (willOpen) {
       openItem(item);
+      scrollRowToTop(item);
       state.openId = id;
       writeHash(stateRoutePrefix() + "/" + id, true);
     } else {
