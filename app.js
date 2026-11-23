@@ -2902,7 +2902,6 @@
       "</div>" +
       '<ul class="form-list">' + formRow("home", g.home, g) + formRow("away", g.away, g) + "</ul>";
 
-    if (tags) preview += '<div class="tags">' + tags + "</div>";
 
     var extraRows = rows.filter(function (r) { return r.kind !== "flow"; });
     if (extraRows.length) {
