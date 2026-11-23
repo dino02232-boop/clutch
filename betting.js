@@ -50,7 +50,7 @@
     if(el('betOdds'))el('betOdds').textContent=mult.toFixed(2)+'배';
     var stake=Number(el('betStake')&&el('betStake').value)||0;
     if(el('betReturn'))el('betReturn').textContent=fmt(Math.floor(stake*mult))+'P';
-    if(el('betBalance'))el('betBalance').textContent=me?fmt(balance)+'P':'';
+    if(el('betBalance'))el('betBalance').textContent=me?((window.clutchNickname||me.displayName||'회원')+' · '+fmt(balance)+'P'):'';
     if(el('betSupport'))el('betSupport').hidden=!(me&&balance<100);
     var submit=el('betSubmit'); if(submit)submit.textContent=me?'베팅 확정':'로그인 후 베팅 확정';
     if(el('betDockTitle'))el('betDockTitle').textContent='🧾 베팅 슬립'+(slip.length?' ('+slip.length+')':'');
