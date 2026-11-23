@@ -1009,9 +1009,9 @@
     var lines = [];
     if (ml.away != null || ml.home != null || ml.draw != null) {
       // 홈을 먼저, 그다음 무승부, 원정 순. 핸디캡·언오버와 같은 칸 모양으로 맞춘다.
-      var mlRows = oddsRowHTML("홈 승", ml.home, g, "moneyline", "home", "", (g.home && g.home.name) || "");
+      var mlRows = oddsRowHTML("홈 승", ml.home, g, "moneyline", "home");
       if (ml.draw != null) mlRows += oddsRowHTML("무승부", ml.draw, g, "moneyline", "draw");
-      mlRows += oddsRowHTML("원정 승", ml.away, g, "moneyline", "away", "", (g.away && g.away.name) || "");
+      mlRows += oddsRowHTML("원정 승", ml.away, g, "moneyline", "away");
       lines.push('<span>승부식</span><ul class="o-list">' + mlRows + '</ul>');
     }
     if (o.spread && (o.spread.homeLine || o.spread.awayLine)) {
