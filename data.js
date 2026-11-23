@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-23T12:51:54+09:00",
+  updatedAt: "2026-11-23T14:02:55+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -10904,7 +10904,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 12:51 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 14:02 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -11258,7 +11258,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, 흥국생명(원정) 2승 4패·5위·승점 6."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 12:51 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-23 14:02 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-22 END */,
@@ -29305,14 +29305,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-23 06:13 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-bos-gsw-20261123",
           "espnId": "401910035",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-23T10:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Chase Center",
           "odds": {
             "provider": "DraftKings",
@@ -29377,6 +29377,83 @@ window.CLUTCH_DATA = {
               "text": "**골든스테이트 워리어스**(홈) 8승 8패(홈 6승 1패, 최근 5경기 0승 5패, 5연패), **보스턴 셀틱스**(원정) 11승 5패(원정 5승 4패, 최근 5경기 2승 3패, 3연패). 직전 경기(11.22) **보스턴 셀틱스**는 새크라멘토 킹스에 96-97로 졌고, Paul George 19점·8리바운드·5어시스트, Mike Conley 19점·4리바운드·2어시스트를 기록했습니다. 직전 경기(11.20) **골든스테이트 워리어스**는 멤피스 그리즐리스에 98-126로 졌고, Charles Bassey 16점·13리바운드·1어시스트, Brandin Podziemski 15점·3리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 87,
+            "homeScore": 88,
+            "lines": {
+              "away": [
+                "20",
+                "22",
+                "33",
+                "12"
+              ],
+              "home": [
+                "27",
+                "17",
+                "25",
+                "19"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Jayson Tatum",
+                "team": "BOS",
+                "min": "38",
+                "pts": 27,
+                "reb": "10",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png"
+              },
+              {
+                "name": "Brandin Podziemski",
+                "team": "GS",
+                "min": "38",
+                "pts": 18,
+                "reb": "7",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png"
+              },
+              {
+                "name": "Derrick White",
+                "team": "BOS",
+                "min": "32",
+                "pts": 14,
+                "reb": "3",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3078576.png"
+              },
+              {
+                "name": "Charles Bassey",
+                "team": "GS",
+                "min": "26",
+                "pts": 13,
+                "reb": "9",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397886.png"
+              },
+              {
+                "name": "Gui Santos",
+                "team": "GS",
+                "min": "23",
+                "pts": 13,
+                "reb": "5",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4997536.png"
+              },
+              {
+                "name": "Yaxel Lendeborg",
+                "team": "GS",
+                "min": "34",
+                "pts": 12,
+                "reb": "8",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
