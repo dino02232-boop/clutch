@@ -13,6 +13,33 @@ service cloud.firestore {
         && request.resource.data.winRate == 0
         && request.resource.data.maxOdds == 0;
     }
+    /* ── 1:1 쪽지 ─────────────────────────────────────────────
+       받은 쪽지는 받는 사람의 inbox, 보낸 쪽지는 보낸 사람의 outbox 에 같은 내용으로 한 번에(batch)
+       기록한다. 두 문서 모두 당사자만 읽을 수 있고, 고칠 수 있는 것은 받는 사람의 '읽음 표시'
+       (readAt) 하나뿐이다. 스팸 방지는 ①자기 자신에게 보내기 금지 ②본문 500자 제한
+       ③보낸 사람 문서의 lastMsgAt 을 같은 batch 에서 갱신하게 해 3초에 한 통으로 제한한다. */
+    function msgBodyOk(data) {
+      return data.keys().hasOnly(['fromUid','fromName','toUid','toName','body','createdAt','readAt'])
+        && data.fromUid is string
+        && data.toUid is string
+        && data.body is string
+        && data.body.size() > 0
+        && data.body.size() <= 500
+        && data.fromName is string
+        && data.fromName.size() > 0
+        && data.fromName.size() <= 40
+        && data.toName is string
+        && data.toName.size() <= 40
+        && data.createdAt == request.time
+        && data.readAt == null;
+    }
+    // 같은 batch 에서 보낸 사람 users/{uid}.lastMsgAt 을 지금 시각으로 올려야 하고,
+    // 그 직전 값은 3초 이상 지나 있어야 한다(연속 전송 제한).
+    function msgThrottleOk(uid) {
+      let prev = get(/databases/$(database)/documents/users/$(uid)).data;
+      return getAfter(/databases/$(database)/documents/users/$(uid)).data.lastMsgAt == request.time
+        && (!('lastMsgAt' in prev) || prev.lastMsgAt <= request.time - duration.value(3, 's'));
+    }
     function matchingNewBet(uid) {
       let bet = getAfter(/databases/$(database)/documents/bets/$(uid)/items/$(request.resource.data.lastBetId));
       return request.resource.data.lastBetId is string
@@ -42,8 +69,49 @@ service cloud.firestore {
         || (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName','photoURL'])
           && request.resource.data.displayName is string
           && request.resource.data.displayName.size() <= 80)
+        || (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['lastMsgAt'])
+          && request.resource.data.lastMsgAt == request.time)
       );
       allow delete: if false;
+
+      /* ── 쪽지함 ────────────────────────────────────────────
+         inbox: 받는 사람만 읽고, 보내는 사람이 자기 이름으로만 넣을 수 있다(자기 자신 제외).
+         outbox: 보낸 사람만 읽고, 받는 사람은 readAt 만 바꿀 수 있다. */
+      match /inbox/{msgId} {
+        allow read: if owner(uid);
+        allow create: if signedIn()
+          && request.auth.uid != uid
+          && request.resource.data.fromUid == request.auth.uid
+          && request.resource.data.toUid == uid
+          && msgBodyOk(request.resource.data)
+          && msgThrottleOk(request.auth.uid);
+        allow update: if owner(uid)
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['readAt'])
+          && request.resource.data.readAt == request.time;
+        allow delete: if false;
+      }
+      match /outbox/{msgId} {
+        allow read: if owner(uid);
+        allow create: if owner(uid)
+          && request.resource.data.fromUid == uid
+          && request.resource.data.toUid != uid
+          && msgBodyOk(request.resource.data)
+          && msgThrottleOk(uid);
+        allow update: if signedIn()
+          && request.auth.uid == resource.data.toUid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['readAt'])
+          && request.resource.data.readAt == request.time;
+        allow delete: if false;
+      }
+      /* 게시판 읽음 표시 — 그 사람만 읽고 쓰는 작은 문서 하나(읽은 글 ID 목록). */
+      match /state/{docId} {
+        allow read: if owner(uid);
+        allow create, update: if owner(uid)
+          && request.resource.data.keys().hasOnly(['ids','updatedAt'])
+          && request.resource.data.ids is list
+          && request.resource.data.ids.size() <= 500;
+        allow delete: if owner(uid);
+      }
     }
     match /bets/{uid}/items/{betId} {
       allow read: if owner(uid);
