@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-24T23:15:00+09:00
+   생성 시각(기준): 2026-11-25T00:29:40+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-24T23:15:00+09:00",
+  "updated": "2026-11-25T00:29:40+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4984,6 +4984,17 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 12,
+              "name": "Scottie Barnes",
+              "id": "4433134",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433134.png",
+              "team": "토론토 랩터스",
+              "teamAbbr": "TOR",
+              "value": 24.833334,
+              "display": "24.8점",
+              "played": 12
+            },
+            {
+              "rank": 13,
               "name": "Donovan Mitchell",
               "id": "3908809",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
@@ -4992,17 +5003,6 @@ window.CLUTCH_STANDINGS = {
               "value": 24.705883,
               "display": "24.7점",
               "played": 17
-            },
-            {
-              "rank": 13,
-              "name": "Austin Reaves",
-              "id": "4066457",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066457.png",
-              "team": "LA 레이커스",
-              "teamAbbr": "LAL",
-              "value": 24.666666,
-              "display": "24.7점",
-              "played": 12
             },
             {
               "rank": 14,
@@ -5107,9 +5107,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
               "team": "새크라멘토 킹스",
               "teamAbbr": "SAC",
-              "value": 13.5,
-              "display": "13.5리바운드",
-              "played": 16
+              "value": 13.6,
+              "display": "13.6리바운드",
+              "played": 15
             },
             {
               "rank": 3,
@@ -5135,17 +5135,6 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 5,
-              "name": "Donovan Clingan",
-              "id": "5105565",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5105565.png",
-              "team": "포틀랜드 트레일블레이저스",
-              "teamAbbr": "POR",
-              "value": 11.294118,
-              "display": "11.3리바운드",
-              "played": 17
-            },
-            {
-              "rank": 6,
               "name": "Nikola Jokic",
               "id": "3112335",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
@@ -5156,48 +5145,59 @@ window.CLUTCH_STANDINGS = {
               "played": 15
             },
             {
-              "rank": 7,
-              "name": "Walker Kessler",
-              "id": "4433136",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433136.png",
-              "team": "LA 레이커스",
-              "teamAbbr": "LAL",
-              "value": 10.764706,
-              "display": "10.8리바운드",
-              "played": 17
-            },
-            {
-              "rank": 8,
+              "rank": 6,
               "name": "Rudy Gobert",
               "id": "3032976",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032976.png",
               "team": "미네소타 팀버울브스",
               "teamAbbr": "MIN",
-              "value": 10.588235,
-              "display": "10.6리바운드",
-              "played": 17
+              "value": 10.875,
+              "display": "10.9리바운드",
+              "played": 16
+            },
+            {
+              "rank": 7,
+              "name": "Donovan Clingan",
+              "id": "5105565",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5105565.png",
+              "team": "포틀랜드 트레일블레이저스",
+              "teamAbbr": "POR",
+              "value": 10.875,
+              "display": "10.9리바운드",
+              "played": 16
+            },
+            {
+              "rank": 8,
+              "name": "Walker Kessler",
+              "id": "4433136",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433136.png",
+              "team": "LA 레이커스",
+              "teamAbbr": "LAL",
+              "value": 10.6875,
+              "display": "10.7리바운드",
+              "played": 16
             },
             {
               "rank": 9,
-              "name": "Moussa Diabate",
-              "id": "4433249",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433249.png",
-              "team": "샬럿 호네츠",
-              "teamAbbr": "CHA",
-              "value": 10.571428,
-              "display": "10.6리바운드",
-              "played": 14
-            },
-            {
-              "rank": 10,
               "name": "Isaiah Hartenstein",
               "id": "4222252",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4222252.png",
               "team": "오클라호마시티 썬더",
               "teamAbbr": "OKC",
-              "value": 10.555555,
+              "value": 10.6470585,
               "display": "10.6리바운드",
-              "played": 18
+              "played": 17
+            },
+            {
+              "rank": 10,
+              "name": "Moussa Diabate",
+              "id": "4433249",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433249.png",
+              "team": "샬럿 호네츠",
+              "teamAbbr": "CHA",
+              "value": 10.615385,
+              "display": "10.6리바운드",
+              "played": 13
             },
             {
               "rank": 11,
@@ -5217,9 +5217,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png",
               "team": "휴스턴 로키츠",
               "teamAbbr": "HOU",
-              "value": 9.1875,
-              "display": "9.2리바운드",
-              "played": 16
+              "value": 9.266666,
+              "display": "9.3리바운드",
+              "played": 15
             },
             {
               "rank": 13,
@@ -5245,17 +5245,6 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 15,
-              "name": "Ivica Zubac",
-              "id": "4017837",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4017837.png",
-              "team": "인디애나 페이서스",
-              "teamAbbr": "IND",
-              "value": 9.076923,
-              "display": "9.1리바운드",
-              "played": 13
-            },
-            {
-              "rank": 16,
               "name": "Joel Embiid",
               "id": "3059318",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png",
@@ -5263,6 +5252,17 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "PHI",
               "value": 8.928572,
               "display": "8.9리바운드",
+              "played": 14
+            },
+            {
+              "rank": 16,
+              "name": "Jarrett Allen",
+              "id": "4066328",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066328.png",
+              "team": "클리블랜드 캐벌리어스",
+              "teamAbbr": "CLE",
+              "value": 8.714286,
+              "display": "8.7리바운드",
               "played": 14
             },
             {
@@ -5278,6 +5278,17 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 18,
+              "name": "Ivica Zubac",
+              "id": "4017837",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4017837.png",
+              "team": "인디애나 페이서스",
+              "teamAbbr": "IND",
+              "value": 8.583333,
+              "display": "8.6리바운드",
+              "played": 12
+            },
+            {
+              "rank": 19,
               "name": "Wendell Carter Jr.",
               "id": "4277847",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277847.png",
@@ -5288,26 +5299,15 @@ window.CLUTCH_STANDINGS = {
               "played": 16
             },
             {
-              "rank": 19,
-              "name": "Jarrett Allen",
-              "id": "4066328",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066328.png",
-              "team": "클리블랜드 캐벌리어스",
-              "teamAbbr": "CLE",
-              "value": 8.4,
-              "display": "8.4리바운드",
-              "played": 15
-            },
-            {
               "rank": 20,
               "name": "Naz Reid",
               "id": "4396971",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396971.png",
               "team": "샬럿 호네츠",
               "teamAbbr": "CHA",
-              "value": 8.3125,
-              "display": "8.3리바운드",
-              "played": 16
+              "value": 8.466666,
+              "display": "8.5리바운드",
+              "played": 15
             }
           ]
         },
@@ -5324,9 +5324,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871145.png",
               "team": "시카고 불스",
               "teamAbbr": "CHI",
-              "value": 9.3529415,
-              "display": "9.4어시스트",
-              "played": 17
+              "value": 9.25,
+              "display": "9.2어시스트",
+              "played": 16
             },
             {
               "rank": 2,
@@ -5385,25 +5385,25 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 7,
-              "name": "Luka Doncic",
-              "id": "3945274",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
-              "team": "LA 레이커스",
-              "teamAbbr": "LAL",
-              "value": 7.6875,
-              "display": "7.7어시스트",
-              "played": 16
-            },
-            {
-              "rank": 8,
               "name": "Andrew Nembhard",
               "id": "4395712",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png",
               "team": "인디애나 페이서스",
               "teamAbbr": "IND",
-              "value": 7.571429,
-              "display": "7.6어시스트",
-              "played": 14
+              "value": 7.6923075,
+              "display": "7.7어시스트",
+              "played": 13
+            },
+            {
+              "rank": 8,
+              "name": "Luka Doncic",
+              "id": "3945274",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
+              "team": "LA 레이커스",
+              "teamAbbr": "LAL",
+              "value": 7.6666665,
+              "display": "7.7어시스트",
+              "played": 15
             },
             {
               "rank": 9,
@@ -5412,12 +5412,23 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png",
               "team": "새크라멘토 킹스",
               "teamAbbr": "SAC",
-              "value": 7.1764708,
-              "display": "7.2어시스트",
-              "played": 17
+              "value": 7.375,
+              "display": "7.4어시스트",
+              "played": 16
             },
             {
               "rank": 10,
+              "name": "Keyonte George",
+              "id": "4433627",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
+              "team": "유타 재즈",
+              "teamAbbr": "UTAH",
+              "value": 7.0588236,
+              "display": "7.1어시스트",
+              "played": 17
+            },
+            {
+              "rank": 11,
               "name": "Alperen Sengun",
               "id": "4871144",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png",
@@ -5425,10 +5436,10 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "HOU",
               "value": 7.0,
               "display": "7.0어시스트",
-              "played": 16
+              "played": 15
             },
             {
-              "rank": 11,
+              "rank": 12,
               "name": "Jalen Johnson",
               "id": "4701230",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png",
@@ -5439,18 +5450,18 @@ window.CLUTCH_STANDINGS = {
               "played": 14
             },
             {
-              "rank": 12,
-              "name": "Keyonte George",
-              "id": "4433627",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
-              "team": "유타 재즈",
-              "teamAbbr": "UTAH",
-              "value": 6.7777777,
+              "rank": 13,
+              "name": "LeBron James",
+              "id": "1966",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png",
+              "team": "필라델피아 세븐티식서스",
+              "teamAbbr": "PHI",
+              "value": 6.769231,
               "display": "6.8어시스트",
-              "played": 18
+              "played": 13
             },
             {
-              "rank": 13,
+              "rank": 14,
               "name": "Jayson Tatum",
               "id": "4065648",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
@@ -5461,26 +5472,15 @@ window.CLUTCH_STANDINGS = {
               "played": 15
             },
             {
-              "rank": 14,
+              "rank": 15,
               "name": "Darius Garland",
               "id": "4396907",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
               "team": "LA 클리퍼스",
               "teamAbbr": "LAC",
-              "value": 6.5625,
-              "display": "6.6어시스트",
-              "played": 16
-            },
-            {
-              "rank": 15,
-              "name": "LeBron James",
-              "id": "1966",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png",
-              "team": "필라델피아 세븐티식서스",
-              "teamAbbr": "PHI",
-              "value": 6.5,
+              "value": 6.4666667,
               "display": "6.5어시스트",
-              "played": 14
+              "played": 15
             },
             {
               "rank": 16,
@@ -5500,9 +5500,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432241.png",
               "team": "토론토 랩터스",
               "teamAbbr": "TOR",
-              "value": 6.2941175,
+              "value": 6.3125,
               "display": "6.3어시스트",
-              "played": 17
+              "played": 16
             },
             {
               "rank": 18,
@@ -5522,20 +5522,20 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3992.png",
               "team": "클리블랜드 캐벌리어스",
               "teamAbbr": "CLE",
-              "value": 6.1764708,
+              "value": 6.25,
               "display": "6.2어시스트",
-              "played": 17
+              "played": 16
             },
             {
               "rank": 20,
-              "name": "Stephon Castle",
-              "id": "4845367",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png",
-              "team": "샌안토니오 스퍼스",
-              "teamAbbr": "SA",
-              "value": 6.1666665,
-              "display": "6.2어시스트",
-              "played": 18
+              "name": "Immanuel Quickley",
+              "id": "4395724",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395724.png",
+              "team": "토론토 랩터스",
+              "teamAbbr": "TOR",
+              "value": 6.0,
+              "display": "6.0어시스트",
+              "played": 14
             }
           ]
         }
