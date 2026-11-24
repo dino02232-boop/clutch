@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-24T12:50:06+09:00",
+  updatedAt: "2026-11-24T13:30:24+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -27620,7 +27620,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 4패·6위·승점 4, 대한항공(원정) 2승 3패·5위·승점 7."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 12:49 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 13:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27926,7 +27926,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 2패·4위·승점 8, GS칼텍스(원정) 4승 1패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 12:49 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 13:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
@@ -32256,14 +32256,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-24 06:16 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-lac-hou-20261124",
           "espnId": "401910043",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-24T10:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Toyota Center (Houston)",
           "odds": {
             "provider": "DraftKings",
@@ -32328,6 +32328,83 @@ window.CLUTCH_DATA = {
               "text": "**휴스턴 로키츠**(홈) 12승 5패(홈 7승 1패, 최근 5경기 3승 2패), **LA 클리퍼스**(원정) 4승 11패(원정 0승 7패, 최근 5경기 2승 3패, 3연패). 직전 경기(11.22) **LA 클리퍼스**는 댈러스 매버릭스에 100-110로 졌고, Brook Lopez 21점·6리바운드·0어시스트, Rui Hachimura 19점·8리바운드·1어시스트를 기록했습니다. 직전 경기(11.21) **휴스턴 로키츠**는 덴버 너기츠에 124-133로 졌고, Alperen Sengun 28점·11리바운드·10어시스트, Fred VanVleet 25점·1리바운드·9어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 104,
+            "homeScore": 116,
+            "lines": {
+              "away": [
+                "15",
+                "28",
+                "32",
+                "29"
+              ],
+              "home": [
+                "25",
+                "22",
+                "38",
+                "31"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Kevin Durant",
+                "team": "HOU",
+                "min": "33",
+                "pts": 32,
+                "reb": "9",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3202.png"
+              },
+              {
+                "name": "Darius Garland",
+                "team": "LAC",
+                "min": "34",
+                "pts": 26,
+                "reb": "1",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png"
+              },
+              {
+                "name": "Alperen Sengun",
+                "team": "HOU",
+                "min": "31",
+                "pts": 20,
+                "reb": "8",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4871144.png"
+              },
+              {
+                "name": "Amen Thompson",
+                "team": "HOU",
+                "min": "28",
+                "pts": 20,
+                "reb": "4",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684740.png"
+              },
+              {
+                "name": "Rui Hachimura",
+                "team": "LAC",
+                "min": "29",
+                "pts": 19,
+                "reb": "3",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066648.png"
+              },
+              {
+                "name": "Brandon Ingram",
+                "team": "LAC",
+                "min": "27",
+                "pts": 16,
+                "reb": "7",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3913176.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {

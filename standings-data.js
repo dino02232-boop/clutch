@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-24T12:44:22+09:00
+   생성 시각(기준): 2026-11-24T13:30:23+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-24T12:44:22+09:00",
+  "updated": "2026-11-24T13:30:23+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4673,6 +4673,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 4,
+              "team": "휴스턴 로키츠",
+              "abbr": "HOU",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+              "played": 18,
+              "win": 13,
+              "draw": null,
+              "loss": 5,
+              "points": null,
+              "diff": 142,
+              "pct": ".722",
+              "gb": "1.5",
+              "zone": null
+            },
+            {
+              "rank": 5,
               "team": "멤피스 그리즐리스",
               "abbr": "MEM",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
@@ -4684,21 +4699,6 @@ window.CLUTCH_STANDINGS = {
               "diff": 160,
               "pct": ".722",
               "gb": "1.5",
-              "zone": null
-            },
-            {
-              "rank": 5,
-              "team": "휴스턴 로키츠",
-              "abbr": "HOU",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
-              "played": 17,
-              "win": 12,
-              "draw": null,
-              "loss": 5,
-              "points": null,
-              "diff": 130,
-              "pct": ".706",
-              "gb": "2",
               "zone": null
             },
             {
@@ -4748,6 +4748,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 9,
+              "team": "피닉스 선즈",
+              "abbr": "PHX",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+              "played": 16,
+              "win": 9,
+              "draw": null,
+              "loss": 7,
+              "points": null,
+              "diff": -9,
+              "pct": ".563",
+              "gb": "4.5",
+              "zone": null
+            },
+            {
+              "rank": 10,
               "team": "오클라호마시티 썬더",
               "abbr": "OKC",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
@@ -4759,21 +4774,6 @@ window.CLUTCH_STANDINGS = {
               "diff": 57,
               "pct": ".556",
               "gb": "4.5",
-              "zone": null
-            },
-            {
-              "rank": 10,
-              "team": "피닉스 선즈",
-              "abbr": "PHX",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
-              "played": 15,
-              "win": 8,
-              "draw": null,
-              "loss": 7,
-              "points": null,
-              "diff": -13,
-              "pct": ".533",
-              "gb": "5",
               "zone": null
             },
             {
@@ -4796,14 +4796,14 @@ window.CLUTCH_STANDINGS = {
               "team": "뉴올리언스 펠리컨스",
               "abbr": "NO",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/no.png",
-              "played": 18,
+              "played": 19,
               "win": 5,
               "draw": null,
-              "loss": 13,
+              "loss": 14,
               "points": null,
-              "diff": -148,
-              "pct": ".278",
-              "gb": "9.5",
+              "diff": -152,
+              "pct": ".263",
+              "gb": "10",
               "zone": null
             },
             {
@@ -4811,14 +4811,14 @@ window.CLUTCH_STANDINGS = {
               "team": "LA 클리퍼스",
               "abbr": "LAC",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
-              "played": 15,
+              "played": 16,
               "win": 4,
               "draw": null,
-              "loss": 11,
+              "loss": 12,
               "points": null,
-              "diff": -97,
-              "pct": ".267",
-              "gb": "9",
+              "diff": -109,
+              "pct": ".250",
+              "gb": "9.5",
               "zone": null
             },
             {
