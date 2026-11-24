@@ -680,8 +680,10 @@
     state.weekStart = mondayOf(state.day);
     render();
     if (state.openId) {
+      // 펼친 경기의 맨 윗줄이 상단 고정 헤더 바로 아래에 오게 맞춘다.
+      // (block:'nearest' 로 두면 화면에 걸치기만 해도 그대로라 카드가 화면 아래쪽에 붙는다)
       var item = itemOf(state.openId);
-      if (item) item.scrollIntoView({ block: "nearest" });
+      if (item) scrollRowToTop(item);
     }
   }
 
@@ -3422,7 +3424,7 @@
           '<span class="hl-ico" aria-hidden="true">' + esc(sm.icon) + "</span>" +
           '<span class="hl-lg">' + esc(league) + "</span>" +
           (detail ? '<span class="hl-ph">' + esc(detail) + "</span>" : "") +
-          '<span class="hl-go" aria-hidden="true">브리핑 ›</span>' +
+          '<span class="hl-go" aria-hidden="true">' + VS_MARK + " ›</span>" +
         "</span>" +
         '<span class="hl-teams">' +
           '<span class="hl-tm away">' + crestHTML(g, "away") + '<span class="hl-name">' + esc(away) + "</span></span>" +
