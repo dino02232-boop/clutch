@@ -11,7 +11,6 @@
   'use strict';
   var db = window.clutchDb, auth = window.clutchAuth;
   var CAP = 500, GUEST_KEY = 'clutchReadPosts';
-  var IGNORE_KEY = 'clutchBoardReadIntro';   // 첫 방문 안내를 이미 봤는지
 
   var me = null, stateDoc = null;
   var ids = [], set = {}, total = 0, loaded = false, staleTried = false, ready = false;
@@ -134,15 +133,7 @@
     }
     // 처음 온 사람에게만: 모든 글이 '안 읽음'으로 시작한다는 한 줄 안내
     var tip = document.getElementById('boardReadTip');
-    if (tip) {
-      var seen = false;
-      try { seen = sessionStorage.getItem(IGNORE_KEY) === '1'; } catch (_) {}
-      var show = !seen && total > 0 && ids.length === 0;
-      tip.hidden = !show;
-      if (show) {
-        try { sessionStorage.setItem(IGNORE_KEY, '1'); } catch (_) {}
-      }
-    }
+    if (tip) tip.hidden = !(total > 0 && ids.length === 0 && loaded);
   }
 
   function start() {

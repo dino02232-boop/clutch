@@ -144,6 +144,9 @@
     if (!root) return;
     var home = isHome();
     root.hidden = !home;
+    // 홈에서는 소개 카드가 같은 말을 더 자세히 하므로 위의 한 줄(homeLead)은 감춘다.
+    var lead = document.getElementById('homeLead');
+    if (lead && home) lead.style.display = 'none';
     if (!home) return;
     var spot = spotGame();
     var sig = (me ? 'm' + (myPoints == null ? '' : myPoints) : 'g') + '|' + (spot ? spot.g.id + spot.kind + ((spot.g.result || {}).awayScore || '') + ((spot.g.result || {}).homeScore || '') : '-');
