@@ -694,6 +694,38 @@
     return '<span class="st none">' + esc(status || "—") + "</span>";
   }
 
+  /* ── 주요 선수 이름 옙 부상·결장 배지 ──────────────────
+     팀 부상·결장 명단(t.injuries)에서 같은 선수를 찾아, 주요 선수 카드의 이름 옙에
+     결장·부상·출전의심을 바로 보이게 붙인다. 명단에 없으면 배지를 그리지 않는다. */
+  function normName(s) {
+    return String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase().replace(/[^a-z0-9가-힣]/g, "");
+  }
+  function injuryOfPlayer(name, list) {
+    var n = normName(name);
+    if (!n) return null;
+    for (var i = 0; i < (list || []).length; i++) {
+      var it = list[i] || {};
+      var pn = normName(it.player || it.name);
+      if (!pn) continue;
+      if (pn === n || pn.indexOf(n) >= 0 || n.indexOf(pn) >= 0) return it;
+    }
+    return null;
+  }
+  function injuryBadgeHTML(name, list) {
+    var it = injuryOfPlayer(name, list);
+    if (!it) return "";
+    var raw = String(it.status || "").trim();
+    var s = raw.toUpperCase();
+    var cls = "", label = "";
+    if (/^(OUT|S|SUSP|SUSPENDED|INACTIVE|IR|IL)$/.test(s)) { cls = "out"; label = "결장"; }
+    else if (/(DOUBT|QUESTION|GTD|GAME.?TIME)/.test(s)) { cls = "doubt"; label = "출전의심"; }
+    else if (/(DAY.?TO.?DAY|DTD|PROBABLE)/.test(s)) { cls = "dtd"; label = "부상"; }
+    else return "";
+    var tip = raw + (it.note ? " · " + it.note : "");
+    return '<span class="st pl-inj ' + cls + '" title="' + esc(tip) + '">' + label + "</span>";
+  }
+
   /* ── 경기 박스 내용 (펼쳤을 때만 DOM 에 들어간다) ─────── */
   // 농구는 생성기 배지에 리그 순위가 없어 순위표(CLUTCH_STANDINGS)에서 직접 찾아 붙인다.
   var NBA_RANK_CACHE = null;
@@ -918,6 +950,7 @@
           return '<li>' +
             '<span class="pl-top">' + faceHTML(p.name, p.photo) +
             '<b>' + esc(p.name) + "</b>" +
+            injuryBadgeHTML(p.name, t.injuries) +
             (p.pos ? '<i class="pl-pos">' + esc(p.pos) + "</i>" : "") +
             ratingHTML(p.rating) + "</span>" +
             (p.stat ? '<span class="pl-stat">' + esc(p.stat) + "</span>" : "") +
@@ -2778,6 +2811,7 @@
       var list = ps.map(function (p) {
         return '<li>' + faceHTML(p.name, p.photo) +
           '<b class="lu-pname">' + esc(p.name || "") + "</b>" +
+          injuryBadgeHTML(p.name, t.injuries) +
           ratingHTML(p.rating, "lu-rating") +
           (p.stat ? '<span class="lu-stat">' + esc(p.stat) + "</span>" : "") + "</li>";
       }).join("");
@@ -2933,7 +2967,7 @@
 
     // 경기 전 프리뷰(팀 상태·배당·맞대결·체크포인트)
     var preview = '<div class="box-head">' +
-      '<span class="ch-badge">' + (finalNow ? "경기 전 기록" : "경기 전 브리핑") + "</span>" +
+      '<span class="ch-badge">경기 전 브리핑</span>' +
       '<span class="ch-sub">' + (liveNow ? "경기 전 기준 정보 · 팀 비교 · 결장" :
         (finalNow ? "경기 당시 팀 정보 · 부상자 · 체크포인트" : "팀 비교 · 부상자 · 체크포인트")) + "</span>" +
       (g.venue ? '<span class="ch-venue">' + esc(g.venue) + "</span>" : "") +
@@ -2983,12 +3017,14 @@
     // 경기 전에는 프리뷰만 보여준다. 진행 중에는 라이브 상황을 위에 두고,
     // 종료 후에는 결과를 위로 올린 뒤 경기 전 프리뷰를 아래에 보존한다.
     var body;
-    var lineup = startBoxHTML(g);
+    // 종료 카드에는 선발 라인업 판을 두지 않는다(선수 기록·평점으로 충분).
+    var lineup = finalNow ? "" : startBoxHTML(g);
     if (liveNow) {
       body = liveSectionHTML(g) + lineup + pgMoreHTML("경기 전 브리핑", '<div class="pregame-body">' + preview + more + "</div>");
     } else if (finalNow) {
-      // 종료 카드에서는 '예상'이 아니라 '기록'이다 — 제목·버튼 모양을 경기 후 브리핑과 맞춘다.
-      body = resultHTML(g) + postgameHTML(g) + lineup + pgMoreHTML("경기 전 기록", '<div class="pregame-body">' + preview + more + "</div>");
+      // 종료 카드에는 선수 기록·평점이 이미 있으므로 선발 라인업 판은 그리지 않는다.
+      // 제목은 경기 전·경기 중 카드와 같은 '경기 전 브리핑'으로 맞춘다.
+      body = resultHTML(g) + postgameHTML(g) + pgMoreHTML("경기 전 브리핑", '<div class="pregame-body">' + preview + more + "</div>");
     } else {
       body = preview + lineup + (more ? '<details class="more"><summary>팀 정보 · 부상 · 맞대결</summary><div class="more-body">' + more + "</div></details>" : "");
     }
@@ -3649,6 +3685,7 @@
     kovoBusy: false,
     kovoRetry: null,
     kovoRelay: {}   // KOVO 경기번호 → { at, set, plays:[], homeCode, err }  (배구 랠리 중계)
+    ,benchOpen: {}   // "경기id|팀약어" → 교체명단을 펼쳐 두었는지 (30초 갱신에도 유지)
   };
 
   var KOVO_API = "https://user-api.kovo.co.kr";
@@ -4671,6 +4708,7 @@
             id: (a.athlete && a.athlete.id) || "",
             name: (a.athlete && (a.athlete.displayName || a.athlete.fullName || a.athlete.shortName)) || "",
             photo: (a.athlete && a.athlete.headshot && a.athlete.headshot.href) || "",
+            starter: !!a.starter,
             min: min,
             pts: s[idx.PTS],
             reb: idx.REB != null ? s[idx.REB] : null,
@@ -4866,6 +4904,7 @@
   }
 
   // 쿼터별 점수표(진행 중·종료 모두 같은 표). 축구는 전반·후반으로 적는다.
+  // 목록 줄·LIVE 점수판과 같은 순서 — 홈 팀이 위, 원정 팀이 아래.
   function linesTableHTML(g, r) {
     if (!r || !r.lines) return "";
     var al = r.lines.away || [], hl = r.lines.home || [];
@@ -4881,10 +4920,10 @@
       hr += "<td>" + esc(hl[i] || "-") + "</td>";
     }
     return '<table class="r-lines"><thead><tr><th></th>' + head + '<th scope="col">합</th></tr></thead><tbody>' +
-      '<tr><th scope="row">' + esc(g.away ? g.away.abbr : "원정") + "</th>" + ar +
-        "<td>" + esc(String(r.awayScore != null ? r.awayScore : "-")) + "</td></tr>" +
       '<tr><th scope="row">' + esc(g.home ? g.home.abbr : "홈") + "</th>" + hr +
         "<td>" + esc(String(r.homeScore != null ? r.homeScore : "-")) + "</td></tr>" +
+      '<tr><th scope="row">' + esc(g.away ? g.away.abbr : "원정") + "</th>" + ar +
+        "<td>" + esc(String(r.awayScore != null ? r.awayScore : "-")) + "</td></tr>" +
       "</tbody></table>";
   }
 
@@ -4912,10 +4951,11 @@
         '<span class="lb-nm">' + esc(name) + "</span>" +
         "</div>";
     }
+    // 목록 줄과 같은 순서 — 홈 팀이 왼쪽, 원정 팀이 오른쪽.
     return '<div class="lb-score">' +
-      side("away", g.away ? g.away.abbr : "원정", g.away ? g.away.name : "원정", a, h) +
-      '<span class="lb-col" aria-hidden="true">:</span>' +
       side("home", g.home ? g.home.abbr : "홈", g.home ? g.home.name : "홈", h, a) +
+      '<span class="lb-col" aria-hidden="true">:</span>' +
+      side("away", g.away ? g.away.abbr : "원정", g.away ? g.away.name : "원정", a, h) +
       "</div>";
   }
 
@@ -4939,44 +4979,85 @@
     }).join("") + "</ul>";
   }
 
+  // 출전 시간 표기("36:12" · "36")를 초로 바꾼다. 값이 없으면 -1.
+  function minSeconds(v) {
+    var s = String(v == null ? "" : v).trim();
+    if (!s) return -1;
+    var m = s.match(/^(\d+)(?::(\d{1,2}))?/);
+    return m ? Number(m[1]) * 60 + (m[2] ? Number(m[2]) : 0) : -1;
+  }
+
+  /* 한 팀의 선수 기록 표
+     · 선발(starter) 5명은 기본으로 펼쳐 두고, 교체 선수는 '교체명단' 버튼으로 펼친다.
+     · ESPN 이 선발 표시를 주지 않을 때는 출전 시간 많은 순 상위 5명을 선발 자리에 놓는다.
+     · 펼침 상태는 LIVE.benchOpen 에 남겨 두어 30초 자동 갱신에도 유지된다. */
   function liveTeamTableHTML(g, t) {
     var ab = String(t.abbr || "").toUpperCase();
     var side = g.away && ab === String(g.away.abbr || "").toUpperCase() ? "away" :
       (g.home && ab === String(g.home.abbr || "").toUpperCase() ? "home" : "");
     var name = (side === "away" && g.away) ? g.away.name :
       (side === "home" && g.home) ? g.home.name : (t.name || t.abbr || "팀");
-    var rows = (t.rows || []).slice().sort(function (a, b) {
-      return (toNum(b.pts) - toNum(a.pts)) || (toNum(b.min) - toNum(a.min));
-    }).slice(0, 6);
-    if (!rows.length) return "";
+    var all = (t.rows || []).filter(function (p) { return p && p.name; });
+    if (!all.length) return "";
+    var byTime = function (a, b) {
+      return (minSeconds(b.min) - minSeconds(a.min)) || (toNum(b.pts) - toNum(a.pts));
+    };
+    var hasStarter = all.some(function (p) { return p.starter; });
+    var starters, bench;
+    if (hasStarter) {
+      starters = all.filter(function (p) { return p.starter; }).slice(0, 5);
+      bench = all.filter(function (p) { return !p.starter; }).sort(byTime);
+    } else {
+      var ordered = all.slice().sort(byTime);
+      starters = ordered.slice(0, 5);
+      bench = ordered.slice(5);
+    }
+    var key = String(g.id || "") + "|" + ab;
+    var open = !!LIVE.benchOpen[key];
+    function playerRow(p) {
+      return '<tr><th scope="row" class="c-nm"><span class="nm-wrap">' +
+        faceHTML(p.name, p.photo, true) + "<b>" + esc(p.name) + "</b></span></th>" +
+        '<td class="c-min">' + esc(dash(p.min)) + "</td>" +
+        '<td class="c-pts">' + esc(dash(p.pts)) + "</td>" +
+        "<td>" + esc(dash(p.reb)) + "</td>" +
+        "<td>" + esc(dash(p.ast)) + "</td></tr>";
+    }
     var head = '<div class="lb-team-h">' +
       (side ? '<span class="lbt-side ' + side + '">' + (side === "away" ? "원정" : "홈") + "</span>" : "") +
       "<b>" + esc(name) + "</b>" +
       '<span class="lbt-abbr">' + esc(t.abbr || "") + "</span></div>";
-    return '<div class="lb-team-box">' + head +
-      '<table class="lb-tbl"><thead><tr>' +
+    var table = '<table class="lb-tbl"><thead><tr>' +
         '<th scope="col" class="c-nm">선수</th>' +
         '<th scope="col">시간</th>' +
         '<th scope="col" class="c-pts">득점</th>' +
         '<th scope="col">리바</th>' +
         '<th scope="col">어시</th>' +
-      "</tr></thead><tbody>" +
-      rows.map(function (p) {
-        return '<tr><th scope="row" class="c-nm"><span class="nm-wrap">' +
-          faceHTML(p.name, p.photo, true) + "<b>" + esc(p.name) + "</b></span></th>" +
-          '<td class="c-min">' + esc(dash(p.min)) + "</td>" +
-          '<td class="c-pts">' + esc(dash(p.pts)) + "</td>" +
-          "<td>" + esc(dash(p.reb)) + "</td>" +
-          "<td>" + esc(dash(p.ast)) + "</td></tr>";
-      }).join("") + "</tbody></table></div>";
+      "</tr></thead><tbody class=\"lb-start\">" +
+      starters.map(playerRow).join("") + "</tbody>" +
+      (bench.length ? '<tbody class="lb-bench-body" data-count="' + bench.length + '"' +
+        (open ? "" : " hidden") + ">" + bench.map(playerRow).join("") + "</tbody>" : "") +
+      "</table>";
+    var toggle = bench.length
+      ? '<button type="button" class="lb-bench" data-lb-bench="' + esc(key) + '" aria-expanded="' +
+        (open ? "true" : "false") + '">교체명단 ' + bench.length + "명 " + (open ? "접기 ⌃" : "보기 ⌄") + "</button>"
+      : "";
+    return '<div class="lb-team-box">' + head + table + toggle + "</div>";
   }
 
   function liveRosterHTML(g) {
     if (g.sport !== "basketball") return "";
-    var head = '<h4 class="lb-sub">현재 선수 기록 <span class="lb-sub-note">득점 많은 순 6명</span></h4>';
     var s = summaryEntry(g);
-    if (!s) return head + '<p class="lb-none">선수 기록을 불러오는 중…</p>';
+    if (!s) {
+      return '<h4 class="lb-sub">현재 선수 기록 <span class="lb-sub-note">선발 5명</span></h4>' +
+        '<p class="lb-none">선수 기록을 불러오는 중…</p>';
+    }
     var teams = (s.data && s.data.box) || [];
+    // 선발 표시가 오는지에 따라 안내 문구를 바꾼다.
+    var hasStarter = teams.some(function (t) {
+      return (t.rows || []).some(function (p) { return p && p.starter; });
+    });
+    var head = '<h4 class="lb-sub">현재 선수 기록 <span class="lb-sub-note">' +
+      (hasStarter ? "선발 5명" : "출전 시간 순 5명") + "</span></h4>";
     var awayAbbr = g.away ? String(g.away.abbr || "").toUpperCase() : "";
     var homeAbbr = g.home ? String(g.home.abbr || "").toUpperCase() : "";
     var ordered = teams.slice().sort(function (a, b) {
@@ -5045,7 +5126,7 @@
     if (!hb || !ab) return "";
     var hs = hb.stats || {}, as = ab.stats || {};
     var rows = [], active = false;
-    // 점수판(원정 왼쪽 · 홈 오른쪽)과 같은 순서로 놓는다
+    // 점수판(홈 왼쪽 · 원정 오른쪽)과 같은 순서로 놓는다
     SOCCER_STATS.forEach(function (r) {
       var av = statText(as[r.key], r.suffix), hv = statText(hs[r.key], r.suffix);
       var an = statNumOf(as[r.key]), hn = statNumOf(hs[r.key]);
@@ -5057,23 +5138,23 @@
         active = true;
       }
       var total = Math.abs(an) + Math.abs(hn);
-      var pct = total > 0 ? Math.round((Math.abs(an) / total) * 100) : 50;
+      var pct = total > 0 ? Math.round((Math.abs(hn) / total) * 100) : 50;
       rows.push('<div class="sb-row">' +
-        '<b class="sb-v">' + esc(av) + "</b>" +
+        '<b class="sb-v">' + esc(hv) + "</b>" +
         '<span class="sb-mid"><span class="sb-k">' + esc(r.label) + "</span>" +
           '<span class="sb-bar" aria-hidden="true"><i style="width:' + pct + '%"></i></span></span>' +
-        '<b class="sb-v r">' + esc(hv) + "</b>" +
+        '<b class="sb-v r">' + esc(av) + "</b>" +
         "</div>");
     });
     if (!rows.length || !active) return "";
     var hn = String((g.home && (g.home.abbr || g.home.name)) || "홈");
     var an = String((g.away && (g.away.abbr || g.away.name)) || "원정");
     return '<h4 class="lb-sub">팀 지표</h4>' +
-      '<div class="sb-stats" aria-label="팀 지표 비교 (원정 ' + esc(an) + ', 홈 ' + esc(hn) + ')">' +
+      '<div class="sb-stats" aria-label="팀 지표 비교 (홈 ' + esc(hn) + ', 원정 ' + esc(an) + ')">' +
         '<div class="sb-row sb-hd">' +
-          '<span class="sb-side"><b>' + esc(an) + '</b><i class="sb-tag away">원정</i></span>' +
+          '<span class="sb-side"><b>' + esc(hn) + '</b><i class="sb-tag">홈</i></span>' +
           '<span class="sb-k"></span>' +
-          '<span class="sb-side r"><b>' + esc(hn) + '</b><i class="sb-tag">홈</i></span>' +
+          '<span class="sb-side r"><b>' + esc(an) + '</b><i class="sb-tag away">원정</i></span>' +
         "</div>" + rows.join("") + "</div>";
   }
 
@@ -5656,6 +5737,20 @@
     goHome();
   });
   elBack.addEventListener("click", goHome);
+
+  // 선수 기록 표의 '교체명단' 펼치기 — 재그리기에도 상태가 남도록 LIVE.benchOpen 에 적어 둔다.
+  document.addEventListener("click", function (e) {
+    var btn = e.target && e.target.closest ? e.target.closest("[data-lb-bench]") : null;
+    if (!btn) return;
+    var box = btn.closest(".lb-team-box");
+    var bd = box ? box.querySelector(".lb-bench-body") : null;
+    if (!bd) return;
+    var willOpen = bd.hasAttribute("hidden");
+    if (willOpen) bd.removeAttribute("hidden"); else bd.setAttribute("hidden", "");
+    LIVE.benchOpen[btn.getAttribute("data-lb-bench")] = willOpen;
+    btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    btn.textContent = "교체명단 " + (bd.getAttribute("data-count") || "") + "명 " + (willOpen ? "접기 ⌃" : "보기 ⌄");
+  });
 
   window.addEventListener("hashchange", syncFromHash);
   window.addEventListener("popstate", syncFromHash);
