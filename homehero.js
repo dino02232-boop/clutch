@@ -67,7 +67,7 @@
     if (kind === 'live') {
       var r = g.result || {};
       var a = r.awayScore != null ? r.awayScore : '-', h = r.homeScore != null ? r.homeScore : '-';
-      var tail = r.detail ? ' · ' + r.detail : '';
+      var tail = r.detail ? ' · ' + String(r.detail).replace(/\s*·?\s*세트\s*스코어\s*$/, '') : '';
       return '지금 ' + (g.away ? g.away.name : '') + ' ' + a + ' : ' + h + ' ' + (g.home ? g.home.name : '') + tail;
     }
     if (g.preview) return cut(g.preview, 96);
