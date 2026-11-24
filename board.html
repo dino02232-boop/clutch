@@ -17,24 +17,34 @@
 <meta name="description" content="VERSUS 자유게시판 — 경기 이야기와 내 Bet 을 함께 남깁니다.">
 <link rel="icon" type="image/png" sizes="512x512" href="icon.png?v=20261122-vs2">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="styles.css?v=20261124-gp1">
-<link rel="stylesheet" href="betting.css?v=20261124-multi1">
+<link rel="stylesheet" href="styles.css?v=20261124-board4">
+<link rel="stylesheet" href="betting.css?v=20261124-board4">
+<link rel="stylesheet" href="messages.css?v=20261124-msg1">
 </head>
 <body>
 <div class="page-shell board-page">
   <div class="board-top">
     <a class="board-back" href="index.html">← VERSUS 홈</a>
-    <button type="button" id="writeToggle" class="board-write">✏️ 글쓰기</button>
+    <div class="board-actions">
+      <button type="button" id="msgOpen" class="msg-open" aria-label="쪽지함 열기"><i class="mp-ico" aria-hidden="true">✉️</i><i class="mp-txt">쪽지</i><i id="msgOpenBadge" class="cnt-badge" hidden></i></button>
+      <button type="button" id="writeToggle" class="board-write">✏️ 글쓰기</button>
+    </div>
   </div>
 
   <header class="board-hero">
     <h1>💬 자유게시판</h1>
+    <p class="board-count" id="boardCount">글 <b>0</b>개</p>
   </header>
+  <p class="board-readtip" id="boardReadTip" hidden>아직 열어 보지 않은 글은 목록에서 <b>점</b>으로 표시됩니다. 하나씩 열면 안 읽은 글 숫자에서 빠져요.</p>
 
   <section class="board-compose" id="writeBox" hidden>
-    <h2>새 글</h2>
-    <input id="postTitle" maxlength="100" placeholder="제목">
-    <textarea id="postBody" rows="5" maxlength="3000" placeholder="내용"></textarea>
+    <div class="bc-head"><b>새 글 쓰기</b><span>제목과 내용을 적고 등록하세요</span></div>
+    <label class="bc-field"><span>제목</span>
+      <input id="postTitle" maxlength="100" placeholder="제목을 입력하세요">
+    </label>
+    <label class="bc-field"><span>내용</span>
+      <textarea id="postBody" rows="6" maxlength="3000" placeholder="경기 이야기, 내 Bet, 궁금한 점을 자유롭게 적어 주세요."></textarea>
+    </label>
 
     <div class="share-box">
       <div class="share-h"><b>내 Bet 공유</b><span>내 베팅 내역에서 골라 글에 붙입니다</span></div>
@@ -51,6 +61,7 @@
   </section>
 
   <div id="postList" class="board-list" hidden><p class="bl-empty">불러오는 중…</p></div>
+  <div id="boardPager" class="pager" role="navigation" aria-label="게시글 페이지" hidden></div>
 
   <section id="postDetail" class="board-detail" hidden>
     <button type="button" class="detail-back" id="detailBack">← 목록으로</button>
@@ -76,6 +87,8 @@
 <script src="firebase.js"></script>
 <script src="tiers.js?v=20261124-tier4"></script>
 <script src="auth.js?v=20261124-login1"></script>
-<script src="pages.js?v=20261124-login1"></script>
+<script src="boardunread.js?v=20261124-badge1"></script>
+<script src="messages.js?v=20261124-msg1"></script>
+<script src="pages.js?v=20261124-board4"></script>
 </body>
 </html>

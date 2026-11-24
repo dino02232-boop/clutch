@@ -164,36 +164,84 @@
     });
   }
 
-  // 목록 한 줄
+  // 목록 한 줄 — 안 읽은 글은 점 + 진한 제목으로 구분한다.
   function rowHTML(id, p) {
     var n = countCache[id] || 0;
-    return '<a class="bl-row" href="#post=' + encodeURIComponent(id) + '" data-post="' + esc(id) + '">' +
-      '<span class="bl-titlerow"><span class="bl-title">' + esc(p.title) + '</span>' +
-      (p.slip && p.slip.length ? '<span class="bl-ticket" title="베팅 첨부">🎟</span>' : '') +
-      '<span class="bl-cmt" data-cmt="' + esc(id) + '"' + (n ? '' : ' hidden') + '>' + (n || '') + '</span></span>' +
+    var read = window.clutchBoard ? window.clutchBoard.isRead(id) : true;
+    return '<a class="bl-row' + (read ? '' : ' unread') + '" href="#post=' + encodeURIComponent(id) + '" data-post="' + esc(id) + '"' +
+      (read ? '' : ' aria-label="안 읽음, ' + esc(p.title || '') + '"') + '>' +
+      '<span class="bl-titlerow">' +
+        '<span class="bl-dot" aria-hidden="true"></span>' +
+        '<span class="bl-title">' + esc(p.title) + '</span>' +
+        (p.slip && p.slip.length ? '<span class="bl-ticket" title="베팅 첨부">🎟</span>' : '') +
+        '<span class="bl-cmt" data-cmt="' + esc(id) + '"' + (n ? '' : ' hidden') + '>' + (n || '') + '</span></span>' +
       '<span class="bl-meta">' + postByHTML(p) + '<span class="bl-time">' + fmtTime(p.createdAt) + '</span></span>' +
       '</a>';
   }
 
-  function loadPosts() {
-    db.collection('posts').orderBy('createdAt', 'desc').limit(50).onSnapshot(function (s) {
-      var node = $('postList');
-      if (!node) return;
+  /* ── 목록 페이지 나누기(한 페이지 20개) ──────────────────
+     전체 글 수는 posts count() 집계(clutchBoard)로 받고, 페이지는 최신순으로 PAGE_SIZE*page
+     개를 받아 끝의 20개만 그린다. 글이 수십 개 수준이라 이 방식이 가장 단순하고,
+     한 페이지를 넘길 때마다 20개씩만 더 읽는다. */
+  var PAGE_SIZE = 20, listPage = 1, listDocs = [], postsUnsub = null;
+
+  function totalPosts() {
+    return window.clutchBoard ? window.clutchBoard.total() : 0;
+  }
+  function pagerHTML() {
+    var total = totalPosts();
+    var max = Math.max(1, Math.ceil(total / PAGE_SIZE));
+    if (max <= 1) return '';
+    var cur = Math.min(listPage, max), out = [];
+    var from = Math.max(1, cur - 2), to = Math.min(max, from + 4);
+    from = Math.max(1, to - 4);
+    out.push('<button type="button" class="pg-btn" data-pg="' + (cur - 1) + '"' + (cur <= 1 ? ' disabled' : '') + ' aria-label="이전 페이지">‹</button>');
+    if (from > 1) out.push('<button type="button" class="pg-btn" data-pg="1">1</button>' + (from > 2 ? '<span class="pg-gap">…</span>' : ''));
+    for (var p = from; p <= to; p++) {
+      out.push('<button type="button" class="pg-btn' + (p === cur ? ' on' : '') + '" data-pg="' + p + '"' + (p === cur ? ' aria-current="page"' : '') + '>' + p + '</button>');
+    }
+    if (to < max) out.push((to < max - 1 ? '<span class="pg-gap">…</span>' : '') + '<button type="button" class="pg-btn" data-pg="' + max + '">' + max + '</button>');
+    out.push('<button type="button" class="pg-btn" data-pg="' + (cur + 1) + '"' + (cur >= max ? ' disabled' : '') + ' aria-label="다음 페이지">›</button>');
+    return out.join('');
+  }
+  function paintPager() {
+    var box = $('boardPager');
+    if (!box) return;
+    box.innerHTML = pagerHTML();
+    box.hidden = !box.innerHTML;
+  }
+  function paintRows() {
+    var node = $('postList');
+    if (!node || $('postDetail') && !$('postDetail').hidden) return;
+    node.innerHTML = listDocs.length
+      ? listDocs.map(function (d) { return rowHTML(d.id, d.data() || {}); }).join('')
+      : '<p class="bl-empty">아직 글이 없습니다. 첫 글을 남겨 보세요.</p>';
+  }
+
+  function loadPosts(page) {
+    var want = Math.max(1, page || 1);
+    if (postsUnsub) { try { postsUnsub(); } catch (_) {} postsUnsub = null; }
+    var node = $('postList');
+    if (!node) return;
+    if (want !== listPage || !node.innerHTML) node.innerHTML = '<p class="bl-empty">불러오는 중…</p>';
+    postsUnsub = db.collection('posts').orderBy('createdAt', 'desc').limit(PAGE_SIZE * want).onSnapshot(function (s) {
+      listPage = want;
+      listDocs = s.docs.slice(-PAGE_SIZE);
       postMap = {};
       s.docs.forEach(function (d) {
         var p = d.data() || {};
         postMap[d.id] = p;
         if (p.points == null) profFetch(p.uid);
       });
-      node.innerHTML = s.docs.length
-        ? s.docs.map(function (d) { return rowHTML(d.id, d.data() || {}); }).join('')
-        : '<p class="bl-empty">아직 글이 없습니다. 첫 글을 남겨 보세요.</p>';
       node.hidden = false;
+      paintRows();
       s.docs.forEach(function (d) { countComments(d.id); });
       paintAuthors();
+      paintPager();
+      if (want > 1 && !listDocs.length) { listPage = 1; loadPosts(1); }
     }, function () {
-      var node = $('postList');
-      if (node) { node.innerHTML = '<p class="bl-empty">글을 불러오지 못했습니다.</p>'; node.hidden = false; }
+      node.innerHTML = '<p class="bl-empty">글을 불러오지 못했습니다.</p>';
+      node.hidden = false;
     });
   }
 
@@ -212,7 +260,9 @@
     if (det) {
       det.hidden = false;
       $('detailTitle').textContent = p.title || '';
-      $('detailMeta').innerHTML = postByHTML(p) + '<span class="meta-when">' + esc(fmtFull(p.createdAt)) + '</span>';
+      var mine = user && p.uid === user.uid;
+      $('detailMeta').innerHTML = postByHTML(p) + '<span class="meta-when">' + esc(fmtFull(p.createdAt)) + '</span>' +
+        (p.uid && !mine ? '<button type="button" class="meta-msg" data-msg-to="' + esc(p.uid) + '">✉️ 쪽지</button>' : '');
       $('detailBody').textContent = p.body || '';
       $('detailSlip').innerHTML = slipCardHTML(p.slip, '🎟 공유한 베팅');
       $('detailCmtCount').textContent = countCache[id] ? String(countCache[id]) : '0';
@@ -224,6 +274,8 @@
     if (detailUnsub) { try { detailUnsub(); } catch (_) {} detailUnsub = null; }
     detailUnsub = loadComments(id);
     paintAuthors();
+    // 이 글을 열었으니 '안 읽은 글' 숫자에서 뺀다(로그인: Firestore, 비로그인: localStorage)
+    if (window.clutchBoard) window.clutchBoard.markRead(id);
     return true;
   }
   function showDetail(id) {
@@ -260,6 +312,8 @@
     var det = $('postDetail'), list = $('postList');
     if (det) det.hidden = true;
     if (list) list.hidden = false;
+    paintRows();
+    paintPager();
   }
   // '← 목록으로' — 해시 기록만 지우고 목록으로 (뒤로 가기 기록을 남기지 않는다)
   function closeDetail() {
@@ -355,9 +409,11 @@
     try {
       // Firestore 규칙(posts create)이 uid·displayName·title·body·slip·createdAt 6개만 허용한다.
       // points 를 함께 쓰면 'Missing or insufficient permissions' 로 거부되므로 넣지 않는다.
-      await db.collection('posts').add({ uid: user.uid, displayName: (window.clutchNickname || user.displayName || '회원'), title: title, body: body, slip: shared.slice(0, 20), createdAt: firebase.firestore.FieldValue.serverTimestamp() });
+      var ref = await db.collection('posts').add({ uid: user.uid, displayName: (window.clutchNickname || user.displayName || '회원'), title: title, body: body, slip: shared.slice(0, 20), createdAt: firebase.firestore.FieldValue.serverTimestamp() });
       $('postTitle').value = ''; $('postBody').value = ''; shared = []; picked.sel = {};
       sessionStorage.removeItem('clutchSlipShare'); drawBetPick(); drawShared(); toggleCompose(false); say('');
+      // 내가 쓴 글은 '안 읽은 글'로 세지 않는다. 글 수도 바로 다시 센다.
+      if (window.clutchBoard) { if (ref && ref.id) window.clutchBoard.markRead(ref.id); window.clutchBoard.refresh(); }
     } catch (e) { say('등록 실패: ' + e.message); }
   }
   async function addComment(id) {
@@ -381,12 +437,14 @@
       var st = JSON.parse(sessionStorage.getItem('clutchSlipShare') || '[]');
       if (Array.isArray(st)) shared = st;
     } catch (_) { shared = []; }
-    loadPosts();
+    loadPosts(1);
     drawShared();
     if (shared.length) toggleCompose(true);
     window.addEventListener('hashchange', route);
     // 처음 들어온 주소에 #post=id 가 붙어 있으면 그 글로 바로 연다
     route();
+    // 읽음 기록·전체 글 수가 준비되면 목록의 점과 페이지 번호를 다시 그린다
+    if (window.clutchBoard) window.clutchBoard.onChange(function () { paintRows(); paintPager(); });
   }
   if (auth) auth.onAuthStateChanged(function (u) {
     user = u;
@@ -412,6 +470,21 @@
     if (e.target.id === 'writeCancel') toggleCompose(false);
     if (e.target.id === 'submitPost') addPost();
     if (e.target.id === 'detailBack' || (e.target.closest && e.target.closest('#detailBack'))) closeDetail();
+    var pg = e.target.closest && e.target.closest('#boardPager [data-pg]');
+    if (pg && !pg.disabled) {
+      var n = Number(pg.getAttribute('data-pg')) || 1;
+      if (location.hash) { try { history.replaceState(null, '', location.pathname + location.search); } catch (_) { location.hash = ''; } }
+      showList();
+      loadPosts(n);
+      try { window.scrollTo(0, 0); } catch (_) {}
+    }
+    var mto = e.target.closest && e.target.closest('[data-msg-to]');
+    if (mto) {
+      if (!user) return login();
+      var uid = mto.getAttribute('data-msg-to'), nm = '';
+      for (var k in postMap) { if (postMap[k] && postMap[k].uid === uid) { nm = postMap[k].displayName || ''; break; } }
+      if (window.clutchMessages) window.clutchMessages.compose({ uid: uid, name: nm });
+    }
     if (e.target.closest && e.target.closest('[data-betpick]')) pickBet(e.target.closest('[data-betpick]').getAttribute('data-betpick'));
     if (e.target.dataset && e.target.dataset.comment) addComment(e.target.dataset.comment);
   });

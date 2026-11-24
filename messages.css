@@ -1,0 +1,134 @@
+/* ── 쪽지 · 게시판 배지 · 쪽지 모달 ──────────────────────────────
+   messages.js / boardunread.js 가 쓰는 화면. 색·간격은 styles.css 의 토큰을 그대로 쓰고,
+   '내 베팅 내역' 모달(bets-box)과 같은 결(아래에서 올라오는 시트, 18px 라운드)로 맞춘다. */
+
+/* ── 헤더 안의 배지 ─────────────────────────────────────── */
+.cnt-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 15px; height: 15px; padding: 0 4px;
+  border-radius: 999px; background: #DC2626; color: #fff;
+  font-style: normal; font-size: 9.5px; font-weight: 800; line-height: 1;
+  font-variant-numeric: tabular-nums; vertical-align: middle;
+  margin-left: 3px;
+}
+.cnt-badge[hidden] { display: none; }
+
+/* 상단 메뉴의 '쪽지' */
+.bet-nav .msg-pill { display: inline-flex; align-items: center; gap: 3px; }
+.bet-nav .msg-pill.has-unread { color: var(--accent); font-weight: 800; }
+.mp-ico, .mp-txt { font-style: normal; }
+@media (max-width: 430px) { .bet-nav .msg-pill .mp-txt { display: none; } }
+/* 자유게시판 링크의 안 읽은 글 수 */
+.bet-nav [data-board-link].has-unread { color: var(--accent); font-weight: 800; }
+
+/* 게시판 페이지 머리의 쪽지 버튼 */
+.board-actions { display: flex; align-items: center; gap: 8px; }
+.msg-open {
+  position: relative; display: inline-flex; align-items: center; gap: 4px;
+  border: 1px solid var(--line-2); background: #fff; border-radius: 999px;
+  padding: 7px 12px; font: inherit; font-size: 12px; font-weight: 800;
+  color: var(--text-2); cursor: pointer;
+}
+.msg-open.has-unread { color: var(--accent); border-color: rgba(11, 122, 84, .3); }
+.msg-open .mp-txt { font-style: normal; }
+
+/* ── 쪽지 모달 ─────────────────────────────────────────── */
+.msg-modal {
+  position: fixed; inset: 0; z-index: 85;
+  display: flex; align-items: flex-end; justify-content: center;
+  background: rgba(17, 24, 39, .42);
+}
+.msg-box {
+  width: min(430px, 100%); max-height: 86vh;
+  background: #fff; border-radius: 18px 18px 0 0;
+  padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+  box-shadow: 0 -12px 40px rgba(17, 24, 39, .22);
+  display: flex; flex-direction: column;
+}
+@media (min-width: 620px) {
+  .msg-modal { align-items: center; padding: 18px; }
+  .msg-box { border-radius: 18px; max-height: 78vh; box-shadow: 0 20px 60px rgba(0, 0, 0, .28); }
+}
+.msg-box .bets-head b { font-size: 16px; font-weight: 800; letter-spacing: -.01em; }
+
+.msg-tabs { display: flex; gap: 6px; margin: 11px 0 10px; flex: 0 0 auto; }
+.msg-tabs button {
+  flex: 1 1 0; min-width: 0;
+  border: 1px solid var(--line); background: #fff; border-radius: 10px;
+  font: inherit; font-size: 12px; font-weight: 800; color: var(--text-2);
+  padding: 9px 6px; cursor: pointer; white-space: nowrap;
+}
+.msg-tabs button.on { background: var(--accent-dim); border-color: rgba(11, 122, 84, .28); color: var(--accent); }
+.msg-tabs .msg-new { flex: 0 0 auto; background: var(--accent); border-color: var(--accent); color: #fff; padding: 9px 11px; }
+.msg-tabs[hidden] { display: none; }
+
+.msg-list {
+  flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.msg-empty { margin: 8px 0; font-size: 12.5px; color: var(--text-3); line-height: 1.65; }
+.msg-empty b { color: var(--text-2); }
+
+.msg-row {
+  position: relative; display: flex; flex-direction: column; gap: 3px;
+  width: 100%; text-align: left; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 12px; background: #fff;
+  padding: 10px 12px; font: inherit; color: inherit;
+}
+.msg-row.unread { background: #F7FBF9; border-color: rgba(11, 122, 84, .26); }
+.mr-top { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+.mr-who { font-size: 12.5px; font-weight: 800; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mr-time { margin-left: auto; flex: 0 0 auto; font-size: 10.5px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.mr-body { font-size: 12px; color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.msg-row.unread .mr-body { color: var(--text); }
+.mr-dot { flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; background: #DC2626; transform: translateY(-1px); }
+.msg-pager { flex: 0 0 auto; margin: 10px 0 0; }
+
+/* 한 통 보기 */
+.msg-detail { display: flex; flex-direction: column; gap: 8px; }
+.md-head { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.md-who { font-size: 14px; font-weight: 800; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.md-when { margin-left: auto; flex: 0 0 auto; font-size: 10.5px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.md-sub { margin: 0; font-size: 11px; color: var(--text-3); }
+.md-read { color: var(--accent); font-weight: 800; }
+.md-read.un { color: var(--text-3); font-weight: 700; }
+.md-body {
+  padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: #F7F9F9;
+  font-size: 13.5px; line-height: 1.68; color: #1F2937; white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.md-actions { display: flex; gap: 8px; margin-top: 2px; }
+.md-actions button { min-height: 38px; border-radius: 10px; font: inherit; font-size: 12.5px; font-weight: 800; cursor: pointer; padding: 0 14px; }
+.md-reply { border: 0; background: var(--accent); color: #fff; }
+.md-back { border: 1px solid var(--line-2); background: #fff; color: var(--text-2); }
+
+/* 새 쪽지 쓰기 */
+.msg-compose { display: flex; flex-direction: column; gap: 6px; }
+.mc-lab { margin: 2px 0 0; font-size: 11.5px; font-weight: 800; color: var(--text-2); }
+.mc-to { display: flex; gap: 6px; }
+.mc-to input { flex: 1 1 auto; min-width: 0; padding: 10px 12px; border: 1px solid var(--line-2); border-radius: 11px; font: inherit; font-size: 16px; }
+.mc-to button {
+  flex: 0 0 auto; min-height: 42px; padding: 0 14px; border: 0; border-radius: 11px;
+  background: #EEF1F3; color: var(--text-2); font: inherit; font-size: 12.5px; font-weight: 800; cursor: pointer;
+}
+.msg-compose textarea {
+  width: 100%; min-height: 132px; padding: 11px 12px; border: 1px solid var(--line-2);
+  border-radius: 11px; font: inherit; font-size: 16px; line-height: 1.6; resize: vertical;
+}
+.mc-to input:focus, .msg-compose textarea:focus { outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(11, 122, 84, .10); }
+.mc-foot { display: flex; align-items: center; gap: 10px; margin-top: 2px; }
+#msgLen { font-size: 10.5px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.mc-send { margin-left: auto; min-height: 40px; padding: 0 18px; border: 0; border-radius: 11px; background: var(--accent); color: #fff; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; }
+.mc-send[disabled] { opacity: .6; }
+.mc-notice { margin: 2px 0 0; min-height: 15px; font-size: 11.5px; color: var(--warn); line-height: 1.45; }
+.mc-hint { margin: 4px 0; font-size: 11.5px; color: var(--text-3); line-height: 1.55; }
+.mc-hits { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0; }
+.mc-hit { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 12px; font: inherit; font-size: 12px; font-weight: 700; color: var(--text); cursor: pointer; }
+.mc-hit:hover { border-color: var(--accent); color: var(--accent); }
+.mc-hit[disabled] { opacity: .45; cursor: default; }
+.mc-picked[hidden] { display: none; }
+.mp-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--accent-dim); color: var(--accent);
+  border-radius: 999px; padding: 5px 6px 5px 11px; font-size: 12px; font-weight: 800;
+}
+.mp-x { border: 0; background: none; color: inherit; font-size: 14px; line-height: 1; cursor: pointer; padding: 0 3px; }

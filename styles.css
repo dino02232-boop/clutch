@@ -2090,3 +2090,104 @@ textarea,
 select {
   font-size: 16px;
 }
+
+/* ── 홈 첫 화면: 소개 카드 · 첫 경기 강조 ─────────────────────
+   처음 온 사람이 3초 안에 이해하도록, 종목 타일 위에 짧게. 소개문만으로
+   첫 화면이 가득 차지 않게 카드 하나 + 강조 카드 하나로 끝낸다. */
+.home-hero { margin: 0 0 14px; }
+.home-hero[hidden] { display: none; }
+
+.hh-card {
+  background: linear-gradient(180deg, #F6FBF8 0%, #FFFFFF 72%);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 1px 2px rgba(17, 24, 39, .04);
+}
+.hh-kicker {
+  display: inline-block;
+  margin: 0 0 7px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .01em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-radius: 999px;
+  padding: 3px 9px;
+}
+.hh-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.34;
+  word-break: keep-all;
+}
+.hh-lead {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-2);
+  letter-spacing: -.01em;
+  word-break: keep-all;
+}
+.hh-steps { list-style: none; counter-reset: hh; margin: 11px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.hh-steps li { counter-increment: hh; display: flex; align-items: baseline; gap: 7px; font-size: 12px; color: var(--text-2); }
+.hh-steps li::before {
+  content: counter(hh);
+  flex: 0 0 auto;
+  width: 17px; height: 17px;
+  border-radius: 999px;
+  background: #E9F5EF;
+  color: var(--accent);
+  font-size: 10.5px; font-weight: 800;
+  display: inline-flex; align-items: center; justify-content: center;
+  line-height: 1;
+  transform: translateY(1px);
+}
+.hh-steps li b { font-weight: 800; color: var(--text); font-size: 12.5px; }
+.hh-steps li span { font-size: 11px; color: var(--text-3); }
+.hh-cta { display: flex; gap: 8px; margin: 12px 0 0; }
+.hh-cta button {
+  flex: 1 1 0; min-width: 0; min-height: 42px;
+  border-radius: 12px; font: inherit; font-size: 13.5px; font-weight: 800;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.hh-join { border: 0; background: var(--accent); color: #fff; box-shadow: 0 6px 16px -9px rgba(11, 122, 84, .75); }
+.hh-join:active { transform: scale(.99); }
+.hh-login { border: 1px solid var(--line-2); background: #fff; color: var(--text); }
+.hh-note { margin: 9px 0 0; font-size: 10.5px; line-height: 1.5; color: var(--text-3); letter-spacing: -.005em; word-break: keep-all; }
+
+/* 회원: 반복을 줄여 한 줄로 */
+.hh-card.is-mine { padding: 12px 14px; }
+.hh-mine { margin: 0; font-size: 12.5px; font-weight: 700; color: var(--text-2); word-break: keep-all; }
+.hh-mine b { color: var(--accent); font-variant-numeric: tabular-nums; }
+.hh-more { margin: 6px 0 0; }
+.hh-more summary { font-size: 11.5px; font-weight: 700; color: var(--text-3); cursor: pointer; list-style: none; }
+.hh-more summary::-webkit-details-marker { display: none; }
+.hh-more summary::after { content: " ›"; color: var(--text-3); }
+.hh-more[open] summary::after { content: ""; }
+.hh-more .hh-steps { margin-top: 9px; }
+
+/* 첫 경기 강조 카드 */
+.hh-feat {
+  display: block;
+  margin: 8px 0 0;
+  padding: 13px 14px 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(11, 122, 84, .22);
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 2px rgba(17, 24, 39, .05), 0 12px 26px -22px rgba(11, 122, 84, .6);
+  -webkit-tap-highlight-color: transparent;
+}
+.hh-feat:active { background: #F7FBFA; }
+.hh-feat-top { display: flex; align-items: center; gap: 6px; font-size: 10.5px; font-weight: 800; color: var(--text-3); }
+.hh-live { background: rgba(220, 38, 38, .12); color: #DC2626; border-radius: 5px; padding: 1px 6px; font-size: 9.5px; letter-spacing: .04em; }
+.hh-when { color: var(--text-2); font-variant-numeric: tabular-nums; }
+.hh-lg { margin-left: auto; font-weight: 700; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hh-teams { display: flex; align-items: baseline; gap: 7px; margin: 7px 0 0; font-size: 16.5px; font-weight: 800; letter-spacing: -.025em; flex-wrap: wrap; }
+.hh-teams i { font-style: normal; font-size: 11px; font-weight: 700; color: var(--text-3); }
+.hh-why { margin: 5px 0 0; font-size: 12px; line-height: 1.55; color: var(--text-2); word-break: keep-all; }
+.hh-go { display: inline-block; margin-top: 8px; font-size: 11.5px; font-weight: 800; color: var(--accent); }
