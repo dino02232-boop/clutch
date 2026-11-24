@@ -678,6 +678,8 @@
     // 주소에 어제 경기(#…)가 남아 있으면 새 페이지가 그 경기 날짜로 돌아가므로 지운다.
     if (location.hash) writeHash("", true);
     render();
+    // 베팅 슬립을 작성 중이면 새로고침으로 담아 둔 픽을 날리지 않는다(화면 전환은 위에서 이미 했다).
+    if (window.clutchSlipShare && (window.clutchSlipShare() || []).length) return true;
     if (rolloverTriedRecently(t)) return true;
     try { sessionStorage.setItem(ROLL_RELOAD_KEY, JSON.stringify({ date: t, at: Date.now() })); } catch (e) { /* 저장 못 하면 매번 확인만 */ }
     try { location.reload(); } catch (e2) { /* 새로고침 불가한 환경이면 위 전환으로 끝 */ }
