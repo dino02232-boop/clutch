@@ -1028,14 +1028,30 @@
     var d = n > 0 ? (n / 100 + 1) : (100 / Math.abs(n) + 1);
     return d.toFixed(2);
   }
+  // 경기 시작(KST) 뒤에는 배당을 고를 수 없다. LIVE·종료 상태도 같은 기준으로 잠근다.
+  // 시작 시각을 못 읽는 경기도 열어 두지 않는다. betting.js 는 이 함수를 그대로 써서
+  // 클릭과 베팅 확정을 한 번 더 막는다(같은 기준을 두 곳에 적지 않으려고 window 에 올린다).
+  function betLocked(g) {
+    if (!g) return true;
+    var r = g.result || {};
+    if (r.state === "live" || r.state === "final") return true;
+    if (g.status === "live" || g.status === "final") return true;
+    var t = new Date(g.start).getTime();
+    return !isFinite(t) || Date.now() >= t;
+  }
+  window.clutchBetLocked = betLocked;
+  window.clutchBetCloseText = "베팅 마감";
   function oddsRowHTML(label, ml, game, market, pick, line, team) {
     if (ml == null) return '';
-    return '<li><button type="button" class="o-pick" data-bet-game="' + esc(game.id) + '" data-bet-market="' + market + '" data-bet-pick="' + pick + '" data-bet-line="' + esc(line || '') + '" data-bet-odds="' + esc(String(ml)) + '"><span class="o-lab">' + esc(label) + "</span>" +
+    var closed = betLocked(game);
+    return '<li><button type="button" class="o-pick' + (closed ? ' is-closed' : '') + '" data-bet-game="' + esc(game.id) + '" data-bet-market="' + market + '" data-bet-pick="' + pick + '" data-bet-line="' + esc(line || '') + '" data-bet-odds="' + esc(String(ml)) + '"' +
+      (closed ? ' disabled aria-disabled="true" data-bet-closed="1"' : '') + '><span class="o-lab">' + esc(label) + "</span>" +
       (team ? '<span class="o-team">' + esc(team) + "</span>" : "") +
       '<span class="o-val"><b>' + decText(ml) + "배</b></span></button></li>";
   }
   function oddsHTML(g) {
     var o = g.odds;
+    var closed = betLocked(g);
     if (!o) {
       var why = g.status === "final"
         ? "경기가 끝나 ESPN이 배당을 내렸습니다."
@@ -1072,8 +1088,9 @@
       impLine = '<p class="o-imp">내재 확률 ' + bits.join(" · ") + "</p>";
     }
     var at = o.at ? String(o.at).slice(5, 16).replace("T", " ") : "";
-    return '<section class="obox">' +
+    return '<section class="obox' + (closed ? " is-closed" : "") + '">' +
       '<div class="o-head"><b>배당</b>' +
+        (closed ? '<span class="o-closed-note">🔒 ' + esc(window.clutchBetCloseText || "베팅 마감") + "</span>" : "") +
         (o.provider ? '<span class="o-prov">' + esc(o.provider) + "</span>" : "") +
         (at ? '<span class="o-at">' + esc(at) + " 기준</span>" : "") +
       "</div>" +

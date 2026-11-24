@@ -10,6 +10,57 @@
     return m;
   }
   function dec(a) { a = Number(a); return a > 0 ? 1 + a / 100 : 1 + 100 / Math.abs(a); }
+  // 경기 시작(KST) 뒤에는 배당을 고를 수 없다. LIVE·종료 상태도 잠근다.
+  // 카드를 그리는 app.js 와 같은 함수를 쓰고, 없으면 여기서 같은 기준으로 판단한다.
+  function betLocked(g) {
+    if (window.clutchBetLocked) return window.clutchBetLocked(g);
+    if (!g) return true;
+    var r = g.result || {};
+    if (r.state === 'live' || r.state === 'final') return true;
+    if (g.status === 'live' || g.status === 'final') return true;
+    var t = new Date(g.start).getTime();
+    return !isFinite(t) || Date.now() >= t;
+  }
+  function closeText() { return window.clutchBetCloseText || '베팅 마감'; }
+  // 화면에 그려진 배당 칸을 잠근다. app.js 가 다시 그린 카드든, 시작 시각만 지난
+  // 카드(라이브 폴링이 없을 때)든 배당 칸과 배당 박스를 같은 모양으로 맞춘다.
+  function lockDom() {
+    var gm = gameMap();
+    Array.prototype.forEach.call(document.querySelectorAll('.o-pick'), function (b) {
+      if (!betLocked(gm[b.dataset.betGame])) return;
+      if (!b.disabled) b.disabled = true;
+      if (b.getAttribute('aria-disabled') !== 'true') b.setAttribute('aria-disabled', 'true');
+      b.setAttribute('data-bet-closed', '1');
+      if (!b.classList.contains('is-closed')) b.classList.add('is-closed');
+      var box = b.closest ? b.closest('.obox') : null;
+      if (!box) return;
+      box.classList.add('is-closed');
+      var head = box.querySelector('.o-head');
+      if (!head || head.querySelector('.o-closed-note')) return;
+      var note = document.createElement('span');
+      note.className = 'o-closed-note';
+      note.textContent = '🔒 ' + closeText();
+      var headTitle = head.querySelector('b');
+      if (headTitle && headTitle.nextSibling) head.insertBefore(note, headTitle.nextSibling);
+      else head.appendChild(note);
+    });
+  }
+  // 슬립에 담아 둔 픽 중 경기가 시작된 것을 뺀다. 뺀 게 있으면 Bet 을 펼쳐 알린다.
+  function pruneClosed() {
+    if (!slip.length) return 0;
+    var gm = gameMap(), dropped = [];
+    slip = slip.filter(function (x) {
+      if (!betLocked(gm[x.gameId])) return true;
+      dropped.push(x);
+      return false;
+    });
+    if (!dropped.length) return 0;
+    if (el('betDock')) el('betDock').classList.remove('is-min');
+    syncDock();
+    say('경기가 시작되어 베팅 슬립에서 뺐습니다: ' + dropped.map(function (x) { return x.away + ' vs ' + x.home; }).join(', '));
+    paint();
+    return dropped.length;
+  }
   // 화면에 보이는 배당(소수 둘째 자리)과 예상 획득을 같은 값으로 계산한다.
   function payout(stake, mult) { var m = Math.round(mult * 100) / 100; return Math.floor(stake * m + 1e-9); }
   function say(text) { var n = el('betNotice'); if (n) n.textContent = text; }
@@ -38,8 +89,8 @@
     }
     document.body.addEventListener('click', function (e) {
       var b=e.target.closest('.o-pick'); if (!b) return;
-      var g=gameMap()[b.dataset.betGame]; if (!g) return;
-      if (Date.parse(g.start)<=Date.now()) { say('경기가 시작되어 선택할 수 없습니다.'); return; }
+      var gm=gameMap(), g=gm[b.dataset.betGame];
+      if (b.disabled || b.getAttribute('aria-disabled')==='true' || betLocked(g)) { lockDom(); say('경기가 시작되어 선택할 수 없습니다.'); return; }
       var item={gameId:g.id, date:g.date, sport:g.sport, league:g.league, start:g.start, away:g.away.name, home:g.home.name, market:b.dataset.betMarket, pick:b.dataset.betPick, line:b.dataset.betLine||'', odds:Number(b.dataset.betOdds), decimal:Number(dec(b.dataset.betOdds).toFixed(4))};
       var ix=slip.findIndex(function(x){return x.gameId===item.gameId;}); if(ix>=0) slip[ix]=item; else slip.push(item); el('betDock')?.classList.remove('is-min'); syncDock(); paint();
     });
@@ -58,6 +109,13 @@
       document.addEventListener(ev,function(e){if(e.target&&e.target.id==='betStake')paint();},true);
     });
     if(auth) auth.onAuthStateChanged(onUser);
+    // 경기 시작 시각이 지나면 다시 그리지 않은 카드도 잠근다(라이브 폴링이 쉬는 동안 포함).
+    lockDom();
+    setInterval(function(){ lockDom(); pruneClosed(); }, 15000);
+    ['visibilitychange','pageshow','focus'].forEach(function(ev){
+      document.addEventListener(ev,function(){ lockDom(); pruneClosed(); },true);
+      window.addEventListener(ev,function(){ lockDom(); pruneClosed(); },true);
+    });
     syncDock();
     paint();
   }
@@ -95,9 +153,11 @@
   function nick(){ if(!me)return login(); if(document.getElementById('nickModal'))return; openNick(); }
   async function submitBet(){
     if(!me){await login();return;} if(!slip.length)return say('먼저 경기 배당을 선택해 주세요.');
-    var stake=Number(el('betStake').value), now=Date.now(), gm=gameMap();
+    if (pruneClosed()) return say('이미 시작된 경기가 있어 베팅할 수 없습니다.');
+    if(!slip.length)return say('먼저 경기 배당을 선택해 주세요.');
+    var stake=Number(el('betStake').value), gm=gameMap();
     if(!Number.isInteger(stake)||stake<100)return say('베팅 금액은 100P 이상 정수로 입력해 주세요.');
-    if(slip.some(function(x){return !gm[x.gameId]||Date.parse(gm[x.gameId].start)<=now;}))return say('경기가 시작된 선택이 있어 베팅할 수 없습니다. 배팅을 확인해 주세요.');
+    if(slip.some(function(x){return betLocked(gm[x.gameId]);}))return say('이미 시작된 경기가 있어 베팅할 수 없습니다.');
     if(stake>balance)return say('보유 포인트가 부족합니다.');
     var id=db.collection('bets').doc(me.uid).collection('items').doc().id, userRef=db.collection('users').doc(me.uid), betRef=db.collection('bets').doc(me.uid).collection('items').doc(id);
     var picks=slip.map(function(x){return {gameId:x.gameId,date:x.date,sport:x.sport,league:x.league,start:x.start,away:x.away,home:x.home,market:x.market,pick:x.pick,line:x.line,odds:x.odds,decimal:x.decimal};});
