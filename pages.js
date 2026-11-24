@@ -12,6 +12,11 @@
     if (points == null || !isFinite(Number(points))) return '';
     return window.clutchTierBadge ? window.clutchTierBadge(points) : '';
   };
+  // 게시판 목록·상세처럼 좁은 자리에 쓰는 작은 티어 마크(엠블럼만)
+  var tierMark = function (points) {
+    if (points == null || !isFinite(Number(points))) return '';
+    return window.clutchTierBadge ? window.clutchTierBadge(points, { label: false }) : '';
+  };
   var pickText = function (x) {
     return (MARKET_KO[x.market] || x.market || '') + ' ' + (PICK_KO[x.pick] || x.pick || '') +
       (x.line ? ' ' + x.line : '');
@@ -43,12 +48,29 @@
   }
 
   /* ── 자유게시판 ────────────────────────────────────────── */
-  function loadComments(id) {
-    db.collection('posts').doc(id).collection('comments').orderBy('createdAt', 'asc').limit(100).onSnapshot(function (s) {
-      var node = $('comments-' + id);
-      if (node) node.innerHTML = s.docs.map(function (d) { var c = d.data(); return '<p><b>' + esc(c.displayName) + '</b> ' + esc(c.body) + '</p>'; }).join('');
-    });
+  var postMap = {}, countCache = {}, profCache = {}, profBusy = {}, detailUnsub = null, curDetailId = '', listScroll = 0;
+
+  function toDate(ts) {
+    var d = ts && ts.toDate ? ts.toDate() : (ts instanceof Date ? ts : (typeof ts === 'number' ? new Date(ts) : null));
+    return d && !isNaN(d.getTime()) ? d : null;
   }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  // 목록용: 오늘 쓴 글은 12:59, 다른 날은 11.24
+  function fmtTime(ts) {
+    var d = toDate(ts), now = new Date();
+    if (!d) return '';
+    if (d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth() && d.getDate() === now.getDate()) {
+      return pad(d.getHours()) + ':' + pad(d.getMinutes());
+    }
+    return (d.getMonth() + 1) + '.' + pad(d.getDate());
+  }
+  // 상세용: 2026.11.24 12:59
+  function fmtFull(ts) {
+    var d = toDate(ts);
+    if (!d) return '';
+    return d.getFullYear() + '.' + pad(d.getMonth() + 1) + '.' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+  }
+
   function slipCardHTML(slip, title) {
     if (!slip || !slip.length) return '';
     return '<div class="post-slip"><b>' + esc(title) + '</b>' + slip.map(function (x) {
@@ -56,10 +78,10 @@
         ' · ' + Number(x.decimal || 0).toFixed(2) + '배' + (x.stake ? ' · ' + fmt(x.stake) + 'P' : '') + '</p>';
     }).join('') + '</div>';
   }
+
   /* 글쓴이 — 새 글에는 points 를 저장하지 않는다(Firestore 규칙이 6개 필드만 허용).
      그래서 티어 배지는 글에 남은 points 가 있으면 그것으로, 없으면 users 문서에서
      그 사람의 지금 포인트·닉네임을 한 번만 읽어 와(캐시) 채운다. */
-  var profCache = {}, profBusy = {};
   function profOf(uid) {
     return uid && Object.prototype.hasOwnProperty.call(profCache, uid) ? profCache[uid] : null;
   }
@@ -81,7 +103,7 @@
     return '<span class="post-by" data-uid="' + esc(p.uid || '') + '"' +
       ' data-name="' + esc(p.displayName || '') + '"' +
       (p.points != null ? ' data-pts="' + esc(p.points) + '"' : '') + '>' +
-      esc(name) + tierBadge(pts) + '</span>';
+      esc(name) + tierMark(pts) + '</span>';
   }
   function paintAuthors(uid) {
     var nodes = document.querySelectorAll('.post-by[data-uid]');
@@ -90,27 +112,169 @@
       if (uid && u !== uid) continue;
       var pr = profOf(u), kept = n.getAttribute('data-pts');
       var pts = kept != null ? Number(kept) : (pr ? pr.points : null);
-      n.innerHTML = esc((pr && pr.nickname) || n.getAttribute('data-name') || '회원') + tierBadge(pts);
+      n.innerHTML = esc((pr && pr.nickname) || n.getAttribute('data-name') || '회원') + tierMark(pts);
     }
   }
+
+  // 댓글 수 — count 집계를 먼저 쓰고, 지원하지 않으면 최근 50개를 세어 대신한다.
+  function setCount(id, n) {
+    if (typeof n !== 'number' || n < 0) return;
+    countCache[id] = n;
+    var nodes = document.querySelectorAll('[data-cmt]');
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (el.getAttribute('data-cmt') !== id) continue;
+      el.textContent = n > 0 ? n : '';
+      el.hidden = !(n > 0);
+    }
+    var dc = $('detailCmtCount');
+    if (dc && curDetailId === id) dc.textContent = n > 0 ? String(n) : '0';
+  }
+  function countComments(id) {
+    var ref = db.collection('posts').doc(id).collection('comments');
+    try {
+      if (typeof ref.count === 'function') {
+        ref.count().get().then(function (agg) {
+          var d = agg && agg.data ? agg.data() : {};
+          setCount(id, Number(d.count) || 0);
+        }, function () {});
+        return;
+      }
+    } catch (_) { /* 집계 미지원 → 아래로 */ }
+    ref.limit(50).get().then(function (s) { setCount(id, s.size); }, function () {});
+  }
+  // 상세 화면의 댓글 목록(실시간)
+  function loadComments(id) {
+    return db.collection('posts').doc(id).collection('comments').orderBy('createdAt', 'asc').limit(100).onSnapshot(function (s) {
+      var node = $('comments-' + id);
+      if (node) {
+        node.innerHTML = s.docs.length
+          ? s.docs.map(function (d) {
+              var c = d.data() || {};
+              return '<div class="cmt"><div class="cmt-h"><b>' + esc(c.displayName || '회원') + '</b>' +
+                '<span class="cmt-t">' + esc(fmtTime(c.createdAt)) + '</span></div>' +
+                '<p>' + esc(c.body) + '</p></div>';
+            }).join('')
+          : '<p class="bl-nocmt">아직 댓글이 없습니다.</p>';
+      }
+      setCount(id, s.docs.length);
+    }, function () {
+      var node = $('comments-' + id);
+      if (node) node.innerHTML = '<p class="bl-nocmt">댓글을 불러오지 못했습니다.</p>';
+    });
+  }
+
+  // 목록 한 줄
+  function rowHTML(id, p) {
+    var n = countCache[id] || 0;
+    return '<a class="bl-row" href="#post=' + encodeURIComponent(id) + '" data-post="' + esc(id) + '">' +
+      '<span class="bl-titlerow"><span class="bl-title">' + esc(p.title) + '</span>' +
+      (p.slip && p.slip.length ? '<span class="bl-ticket" title="베팅 첨부">🎟</span>' : '') +
+      '<span class="bl-cmt" data-cmt="' + esc(id) + '"' + (n ? '' : ' hidden') + '>' + (n || '') + '</span></span>' +
+      '<span class="bl-meta">' + postByHTML(p) + '<span class="bl-time">' + fmtTime(p.createdAt) + '</span></span>' +
+      '</a>';
+  }
+
   function loadPosts() {
     db.collection('posts').orderBy('createdAt', 'desc').limit(50).onSnapshot(function (s) {
-      var node = $('posts');
+      var node = $('postList');
       if (!node) return;
-      node.innerHTML = s.docs.map(function (doc) {
-        var p = doc.data();
-        var created = p.createdAt && p.createdAt.toDate ? p.createdAt.toDate().toLocaleString('ko-KR') : '방금';
+      postMap = {};
+      s.docs.forEach(function (d) {
+        var p = d.data() || {};
+        postMap[d.id] = p;
         if (p.points == null) profFetch(p.uid);
-        return '<article class="board-post"><h2>' + esc(p.title) + '</h2>' +
-          '<small>' + postByHTML(p) + ' · ' + created + '</small>' +
-          '<p class="post-body">' + esc(p.body) + '</p>' +
-          slipCardHTML(p.slip, '🎟 공유한 베팅') +
-          '<div class="post-comments" id="comments-' + doc.id + '"></div>' +
-          '<div class="comment-box"><input id="comment-' + doc.id + '" maxlength="1000" placeholder="댓글 남기기">' +
-          '<button type="button" data-comment="' + doc.id + '">댓글</button></div></article>';
-      }).join('') || '<p class="rk-empty">첫 글을 남겨 보세요.</p>';
-      s.docs.forEach(function (d) { loadComments(d.id); });
+      });
+      node.innerHTML = s.docs.length
+        ? s.docs.map(function (d) { return rowHTML(d.id, d.data() || {}); }).join('')
+        : '<p class="bl-empty">아직 글이 없습니다. 첫 글을 남겨 보세요.</p>';
+      node.hidden = false;
+      s.docs.forEach(function (d) { countComments(d.id); });
+      paintAuthors();
+    }, function () {
+      var node = $('postList');
+      if (node) { node.innerHTML = '<p class="bl-empty">글을 불러오지 못했습니다.</p>'; node.hidden = false; }
     });
+  }
+
+  /* 목록 ↔ 상세: 해시(#post=id)로 오가서 브라우저 뒤로 가기도 목록 복귀가 된다 */
+  function hashId() {
+    var m = /^#post=(.+)$/.exec(location.hash || '');
+    if (!m) return '';
+    try { return decodeURIComponent(m[1]); } catch (_) { return m[1]; }
+  }
+  function renderDetail(id) {
+    var p = postMap[id];
+    if (!p) return false;
+    curDetailId = id;
+    var list = $('postList'), det = $('postDetail');
+    if (list) list.hidden = true;
+    if (det) {
+      det.hidden = false;
+      $('detailTitle').textContent = p.title || '';
+      $('detailMeta').innerHTML = postByHTML(p) + '<span class="meta-when">' + esc(fmtFull(p.createdAt)) + '</span>';
+      $('detailBody').textContent = p.body || '';
+      $('detailSlip').innerHTML = slipCardHTML(p.slip, '🎟 공유한 베팅');
+      $('detailCmtCount').textContent = countCache[id] ? String(countCache[id]) : '0';
+      $('detailComments').innerHTML = '<div id="comments-' + esc(id) + '"><p class="bl-nocmt">댓글을 불러오는 중…</p></div>';
+      $('detailCommentBox').innerHTML = '<input id="comment-' + esc(id) + '" maxlength="1000" placeholder="댓글 남기기">' +
+        '<button type="button" data-comment="' + esc(id) + '">등록</button>';
+    }
+    if (detailUnsub) { try { detailUnsub(); } catch (_) {} detailUnsub = null; }
+    detailUnsub = loadComments(id);
+    paintAuthors();
+    return true;
+  }
+  function showDetail(id) {
+    if (!id) return showList();
+    if (!postMap[id]) {
+      // 목록 스냅샷보다 먼저 해시로 들어온 경우(새로고침·링크 공유) 직접 한 번 읽는다
+      var list = $('postList'), det = $('postDetail');
+      if (list) list.hidden = true;
+      if (det) {
+        det.hidden = false;
+        $('detailTitle').textContent = '';
+        $('detailMeta').innerHTML = '';
+        $('detailBody').textContent = '불러오는 중…';
+        $('detailSlip').innerHTML = '';
+        $('detailComments').innerHTML = '';
+        $('detailCommentBox').innerHTML = '';
+      }
+      curDetailId = '';
+      db.collection('posts').doc(id).get().then(function (d) {
+        if (!d.exists) { closeDetail(); return; }
+        postMap[id] = d.data() || {};
+        if (postMap[id].points == null) profFetch(postMap[id].uid);
+        if (hashId() === id) renderDetail(id);
+      }, function () {
+        if ($('detailBody')) $('detailBody').textContent = '글을 불러오지 못했습니다.';
+      });
+      return;
+    }
+    renderDetail(id);
+  }
+  function showList() {
+    curDetailId = '';
+    if (detailUnsub) { try { detailUnsub(); } catch (_) {} detailUnsub = null; }
+    var det = $('postDetail'), list = $('postList');
+    if (det) det.hidden = true;
+    if (list) list.hidden = false;
+  }
+  // '← 목록으로' — 해시 기록만 지우고 목록으로 (뒤로 가기 기록을 남기지 않는다)
+  function closeDetail() {
+    if (location.hash) {
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (_) { location.hash = ''; }
+    }
+    showList();
+    if (listScroll) { try { window.scrollTo(0, listScroll); } catch (_) {} }
+    listScroll = 0;
+  }
+  function route() {
+    var id = hashId();
+    if (!id) { showList(); return; }
+    listScroll = listScroll || window.scrollY || document.documentElement.scrollTop || 0;
+    if (renderDetail(id)) { try { window.scrollTo(0, 0); } catch (_) {} }
+    else showDetail(id);
   }
 
   // 글쓰기 판 열기/닫기
@@ -118,6 +282,7 @@
     var box = $('writeBox'), btn = $('writeToggle');
     if (!box) return;
     var open = typeof force === 'boolean' ? force : box.hidden;
+    if (open && curDetailId) closeDetail();
     box.hidden = !open;
     if (btn) { btn.textContent = open ? '닫기' : '✏️ 글쓰기'; btn.classList.toggle('on', open); }
     if (open) { try { box.scrollIntoView({ block: 'start', behavior: 'smooth' }); } catch (_) { box.scrollIntoView(); } }
@@ -190,9 +355,11 @@
   }
   async function addComment(id) {
     if (!user) return say('댓글은 Google 로그인 후 작성할 수 있습니다.');
-    var input = $('comment-' + id), body = input.value.trim(); if (!body) return;
-    try { await db.collection('posts').doc(id).collection('comments').add({ uid: user.uid, displayName: (window.clutchNickname || user.displayName || '회원'), body: body, createdAt: firebase.firestore.FieldValue.serverTimestamp() }); input.value = ''; }
-    catch (e) { say('댓글 등록 실패: ' + e.message); }
+    var input = $('comment-' + id), body = input ? input.value.trim() : ''; if (!body) return;
+    try {
+      await db.collection('posts').doc(id).collection('comments').add({ uid: user.uid, displayName: (window.clutchNickname || user.displayName || '회원'), body: body, createdAt: firebase.firestore.FieldValue.serverTimestamp() });
+      input.value = '';
+    } catch (e) { say('댓글 등록 실패: ' + e.message); }
   }
 
   if ($('rankAll')) {
@@ -200,7 +367,7 @@
     var rd = $('rankDate');
     if (rd) rd.textContent = new Date().toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' }) + ' 기준';
   }
-  if ($('posts')) {
+  if ($('postList')) {
     picked = { list: [], sel: {} };
     // 예전 'Bet 공유' 버튼에서 넘어온 슬립이 있으면 그대로 붙여 둔다
     try {
@@ -210,6 +377,9 @@
     loadPosts();
     drawShared();
     if (shared.length) toggleCompose(true);
+    window.addEventListener('hashchange', route);
+    // 처음 들어온 주소에 #post=id 가 붙어 있으면 그 글로 바로 연다
+    route();
   }
   if (auth) auth.onAuthStateChanged(function (u) {
     user = u;
@@ -234,6 +404,7 @@
     if (e.target.id === 'writeToggle') toggleCompose();
     if (e.target.id === 'writeCancel') toggleCompose(false);
     if (e.target.id === 'submitPost') addPost();
+    if (e.target.id === 'detailBack' || (e.target.closest && e.target.closest('#detailBack'))) closeDetail();
     if (e.target.closest && e.target.closest('[data-betpick]')) pickBet(e.target.closest('[data-betpick]').getAttribute('data-betpick'));
     if (e.target.dataset && e.target.dataset.comment) addComment(e.target.dataset.comment);
   });
