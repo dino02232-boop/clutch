@@ -3,21 +3,149 @@
 import json
 import os
 import re
+import sys
 from datetime import datetime, timedelta, timezone
 
-import firebase_admin
-from firebase_admin import credentials, firestore
+# firebase_admin 은 실제 정산(main)에서만 쓴다 — load_games 만 확인할 때는 필요 없다.
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KST = timezone(timedelta(hours=9))
 
 
+def _object_literal(src, start):
+    """start 위치의 '{' 에서 짝이 맞는 '}' 까지를 잘라 낸다.
+
+    문자열과 주석 안의 중괄호는 세지 않는다. data.js 는 JS 객체 리터럴이라
+    안에 '};' 처럼 보이는 문자열이 있어도 여기서는 안전하다.
+    """
+    depth = 0
+    i = start
+    quote = None
+    n = len(src)
+    while i < n:
+        c = src[i]
+        if quote:
+            if c == "\\":
+                i += 2
+                continue
+            if c == quote:
+                quote = None
+        elif c in "\"'":
+            quote = c
+        elif c == "/" and src[i + 1:i + 2] == "*":
+            j = src.find("*/", i + 2)
+            i = n if j < 0 else j + 2
+            continue
+        elif c == "/" and src[i + 1:i + 2] == "//":
+            j = src.find("\n", i + 2)
+            i = n if j < 0 else j
+            continue
+        elif c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return src[start:i + 1]
+        i += 1
+    raise RuntimeError("window.CLUTCH_DATA object literal is not closed")
+
+
+def _js_to_json(src):
+    """JS 객체 리터럴을 JSON 으로 바꾼다.
+
+    data.js 는 거의 JSON 이지만 최상위 키가 따옴표 없이(`version: 1,`) 적혀 있고
+    `/* 자동 갱신 */` 주석이 섞여 있다. 문자열 안은 건드리지 않고 키와 주석만 정리한다.
+    """
+    out = []
+    i = 0
+    n = len(src)
+    expect_key = False          # '{' 나 ',' 바로 뒤 = 키가 올 수 있는 자리
+    while i < n:
+        c = src[i]
+        if c == "/" and src[i + 1:i + 2] == "*":
+            j = src.find("*/", i + 2)
+            i = n if j < 0 else j + 2
+            continue
+        if c == "/" and src[i + 1:i + 2] == "//":
+            j = src.find("\n", i + 2)
+            i = n if j < 0 else j
+            continue
+        if c in "\"'":
+            q = c
+            j = i + 1
+            buf = [c]
+            while j < n:
+                ch = src[j]
+                if ch == "\\":
+                    buf.append(src[j:j + 2])
+                    j += 2
+                    continue
+                buf.append(ch)
+                j += 1
+                if ch == q:
+                    break
+            text = "".join(buf)
+            if q == "'":              # JS 작은따옴표 문자열 → JSON 큰따옴표
+                inner = text[1:-1].replace("\\'", "'").replace('"', '\\"')
+                text = '"' + inner + '"'
+            out.append(text)
+            i = j
+            expect_key = False
+            continue
+        if c in "{,":
+            out.append(c)
+            i += 1
+            expect_key = True
+            continue
+        if c in "[:":
+            out.append(c)
+            i += 1
+            expect_key = False
+            continue
+        if expect_key and (c.isalpha() or c in "_$"):
+            j = i
+            while j < n and (src[j].isalnum() or src[j] in "_$"):
+                j += 1
+            word = src[i:j]
+            k = j
+            while k < n and src[k] in " \t\r\n":
+                k += 1
+            if k < n and src[k] == ":":
+                out.append('"' + word + '"')
+                i = j
+                expect_key = False
+                continue
+            out.append(word)                      # true / false / null
+            i = j
+            expect_key = False
+            continue
+        out.append(c)
+        if c not in " \t\r\n":
+            expect_key = False
+        i += 1
+    return "".join(out)
+
+
 def load_games():
-    src = open(os.path.join(ROOT, "data.js"), encoding="utf-8").read()
-    match = re.search(r"window\.CLUTCH_DATA\s*=\s*(\{.*?\})\s*;", src, re.S)
-    if not match:
-        raise RuntimeError("window.CLUTCH_DATA JSON not found")
-    data = json.loads(match.group(1))
+    """data.js 의 window.CLUTCH_DATA 를 읽어 경기 id → 경기 사전을 돌려준다.
+
+    data.js 는 JSON 이 아니라 JS 객체 리터럴이라 json.loads 로는 늘 실패했다
+    (`version: 1,`). 먼저 그대로 JSON 으로 시도하고, 실패하면 키를 따옴표로
+    바꾸고 주석을 지운 뒤 다시 읽는다.
+    """
+    path = os.path.join(ROOT, "data.js")
+    with open(path, encoding="utf-8") as f:
+        src = f.read()
+    # 파일 위쪽 설명 주석에도 'window.CLUTCH_DATA' 와 '{' 가 나오므로,
+    # 실제 대입문(`window.CLUTCH_DATA = {`)을 찾는다.
+    found = re.search(r"window\.CLUTCH_DATA\s*=\s*\{", src)
+    if not found:
+        raise RuntimeError("window.CLUTCH_DATA assignment not found in data.js")
+    literal = _object_literal(src, found.end() - 1)
+    try:
+        data = json.loads(literal)
+    except json.JSONDecodeError:
+        data = json.loads(_js_to_json(literal))
     return {g["id"]: g for day in data.get("days", []) for g in day.get("games", [])}
 
 
@@ -75,6 +203,9 @@ def kst_week_start(now):
 
 
 def main():
+    import firebase_admin
+    from firebase_admin import credentials, firestore
+
     service_json = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
     if not service_json:
         raise RuntimeError("FIREBASE_SERVICE_ACCOUNT secret is required")
@@ -149,4 +280,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if "--verify" in sys.argv:
+        # Firestore 쓰기 없이 data.js 파싱만 확인한다 (tools/settle_bets.py --verify).
+        games = load_games()
+        finals = sum(1 for g in games.values() if (g.get("result") or {}).get("state") == "final")
+        print(f"games={len(games)} finals={finals}")
+    else:
+        main()
