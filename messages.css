@@ -132,3 +132,6 @@
   border-radius: 999px; padding: 5px 6px 5px 11px; font-size: 12px; font-weight: 800;
 }
 .mp-x { border: 0; background: none; color: inherit; font-size: 14px; line-height: 1; cursor: pointer; padding: 0 3px; }
+
+/* '+' 새 쪽지 탭이 열려 있을 때 */
+.msg-tabs .msg-new.on { background: #0A6B49; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .35); }

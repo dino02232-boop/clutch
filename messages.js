@@ -154,7 +154,9 @@
         if (page > max && max >= 1) { page = max; return loadPage(); }
         paintPager();
       }).catch(function (e) {
-        if (list) list.innerHTML = '<p class="msg-empty">쪽지를 불러오지 못했습니다: ' + esc(e.message) + '</p>';
+        var m = String(e && e.message || e);
+        if (/permission|insufficient/i.test(m)) m = '쪽지함을 열 수 없습니다. 잠시 후 다시 시도해 주세요.';
+        if (list) list.innerHTML = '<p class="msg-empty">' + esc(m) + '</p>';
       });
   }
 
@@ -308,6 +310,8 @@
     var ti = box.querySelector('[data-tab="inbox"]'), to = box.querySelector('[data-tab="outbox"]');
     if (ti) { ti.classList.toggle('on', tab === 'inbox'); ti.setAttribute('aria-selected', tab === 'inbox' ? 'true' : 'false'); }
     if (to) { to.classList.toggle('on', tab === 'outbox'); to.setAttribute('aria-selected', tab === 'outbox' ? 'true' : 'false'); }
+    var nb = box.querySelector('.msg-new');
+    if (nb) { nb.classList.remove('on'); nb.removeAttribute('aria-pressed'); }
   }
   function paintPager(hide) {
     var box = $('msgPager');
@@ -328,8 +332,13 @@
     view = 'compose';
     var box = $('msgModal');
     if (!box) return;
+    // 탭은 그대로 두어 받은/보낸 쪽지로 되돌아갈 수 있게 한다.
     var tabs = box.querySelector('.msg-tabs');
-    if (tabs) tabs.hidden = true;
+    if (tabs) {
+      tabs.hidden = false;
+      var nb = tabs.querySelector('.msg-new');
+      if (nb) { nb.classList.add('on'); nb.setAttribute('aria-pressed', 'true'); }
+    }
     var list = $('msgList');
     if (list) list.innerHTML = composeHTML();
     paintPager(true);
