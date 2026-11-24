@@ -4765,14 +4765,37 @@
       out.clutch[String(who.id)] = (out.clutch[String(who.id)] || 0) + val;
     });
 
+    // 플레이가 어느 팀 것인지 — 선수 이름만으로는 팀을 알 수 없어 팀 약자를 함께 담는다.
+    // ESPN 이 plays[].team 을 주면 그 약자를 쓰고, 없으면 id·이름으로 헤더 competitor 와 맞춘다.
+    function playTeamOf(p) {
+      var t = (p && p.team) || null;
+      var ab = String((t && (t.abbreviation || t.shortDisplayName)) || "").toUpperCase().trim();
+      var id = String((t && t.id) || (p && p.teamId) || "").trim();
+      var nm = String((t && (t.displayName || t.name)) || "").trim().toLowerCase();
+      var cands = [out.sides.home, out.sides.away].filter(Boolean);
+      var hit = null;
+      if (id) hit = cands.filter(function (s) { return s.id && s.id === id; })[0] || null;
+      if (!hit && nm) {
+        hit = cands.filter(function (s) { return String(s.name || "").toLowerCase() === nm; })[0] || null;
+      }
+      if (!ab && hit) ab = String(hit.abbr || "").toUpperCase();
+      if (!ab && hit) ab = String(hit.short || hit.name || "").toUpperCase();
+      var side = "";
+      if (hit) side = hit === out.sides.home ? "home" : (hit === out.sides.away ? "away" : "");
+      return { abbr: ab, side: side };
+    }
+
     var plays = j && Array.isArray(j.plays) ? j.plays : [];
     out.plays = plays.slice(-5).reverse().map(function (p) {
       var per = p && p.period && p.period.number ? p.period.number + "Q" : "";
       var clk = (p && p.clock && p.clock.displayValue) || "";
       var ko = koTranslate(String((p && (p.text || p.shortDescription)) || ""));
+      var pt = playTeamOf(p);
       return {
         // '2쿼터 종료'처럼 문장 자체가 시점을 말하는 줄은 앞 시간 칸을 비운다
         label: ko.rule === "period" ? "" : [per, clk].filter(Boolean).join(" "),
+        team: pt.abbr,
+        teamSide: pt.side,
         text: ko.text,
         away: p && p.awayScore != null ? p.awayScore : null,
         home: p && p.homeScore != null ? p.homeScore : null,
@@ -5066,8 +5089,16 @@
     }
     return head + '<ul class="lb-plays">' + plays.map(function (p) {
       var sc = (p.away != null && p.home != null) ? (p.away + "-" + p.home) : "";
+      // 선수 이름만 보고는 어느 팀 플레이인지 알 수 없으니 팀 약자를 배지로 붙인다.
+      var tm = String(p.team || "").toUpperCase();
+      var side = String(p.teamSide || "");
+      if (!side && tm) {
+        if (g.home && String(g.home.abbr || "").toUpperCase() === tm) side = "home";
+        else if (g.away && String(g.away.abbr || "").toUpperCase() === tm) side = "away";
+      }
       return "<li" + (p.scoring ? ' class="sc"' : "") + ">" +
         '<span class="bp-t">' + esc(p.label) + "</span>" +
+        (tm ? '<span class="lp-tm' + (side ? " " + side : "") + '">' + esc(tm) + "</span>" : "") +
         '<span class="bp-x">' + livePlayMarkerHTML("basketball", p) + esc(p.text) + "</span>" +
         (sc ? '<span class="bp-s">' + esc(sc) + "</span>" : "") +
         "</li>";
