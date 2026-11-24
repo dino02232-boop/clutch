@@ -165,16 +165,14 @@
   function paintDetail(d) {
     var v = d.data() || {};
     var other = tab === 'inbox' ? (v.fromName || '회원') : (v.toName || '회원');
-    var who = tab === 'inbox' ? '보낸 사람' : '받는 사람';
     var sub = tab === 'inbox'
       ? '받은 쪽지'
       : '보낸 쪽지 · ' + (v.readAt ? '<span class="md-read">읽음</span>' : '<span class="md-read un">아직 안 읽음</span>');
-    var body = $('msgList');
-    if (!body) return;
+    var body = $('msgList');    if (!body) return;
     body.innerHTML = '<div class="msg-detail">' +
         '<div class="md-head"><b class="md-who">' + esc(other) + '</b>' +
           '<span class="md-when">' + esc(whenFull(v.createdAt)) + '</span></div>' +
-        '<p class="md-sub">' + esc(who) + ' · ' + sub + '</p>' +
+        '<p class="md-sub">' + sub + '</p>' +
         '<div class="md-body">' + esc(v.body) + '</div>' +
         '<div class="md-actions">' +
           '<button type="button" class="md-reply" data-reply="1">답장</button>' +
