@@ -157,3 +157,37 @@
 .comment-box input{flex:1 1 auto;min-width:0;padding:8px 10px;border:1px solid var(--line-2);border-radius:9px;font:inherit;font-size:12.5px}
 .comment-box button{flex:0 0 auto;border:0;border-radius:9px;background:#eef1f3;color:var(--text-2);font:inherit;font-size:12px;font-weight:800;padding:8px 12px;cursor:pointer}
 .comment-box button:hover{background:var(--accent);color:#fff}
+
+/* ── 롤(LoL) 티어 배지 — tiers.js 가 만든 .tier-badge .t-<key> ────── */
+.tier-badge{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:800;letter-spacing:-.01em;line-height:1.45;padding:1px 6px;border-radius:5px;border:1px solid transparent;white-space:nowrap;flex:0 0 auto;vertical-align:middle}
+.tier-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex:0 0 auto}
+.t-iron{color:#4B5563;background:#EEF1F4;border-color:rgba(75,85,99,.20)}
+.t-bronze{color:#96552A;background:#F8EEE2;border-color:rgba(150,85,42,.22)}
+.t-silver{color:#67757F;background:#EDF1F4;border-color:rgba(103,117,127,.22)}
+.t-gold{color:#8F6600;background:#FCF0CF;border-color:rgba(143,102,0,.26)}
+.t-platinum{color:#0F7C74;background:#DFF4F1;border-color:rgba(15,124,116,.24)}
+.t-emerald{color:#137A3C;background:#E2F6E9;border-color:rgba(19,122,60,.24)}
+.t-diamond{color:#1D4ED8;background:#E6EEFE;border-color:rgba(29,78,216,.22)}
+.t-master{color:#6D28D9;background:#F0E9FE;border-color:rgba(109,40,217,.24)}
+.t-grandmaster{color:#B42318;background:#FCE7E7;border-color:rgba(180,35,24,.24)}
+.t-challenger{color:#0E7490;background:#DEF3F8;border-color:rgba(14,116,144,.26)}
+
+/* 티어 색이 어두운 배지 위에서도 읽히게 — 오른쪽 항목과 같은 줄 높이 유지 */
+.rank-card-h .tier-badge,.rk-sub .tier-badge{vertical-align:1px}
+
+/* 랭킹: 닉네임 + 티어 배지 한 줄 */
+.rk-nmline{display:flex;align-items:center;gap:6px;min-width:0}
+.rk-nmline .rk-name{min-width:0}
+
+/* 상단 닉네임 알약: [티어] 닉네임 · 포인트 */
+.bet-nav #betBalance{max-width:250px;gap:5px}
+.bet-pill-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+#betBalance .tier-badge{box-shadow:0 0 0 1px rgba(255,255,255,.75)}
+
+/* 내 베팅 내역 모달: 닉네임 옆 티어 + 다음 티어 안내 */
+.bets-me{flex-wrap:wrap}
+.bets-me .tier-badge{margin-left:-2px}
+.bets-next{flex:1 1 100%;font-style:normal;font-size:10.5px;font-weight:700;color:var(--text-3);letter-spacing:-.01em}
+
+/* 자유게시판 글쓴이 옆 티어 배지 */
+.board-post small .tier-badge{margin:0 4px;vertical-align:-1px}

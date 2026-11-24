@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var db = window.clutchDb, auth = window.clutchAuth, user = null, shared = [], picked = {};
+  var db = window.clutchDb, auth = window.clutchAuth, user = null, shared = [], picked = {}, myPoints = 0;
   var $ = function (id) { return document.getElementById(id); };
   var fmt = function (n) { return Math.floor(Number(n) || 0).toLocaleString('ko-KR'); };
   var esc = function (s) { return String(s || '').replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
@@ -8,6 +8,10 @@
   var MARKET_KO = { moneyline: '승무패', spread: '핸디캡', total: '언오버' };
   var PICK_KO = { away: '원정', home: '홈', draw: '무승부', over: '오버', under: '언더' };
   var STATUS_KO = { open: '베팅중', won: '적중', lost: '미적중', push: '무효' };
+  var tierBadge = function (points) {
+    if (points == null || !isFinite(Number(points))) return '';
+    return window.clutchTierBadge ? window.clutchTierBadge(points) : '';
+  };
   var pickText = function (x) {
     return (MARKET_KO[x.market] || x.market || '') + ' ' + (PICK_KO[x.pick] || x.pick || '') +
       (x.line ? ' ' + x.line : '');
@@ -20,7 +24,8 @@
     var sub = '적중 ' + Number(x.winRate || 0).toFixed(1) + '% · 최고 ' + Number(x.maxOdds || 0).toFixed(2) + '배';
     return '<div class="rk-row' + (i < 3 ? ' top' + (i + 1) : '') + '">' +
       '<span class="rk-no">' + (i + 1) + '</span>' +
-      '<span class="rk-who"><b class="rk-name">' + esc(name) + '</b>' +
+      '<span class="rk-who"><span class="rk-nmline"><b class="rk-name">' + esc(name) + '</b>' +
+      tierBadge(x.points) + '</span>' +
       '<span class="rk-sub">' + esc(sub) + '</span></span>' +
       '<span class="rk-pt">' + fmt(pts) + '<small>P</small></span></div>';
   }
@@ -59,7 +64,7 @@
         var p = doc.data();
         var created = p.createdAt && p.createdAt.toDate ? p.createdAt.toDate().toLocaleString('ko-KR') : '방금';
         return '<article class="board-post"><h2>' + esc(p.title) + '</h2>' +
-          '<small>' + esc(p.displayName) + ' · ' + created + '</small>' +
+          '<small>' + esc(p.displayName) + tierBadge(p.points) + ' · ' + created + '</small>' +
           '<p class="post-body">' + esc(p.body) + '</p>' +
           slipCardHTML(p.slip, '🎟 공유한 베팅') +
           '<div class="post-comments" id="comments-' + doc.id + '"></div>' +
@@ -138,7 +143,7 @@
     var title = $('postTitle').value.trim(), body = $('postBody').value.trim();
     if (!title || !body) return say('제목과 내용을 입력해 주세요.');
     try {
-      await db.collection('posts').add({ uid: user.uid, displayName: (window.clutchNickname || user.displayName || '회원'), title: title, body: body, slip: shared.slice(0, 20), createdAt: firebase.firestore.FieldValue.serverTimestamp() });
+      await db.collection('posts').add({ uid: user.uid, displayName: (window.clutchNickname || user.displayName || '회원'), title: title, body: body, slip: shared.slice(0, 20), points: myPoints, createdAt: firebase.firestore.FieldValue.serverTimestamp() });
       $('postTitle').value = ''; $('postBody').value = ''; shared = []; picked.sel = {};
       sessionStorage.removeItem('clutchSlipShare'); drawBetPick(); drawShared(); toggleCompose(false); say('');
     } catch (e) { say('등록 실패: ' + e.message); }
@@ -170,9 +175,11 @@
     user = u;
     if (!u) { if ($('myBetPick')) drawBetPick(); return; }
     var ref = db.collection('users').doc(u.uid);
-    ref.get().then(function (d) { var v = d.exists ? d.data() : {}; window.clutchNickname = v.nickname || ''; if (!d.exists) return ref.set({ uid: u.uid, displayName: u.displayName || '회원', photoURL: u.photoURL || '', points: 10000, createdAt: firebase.firestore.FieldValue.serverTimestamp(), weekProfit: 0, totalProfit: 0, winRate: 0, maxOdds: 0 }); }).then(function () {
+    ref.get().then(function (d) { var v = d.exists ? d.data() : {}; window.clutchNickname = v.nickname || ''; myPoints = Number(v.points) || 0; if (!d.exists) return ref.set({ uid: u.uid, displayName: u.displayName || '회원', photoURL: u.photoURL || '', points: 10000, createdAt: firebase.firestore.FieldValue.serverTimestamp(), weekProfit: 0, totalProfit: 0, winRate: 0, maxOdds: 0 }); }).then(function () {
       if ($('myBetPick')) { drawBetPick(); myBets(u); }
     });
+    // 글을 쓸 때 그 시점 포인트(티어)를 글에 남기기 위해 최신 잔액을 받아 둔다.
+    ref.onSnapshot(function (d) { if (d.exists) myPoints = Number((d.data() || {}).points) || 0; });
   });
   document.addEventListener('click', function (e) {
     if (e.target.id === 'boardLogin') login();

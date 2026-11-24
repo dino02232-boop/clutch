@@ -68,7 +68,7 @@
     if(el('betOdds'))el('betOdds').textContent=mult.toFixed(2)+'배';
     var stake=Number(el('betStake')&&el('betStake').value)||0;
     if(el('betReturn'))el('betReturn').textContent=fmt(payout(stake,mult))+'P';
-    if(el('betBalance')){var pill=el('betBalance');pill.textContent=me?((window.clutchNickname||me.displayName||'회원')+' · '+fmt(balance)+'P'):'';pill.hidden=!me;}
+    if(el('betBalance')){var pill=el('betBalance');pill.hidden=!me;pill.innerHTML=me?((window.clutchTierBadge?window.clutchTierBadge(balance):'')+'<span class="bet-pill-txt">'+esc(window.clutchNickname||me.displayName||'회원')+' · '+fmt(balance)+'P</span>'):'';}
     if(el('betSupport'))el('betSupport').hidden=!(me&&balance<100);
     var submit=el('betSubmit'); if(submit)submit.textContent=me?'베팅 확정':'로그인 후 베팅 확정';
     if(el('betDockTitle'))el('betDockTitle').textContent='🧾 Bet'+(slip.length?' ('+slip.length+')':'');
@@ -116,8 +116,14 @@
   function paintBetsMe() {
     var n = el('betsMe');
     if (!n || !me) return;
+    var nx = window.clutchTierNext ? window.clutchTierNext(balance) : null;
+    var hint = nx
+      ? '다음 ' + nx.tier.name + '까지 ' + fmt(nx.need) + 'P'
+      : '최고 티어입니다';
     n.innerHTML = '<b>' + esc(window.clutchNickname || me.displayName || '회원') + '</b>' +
-      '<span>' + fmt(balance) + 'P</span>';
+      (window.clutchTierBadge ? window.clutchTierBadge(balance) : '') +
+      '<span>' + fmt(balance) + 'P</span>' +
+      '<em class="bets-next">' + esc(hint) + '</em>';
   }
   function betRowHTML(doc) {
     var b = doc && doc.data ? doc.data() : (doc || {});
