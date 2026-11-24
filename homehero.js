@@ -19,9 +19,15 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
+  // 소개 카드는 '처음 들어온 홈 화면'에서만 띄운다(2026-11-24 요청).
+  // 날짜·종목을 고르면 app.js 가 pushState 로 주소만 바꿔 hashchange 이벤트가 오지 않으므로,
+  // 주소뿐 아니라 종목 탭 줄이 숨겨진 진짜 홈 상태인지까지 함께 본다.
   function isHome() {
     var h = location.hash || '';
-    return !h || h === '#';
+    if (h && h !== '#') return false;
+    var tabs = document.getElementById('tabs');
+    if (tabs && !tabs.hidden) return false; // 날짜·종목을 골라 목록을 보는 중
+    return true;
   }
   function plain(s) {
     return String(s || '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
@@ -191,6 +197,13 @@
   });
 
   window.addEventListener('hashchange', function () { paint(false); });
+  window.addEventListener('popstate', function () { paint(false); });
+  // 날짜·종목·뒤로가기 버튼은 주소를 pushState 로 바꿔 hashchange 가 오지 않는다 → 직접 다시 그린다.
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    if (t.closest('#dates button, #tabs .tab, #backBtn, #homeLink')) setTimeout(function () { paint(true); }, 0);
+  });
 
   function init() {
     mount();
