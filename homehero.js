@@ -12,6 +12,9 @@
   'use strict';
   var auth = window.clutchAuth, db = window.clutchDb;
   var me = null, myPoints = null;
+  // 로그인 상태가 확정되기 전에는 아무것도 그리지 않는다. 먼저 비회원용 카드가
+  // 잠깐 떴다가 회원 카드로 바뀌는 깜빡임을 막기 위함(2026-11-24 요청).
+  var authReady = false;
   var root = null, lastSig = '';
 
   function esc(s) {
@@ -154,6 +157,7 @@
   function paint(force) {
     if (!root) return;
     var home = isHome();
+    if (!authReady) { root.hidden = true; return; }
     root.hidden = !home;
     // 홈에서는 소개 카드가 같은 말을 더 자세히 하므로 위의 한 줄(homeLead)은 감춘다.
     var lead = document.getElementById('homeLead');
@@ -173,6 +177,7 @@
     root = document.createElement('div');
     root.id = 'homeHero';
     root.className = 'home-hero';
+    root.hidden = true;
     lead.parentNode.insertBefore(root, lead.nextSibling);
     paint(true);
   }
@@ -211,12 +216,17 @@
       auth.onAuthStateChanged(function (u) {
         var was = me && me.uid;
         me = u || null;
+        authReady = true;
         if ((me && me.uid) !== was) loadPoints();
         paint(true);
       });
+    } else {
+      authReady = true;
     }
     // 라이브 점수는 app.js 가 data 를 갱신하므로 주기적으로 다시 그린다(홈일 때만)
     setInterval(function () { paint(false); }, 30000);
+    // 로그인 응답이 오지 않는 환경(오프라인 등)에서도 카드가 영영 숨지 않도록 안전장치.
+    setTimeout(function () { if (!authReady) { authReady = true; paint(true); } }, 2500);
     document.addEventListener('visibilitychange', function () { if (!document.hidden) paint(true); });
   }
   document.addEventListener('DOMContentLoaded', init);
