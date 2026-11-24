@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var db = window.clutchDb, auth = window.clutchAuth, user = null, shared = [], picked = {}, myPoints = 0;
+  var db = window.clutchDb, auth = window.clutchAuth, user = null, shared = [], picked = {};
   var $ = function (id) { return document.getElementById(id); };
   var fmt = function (n) { return Math.floor(Number(n) || 0).toLocaleString('ko-KR'); };
   var esc = function (s) { return String(s || '').replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
@@ -56,6 +56,43 @@
         ' · ' + Number(x.decimal || 0).toFixed(2) + '배' + (x.stake ? ' · ' + fmt(x.stake) + 'P' : '') + '</p>';
     }).join('') + '</div>';
   }
+  /* 글쓴이 — 새 글에는 points 를 저장하지 않는다(Firestore 규칙이 6개 필드만 허용).
+     그래서 티어 배지는 글에 남은 points 가 있으면 그것으로, 없으면 users 문서에서
+     그 사람의 지금 포인트·닉네임을 한 번만 읽어 와(캐시) 채운다. */
+  var profCache = {}, profBusy = {};
+  function profOf(uid) {
+    return uid && Object.prototype.hasOwnProperty.call(profCache, uid) ? profCache[uid] : null;
+  }
+  function profFetch(uid) {
+    if (!uid || profBusy[uid] || Object.prototype.hasOwnProperty.call(profCache, uid)) return;
+    profBusy[uid] = true;
+    db.collection('users').doc(uid).get().then(function (d) {
+      var v = (d.exists && d.data()) || {};
+      profCache[uid] = { points: v.points != null ? Number(v.points) : null, nickname: v.nickname || '' };
+    }, function () { profCache[uid] = { points: null, nickname: '' }; }).then(function () {
+      profBusy[uid] = false;
+      paintAuthors(uid);
+    });
+  }
+  function postByHTML(p) {
+    var pr = profOf(p.uid);
+    var pts = p.points != null ? p.points : (pr ? pr.points : null);
+    var name = (pr && pr.nickname) || p.displayName || '회원';
+    return '<span class="post-by" data-uid="' + esc(p.uid || '') + '"' +
+      ' data-name="' + esc(p.displayName || '') + '"' +
+      (p.points != null ? ' data-pts="' + esc(p.points) + '"' : '') + '>' +
+      esc(name) + tierBadge(pts) + '</span>';
+  }
+  function paintAuthors(uid) {
+    var nodes = document.querySelectorAll('.post-by[data-uid]');
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i], u = n.getAttribute('data-uid');
+      if (uid && u !== uid) continue;
+      var pr = profOf(u), kept = n.getAttribute('data-pts');
+      var pts = kept != null ? Number(kept) : (pr ? pr.points : null);
+      n.innerHTML = esc((pr && pr.nickname) || n.getAttribute('data-name') || '회원') + tierBadge(pts);
+    }
+  }
   function loadPosts() {
     db.collection('posts').orderBy('createdAt', 'desc').limit(50).onSnapshot(function (s) {
       var node = $('posts');
@@ -63,8 +100,9 @@
       node.innerHTML = s.docs.map(function (doc) {
         var p = doc.data();
         var created = p.createdAt && p.createdAt.toDate ? p.createdAt.toDate().toLocaleString('ko-KR') : '방금';
+        if (p.points == null) profFetch(p.uid);
         return '<article class="board-post"><h2>' + esc(p.title) + '</h2>' +
-          '<small>' + esc(p.displayName) + tierBadge(p.points) + ' · ' + created + '</small>' +
+          '<small>' + postByHTML(p) + ' · ' + created + '</small>' +
           '<p class="post-body">' + esc(p.body) + '</p>' +
           slipCardHTML(p.slip, '🎟 공유한 베팅') +
           '<div class="post-comments" id="comments-' + doc.id + '"></div>' +
@@ -143,7 +181,9 @@
     var title = $('postTitle').value.trim(), body = $('postBody').value.trim();
     if (!title || !body) return say('제목과 내용을 입력해 주세요.');
     try {
-      await db.collection('posts').add({ uid: user.uid, displayName: (window.clutchNickname || user.displayName || '회원'), title: title, body: body, slip: shared.slice(0, 20), points: myPoints, createdAt: firebase.firestore.FieldValue.serverTimestamp() });
+      // Firestore 규칙(posts create)이 uid·displayName·title·body·slip·createdAt 6개만 허용한다.
+      // points 를 함께 쓰면 'Missing or insufficient permissions' 로 거부되므로 넣지 않는다.
+      await db.collection('posts').add({ uid: user.uid, displayName: (window.clutchNickname || user.displayName || '회원'), title: title, body: body, slip: shared.slice(0, 20), createdAt: firebase.firestore.FieldValue.serverTimestamp() });
       $('postTitle').value = ''; $('postBody').value = ''; shared = []; picked.sel = {};
       sessionStorage.removeItem('clutchSlipShare'); drawBetPick(); drawShared(); toggleCompose(false); say('');
     } catch (e) { say('등록 실패: ' + e.message); }
@@ -173,13 +213,21 @@
   }
   if (auth) auth.onAuthStateChanged(function (u) {
     user = u;
+    // 이미 로그인한 사람에게는 'Google 로그인' 버튼을 내보이지 않는다
+    var lb = $('boardLogin');
+    if (lb) lb.hidden = !!u;
     if (!u) { if ($('myBetPick')) drawBetPick(); return; }
     var ref = db.collection('users').doc(u.uid);
-    ref.get().then(function (d) { var v = d.exists ? d.data() : {}; window.clutchNickname = v.nickname || ''; myPoints = Number(v.points) || 0; if (!d.exists) return ref.set({ uid: u.uid, displayName: u.displayName || '회원', photoURL: u.photoURL || '', points: 10000, createdAt: firebase.firestore.FieldValue.serverTimestamp(), weekProfit: 0, totalProfit: 0, winRate: 0, maxOdds: 0 }); }).then(function () {
+    ref.get().then(function (d) {
+      var v = d.exists ? d.data() : {};
+      window.clutchNickname = v.nickname || '';
+      if (!d.exists) return ref.set({ uid: u.uid, displayName: u.displayName || '회원', photoURL: u.photoURL || '', points: 10000, createdAt: firebase.firestore.FieldValue.serverTimestamp(), weekProfit: 0, totalProfit: 0, winRate: 0, maxOdds: 0 });
+      // 내 정보는 이미 읽었으니 글 목록에서 다시 읽지 않고 그대로 쓴다
+      profCache[u.uid] = { points: v.points != null ? Number(v.points) : null, nickname: v.nickname || '' };
+      paintAuthors(u.uid);
+    }).then(function () {
       if ($('myBetPick')) { drawBetPick(); myBets(u); }
     });
-    // 글을 쓸 때 그 시점 포인트(티어)를 글에 남기기 위해 최신 잔액을 받아 둔다.
-    ref.onSnapshot(function (d) { if (d.exists) myPoints = Number((d.data() || {}).points) || 0; });
   });
   document.addEventListener('click', function (e) {
     if (e.target.id === 'boardLogin') login();

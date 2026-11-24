@@ -219,3 +219,22 @@
 .board-post small .tier-badge{margin:0 5px;vertical-align:middle}
 .board-post small .tier-badge .tier-emblem{width:32px;height:32px}
 .board-post small .tier-badge.has-mark{padding:0 6px 0 2px;gap:4px;font-size:10px}
+
+/* ── 자유게시판·랭킹: 아이폰 상단 상태바(노치·시계)와 겹치지 않게 ──────────
+   viewport-fit=cover 라서 아이폰에서는 페이지가 상태바 아래까지 올라온다.
+   상단 여백을 안전 영역(safe-area-inset-top)만큼 확보하고 — 없으면 지금처럼 16px —
+   아래쪽도 홈 인디케이터를 피한다. */
+.page-shell{
+  padding-top:max(16px, env(safe-area-inset-top));
+  padding-bottom:max(16px, calc(env(safe-area-inset-bottom) + 16px));
+}
+.board-top,.rank-top{
+  padding-top:2px;
+  min-height:32px;
+}
+
+/* 이미 로그인한 사람에게는 'Google 로그인' 버튼을 감춘다 */
+#boardLogin[hidden]{display:none}
+
+/* 글쓴이 이름 + 티어 배지 한 덩어리 */
+.post-by{overflow-wrap:anywhere}
