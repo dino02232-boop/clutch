@@ -3087,9 +3087,10 @@
   function livePillHTML(g) {
     var r = g.result;
     if (r && r.state === "live") {
+      var detail = liveDetailNow(g);
       return '<span class="mlive">' +
         '<span class="lv"><span class="lv-dot" aria-hidden="true"></span>LIVE</span>' +
-        (r.detail ? '<b class="mlive-t">' + esc(r.detail) + "</b>" : "") +
+        (detail ? '<b class="mlive-t">' + esc(detail) + "</b>" : "") +
         "</span>";
     }
     if (g.id && LIVE.ended[g.id]) return '<span class="mend">종료</span>';
@@ -3391,15 +3392,17 @@
     var home = g.home ? g.home.name : "—";
     var a = r.awayScore != null ? String(r.awayScore) : "-";
     var h = r.homeScore != null ? String(r.homeScore) : "-";
+    // 남은 시간은 받아 둔 기준점에서 1초씩 줄여 그린다(폴링 사이에도 시계가 흐르게)
+    var detail = liveDetailNow(g);
     var label = sm.name + " " + league + ", " + away + " " + a + " 대 " + h + " " + home +
-      (r.detail ? " (" + r.detail + ")" : "") + " — 이 경기 브리핑 열기";
+      (detail ? " (" + detail + ")" : "") + " — 이 경기 브리핑 열기";
     return '<li>' +
-      '<a class="hl-row" href="#' + esc(g.sport) + "/" + encodeURIComponent(g.id) + '"' +
+      '<a class="hl-row" data-live="' + esc(g.id) + '" href="#' + esc(g.sport) + "/" + encodeURIComponent(g.id) + '"' +
       ' aria-label="' + esc(label) + '">' +
         '<span class="hl-meta">' +
           '<span class="hl-ico" aria-hidden="true">' + esc(sm.icon) + "</span>" +
           '<span class="hl-lg">' + esc(league) + "</span>" +
-          (r.detail ? '<span class="hl-ph">' + esc(r.detail) + "</span>" : "") +
+          (detail ? '<span class="hl-ph">' + esc(detail) + "</span>" : "") +
           '<span class="hl-go" aria-hidden="true">브리핑 ›</span>' +
         "</span>" +
         '<span class="hl-teams">' +
@@ -3429,7 +3432,7 @@
     elHomeLive.hidden = false;
     var shown = entries.slice(0, HOME_LIVE_MAX);
     var rest = entries.length - shown.length;
-    // 점수·진행 시각이 그대로면 다시 그리지 않는다(30초 갱신 때 포커스가 튀지 않게)
+    // 점수·진행 시각이 그대로면 다시 그리지 않는다(10초 갱신 때 포커스가 튀지 않게)
     var sig = shown.map(function (e) {
       var r = e.g.result || {};
       return e.g.id + "|" + r.awayScore + "|" + r.homeScore + "|" + (r.detail || "");
@@ -3652,18 +3655,21 @@
   }
 
   /* ── 실시간 점수(ESPN 공개 스코어보드) ───────────────
-     · 페이지를 열 때와 30초마다 오늘·어제 경기의 ESPN 스코어보드를 받아
-       data.js 의 경기(result)에 덮어쓴 뒤, 화면의 점수 자리만 다시 그립니다.
-     · 탭이 백그라운드면 요청하지 않고, 다시 보일 때 바로 한 번 받습니다.
+     · 페이지를 열 때와, 진행 중인 경기가 있으면 10초마다(없으면 30초마다) 오늘·어제
+       경기의 ESPN 스코어보드를 받아 data.js 의 경기(result)에 덮어쓴 뒤, 화면의 점수 자리만 다시 그립니다.
+     · 받은 남은 시간(예: "4Q 10:32")은 기준점으로 잡아 두고 1초마다 줄여 그립니다.
+       그래서 다음 응답이 오기 전에도 경기 시계가 저절로 흐릅니다.
+     · 탭이 백그라운드면 요청하지 않고, 다시 보일 때(visibilitychange·focus) 바로 한 번 받습니다.
      · 실패(CORS·네트워크·응답 형식)하면 기존 정적 data.js 표시를 그대로 두고
        실시간 줄에만 살짝 알려 줍니다.
      · 배구(KOVO)·야구는 ESPN 에 없어 건드리지 않습니다. */
   var ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports/";
-  var LIVE_MS = 30000;          // 자동 갱신 간격
+  var LIVE_MS = 10000;          // 진행 중일 때 자동 갱신 간격(10초)
+  var LIVE_IDLE_MS = 30000;     // 진행 시간대가 아닐 때(쓸데없는 요청을 줄인다)
   var LIVE_TIMEOUT = 9000;      // 요청 하나의 제한 시간
   var LIVE_STALE_MS = 60000;    // 마지막 성공 이후 1분 넘게 오류면 연결 지연을 표시
   var DATED_TTL = 5 * 60 * 1000;
-  var LIVE_SUM_TTL = 12000;     // 펼친 박스의 선수 기록·최근 플레이 캐시
+  var LIVE_SUM_TTL = 8000;      // 펼친 박스의 선수 기록·최근 플레이 캐시(10초 갱신에 맞춤)
 
   // data.js 의 league 값 → ESPN 경로
   var SOCCER_PATH = {
@@ -3686,7 +3692,8 @@
     kovoBusy: false,
     kovoRetry: null,
     kovoRelay: {}   // KOVO 경기번호 → { at, set, plays:[], homeCode, err }  (배구 랠리 중계)
-    ,benchOpen: {}   // "경기id|팀약어" → 교체명단을 펼쳐 두었는지 (30초 갱신에도 유지)
+    ,benchOpen: {}   // "경기id|팀약어" → 교체명단을 펼쳐 두었는지 (10초 갱신에도 유지)
+    ,clock: {}       // 경기id → { head:"4Q", left:초, at:기준시각 }  남은 시간을 1초씩 줄일 기준점
   };
 
   var KOVO_API = "https://user-api.kovo.co.kr";
@@ -4144,10 +4151,92 @@
     return clock;
   }
 
+  /* ── 흐르는 경기 시계 ─────────────────────────────────
+     ESPN 은 10초에 한 번만 남은 시간을 준다. 받은 값을 그대로 적으면 시계가 10초씩
+     건너뛰거나 응답이 늦으면 멈춘 것처럼 보인다. 그래서 응답이 올 때마다
+     "이 쿼터의 남은 시간 + 그 시각"을 기준점으로 저장하고, 그릴 때 지난 초만큼
+     빼서 보여 준다. 다음 응답이 오면 기준점을 다시 잡는다.
+     · 줄어드는 시계(농구·연장)만 다룬다. 축구의 전반 38' 처럼 올라가는 시계는 그대로 둔다. */
+  function clockSeconds(v) {
+    var m = String(v == null ? "" : v).trim().match(/^(\d{1,2}):(\d{2})$/);
+    return m ? Number(m[1]) * 60 + Number(m[2]) : -1;
+  }
+
+  function mmss(sec) {
+    var s = Math.max(0, Math.round(sec));
+    var mm = Math.floor(s / 60), ss = s % 60;
+    return (mm < 10 ? "0" : "") + mm + ":" + (ss < 10 ? "0" : "") + ss;
+  }
+
+  // "4Q 10:32" · "연장 04:12" → { head:"4Q", left:632 } / 그 외는 null
+  function detailClock(detail) {
+    var m = String(detail == null ? "" : detail).trim().match(/^((?:\d+)Q|연장)\s+(\d{1,2}:\d{2})$/);
+    if (!m) return null;
+    var left = clockSeconds(m[2]);
+    return left < 0 ? null : { head: m[1], left: left };
+  }
+
+  // 서버가 준 남은 시간으로 기준점을 다시 잡는다(updateGame 이 부른다)
+  function noteLiveClock(g) {
+    if (!g || !g.id) return;
+    var r = g.result || {};
+    var c = (r.state === "live" && g.sport === "basketball") ? detailClock(r.detail) : null;
+    if (!c) { delete LIVE.clock[g.id]; return; }
+    var cur = LIVE.clock[g.id];
+    var now = Date.now();
+    if (cur && cur.head === c.head) {
+      var shown = cur.left - Math.floor((now - cur.at) / 1000);
+      // 서버 응답이 조금 늦게(캐시로) 와서 화면 시계가 거꾸로 올라가는 일을 막는다
+      if (Math.abs(shown - c.left) <= 3) return;
+    }
+    LIVE.clock[g.id] = { head: c.head, left: c.left, at: now };
+  }
+
+  // 화면에 적을 남은 시간 — 기준점에서 지난 초만큼 뺀 값
+  function liveDetailNow(g) {
+    var r = (g && g.result) || {};
+    if (r.state !== "live") return r.detail || "";
+    var cur = (LIVE.clock && g.id) ? LIVE.clock[g.id] : null;
+    if (!cur) return r.detail || "";
+    return cur.head + " " + mmss(cur.left - (Date.now() - cur.at) / 1000);
+  }
+
+  // 1초마다 진행 중 경기의 남은 시간 글자만 바꿔 준다(화면 전체를 다시 그리지 않는다)
+  function tickLiveClocks() {
+    if (document.hidden) return;
+    if (!LIVE.clock || !Object.keys(LIVE.clock).length) return;   // 흐를 시계가 없으면 그냥 지나간다
+    Array.prototype.forEach.call(elList.querySelectorAll(".mrow-item"), function (item) {
+      var e = gameEntry(item.dataset.id);
+      if (!e || !e.g.result || e.g.result.state !== "live" || !LIVE.clock[e.g.id]) return;
+      var t = item.querySelector(".mpill .mlive-t");
+      if (!t) return;
+      var txt = liveDetailNow(e.g);
+      if (t.textContent !== txt) t.textContent = txt;
+    });
+    var phase = elList.querySelector(".mrow-item.open .lbox .lb-phase");
+    if (phase) {
+      var openRow = phase.closest(".mrow-item");
+      var oe = openRow ? gameEntry(openRow.dataset.id) : null;
+      if (oe && oe.g.result && oe.g.result.state === "live" && LIVE.clock[oe.g.id]) {
+        var ptxt = liveDetailNow(oe.g);
+        if (phase.textContent !== ptxt) phase.textContent = ptxt;
+      }
+    }
+    Array.prototype.forEach.call(document.querySelectorAll(".hl-row[data-live]"), function (row) {
+      var he = gameEntry(row.getAttribute("data-live"));
+      if (!he || !he.g.result || he.g.result.state !== "live" || !LIVE.clock[he.g.id]) return;
+      var ph = row.querySelector(".hl-ph");
+      if (!ph) return;
+      var htxt = liveDetailNow(he.g);
+      if (ph.textContent !== htxt) ph.textContent = htxt;
+    });
+  }
+
   /* ── 진행 중 경기: 박스 맨 위 '지금 상황' ────────────────
-     · 현재 스코어·쿼터·남은 시간·쿼터별 점수표는 30초 폴링 값으로 그립니다.
+     · 현재 스코어·쿼터·남은 시간·쿼터별 점수표는 10초 폴링 값으로 그리고,
+       남은 시간은 그 사이에도 1초씩 저절로 줄어듭니다.
      · 최근 플레이와 선수별 기록은 ESPN summary API 에서 받습니다.
-       (펼칠 때 한 번 + 펼쳐 둔 동안 30초마다)
+       (펼칠 때 한 번 + 펼쳐 둔 동안 10초마다)
      · summary 를 못 받아도 스코어·쿼터표는 그대로 나오고 그 자리에만 안내를 둡니다. */
 
   // 이 경기의 ESPN summary 위치 { path, id }
@@ -4936,7 +5025,7 @@
     var upd = at ? hhmm(new Date(at)) : "";
     return '<div class="lb-head">' +
       '<span class="lv"><span class="lv-dot" aria-hidden="true"></span>LIVE</span>' +
-      '<b class="lb-phase">' + esc(r.detail || "진행 중") + "</b>" +
+      '<b class="lb-phase">' + esc(liveDetailNow(g) || "진행 중") + "</b>" +
       (upd ? '<span class="lb-upd">' + esc(upd) + " 갱신</span>" : "") +
       "</div>";
   }
@@ -5242,15 +5331,29 @@
   }
 
   // 펼쳐 둔 진행 중 경기의 실시간 부분만 다시 그리고, 안쪽은 높이 auto 로 둔다
+  // · lbox 를 통째로 갈아끼우면 펼쳐 둔 <details>(이전 장면·선수 기록)가 접히므로 그 상태는 옮겨 준다
+  function replaceLiveBox(box, g) {
+    if (!box) return;
+    var openIdx = [];
+    Array.prototype.forEach.call(box.querySelectorAll("details"), function (d, i) {
+      if (d.open) openIdx.push(i);
+    });
+    var tpl = document.createElement("div");
+    tpl.innerHTML = liveSectionHTML(g);
+    var next = tpl.firstChild;
+    if (!next) return;
+    box.parentNode.replaceChild(next, box);
+    if (!openIdx.length) return;
+    Array.prototype.forEach.call(next.querySelectorAll("details"), function (d, i) {
+      if (openIdx.indexOf(i) >= 0) d.open = true;
+    });
+  }
+
   function refreshLiveSummary(item, g, force) {
     loadLiveSummary(g, !!force, function () {
       var it = itemOf(g.id);
       if (!it || !it.classList.contains("open")) return;
-      var box = it.querySelector(".lbox");
-      if (!box) return;
-      var tpl = document.createElement("div");
-      tpl.innerHTML = liveSectionHTML(g);
-      if (tpl.firstChild) box.parentNode.replaceChild(tpl.firstChild, box);
+      replaceLiveBox(it.querySelector(".lbox"), g);
       paintStarters(it, g);
     });
   }
@@ -5368,6 +5471,7 @@
       };
       g.status = "live";
     }
+    noteLiveClock(g);
     var changed = before !== JSON.stringify(g.result);
     if (changed) notifyFavoriteGameChange(g, prev, g.result);
     return changed;
@@ -5466,12 +5570,8 @@
             wrap.innerHTML = boxHTML(oe.g);
           }
         } else if (oeLive) {
-          var lold = open.querySelector(".lbox");
-          if (lold) {
-            var ltpl = document.createElement("div");
-            ltpl.innerHTML = liveSectionHTML(oe.g);
-            if (ltpl.firstChild) lold.parentNode.replaceChild(ltpl.firstChild, lold);
-          }
+          // 남은 시간은 위에서 1초마다 따로 적으므로, 여기서는 점수·쿼터표만 새 값으로 맞춘다
+          replaceLiveBox(open.querySelector(".lbox"), oe.g);
         } else {
           var old = open.querySelector(".rbox");
           if (old) {
@@ -5484,8 +5584,8 @@
         // 경기 전에 열어 둔 카드는 발표 시각대에 다시 확인하고, 값이 오면 그 자리만 다시 그린다.
         if (!oeLive && !(oe.g.result && oe.g.result.state === "final")) maybeFetchStarters(oe.g, open);
         paintStarters(open, oe.g);
-        // 펼쳐 둔 진행 중 경기는 선수 기록·최근 플레이도 30초마다 새로 받는다
-        if (oeLive) refreshLiveSummary(open, oe.g, true);
+        // 펼쳐 둔 진행 중 경기는 선수 기록·최근 플레이도 10초마다 새로 받는다
+        if (oeLive) refreshLiveSummary(open, oe.g, false);
         else if (oe.g.result && oe.g.result.state === "final" && (oe.g.sport === "basketball" || oe.g.sport === "soccer")) {
           var postgameEntry = summaryEntry(oe.g);
           if (!postgameEntry || (postgameEntry.err && Date.now() - postgameEntry.at > 60000)) {
@@ -5603,20 +5703,39 @@
     if (!elLiveBar) return;
     paintLive();
     pollLive(false);
-    if (LIVE.timer) window.clearInterval(LIVE.timer);
-    LIVE.timer = window.setInterval(function () {
-      if (document.hidden) return;        // 백그라운드 탭에서는 요청하지 않음
-      // 경기 시간대가 아니면 두 분에 한 번만 확인한다(데이터 사용 절약)
-      if (!anyLiveWindow() && !anyKovoWindow()) {
-        LIVE.idle = (LIVE.idle || 0) + 1;
-        if (LIVE.idle % 4 !== 0) return;
-      } else {
-        LIVE.idle = 0;
-      }
-      pollLive(false);
-    }, LIVE_MS);
+
+    // 진행 중인 경기가 있으면 10초, 아니면 30초에 한 번. 다음 간격은 그때그때 다시 정한다.
+    function livePollDelay() {
+      return (anyLiveWindow() || anyKovoWindow()) ? LIVE_MS : LIVE_IDLE_MS;
+    }
+    function loopLivePoll() {
+      if (LIVE.timer) window.clearTimeout(LIVE.timer);
+      LIVE.timer = window.setTimeout(function () {
+        LIVE.timer = null;
+        if (!document.hidden) pollLive(false);   // 백그라운드 탭에서는 요청하지 않음
+        loopLivePoll();
+      }, livePollDelay());
+    }
+    loopLivePoll();
+
+    // 받아 둔 남은 시간을 1초씩 줄여 그린다(폴링 사이에도 경기 시계가 저절로 흐르게)
+    if (LIVE.tick) window.clearInterval(LIVE.tick);
+    LIVE.tick = window.setInterval(tickLiveClocks, 1000);
+
     document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        // 백그라운드에 있는 동안은 시계 기준점이 낡으니 버린다(돌아오면 바로 새로 받는다)
+        LIVE.clock = {};
+        return;
+      }
+      tickLiveClocks();
+      pollLive(false);
+    });
+    window.addEventListener("focus", function () {
       if (!document.hidden) pollLive(false);
+    });
+    window.addEventListener("pageshow", function (e) {
+      if (e && e.persisted) pollLive(false);   // 뒤로가기로 되살아난 화면
     });
     window.addEventListener("online", function () { pollLive(false); });
     if (elLiveRefresh) elLiveRefresh.addEventListener("click", function () { pollLive(true); });
