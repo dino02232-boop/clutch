@@ -1670,7 +1670,10 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .lb-team { display: flex; align-items: center; gap: 4px; min-width: 0; }
 .lb-team.home { grid-column: 1; grid-row: 1; justify-content: flex-start; }
-.lb-team.away { grid-column: 3; grid-row: 1; justify-content: flex-end; }
+/* 원정 팀은 홈 팀의 거울상 — [원정] 배지가 안쪽, 팀명이 오른쪽 끝에 붙는다.
+   row-reverse 로 배지를 팀명 왼쪽에 두고 flex-start(오른쪽 기준)로 오른쪽에 붙인다. */
+.lb-team.away { grid-column: 3; grid-row: 1; flex-direction: row-reverse; justify-content: flex-start; }
+.lb-team.away .lb-nm { text-align: right; }
 .lb-nm {
   font-size: 12px; line-height: 1.25; font-weight: 700; color: var(--text);
   min-width: 0; max-width: 100%;
