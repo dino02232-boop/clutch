@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-24T17:22:37+09:00
+   생성 시각(기준): 2026-11-24T18:40:10+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-24T17:22:37+09:00",
+  "updated": "2026-11-24T18:40:10+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -405,7 +405,7 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "EVE",
               "value": 6.0,
               "display": "6골",
-              "played": 10
+              "played": 11
             },
             {
               "rank": 5,
@@ -515,7 +515,7 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "BRE",
               "value": 4.0,
               "display": "4골",
-              "played": 10
+              "played": 11
             },
             {
               "rank": 15,
@@ -570,7 +570,7 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "EVE",
               "value": 3.0,
               "display": "3골",
-              "played": 10
+              "played": 11
             },
             {
               "rank": 20,
@@ -655,7 +655,7 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "BRE",
               "value": 4.0,
               "display": "4도움",
-              "played": 9
+              "played": 10
             },
             {
               "rank": 7,
@@ -1277,7 +1277,7 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "ELC",
               "value": 6.0,
               "display": "6골",
-              "played": 12
+              "played": 13
             },
             {
               "rank": 10,
@@ -1332,7 +1332,7 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "LEV",
               "value": 5.0,
               "display": "5골",
-              "played": 11
+              "played": 12
             },
             {
               "rank": 15,
@@ -1615,7 +1615,7 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "ELC",
               "value": 3.0,
               "display": "3도움",
-              "played": 12
+              "played": 13
             },
             {
               "rank": 20,
@@ -2794,9 +2794,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/384482.png",
               "team": "몬차",
               "teamAbbr": "MON",
-              "value": 9.0,
-              "display": "9골",
-              "played": 10
+              "value": 11.0,
+              "display": "11골",
+              "played": 11
             },
             {
               "rank": 3,
@@ -2954,6 +2954,28 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 17,
+              "name": "Franco Mastantuono",
+              "id": "376473",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/376473.png",
+              "team": "피오렌티나",
+              "teamAbbr": "FIO",
+              "value": 4.0,
+              "display": "4골",
+              "played": 12
+            },
+            {
+              "rank": 18,
+              "name": "Mateo Pellegrino",
+              "id": "312757",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/312757.png",
+              "team": "피오렌티나",
+              "teamAbbr": "FIO",
+              "value": 4.0,
+              "display": "4골",
+              "played": 12
+            },
+            {
+              "rank": 19,
               "name": "Gustav Isaksen",
               "id": "291550",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/291550.png",
@@ -2964,7 +2986,7 @@ window.CLUTCH_STANDINGS = {
               "played": 12
             },
             {
-              "rank": 18,
+              "rank": 20,
               "name": "Kevin De Bruyne",
               "id": "134947",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/134947.png",
@@ -2973,28 +2995,6 @@ window.CLUTCH_STANDINGS = {
               "value": 4.0,
               "display": "4골",
               "played": 12
-            },
-            {
-              "rank": 19,
-              "name": "Franco Mastantuono",
-              "id": "376473",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/376473.png",
-              "team": "피오렌티나",
-              "teamAbbr": "FIO",
-              "value": 4.0,
-              "display": "4골",
-              "played": 11
-            },
-            {
-              "rank": 20,
-              "name": "Mateo Pellegrino",
-              "id": "312757",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/312757.png",
-              "team": "피오렌티나",
-              "teamAbbr": "FIO",
-              "value": 4.0,
-              "display": "4골",
-              "played": 11
             }
           ]
         },
