@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-24T12:19:44+09:00
+   생성 시각(기준): 2026-11-24T12:44:22+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-24T12:19:44+09:00",
+  "updated": "2026-11-24T12:44:22+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4491,14 +4491,14 @@ window.CLUTCH_STANDINGS = {
               "team": "클리블랜드 캐벌리어스",
               "abbr": "CLE",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
-              "played": 17,
+              "played": 18,
               "win": 9,
               "draw": null,
-              "loss": 8,
+              "loss": 9,
               "points": null,
-              "diff": 40,
-              "pct": ".529",
-              "gb": "4.5",
+              "diff": 26,
+              "pct": ".500",
+              "gb": "5",
               "zone": null
             },
             {
@@ -4563,6 +4563,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 12,
+              "team": "시카고 불스",
+              "abbr": "CHI",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
+              "played": 17,
+              "win": 5,
+              "draw": null,
+              "loss": 12,
+              "points": null,
+              "diff": -113,
+              "pct": ".294",
+              "gb": "8.5",
+              "zone": null
+            },
+            {
+              "rank": 13,
               "team": "샬럿 호네츠",
               "abbr": "CHA",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
@@ -4572,21 +4587,6 @@ window.CLUTCH_STANDINGS = {
               "loss": 12,
               "points": null,
               "diff": -164,
-              "pct": ".250",
-              "gb": "9",
-              "zone": null
-            },
-            {
-              "rank": 13,
-              "team": "시카고 불스",
-              "abbr": "CHI",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
-              "played": 16,
-              "win": 4,
-              "draw": null,
-              "loss": 12,
-              "points": null,
-              "diff": -127,
               "pct": ".250",
               "gb": "9",
               "zone": null

@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-24T12:19:45+09:00",
+  updatedAt: "2026-11-24T12:44:22+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -27620,7 +27620,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 4패·6위·승점 4, 대한항공(원정) 2승 3패·5위·승점 7."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 12:19 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 12:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27926,7 +27926,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 2패·4위·승점 8, GS칼텍스(원정) 4승 1패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 12:19 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 12:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
@@ -31500,14 +31500,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-24 06:16 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-cle-chi-20261124",
           "espnId": "401910041",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-24T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "United Center",
           "odds": {
             "provider": "DraftKings",
@@ -31572,6 +31572,83 @@ window.CLUTCH_DATA = {
               "text": "**시카고 불스**(홈) 4승 12패(홈 1승 6패, 최근 5경기 2승 3패, 2연패), **클리블랜드 캐벌리어스**(원정) 9승 8패(원정 2승 5패, 최근 5경기 3승 2패). 직전 경기(11.21) **클리블랜드 캐벌리어스**는 인디애나 페이서스에 128-119로 이겼고, James Harden 51점·6리바운드·6어시스트, Donovan Mitchell 20점·3리바운드·3어시스트를 기록했습니다. 직전 경기(11.23) **시카고 불스**는 덴버 너기츠에 145-151로 졌고, Buddy Hield 33점·7리바운드·6어시스트, Jalen Smith 26점·4리바운드·1어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 108,
+            "homeScore": 122,
+            "lines": {
+              "away": [
+                "30",
+                "20",
+                "39",
+                "19"
+              ],
+              "home": [
+                "27",
+                "45",
+                "21",
+                "29"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Donovan Mitchell",
+                "team": "CLE",
+                "min": "37",
+                "pts": 28,
+                "reb": "3",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png"
+              },
+              {
+                "name": "James Harden",
+                "team": "CLE",
+                "min": "37",
+                "pts": 21,
+                "reb": "6",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3992.png"
+              },
+              {
+                "name": "Jordan Hawkins",
+                "team": "CHI",
+                "min": "18",
+                "pts": 19,
+                "reb": "1",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683750.png"
+              },
+              {
+                "name": "Buddy Hield",
+                "team": "CHI",
+                "min": "27",
+                "pts": 17,
+                "reb": "5",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/2990984.png"
+              },
+              {
+                "name": "Jarrett Allen",
+                "team": "CLE",
+                "min": "29",
+                "pts": 16,
+                "reb": "4",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066328.png"
+              },
+              {
+                "name": "Tre Jones",
+                "team": "CHI",
+                "min": "27",
+                "pts": 16,
+                "reb": "4",
+                "ast": "9",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395626.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
