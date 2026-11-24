@@ -4,7 +4,7 @@
   var $ = function (id) { return document.getElementById(id); };
   var fmt = function (n) { return Math.floor(Number(n) || 0).toLocaleString('ko-KR'); };
   var esc = function (s) { return String(s || '').replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
-  var say = function (s) { if ($('boardNotice')) $('boardNotice').textContent = s; };
+  var say = function (s) { if ($('boardNotice')) $('boardNotice').textContent = s; if ($('detailNotice')) $('detailNotice').textContent = s; };
   var MARKET_KO = { moneyline: '승무패', spread: '핸디캡', total: '언오버' };
   var PICK_KO = { away: '원정', home: '홈', draw: '무승부', over: '오버', under: '언더' };
   var STATUS_KO = { open: '베팅중', won: '적중', lost: '미적중', push: '무효' };
@@ -216,6 +216,7 @@
       $('detailBody').textContent = p.body || '';
       $('detailSlip').innerHTML = slipCardHTML(p.slip, '🎟 공유한 베팅');
       $('detailCmtCount').textContent = countCache[id] ? String(countCache[id]) : '0';
+      if ($('detailNotice')) $('detailNotice').textContent = '';
       $('detailComments').innerHTML = '<div id="comments-' + esc(id) + '"><p class="bl-nocmt">댓글을 불러오는 중…</p></div>';
       $('detailCommentBox').innerHTML = '<input id="comment-' + esc(id) + '" maxlength="1000" placeholder="댓글 남기기">' +
         '<button type="button" data-comment="' + esc(id) + '">등록</button>';
