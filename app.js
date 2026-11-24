@@ -1138,8 +1138,9 @@
         esc(state) + (rDetail ? " · " + esc(rDetail) : "") + "</span>" +
         (win ? '<span class="r-win">' + esc(win) + " 승</span>" : "") +
       "</div>" +
-      '<p class="r-score"><b>' + esc(g.away ? g.away.abbr : "원정") + " " + esc(String(r.awayScore != null ? r.awayScore : "-")) + "</b>" +
-        ' <span class="r-vs">:</span> <b>' + esc(String(r.homeScore != null ? r.homeScore : "-")) + " " + esc(g.home ? g.home.abbr : "홈") + "</b></p>" +
+      // 점수도 목록 줄·쿼터표와 같은 방향 — 홈 팀을 왼쪽에 둔다.
+      '<p class="r-score"><b>' + esc(g.home ? g.home.abbr : "홈") + " " + esc(String(r.homeScore != null ? r.homeScore : "-")) + "</b>" +
+        ' <span class="r-vs">:</span> <b>' + esc(String(r.awayScore != null ? r.awayScore : "-")) + " " + esc(g.away ? g.away.abbr : "원정") + "</b></p>" +
       linesHTML +
       // 축구는 ESPN 공개 데이터에 선수별 기록이 없어 '주요 선수 기록' 칸을 비워 둔다
       (top.length || g.sport !== "soccer" ? '<h4 class="tb-sub">주요 선수 기록</h4>' + topHTML : "") +
