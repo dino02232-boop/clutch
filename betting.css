@@ -77,8 +77,20 @@
 .bh-odds{font-size:11px;font-weight:700;color:var(--text-2);font-variant-numeric:tabular-nums}
 .bh-when{margin-left:auto;font-size:10.5px;color:var(--text-3);font-variant-numeric:tabular-nums;white-space:nowrap}
 .bh-picks{list-style:none;margin:7px 0 6px;padding:0;display:flex;flex-direction:column;gap:4px}
-.bh-picks li{font-size:12px;color:#111827;font-weight:700;display:flex;flex-direction:column;gap:1px;line-height:1.4;overflow-wrap:anywhere}
-.bh-picks li span{font-size:11px;font-weight:600;color:var(--text-2)}
+.bh-picks li{font-size:12px;color:#111827;font-weight:700;display:flex;flex-direction:column;gap:2px;line-height:1.4;overflow-wrap:anywhere}
+/* 픽 한 줄: 왼쪽 경기 이름, 오른쪽 적중·미적중 배지 */
+.bp-top{display:flex;align-items:center;gap:6px;min-width:0}
+.bp-match{font-size:12px;font-weight:700;color:#111827;min-width:0;overflow-wrap:anywhere}
+.bp-badge{margin-left:auto;flex:0 0 auto;font-size:10px;font-weight:800;letter-spacing:.01em;padding:2px 6px;border-radius:5px;white-space:nowrap;font-variant-numeric:tabular-nums;background:#eef1f3;color:var(--text-2)}
+.bp-badge.won{background:rgba(11,122,84,.12);color:var(--accent)}
+.bp-badge.lost{background:rgba(194,65,12,.14);color:var(--warn)}
+.bp-badge.live{background:rgba(220,38,38,.12);color:#DC2626}
+.bp-badge.pre{background:#f2f5f6;color:var(--text-3);font-weight:700}
+.bp-meta{font-size:11px;font-weight:600;color:var(--text-2);font-variant-numeric:tabular-nums}
+/* 슬립 카드: 픽 하나라도 미적중이면 한눈에 알 수 있게 */
+.bh-flag{flex:0 0 auto;font-size:9.5px;font-weight:800;padding:2px 6px;border-radius:5px;white-space:nowrap;background:rgba(194,65,12,.12);color:var(--warn)}
+.bh-flag.won{background:rgba(11,122,84,.12);color:var(--accent)}
+.bet-hist.settled-lost{border-color:rgba(194,65,12,.28)}
 .bh-foot{display:flex;gap:10px;border-top:1px dashed var(--line);padding-top:7px;font-size:11px;color:var(--text-2);font-variant-numeric:tabular-nums}
 
 /* ── 랭킹 페이지 ─────────────────────────────────────── */

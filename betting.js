@@ -125,7 +125,61 @@
       '<span>' + fmt(balance) + 'P</span>' +
       '<em class="bets-next">' + esc(hint) + '</em>';
   }
-  function betRowHTML(doc) {
+  /* ── 픽별 적중·미적중 판정 ─────────────────────────────
+     tools/settle_bets.py 와 같은 기준으로 계산한다. 서버 정산값(pick.status)이
+     있으면 그 값을 먼저 쓰고, 아직 정산 전이면 페이지에 실린 경기 결과
+     (window.CLUTCH_DATA 의 game.result — app.js 가 실시간 점수까지 덮어쓴다)로
+     지금 바로 판정한다. */
+  function pickNum(v) {
+    if (v == null) return NaN;
+    var n = parseFloat(String(v).replace(/^\s*\+/, '').trim());
+    return isFinite(n) ? n : NaN;
+  }
+  var PICK_EPS = 1e-9;
+  function pickOutcome(x, g) {
+    // → { kind: won | lost | push | live | pre | unknown, score: '0:4' }
+    var r = (g && g.result) || null;
+    var score = r && r.awayScore != null && r.homeScore != null
+      ? String(r.awayScore) + ':' + String(r.homeScore) : '';
+    var st = String((x && x.status) || '');
+    if (st === 'won' || st === 'lost' || st === 'push' || st === 'void') {
+      return { kind: st === 'void' ? 'push' : st, score: score };
+    }
+    if (!g) return { kind: 'unknown', score: '' };
+    var state = r ? String(r.state || '') : '';
+    if (state === 'live') return { kind: 'live', score: score };
+    if (state !== 'final') return { kind: 'pre', score: '' };
+    var away = Number(r.awayScore), home = Number(r.homeScore);
+    if (!isFinite(away) || !isFinite(home)) return { kind: 'pre', score: '' };
+    var market = String(x.market || ''), side = String(x.pick || ''), line = pickNum(x.line);
+    var kind = '';
+    if (market === 'moneyline' || market === 'h2h' || market === '1x2') {
+      if (away === home) {
+        var drawOdds = (g.odds && g.odds.moneyline) ? g.odds.moneyline.draw : null;
+        kind = side === 'draw' ? 'won' : (drawOdds != null ? 'lost' : 'push');
+      } else {
+        kind = ((side === 'away') === (away > home)) ? 'won' : 'lost';
+      }
+    } else if (market === 'spread' || market === 'handicap') {
+      if (!isFinite(line) || (side !== 'home' && side !== 'away')) return { kind: 'unknown', score: score };
+      var margin = side === 'home' ? (home + line - away) : (away + line - home);
+      kind = Math.abs(margin) < PICK_EPS ? 'push' : (margin > 0 ? 'won' : 'lost');
+    } else if (market === 'total' || market === 'ou') {
+      if (!isFinite(line) || (side !== 'over' && side !== 'under')) return { kind: 'unknown', score: score };
+      var total = away + home;
+      kind = Math.abs(total - line) < PICK_EPS ? 'push' : (((side === 'over') === (total > line)) ? 'won' : 'lost');
+    }
+    return { kind: kind || 'unknown', score: score };
+  }
+  var OUT_BADGE = { won: ['won', '✅ 적중'], lost: ['lost', '❌ 미적중'], push: ['push', '적특'], live: ['live', 'LIVE'], pre: ['pre', '경기 전'] };
+  function pickBadgeHTML(o) {
+    var b = OUT_BADGE[o && o.kind];
+    if (!b) return '';
+    var tail = o.score && (o.kind === 'won' || o.kind === 'lost' || o.kind === 'push' || o.kind === 'live')
+      ? ' · ' + o.score : '';
+    return '<span class="bp-badge ' + b[0] + '">' + esc(b[1] + tail) + '</span>';
+  }
+  function betRowHTML(doc, gm) {
     var b = doc && doc.data ? doc.data() : (doc || {});
     var picks = Array.isArray(b.picks) ? b.picks : [];
     var st = String(b.status || 'open');
@@ -134,21 +188,59 @@
     var stake = Number(b.stake) || 0;
     var odds = Number(b.combinedOdds) || 0;
     var expect = b.potential != null ? Number(b.potential) : payout(stake, odds);
-    var picksHTML = picks.map(function (x) {
-      return '<li>' + esc(x.away) + ' vs ' + esc(x.home) +
-        '<span>' + esc(MARKET_KO[x.market] || x.market || '') + ' ' +
+    var games = gm || gameMap();
+    var outs = picks.map(function (x) { return pickOutcome(x, games[x.gameId]); });
+    var anyLost = outs.some(function (o) { return o.kind === 'lost'; });
+    var allDone = outs.length > 0 && outs.every(function (o) { return o.kind === 'won' || o.kind === 'lost' || o.kind === 'push'; });
+    // 슬립 상태는 그대로 두고, 확정된 결과만 배지로 덧붙인다.
+    var flag = '';
+    if (st === 'open' && anyLost) flag = '<span class="bh-flag lost">미적중 확정</span>';
+    else if (st === 'open' && allDone) flag = '<span class="bh-flag won">적중 확정</span>';
+    var picksHTML = picks.map(function (x, i) {
+      return '<li class="bh-pick">' +
+        '<span class="bp-top"><b class="bp-match">' + esc(x.away) + ' vs ' + esc(x.home) + '</b>' +
+          pickBadgeHTML(outs[i]) + '</span>' +
+        '<span class="bp-meta">' + esc(MARKET_KO[x.market] || x.market || '') + ' ' +
         esc(PICK_KO[x.pick] || x.pick || '') + (x.line ? ' ' + esc(x.line) : '') +
         ' · ' + (Number(x.decimal) || 0).toFixed(2) + '배</span></li>';
     }).join('');
-    return '<article class="bet-hist ' + esc(st) + '">' +
-      '<div class="bh-top"><span class="bh-st ' + esc(st) + '">' + esc(statusKo(st)) + '</span>' +
+    var footRight = st !== 'open'
+      ? '획득 ' + fmt(b.payout != null ? b.payout : 0) + 'P'
+      : (anyLost ? '미적중 확정 · 정산 대기' : (allDone ? '적중 확정 · 정산 대기' : '결과 기다리는 중'));
+    return '<article class="bet-hist ' + esc(st) + (st === 'open' && anyLost ? ' settled-lost' : '') + '">' +
+      '<div class="bh-top"><span class="bh-st ' + esc(st) + '">' + esc(statusKo(st)) + '</span>' + flag +
       '<b class="bh-stake">' + fmt(stake) + 'P</b>' +
       '<span class="bh-odds">' + odds.toFixed(2) + '배</span>' +
       (when ? '<span class="bh-when">' + when + '</span>' : '') + '</div>' +
       '<ul class="bh-picks">' + picksHTML + '</ul>' +
       '<div class="bh-foot"><span>예상 ' + fmt(expect) + 'P</span>' +
-      '<span>' + (st === 'open' ? '결과 기다리는 중' : '획득 ' + fmt(b.payout != null ? b.payout : 0) + 'P') + '</span></div>' +
+      '<span>' + esc(footRight) + '</span></div>' +
       '</article>';
+  }
+  /* 실시간 점수가 갱신되면 모달을 열어 둔 동안 배지도 따라 바뀌게 한다
+     (20초마다 화면 내용이 달라졌는지만 확인하고, 달라졌을 때만 다시 그린다). */
+  var betsDocs = null, betsSig = '', betsTick = null;
+  function betsSignature(docs, games) {
+    return docs.map(function (d) {
+      var b = d && d.data ? d.data() : (d || {});
+      return String(b.status || 'open') + (b.picks || []).map(function (x) {
+        var g = games[x.gameId], r = (g && g.result) || {};
+        return '#' + x.gameId + ':' + (r.state || '-') + ':' + r.awayScore + ':' + r.homeScore;
+      }).join(',');
+    }).join(';');
+  }
+  function renderMyBets() {
+    var list = el('betsList');
+    if (!list || !betsDocs) return;
+    if (!betsDocs.length) { list.innerHTML = '<p class="bets-empty">아직 베팅 내역이 없습니다.</p>'; return; }
+    var games = gameMap();
+    betsSig = betsSignature(betsDocs, games);
+    list.innerHTML = betsDocs.map(function (d) { return betRowHTML(d, games); }).join('');
+  }
+  function refreshIfStale() {
+    if (!betsDocs || !el('betsList')) return;
+    var games = gameMap();
+    if (betsSignature(betsDocs, games) !== betsSig) renderMyBets();
   }
   function loadMyBets() {
     var list = el('betsList');
@@ -157,14 +249,18 @@
     betsUnsub = db.collection('bets').doc(me.uid).collection('items')
       .orderBy('createdAt', 'desc').limit(30)
       .onSnapshot(function (s) {
-        if (!s.docs.length) { list.innerHTML = '<p class="bets-empty">아직 베팅 내역이 없습니다.</p>'; return; }
-        list.innerHTML = s.docs.map(betRowHTML).join('');
+        betsDocs = s.docs;
+        renderMyBets();
       }, function (e) {
+        betsDocs = null;
         list.innerHTML = '<p class="bets-empty">내역을 불러오지 못했습니다: ' + esc(e.message) + '</p>';
       });
+    if (!betsTick) betsTick = setInterval(refreshIfStale, 20000);
   }
   function closeBets() {
     if (betsUnsub) { betsUnsub(); betsUnsub = null; }
+    if (betsTick) { clearInterval(betsTick); betsTick = null; }
+    betsDocs = null;
     var w = el('betsModal');
     if (w) w.remove();
   }
