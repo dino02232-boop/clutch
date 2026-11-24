@@ -3,7 +3,9 @@
    짧은 소개(무엇 · 가상 포인트 · 이용 3단계)와 회원가입/로그인 버튼을 둔다.
    바로 아래에는 지금 진행 중이거나 가장 가까운 경기 하나를 크게 걸어 둔다.
 
-   · 로그인한 회원에게는 같은 내용을 한 줄로 줄이고, 3단계는 접어 둔다(반복 최소화).
+   · 로그인한 회원에게도 같은 내용을 두고, 3단계는 접지 않고 늘 펼쳐 둔다(2026-11-24 요청).
+   · 소개 문구는 '경기 정보 → 예측' 순서로 읽히게 쓴다. 사이트의 절반은 경기 브리핑이라는 점이
+     첫 문장에서 드러나야 한다(베팅 안내만 먼저 나오지 않게).
    · 포인트는 실제 돈이 아니라는 안내를 이 소개문 안에 담는다(별도 팝업 없음).
    · 홈(종목을 고르기 전 화면)에서만 보이고, 종목·경기 화면으로 들어가면 숨는다. */
 (function () {
@@ -96,16 +98,16 @@
   /* ── 마크업 ─────────────────────────────────────────── */
   function stepsHTML() {
     return '<ol class="hh-steps">' +
-      '<li><b>로그인·회원가입</b><span>아이디나 구글 계정으로 10초</span></li>' +
-      '<li><b>10,000P 받기</b><span>가입하면 바로 들어옵니다</span></li>' +
-      '<li><b>경기 골라 Bet</b><span>배당을 눌러 슬립에 담고 확정</span></li>' +
+      '<li><b>경기 브리핑 보기</b><span>두 팀 상태와 변수를 30초로</span></li>' +
+      '<li><b>10,000P 받기</b><span>회원가입하면 바로 들어옵니다</span></li>' +
+      '<li><b>마음에 드는 쪽 예측</b><span>배당을 눌러 슬립에 담고 확정</span></li>' +
       '</ol>';
   }
   function guestHTML() {
     return '<div class="hh-card">' +
-      '<p class="hh-kicker">가상 포인트로 즐기는 스포츠 예측</p>' +
+      '<p class="hh-kicker">경기 브리핑 · 가상 포인트 예측</p>' +
       '<h2 class="hh-title">돈 걸지 말고, 결과 예측만 즐기세요</h2>' +
-      '<p class="hh-lead">축구·농구·배구 경기 결과를 가상 포인트로 골라 보는 곳입니다. 가입하면 10,000P부터, 마음껏 예측해 보세요.</p>' +
+      '<p class="hh-lead">축구·농구·배구 경기의 팀 상태와 변수를 30초로 정리해 드립니다. 마음에 드는 쪽을 골라 가상 포인트로 예측해 보세요. 가입하면 10,000P부터입니다.</p>' +
       stepsHTML() +
       '<div class="hh-cta"><button type="button" class="hh-join" id="hhJoin">회원가입</button>' +
         '<button type="button" class="hh-login" id="hhLogin">로그인</button></div>' +
@@ -116,8 +118,11 @@
     var p = myPoints == null ? '' : ' · 내 포인트 <b>' + Math.floor(Number(myPoints)).toLocaleString('ko-KR') + 'P</b>';
     return '<div class="hh-card is-mine">' +
       '<p class="hh-mine">오늘도 놀다 가세요' + p + '</p>' +
-      '<details class="hh-more"><summary>이용 방법 보기</summary>' + stepsHTML() +
-      '<p class="hh-note">포인트는 실제 돈이 아니에요. 충전·환전·현금화는 안 되고, 재미로 순위를 겨루는 놀이터입니다.</p></details>' +
+      '<p class="hh-lead">오늘 경기의 팀 상태와 변수를 30초로 정리해 드립니다. 마음에 드는 쪽을 골라 가상 포인트로 예측해 보세요.</p>' +
+      '<div class="hh-more">' +
+      '<p class="hh-more-label">이용 방법 보기</p>' + stepsHTML() +
+      '<p class="hh-note">포인트는 실제 돈이 아니에요. 충전·환전·현금화는 안 되고, 재미로 순위를 겨루는 놀이터입니다.</p>' +
+      '</div>' +
       '</div>';
   }
   function featHTML(spot) {

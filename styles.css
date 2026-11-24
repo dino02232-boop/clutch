@@ -2162,12 +2162,11 @@ select {
 .hh-card.is-mine { padding: 12px 14px; }
 .hh-mine { margin: 0; font-size: 12.5px; font-weight: 700; color: var(--text-2); word-break: keep-all; }
 .hh-mine b { color: var(--accent); font-variant-numeric: tabular-nums; }
-.hh-more { margin: 6px 0 0; }
-.hh-more summary { font-size: 11.5px; font-weight: 700; color: var(--text-3); cursor: pointer; list-style: none; }
-.hh-more summary::-webkit-details-marker { display: none; }
-.hh-more summary::after { content: " ›"; color: var(--text-3); }
-.hh-more[open] summary::after { content: ""; }
-.hh-more .hh-steps { margin-top: 9px; }
+/* 회원 카드: '이용 방법 보기'는 접지 않고 늘 펼쳐 둔다(제목 줄만 작게 남긴다) */
+.hh-card.is-mine .hh-lead { margin-top: 5px; font-size: 12px; }
+.hh-more { margin: 9px 0 0; }
+.hh-more-label { margin: 0; font-size: 11.5px; font-weight: 700; color: var(--text-3); }
+.hh-more .hh-steps { margin-top: 7px; }
 
 /* 첫 경기 강조 카드 */
 .hh-feat {
