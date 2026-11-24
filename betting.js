@@ -57,7 +57,7 @@
     if (!dropped.length) return 0;
     if (el('betDock')) el('betDock').classList.remove('is-min');
     syncDock();
-    say('경기가 시작되어 베팅 슬립에서 뺐습니다: ' + dropped.map(function (x) { return x.away + ' vs ' + x.home; }).join(', '));
+    say('경기가 시작되어 베팅 슬립에서 뺐습니다: ' + dropped.map(function (x) { return x.home + ' vs ' + x.away; }).join(', '));
     paint();
     return dropped.length;
   }
@@ -129,7 +129,7 @@
   function paint() {
     var picks=el('betPicks'); if(!picks)return;
     var mult=slip.reduce(function(a,x){return a*x.decimal;},1);
-    picks.innerHTML=slip.length?slip.map(function(x,i){return '<div class="bet-pick"><button data-slip-remove="'+i+'" aria-label="선택 삭제">×</button><b>'+esc(x.away)+' vs '+esc(x.home)+'</b><span>'+esc(({moneyline:'승무패',spread:'핸디캡',total:'언오버'})[x.market])+' · '+esc(({away:'원정',home:'홈',draw:'무승부',over:'오버',under:'언더'})[x.pick])+(x.line?' '+esc(x.line):'')+' · '+x.decimal.toFixed(2)+'배</span></div>';}).join(''):'<p class="bet-empty">경기에서 배당을 선택하세요. 같은 경기의 승무패·핸디캡·언오버는 함께 담을 수 있습니다.</p>';
+    picks.innerHTML=slip.length?slip.map(function(x,i){return '<div class="bet-pick"><button data-slip-remove="'+i+'" aria-label="선택 삭제">×</button><b>'+esc(x.home)+' vs '+esc(x.away)+'</b><span>'+esc(({moneyline:'승무패',spread:'핸디캡',total:'언오버'})[x.market])+' · '+esc(({away:'원정',home:'홈',draw:'무승부',over:'오버',under:'언더'})[x.pick])+(x.line?' '+esc(x.line):'')+' · '+x.decimal.toFixed(2)+'배</span></div>';}).join(''):'<p class="bet-empty">경기에서 배당을 선택하세요. 같은 경기의 승무패·핸디캡·언오버는 함께 담을 수 있습니다.</p>';
     if(el('betOdds'))el('betOdds').textContent=mult.toFixed(2)+'배';
     var stake=Number(el('betStake')&&el('betStake').value)||0;
     if(el('betReturn'))el('betReturn').textContent=fmt(payout(stake,mult))+'P';
@@ -212,10 +212,11 @@
   }
   var PICK_EPS = 1e-9;
   function pickOutcome(x, g) {
-    // → { kind: won | lost | push | live | pre | unknown, score: '0:4' }
+    // → { kind: won | lost | push | live | pre | unknown, score: '4:0' }
+    // 표기는 경기 줄과 같게 홈:원정 순서로 적는다(판정은 아래에서 away·home 값으로 한다).
     var r = (g && g.result) || null;
     var score = r && r.awayScore != null && r.homeScore != null
-      ? String(r.awayScore) + ':' + String(r.homeScore) : '';
+      ? String(r.homeScore) + ':' + String(r.awayScore) : '';
     var st = String((x && x.status) || '');
     if (st === 'won' || st === 'lost' || st === 'push' || st === 'void') {
       return { kind: st === 'void' ? 'push' : st, score: score };
@@ -273,7 +274,7 @@
     else if (st === 'open' && allDone) flag = '<span class="bh-flag won">적중 확정</span>';
     var picksHTML = picks.map(function (x, i) {
       return '<li class="bh-pick">' +
-        '<span class="bp-top"><b class="bp-match">' + esc(x.away) + ' vs ' + esc(x.home) + '</b>' +
+        '<span class="bp-top"><b class="bp-match">' + esc(x.home) + ' vs ' + esc(x.away) + '</b>' +
           pickBadgeHTML(outs[i]) + '</span>' +
         '<span class="bp-meta">' + esc(MARKET_KO[x.market] || x.market || '') + ' ' +
         esc(PICK_KO[x.pick] || x.pick || '') + (x.line ? ' ' + esc(x.line) : '') +

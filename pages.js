@@ -74,7 +74,7 @@
   function slipCardHTML(slip, title) {
     if (!slip || !slip.length) return '';
     return '<div class="post-slip"><b>' + esc(title) + '</b>' + slip.map(function (x) {
-      return '<p>' + esc(x.away) + ' vs ' + esc(x.home) + ' · ' + esc(pickText(x)) +
+      return '<p>' + esc(x.home) + ' vs ' + esc(x.away) + ' · ' + esc(pickText(x)) +
         ' · ' + Number(x.decimal || 0).toFixed(2) + '배' + (x.stake ? ' · ' + fmt(x.stake) + 'P' : '') + '</p>';
     }).join('') + '</div>';
   }
@@ -352,7 +352,7 @@
     node.innerHTML = picked.list.map(function (b) {
       var on = picked.sel[b.id];
       return '<button type="button" class="bet-choice' + (on ? ' on' : '') + '" data-betpick="' + esc(b.id) + '" aria-pressed="' + (on ? 'true' : 'false') + '">' +
-        '<span class="bc-main">' + esc(b.away) + ' vs ' + esc(b.home) + '</span>' +
+        '<span class="bc-main">' + esc(b.home) + ' vs ' + esc(b.away) + '</span>' +
         '<span class="bc-sub">' + esc(pickText(b)) + ' · ' + Number(b.decimal || 0).toFixed(2) + '배' +
         (b.stake ? ' · ' + fmt(b.stake) + 'P' : '') + ' · ' + esc(STATUS_KO[b.status] || b.status || '') + '</span>' +
         '</button>';

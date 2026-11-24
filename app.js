@@ -648,6 +648,50 @@
     return up ? up.date : DAYS[DAYS.length - 1].date;
   }
 
+  /* ── 자정이 지난 뒤 돌아온 화면 ───────────────────────
+     아이폰 홈 화면 웹앱이나 백그라운드에 둔 탭은 어제 연 화면이 그대로 살아나
+     state.day 와 data.js(일정·배당·결과)가 어제에 머문다. 복귀할 때 날짜가
+     바뀐 것을 확인해 오늘 탭으로 맞추고, 낡은 data.js 대신 새 페이지를 한 번 받는다. */
+  var ROLL_RELOAD_KEY = "clutch.dayRollover.reload";
+  function rolloverTriedRecently(t) {
+    try {
+      var prev = JSON.parse(sessionStorage.getItem(ROLL_RELOAD_KEY) || "null");
+      if (!prev) return false;
+      return prev.date === t && Date.now() - Number(prev.at || 0) < 30 * 1000;
+    } catch (e) { return false; }
+  }
+  // 날짜가 바뀌었으면 오늘로 전환하고 true 를 돌려준다. 같은 날짜로 30초 안에
+  // 이미 새로고침을 시도했다면 다시 부르지 않는다(무한 새로고침 방지).
+  function checkDayRollover() {
+    var t = todayStr();
+    if (t === today) return false;
+    today = t;
+    // 새로고침이 막히더라도 어제 탭에 머물지 않게 먼저 화면을 오늘로 맞춘다.
+    // 처음 여는 화면과 같게 홈(오늘)으로 돌리고, 어제 보던 필터·펼친 경기는 접는다.
+    state.day = defaultDay();
+    state.weekStart = mondayOf(state.day);
+    state.sport = null;
+    state.favorites = false;
+    state.allSports = false;
+    state.league = null;
+    state.openId = null;
+    // 주소에 어제 경기(#…)가 남아 있으면 새 페이지가 그 경기 날짜로 돌아가므로 지운다.
+    if (location.hash) writeHash("", true);
+    render();
+    if (rolloverTriedRecently(t)) return true;
+    try { sessionStorage.setItem(ROLL_RELOAD_KEY, JSON.stringify({ date: t, at: Date.now() })); } catch (e) { /* 저장 못 하면 매번 확인만 */ }
+    try { location.reload(); } catch (e2) { /* 새로고침 불가한 환경이면 위 전환으로 끝 */ }
+    return true;
+  }
+  function startDayRollover() {
+    function onReturn() { if (!document.hidden) checkDayRollover(); }
+    document.addEventListener("visibilitychange", onReturn);
+    window.addEventListener("focus", onReturn);
+    window.addEventListener("pageshow", function () { checkDayRollover(); });
+    // 창을 닫지 않고 자정을 넘긴 경우도 라이브 폴링과 같은 결로 1분마다 확인한다.
+    window.setInterval(onReturn, 60 * 1000);
+  }
+
   function goHome() {
     var same = state.sport === null && !state.favorites && !state.allSports;
     state.sport = null;
@@ -5981,5 +6025,6 @@
   window.setInterval(paintDataFreshness, 15 * 60 * 1000);
 
   render();
+  startDayRollover();
   startLive();
 })();
