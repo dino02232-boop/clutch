@@ -345,3 +345,4 @@
 
 /* 가상 포인트 안내 — Bet 확정 버튼 바로 아래(입력 직전에 읽히게), 작은 글씨로 */
 .bet-money-note{flex:0 0 auto;margin:7px 0 0;font-size:10.5px;line-height:1.45;color:var(--text-3);letter-spacing:-.005em}
+.pager[hidden]{display:none}
