@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-25T03:45:51+09:00",
+  updatedAt: "2026-11-25T04:53:39+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -27672,7 +27672,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 5패·6위·승점 5, 대한항공(원정) 3승 3패·4위·승점 9."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 03:45 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 04:53 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -28030,7 +28030,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 3패·4위·승점 8, GS칼텍스(원정) 5승 1패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 03:45 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 04:53 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
@@ -33768,7 +33768,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 한국전력(홈) 5승 1패·1위·승점 14, 현대캐피탈(원정) 4승 2패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 03:45 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 04:53 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -34074,13 +34074,13 @@ window.CLUTCH_DATA = {
               "**경기장** — 화성종합실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행(홈) 4승 2패·3위·승점 12, 도로공사(원정) 5승 1패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 03:45 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 04:53 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-25 END */,
 
         /* SOCCER-AUTO 2026-11-25 START */
-        {
+                {
           "id": "soccer-avl-gal-20261125",
           "espnId": "401915300",
           "sport": "soccer",
@@ -34163,6 +34163,23 @@ window.CLUTCH_DATA = {
             }
           ],
           "preview": "갈라타사라이는 터키 쉬페르리그 선두(승점 31, 득실 +13)이고, 이 대회에서는 2승 2패(18위)입니다. 애스턴 빌라는 프리미어리그 12위(승점 14, 득실 -3)로 중위권이고, 이 대회에서는 3승 1패(6위)입니다. 최근 5경기는 갈라타사라이 5연승, 애스턴 빌라 3무 2패이고, 두 팀 평균 득점을 합치면 5.0골, 평균 실점은 3.7골입니다.",
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "0",
+                "1"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -34276,7 +34293,99 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 4월 중순"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Tyrone Mings",
+                    "rating": 7.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Johan Manzambi",
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Victor Nilsson Lindelöf",
+                    "rating": 6.5,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Boubacar Kamara",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "George Hemmings",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Leon Goretzka",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Zion Suzuki",
+                    "rating": 6.4,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "John McGinn",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "João Gomes",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Taylor Harwood-Bellis",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ian Maatsen",
+                    "rating": 6.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nicolas Jackson",
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alysson Edward",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ross Barkley",
+                    "rating": 6.0,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Ibrahim Mbaye",
+                    "rating": 5.9,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               },
               {
                 "abbr": "GAL",
@@ -34393,7 +34502,93 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 3명 · 불확실 1명"
+                "injurySummary": "결장 3명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Davinson Sánchez",
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ismail Jakobs",
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Lucas Torreira",
+                    "rating": 7.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Wilfried Singo",
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Deniz Gül",
+                    "rating": 7.3,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Yunus Akgün",
+                    "rating": 7.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mario Lemina",
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Uğurcan Çakır",
+                    "rating": 7.0,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Abdülkerim Bardakci",
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Barış Alper Yılmaz",
+                    "rating": 6.8,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Eren Elmalı",
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Aleksey Batrakov",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Gabriel Sara",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Lesley Ugochukwu",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "keyPlayers": [
@@ -34407,7 +34602,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Aleksey_Batrakov.jpg/120px-Aleksey_Batrakov.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 4"
-                    ]
+                    ],
+                    "rating": 6.7
                   },
                   {
                     "name": "Davinson Sánchez",
@@ -34415,7 +34611,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/D%C3%A1vinson_S%C3%A1nchez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg/120px-D%C3%A1vinson_S%C3%A1nchez%2C_Colombia_NT_presidential_send-off%2C_Jun_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 1"
-                    ]
+                    ],
+                    "rating": 7.8
                   }
                 ]
               },
@@ -34429,7 +34626,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg/120px-Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 3"
-                    ]
+                    ],
+                    "rating": 6.1
                   },
                   {
                     "name": "Pau Torres",
@@ -34449,9 +34647,10 @@ window.CLUTCH_DATA = {
             "note": "일정·전적·순위는 ESPN 2026-11-24 18:34 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-24 18:52 기준입니다.",
             "fotmobId": 6106339,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
-        {
+                {
           "id": "soccer-las-bodo-20261125",
           "espnId": "401915380",
           "sport": "soccer",
@@ -34534,6 +34733,23 @@ window.CLUTCH_DATA = {
             }
           ],
           "preview": "보되/글림트는 노르웨이 엘리테세리엔 선두(승점 65, 득실 +42)이고, 이 대회에서는 1승 1무 2패(25위)입니다. LASK 린츠는 오스트리아 분데스리가 3위(승점 28, 득실 +16)로 상위권이고, 이 대회에서는 2승 2패(16위)입니다. 최근 5경기는 보되/글림트 3승 1무 1패, LASK 린츠 4승 1패이고, 두 팀 평균 득점을 합치면 3.5골, 평균 실점은 4.4골입니다.",
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "0",
+                "1"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -34646,7 +34862,93 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 11월 중순"
                   }
                 ],
-                "injurySummary": "결장 2명 · 불확실 1명"
+                "injurySummary": "결장 2명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Xavier Mbuyamba",
+                    "rating": 8.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Alemão",
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Miguel Freckleton",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Yvan Dibango",
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Kasper Jørgensen",
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Lukas Jungwirth",
+                    "rating": 6.6,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Samuel Adeniran",
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Robert Ljubičić",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Daniel Elfadli",
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Kryštof Daněk",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sascha Horvath",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Christoph Lang",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Moses Usor",
+                    "rating": 5.7,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Alessandro Schöpf",
+                    "rating": 5.6,
+                    "pos": "MF",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "BODO",
@@ -34754,7 +35056,93 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 초"
                   }
                 ],
-                "injurySummary": "결장 2명"
+                "injurySummary": "결장 2명",
+                "players": [
+                  {
+                    "name": "Fredrik André Bjørkan",
+                    "rating": 8.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Patrick Berg",
+                    "rating": 7.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jens Petter Hauge",
+                    "rating": 7.8,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sondre Auklend",
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Fredrik Sjøvold",
+                    "rating": 7.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nikita Haikin",
+                    "rating": 7.2,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jostein Gundersen",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ole Blomberg",
+                    "rating": 7.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Odin Lurås Bjørtuft",
+                    "rating": 7.0,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sondre Brunstad Fet",
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ola Brynhildsen",
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Joshua Kitolano",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Andreas Helmersen",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Ulrik Saltnes",
+                    "rating": 6.0,
+                    "pos": "MF",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "keyPlayers": [
@@ -34768,7 +35156,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://r2.thesportsdb.com/images/media/player/thumb/2567d91762291432.jpg",
                     "stats": [
                       "득점 1"
-                    ]
+                    ],
+                    "rating": 7.3
                   },
                   {
                     "name": "Sondre Brunstad Fet",
@@ -34776,7 +35165,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://r2.thesportsdb.com/images/media/player/thumb/k7gia51610706351.jpg",
                     "stats": [
                       "도움 2"
-                    ]
+                    ],
+                    "rating": 6.8
                   }
                 ]
               },
@@ -34790,7 +35180,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/FC_RB_Salzburg_gegen_LASK_%282026-05-10_Bundesliga_%29_20.jpg?width=120",
                     "stats": [
                       "득점 2"
-                    ]
+                    ],
+                    "rating": 6.6
                   },
                   {
                     "name": "Yvan Dibango",
@@ -34798,7 +35189,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/%D0%A3%D0%9F%D0%9B._%C2%AB%D0%9A%D1%80%D0%B8%D0%B2%D0%B1%D0%B0%D1%81%C2%BB_%E2%80%94_%C2%AB%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D0%B8%C2%BB_%E2%80%94_2-0_%E2%80%94_2994_%28cropped%29.jpg/120px-%D0%A3%D0%9F%D0%9B._%C2%AB%D0%9A%D1%80%D0%B8%D0%B2%D0%B1%D0%B0%D1%81%C2%BB_%E2%80%94_%C2%AB%D0%9A%D0%B0%D1%80%D0%BF%D0%B0%D1%82%D0%B8%C2%BB_%E2%80%94_2-0_%E2%80%94_2994_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 3"
-                    ]
+                    ],
+                    "rating": 6.8
                   }
                 ]
               }
@@ -34810,7 +35202,8 @@ window.CLUTCH_DATA = {
             "note": "일정·전적·순위는 ESPN 2026-11-24 18:34 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-24 18:52 기준입니다.",
             "fotmobId": 6106317,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
         {
           "id": "soccer-aek-como-20261125",

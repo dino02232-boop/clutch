@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-25T01:38:59+09:00
+   생성 시각(기준): 2026-11-25T04:53:39+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-25T01:38:59+09:00",
+  "updated": "2026-11-25T04:53:39+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -3336,15 +3336,15 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 6,
-              "team": "애스턴 빌라",
-              "abbr": "AVL",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
+              "team": "맨체스터 시티",
+              "abbr": "MNC",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
               "played": 4,
               "win": 3,
               "draw": 0,
               "loss": 1,
               "points": 9,
-              "diff": 6,
+              "diff": 5,
               "pct": null,
               "gb": null,
               "zone": {
@@ -3355,13 +3355,13 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 7,
-              "team": "맨체스터 시티",
-              "abbr": "MNC",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
-              "played": 4,
+              "team": "애스턴 빌라",
+              "abbr": "AVL",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
+              "played": 5,
               "win": 3,
               "draw": 0,
-              "loss": 1,
+              "loss": 2,
               "points": 9,
               "diff": 5,
               "pct": null,
@@ -3469,6 +3469,25 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 13,
+              "team": "갈라타사라이",
+              "abbr": "GAL",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/432.png",
+              "played": 5,
+              "win": 3,
+              "draw": 0,
+              "loss": 2,
+              "points": 9,
+              "diff": 0,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 14,
               "team": "바이에른 뮌헨",
               "abbr": "MUN",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132.png",
@@ -3487,7 +3506,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 14,
+              "rank": 15,
               "team": "슈투트가르트",
               "abbr": "VFB",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png",
@@ -3506,7 +3525,26 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 15,
+              "rank": 16,
+              "team": "보되/글림트",
+              "abbr": "BODO",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2980.png",
+              "played": 5,
+              "win": 2,
+              "draw": 1,
+              "loss": 2,
+              "points": 7,
+              "diff": -4,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 17,
               "team": "인터 밀란",
               "abbr": "INT",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
@@ -3519,32 +3557,32 @@ window.CLUTCH_STANDINGS = {
               "pct": null,
               "gb": null,
               "zone": {
-                "label": "녹아웃 PO 시드",
-                "color": "#B5E7CE",
-                "src": "Knockout phase playoffs - seeded"
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
               }
             },
             {
-              "rank": 16,
+              "rank": 18,
               "team": "LASK 린츠",
               "abbr": "LAS",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4411.png",
-              "played": 4,
+              "played": 5,
               "win": 2,
               "draw": 0,
-              "loss": 2,
+              "loss": 3,
               "points": 6,
-              "diff": 1,
+              "diff": 0,
               "pct": null,
               "gb": null,
               "zone": {
-                "label": "녹아웃 PO 시드",
-                "color": "#B5E7CE",
-                "src": "Knockout phase playoffs - seeded"
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
               }
             },
             {
-              "rank": 17,
+              "rank": 19,
               "team": "맨체스터 유나이티드",
               "abbr": "MAN",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
@@ -3563,26 +3601,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 18,
-              "team": "갈라타사라이",
-              "abbr": "GAL",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/432.png",
-              "played": 4,
-              "win": 2,
-              "draw": 0,
-              "loss": 2,
-              "points": 6,
-              "diff": -1,
-              "pct": null,
-              "gb": null,
-              "zone": {
-                "label": "녹아웃 PO 비시드",
-                "color": "#B2BFD0",
-                "src": "Knockout phase playoffs - unseeded"
-              }
-            },
-            {
-              "rank": 19,
+              "rank": 20,
               "team": "Fenerbahce",
               "abbr": "FEN",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/436.png",
@@ -3601,7 +3620,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 20,
+              "rank": 21,
               "team": "AS 로마",
               "abbr": "ROMA",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
@@ -3620,7 +3639,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 21,
+              "rank": 22,
               "team": "Shakhtar Donetsk",
               "abbr": "SHK",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/493.png",
@@ -3639,7 +3658,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 22,
+              "rank": 23,
               "team": "Viking FK",
               "abbr": "VFK",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/510.png",
@@ -3658,7 +3677,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 23,
+              "rank": 24,
               "team": "아틀레티코 마드리드",
               "abbr": "ATM",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
@@ -3677,7 +3696,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 24,
+              "rank": 25,
               "team": "PSV 에인트호번",
               "abbr": "PSV",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/148.png",
@@ -3687,25 +3706,6 @@ window.CLUTCH_STANDINGS = {
               "loss": 2,
               "points": 4,
               "diff": -1,
-              "pct": null,
-              "gb": null,
-              "zone": {
-                "label": "녹아웃 PO 비시드",
-                "color": "#B2BFD0",
-                "src": "Knockout phase playoffs - unseeded"
-              }
-            },
-            {
-              "rank": 25,
-              "team": "보되/글림트",
-              "abbr": "BODO",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2980.png",
-              "played": 4,
-              "win": 1,
-              "draw": 1,
-              "loss": 2,
-              "points": 4,
-              "diff": -5,
               "pct": null,
               "gb": null,
               "zone": {
