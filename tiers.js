@@ -17,7 +17,7 @@
 
    쓰는 곳: 랭킹(닉네임 옆), 상단 닉네임 알약, 내 베팅 내역 모달,
    자유게시판 글쓴이. 배지 색은 betting.css 의 .t-<key> 가,
-   엠블럼 그림은 이 파일 아래쪽 EMB 가 맡는다.
+   엠블럼 그림은 assets/tiers/<key>.png (롤 공식 티어 엠블럼) 가 맡는다.
    ============================================================= */
 (function () {
   'use strict';
@@ -35,71 +35,19 @@
     { key: 'challenger',  name: '챌린저',       en: 'CHALLENGER',  min: 300000, max: null }
   ];
 
-  /* ── 롤 티어 엠블럼 (인라인 SVG) ──────────────────────────────
-     기본은 방패 하나. 티어가 오를수록 보석·왕관·날개를 더해
-     실루엣만 봐도 단계가 구분되게 했다. 16~24px 로 줄여도 형태가
-     남도록 면적은 크게, 선은 1.8~3px 로 두껍게 그렸다.
-     그라데이션 id 는 티어마다 하나(tv-<key>)만 쓴다. 같은 배지가
-     화면에 여러 번 나와도 정의 내용이 같아 문제되지 않는다. */
-  var SHIELD = 'M14 1.6 22.9 4.8v7.1c0 5.1-3.7 8.7-8.9 10.2C8.8 20.6 5.1 17 5.1 11.9V4.8z';
-  var SHINE = 'M14 3.1 20.9 5.4v6.5c0 4.1-2.9 7.1-6.9 8.4z';
+  /* ── 롤 공식 티어 엠블럼 (PNG) ───────────────────────────────
+     CommunityDragon 의 rcp-fe-lol-shared-components 정식 경로에서
+     받은 10개 그림을 assets/tiers/<key>.png 로 저장했다. 투구·날개
+     디테일이 그대로 남도록 원본(500x500)을 160x160 으로만 줄였다.
+     크기는 배지 자리마다 betting.css 가 정한다(.tier-emblem). */
+  var EMBLEM_BASE = 'assets/tiers/';
 
-  // 날개(깃) — 방패 양옆으로 뻗는 짧은 획 세 줄
-  var FEATHERS = 'M5.3 6 2 4.1M5.3 9.5 1.5 8.2M5.3 12.9 2.2 12.5' +
-    'M22.7 6 26 4.1M22.7 9.5 26.5 8.2M22.7 12.9 25.8 12.5';
-
-  var EMB = {
-    iron: {
-      g: ['#93A0AD', '#4B5563'],
-      art: '<path d="M9.5 11.7h9" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".92"/>'
-    },
-    bronze: {
-      g: ['#DCA36C', '#8A5327'],
-      art: '<path d="M9.9 9.4 14 13.5l4.1-4.1" fill="none" stroke="#fff" stroke-width="2.7"' +
-        ' stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>'
-    },
-    silver: {
-      g: ['#DCE4EC', '#8B9AA8'],
-      art: '<path d="M10 9.9h8M10 13.7h8" stroke="#fff" stroke-width="2.1" stroke-linecap="round" opacity=".92"/>'
-    },
-    gold: {
-      g: ['#FFDB7D', '#C08A00'],
-      art: '<path d="M9.5 13.6V8.7l2.7 2 1.8-3.4 1.8 3.4 2.7-2v4.9z" fill="#fff" opacity=".95"/>'
-    },
-    platinum: {
-      g: ['#9CEAE0', '#0E7C74'],
-      art: '<path d="M14 7.7 17.7 11.4 14 15.9 10.3 11.4z" fill="#fff" opacity=".96"/>' +
-        '<path d="M14 7.7 15.9 11.4h-3.8z" fill="#0B1220" opacity=".2"/>'
-    },
-    emerald: {
-      g: ['#7FE3A4', '#11763A'],
-      art: '<path d="M14 8 17.5 11.5 14 15.7 10.5 11.5z" fill="#fff" opacity=".96"/>' +
-        '<path d="M14 8 15.8 11.5h-3.6z" fill="#0B1220" opacity=".2"/>'
-    },
-    diamond: {
-      g: ['#A9C4FF', '#1D4ED8'],
-      art: '<path d="M9.7 9.9H18.3L14 16.7z" fill="#fff" opacity=".96"/>' +
-        '<path d="M9.7 9.9h8.6l-2.6 2.1h-3.4z" fill="#0B1220" opacity=".16"/>'
-    },
-    master: {
-      g: ['#C9A8FF', '#6D28D9'],
-      art: '<path d="M10.2 10V6.9l2.1 1.5 1.7-2.6 1.7 2.6 2.1-1.5V10z" fill="#fff" opacity=".95"/>' +
-        '<path d="M14 11.1 16.8 14 14 17.3 11.2 14z" fill="#fff" opacity=".9"/>'
-    },
-    grandmaster: {
-      g: ['#FFA38F', '#B42318'],
-      art: '<path d="M14 8.4 17.6 11.7 14 15.9 10.4 11.7z" fill="#fff" opacity=".96"/>' +
-        '<path d="M14 8.4 15.9 11.7h-3.8z" fill="#0B1220" opacity=".2"/>',
-      feather: true
-    },
-    challenger: {
-      g: ['#8FF0FF', '#0E7490'],
-      art: '<path d="M10.1 9.6V6.6l2.1 1.5 1.8-2.6 1.8 2.6 2.1-1.5v3z" fill="#fff" opacity=".95"/>' +
-        '<path d="M14 10.8 16.9 13.8 14 17.2 11.1 13.8z" fill="#fff" opacity=".92"/>',
-      feather: true,
-      glow: true
-    }
-  };
+  // 엠블럼 그림만. 이름은 badgeHTML 이 붙인다.
+  function markImg(t) {
+    return '<img class="tier-emblem" src="' + EMBLEM_BASE + t.key + '.png"' +
+      ' alt="' + t.name + '" width="24" height="24"' +
+      ' loading="lazy" decoding="async" draggable="false">';
+  }
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -132,28 +80,6 @@
       : t.min.toLocaleString('ko-KR') + '~' + t.max.toLocaleString('ko-KR') + 'P';
   }
 
-  // 티어 하나의 엠블럼 SVG. 그림만 있고 이름은 badgeHTML 이 붙인다.
-  function markSVG(t) {
-    var e = EMB[t.key] || EMB.iron;
-    var id = 'tv-' + t.key;
-    return '<svg class="tier-mark" viewBox="0 0 28 24" aria-hidden="true" focusable="false">' +
-      '<defs><linearGradient id="' + id + '" x1="0" y1="0" x2=".35" y2="1">' +
-        '<stop offset="0" stop-color="' + e.g[0] + '"/><stop offset="1" stop-color="' + e.g[1] + '"/>' +
-      '</linearGradient></defs>' +
-      (e.feather
-        ? '<path d="' + FEATHERS + '" stroke="' + e.g[1] +
-          '" stroke-width="2" stroke-linecap="round" opacity=".55"/>'
-        : '') +
-      '<path d="' + SHIELD + '" fill="url(#' + id + ')" stroke="' + e.g[1] +
-        '" stroke-width=".9" stroke-opacity=".9"/>' +
-      '<path d="' + SHINE + '" fill="#fff" opacity=".16"/>' +
-      e.art +
-      (e.glow
-        ? '<path d="' + SHIELD + '" fill="none" stroke="#fff" stroke-width=".8" opacity=".45"/>'
-        : '') +
-      '</svg>';
-  }
-
   /* 티어 배지 한 조각.
      opt.cls        : 추가 클래스
      opt.en         : true 면 영문 약자(IRON) 대신 한글 이름
@@ -172,7 +98,7 @@
       (opt.cls ? ' ' + opt.cls : '');
     var inner = (opt.icon === false
       ? '<i class="tier-dot" aria-hidden="true"></i>'
-      : markSVG(t)) +
+      : markImg(t)) +
       (opt.label === false ? '' : esc(label));
     return '<span class="' + cls + '" role="img" aria-label="' + esc(tip) +
       '" title="' + esc(tip) + '">' + inner + '</span>';
@@ -183,5 +109,5 @@
   window.clutchTierNext = nextOf;
   window.clutchTierRange = rangeText;
   window.clutchTierBadge = badgeHTML;
-  window.clutchTierMark = function (points) { return markSVG(tierOf(points)); };
+  window.clutchTierMark = function (points) { return markImg(tierOf(points)); };
 })();
