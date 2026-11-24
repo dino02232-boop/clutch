@@ -1709,6 +1709,18 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .lb-sub::after { content: ""; height: 1px; flex: 1; background: var(--line); }
 .lb-sub-note { font-size: 9px; font-weight: 600; color: var(--text-3); letter-spacing: 0; }
+/* 코트 위 출전 중 표시 — 현재 선수 기록의 선수 이름 옆에 붙는 작은 초록 점 */
+.on-court {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: #16a34a; margin-left: 5px; vertical-align: middle;
+}
+/* 이름 줄(nm-wrap)은 flex 라 gap 과 겹치지 않게 여백은 gap 한 번만 준다 */
+.lb-tbl .c-nm .nm-wrap .on-court { flex: 0 0 auto; margin-left: 0; }
+.lb-sub-legend {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 9px; font-weight: 600; color: var(--text-3); letter-spacing: 0; opacity: .8;
+}
+.lb-sub-legend .on-court { width: 5px; height: 5px; margin-left: 0; }
 .lb-none { margin: 3px 0 8px; font-size: 12px; color: var(--text-3); line-height: 1.55; }
 
 .lb-plays { list-style: none; margin: 0 0 2px; padding: 0; display: flex; flex-direction: column; gap: 5px; }

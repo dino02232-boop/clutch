@@ -4824,6 +4824,8 @@
             name: (a.athlete && (a.athlete.displayName || a.athlete.fullName || a.athlete.shortName)) || "",
             photo: (a.athlete && a.athlete.headshot && a.athlete.headshot.href) || "",
             starter: !!a.starter,
+            // active = 지금 실제로 코트 위에 뛰고 있는 선수(실시간 교체 반영, 팀당 5명)
+            active: !!a.active,
             min: min,
             pts: s[idx.PTS],
             reb: idx.REB != null ? s[idx.REB] : null,
@@ -5145,7 +5147,9 @@
     var open = !!LIVE.benchOpen[key];
     function playerRow(p) {
       return '<tr><th scope="row" class="c-nm"><span class="nm-wrap">' +
-        faceHTML(p.name, p.photo, true) + "<b>" + esc(p.name) + "</b></span></th>" +
+        faceHTML(p.name, p.photo, true) + "<b>" + esc(p.name) + "</b>" +
+        (p.active ? '<span class="on-court" title="코트 위 출전 중" aria-label="출전 중"></span>' : "") +
+        "</span></th>" +
         '<td class="c-min">' + esc(dash(p.min)) + "</td>" +
         '<td class="c-pts">' + esc(dash(p.pts)) + "</td>" +
         "<td>" + esc(dash(p.reb)) + "</td>" +
@@ -5185,8 +5189,14 @@
     var hasStarter = teams.some(function (t) {
       return (t.rows || []).some(function (p) { return p && p.starter; });
     });
+    // 코트 위 5명을 표시한 초록 점의 의미를 헤더에서 바로 알 수 있게 아주 작게 붙인다
+    var hasActive = teams.some(function (t) {
+      return (t.rows || []).some(function (p) { return p && p.active; });
+    });
     var head = '<h4 class="lb-sub">현재 선수 기록 <span class="lb-sub-note">' +
-      (hasStarter ? "선발 5명" : "출전 시간 순 5명") + "</span></h4>";
+      (hasStarter ? "선발 5명" : "출전 시간 순 5명") + "</span>" +
+      (hasActive ? '<span class="lb-sub-legend" title="지금 코트 위에 뛰고 있는 선수">' +
+        '<span class="on-court"></span>출전중</span>' : "") + "</h4>";
     var awayAbbr = g.away ? String(g.away.abbr || "").toUpperCase() : "";
     var homeAbbr = g.home ? String(g.home.abbr || "").toUpperCase() : "";
     var ordered = teams.slice().sort(function (a, b) {
