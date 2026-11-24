@@ -5,5 +5,6 @@ window.CLUTCH_FIREBASE_CONFIG = {
   projectId: "versus-3f808",
   storageBucket: "versus-3f808.firebasestorage.app",
   messagingSenderId: "142111511947",
-  appId: "1:142111511947:web:11916417359c350b4fcb8e"
+  appId: "1:142111511947:web:11916417359c350b4fcb8e",
+  measurementId: "G-HHPEG1H1QK"
 };
