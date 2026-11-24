@@ -2995,7 +2995,16 @@
       '<ul class="form-list">' + formRow("home", g.home, g) + formRow("away", g.away, g) + "</ul>";
 
 
-    var extraRows = rows.filter(function (r) { return r.kind !== "flow"; });
+    // 경기 전망 문장이 있는 경기(축구)는 위쪽 '관전 포인트' 행을 감춘다.
+    // 평균 득점·실점은 팀 블록과 배당판에 이미 있고, 같은 내용을 전망 문장이 이어받는다.
+    // 전망이 없는 경기(농구·배구 등)에서는 이 행이 유일한 요약이라 그대로 둔다.
+    var previewText = typeof g.preview === "string" ? g.preview.trim() : "";
+
+    var extraRows = rows.filter(function (r) {
+      if (r.kind === "flow") return false;
+      if (r.kind === "watch" && previewText) return false;
+      return true;
+    });
     if (extraRows.length) {
       preview += '<dl class="summary">' + extraRows.map(function (r) {
         var kind = toneClass(r.kind, ["flow", "inj", "watch"], "");
@@ -3005,8 +3014,6 @@
 
 
     // 경기 전망 — 두 팀 관전 포인트를 합친 한 단락. 없는 경기(농구·배구 등)는 그냥 빠진다.
-    var previewText = typeof g.preview === "string" ? g.preview : "";
-
     // 축구 핵심 선수는 더보기 안, 팀 블록 다음에 둔다.
     var more = "";
 

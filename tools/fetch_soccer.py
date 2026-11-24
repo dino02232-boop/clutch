@@ -716,11 +716,6 @@ def sub_josa(name):
     return "이" if topic_josa(name) == "은" else "가"
 
 
-def obj_josa(word):
-    """말 뒤의 '을/를'."""
-    return "을" if topic_josa(word) == "은" else "를"
-
-
 def series_text(w, d, l):
     """대회 전적 → '3승 1패' · '4전 전승' · '4전 전패'. 값이 없으면 None."""
     body = wdl_text(w, d, l)
@@ -743,13 +738,6 @@ def _form_brief(l5, streak):
     return wdl_text(sum(1 for r in l5 if r["res"] == "승"),
                     sum(1 for r in l5 if r["res"] == "무"),
                     sum(1 for r in l5 if r["res"] == "패"))
-
-
-def _form_points(l5):
-    """최근 5경기 승점(승3·무1). 값이 없으면 None."""
-    if not l5:
-        return None
-    return sum(3 if r["res"] == "승" else (1 if r["res"] == "무" else 0) for r in l5)
 
 
 def _rank_bit(name, row, tier):
@@ -776,6 +764,7 @@ def build_preview(home, home_st, away, away_st, league, league_full, table_size,
     유럽대항전은 팀마다 '자국 리그에서의 위치 → 이 대회 전적'을 사실로만 적고,
     서로 다른 리그의 순위를 나란히 놓고 우열을 말하지 않는다(리그 간 격차는 알 수 없다).
     비교는 이 대회 전적·최근 5경기·홈/원정 성적·평균 득점·실점으로만 한다.
+    우열을 판단하는 마지막 문장('…가 앞선다는 계산이 나옵니다' 등)은 쓰지 않는다.
     값이 없으면 그 문장만 빼고, 배당·확률·추천은 쓰지 않는다.
     """
     ps = []
@@ -839,46 +828,14 @@ def build_preview(home, home_st, away, away_st, league, league_full, table_size,
         elif forms:
             ps.append("최근 5경기는 %s입니다." % forms)
 
-    # 마지막 문장 — 골 + 조심스러운 전망. 비교 근거는 이 대회(리그) 전적·최근 흐름뿐이다.
+    # 마지막 문장 — 두 팀 평균 득점·실점 합계만 사실로 적는다.
+    # 예전에는 이어서 '…모두 X를 가리켜 X가 앞선다는 계산이 나옵니다' 같은 우열 판단을 붙였는데,
+    # 근거가 대회 전적·최근 흐름뿐이라 단정으로 읽혀 뺐다. 앞의 사실 서술만 남긴다.
     h_gf, h_ga = per_game(home_st.get("gf"), home_st.get("played")), per_game(home_st.get("ga"), home_st.get("played"))
     a_gf, a_ga = per_game(away_st.get("gf"), away_st.get("played")), per_game(away_st.get("ga"), away_st.get("played"))
     goals = None
     if None not in (h_gf, h_ga, a_gf, a_ga):
         goals = "두 팀 평균 득점을 합치면 %.1f골, 평균 실점은 %.1f골" % (h_gf + a_gf, h_ga + a_ga)
-
-    def _ppg(row):
-        pts, played = (row or {}).get("points"), (row or {}).get("played")
-        if pts is None or not played:
-            return None
-        return float(pts) / float(played)
-
-    form_pts = (_form_points(h_l5), _form_points(a_l5))
-    ppg = (_ppg(home_st), _ppg(away_st))
-    signals = []
-    if None not in ppg and abs(ppg[0] - ppg[1]) > 0.02:
-        signals.append(("이 대회 성적" if cup else "리그 성적", "h" if ppg[0] > ppg[1] else "a"))
-    if None not in form_pts and form_pts[0] != form_pts[1]:
-        signals.append(("최근 흐름", "h" if form_pts[0] > form_pts[1] else "a"))
-
-    def _name(side):
-        return h_name if side == "h" else a_name
-
-    lean = None
-    if signals:
-        sides = {s for _, s in signals}
-        if len(signals) == 2 and len(sides) == 1:
-            lead = _name(signals[0][1])
-            labels = [l for l, _ in signals]
-            lean = "%s 모두 %s%s 가리켜 %s 쪽이 앞선다는 계산이 나옵니다." % (
-                labels[0] + and_josa(labels[0]) + " " + labels[1], lead, obj_josa(lead), lead)
-        elif len(signals) == 2:
-            (l1, s1), (l2, s2) = signals
-            lean = "%s%s %s, %s%s %s로 갈려 어느 쪽이 앞선다고 말하기 어렵습니다." % (
-                l1, topic_josa(l1), _name(s1), l2, topic_josa(l2), _name(s2))
-        else:
-            label, side = signals[0]
-            lead = _name(side)
-            lean = "%s만 보면 %s 쪽이 조금 앞선다는 계산이 나옵니다." % (label, lead)
 
     if cup:
         forms_cup = ("최근 5경기는 %s %s, %s %s" % (h_name, h_form, a_name, a_form)) if (h_form and a_form) else None
@@ -888,14 +845,8 @@ def build_preview(home, home_st, away, away_st, league, league_full, table_size,
             ps.append(forms_cup + "입니다.")
         elif goals:
             ps.append(goals + "입니다.")
-        if lean:
-            ps.append(lean)
-    elif goals and lean:
-        ps.append(goals + "이고, " + lean)
     elif goals:
         ps.append(goals + "입니다.")
-    elif lean:
-        ps.append(lean)
     return " ".join(ps) or None
 
 
