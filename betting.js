@@ -173,7 +173,7 @@
   async function support(){if(!me||balance>=100)return;var ref=db.collection('users').doc(me.uid);try{await db.runTransaction(async function(tx){var d=await tx.get(ref),v=d.data(),now=Date.now();if(Number(v.points)>=100)throw Error('잔고가 100P 이상입니다.');if(v.supportAt&&now-v.supportAt.toMillis()<86400000)throw Error('지원금은 24시간에 한 번 받을 수 있습니다.');tx.update(ref,{points:Number(v.points)+1000,supportAt:firebase.firestore.FieldValue.serverTimestamp()});});say('1,000P 지원금을 받았습니다.');}catch(e){say(e.message);}}
   /* ── 내 베팅 내역 모달 ────────────────────────────────
      상단 `닉네임 · 포인트` 알약을 누르면 베팅한 경기·픽·배당·금액·예상/획득·상태를 보여 준다.
-     머리의 ✏️ 로 닉네임을 바로 고칠 수 있다. */
+     닉네임 바로 옆의 ✏️ 로 닉네임을 바로 고칠 수 있다. */
   var betsUnsub = null;
   var STATUS_KO = { open: '베팅중', won: '적중', lost: '미적중', push: '무효' };
   var MARKET_KO = { moneyline: '승무패', spread: '핸디캡', total: '언오버' };
@@ -188,6 +188,7 @@
       ? '다음 ' + nx.tier.name + '까지 ' + fmt(nx.need) + 'P'
       : '최고 티어입니다';
     n.innerHTML = '<b>' + esc(window.clutchNickname || me.displayName || '회원') + '</b>' +
+      '<button type="button" id="betsNick" class="bets-icon" aria-label="닉네임 변경" title="닉네임 변경">✏️</button>' +
       (window.clutchTierBadge ? window.clutchTierBadge(balance, { cls: 'lg' }) : '') +
       '<span>' + fmt(balance) + 'P</span>' +
       '<em class="bets-next">' + esc(hint) + '</em>';
@@ -339,7 +340,6 @@
     wrap.className = 'bets-modal';
     wrap.innerHTML = '<div class="bets-box" role="dialog" aria-modal="true" aria-label="내 베팅 내역">' +
       '<div class="bets-head"><b>🎟 내 베팅 내역</b>' +
-      '<button type="button" id="betsNick" class="bets-icon" aria-label="닉네임 변경" title="닉네임 변경">✏️</button>' +
       '<button type="button" id="betsClose" class="bets-icon" aria-label="닫기" title="닫기">×</button></div>' +
       '<div id="betsMe" class="bets-me"></div>' +
       '<div id="betsList" class="bets-list"><p class="bets-empty">불러오는 중…</p></div>' +
