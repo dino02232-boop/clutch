@@ -5096,6 +5096,9 @@
         if (g.home && String(g.home.abbr || "").toUpperCase() === tm) side = "home";
         else if (g.away && String(g.away.abbr || "").toUpperCase() === tm) side = "away";
       }
+      // 카드 안의 다른 표기(점수판·목록)와 같은 약자를 쓴다. ESPN 약자가 다를 때가 있다(예: SAS ↔ SA).
+      if (side === "home" && g.home && g.home.abbr) tm = String(g.home.abbr).toUpperCase();
+      else if (side === "away" && g.away && g.away.abbr) tm = String(g.away.abbr).toUpperCase();
       return "<li" + (p.scoring ? ' class="sc"' : "") + ">" +
         '<span class="bp-t">' + esc(p.label) + "</span>" +
         (tm ? '<span class="lp-tm' + (side ? " " + side : "") + '">' + esc(tm) + "</span>" : "") +
