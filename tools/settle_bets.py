@@ -219,7 +219,10 @@ def main():
     for doc in db.collection_group("items").where("status", "==", "open").stream():
         bet = doc.to_dict()
         picks = bet.get("picks") or []
-        if not picks or len({p.get("gameId") for p in picks}) != len(picks):
+        # 같은 경기의 다른 마켓(승무패·핸디·언오버)은 한 슬립에 함께 담을 수 있다.
+        # 막을 것은 gameId+market+pick 이 완전히 같은 중복 leg 뿐이다.
+        leg_keys = {(p.get("gameId"), p.get("market"), p.get("pick"), str(p.get("line") or "")) for p in picks}
+        if not picks or len(leg_keys) != len(picks):
             continue
         try:
             created = bet.get("createdAt")

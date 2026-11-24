@@ -92,7 +92,14 @@
       var gm=gameMap(), g=gm[b.dataset.betGame];
       if (b.disabled || b.getAttribute('aria-disabled')==='true' || betLocked(g)) { lockDom(); say('경기가 시작되어 선택할 수 없습니다.'); return; }
       var item={gameId:g.id, date:g.date, sport:g.sport, league:g.league, start:g.start, away:g.away.name, home:g.home.name, market:b.dataset.betMarket, pick:b.dataset.betPick, line:b.dataset.betLine||'', odds:Number(b.dataset.betOdds), decimal:Number(dec(b.dataset.betOdds).toFixed(4))};
-      var ix=slip.findIndex(function(x){return x.gameId===item.gameId;}); if(ix>=0) slip[ix]=item; else slip.push(item); el('betDock')?.classList.remove('is-min'); syncDock(); paint();
+      // 슬립 한 자리는 '경기 + 마켓'. 같은 경기라도 승무패·핸디캡·언오버는 각각 따로 담긴다.
+      // 같은 마켓의 다른 픽은 교체하고, 완전히 같은 leg(경기+마켓+픽)를 다시 누르면 뺀다.
+      var ix=slip.findIndex(function(x){return x.gameId===item.gameId&&x.market===item.market;});
+      if(ix>=0){
+        if(slip[ix].pick===item.pick){slip.splice(ix,1);say('슬립에서 뺐습니다.');}
+        else{slip[ix]=item;say('같은 마켓의 픽을 교체했습니다.');}
+      } else slip.push(item);
+      el('betDock')?.classList.remove('is-min'); syncDock(); paint();
     });
     document.addEventListener('click', function(e){
       if(e.target.id==='betDockTitle'||e.target.id==='betDockToggle'){toggleDock();}
@@ -122,7 +129,7 @@
   function paint() {
     var picks=el('betPicks'); if(!picks)return;
     var mult=slip.reduce(function(a,x){return a*x.decimal;},1);
-    picks.innerHTML=slip.length?slip.map(function(x,i){return '<div class="bet-pick"><button data-slip-remove="'+i+'" aria-label="선택 삭제">×</button><b>'+esc(x.away)+' vs '+esc(x.home)+'</b><span>'+esc(({moneyline:'승무패',spread:'핸디캡',total:'언오버'})[x.market])+' · '+esc(({away:'원정',home:'홈',draw:'무승부',over:'오버',under:'언더'})[x.pick])+(x.line?' '+esc(x.line):'')+' · '+x.decimal.toFixed(2)+'배</span></div>';}).join(''):'<p class="bet-empty">경기에서 배당을 선택하세요.</p>';
+    picks.innerHTML=slip.length?slip.map(function(x,i){return '<div class="bet-pick"><button data-slip-remove="'+i+'" aria-label="선택 삭제">×</button><b>'+esc(x.away)+' vs '+esc(x.home)+'</b><span>'+esc(({moneyline:'승무패',spread:'핸디캡',total:'언오버'})[x.market])+' · '+esc(({away:'원정',home:'홈',draw:'무승부',over:'오버',under:'언더'})[x.pick])+(x.line?' '+esc(x.line):'')+' · '+x.decimal.toFixed(2)+'배</span></div>';}).join(''):'<p class="bet-empty">경기에서 배당을 선택하세요. 같은 경기의 승무패·핸디캡·언오버는 함께 담을 수 있습니다.</p>';
     if(el('betOdds'))el('betOdds').textContent=mult.toFixed(2)+'배';
     var stake=Number(el('betStake')&&el('betStake').value)||0;
     if(el('betReturn'))el('betReturn').textContent=fmt(payout(stake,mult))+'P';
