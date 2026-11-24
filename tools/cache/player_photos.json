@@ -99,6 +99,15 @@
    "espnId": "249299",
    "checked": "2026-11-20T23:32:35+09:00"
   },
+  "alphadjo cissè": {
+   "name": "Alphadjo Cissè",
+   "photo": null,
+   "src": "none",
+   "conf": "club",
+   "title": "Alphadjo Cisse",
+   "espnId": "359754",
+   "checked": "2026-11-25T06:22:55+09:00"
+  },
   "andy diouf": {
    "name": "Andy Diouf",
    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Andy_Diouf_ASSE_RCL_2425.jpg/120px-Andy_Diouf_ASSE_RCL_2425.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
@@ -1359,6 +1368,15 @@
    "espnId": "337970",
    "checked": "2026-11-20T23:22:44+09:00"
   },
+  "nicola zalewski": {
+   "name": "Nicola Zalewski",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/FC_Salzburg_gegen_AS_Roma_%28UEFA_Euroleague_play-off%2C_2023-02-16%29_14_%28cropped%29.jpg/120px-FC_Salzburg_gegen_AS_Roma_%28UEFA_Euroleague_play-off%2C_2023-02-16%29_14_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Nicola Zalewski",
+   "espnId": "288488",
+   "checked": "2026-11-25T06:22:53+09:00"
+  },
   "nicolas jackson": {
    "name": "Nicolas Jackson",
    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg/120px-Nicolas_Jackson_France_v_Senegal_16_June_2026-369_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
@@ -1900,5 +1918,5 @@
    "checked": "2026-11-20T23:22:31+09:00"
   }
  },
- "updatedAt": "2026-11-25T04:53:21+09:00"
+ "updatedAt": "2026-11-25T06:23:15+09:00"
 }
