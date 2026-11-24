@@ -915,6 +915,13 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 .srow dd { margin: 0; font-size: 12.5px; line-height: 1.62; color: #374151; letter-spacing: -.012em; }
 .srow dd b { color: #111827; font-weight: 700; }
 
+/* 경기 전망 — 두 팀 관전 포인트를 합친 한 단락(팀 블록보다 앞) */
+.gp { margin: 10px 0 4px; padding: 10px 12px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; background: #FCFCFE; }
+.gp-h { margin: 0 0 5px; font-size: 10.5px; font-weight: 800; letter-spacing: -.01em; color: var(--accent); }
+.gp-t { margin: 0; font-size: 12.5px; line-height: 1.68; color: #374151; letter-spacing: -.012em; }
+.gp-t b { color: #111827; font-weight: 700; }
+@media (max-width: 420px) { .gp { padding: 9px 10px; } .gp-t { font-size: 12px; } }
+
 .flow-card, .postgame {
   margin: 10px 0; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: #FFFFFF;
 }

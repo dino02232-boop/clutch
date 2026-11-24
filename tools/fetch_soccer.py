@@ -27,13 +27,14 @@ import json
 import os
 import re
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetch_nba import CACHE, KST, get_json, kst_date, weekday_ko  # 공용 유틸
 from odds_common import cache_at, implied, odds_of  # 배당(odds) 추출
 from photo_sources import load_cache as load_photo_cache, resolve as photo_resolve, save_cache as save_photo_cache
-from fotmob_injuries import annotate as annotate_injuries
+from fotmob_injuries import BASE_FOCUS, annotate as annotate_injuries
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -67,6 +68,34 @@ LEAGUES = {
     "ger.1": ("BUNDES", "분데스리가"),
 }
 DEFAULT_LEAGUES = ["uefa.champions", "eng.1", "esp.1", "ger.1", "ita.1"]
+
+# 유럽대항전 경기에서 "이 팀이 자국 리그에서 어디쯤인지"를 쓰려면 그 리그 순위표가 필요하다.
+# ESPN 팀 id 는 대회가 달라도 같아서(예: 갈라타사라이 432), 아래 리그들을 훑어 id 로 맞춘다.
+# 정적 '팀→리그' 표를 두지 않는 이유: 승격·강등으로 리그가 바뀌어도 그대로 맞고,
+# 이 목록에 없는 팀은 못 찾은 것이니 리그를 추측하지 않고 그 문장만 생략한다.
+# 앞의 6개(빅리그+터키)를 먼저 보고, 못 찾으면 나머지를 본다.
+DOMESTIC_LEAGUES = {
+    "eng.1": "프리미어리그",
+    "esp.1": "라리가",
+    "ita.1": "세리에 A",
+    "ger.1": "분데스리가",
+    "fra.1": "리그 1",
+    "tur.1": "터키 쉬페르리그",
+    "ned.1": "에레디비시",
+    "por.1": "포르투갈 프리메이라리가",
+    "bel.1": "벨기에 프로리그",
+    "sco.1": "스코틀랜드 프리미어십",
+    "gre.1": "그리스 슈퍼리그",
+    "aut.1": "오스트리아 분데스리가",
+    "nor.1": "노르웨이 엘리테세리엔",
+    "den.1": "덴마크 슈퍼리가",
+    "isr.1": "이스라엘 리그",
+    "cyp.1": "키프로스 1부리그",
+    "swe.1": "스웨덴 알스벤스칸",
+}
+DOMESTIC_FIRST = ["eng.1", "esp.1", "ita.1", "ger.1", "fra.1", "tur.1"]
+DOMESTIC_REST = [l for l in DOMESTIC_LEAGUES if l not in DOMESTIC_FIRST]
+EURO_CUP_PREFIX = "uefa."  # 이 접두사 리그는 '자국 리그 + 이 대회' 두 축으로 설명한다
 
 # ESPN 영문 팀명 → 한국어 표기. 확실한 팀만 적고, 없으면 영문명을 그대로 씁니다.
 TEAM_KO = {
@@ -179,12 +208,21 @@ def form_text(form):
     return "-".join(seq) if seq else None
 
 
-def standings_map(league, refresh):
-    """팀 id → { rank, played, gf, ga, points, w, d, l } (ESPN 순위표 기준)"""
+# 리그 슬러그 → 순위표. 한 번 만든 생성 안에서 리그당 한 번만 받는다(자국 리그 탐색이
+# 여러 팀에서 같은 리그를 다시 부르므로).
+_STANDINGS_CACHE = {}
+
+
+def standings_map(league, refresh, verbose=True):
+    """팀 id → { rank, played, gf, ga, points, gd, w, d, l, name } (ESPN 순위표 기준)"""
+    if league in _STANDINGS_CACHE:
+        return _STANDINGS_CACHE[league]
     try:
         data = get_json(ST % league, "standings-%s" % league.replace(".", "_"), refresh)
     except Exception as e:
-        print("! %s 순위표를 받지 못했습니다: %s" % (league, e))
+        if verbose:
+            print("! %s 순위표를 받지 못했습니다: %s" % (league, e))
+        _STANDINGS_CACHE[league] = {}
         return {}
     out = {}
 
@@ -231,10 +269,51 @@ def standings_map(league, refresh):
                 "w": wdl[0] if wdl else None,
                 "d": wdl[1] if wdl else None,
                 "l": wdl[2] if wdl else None,
+                "name": team.get("displayName") or team.get("name") or "",
             }
         except (TypeError, ValueError):
             continue
+    _STANDINGS_CACHE[league] = out
     return out
+
+
+def _warm_tables(leagues, refresh=False):
+    """순위표 여러 개를 병렬로 받아 캐시에 넣는다. 이미 받은 리그는 건너뛴다.
+
+    실패한 리그는 standings_map() 이 빈 표로 남기므로 여기서 예외가 나지 않는다.
+    """
+    todo = [l for l in leagues if l not in _STANDINGS_CACHE]
+    if not todo:
+        return
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        list(ex.map(lambda l: standings_map(l, refresh, verbose=False), todo))
+
+
+def domestic_lookup(team_id, refresh=False, table_size=0):
+    """유럽대항전 경기의 팀 id → (자국 리그 슬러그, 그 팀 순위표 줄, 그 리그 팀 수).
+
+    빅리그·터키를 먼저 보고, 못 찾으면 나머지 유럽 리그를 본다. 어느 표에도 없으면
+    None — 호출한 쪽은 자국 리그 문장만 생략한다(추측해서 쓰지 않는다).
+    """
+    if not team_id:
+        return None
+    tid = str(team_id)
+    for group in (DOMESTIC_FIRST, DOMESTIC_REST):
+        _warm_tables(group, refresh)
+        for slug in group:
+            table = _STANDINGS_CACHE.get(slug) or {}
+            row = table.get(tid)
+            if row:
+                return slug, row, len(table)
+    return None
+
+
+def leader_row(league):
+    """그 리그 순위표의 1위 줄. 없으면 None."""
+    for row in (_STANDINGS_CACHE.get(league) or {}).values():
+        if row.get("rank") == 1:
+            return row
+    return None
 
 
 def per_game(total, played):
@@ -520,7 +599,388 @@ def h2h_block(summary):
 
 
 
-def build_team(comp, side, table, league_short, summary, league, refresh=False):
+# ── 관전 포인트(focus) 문장 ────────────────────────────────────────
+# 문장은 '팀 상황 → 최근 흐름' 순서로 잇고, 값이 있는 것만 쓴다.
+# 순위·연승·연패는 실제 값과 어긋나면 쓰지 않고, 상위권/중위권/하위권은
+# 리그 팀 수 기준 상수로만 판정한다(느낌으로 붙이지 않는다).
+
+def gd_text(v):
+    """+9 / -3. 값이 없으면 None."""
+    if v is None:
+        return None
+    return ("+%d" % v) if v > 0 else str(v)
+
+
+def wdl_text(w, d, l):
+    """(4, 0, 1) → '4승 1패' (0인 항은 뺀다). 값이 하나라도 없으면 None."""
+    if w is None or d is None or l is None:
+        return None
+    parts = []
+    if w:
+        parts.append("%d승" % w)
+    if d:
+        parts.append("%d무" % d)
+    if l:
+        parts.append("%d패" % l)
+    return " ".join(parts) or None
+
+
+def tier_word(rank, total):
+    """순위 → '상위권'·'중위권'·'하위권'. 리그 팀 수로만 판정하고, 값이 없으면 None.
+
+    18팀 이상 리그: 1~6위 상위권, 아래 6팀 하위권, 나머지 중위권.
+    그보다 작은 리그: 위·아래 각 3분의 1.
+    """
+    try:
+        rank, total = int(rank), int(total)
+    except (TypeError, ValueError):
+        return None
+    if rank < 1 or rank > total or total < 8:
+        return None
+    if total >= 18:
+        top, low_from = 6, total - 5
+    else:
+        top = max(3, total // 3)
+        low_from = total - top + 1
+    if rank <= top:
+        return "상위권"
+    if rank >= low_from:
+        return "하위권"
+    return "중위권"
+
+
+def stand_phrase(row, league_name):
+    """'프리미어리그 12위(승점 14, 득실 -3)' · '터키 쉬페르리그 선두(승점 31, 득실 +13)'."""
+    if not row or not row.get("rank") or not league_name:
+        return None
+    rank = int(row["rank"])
+    if rank == 1:
+        head = "%s 선두" % league_name
+    elif str(league_name)[-1:].isdigit():  # '리그 1' + '11위'가 붙어 읽히지 않게
+        head = "%s에서 %d위" % (league_name, rank)
+    else:
+        head = "%s %d위" % (league_name, rank)
+    bits = []
+    if row.get("points") is not None:
+        bits.append("승점 %d" % row["points"])
+    gd = gd_text(row.get("gd"))
+    if gd is not None:
+        bits.append("득실 %s" % gd)
+    return "%s(%s)" % (head, ", ".join(bits)) if bits else head
+
+
+def form_sentence(l5, streak):
+    """최근 5경기 문장. 연승·연패가 5경기 전체면 그것만 쓰고, 아니면 승무패를 적는다."""
+    if not l5:
+        return None
+    n = len(l5)
+    w = sum(1 for r in l5 if r["res"] == "승")
+    d = sum(1 for r in l5 if r["res"] == "무")
+    l = sum(1 for r in l5 if r["res"] == "패")
+    if streak in ("%d연승" % n, "%d연패" % n):
+        return "최근 %d경기는 %s입니다." % (n, streak)
+    body = wdl_text(w, d, l)
+    if not body:
+        return None
+    s = "최근 %d경기는 %s" % (n, body)
+    # 5경기 전체가 같은 흐름이 아닐 때만 'N연승/연패'를 덧붙인다(무승부 흐름은 숫자로 충분).
+    if streak and (streak.endswith("연승") or streak.endswith("연패")):
+        s += "로 %s 중입니다." % streak
+    else:
+        s += "입니다."
+    return s
+
+
+def topic_josa(name):
+    """팀 이름 뒤의 '은/는' — 한글 음절은 받침으로, 숫자·영문은 끝소리로 고른다."""
+    s = (name or "").strip()
+    if not s:
+        return "은"
+    ch = s[-1]
+    if "가" <= ch <= "힣":
+        return "은" if (ord(ch) - 0xAC00) % 28 else "는"
+    if ch.isdigit():  # 0영·1일·2이·3삼·4사·5오·6육·7칠·8팔·9구
+        return "은" if ch in "13678" else "는"
+    if ch.isalpha():
+        return "는" if ch.lower() in "aeiouy" else "은"
+    return "은"
+
+
+def and_josa(name):
+    """팀 이름 뒤의 '과/와'."""
+    return "과" if topic_josa(name) == "은" else "와"
+
+
+def sub_josa(name):
+    """팀 이름 뒤의 '이/가'."""
+    return "이" if topic_josa(name) == "은" else "가"
+
+
+def obj_josa(word):
+    """말 뒤의 '을/를'."""
+    return "을" if topic_josa(word) == "은" else "를"
+
+
+def series_text(w, d, l):
+    """대회 전적 → '3승 1패' · '4전 전승' · '4전 전패'. 값이 없으면 None."""
+    body = wdl_text(w, d, l)
+    if not body:
+        return None
+    if w and not d and not l and w >= 2:
+        return "%d전 전승" % w
+    if l and not w and not d and l >= 2:
+        return "%d전 전패" % l
+    return body
+
+
+def _form_brief(l5, streak):
+    """비교 문장에 넣을 짧은 최근 흐름 — '5연승' 또는 '3무 2패'."""
+    if not l5:
+        return None
+    n = len(l5)
+    if streak in ("%d연승" % n, "%d연패" % n):
+        return streak
+    return wdl_text(sum(1 for r in l5 if r["res"] == "승"),
+                    sum(1 for r in l5 if r["res"] == "무"),
+                    sum(1 for r in l5 if r["res"] == "패"))
+
+
+def _form_points(l5):
+    """최근 5경기 승점(승3·무1). 값이 없으면 None."""
+    if not l5:
+        return None
+    return sum(3 if r["res"] == "승" else (1 if r["res"] == "무" else 0) for r in l5)
+
+
+def _rank_bit(name, row, tier):
+    """'아스널이 5위(승점 18, 득실 +4)로 상위권' — 비교 문장용 짧은 순위 표현."""
+    if not row or not row.get("rank"):
+        return None
+    bits = []
+    if row.get("points") is not None:
+        bits.append("승점 %d" % row["points"])
+    gd = gd_text(row.get("gd"))
+    if gd is not None:
+        bits.append("득실 %s" % gd)
+    s = "%s%s %d위" % (name, sub_josa(name), row["rank"])
+    if bits:
+        s += "(" + ", ".join(bits) + ")"
+    if tier:
+        s += "로 " + tier
+    return s
+
+
+def build_preview(home, home_st, away, away_st, league, league_full, table_size, home_dom, away_dom):
+    """두 팀 관전 포인트를 합친 경기 전망 2~3문장.
+
+    유럽대항전은 팀마다 '자국 리그에서의 위치 → 이 대회 전적'을 사실로만 적고,
+    서로 다른 리그의 순위를 나란히 놓고 우열을 말하지 않는다(리그 간 격차는 알 수 없다).
+    비교는 이 대회 전적·최근 5경기·홈/원정 성적·평균 득점·실점으로만 한다.
+    값이 없으면 그 문장만 빼고, 배당·확률·추천은 쓰지 않는다.
+    """
+    ps = []
+    cup = league.startswith(EURO_CUP_PREFIX)
+    h_name, a_name = home["name"], away["name"]
+    h_l5, a_l5 = home.get("last5Detail") or [], away.get("last5Detail") or []
+    h_form = _form_brief(h_l5, home.get("streak"))
+    a_form = _form_brief(a_l5, away.get("streak"))
+    home_st, away_st = home_st or {}, away_st or {}
+
+    def cup_team(name, dom, st):
+        """'{팀}는 {자국 리그 위치}이고, 이 대회에서는 {전적}({순위}위)입니다.' — 한 팀만 서술."""
+        head = ""
+        if dom:
+            sp = stand_phrase(dom[1], DOMESTIC_LEAGUES.get(dom[0]) or dom[0])
+            if sp:
+                tier = None if int(dom[1]["rank"]) == 1 else tier_word(dom[1].get("rank"), dom[2])
+                head = "%s%s %s%s" % (name, topic_josa(name), sp, ("로 " + tier) if tier else "")
+        rec = series_text(st.get("w"), st.get("d"), st.get("l"))
+        rank = "%d위" % st["rank"] if st.get("rank") else None
+        if rec and rank:
+            tail = "%s(%s)" % (rec, rank)
+        else:
+            tail = rec or rank
+        if head and tail:
+            return "%s이고, 이 대회에서는 %s입니다." % (head, tail)
+        if head:
+            return head + "입니다."
+        if tail:
+            return "%s%s 이 대회에서 %s입니다." % (name, topic_josa(name), tail)
+        return None
+
+    if cup:
+        for name, dom, st in ((h_name, home_dom, home_st), (a_name, away_dom, away_st)):
+            sent = cup_team(name, dom, st)
+            if sent:
+                ps.append(sent)
+    else:
+        # 같은 리그 안에서의 위치 비교 — 리그가 같으니 순위를 나란히 놓아도 된다.
+        h_tier = tier_word(home_st.get("rank"), table_size)
+        a_tier = tier_word(away_st.get("rank"), table_size)
+        h_rb, a_rb = _rank_bit(h_name, home_st, h_tier), _rank_bit(a_name, away_st, a_tier)
+        if h_rb and a_rb:
+            ps.append("%s에서는 %s, %s입니다." % (league_full, h_rb, a_rb))
+        elif h_rb or a_rb:
+            ps.append("%s에서는 %s입니다." % (league_full, h_rb or a_rb))
+
+        # 홈/원정 성적 + 최근 5경기
+        def venue_bit(v):
+            m = re.match(r"^(?:홈|원정)\s+(\d+)승\s+(\d+)무\s+(\d+)패$", str(v or ""))
+            return series_text(int(m.group(1)), int(m.group(2)), int(m.group(3))) if m else None
+
+        h_vs, a_vs = venue_bit(home.get("venueRecord")), venue_bit(away.get("venueRecord"))
+        forms = None
+        if h_form and a_form:
+            forms = "%s %s, %s %s" % (h_name, h_form, a_name, a_form)
+        if h_vs and a_vs:
+            s = "홈에서 %s%s %s, 원정에서 %s%s %s" % (
+                h_name, topic_josa(h_name), h_vs, a_name, topic_josa(a_name), a_vs)
+            ps.append(("%s이고, 최근 5경기는 %s입니다." % (s, forms)) if forms else (s + "입니다."))
+        elif forms:
+            ps.append("최근 5경기는 %s입니다." % forms)
+
+    # 마지막 문장 — 골 + 조심스러운 전망. 비교 근거는 이 대회(리그) 전적·최근 흐름뿐이다.
+    h_gf, h_ga = per_game(home_st.get("gf"), home_st.get("played")), per_game(home_st.get("ga"), home_st.get("played"))
+    a_gf, a_ga = per_game(away_st.get("gf"), away_st.get("played")), per_game(away_st.get("ga"), away_st.get("played"))
+    goals = None
+    if None not in (h_gf, h_ga, a_gf, a_ga):
+        goals = "두 팀 평균 득점을 합치면 %.1f골, 평균 실점은 %.1f골" % (h_gf + a_gf, h_ga + a_ga)
+
+    def _ppg(row):
+        pts, played = (row or {}).get("points"), (row or {}).get("played")
+        if pts is None or not played:
+            return None
+        return float(pts) / float(played)
+
+    form_pts = (_form_points(h_l5), _form_points(a_l5))
+    ppg = (_ppg(home_st), _ppg(away_st))
+    signals = []
+    if None not in ppg and abs(ppg[0] - ppg[1]) > 0.02:
+        signals.append(("이 대회 성적" if cup else "리그 성적", "h" if ppg[0] > ppg[1] else "a"))
+    if None not in form_pts and form_pts[0] != form_pts[1]:
+        signals.append(("최근 흐름", "h" if form_pts[0] > form_pts[1] else "a"))
+
+    def _name(side):
+        return h_name if side == "h" else a_name
+
+    lean = None
+    if signals:
+        sides = {s for _, s in signals}
+        if len(signals) == 2 and len(sides) == 1:
+            lead = _name(signals[0][1])
+            labels = [l for l, _ in signals]
+            lean = "%s 모두 %s%s 가리켜 %s 쪽이 앞선다는 계산이 나옵니다." % (
+                labels[0] + and_josa(labels[0]) + " " + labels[1], lead, obj_josa(lead), lead)
+        elif len(signals) == 2:
+            (l1, s1), (l2, s2) = signals
+            lean = "%s%s %s, %s%s %s로 갈려 어느 쪽이 앞선다고 말하기 어렵습니다." % (
+                l1, topic_josa(l1), _name(s1), l2, topic_josa(l2), _name(s2))
+        else:
+            label, side = signals[0]
+            lead = _name(side)
+            lean = "%s만 보면 %s 쪽이 조금 앞선다는 계산이 나옵니다." % (label, lead)
+
+    if cup:
+        forms_cup = ("최근 5경기는 %s %s, %s %s" % (h_name, h_form, a_name, a_form)) if (h_form and a_form) else None
+        if forms_cup and goals:
+            ps.append(forms_cup + "이고, " + goals + "입니다.")
+        elif forms_cup:
+            ps.append(forms_cup + "입니다.")
+        elif goals:
+            ps.append(goals + "입니다.")
+        if lean:
+            ps.append(lean)
+    elif goals and lean:
+        ps.append(goals + "이고, " + lean)
+    elif goals:
+        ps.append(goals + "입니다.")
+    elif lean:
+        ps.append(lean)
+    return " ".join(ps) or None
+
+
+def team_focus(name, league, league_full, rec, st, table_size,
+               dom, vsplit, l5, streak):
+    """팀별 '관전 포인트' — 그 팀이 지금 어디에 있는지 읽히는 2~3문장.
+
+    유럽대항전 경기: 자국 리그 순위 + 이 대회 전적을 한 문장에 묶고, 그다음 최근 흐름.
+    자국 리그 경기: 리그 순위(필요하면 선두와 승점 차) + 홈/원정 성적 + 최근 흐름.
+    마지막 문장은 결장 명단 안내(fotmob_injuries.BASE_FOCUS) — 그 단계가 통째로 치환한다.
+    """
+    fs = []
+    st = st or {}
+    head = name + topic_josa(name)
+    form = form_sentence(l5, streak)
+    if league.startswith(EURO_CUP_PREFIX):
+        s1 = ""
+        if dom:
+            slug, drow, dsize = dom
+            sp = stand_phrase(drow, DOMESTIC_LEAGUES.get(slug) or slug)
+            if sp:
+                # 1위는 '선두'라고 이미 적었으니 '상위권'을 겹쳐 붙이지 않는다.
+                tier = None if int(drow["rank"]) == 1 else tier_word(drow.get("rank"), dsize)
+                s1 = "%s %s%s이고, " % (head, sp, ("로 " + tier) if tier else "")
+        body = series_text(st.get("w"), st.get("d"), st.get("l"))
+        if not body and rec:  # 순위표에 승무패가 없고 '3승 0무 1패' 문자열만 있을 때
+            m = re.match(r"^(\d+)승\s+(\d+)무\s+(\d+)패$", str(rec).strip())
+            body = series_text(int(m.group(1)), int(m.group(2)), int(m.group(3))) if m else rec
+        tail = []
+        if st.get("points") is not None:
+            tail.append("승점 %d" % st["points"])
+        if st.get("rank"):
+            tail.append("%d위" % st["rank"])
+        cup_name = "챔피언스리그" if league == "uefa.champions" else (re.sub("^UEFA ", "", league_full or "") or "이 대회")
+        if body:
+            val = body + (("(%s)" % ", ".join(tail)) if tail else "")
+            if s1:
+                fs.append(s1 + "%s 리그 페이즈에서는 %s입니다." % (cup_name, val))
+            else:
+                fs.append("%s %s 리그 페이즈에서 %s입니다." % (head, cup_name, val))
+        elif s1:
+            fs.append(s1.rstrip(", ") + "입니다.")
+        elif tail:
+            fs.append("%s %s 리그 페이즈에서 %s입니다." % (head, cup_name, ", ".join(tail)))
+    else:
+        sp = stand_phrase(st, league_full)
+        if sp:
+            tier = None if int(st["rank"]) == 1 else tier_word(st.get("rank"), table_size)
+            s1 = "%s %s%s" % (head, sp, ("로 " + tier) if tier else "")
+            lead = leader_row(league)
+            if (lead and st.get("rank") and int(st["rank"]) > 1
+                    and lead.get("points") is not None and st.get("points") is not None
+                    and lead["points"] > st["points"]):
+                lead_name = ko(lead.get("name") or "")
+                if lead_name:
+                    s1 += "이고, 선두 %s%s는 승점 %d점 차입니다." % (
+                        lead_name, and_josa(lead_name), lead["points"] - st["points"])
+                else:
+                    s1 += "입니다."
+            else:
+                s1 += "입니다."
+            fs.append(s1)
+        s2 = ""
+        if vsplit:
+            # venueRecord 는 '홈 3승 1무 2패' 그대로 두고, 문장에서는 0인 항을 뺀다.
+            m = re.match(r"^(홈|원정)\s+(\d+)승\s+(\d+)무\s+(\d+)패$", str(vsplit))
+            if m:
+                body = series_text(int(m.group(2)), int(m.group(3)), int(m.group(4)))
+                if body:
+                    s2 = "%s에서 %s를 기록 중이고, " % (m.group(1), body)
+            if not s2:
+                s2 = "%s이고, " % vsplit
+        if form:
+            fs.append((s2 + form) if s2 else form)
+        elif s2:
+            fs.append(s2.rstrip(", ") + "입니다.")
+    # 유럽대항전은 자국 리그 + 대회 전적만으로 문장이 길어져 최근 흐름을 따로 잇는다.
+    if league.startswith(EURO_CUP_PREFIX) and form:
+        fs.append(form)
+    fs.append(BASE_FOCUS)
+    return " ".join(fs)
+
+
+def build_team(comp, side, table, league_short, summary, league, refresh=False, table_size=0,
+               league_full=""):
     team = comp.get("team") or {}
     name_en = team.get("displayName") or team.get("name") or ""
     abbr = (team.get("abbreviation") or team.get("shortDisplayName") or name_en[:3]).upper()
@@ -588,23 +1048,12 @@ def build_team(comp, side, table, league_short, summary, league, refresh=False):
             sum(1 for r in l5 if r["res"] == "무"),
             sum(1 for r in l5 if r["res"] == "패"))
         out["last5Detail"] = l5
-    # 팀별 관전 포인트 — 실제 수치만으로 2~3문장
-    fs = []
-    if streak and not str(streak).startswith("최근"):
-        fs.append("최근 흐름은 %s입니다." % streak)
-    if out.get("last5"):
-        fs.append("최근 5경기 %s입니다." % out["last5"])
-    if vsplit:
-        fs.append("%s입니다." % vsplit)
-    if None not in (gf, ga):
-        fs.append("경기당 평균 %s골을 넣고 %s골을 실점했습니다." % (gf, ga))
-    if out.get("last5Detail"):
-        r0 = out["last5Detail"][0]
-        fs.append("직전 경기 기록은 %s %s %s %s %s입니다." % (r0.get("date", "").replace("-", "."),
-                   r0.get("ha", ""), r0.get("opp", ""), r0.get("score", ""), r0.get("res", "")))
-    fs.append("결장 명단은 경기 전 확정 발표로 확인해야 합니다.")
-    if fs:
-        out["focus"] = " ".join(fs)
+    # 팀별 관전 포인트 — 그 팀이 지금 어디에 있는지 읽히는 문장(team_focus).
+    # 유럽대항전이면 자국 리그 순위표를 찾아 '리그 + 이 대회' 두 축으로 쓰고,
+    # 못 찾은 팀은 그 문장만 빠진다.
+    dom = domestic_lookup(tid, refresh) if league.startswith(EURO_CUP_PREFIX) else None
+    out["focus"] = team_focus(name, league, league_full or LEAGUES.get(league, ("", league))[1],
+                              rec, st, table_size, dom, vsplit, l5, streak)
 
     # 결장 명단은 FotMob 에서 받아 fotmob_injuries.annotate() 가 덮어쓴다.
     # 여기 남는 문구는 그 단계가 실패했을 때 그대로 화면에 나간다.
@@ -612,14 +1061,17 @@ def build_team(comp, side, table, league_short, summary, league, refresh=False):
     return out, st
 
 
-def build_game(event, league, day, table, league_short, league_full, updated_at, summary):
+def build_game(event, league, day, table, league_short, league_full, updated_at, summary,
+               refresh=False):
     comp = event["competitions"][0]
     sides = {c["homeAway"]: c for c in comp.get("competitors") or []}
     if "away" not in sides or "home" not in sides:
         return None
 
-    away, away_st = build_team(sides["away"], "away", table, league_short, summary, league)
-    home, home_st = build_team(sides["home"], "home", table, league_short, summary, league)
+    away, away_st = build_team(sides["away"], "away", table, league_short, summary, league,
+                               refresh=refresh, table_size=len(table), league_full=league_full)
+    home, home_st = build_team(sides["home"], "home", table, league_short, summary, league,
+                               refresh=refresh, table_size=len(table), league_full=league_full)
 
     start_iso = comp.get("date") or event.get("date")
     odds = odds_of(comp, event.get("_oddsAt"))
@@ -638,6 +1090,15 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
         tags.append({"text": "오버언더 %s골" % ou, "tone": "info"})
 
     h2h = h2h_block(summary)
+
+    # 경기 전망 — 두 팀 관전 포인트를 합쳐 '이 경기가 어떤 경기인지' 읽히게 한 단락.
+    # 유럽대항전은 자국 리그 순위표를 다시 찾아(런당 1회 캐번) 리그 위치를 붙인다.
+    home_dom = domestic_lookup(str((sides["home"].get("team") or {}).get("id") or ""), refresh) \
+        if league.startswith(EURO_CUP_PREFIX) else None
+    away_dom = domestic_lookup(str((sides["away"].get("team") or {}).get("id") or ""), refresh) \
+        if league.startswith(EURO_CUP_PREFIX) else None
+    preview = build_preview(home, home_st, away, away_st, league, league_full, len(table),
+                            home_dom, away_dom)
 
     # 흐름 — 실제 전적·순위·최근 흐름·맞대결만. 홈 팀을 앞에 두고 홈/원정 라벨을 붙인다.
     flow = "%s, %s." % (
@@ -673,7 +1134,6 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
     rows = [{"kind": "flow", "label": "흐름", "text": flow}]
     if watch:
         rows.append({"kind": "watch", "label": "관전 포인트", "text": watch})
-
     # 체크포인트 — 순위표 맥락(사실 계산만)
     checks = []
     for t, st in ((home, home_st), (away, away_st)):
@@ -729,6 +1189,7 @@ def build_game(event, league, day, table, league_short, league_full, updated_at,
                  "badges": home.get("badges", [])},
         "tags": tags,
         "rows": rows,
+        **({"preview": preview} if preview else {}),
         "details": det,
     }
     if not game["venue"]:
@@ -856,7 +1317,7 @@ def main():
                 except Exception as e:
                     print("! %s summary 실패: %s" % (ev.get("id"), e))
                     summ = {}
-                g = build_game(ev, lg, kday, table, short, full, sb_at, summ)
+                g = build_game(ev, lg, kday, table, short, full, sb_at, summ, refresh=args.refresh)
                 if g:
                     by_day[kday].append(g)
 

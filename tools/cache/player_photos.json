@@ -747,6 +747,15 @@
    "espnId": "286967",
    "checked": "2026-11-20T23:23:49+09:00"
   },
+  "jaidon anthony": {
+   "name": "Jaidon Anthony",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Jaidon_Anthony_26042025_%283%29.jpg/120px-Jaidon_Anthony_26042025_%283%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Jaidon Anthony",
+   "espnId": "307657",
+   "checked": "2026-11-24T18:43:38+09:00"
+  },
   "james tarkowski": {
    "name": "James Tarkowski",
    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/James_Tarkowski_%28Oct_2017%29.jpg/120px-James_Tarkowski_%28Oct_2017%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
@@ -936,6 +945,15 @@
    "espnId": "286853",
    "checked": "2026-11-20T23:31:47+09:00"
   },
+  "keane lewis-potter": {
+   "name": "Keane Lewis-Potter",
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Keane_Lewis-Potter_02082025_%282%29_%28cropped%29.jpg/120px-Keane_Lewis-Potter_02082025_%282%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Keane Lewis-Potter",
+   "espnId": "284490",
+   "checked": "2026-11-24T18:43:37+09:00"
+  },
   "kevin de bruyne": {
    "name": "Kevin De Bruyne",
    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg/120px-Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
@@ -953,6 +971,15 @@
    "title": "Kevin Schade",
    "espnId": "310958",
    "checked": "2026-11-20T23:30:29+09:00"
+  },
+  "kiernan dewsbury-hall": {
+   "name": "Kiernan Dewsbury-Hall",
+   "photo": "https://upload.wikimedia.org/wikipedia/commons/7/77/Kiernan_Dewsbury-Hall_FIFA_Club_World_Cup_final_extraction.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "src": "wikipedia",
+   "conf": "club",
+   "title": "Kiernan Dewsbury-Hall",
+   "espnId": "252389",
+   "checked": "2026-11-24T18:43:39+09:00"
   },
   "kodai sano": {
    "name": "Kodai Sano",
@@ -1873,5 +1900,5 @@
    "checked": "2026-11-20T23:22:31+09:00"
   }
  },
- "updatedAt": "2026-11-24T07:42:07+09:00"
+ "updatedAt": "2026-11-24T18:43:47+09:00"
 }

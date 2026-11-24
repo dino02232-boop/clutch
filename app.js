@@ -3004,6 +3004,9 @@
     }
 
 
+    // 경기 전망 — 두 팀 관전 포인트를 합친 한 단락. 없는 경기(농구·배구 등)는 그냥 빠진다.
+    var previewText = typeof g.preview === "string" ? g.preview : "";
+
     // 축구 핵심 선수는 더보기 안, 팀 블록 다음에 둔다.
     var more = "";
 
@@ -3018,6 +3021,14 @@
       more += '<div class="team-blocks">' + ordered.map(function (team) { return teamBlockHTML(team, g); }).join("") + "</div>";
     } else if (injuries.length) {
       more += '<h3 class="p-title">부상 리포트</h3><ul class="inj-list">' + injRowsHTML(injuries, true) + "</ul>";
+    }
+
+    // 경기 전망은 팀별 관전 포인트(팀 블록)보다 앞에, 배당보다도 위에 둔다.
+    if (previewText) {
+      preview += '<div class="gp">' +
+        '<h3 class="gp-h">경기 전망</h3>' +
+        '<p class="gp-t">' + md(previewText) + "</p>" +
+        "</div>";
     }
 
     preview += oddsHTML(g);
