@@ -19,6 +19,7 @@
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function emit() {
+    paint();
     for (var i = 0; i < observers.length; i++) { try { observers[i](); } catch (_) {} }
   }
   function rebuild() {
@@ -171,4 +172,7 @@
     onChange: function (fn) { observers.push(fn); if (loaded) { try { fn(); } catch (_) {} } paint(); },
     esc: esc
   };
+  // 헤더 메뉴가 나중에 만들어지는 화면이 있어 배지 자리를 한 번 더 확인한다.
+  window.addEventListener('load', paint);
+  setTimeout(paint, 1200);
 })();

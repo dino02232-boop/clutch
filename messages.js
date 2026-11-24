@@ -462,6 +462,10 @@
 
   function init() {
     mountPill();
+    // 상단 메뉴는 betting.js 가 DOMContentLoaded 에서 만든다 — 순서가 엇갈려도 잡도록 몇 번 더 시도한다.
+    setTimeout(mountPill, 200);
+    setTimeout(mountPill, 900);
+    window.addEventListener('load', mountPill);
     if (auth) auth.onAuthStateChanged(onUser);
     else watchUnread();
   }
