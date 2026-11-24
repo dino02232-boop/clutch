@@ -145,7 +145,8 @@
     db.collection('users').doc(me.uid).collection(kind)
       .orderBy('createdAt', 'desc').limit(PAGE * page).get()
       .then(function (s) {
-        rows = s.docs.slice(-PAGE);
+        var start = (page - 1) * PAGE;
+        rows = s.docs.slice(start, start + PAGE);
         paintList();
         return countOf(kind);
       }).then(function (n) {

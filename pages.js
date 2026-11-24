@@ -226,7 +226,7 @@
     if (want !== listPage || !node.innerHTML) node.innerHTML = '<p class="bl-empty">불러오는 중…</p>';
     postsUnsub = db.collection('posts').orderBy('createdAt', 'desc').limit(PAGE_SIZE * want).onSnapshot(function (s) {
       listPage = want;
-      listDocs = s.docs.slice(-PAGE_SIZE);
+      listDocs = s.docs.slice((want - 1) * PAGE_SIZE, want * PAGE_SIZE);
       postMap = {};
       s.docs.forEach(function (d) {
         var p = d.data() || {};
