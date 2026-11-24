@@ -2071,3 +2071,15 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 /* 핸디캡·언오버 목록은 세로 flex라 flex-basis(120px)가 행 높이로 잡히지 않게 */
 .o-select-lines .o-list li{flex:0 0 auto}
 .o-select-lines .o-list{gap:0}
+
+/* ── iOS 자동 확대 방지 ────────────────────────────────────────
+   iOS Safari 는 input·textarea·select 의 computed font-size 가 16px 미만이면
+   입력창을 누를 때 화면을 저절로 확대한다. 페이지를 오가며 확대된 채로 남아
+   글을 쓰기 불편해지므로, 모든 입력창을 16px 이상으로 고정한다.
+   체크박스·라디오·범위 슬라이더·파일 선택은 확대 대상이 아니라 제외하고,
+   버튼(input[type=submit|button])도 글자를 입력하는 칸이 아니라 제외한다. */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="submit"]):not([type="button"]),
+textarea,
+select {
+  font-size: 16px;
+}
