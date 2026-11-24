@@ -1660,18 +1660,44 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .lb-upd { margin-left: auto; font-size: 10.5px; color: var(--text-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
-.lb-score { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; padding: 1px 0 7px; }
-.lb-side { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1 1 0; }
-.lb-side.home { align-items: flex-start; text-align: left; }
-.lb-side.away { align-items: flex-end; text-align: right; }
+/* 점수판은 3줄 그리드 — 1행 한글 팀명(+홈/원정), 2행 영어 약자, 3행 큰 점수.
+   양쪽이 같은 행에 놓이므로 팀명이 두 줄로 접혀도 점수 높이가 어긋나지 않는다. */
+.lb-score {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  column-gap: 8px; row-gap: 1px; align-items: end;
+  padding: 1px 0 7px;
+}
+.lb-team { display: flex; align-items: center; gap: 4px; min-width: 0; }
+.lb-team.home { grid-column: 1; grid-row: 1; justify-content: flex-start; }
+.lb-team.away { grid-column: 3; grid-row: 1; justify-content: flex-end; }
+.lb-nm {
+  font-size: 12px; line-height: 1.25; font-weight: 700; color: var(--text);
+  min-width: 0; max-width: 100%;
+  white-space: normal; word-break: keep-all; overflow-wrap: anywhere;
+}
+.lb-tag {
+  flex: 0 0 auto; font-size: 9px; font-weight: 800; letter-spacing: .02em;
+  line-height: 1.4; padding: 0 4px; border-radius: 4px; white-space: nowrap;
+}
+.lb-tag.home { color: #0B7A54; background: rgba(11, 122, 84, .10); }
+.lb-tag.away { color: #2563EB; background: rgba(37, 99, 235, .10); }
 .lb-abbr { font-size: 9.5px; font-weight: 800; letter-spacing: .06em; color: var(--text-3); }
+.lb-abbr.home { grid-column: 1; grid-row: 2; justify-self: start; text-align: left; }
+.lb-abbr.away { grid-column: 3; grid-row: 2; justify-self: end; text-align: right; }
 .lb-pts {
   font-size: 34px; line-height: 1.05; font-weight: 800; color: #111827;
   font-variant-numeric: tabular-nums; letter-spacing: -.03em;
 }
-.lb-side.lead .lb-pts { color: #B45309; }
-.lb-nm { font-size: 12px; color: var(--text-2); max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.lb-col { flex: 0 0 auto; font-size: 15px; color: var(--text-3); padding-top: 20px; }
+.lb-pts.home { grid-column: 1; grid-row: 3; justify-self: start; }
+.lb-pts.away { grid-column: 3; grid-row: 3; justify-self: end; }
+.lb-pts.lead { color: #B45309; }
+/* ':' 는 점수 줄에 붙여 점수 기준선에 나란히 놓는다 */
+.lb-col {
+  grid-column: 2; grid-row: 3; align-self: end;
+  font-size: 20px; line-height: 1; color: var(--text-3);
+  padding: 0 0 5px; user-select: none;
+}
 
 .lb-sub {
   display: flex; align-items: center; gap: 6px;
@@ -1766,6 +1792,8 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 
 @media (max-width: 380px) {
   .lb-pts { font-size: 29px; }
+  .lb-col { font-size: 18px; padding-bottom: 4px; }
+  .lb-nm { font-size: 11.5px; }
   .lb-tbl { font-size: 11px; }
   .lb-plays li { font-size: 11.5px; }
   .sb-row { grid-template-columns: 46px minmax(0, 1fr) 46px; gap: 6px; }

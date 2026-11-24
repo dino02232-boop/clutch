@@ -161,6 +161,13 @@
 /* ── 롤(LoL) 티어 배지 — tiers.js 가 만든 .tier-badge .t-<key> ────── */
 .tier-badge{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:800;letter-spacing:-.01em;line-height:1.45;padding:1px 6px;border-radius:5px;border:1px solid transparent;white-space:nowrap;flex:0 0 auto;vertical-align:middle}
 .tier-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex:0 0 auto}
+/* 롤 티어 엠블럼 — tiers.js 가 그리는 인라인 SVG */
+.tier-mark{width:14px;height:14px;flex:0 0 auto;display:block;overflow:visible}
+.tier-badge.has-mark{gap:3px;padding:1px 6px 1px 3px}
+/* 엠블럼만 두는 자리(상단 닉네임 알약): 색 배경 없이 그림만 */
+.tier-badge.icon-only{padding:0;border:0;background:none;box-shadow:none;gap:0;line-height:0}
+.tier-badge.icon-only .tier-mark{width:18px;height:18px}
+.tier-badge.lg .tier-mark{width:16px;height:16px}
 .t-iron{color:#4B5563;background:#EEF1F4;border-color:rgba(75,85,99,.20)}
 .t-bronze{color:#96552A;background:#F8EEE2;border-color:rgba(150,85,42,.22)}
 .t-silver{color:#67757F;background:#EDF1F4;border-color:rgba(103,117,127,.22)}
@@ -180,9 +187,13 @@
 .rk-nmline .rk-name{min-width:0}
 
 /* 상단 닉네임 알약: [티어] 닉네임 · 포인트 */
-.bet-nav #betBalance{max-width:250px;gap:5px}
+.bet-nav #betBalance{display:inline-flex;align-items:center;max-width:250px;gap:7px}
+.bet-nav #betBalance[hidden]{display:none}
 .bet-pill-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 #betBalance .tier-badge{box-shadow:0 0 0 1px rgba(255,255,255,.75)}
+#betBalance .tier-badge.icon-only{box-shadow:none}
+.bets-me .tier-badge.lg{padding:1px 7px 1px 4px;font-size:10.5px}
+.rk-nmline .tier-badge .tier-mark{width:15px;height:15px}
 
 /* 내 베팅 내역 모달: 닉네임 옆 티어 + 다음 티어 안내 */
 .bets-me{flex-wrap:wrap}

@@ -68,7 +68,7 @@
     if(el('betOdds'))el('betOdds').textContent=mult.toFixed(2)+'배';
     var stake=Number(el('betStake')&&el('betStake').value)||0;
     if(el('betReturn'))el('betReturn').textContent=fmt(payout(stake,mult))+'P';
-    if(el('betBalance')){var pill=el('betBalance');pill.hidden=!me;pill.innerHTML=me?((window.clutchTierBadge?window.clutchTierBadge(balance):'')+'<span class="bet-pill-txt">'+esc(window.clutchNickname||me.displayName||'회원')+' · '+fmt(balance)+'P</span>'):'';}
+    if(el('betBalance')){var pill=el('betBalance');pill.hidden=!me;pill.innerHTML=me?((window.clutchTierBadge?window.clutchTierBadge(balance,{label:false,cls:'pill'}):'')+'<span class="bet-pill-txt">'+esc(window.clutchNickname||me.displayName||'회원')+' · '+fmt(balance)+'P</span>'):'';}
     if(el('betSupport'))el('betSupport').hidden=!(me&&balance<100);
     var submit=el('betSubmit'); if(submit)submit.textContent=me?'베팅 확정':'로그인 후 베팅 확정';
     if(el('betDockTitle'))el('betDockTitle').textContent='🧾 Bet'+(slip.length?' ('+slip.length+')':'');
@@ -121,7 +121,7 @@
       ? '다음 ' + nx.tier.name + '까지 ' + fmt(nx.need) + 'P'
       : '최고 티어입니다';
     n.innerHTML = '<b>' + esc(window.clutchNickname || me.displayName || '회원') + '</b>' +
-      (window.clutchTierBadge ? window.clutchTierBadge(balance) : '') +
+      (window.clutchTierBadge ? window.clutchTierBadge(balance, { cls: 'lg' }) : '') +
       '<span>' + fmt(balance) + 'P</span>' +
       '<em class="bets-next">' + esc(hint) + '</em>';
   }

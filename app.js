@@ -4944,13 +4944,16 @@
   function liveScoreHTML(g) {
     var r = g.result || {};
     var a = r.awayScore, h = r.homeScore;
+    // 한 팀 칸: 위에서부터 한글 팀명(+홈/원정 배지) → 영어 약자 → 큰 점수.
     function side(cls, abbr, name, pts, other) {
       var lead = pts != null && other != null && toNum(pts) > toNum(other) ? " lead" : "";
-      return '<div class="lb-side ' + cls + lead + '">' +
-        '<span class="lb-abbr">' + esc(abbr) + "</span>" +
-        '<b class="lb-pts">' + esc(pts != null ? pts : "-") + "</b>" +
-        '<span class="lb-nm">' + esc(name) + "</span>" +
-        "</div>";
+      var tag = cls === "home" ? "홈" : "원정";
+      return '<div class="lb-team ' + cls + '">' +
+          '<span class="lb-nm">' + esc(name) + "</span>" +
+          '<span class="lb-tag ' + cls + '">' + tag + "</span>" +
+        "</div>" +
+        '<span class="lb-abbr ' + cls + '">' + esc(abbr) + "</span>" +
+        '<b class="lb-pts ' + cls + lead + '">' + esc(pts != null ? pts : "-") + "</b>";
     }
     // 목록 줄과 같은 순서 — 홈 팀이 왼쪽, 원정 팀이 오른쪽.
     return '<div class="lb-score">' +
