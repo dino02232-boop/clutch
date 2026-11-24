@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-24T13:30:23+09:00
+   생성 시각(기준): 2026-11-24T14:50:49+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-24T13:30:23+09:00",
+  "updated": "2026-11-24T14:50:49+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4631,13 +4631,13 @@ window.CLUTCH_STANDINGS = {
               "team": "샌안토니오 스퍼스",
               "abbr": "SA",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/sa.png",
-              "played": 17,
-              "win": 14,
+              "played": 18,
+              "win": 15,
               "draw": null,
               "loss": 3,
               "points": null,
-              "diff": 203,
-              "pct": ".824",
+              "diff": 219,
+              "pct": ".833",
               "gb": "-",
               "zone": null
             },
@@ -4646,13 +4646,13 @@ window.CLUTCH_STANDINGS = {
               "team": "LA 레이커스",
               "abbr": "LAL",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
-              "played": 17,
-              "win": 14,
+              "played": 18,
+              "win": 15,
               "draw": null,
               "loss": 3,
               "points": null,
-              "diff": 105,
-              "pct": ".824",
+              "diff": 120,
+              "pct": ".833",
               "gb": "-",
               "zone": null
             },
@@ -4668,7 +4668,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 191,
               "pct": ".722",
-              "gb": "1.5",
+              "gb": "2",
               "zone": null
             },
             {
@@ -4683,7 +4683,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 142,
               "pct": ".722",
-              "gb": "1.5",
+              "gb": "2",
               "zone": null
             },
             {
@@ -4698,7 +4698,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 160,
               "pct": ".722",
-              "gb": "1.5",
+              "gb": "2",
               "zone": null
             },
             {
@@ -4713,7 +4713,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 27,
               "pct": ".667",
-              "gb": "3",
+              "gb": "3.5",
               "zone": null
             },
             {
@@ -4728,7 +4728,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 110,
               "pct": ".647",
-              "gb": "3",
+              "gb": "3.5",
               "zone": null
             },
             {
@@ -4743,7 +4743,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -1,
               "pct": ".588",
-              "gb": "4",
+              "gb": "4.5",
               "zone": null
             },
             {
@@ -4758,7 +4758,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -9,
               "pct": ".563",
-              "gb": "4.5",
+              "gb": "5",
               "zone": null
             },
             {
@@ -4773,7 +4773,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 57,
               "pct": ".556",
-              "gb": "4.5",
+              "gb": "5",
               "zone": null
             },
             {
@@ -4788,7 +4788,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -14,
               "pct": ".529",
-              "gb": "5",
+              "gb": "5.5",
               "zone": null
             },
             {
@@ -4803,7 +4803,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -152,
               "pct": ".263",
-              "gb": "10",
+              "gb": "10.5",
               "zone": null
             },
             {
@@ -4818,7 +4818,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -109,
               "pct": ".250",
-              "gb": "9.5",
+              "gb": "10",
               "zone": null
             },
             {
@@ -4826,14 +4826,14 @@ window.CLUTCH_STANDINGS = {
               "team": "유타 재즈",
               "abbr": "UTAH",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
-              "played": 18,
+              "played": 19,
               "win": 3,
               "draw": null,
-              "loss": 15,
+              "loss": 16,
               "points": null,
-              "diff": -128,
-              "pct": ".167",
-              "gb": "11.5",
+              "diff": -143,
+              "pct": ".158",
+              "gb": "12.5",
               "zone": null
             },
             {
@@ -4841,14 +4841,14 @@ window.CLUTCH_STANDINGS = {
               "team": "새크라멘토 킹스",
               "abbr": "SAC",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
-              "played": 16,
+              "played": 17,
               "win": 2,
               "draw": null,
-              "loss": 14,
+              "loss": 15,
               "points": null,
-              "diff": -197,
-              "pct": ".125",
-              "gb": "11.5",
+              "diff": -213,
+              "pct": ".118",
+              "gb": "12.5",
               "zone": null
             }
           ]

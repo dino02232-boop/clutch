@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-24T13:30:24+09:00",
+  updatedAt: "2026-11-24T14:50:49+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -27620,7 +27620,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 4패·6위·승점 4, 대한항공(원정) 2승 3패·5위·승점 7."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 13:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 14:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27926,7 +27926,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 2패·4위·승점 8, GS칼텍스(원정) 4승 1패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 13:30 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 14:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
@@ -32603,14 +32603,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-24 06:16 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-utah-lal-20261124",
           "espnId": "401910044",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-24T12:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "crypto.com Arena",
           "odds": {
             "provider": "DraftKings",
@@ -32675,6 +32675,83 @@ window.CLUTCH_DATA = {
               "text": "**LA 레이커스**(홈) 14승 3패(홈 7승 2패, 최근 5경기 4승 1패), **유타 재즈**(원정) 3승 15패(원정 2승 6패, 최근 5경기 2승 3패, 2연패). 직전 경기(11.23) **유타 재즈**는 댈러스 매버릭스에 114-116로 졌고, Svi Mykhailiuk 39점·5리바운드·3어시스트, Ace Bailey 16점·5리바운드·2어시스트를 기록했습니다. 직전 경기(11.21) **LA 레이커스**는 새크라멘토 킹스에 106-104로 이겼고, Luka Doncic 25점·4리바운드·8어시스트, Walker Kessler 15점·7리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 94,
+            "homeScore": 109,
+            "lines": {
+              "away": [
+                "20",
+                "22",
+                "35",
+                "17"
+              ],
+              "home": [
+                "30",
+                "23",
+                "25",
+                "31"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Luka Doncic",
+                "team": "LAL",
+                "min": "33",
+                "pts": 28,
+                "reb": "4",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png"
+              },
+              {
+                "name": "Kyle Filipowski",
+                "team": "UTAH",
+                "min": "24",
+                "pts": 21,
+                "reb": "12",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684793.png"
+              },
+              {
+                "name": "Ace Bailey",
+                "team": "UTAH",
+                "min": "33",
+                "pts": 18,
+                "reb": "5",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4873138.png"
+              },
+              {
+                "name": "Jake LaRavia",
+                "team": "LAL",
+                "min": "37",
+                "pts": 15,
+                "reb": "10",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4592691.png"
+              },
+              {
+                "name": "Keyonte George",
+                "team": "UTAH",
+                "min": "33",
+                "pts": 14,
+                "reb": "4",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png"
+              },
+              {
+                "name": "Matisse Thybulle",
+                "team": "LAL",
+                "min": "27",
+                "pts": 14,
+                "reb": "4",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3907498.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -32894,14 +32971,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-24 06:16 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-sas-sac-20261124",
           "espnId": "401910045",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-24T12:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Golden 1 Center",
           "odds": {
             "provider": "DraftKings",
@@ -32966,6 +33043,83 @@ window.CLUTCH_DATA = {
               "text": "**새크라멘토 킹스**(홈) 2승 14패(홈 1승 9패, 최근 5경기 1승 4패), **샌안토니오 스퍼스**(원정) 14승 3패(원정 7승 0패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.22) **샌안토니오 스퍼스**는 샌안토니오 스퍼스에 91-114로 졌고, Jeremiah Fears 29점·5리바운드·4어시스트, Jordan Poole 25점·3리바운드·2어시스트를 기록했습니다. 직전 경기(11.22) **새크라멘토 킹스**는 보스턴 셀틱스에 97-96로 이겼고, Darius Acuff Jr. 21점·6리바운드·8어시스트, De'Andre Hunter 20점·6리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 123,
+            "homeScore": 107,
+            "lines": {
+              "away": [
+                "19",
+                "41",
+                "32",
+                "31"
+              ],
+              "home": [
+                "28",
+                "23",
+                "23",
+                "33"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Stephon Castle",
+                "team": "SA",
+                "min": "37",
+                "pts": 28,
+                "reb": "8",
+                "ast": "11",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png"
+              },
+              {
+                "name": "Julian Champagnie",
+                "team": "SA",
+                "min": "30",
+                "pts": 22,
+                "reb": "7",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4592479.png"
+              },
+              {
+                "name": "Domantas Sabonis",
+                "team": "SAC",
+                "min": "30",
+                "pts": 20,
+                "reb": "12",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png"
+              },
+              {
+                "name": "Luke Kornet",
+                "team": "SA",
+                "min": "29",
+                "pts": 18,
+                "reb": "11",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064560.png"
+              },
+              {
+                "name": "Zach LaVine",
+                "team": "SAC",
+                "min": "30",
+                "pts": 18,
+                "reb": "6",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png"
+              },
+              {
+                "name": "Devin Vassell",
+                "team": "SA",
+                "min": "34",
+                "pts": 16,
+                "reb": "6",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395630.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
