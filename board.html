@@ -1,1 +1,56 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CLUTCH — 자유게시판</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="betting.css"></head><body><div class="page-shell"><a href="index.html">← CLUTCH 홈</a><h1>💬 자유게시판</h1><p>비로그인 상태에서도 게시글을 읽을 수 있습니다.</p><section class="page-card" id="writeBox"><h2>새 글</h2><input id="postTitle" maxlength="100" placeholder="제목"><textarea id="postBody" rows="4" maxlength="3000" placeholder="내용"></textarea><div id="sharedSlip"></div><button id="shareCurrent">현재 슬립 카드 첨부</button> <button id="submitPost">로그인 후 글쓰기</button><button id="boardLogin">Google 로그인</button><p id="boardNotice" aria-live="polite"></p></section><div id="posts">불러오는 중…</div></div><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script><script src="firebase-config.js"></script><script src="firebase.js"></script><script src="pages.js"></script></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EDF0F6">
+<meta name="color-scheme" content="light">
+<title>VERSUS — 자유게시판</title>
+<meta name="description" content="VERSUS 자유게시판 — 경기 이야기와 내 Bet 을 함께 남깁니다.">
+<link rel="icon" type="image/png" sizes="512x512" href="icon.png?v=20261122-vs2">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="styles.css?v=20261124-board1">
+<link rel="stylesheet" href="betting.css?v=20261124-bets1">
+</head>
+<body>
+<div class="page-shell board-page">
+  <div class="board-top">
+    <a class="board-back" href="index.html">← VERSUS 홈</a>
+    <button type="button" id="writeToggle" class="board-write">✏️ 글쓰기</button>
+  </div>
+
+  <header class="board-hero">
+    <h1>💬 자유게시판</h1>
+    <p>로그인 없이도 글을 읽을 수 있습니다.</p>
+  </header>
+
+  <section class="board-compose" id="writeBox" hidden>
+    <h2>새 글</h2>
+    <input id="postTitle" maxlength="100" placeholder="제목">
+    <textarea id="postBody" rows="5" maxlength="3000" placeholder="내용"></textarea>
+
+    <div class="share-box">
+      <div class="share-h"><b>내 Bet 공유</b><span>내 베팅 내역에서 골라 글에 붙입니다</span></div>
+      <div id="myBetPick" class="bet-pick-list"><p class="rk-empty">Google 로그인하면 내 베팅 내역을 불러옵니다.</p></div>
+      <div id="sharedSlip"></div>
+    </div>
+
+    <div class="compose-actions">
+      <button type="button" id="submitPost">등록</button>
+      <button type="button" id="writeCancel" class="ghost">취소</button>
+      <button type="button" id="boardLogin" class="ghost">Google 로그인</button>
+    </div>
+    <p id="boardNotice" aria-live="polite"></p>
+  </section>
+
+  <div id="posts" class="board-posts"><p class="rk-empty">불러오는 중…</p></div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="firebase.js"></script>
+<script src="pages.js?v=20261124-rank1"></script>
+</body>
+</html>

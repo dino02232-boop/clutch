@@ -1,1 +1,48 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CLUTCH — 랭킹</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="betting.css"></head><body><div class="page-shell"><a href="index.html">← CLUTCH 홈</a><h1>🏆 포인트 랭킹</h1><div class="page-card"><h2>전체 보유 포인트</h2><div id="rankAll">불러오는 중…</div></div><div class="page-card"><h2>주간 수익</h2><div id="rankWeek">불러오는 중…</div></div><div class="page-card"><h2>내 기록</h2><div id="myStats">로그인하면 기록을 확인할 수 있습니다.</div><h3>내 베팅 내역</h3><div id="myBets"></div></div></div><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script><script src="firebase-config.js"></script><script src="firebase.js"></script><script src="pages.js"></script></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EDF0F6">
+<meta name="color-scheme" content="light">
+<title>VERSUS — 포인트 랭킹</title>
+<meta name="description" content="VERSUS 가상 포인트 랭킹 — 전체 보유 포인트와 주간 수익 순위.">
+<link rel="icon" type="image/png" sizes="512x512" href="icon.png?v=20261122-vs2">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="styles.css?v=20261124-rank1">
+<link rel="stylesheet" href="betting.css?v=20261124-bets1">
+</head>
+<body>
+<div class="page-shell rank-page">
+  <div class="rank-top">
+    <a class="rank-back" href="index.html">← VERSUS 홈</a>
+    <span class="rank-date" id="rankDate">—</span>
+  </div>
+
+  <header class="rank-hero">
+    <span class="rank-kicker">VERSUS RANKING</span>
+    <h1>🏆 포인트 랭킹</h1>
+    <p>가상 포인트로 겨루는 순위입니다. 승자 예측은 제공하지 않습니다.</p>
+  </header>
+
+  <section class="rank-card">
+    <div class="rank-card-h"><h2>전체 보유 포인트</h2><span>상위 50명</span></div>
+    <div id="rankAll" class="rk-list"><p class="rk-empty">불러오는 중…</p></div>
+  </section>
+
+  <section class="rank-card">
+    <div class="rank-card-h"><h2>주간 수익</h2><span>이번 주 정산 기준</span></div>
+    <div id="rankWeek" class="rk-list"><p class="rk-empty">불러오는 중…</p></div>
+  </section>
+
+  <p class="rank-note">내 베팅 내역은 홈 위쪽의 <b>닉네임 · 포인트</b>를 누르면 볼 수 있습니다.</p>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="firebase.js"></script>
+<script src="pages.js?v=20261124-rank1"></script>
+</body>
+</html>
