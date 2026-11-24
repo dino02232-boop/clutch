@@ -660,26 +660,34 @@
       return prev.date === t && Date.now() - Number(prev.at || 0) < 30 * 1000;
     } catch (e) { return false; }
   }
-  // 날짜가 바뀌었으면 오늘로 전환하고 true 를 돌려준다. 같은 날짜로 30초 안에
-  // 이미 새로고침을 시도했다면 다시 부르지 않는다(무한 새로고침 방지).
+  // 날짜가 바뀌면 오늘로 전환하고 true 를 돌려준다. 새로고침은 슬립을 담아 둔 동안
+  // 미뤄 두었다가(rolloverPending) 슬립이 비면 다음 확인에서 한 번 한다.
+  var rolloverPending = false;
+  function slipInProgress() {
+    return !!(window.clutchSlipShare && (window.clutchSlipShare() || []).length);
+  }
   function checkDayRollover() {
     var t = todayStr();
-    if (t === today) return false;
-    today = t;
-    // 새로고침이 막히더라도 어제 탭에 머물지 않게 먼저 화면을 오늘로 맞춘다.
-    // 처음 여는 화면과 같게 홈(오늘)으로 돌리고, 어제 보던 필터·펼친 경기는 접는다.
-    state.day = defaultDay();
-    state.weekStart = mondayOf(state.day);
-    state.sport = null;
-    state.favorites = false;
-    state.allSports = false;
-    state.league = null;
-    state.openId = null;
-    // 주소에 어제 경기(#…)가 남아 있으면 새 페이지가 그 경기 날짜로 돌아가므로 지운다.
-    if (location.hash) writeHash("", true);
-    render();
-    // 베팅 슬립을 작성 중이면 새로고침으로 담아 둔 픽을 날리지 않는다(화면 전환은 위에서 이미 했다).
-    if (window.clutchSlipShare && (window.clutchSlipShare() || []).length) return true;
+    if (t !== today) {
+      today = t;
+      rolloverPending = true;
+      // 새로고침이 막히더라도 어제 탭에 머물지 않게 먼저 화면을 오늘로 맞춘다.
+      // 처음 여는 화면과 같게 홈(오늘)으로 돌리고, 어제 보던 필터·펼친 경기는 접는다.
+      state.day = defaultDay();
+      state.weekStart = mondayOf(state.day);
+      state.sport = null;
+      state.favorites = false;
+      state.allSports = false;
+      state.league = null;
+      state.openId = null;
+      // 주소에 어제 경기(#…)가 남아 있으면 새 페이지가 그 경기 날짜로 돌아가므로 지운다.
+      if (location.hash) writeHash("", true);
+      render();
+    }
+    if (!rolloverPending) return false;
+    // 베팅 슬립에 담아 둔 픽을 새로고침으로 날리지 않는다. 슬립이 비면 다음 확인 때 받는다.
+    if (slipInProgress()) return true;
+    rolloverPending = false;
     if (rolloverTriedRecently(t)) return true;
     try { sessionStorage.setItem(ROLL_RELOAD_KEY, JSON.stringify({ date: t, at: Date.now() })); } catch (e) { /* 저장 못 하면 매번 확인만 */ }
     try { location.reload(); } catch (e2) { /* 새로고침 불가한 환경이면 위 전환으로 끝 */ }
