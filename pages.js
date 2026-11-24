@@ -293,7 +293,7 @@
   function drawBetPick() {
     var node = $('myBetPick');
     if (!node) return;
-    if (!user) { node.innerHTML = '<p class="rk-empty">Google 로그인하면 내 베팅 내역을 불러옵니다.</p>'; return; }
+    if (!user) { node.innerHTML = '<p class="rk-empty">로그인하면 내 베팅 내역을 불러옵니다.</p>'; return; }
     if (!picked.list.length) { node.innerHTML = '<p class="rk-empty">아직 베팅 내역이 없습니다.</p>'; return; }
     node.innerHTML = picked.list.map(function (b) {
       var on = picked.sel[b.id];
@@ -341,9 +341,15 @@
     drawShared();
   }
 
-  async function login() { try { await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); } catch (e) { say('로그인 실패: ' + e.message); } }
+  // 로그인은 auth.js 의 로그인/회원가입 모달로 연다(아이디·비밀번호 또는 Google).
+  // 모달이 없는 화면에서는 예전처럼 Google 팝업으로 넘어간다.
+  function login() {
+    if (!auth) return say('Firebase 연결을 확인해 주세요.');
+    if (window.clutchLogin) return window.clutchLogin('login');
+    return auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(function (e) { say('로그인 실패: ' + e.message); });
+  }
   async function addPost() {
-    if (!user) return say('글쓰기는 Google 로그인 후 이용할 수 있습니다.');
+    if (!user) return say('글쓰기는 로그인 후 이용할 수 있습니다.');
     var title = $('postTitle').value.trim(), body = $('postBody').value.trim();
     if (!title || !body) return say('제목과 내용을 입력해 주세요.');
     try {
@@ -355,7 +361,7 @@
     } catch (e) { say('등록 실패: ' + e.message); }
   }
   async function addComment(id) {
-    if (!user) return say('댓글은 Google 로그인 후 작성할 수 있습니다.');
+    if (!user) return say('댓글은 로그인 후 작성할 수 있습니다.');
     var input = $('comment-' + id), body = input ? input.value.trim() : ''; if (!body) return;
     try {
       await db.collection('posts').doc(id).collection('comments').add({ uid: user.uid, displayName: (window.clutchNickname || user.displayName || '회원'), body: body, createdAt: firebase.firestore.FieldValue.serverTimestamp() });
@@ -384,7 +390,7 @@
   }
   if (auth) auth.onAuthStateChanged(function (u) {
     user = u;
-    // 이미 로그인한 사람에게는 'Google 로그인' 버튼을 내보이지 않는다
+    // 이미 로그인한 사람에게는 '로그인' 버튼을 내보이지 않는다
     var lb = $('boardLogin');
     if (lb) lb.hidden = !!u;
     if (!u) { if ($('myBetPick')) drawBetPick(); return; }

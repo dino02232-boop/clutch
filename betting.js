@@ -84,7 +84,7 @@
       document.body.appendChild(n);
     }
     if (!document.getElementById('betNav')) {
-      var nav=document.createElement('nav'); nav.id='betNav'; nav.className='bet-nav'; nav.innerHTML='<button type="button" id="betBalance" class="bet-pill" hidden aria-haspopup="dialog"></button><a href="ranking.html">🏆 랭킹</a><a href="board.html">💬 자유게시판</a><button id="betLogin">Google 로그인</button><button id="betSupport" hidden>1,000P 지원</button>';
+      var nav=document.createElement('nav'); nav.id='betNav'; nav.className='bet-nav'; nav.innerHTML='<button type="button" id="betBalance" class="bet-pill" hidden aria-haspopup="dialog"></button><a href="ranking.html">🏆 랭킹</a><a href="board.html">💬 자유게시판</a><button id="betLogin">로그인</button><button id="betSupport" hidden>1,000P 지원</button>';
       document.querySelector('.top')?.appendChild(nav);
     }
     document.body.addEventListener('click', function (e) {
@@ -135,7 +135,14 @@
     var bal=el('betBalance'); if(bal){bal.title=me?'내 베팅 내역 보기':'로그인';}
     paintBetsMe();
   }
-  async function login(){if(!auth)return say('Firebase 연결을 확인해 주세요.');try{var p=new firebase.auth.GoogleAuthProvider();await auth.signInWithPopup(p);}catch(e){say('로그인에 실패했습니다: '+e.message);}}
+  // 로그인은 auth.js 의 로그인/회원가입 모달로 연다(아이디·비밀번호 또는 Google).
+  // 모달이 없는 화면에서는 예전처럼 Google 팝업으로 넘어간다.
+  function login(){
+    if(!auth)return say('Firebase 연결을 확인해 주세요.');
+    if(window.clutchLogin)return window.clutchLogin('login');
+    try{return auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());}
+    catch(e){say('로그인에 실패했습니다: '+e.message);}
+  }
   async function onUser(user){me=user;if(!user){balance=0;window.clutchNickname='';closeBets();paint();return;}var ref=db.collection('users').doc(user.uid);try{await db.runTransaction(async function(tx){var d=await tx.get(ref);if(!d.exists)tx.set(ref,{uid:user.uid,displayName:user.displayName||'회원',photoURL:user.photoURL||'',points:10000,createdAt:firebase.firestore.FieldValue.serverTimestamp(),weekProfit:0,totalProfit:0,winRate:0,maxOdds:0});});}catch(e){say('회원 정보를 불러오지 못했습니다: '+e.message);}ref.onSnapshot(function(d){if(d.exists){var v=d.data()||{};balance=Number(v.points)||0;window.clutchNickname=v.nickname||'';if(!v.nickname&&me&&!sessionStorage.getItem('clutchNickSkip')&&!document.getElementById('nickModal'))openNick();paint();}});paint();}
   function openNick(){
     if(!me)return; var wrap=document.createElement('div'); wrap.id='nickModal'; wrap.className='nick-modal';
