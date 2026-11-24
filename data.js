@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-24T12:46:52+09:00",
+  updatedAt: "2026-11-24T12:50:06+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -27620,7 +27620,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 4패·6위·승점 4, 대한항공(원정) 2승 3패·5위·승점 7."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 12:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 12:49 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27926,7 +27926,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 2패·4위·승점 8, GS칼텍스(원정) 4승 1패·2위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 12:46 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-24 12:49 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
@@ -31882,14 +31882,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-24 06:16 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-phx-nop-20261124",
           "espnId": "401910042",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-24T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Smoothie King Center",
           "odds": {
             "provider": "DraftKings",
@@ -31954,6 +31954,85 @@ window.CLUTCH_DATA = {
               "text": "**뉴올리언스 펠리컨스**(홈) 5승 13패(홈 4승 7패, 최근 5경기 1승 4패, 3연패), **피닉스 선즈**(원정) 8승 7패(원정 3승 3패, 최근 5경기 4승 1패, 3연승). 직전 경기(11.21) **피닉스 선즈**는 유타 재즈에 111-101로 이겼고, Devin Booker 23점·2리바운드·3어시스트, Dillon Brooks 18점·3리바운드·3어시스트를 기록했습니다. 직전 경기(11.22) **뉴올리언스 펠리컨스**는 샌안토니오 스퍼스에 91-114로 졌고, Jeremiah Fears 29점·5리바운드·4어시스트, Jordan Poole 25점·3리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final/OT",
+            "awayScore": 123,
+            "homeScore": 119,
+            "lines": {
+              "away": [
+                "31",
+                "25",
+                "23",
+                "30",
+                "14"
+              ],
+              "home": [
+                "35",
+                "19",
+                "29",
+                "26",
+                "10"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Jordan Poole",
+                "team": "NO",
+                "min": "27",
+                "pts": 28,
+                "reb": "0",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277956.png"
+              },
+              {
+                "name": "Jalen Green",
+                "team": "PHX",
+                "min": "37",
+                "pts": 25,
+                "reb": "3",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4437244.png"
+              },
+              {
+                "name": "Zion Williamson",
+                "team": "NO",
+                "min": "40",
+                "pts": 25,
+                "reb": "4",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png"
+              },
+              {
+                "name": "Devin Booker",
+                "team": "PHX",
+                "min": "42",
+                "pts": 22,
+                "reb": "5",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png"
+              },
+              {
+                "name": "Saddiq Bey",
+                "team": "NO",
+                "min": "40",
+                "pts": 21,
+                "reb": "4",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397136.png"
+              },
+              {
+                "name": "Collin Gillespie",
+                "team": "PHX",
+                "min": "30",
+                "pts": 18,
+                "reb": "3",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278585.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
