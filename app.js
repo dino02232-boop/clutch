@@ -3018,8 +3018,10 @@
     // 경기 전에는 프리뷰만 보여준다. 진행 중에는 라이브 상황을 위에 두고,
     // 종료 후에는 결과를 위로 올린 뒤 경기 전 프리뷰를 아래에 보존한다.
     var body;
-    // 종료 카드에는 선발 라인업 판을 두지 않는다(선수 기록·평점으로 충분).
-    var lineup = finalNow ? "" : startBoxHTML(g);
+    // 경기 중·종료 카드에는 선발 라인업 판을 두지 않는다.
+    // 경기 중에는 위쪽 '현재 선수 기록'에 선발 5명이 실시간으로 나와 중복되고,
+    // 종료 카드에는 선수 기록·평점으로 충분하다. 선발 라인업은 경기 전 카드에서만 보여 준다.
+    var lineup = liveNow || finalNow ? "" : startBoxHTML(g);
     if (liveNow) {
       body = liveSectionHTML(g) + lineup + pgMoreHTML("경기 전 브리핑", '<div class="pregame-body">' + preview + more + "</div>");
     } else if (finalNow) {
