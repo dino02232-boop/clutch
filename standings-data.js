@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-25T18:58:50+09:00
+   생성 시각(기준): 2026-11-25T20:50:54+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-25T18:58:50+09:00",
+  "updated": "2026-11-25T20:50:54+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -5671,6 +5671,22 @@ window.CLUTCH_STANDINGS = {
           "rows": [
             {
               "rank": 1,
+              "team": "도로공사",
+              "abbr": "DOW",
+              "logo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
+              "played": 7,
+              "win": 6,
+              "draw": null,
+              "loss": 1,
+              "diff": null,
+              "points": 18,
+              "pct": null,
+              "gb": null,
+              "sets": "18-6",
+              "zone": null
+            },
+            {
+              "rank": 2,
               "team": "GS칼텍스",
               "abbr": "GSC",
               "logo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
@@ -5686,35 +5702,19 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 2,
-              "team": "도로공사",
-              "abbr": "DOW",
-              "logo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
-              "played": 6,
-              "win": 5,
-              "draw": null,
-              "loss": 1,
-              "diff": null,
-              "points": 15,
-              "pct": null,
-              "gb": null,
-              "sets": "15-6",
-              "zone": null
-            },
-            {
               "rank": 3,
               "team": "IBK기업은행",
               "abbr": "IBK",
               "logo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-              "played": 6,
+              "played": 7,
               "win": 4,
               "draw": null,
-              "loss": 2,
+              "loss": 3,
               "diff": null,
               "points": 12,
               "pct": null,
               "gb": null,
-              "sets": "14-8",
+              "sets": "14-11",
               "zone": null
             },
             {
