@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-26T00:30:48+09:00
+   생성 시각(기준): 2026-11-26T01:56:01+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-26T00:30:48+09:00",
+  "updated": "2026-11-26T01:56:01+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -5283,9 +5283,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684742.png",
               "team": "디트로이트 피스턴스",
               "teamAbbr": "DET",
-              "value": 8.6,
-              "display": "8.6리바운드",
-              "played": 15
+              "value": 8.6875,
+              "display": "8.7리바운드",
+              "played": 16
             },
             {
               "rank": 19,
@@ -5379,9 +5379,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
               "team": "올랜도 매직",
               "teamAbbr": "ORL",
-              "value": 8.25,
-              "display": "8.2어시스트",
-              "played": 16
+              "value": 8.117647,
+              "display": "8.1어시스트",
+              "played": 17
             },
             {
               "rank": 7,
@@ -5462,6 +5462,17 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 14,
+              "name": "Cooper Flagg",
+              "id": "5041939",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
+              "team": "댈러스 매버릭스",
+              "teamAbbr": "DAL",
+              "value": 6.7058825,
+              "display": "6.7어시스트",
+              "played": 17
+            },
+            {
+              "rank": 15,
               "name": "Darius Garland",
               "id": "4396907",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png",
@@ -5472,7 +5483,7 @@ window.CLUTCH_STANDINGS = {
               "played": 16
             },
             {
-              "rank": 15,
+              "rank": 16,
               "name": "LeBron James",
               "id": "1966",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png",
@@ -5481,17 +5492,6 @@ window.CLUTCH_STANDINGS = {
               "value": 6.5,
               "display": "6.5어시스트",
               "played": 14
-            },
-            {
-              "rank": 16,
-              "name": "Cooper Flagg",
-              "id": "5041939",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
-              "team": "댈러스 매버릭스",
-              "teamAbbr": "DAL",
-              "value": 6.375,
-              "display": "6.4어시스트",
-              "played": 16
             },
             {
               "rank": 17,
