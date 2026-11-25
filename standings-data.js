@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-25T20:50:54+09:00
+   생성 시각(기준): 2026-11-25T21:59:42+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-25T20:50:54+09:00",
+  "updated": "2026-11-25T21:59:42+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -5557,19 +5557,35 @@ window.CLUTCH_STANDINGS = {
               "team": "한국전력",
               "abbr": "KEP",
               "logo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-              "played": 6,
+              "played": 7,
               "win": 5,
               "draw": null,
-              "loss": 1,
+              "loss": 2,
               "diff": null,
-              "points": 14,
+              "points": 15,
               "pct": null,
               "gb": null,
-              "sets": "15-8",
+              "sets": "17-11",
               "zone": null
             },
             {
               "rank": 2,
+              "team": "현대캐피탈",
+              "abbr": "HYC",
+              "logo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
+              "played": 7,
+              "win": 5,
+              "draw": null,
+              "loss": 2,
+              "diff": null,
+              "points": 14,
+              "pct": null,
+              "gb": null,
+              "sets": "16-11",
+              "zone": null
+            },
+            {
+              "rank": 3,
               "team": "삼성화재",
               "abbr": "SAM",
               "logo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
@@ -5582,22 +5598,6 @@ window.CLUTCH_STANDINGS = {
               "pct": null,
               "gb": null,
               "sets": "14-9",
-              "zone": null
-            },
-            {
-              "rank": 3,
-              "team": "현대캐피탈",
-              "abbr": "HYC",
-              "logo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
-              "played": 6,
-              "win": 4,
-              "draw": null,
-              "loss": 2,
-              "diff": null,
-              "points": 12,
-              "pct": null,
-              "gb": null,
-              "sets": "13-9",
               "zone": null
             },
             {
