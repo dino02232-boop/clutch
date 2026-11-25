@@ -87,6 +87,17 @@
     if (!d) return '';
     return d.getFullYear() + '.' + pad(d.getMonth() + 1) + '.' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
   }
+  // 목록용 상대 시간: 방금 전 · 12분 전 · 3시간 전 · 11.24 (해가 바뀌면 25.11.24)
+  function fmtRel(ts) {
+    var d = toDate(ts), now = new Date();
+    if (!d) return '';
+    var sec = Math.floor((now.getTime() - d.getTime()) / 1000);
+    if (sec < 60) return '방금 전';
+    if (sec < 3600) return Math.floor(sec / 60) + '분 전';
+    if (sec < 86400) return Math.floor(sec / 3600) + '시간 전';
+    var md = (d.getMonth() + 1) + '.' + pad(d.getDate());
+    return d.getFullYear() === now.getFullYear() ? md : String(d.getFullYear()).slice(2) + '.' + md;
+  }
 
   /* ── 글에 붙은 베팅('🎟 공유한 베팅') ─────────────────────
      슬립 한 줄 = 픽 하나. 같은 betId 를 가진 줄은 한 베팅(다폴)으로 묶는다.
@@ -127,6 +138,18 @@
     var sub = esc(pickText(first)) + (more > 0 ? ' · ' + g.legs.length + '픽' : '') +
       ' · ' + (Number(g.odds) || 0).toFixed(2) + '배' + (g.stake ? ' · ' + fmt(g.stake) + 'P' : '');
     return { main: main, sub: sub };
+  }
+  // 목록 메타 줄에 붙는 한 줄 베팅 요약 — '8.82배 · 3,000P' (베팅이 여러 개면 '외 N')
+  function slipSummary(slip) {
+    var gs = slipGroups(slip);
+    if (!gs.length) return '';
+    var g = gs[0], parts = [];
+    var odds = Number(g.odds) || 0;
+    if (odds > 0) parts.push(odds.toFixed(2) + '배');
+    if (Number(g.stake) > 0) parts.push(fmt(g.stake) + 'P');
+    var out = parts.join(' · ');
+    if (gs.length > 1) out += (out ? ' ' : '') + '외 ' + (gs.length - 1);
+    return out;
   }
   function slipCardHTML(slip, title, scope) {
     var groups = slipGroups(slip);
@@ -270,6 +293,7 @@
       if (el.getAttribute('data-cmt') !== id) continue;
       el.textContent = n > 0 ? n : '';
       el.hidden = !(n > 0);
+      if (n > 0) el.setAttribute('aria-label', '댓글 ' + n + '개'); else el.removeAttribute('aria-label');
     }
     var dc = $('detailCmtCount');
     if (dc && curDetailId === id) dc.textContent = n > 0 ? String(n) : '0';
@@ -312,19 +336,28 @@
     });
   }
 
-  // 목록 한 줄 — 안 읽은 글은 점 + 진한 제목으로 구분한다.
+  // 목록 한 줄 — 커뮤니티 게시판처럼 2줄로 촘촘하게.
+  //   1행: 안 읽음 점 · 픽 뱃지 · 제목 · [댓글 수]
+  //   2행: 상대 시간 · 닉네임 · 베팅 한 줄 요약
   function rowHTML(id, p) {
     var n = countCache[id] || 0;
     var read = window.clutchBoard ? window.clutchBoard.isRead(id) : true;
+    var hasSlip = !!(p.slip && p.slip.length);
+    var sum = hasSlip ? slipSummary(p.slip) : '';
+    var full = fmtFull(p.createdAt);
     return '<a class="bl-row' + (read ? '' : ' unread') + '" href="#post=' + encodeURIComponent(id) + '" data-post="' + esc(id) + '"' +
       (read ? '' : ' aria-label="안 읽음, ' + esc(p.title || '') + '"') + '>' +
       '<span class="bl-titlerow">' +
         '<span class="bl-dot" aria-hidden="true"></span>' +
+        (hasSlip ? '<span class="bl-bet" title="베팅 공유" aria-label="베팅 공유">픽</span>' : '') +
         '<span class="bl-title">' + esc(p.title) + '</span>' +
-        (p.slip && p.slip.length ? '<span class="bl-ticket" title="베팅 첨부">🎟</span>' : '') +
-        '<span class="bl-cmt" data-cmt="' + esc(id) + '"' + (n ? '' : ' hidden') + '>' + (n || '') + '</span></span>' +
-      '<span class="bl-meta">' + postByHTML(p, false) + '<span class="bl-time">' + fmtTime(p.createdAt) + '</span></span>' +
-      '</a>';
+        '<span class="bl-cmt" data-cmt="' + esc(id) + '"' + (n ? '' : ' hidden') +
+          (n ? ' aria-label="댓글 ' + n + '개"' : '') + '>' + (n || '') + '</span></span>' +
+      '<span class="bl-meta">' +
+        '<span class="bl-time"' + (full ? ' title="' + esc(full) + '"' : '') + '>' + esc(fmtRel(p.createdAt)) + '</span>' +
+        postByHTML(p, false) +
+        (sum ? '<span class="bl-slip"><i aria-hidden="true">🎟</i> ' + esc(sum) + '</span>' : '') +
+      '</span></a>';
   }
 
   /* ── 목록 페이지 나누기(한 페이지 20개) ──────────────────
