@@ -257,6 +257,8 @@
   }
   function betRowHTML(doc, gm) {
     var b = doc && doc.data ? doc.data() : (doc || {});
+    // 카드 모양은 betcard.js 한 곳에서 그린다(자유게시판의 '공유한 베팅' 상세와 같은 카드).
+    if (window.clutchBetCard) return window.clutchBetCard(b, gm || gameMap());
     var picks = Array.isArray(b.picks) ? b.picks : [];
     var st = String(b.status || 'open');
     var d = b.createdAt && b.createdAt.toDate ? b.createdAt.toDate() : null;

@@ -86,12 +86,129 @@
     return d.getFullYear() + '.' + pad(d.getMonth() + 1) + '.' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
   }
 
-  function slipCardHTML(slip, title) {
-    if (!slip || !slip.length) return '';
-    return '<div class="post-slip"><b>' + esc(title) + '</b>' + slip.map(function (x) {
-      return '<p>' + esc(x.home) + ' vs ' + esc(x.away) + ' · ' + esc(pickText(x)) +
-        ' · ' + Number(x.decimal || 0).toFixed(2) + '배' + (x.stake ? ' · ' + fmt(x.stake) + 'P' : '') + '</p>';
+  /* ── 글에 붙은 베팅('🎟 공유한 베팅') ─────────────────────
+     슬립 한 줄 = 픽 하나. 같은 betId 를 가진 줄은 한 베팅(다폴)으로 묶는다.
+     예전 글은 픽 한 줄에 합산 배당만 남아 있어, 그 한 줄을 한 베팅으로 본다.
+     박스를 누르면 '내 베팅 내역'과 같은 결의 상세 카드가 모달로 열린다. */
+  var slipCache = {}, gamesPromise = null, slipModalGroup = null;
+
+  function slipGroups(slip) {
+    var out = [], by = {};
+    (slip || []).forEach(function (x, i) {
+      if (!x || typeof x !== 'object') return;
+      var key = x.betId ? 'b:' + x.betId : 'l:' + i;
+      var g = by[key];
+      if (!g) {
+        g = by[key] = {
+          key: key, legs: [], legacy: !x.betId,
+          stake: 0, odds: 0, potential: null, payout: null,
+          status: String(x.status || 'open'), createdAt: x.createdAt != null ? x.createdAt : null
+        };
+        out.push(g);
+      }
+      g.legs.push(x);
+    });
+    out.forEach(function (g) {
+      g.legs.forEach(function (x) {
+        if (!g.stake && Number(x.stake)) g.stake = Number(x.stake);
+        if (!g.odds && Number(x.odds)) g.odds = Number(x.odds);
+        if (g.potential == null && x.potential != null) g.potential = Number(x.potential);
+        if (g.payout == null && x.payout != null) g.payout = Number(x.payout);
+      });
+      if (!g.odds) g.odds = g.legs.reduce(function (a, x) { return a * (Number(x.decimal) || 1); }, 1);
+    });
+    return out;
+  }
+  function slipCaption(g) {
+    var first = g.legs[0] || {}, more = g.legs.length - 1;
+    var main = esc(first.home) + ' vs ' + esc(first.away) + (more > 0 ? ' 외 ' + more : '');
+    var sub = esc(pickText(first)) + (more > 0 ? ' · ' + g.legs.length + '픽' : '') +
+      ' · ' + (Number(g.odds) || 0).toFixed(2) + '배' + (g.stake ? ' · ' + fmt(g.stake) + 'P' : '');
+    return { main: main, sub: sub };
+  }
+  function slipCardHTML(slip, title, scope) {
+    var groups = slipGroups(slip);
+    if (!groups.length) return '';
+    scope = scope || 'detail';
+    slipCache[scope] = groups;
+    return '<div class="post-slip"><b>' + esc(title) + '</b>' + groups.map(function (g, i) {
+      var c = slipCaption(g);
+      return '<button type="button" class="ps-card" data-slip-scope="' + esc(scope) + '" data-slip-group="' + i + '"' +
+        ' data-slip-title="' + esc(title) + '"' +
+        ' aria-label="베팅 상세 보기: ' + esc(c.main) + '">' +
+        '<span class="ps-txt"><span class="ps-main">' + c.main + '</span>' +
+        '<span class="ps-sub">' + c.sub + '</span></span>' +
+        '<span class="ps-arw" aria-hidden="true">›</span></button>';
     }).join('') + '</div>';
+  }
+
+  /* 경기 결과(data.js)는 무거워서 게시판에서는 베팅 카드를 처음 열 때 한 번만 받는다. */
+  function ensureGameData() {
+    if (window.CLUTCH_DATA) return Promise.resolve(true);
+    if (gamesPromise) return gamesPromise;
+    gamesPromise = new Promise(function (resolve) {
+      var s = document.createElement('script');
+      s.src = 'data.js';
+      s.async = true;
+      s.onload = function () { resolve(!!window.CLUTCH_DATA); };
+      s.onerror = function () { gamesPromise = null; resolve(false); };
+      document.head.appendChild(s);
+    });
+    return gamesPromise;
+  }
+  function slipBetHTML(g) {
+    var bet = {
+      picks: g.legs.map(function (x) {
+        return {
+          gameId: x.gameId || '', home: x.home || '', away: x.away || '',
+          market: x.market || '', pick: x.pick || '', line: x.line || '',
+          decimal: g.legacy ? 0 : (Number(x.decimal) || 0)
+        };
+      }),
+      stake: g.stake, combinedOdds: g.odds, potential: g.potential,
+      payout: g.payout, status: g.status, createdAt: g.createdAt
+    };
+    if (window.clutchBetCard) return window.clutchBetCard(bet, window.clutchGameMap ? window.clutchGameMap() : null);
+    // betcard.js 가 없을 때를 위한 최소 표시(예전 한 줄 요약과 같은 내용)
+    return '<article class="bet-hist"><ul class="bh-picks">' + g.legs.map(function (x) {
+      return '<li class="bh-pick"><span class="bp-match">' + esc(x.home) + ' vs ' + esc(x.away) + '</span>' +
+        '<span class="bp-meta">' + esc(pickText(x)) + ' · ' + Number(x.decimal || 0).toFixed(2) + '배</span></li>';
+    }).join('') + '</ul></article>';
+  }
+  function paintSlipModal(g) {
+    var node = $('slipList');
+    if (!node || !g) return;
+    node.innerHTML = slipBetHTML(g) +
+      (g.legacy
+        ? '<p class="slip-note">이 글에는 베팅 한 줄 요약만 저장돼 있어요. 실제 베팅의 모든 픽과 결과는 홈 위쪽 <b>내 베팅 내역</b>에서 볼 수 있습니다.</p>'
+        : '');
+  }
+  function closeSlipModal() {
+    var w = $('slipModal');
+    if (w) w.remove();
+    slipModalGroup = null;
+  }
+  function openSlipModal(g, title) {
+    if (!g) return;
+    closeSlipModal();
+    var head = esc(title || '🎟 공유한 베팅');
+    var wrap = document.createElement('div');
+    wrap.id = 'slipModal';
+    wrap.className = 'bets-modal slip-modal';
+    wrap.innerHTML = '<div class="bets-box slip-box" role="dialog" aria-modal="true" aria-label="' + head + '">' +
+      '<div class="bets-head"><b>' + head + '</b>' +
+      '<button type="button" id="slipClose" class="bets-icon" aria-label="닫기" title="닫기">×</button></div>' +
+      '<div id="slipList" class="bets-list slip-list"></div></div>';
+    document.body.appendChild(wrap);
+    slipModalGroup = g;
+    paintSlipModal(g);
+    wrap.addEventListener('click', function (e) {
+      if (e.target === wrap || (e.target.closest && e.target.closest('#slipClose'))) closeSlipModal();
+    });
+    // 적중·미적중·점수는 결과 데이터가 도착하면 채운다(없으면 저장된 상태만 보인다).
+    if (!window.CLUTCH_DATA) {
+      ensureGameData().then(function (ok) { if (ok && slipModalGroup === g) paintSlipModal(g); });
+    }
   }
 
   /* 글쓴이 — 새 글에는 points 를 저장하지 않는다(Firestore 규칙이 6개 필드만 허용).
@@ -294,7 +411,7 @@
         (p.uid && !mine ? '<button type="button" class="meta-msg" data-msg-to="' + esc(p.uid) + '"' +
           ' data-msg-name="' + esc((profOf(p.uid) && profOf(p.uid).nickname) || p.displayName || '') + '">✉️ 쪽지</button>' : '');
       $('detailBody').textContent = p.body || '';
-      $('detailSlip').innerHTML = slipCardHTML(p.slip, '🎟 공유한 베팅');
+      $('detailSlip').innerHTML = slipCardHTML(p.slip, '🎟 공유한 베팅', 'detail');
       $('detailCmtCount').textContent = countCache[id] ? String(countCache[id]) : '0';
       if ($('detailNotice')) $('detailNotice').textContent = '';
       $('detailComments').innerHTML = '<div id="comments-' + esc(id) + '"><p class="bl-nocmt">댓글을 불러오는 중…</p></div>';
@@ -382,8 +499,9 @@
     node.innerHTML = picked.list.map(function (b) {
       var on = picked.sel[b.id];
       return '<button type="button" class="bet-choice' + (on ? ' on' : '') + '" data-betpick="' + esc(b.id) + '" aria-pressed="' + (on ? 'true' : 'false') + '">' +
-        '<span class="bc-main">' + esc(b.home) + ' vs ' + esc(b.away) + '</span>' +
-        '<span class="bc-sub">' + esc(pickText(b)) + ' · ' + Number(b.decimal || 0).toFixed(2) + '배' +
+        '<span class="bc-main">' + esc(b.home) + ' vs ' + esc(b.away) + (b.count > 1 ? ' 외 ' + (b.count - 1) : '') + '</span>' +
+        '<span class="bc-sub">' + esc(pickText(b)) + (b.count > 1 ? ' · ' + b.count + '픽' : '') +
+        ' · ' + Number(b.decimal || 0).toFixed(2) + '배' +
         (b.stake ? ' · ' + fmt(b.stake) + 'P' : '') + ' · ' + esc(STATUS_KO[b.status] || b.status || '') + '</span>' +
         '</button>';
     }).join('');
@@ -392,13 +510,15 @@
     var node = $('sharedSlip');
     if (!node) return;
     node.innerHTML = shared.length
-      ? '<div class="share-count">붙일 베팅 ' + shared.length + '개</div>' + slipCardHTML(shared, '내 Bet 공유')
+      ? '<div class="share-count">붙일 베팅 ' + Object.keys(picked.sel || {}).filter(function (k) { return picked.sel[k]; }).length + '개</div>' + slipCardHTML(shared, '내 Bet 공유', 'compose')
       : '';
   }
   function myBets(u) {
     db.collection('bets').doc(u.uid).collection('items').orderBy('createdAt', 'desc').limit(30).onSnapshot(function (s) {
+      picked.docs = {};
       picked.list = s.docs.map(function (d) {
         var b = d.data() || {};
+        picked.docs[d.id] = b;
         var first = (b.picks || [])[0] || {};
         return {
           id: d.id, gameId: first.gameId || '', away: first.away || '', home: first.home || '',
@@ -413,14 +533,48 @@
       if ($('myBetPick')) $('myBetPick').innerHTML = '<p class="rk-empty">베팅 내역을 불러오지 못했습니다.</p>';
     });
   }
-  function pickBet(id) {
-    var b = null;
-    picked.list.forEach(function (x) { if (x.id === id) b = x; });
-    if (!b) return;
-    picked.sel[id] = !picked.sel[id];
-    shared = picked.list.filter(function (x) { return picked.sel[x.id]; }).map(function (x) {
-      return { gameId: x.gameId, away: x.away, home: x.home, market: x.market, pick: x.pick, line: x.line, decimal: x.decimal, stake: x.stake };
+  /* 글에 붙일 베팅 한 건 → 슬립 줄들(픽마다 한 줄, 같은 betId 로 묶인다).
+     다폴도 모든 픽과 합산 배당·베팅 포인트·상태가 그대로 남는다. */
+  function legsFromBet(id) {
+    var b = (picked.docs || {})[id];
+    if (!b) return [];
+    var picks = Array.isArray(b.picks) ? b.picks : [];
+    var odds = Number(b.combinedOdds) || picks.reduce(function (a, x) { return a * (Number(x.decimal) || 1); }, 1);
+    var created = 0, c = b.createdAt;
+    if (c && typeof c.toDate === 'function') { var dt = c.toDate(); created = dt && dt.getTime ? dt.getTime() : 0; }
+    else if (typeof c === 'number' && isFinite(c)) created = c;
+    else if (typeof c === 'string' && c) { var d2 = new Date(c); created = isNaN(d2.getTime()) ? 0 : d2.getTime(); }
+    var head = {
+      betId: id, stake: Number(b.stake) || 0, odds: Number(Number(odds).toFixed(4)),
+      potential: b.potential != null ? Number(b.potential) : null,
+      payout: b.payout != null ? Number(b.payout) : null,
+      status: String(b.status || 'open'), createdAt: created
+    };
+    return picks.map(function (x) {
+      var leg = {
+        gameId: x.gameId || '', sport: x.sport || '', league: x.league || '', start: x.start || '',
+        home: x.home || '', away: x.away || '', market: x.market || '', pick: x.pick || '',
+        line: x.line || '', decimal: Number(x.decimal) || 0
+      };
+      for (var k in head) if (Object.prototype.hasOwnProperty.call(head, k)) leg[k] = head[k];
+      return leg;
     });
+  }
+  function rebuildShared() {
+    var out = [], ids = Object.keys(picked.sel || {});
+    // 글 한 편에 담기는 슬립은 20줄까지(Firestore 규칙). 베팅 한 건은 통째로 넣거나 뺀다.
+    for (var i = 0; i < ids.length; i++) {
+      if (!picked.sel[ids[i]]) continue;
+      var legs = legsFromBet(ids[i]);
+      if (!legs.length || out.length + legs.length > 20) continue;
+      out = out.concat(legs);
+    }
+    shared = out;
+  }
+  function pickBet(id) {
+    if (!id) return;
+    picked.sel[id] = !picked.sel[id];
+    rebuildShared();
     drawBetPick();
     drawShared();
   }
@@ -461,7 +615,7 @@
     if (rd) rd.textContent = new Date().toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' }) + ' 기준';
   }
   if ($('postList')) {
-    picked = { list: [], sel: {} };
+    picked = { list: [], sel: {}, docs: {} };
     // 예전 'Bet 공유' 버튼에서 넘어온 슬립이 있으면 그대로 붙여 둔다
     try {
       var st = JSON.parse(sessionStorage.getItem('clutchSlipShare') || '[]');
@@ -524,6 +678,18 @@
       if (window.clutchMessages) window.clutchMessages.compose({ uid: uid, name: nm });
     }
     if (e.target.closest && e.target.closest('[data-betpick]')) pickBet(e.target.closest('[data-betpick]').getAttribute('data-betpick'));
+    // '🎟 공유한 베팅' 박스 → 그 베팅의 상세 카드
+    var sc = e.target.closest && e.target.closest('[data-slip-scope]');
+    if (sc) {
+      var scope = sc.getAttribute('data-slip-scope') || 'detail';
+      var gs = slipCache[scope] || [];
+      openSlipModal(gs[Number(sc.getAttribute('data-slip-group')) || 0], sc.getAttribute('data-slip-title'));
+      return;
+    }
     if (e.target.dataset && e.target.dataset.comment) addComment(e.target.dataset.comment);
+  });
+  // 모달은 Esc 로도 닿는다(바깥 영역·× 는 모달이 직접 처리).
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && slipModalGroup) closeSlipModal();
   });
 })();

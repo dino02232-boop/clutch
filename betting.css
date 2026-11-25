@@ -161,6 +161,21 @@
 .post-slip{margin:8px 0 0;padding:9px 10px;border-radius:10px;background:#f6f8f8;border:1px solid var(--line)}
 .post-slip b{display:block;font-size:11px;color:var(--text-2);margin-bottom:4px}
 .post-slip p{margin:2px 0;font-size:11.5px;color:#111827;white-space:normal}
+/* 글에 붙은 베팅 → 누르면 상세 카드가 열린다(‘›’로 누를 수 있음을 알린다) */
+.post-slip .ps-card{display:flex;align-items:center;gap:8px;width:100%;text-align:left;margin-top:5px;padding:7px 9px;border:1px solid var(--line);border-radius:9px;background:#fff;font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.post-slip .ps-card:active{background:#eef2f2;border-color:var(--line-2)}
+@media(hover:hover){.post-slip .ps-card:hover{border-color:var(--accent)}}
+.ps-txt{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:1px}
+.ps-main{font-size:12px;font-weight:800;color:#111827;line-height:1.35;overflow-wrap:anywhere}
+.ps-sub{font-size:10.5px;font-weight:600;color:var(--text-2);line-height:1.35;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.ps-arw{flex:0 0 auto;font-size:16px;font-weight:800;line-height:1;color:var(--text-3)}
+.post-slip .ps-card:hover .ps-arw{color:var(--accent)}
+/* 공유한 베팅 상세 모달 — 내 베팅 내역 모달(.bets-modal / .bets-box)을 그대로 쓴다 */
+.slip-list{padding-top:2px}
+.slip-modal #slipClose{margin-left:auto;font-size:17px;font-weight:700}
+.slip-note{margin:2px 0 0;font-size:11px;line-height:1.55;color:var(--text-3)}
+.slip-note b{color:var(--text-2);font-weight:700}
+.bh-label{font-size:10.5px;font-weight:800;color:var(--accent);margin-bottom:4px}
 .compose-actions{display:flex;gap:8px;flex-wrap:wrap}
 .compose-actions button{border:0;border-radius:10px;background:var(--accent);color:#fff;font:inherit;font-weight:800;font-size:13px;padding:10px 16px;cursor:pointer}
 .compose-actions button.ghost{background:#eef1f3;color:var(--text-2)}
