@@ -18,6 +18,51 @@
   var STATUS_KO = { open: '베팅중', won: '적중', lost: '미적중', push: '무효', void: '무효' };
 
   function statusKo(s) { return STATUS_KO[s] || s || '베팅중'; }
+
+  /* ── 픽 한 줄 표기 ────────────────────────────────────
+     '승무패 홈'·'핸디캡 원정 -1.5' 처럼 홈/원정만 적으면 무엇에 걸었는지
+     한눈에 안 들어온다. 픽에 남은 팀 이름(pick.home·pick.away)을 먼저 쓰고,
+     없으면 경기 데이터(games[gameId])의 홈·원정 팀에서, 그것도 없으면
+     "홈 vs 원정" 한 줄(matchup)에서 읽는다. 어느 쪽도 없을 때만 홈/원정으로 적는다. */
+  function nameOf(v) {
+    if (v == null) return '';
+    if (typeof v === 'string') return v.trim();
+    if (typeof v === 'object') return String(v.name || v.shortName || v.displayName || v.abbr || '').trim();
+    return String(v).trim();
+  }
+  function teamName(x, g, side) {
+    var direct = nameOf(side === 'home' ? (x && x.home) : (x && x.away));
+    if (direct) return direct;
+    var fromGame = nameOf(g && g[side]);
+    if (fromGame) return fromGame;
+    var pair = x && typeof x.matchup === 'string' ? x.matchup.split(/\s*(?:vs\.?|v\.?)\s*/i) : null;
+    if (pair && pair.length === 2) {
+      var fromPair = nameOf(side === 'home' ? pair[0] : pair[1]);
+      if (fromPair) return fromPair;
+    }
+    return PICK_KO[side] || '';
+  }
+  function lineText(v) {
+    if (v == null) return '';
+    return String(v).trim();
+  }
+  /* 예: '승무패 · 갈라타사라이 승', '핸디캡 · 코모 -1.5', '언오버 · 오버 2.5' */
+  function pickLabel(x, g) {
+    x = x || {};
+    var market = String(x.market || ''), side = String(x.pick || ''), line = lineText(x.line);
+    var head = MARKET_KO[market] || market || '';
+    var body;
+    if (market === 'moneyline' || market === 'h2h' || market === '1x2') {
+      if (side === 'draw') body = '무승부';
+      else if (side === 'home' || side === 'away') body = teamName(x, g, side) + ' 승';
+      else body = PICK_KO[side] || side;
+    } else if ((market === 'spread' || market === 'handicap') && (side === 'home' || side === 'away')) {
+      body = teamName(x, g, side) + (line ? ' ' + line : '');
+    } else {
+      body = (PICK_KO[side] || side) + (line ? ' ' + line : '');
+    }
+    return head ? head + ' · ' + body : body;
+  }
   function two(n) { return ('0' + n).slice(-2); }
   function payout(stake, mult) { var m = Math.round(mult * 100) / 100; return Math.floor(stake * m + 1e-9); }
 
@@ -124,8 +169,7 @@
       return '<li class="bh-pick">' +
         '<span class="bp-top"><b class="bp-match">' + esc(x.home) + ' vs ' + esc(x.away) + '</b>' +
           pickBadgeHTML(outs[i]) + '</span>' +
-        '<span class="bp-meta">' + esc(MARKET_KO[x.market] || x.market || '') + ' ' +
-        esc(PICK_KO[x.pick] || x.pick || '') + (x.line ? ' ' + esc(x.line) : '') +
+        '<span class="bp-meta">' + esc(pickLabel(x, gm[x.gameId])) +
         (dec > 0 ? ' · ' + dec.toFixed(2) + '배' : '') + '</span></li>';
     }).join('');
     var footRight = st !== 'open'
@@ -144,6 +188,7 @@
   }
 
   window.clutchBetCard = betCard;
+  window.clutchPickLabel = pickLabel;
   window.clutchPickOutcome = pickOutcome;
   window.clutchGameMap = gameMap;
   window.clutchBetWhen = whenText;

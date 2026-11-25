@@ -6,7 +6,6 @@
   var esc = function (s) { return String(s || '').replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
   var say = function (s) { if ($('boardNotice')) $('boardNotice').textContent = s; if ($('detailNotice')) $('detailNotice').textContent = s; };
   var MARKET_KO = { moneyline: '승무패', spread: '핸디캡', total: '언오버' };
-  var PICK_KO = { away: '원정', home: '홈', draw: '무승부', over: '오버', under: '언더' };
   var STATUS_KO = { open: '베팅중', won: '적중', lost: '미적중', push: '무효' };
   var tierBadge = function (points) {
     if (points == null || !isFinite(Number(points))) return '';
@@ -17,8 +16,11 @@
     if (points == null || !isFinite(Number(points))) return '';
     return window.clutchTierBadge ? window.clutchTierBadge(points, { label: false }) : '';
   };
-  var pickText = function (x) {
-    return (MARKET_KO[x.market] || x.market || '') + ' ' + (PICK_KO[x.pick] || x.pick || '') +
+  // 픽 한 줄 표기는 betcard.js 한 곳에서 만든다(팀 이름이 보이게). 없을 때만 예전 표기.
+  var pickText = function (x, g) {
+    if (window.clutchPickLabel) return window.clutchPickLabel(x, g);
+    return (MARKET_KO[x.market] || x.market || '') + ' ' +
+      ({ away: '원정', home: '홈', draw: '무승부', over: '오버', under: '언더' }[x.pick] || x.pick || '') +
       (x.line ? ' ' + x.line : '');
   };
 

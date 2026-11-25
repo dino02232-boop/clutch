@@ -129,7 +129,7 @@
   function paint() {
     var picks=el('betPicks'); if(!picks)return;
     var mult=slip.reduce(function(a,x){return a*x.decimal;},1);
-    picks.innerHTML=slip.length?slip.map(function(x,i){return '<div class="bet-pick"><button data-slip-remove="'+i+'" aria-label="선택 삭제">×</button><b>'+esc(x.home)+' vs '+esc(x.away)+'</b><span>'+esc(({moneyline:'승무패',spread:'핸디캡',total:'언오버'})[x.market])+' · '+esc(({away:'원정',home:'홈',draw:'무승부',over:'오버',under:'언더'})[x.pick])+(x.line?' '+esc(x.line):'')+' · '+x.decimal.toFixed(2)+'배</span></div>';}).join(''):'<p class="bet-empty">경기에서 배당을 선택하세요. 같은 경기의 승무패·핸디캡·언오버는 함께 담을 수 있습니다.</p>';
+    picks.innerHTML=slip.length?slip.map(function(x,i){return '<div class="bet-pick"><button data-slip-remove="'+i+'" aria-label="선택 삭제">×</button><b>'+esc(x.home)+' vs '+esc(x.away)+'</b><span>'+esc(pickLabel(x))+' · '+x.decimal.toFixed(2)+'배</span></div>';}).join(''):'<p class="bet-empty">경기에서 배당을 선택하세요. 같은 경기의 승무패·핸디캡·언오버는 함께 담을 수 있습니다.</p>';
     if(el('betOdds'))el('betOdds').textContent=mult.toFixed(2)+'배';
     var stake=Number(el('betStake')&&el('betStake').value)||0;
     if(el('betReturn'))el('betReturn').textContent=fmt(payout(stake,mult))+'P';
@@ -184,7 +184,13 @@
   var betsUnsub = null;
   var STATUS_KO = { open: '베팅중', won: '적중', lost: '미적중', push: '무효' };
   var MARKET_KO = { moneyline: '승무패', spread: '핸디캡', total: '언오버' };
-  var PICK_KO = { away: '원정', home: '홈', draw: '무승부', over: '오버', under: '언더' };
+  // 픽 한 줄 표기는 betcard.js 한 곳에서 만든다(여기는 betcard.js 가 늦게 실렸을 때의 대비).
+  function pickLabel(x, g) {
+    if (window.clutchPickLabel) return window.clutchPickLabel(x, g);
+    return (MARKET_KO[x.market] || x.market || '') + ' ' +
+      ({ away: '원정', home: '홈', draw: '무승부', over: '오버', under: '언더' }[x.pick] || x.pick || '') +
+      (x.line ? ' ' + x.line : '');
+  }
   function statusKo(s) { return STATUS_KO[s] || s || '베팅중'; }
   function two(n) { return ('0' + n).slice(-2); }
   function paintBetsMe() {
@@ -281,8 +287,7 @@
       return '<li class="bh-pick">' +
         '<span class="bp-top"><b class="bp-match">' + esc(x.home) + ' vs ' + esc(x.away) + '</b>' +
           pickBadgeHTML(outs[i]) + '</span>' +
-        '<span class="bp-meta">' + esc(MARKET_KO[x.market] || x.market || '') + ' ' +
-        esc(PICK_KO[x.pick] || x.pick || '') + (x.line ? ' ' + esc(x.line) : '') +
+        '<span class="bp-meta">' + esc(pickLabel(x, games[x.gameId])) +
         ' · ' + (Number(x.decimal) || 0).toFixed(2) + '배</span></li>';
     }).join('');
     var footRight = st !== 'open'
