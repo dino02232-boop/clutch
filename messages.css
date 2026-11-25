@@ -133,8 +133,8 @@
 }
 .mp-x { border: 0; background: none; color: inherit; font-size: 14px; line-height: 1; cursor: pointer; padding: 0 3px; }
 
-/* '+' 새 쪽지 탭이 열려 있을 때 */
-.msg-tabs .msg-new.on { background: #0A6B49; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .35); }
+/* '+' 새 쪽지 탭이 열려 있을 때 (탭 기본 .on 규칙의 글자색을 덮어 흰 글자를 유지한다) */
+.msg-tabs .msg-new.on { background: #0A6B49; border-color: #0A6B49; color: #fff; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .35); }
 
 /* 좁은 폭에서 상단 메뉴가 한 줄에 다 들어오도록: 쪽지는 아이콘만, 닉네임 알약은 더 짧게 */
 @media (max-width: 430px) {
