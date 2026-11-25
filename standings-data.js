@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-25T21:59:42+09:00
+   생성 시각(기준): 2026-11-25T23:21:34+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-25T21:59:42+09:00",
+  "updated": "2026-11-25T23:21:34+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4907,6 +4907,17 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 5,
+              "name": "Jayson Tatum",
+              "id": "4065648",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
+              "team": "보스턴 셀틱스",
+              "teamAbbr": "BOS",
+              "value": 27.3125,
+              "display": "27.3점",
+              "played": 16
+            },
+            {
+              "rank": 6,
               "name": "Jalen Brunson",
               "id": "3934672",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
@@ -4917,26 +4928,15 @@ window.CLUTCH_STANDINGS = {
               "played": 17
             },
             {
-              "rank": 6,
-              "name": "Jayson Tatum",
-              "id": "4065648",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
-              "team": "보스턴 셀틱스",
-              "teamAbbr": "BOS",
-              "value": 26.4,
-              "display": "26.4점",
-              "played": 15
-            },
-            {
               "rank": 7,
               "name": "Jamal Murray",
               "id": "3936299",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png",
               "team": "덴버 너기츠",
               "teamAbbr": "DEN",
-              "value": 26.2,
-              "display": "26.2점",
-              "played": 15
+              "value": 25.8125,
+              "display": "25.8점",
+              "played": 16
             },
             {
               "rank": 8,
@@ -4956,9 +4956,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
               "team": "워싱턴 위저즈",
               "teamAbbr": "WSH",
-              "value": 25.125,
-              "display": "25.1점",
-              "played": 16
+              "value": 25.588236,
+              "display": "25.6점",
+              "played": 17
             },
             {
               "rank": 10,
@@ -4973,17 +4973,6 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 11,
-              "name": "Nikola Jokic",
-              "id": "3112335",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
-              "team": "덴버 너기츠",
-              "teamAbbr": "DEN",
-              "value": 25.066668,
-              "display": "25.1점",
-              "played": 15
-            },
-            {
-              "rank": 12,
               "name": "Scottie Barnes",
               "id": "4433134",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433134.png",
@@ -4994,7 +4983,7 @@ window.CLUTCH_STANDINGS = {
               "played": 12
             },
             {
-              "rank": 13,
+              "rank": 12,
               "name": "Donovan Mitchell",
               "id": "3908809",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3908809.png",
@@ -5003,6 +4992,17 @@ window.CLUTCH_STANDINGS = {
               "value": 24.705883,
               "display": "24.7점",
               "played": 17
+            },
+            {
+              "rank": 13,
+              "name": "Nikola Jokic",
+              "id": "3112335",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
+              "team": "덴버 너기츠",
+              "teamAbbr": "DEN",
+              "value": 24.625,
+              "display": "24.6점",
+              "played": 16
             },
             {
               "rank": 14,
@@ -5028,17 +5028,6 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 16,
-              "name": "Franz Wagner",
-              "id": "4566434",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
-              "team": "올랜도 매직",
-              "teamAbbr": "ORL",
-              "value": 24.5,
-              "display": "24.5점",
-              "played": 16
-            },
-            {
-              "rank": 17,
               "name": "Deni Avdija",
               "id": "4683021",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
@@ -5049,15 +5038,26 @@ window.CLUTCH_STANDINGS = {
               "played": 15
             },
             {
-              "rank": 18,
+              "rank": 17,
               "name": "Cooper Flagg",
               "id": "5041939",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png",
               "team": "댈러스 매버릭스",
               "teamAbbr": "DAL",
-              "value": 24.3125,
+              "value": 24.294117,
               "display": "24.3점",
-              "played": 16
+              "played": 17
+            },
+            {
+              "rank": 18,
+              "name": "Franz Wagner",
+              "id": "4566434",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png",
+              "team": "올랜도 매직",
+              "teamAbbr": "ORL",
+              "value": 24.235294,
+              "display": "24.2점",
+              "played": 17
             },
             {
               "rank": 19,
