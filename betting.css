@@ -279,6 +279,20 @@
 /* 글쓴이 이름 + 티어 배지 한 덩어리 */
 .post-by{overflow-wrap:anywhere}
 
+/* ── 아이디(닉네임)를 누르면 그 사람에게 쪽지 ─────────────────
+   랭킹 행·글 상세 글쓴이·댓글쓴이의 닉네임을 '글자처럼 보이는 버튼'으로 둔다.
+   누르면 messages.js 의 쪽지 창이 받는 사람을 채운 채 열린다. 한 줄 정렬은 그대로 유지한다. */
+.name-msg{
+  font-family:inherit; line-height:inherit; border:0; background:none; padding:0; margin:0;
+  color:inherit; cursor:pointer; text-align:left; -webkit-tap-highlight-color:transparent;
+  text-decoration:underline dotted rgba(17,24,39,.3); text-underline-offset:2.5px;
+}
+.rk-name.name-msg{display:block; max-width:100%; font-size:13.5px; font-weight:800; color:#111827; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.rk-row.top1 .rk-name.name-msg,.rk-row.top2 .rk-name.name-msg,.rk-row.top3 .rk-name.name-msg{font-size:14px}
+.cmt-h .post-by.name-msg{display:inline-flex; align-items:center; gap:3px; font-size:11.5px; font-weight:800; color:var(--text); max-width:100%}
+.name-msg:hover,.name-msg:active{color:var(--accent); text-decoration-color:currentColor}
+.name-msg:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:3px}
+
 /* ── 로그인/회원가입 모달 (auth.js) ─────────────────────────────────────
    아이디 + 비밀번호(+확인) 두세 칸으로 가입·로그인하고, 아래 구글 버튼도 같은 창에 둔다.
    아이폰에서 입력할 때 화면이 확대되지 않도록 모든 input 은 font-size 16px 을 지킨다. */

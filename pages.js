@@ -23,13 +23,22 @@
   };
 
   /* ── 랭킹 ──────────────────────────────────────────────── */
-  function rankRowHTML(x, i, metric) {
+  // 아이디(닉네임)를 누르면 그 사람에게 1:1 쪽지 창이 열린다.
+  // 내 아이디는 눌러도 아무 일이 없도록 평범한 글자로 그린다.
+  function isMine(uid) { return !!(uid && user && uid === user.uid); }
+  function rankNameHTML(uid, name) {
+    if (!uid || isMine(uid)) return '<b class="rk-name">' + esc(name) + '</b>';
+    return '<button type="button" class="rk-name name-msg" data-msg-to="' + esc(uid) + '"' +
+      ' data-msg-name="' + esc(name) + '" title="' + esc(name) + '에게 쪽지 보내기"' +
+      ' aria-label="' + esc(name) + '에게 쪽지 보내기">' + esc(name) + '</button>';
+  }
+  function rankRowHTML(uid, x, i, metric) {
     var name = x.nickname || x.displayName || '회원';
     var pts = metric === 'week' ? Number(x.weekProfit || 0) : Number(x.points || 0);
     var sub = '적중 ' + Number(x.winRate || 0).toFixed(1) + '% · 최고 ' + Number(x.maxOdds || 0).toFixed(2) + '배';
     return '<div class="rk-row' + (i < 3 ? ' top' + (i + 1) : '') + '">' +
       '<span class="rk-no">' + (i + 1) + '</span>' +
-      '<span class="rk-who"><span class="rk-nmline"><b class="rk-name">' + esc(name) + '</b>' +
+      '<span class="rk-who"><span class="rk-nmline">' + rankNameHTML(uid, name) +
       tierBadge(x.points) + '</span>' +
       '<span class="rk-sub">' + esc(sub) + '</span></span>' +
       '<span class="rk-pt">' + fmt(pts) + '<small>P</small></span></div>';
@@ -39,12 +48,18 @@
     if (!node) return;
     if (!snap.docs.length) { node.innerHTML = '<p class="rk-empty">아직 랭킹 데이터가 없습니다.</p>'; return; }
     node.innerHTML = snap.docs.map(function (doc, i) {
-      return rankRowHTML(doc.data() || {}, i, metric);
+      return rankRowHTML(doc.id, doc.data() || {}, i, metric);
     }).join('');
   }
+  // 로그인 상태가 정해지면 '내 아이디'를 다시 판단해 한 번 더 그린다.
+  var rankSnap = { all: null, week: null };
+  function paintRanks() {
+    if (rankSnap.all) rankRows('rankAll', rankSnap.all, 'all');
+    if (rankSnap.week) rankRows('rankWeek', rankSnap.week, 'week');
+  }
   function loadRanks() {
-    db.collection('users').orderBy('points', 'desc').limit(50).onSnapshot(function (s) { rankRows('rankAll', s, 'all'); });
-    db.collection('users').orderBy('weekProfit', 'desc').limit(50).onSnapshot(function (s) { rankRows('rankWeek', s, 'week'); });
+    db.collection('users').orderBy('points', 'desc').limit(50).onSnapshot(function (s) { rankSnap.all = s; rankRows('rankAll', s, 'all'); });
+    db.collection('users').orderBy('weekProfit', 'desc').limit(50).onSnapshot(function (s) { rankSnap.week = s; rankRows('rankWeek', s, 'week'); });
   }
 
   /* ── 자유게시판 ────────────────────────────────────────── */
@@ -96,14 +111,24 @@
       paintAuthors(uid);
     });
   }
-  function postByHTML(p) {
+  // 글쓴이·댓글쓴이 표시 — clickable 이면 닉네임을 눌러 쪽지를 보낼 수 있는 버튼으로 그린다.
+  // (목록 행은 행 전체가 '글 열기' 링크라서 버튼을 넣지 않는다 — 상세·댓글에서만)
+  function authorHTML(uid, name, pts, clickable) {
+    var can = !!(clickable && uid && !isMine(uid));
+    var attrs = ' data-uid="' + esc(uid || '') + '" data-name="' + esc(name || '') + '"' +
+      (pts != null ? ' data-pts="' + esc(pts) + '"' : '');
+    var inner = esc(name || '회원') + tierMark(pts);
+    return can
+      ? '<button type="button" class="post-by name-msg" data-msg-to="' + esc(uid) + '"' +
+          ' data-msg-name="' + esc(name || '') + '" title="' + esc(name || '회원') + '에게 쪽지 보내기"' +
+          ' aria-label="' + esc(name || '회원') + '에게 쪽지 보내기"' + attrs + '>' + inner + '</button>'
+      : '<span class="post-by"' + attrs + '>' + inner + '</span>';
+  }
+  function postByHTML(p, clickable) {
     var pr = profOf(p.uid);
     var pts = p.points != null ? p.points : (pr ? pr.points : null);
     var name = (pr && pr.nickname) || p.displayName || '회원';
-    return '<span class="post-by" data-uid="' + esc(p.uid || '') + '"' +
-      ' data-name="' + esc(p.displayName || '') + '"' +
-      (p.points != null ? ' data-pts="' + esc(p.points) + '"' : '') + '>' +
-      esc(name) + tierMark(pts) + '</span>';
+    return authorHTML(p.uid, name, pts, clickable);
   }
   function paintAuthors(uid) {
     var nodes = document.querySelectorAll('.post-by[data-uid]');
@@ -151,7 +176,11 @@
         node.innerHTML = s.docs.length
           ? s.docs.map(function (d) {
               var c = d.data() || {};
-              return '<div class="cmt"><div class="cmt-h"><b>' + esc(c.displayName || '회원') + '</b>' +
+              // 댓글쓴이 닉네임도 눌러서 쪽지를 보낼 수 있다(지금 닉네임은 users 문서에서 채운다)
+              var cpr = c.uid ? profOf(c.uid) : null;
+              if (c.uid && !isMine(c.uid)) profFetch(c.uid);
+              var cn = (cpr && cpr.nickname) || c.displayName || '회원';
+              return '<div class="cmt"><div class="cmt-h">' + authorHTML(c.uid, cn, cpr ? cpr.points : null, true) +
                 '<span class="cmt-t">' + esc(fmtTime(c.createdAt)) + '</span></div>' +
                 '<p>' + esc(c.body) + '</p></div>';
             }).join('')
@@ -175,7 +204,7 @@
         '<span class="bl-title">' + esc(p.title) + '</span>' +
         (p.slip && p.slip.length ? '<span class="bl-ticket" title="베팅 첨부">🎟</span>' : '') +
         '<span class="bl-cmt" data-cmt="' + esc(id) + '"' + (n ? '' : ' hidden') + '>' + (n || '') + '</span></span>' +
-      '<span class="bl-meta">' + postByHTML(p) + '<span class="bl-time">' + fmtTime(p.createdAt) + '</span></span>' +
+      '<span class="bl-meta">' + postByHTML(p, false) + '<span class="bl-time">' + fmtTime(p.createdAt) + '</span></span>' +
       '</a>';
   }
 
@@ -261,8 +290,9 @@
       det.hidden = false;
       $('detailTitle').textContent = p.title || '';
       var mine = user && p.uid === user.uid;
-      $('detailMeta').innerHTML = postByHTML(p) + '<span class="meta-when">' + esc(fmtFull(p.createdAt)) + '</span>' +
-        (p.uid && !mine ? '<button type="button" class="meta-msg" data-msg-to="' + esc(p.uid) + '">✉️ 쪽지</button>' : '');
+      $('detailMeta').innerHTML = postByHTML(p, true) + '<span class="meta-when">' + esc(fmtFull(p.createdAt)) + '</span>' +
+        (p.uid && !mine ? '<button type="button" class="meta-msg" data-msg-to="' + esc(p.uid) + '"' +
+          ' data-msg-name="' + esc((profOf(p.uid) && profOf(p.uid).nickname) || p.displayName || '') + '">✉️ 쪽지</button>' : '');
       $('detailBody').textContent = p.body || '';
       $('detailSlip').innerHTML = slipCardHTML(p.slip, '🎟 공유한 베팅');
       $('detailCmtCount').textContent = countCache[id] ? String(countCache[id]) : '0';
@@ -451,6 +481,9 @@
     // 이미 로그인한 사람에게는 '로그인' 버튼을 내보이지 않는다
     var lb = $('boardLogin');
     if (lb) lb.hidden = !!u;
+    // 내 아이디는 쪽지 버튼이 아니어야 하므로 랭킹·게시판을 한 번 다시 그린다
+    if ($('rankAll')) paintRanks();
+    paintAuthors();
     if (!u) { if ($('myBetPick')) drawBetPick(); return; }
     var ref = db.collection('users').doc(u.uid);
     ref.get().then(function (d) {
@@ -478,11 +511,16 @@
       loadPosts(n);
       try { window.scrollTo(0, 0); } catch (_) {}
     }
+    /* 아이디(닉네임)·✉️ 버튼 → 그 사람에게 1:1 쪽지. 내 아이디는 열지 않고,
+       로그인 전이면 로그인 모달을 띄운다. */
     var mto = e.target.closest && e.target.closest('[data-msg-to]');
     if (mto) {
+      e.preventDefault();
+      var uid = mto.getAttribute('data-msg-to');
+      if (!uid || isMine(uid)) return;
       if (!user) return login();
-      var uid = mto.getAttribute('data-msg-to'), nm = '';
-      for (var k in postMap) { if (postMap[k] && postMap[k].uid === uid) { nm = postMap[k].displayName || ''; break; } }
+      var nm = mto.getAttribute('data-msg-name') || '';
+      if (!nm) { for (var k in postMap) { if (postMap[k] && postMap[k].uid === uid) { nm = postMap[k].displayName || ''; break; } } }
       if (window.clutchMessages) window.clutchMessages.compose({ uid: uid, name: nm });
     }
     if (e.target.closest && e.target.closest('[data-betpick]')) pickBet(e.target.closest('[data-betpick]').getAttribute('data-betpick'));
