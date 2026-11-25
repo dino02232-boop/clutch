@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-25T13:35:45+09:00
+   생성 시각(기준): 2026-11-25T14:50:44+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-25T13:35:45+09:00",
+  "updated": "2026-11-25T14:50:44+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4703,21 +4703,6 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 6,
-              "team": "덴버 너기츠",
-              "abbr": "DEN",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
-              "played": 15,
-              "win": 10,
-              "draw": null,
-              "loss": 5,
-              "points": null,
-              "diff": 27,
-              "pct": ".667",
-              "gb": "3.5",
-              "zone": null
-            },
-            {
-              "rank": 7,
               "team": "포틀랜드 트레일블레이저스",
               "abbr": "POR",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
@@ -4732,18 +4717,33 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
+              "rank": 7,
+              "team": "덴버 너기츠",
+              "abbr": "DEN",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+              "played": 16,
+              "win": 10,
+              "draw": null,
+              "loss": 6,
+              "points": null,
+              "diff": 8,
+              "pct": ".625",
+              "gb": "4",
+              "zone": null
+            },
+            {
               "rank": 8,
               "team": "댈러스 매버릭스",
               "abbr": "DAL",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
-              "played": 17,
-              "win": 10,
+              "played": 18,
+              "win": 11,
               "draw": null,
               "loss": 7,
               "points": null,
-              "diff": -1,
-              "pct": ".588",
-              "gb": "4.5",
+              "diff": 18,
+              "pct": ".611",
+              "gb": "4",
               "zone": null
             },
             {

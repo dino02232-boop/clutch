@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-25T13:39:36+09:00",
+  updatedAt: "2026-11-25T14:50:44+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -19501,7 +19501,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 5패·6위·승점 5, 대한항공(원정) 3승 3패·4위·승점 9."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 13:39 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 14:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -19859,7 +19859,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 3패·4위·승점 8, GS칼텍스(원정) 5승 1패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 13:39 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 14:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
@@ -25597,7 +25597,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 한국전력(홈) 5승 1패·1위·승점 14, 현대캐피탈(원정) 4승 2패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 13:39 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 14:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -25903,7 +25903,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 화성종합실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행(홈) 4승 2패·3위·승점 12, 도로공사(원정) 5승 1패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 13:39 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 14:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-25 END */,
@@ -31409,14 +31409,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-25 06:22 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-dal-den-20261125",
           "espnId": "401909316",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-25T12:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Ball Arena",
           "odds": {
             "provider": "DraftKings",
@@ -31481,6 +31481,83 @@ window.CLUTCH_DATA = {
               "text": "**덴버 너기츠**(홈) 10승 5패(홈 4승 3패, 최근 5경기 4승 1패, 3연승), **댈러스 매버릭스**(원정) 10승 7패(원정 3승 5패, 최근 5경기 3승 2패, 3연승). 직전 경기(11.23) **댈러스 매버릭스**는 유타 재즈에 116-114로 이겼고, Cooper Flagg 28점·3리바운드·4어시스트, Kyrie Irving 16점·1리바운드·8어시스트를 기록했습니다. 직전 경기(11.23) **덴버 너기츠**는 시카고 불스에 151-145로 이겼고, Jamal Murray 45점·5리바운드·7어시스트, Nikola Jokic 37점·18리바운드·11어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 120,
+            "homeScore": 101,
+            "lines": {
+              "away": [
+                "24",
+                "34",
+                "26",
+                "36"
+              ],
+              "home": [
+                "17",
+                "22",
+                "38",
+                "24"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Cooper Flagg",
+                "team": "DAL",
+                "min": "31",
+                "pts": 24,
+                "reb": "6",
+                "ast": "12",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png"
+              },
+              {
+                "name": "Jamal Murray",
+                "team": "DEN",
+                "min": "36",
+                "pts": 20,
+                "reb": "2",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png"
+              },
+              {
+                "name": "Nikola Jokic",
+                "team": "DEN",
+                "min": "33",
+                "pts": 18,
+                "reb": "11",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png"
+              },
+              {
+                "name": "Cameron Johnson",
+                "team": "DEN",
+                "min": "34",
+                "pts": 17,
+                "reb": "5",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3138196.png"
+              },
+              {
+                "name": "Christian Braun",
+                "team": "DEN",
+                "min": "29",
+                "pts": 15,
+                "reb": "2",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png"
+              },
+              {
+                "name": "P.J. Washington",
+                "team": "DAL",
+                "min": "25",
+                "pts": 14,
+                "reb": "6",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278078.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
