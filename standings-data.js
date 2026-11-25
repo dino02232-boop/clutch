@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-25T07:47:25+09:00
+   생성 시각(기준): 2026-11-25T12:28:26+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-25T07:47:25+09:00",
+  "updated": "2026-11-25T12:28:26+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4461,14 +4461,14 @@ window.CLUTCH_STANDINGS = {
               "team": "디트로이트 피스턴스",
               "abbr": "DET",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
-              "played": 16,
-              "win": 10,
+              "played": 17,
+              "win": 11,
               "draw": null,
               "loss": 6,
               "points": null,
-              "diff": 77,
-              "pct": ".625",
-              "gb": "3",
+              "diff": 95,
+              "pct": ".647",
+              "gb": "2.5",
               "zone": null
             },
             {
@@ -4506,14 +4506,14 @@ window.CLUTCH_STANDINGS = {
               "team": "올랜도 매직",
               "abbr": "ORL",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
-              "played": 16,
+              "played": 17,
               "win": 7,
               "draw": null,
-              "loss": 9,
+              "loss": 10,
               "points": null,
-              "diff": -66,
-              "pct": ".438",
-              "gb": "6",
+              "diff": -84,
+              "pct": ".412",
+              "gb": "6.5",
               "zone": null
             },
             {

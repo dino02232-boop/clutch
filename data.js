@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-25T11:13:54+09:00",
+  updatedAt: "2026-11-25T12:28:26+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -19501,7 +19501,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 5패·6위·승점 5, 대한항공(원정) 3승 3패·4위·승점 9."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 11:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 12:28 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -19859,7 +19859,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 3패·4위·승점 8, GS칼텍스(원정) 5승 1패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 11:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 12:28 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
@@ -25597,7 +25597,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 한국전력(홈) 5승 1패·1위·승점 14, 현대캐피탈(원정) 4승 2패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 11:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 12:28 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -25903,7 +25903,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 화성종합실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행(홈) 4승 2패·3위·승점 12, 도로공사(원정) 5승 1패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 11:13 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 12:28 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-25 END */,
@@ -30634,14 +30634,14 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-25 END */,
 
         /* NBA-AUTO 2026-11-25 START */
-        {
+                {
           "id": "nba-det-orl-20261125",
           "espnId": "401909314",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-25T09:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Kia Center",
           "odds": {
             "provider": "DraftKings",
@@ -30706,6 +30706,83 @@ window.CLUTCH_DATA = {
               "text": "**올랜도 매직**(홈) 7승 9패(홈 1승 5패, 최근 5경기 3승 2패), **디트로이트 피스턴스**(원정) 10승 6패(원정 7승 3패, 최근 5경기 2승 3패, 2연패). 직전 경기(11.22) **디트로이트 피스턴스**는 애틀랜타 호크스에 97-107로 졌고, Isaiah Joe 19점·2리바운드·3어시스트, John Collins 18점·6리바운드·0어시스트를 기록했습니다. 직전 경기(11.23) **올랜도 매직**은 워싱턴 위저즈에 96-116로 졌고, Tristan da Silva 18점·3리바운드·0어시스트, Desmond Bane 17점·1리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 104,
+            "homeScore": 86,
+            "lines": {
+              "away": [
+                "16",
+                "32",
+                "25",
+                "31"
+              ],
+              "home": [
+                "22",
+                "14",
+                "25",
+                "25"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Isaiah Joe",
+                "team": "DET",
+                "min": "30",
+                "pts": 21,
+                "reb": "4",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395702.png"
+              },
+              {
+                "name": "Desmond Bane",
+                "team": "ORL",
+                "min": "34",
+                "pts": 21,
+                "reb": "1",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066320.png"
+              },
+              {
+                "name": "Franz Wagner",
+                "team": "ORL",
+                "min": "38",
+                "pts": 20,
+                "reb": "9",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4566434.png"
+              },
+              {
+                "name": "Tristan da Silva",
+                "team": "ORL",
+                "min": "33",
+                "pts": 16,
+                "reb": "3",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4702382.png"
+              },
+              {
+                "name": "Daniss Jenkins",
+                "team": "DET",
+                "min": "35",
+                "pts": 15,
+                "reb": "4",
+                "ast": "10",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5107199.png"
+              },
+              {
+                "name": "Kevin Huerter",
+                "team": "DET",
+                "min": "32",
+                "pts": 13,
+                "reb": "6",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066372.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
