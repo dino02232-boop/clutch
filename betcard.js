@@ -167,7 +167,7 @@
     var picksHTML = picks.map(function (x, i) {
       var dec = Number(x.decimal) || 0;
       return '<li class="bh-pick">' +
-        '<span class="bp-top"><b class="bp-match">' + esc(x.home) + ' vs ' + esc(x.away) + '</b>' +
+        '<span class="bp-top"><b class="bp-match">' + esc(teamName(x, gm[x.gameId], 'home')) + ' vs ' + esc(teamName(x, gm[x.gameId], 'away')) + '</b>' +
           pickBadgeHTML(outs[i]) + '</span>' +
         '<span class="bp-meta">' + esc(pickLabel(x, gm[x.gameId])) +
         (dec > 0 ? ' · ' + dec.toFixed(2) + '배' : '') + '</span></li>';
