@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-26T04:46:38+09:00
+   생성 시각(기준): 2026-11-26T07:44:51+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-26T04:46:38+09:00",
+  "updated": "2026-11-26T07:44:51+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -3263,11 +3263,11 @@ window.CLUTCH_STANDINGS = {
               "team": "Paris Saint-Germain",
               "abbr": "PSG",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
-              "played": 4,
+              "played": 5,
               "win": 4,
-              "draw": 0,
+              "draw": 1,
               "loss": 0,
-              "points": 12,
+              "points": 13,
               "diff": 15,
               "pct": null,
               "gb": null,
@@ -3317,6 +3317,25 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 5,
+              "team": "리버풀",
+              "abbr": "LIV",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
+              "played": 5,
+              "win": 4,
+              "draw": 0,
+              "loss": 1,
+              "points": 12,
+              "diff": 7,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "16강 진출",
+                "color": "#81D6AC",
+                "src": "Qualifies for round of 16"
+              }
+            },
+            {
+              "rank": 6,
               "team": "레알 베티스",
               "abbr": "BET",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/244.png",
@@ -3335,7 +3354,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 6,
+              "rank": 7,
               "team": "아스널",
               "abbr": "ARS",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/359.png",
@@ -3354,7 +3373,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 7,
+              "rank": 8,
               "team": "맨체스터 시티",
               "abbr": "MNC",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
@@ -3373,7 +3392,26 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 8,
+              "rank": 9,
+              "team": "Sporting CP",
+              "abbr": "SCP",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2250.png",
+              "played": 5,
+              "win": 3,
+              "draw": 1,
+              "loss": 1,
+              "points": 10,
+              "diff": 4,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 10,
               "team": "도르트문트",
               "abbr": "DOR",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/124.png",
@@ -3386,13 +3424,13 @@ window.CLUTCH_STANDINGS = {
               "pct": null,
               "gb": null,
               "zone": {
-                "label": "16강 진출",
-                "color": "#81D6AC",
-                "src": "Qualifies for round of 16"
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
               }
             },
             {
-              "rank": 9,
+              "rank": 11,
               "team": "애스턴 빌라",
               "abbr": "AVL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
@@ -3411,52 +3449,14 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 10,
-              "team": "리버풀",
-              "abbr": "LIV",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
-              "played": 4,
-              "win": 3,
-              "draw": 0,
-              "loss": 1,
-              "points": 9,
-              "diff": 4,
-              "pct": null,
-              "gb": null,
-              "zone": {
-                "label": "녹아웃 PO 시드",
-                "color": "#B5E7CE",
-                "src": "Knockout phase playoffs - seeded"
-              }
-            },
-            {
-              "rank": 11,
-              "team": "Club Brugge",
-              "abbr": "BRU",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/570.png",
-              "played": 4,
-              "win": 3,
-              "draw": 0,
-              "loss": 1,
-              "points": 9,
-              "diff": 4,
-              "pct": null,
-              "gb": null,
-              "zone": {
-                "label": "녹아웃 PO 시드",
-                "color": "#B5E7CE",
-                "src": "Knockout phase playoffs - seeded"
-              }
-            },
-            {
               "rank": 12,
-              "team": "Sporting CP",
-              "abbr": "SCP",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2250.png",
-              "played": 4,
+              "team": "인터 밀란",
+              "abbr": "INT",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
+              "played": 5,
               "win": 3,
               "draw": 0,
-              "loss": 1,
+              "loss": 2,
               "points": 9,
               "diff": 4,
               "pct": null,
@@ -3469,6 +3469,25 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 13,
+              "team": "Club Brugge",
+              "abbr": "BRU",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/570.png",
+              "played": 5,
+              "win": 3,
+              "draw": 0,
+              "loss": 2,
+              "points": 9,
+              "diff": 1,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 14,
               "team": "갈라타사라이",
               "abbr": "GAL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/432.png",
@@ -3487,35 +3506,16 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 14,
+              "rank": 15,
               "team": "바이에른 뮌헨",
               "abbr": "MUN",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132.png",
-              "played": 4,
+              "played": 5,
               "win": 2,
               "draw": 2,
-              "loss": 0,
-              "points": 8,
-              "diff": 7,
-              "pct": null,
-              "gb": null,
-              "zone": {
-                "label": "녹아웃 PO 시드",
-                "color": "#B5E7CE",
-                "src": "Knockout phase playoffs - seeded"
-              }
-            },
-            {
-              "rank": 15,
-              "team": "슈투트가르트",
-              "abbr": "VFB",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png",
-              "played": 4,
-              "win": 2,
-              "draw": 1,
               "loss": 1,
-              "points": 7,
-              "diff": 3,
+              "points": 8,
+              "diff": 6,
               "pct": null,
               "gb": null,
               "zone": {
@@ -3526,6 +3526,82 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 16,
+              "team": "Fenerbahce",
+              "abbr": "FEN",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/436.png",
+              "played": 5,
+              "win": 2,
+              "draw": 2,
+              "loss": 1,
+              "points": 8,
+              "diff": -4,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 17,
+              "team": "슈투트가르트",
+              "abbr": "VFB",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png",
+              "played": 5,
+              "win": 2,
+              "draw": 1,
+              "loss": 2,
+              "points": 7,
+              "diff": 1,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 18,
+              "team": "아틀레티코 마드리드",
+              "abbr": "ATM",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+              "played": 5,
+              "win": 2,
+              "draw": 1,
+              "loss": 2,
+              "points": 7,
+              "diff": 1,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 19,
+              "team": "맨체스터 유나이티드",
+              "abbr": "MAN",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
+              "played": 5,
+              "win": 2,
+              "draw": 1,
+              "loss": 2,
+              "points": 7,
+              "diff": 0,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 20,
               "team": "보되/글림트",
               "abbr": "BODO",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2980.png",
@@ -3538,32 +3614,13 @@ window.CLUTCH_STANDINGS = {
               "pct": null,
               "gb": null,
               "zone": {
-                "label": "녹아웃 PO 시드",
-                "color": "#B5E7CE",
-                "src": "Knockout phase playoffs - seeded"
-              }
-            },
-            {
-              "rank": 17,
-              "team": "인터 밀란",
-              "abbr": "INT",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
-              "played": 4,
-              "win": 2,
-              "draw": 0,
-              "loss": 2,
-              "points": 6,
-              "diff": 2,
-              "pct": null,
-              "gb": null,
-              "zone": {
                 "label": "녹아웃 PO 비시드",
                 "color": "#B2BFD0",
                 "src": "Knockout phase playoffs - unseeded"
               }
             },
             {
-              "rank": 18,
+              "rank": 21,
               "team": "LASK 린츠",
               "abbr": "LAS",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4411.png",
@@ -3582,26 +3639,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 19,
-              "team": "맨체스터 유나이티드",
-              "abbr": "MAN",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
-              "played": 4,
-              "win": 2,
-              "draw": 0,
-              "loss": 2,
-              "points": 6,
-              "diff": 0,
-              "pct": null,
-              "gb": null,
-              "zone": {
-                "label": "녹아웃 PO 비시드",
-                "color": "#B2BFD0",
-                "src": "Knockout phase playoffs - unseeded"
-              }
-            },
-            {
-              "rank": 20,
+              "rank": 22,
               "team": "FC 포르투",
               "abbr": "FCP",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
@@ -3620,7 +3658,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 21,
+              "rank": 23,
               "team": "RB 라이프치히",
               "abbr": "RBL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11420.png",
@@ -3639,7 +3677,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 22,
+              "rank": 24,
               "team": "비야레알",
               "abbr": "VIL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png",
@@ -3658,54 +3696,16 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 23,
-              "team": "Fenerbahce",
-              "abbr": "FEN",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/436.png",
-              "played": 4,
-              "win": 1,
-              "draw": 2,
-              "loss": 1,
-              "points": 5,
-              "diff": -5,
-              "pct": null,
-              "gb": null,
-              "zone": {
-                "label": "녹아웃 PO 비시드",
-                "color": "#B2BFD0",
-                "src": "Knockout phase playoffs - unseeded"
-              }
-            },
-            {
-              "rank": 24,
+              "rank": 25,
               "team": "AS 로마",
               "abbr": "ROMA",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
-              "played": 4,
+              "played": 5,
               "win": 1,
-              "draw": 1,
+              "draw": 2,
               "loss": 2,
-              "points": 4,
+              "points": 5,
               "diff": 2,
-              "pct": null,
-              "gb": null,
-              "zone": {
-                "label": "녹아웃 PO 비시드",
-                "color": "#B2BFD0",
-                "src": "Knockout phase playoffs - unseeded"
-              }
-            },
-            {
-              "rank": 25,
-              "team": "Shakhtar Donetsk",
-              "abbr": "SHK",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/493.png",
-              "played": 4,
-              "win": 1,
-              "draw": 1,
-              "loss": 2,
-              "points": 4,
-              "diff": 0,
               "pct": null,
               "gb": null,
               "zone": {
@@ -3716,13 +3716,13 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 26,
-              "team": "Viking FK",
-              "abbr": "VFK",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/510.png",
-              "played": 4,
+              "team": "Shakhtar Donetsk",
+              "abbr": "SHK",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/493.png",
+              "played": 5,
               "win": 1,
               "draw": 1,
-              "loss": 2,
+              "loss": 3,
               "points": 4,
               "diff": -1,
               "pct": null,
@@ -3735,15 +3735,15 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 27,
-              "team": "아틀레티코 마드리드",
-              "abbr": "ATM",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
-              "played": 4,
+              "team": "Viking FK",
+              "abbr": "VFK",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/510.png",
+              "played": 5,
               "win": 1,
               "draw": 1,
-              "loss": 2,
+              "loss": 3,
               "points": 4,
-              "diff": -1,
+              "diff": -3,
               "pct": null,
               "gb": null,
               "zone": {
@@ -3773,6 +3773,25 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 29,
+              "team": "Lille",
+              "abbr": "LILL",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/166.png",
+              "played": 5,
+              "win": 1,
+              "draw": 1,
+              "loss": 3,
+              "points": 4,
+              "diff": -5,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 30,
               "team": "PSV 에인트호번",
               "abbr": "PSV",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/148.png",
@@ -3791,7 +3810,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 30,
+              "rank": 31,
               "team": "AEK 아테네",
               "abbr": "AEK",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/887.png",
@@ -3810,7 +3829,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 31,
+              "rank": 32,
               "team": "페예노르트",
               "abbr": "FEY",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/142.png",
@@ -3829,7 +3848,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 32,
+              "rank": 33,
               "team": "Sabah FK",
               "abbr": "SAB",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/21922.png",
@@ -3848,7 +3867,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 33,
+              "rank": 34,
               "team": "랑스",
               "abbr": "RCL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/175.png",
@@ -3867,7 +3886,7 @@ window.CLUTCH_STANDINGS = {
               }
             },
             {
-              "rank": 34,
+              "rank": 35,
               "team": "Slavia Prague",
               "abbr": "SLP",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/494.png",
@@ -3877,25 +3896,6 @@ window.CLUTCH_STANDINGS = {
               "loss": 4,
               "points": 1,
               "diff": -5,
-              "pct": null,
-              "gb": null,
-              "zone": {
-                "label": "탈락",
-                "color": "#FF7F84",
-                "src": "Eliminated"
-              }
-            },
-            {
-              "rank": 35,
-              "team": "Lille",
-              "abbr": "LILL",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/166.png",
-              "played": 4,
-              "win": 0,
-              "draw": 1,
-              "loss": 3,
-              "points": 1,
-              "diff": -6,
               "pct": null,
               "gb": null,
               "zone": {
