@@ -125,12 +125,20 @@
       lastRemote = Date.now();
     });
   }
-  function saveReads() {
+  function saveReads(opts) {
     writeLs(ids);                       // 기기 기록은 로그인 여부와 상관없이 항상 남긴다
     if (!me || !db) return;
     if (!stateDoc) stateDoc = db.collection('users').doc(me.uid).collection('state').doc('board');
     var ts = firebase.firestore.FieldValue.serverTimestamp();
-    stateDoc.set({ ids: ids.slice(-CAP), updatedAt: ts }, { merge: true })
+    // 방금 읽은 한 개는 arrayUnion 으로 더한다(다른 기기에서 읽은 기록을 지우지 않게).
+    // 여러 기기 기록을 합칠 때(loadRemote·checkStale)는 합친 전체 목록을 쓴다.
+    var payload = { updatedAt: ts };
+    if (opts && opts.add && opts.add.length) {
+      payload.ids = firebase.firestore.FieldValue.arrayUnion.apply(null, opts.add.slice(-CAP));
+    } else {
+      payload.ids = ids.slice(-CAP);
+    }
+    stateDoc.set(payload, { merge: true })
       .catch(function () { /* 규칙·네트워크 문제는 화면 숫자만 우선 반영 */ });
   }
 
@@ -138,7 +146,7 @@
     if (!id || typeof id !== 'string' || set[id]) return;
     set[id] = true; ids.push(id);
     rebuild();
-    saveReads();
+    saveReads({ add: [id] });
     emit();
   }
 
