@@ -69,9 +69,12 @@
     var market = String(x.market || ''), side = String(x.pick || ''), line = pickNum(x.line);
     var kind = '';
     if (market === 'moneyline' || market === 'h2h' || market === '1x2') {
-      if (away === home) {
+      if (side === 'draw') {
+        kind = away === home ? 'won' : 'lost';
+      } else if (away === home) {
+        // 경기 뒤 data.js 배당이 내려가도, 무승부가 있는 종목(축구)이면 홈·원정은 미적중이다.
         var drawOdds = (g.odds && g.odds.moneyline) ? g.odds.moneyline.draw : null;
-        kind = side === 'draw' ? 'won' : (drawOdds != null ? 'lost' : 'push');
+        kind = (drawOdds != null || String(g.sport || '') === 'soccer') ? 'lost' : 'push';
       } else {
         kind = ((side === 'away') === (away > home)) ? 'won' : 'lost';
       }

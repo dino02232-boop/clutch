@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Settle virtual CLUTCH parlays from final results in data.js using Admin SDK."""
 import json
+import math
 import os
 import re
 import sys
@@ -154,46 +155,142 @@ def decimal(american):
     return 1 + (a / 100 if a > 0 else 100 / abs(a))
 
 
+# 픽에 적힌 마켓과 그 마켓에서 고를 수 있는 선택지. 여기 없는 값은 위조로 보고 정산하지 않는다.
+PICK_SIDES = {"moneyline": ("away", "home", "draw"), "spread": ("away", "home"), "total": ("over", "under")}
+MIN_DECIMAL, MAX_DECIMAL = 1.01, 100.0     # 소수 배당으로 바꿨을 때 받아 줄 범위
+DRAWABLE_SPORTS = ("soccer",)               # 무승부가 있는 종목(승무패가 3지선다)
+
+
+def _number(value):
+    """숫자 하나를 float 로. bool·문자열 숫자가 아닌 값은 ValueError."""
+    if isinstance(value, bool) or value is None:
+        raise ValueError("number expected")
+    try:
+        n = float(value)
+    except (TypeError, ValueError):
+        raise ValueError("number expected")
+    if not math.isfinite(n):
+        raise ValueError("number expected")
+    return n
+
+
+def american_decimal(american):
+    """미국식 배당을 검증하고 소수 배당으로 돌려준다.
+
+    0 은 배당이 아니고, |100| 보다 작은 값은 미국식 표기가 아니다(예: +99, -50).
+    소수로 바꾼 값이 1.01~100.0 을 벗어나면 위조로 본다.
+    """
+    a = _number(american)
+    if a == 0 or abs(a) < 100:
+        raise ValueError("invalid american odds")
+    d = decimal(a)
+    if not (MIN_DECIMAL <= d <= MAX_DECIMAL):
+        raise ValueError("odds out of range")
+    return d
+
+
+def parse_line(value):
+    """핸디캡·언오버 기준점('-1.5', '+1.5', '2.5', 2.5)을 float 로."""
+    text = str(value if value is not None else "").strip().replace("\u2212", "-")
+    if not text:
+        raise ValueError("missing line")
+    try:
+        line = float(text.lstrip("+"))
+    except (TypeError, ValueError):
+        raise ValueError("invalid line")
+    if not math.isfinite(line) or abs(line) > 1000:
+        raise ValueError("invalid line")
+    return line
+
+
+def draw_available(game):
+    """그 경기의 승무패에 무승부가 있는지(data.js 배당이 내려가도 종목으로 판단)."""
+    odds = game.get("odds")
+    ml = odds.get("moneyline") if isinstance(odds, dict) else None
+    if isinstance(ml, dict) and ml.get("draw") is not None:
+        return True
+    return str(game.get("sport") or "").lower() in DRAWABLE_SPORTS
+
+
 def settle_pick(pick, game, bet_created):
-    """Return (win/loss/push) after validating the submitted selection against data.js."""
-    odds = game.get("odds") or {}
-    market, side, line = pick.get("market"), pick.get("pick"), str(pick.get("line") or "")
-    if game.get("result", {}).get("state") != "final":
+    """한 픽의 결과(win/loss/push)를 돌려준다. 경기가 아직 끝나지 않았으면 None.
+
+    정산은 **베팅할 때 저장한 선택(마켓·선택지·기준점·배당)** 으로 한다. 경기가 끝나면
+    ESPN 이 data.js 의 odds 를 내리고(None), 경기 전에도 배당·기준점이 움직이므로
+    지금 data.js 의 배당과 같은지로 정산 여부를 가르면 베팅이 영원히 'open' 에 남는다.
+    대신 마켓·선택지·기준점·미국식 배당·소수 배당의 형식을 검증해, 위조·손상된 문서만 건너뛴다.
+    """
+    if not isinstance(pick, dict) or not isinstance(game, dict):
+        raise ValueError("invalid pick")
+    result = game.get("result") or {}
+    if result.get("state") != "final":
         return None
-    start = datetime.fromisoformat(game["start"])
-    if bet_created and bet_created >= start:
+
+    start = datetime.fromisoformat(str(game["start"]))
+    if bet_created is None:
+        raise ValueError("bet has no createdAt")
+    if bet_created >= start:
         raise ValueError("bet was created after fixture start")
-    result = game["result"]
-    away, home = float(result["awayScore"]), float(result["homeScore"])
+
+    market, side = pick.get("market"), pick.get("pick")
+    if market not in PICK_SIDES:
+        raise ValueError("invalid market")
+    if side not in PICK_SIDES[market]:
+        raise ValueError("invalid selection")
+
+    # 저장된 미국식 배당과 소수 배당이 서로 맞는지(클라이언트는 소수 4자리로 적는다).
+    expected = american_decimal(pick.get("odds"))
+    claimed = _number(pick.get("decimal"))
+    if abs(claimed - expected) > max(0.02, expected * 0.01):
+        raise ValueError("selection decimal does not match odds")
+
+    away, home = _number(result["awayScore"]), _number(result["homeScore"])
     if market == "moneyline":
-        source = odds.get("moneyline") or {}
-        if side not in ("away", "home", "draw") or source.get(side) is None:
-            raise ValueError("invalid moneyline selection")
-        american = source[side]
         if away == home:
-            outcome = "win" if side == "draw" else ("loss" if source.get("draw") is not None else "push")
+            if side == "draw":
+                outcome = "win"
+            else:
+                outcome = "loss" if draw_available(game) else "push"
+        elif side == "draw":
+            outcome = "loss"
         else:
             outcome = "win" if (side == "away") == (away > home) else "loss"
     elif market == "spread":
-        source = odds.get("spread") or {}
-        if side not in ("away", "home") or source.get(side) is None or str(source.get(side + "Line")) != line:
-            raise ValueError("invalid spread selection")
-        american = source[side]
-        handicap = float(line)
-        margin = (home + handicap - away) if side == "home" else (away + handicap - home)
-        outcome = "push" if margin == 0 else ("win" if margin > 0 else "loss")
-    elif market == "total":
-        source = odds.get("total") or {}
-        if side not in ("over", "under") or source.get(side) is None or str(source.get("line")) != line:
-            raise ValueError("invalid total selection")
-        american = source[side]
-        total, threshold = away + home, float(line)
-        outcome = "push" if total == threshold else ("win" if (side == "over") == (total > threshold) else "loss")
-    else:
-        raise ValueError("invalid market")
-    if abs(float(pick.get("decimal", 0)) - decimal(american)) > 0.005 or float(pick.get("odds", 0)) != float(american):
-        raise ValueError("selection odds do not match data.js")
+        line = parse_line(pick.get("line"))
+        margin = (home + line - away) if side == "home" else (away + line - home)
+        outcome = "push" if abs(margin) < 1e-9 else ("win" if margin > 0 else "loss")
+    else:  # total
+        line = parse_line(pick.get("line"))
+        total = away + home
+        outcome = "push" if abs(total - line) < 1e-9 else ("win" if (side == "over") == (total > line) else "loss")
     return outcome
+
+
+def settle_bet(picks, games, created, stake):
+    """슬립 하나를 정산한다. (status, payout) 또는 아직 기다려야 하면 None.
+
+    다폴에서 한 leg 라도 미적중이 확정되면 다른 경기가 아직 안 끝났어도 바로 lost 다
+    (그 슬립은 더 볼 것 없이 획득 0). 반대로 아직 끝나지 않은 경기가 있고 미적중이
+    없으면 결과를 기다린다.
+    """
+    if not isinstance(picks, list) or not picks:
+        return None
+    if not all(isinstance(p, dict) for p in picks):
+        return None            # 손상된 픽 목록은 정산하지 않는다
+    leg_keys = {(p.get("gameId"), p.get("market"), p.get("pick"), str(p.get("line") or "")) for p in picks}
+    if len(leg_keys) != len(picks):
+        return None            # 완전히 같은 leg 를 두 번 담은 문서는 정산하지 않는다
+    outcomes = [settle_pick(p, games[p["gameId"]], created) for p in picks]
+    if "loss" in outcomes:
+        return "lost", 0
+    if any(o is None for o in outcomes):
+        return None
+    mult = 1.0
+    for pick, outcome in zip(picks, outcomes):
+        mult *= 1.0 if outcome == "push" else decimal(pick["odds"])
+    payout = int(stake * mult)
+    status = "push" if all(o == "push" for o in outcomes) else "won"
+    return status, payout
 
 
 def kst_week_start(now):
@@ -220,29 +317,24 @@ def main():
         bet = doc.to_dict()
         picks = bet.get("picks") or []
         # 같은 경기의 다른 마켓(승무패·핸디·언오버)은 한 슬립에 함께 담을 수 있다.
-        # 막을 것은 gameId+market+pick 이 완전히 같은 중복 leg 뿐이다.
-        leg_keys = {(p.get("gameId"), p.get("market"), p.get("pick"), str(p.get("line") or "")) for p in picks}
-        if not picks or len(leg_keys) != len(picks):
+        # 막을 것은 gameId+market+pick 이 완전히 같은 중복 leg 뿐이다(settle_bet 안에서 확인).
+        stake, uid = bet.get("stake"), bet.get("uid")
+        if not isinstance(uid, str) or not uid:
+            continue
+        if not isinstance(stake, int) or isinstance(stake, bool) or stake < 0:
             continue
         try:
-            created = bet.get("createdAt")
-            outcomes = [settle_pick(p, games[p["gameId"]], created) for p in picks]
+            settled = settle_bet(picks, games, bet.get("createdAt"), stake)
         except (KeyError, TypeError, ValueError):
             # Do not pay malformed or forged client documents.
             continue
-        if any(o is None for o in outcomes):
+        if settled is None:
             continue
-        lost = "loss" in outcomes
-        mult = 1.0
-        if not lost:
-            for pick, outcome in zip(picks, outcomes):
-                mult *= 1.0 if outcome == "push" else decimal(pick["odds"])
-        payout = 0 if lost else int(bet["stake"] * mult)
-        status = "lost" if lost else ("push" if all(o == "push" for o in outcomes) else "won")
-        user_ref = db.collection("users").document(bet["uid"])
+        status, payout = settled
+        user_ref = db.collection("users").document(uid)
 
         @firestore.transactional
-        def finalize(transaction):
+        def finalize(transaction, doc=doc, user_ref=user_ref, status=status, payout=payout):
             current = doc.reference.get(transaction=transaction)
             if not current.exists or current.get("status") != "open":
                 return False
