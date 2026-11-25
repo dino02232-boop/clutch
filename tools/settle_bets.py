@@ -312,7 +312,9 @@ def main():
     db = firestore.client()
     games = load_games()
     now = datetime.now(timezone.utc)
-    changed = 0
+    changed = 0      # 이번에 정산한 슬립 수
+    waiting = 0      # 아직 안 끝난 경기가 있어 결과를 기다리는 슬립 수
+    unverified = 0   # 형식이 맞지 않아 정산하지 않은(위조·손상 의심) 슬립 수
     for doc in db.collection_group("items").where("status", "==", "open").stream():
         bet = doc.to_dict()
         picks = bet.get("picks") or []
@@ -327,8 +329,10 @@ def main():
             settled = settle_bet(picks, games, bet.get("createdAt"), stake)
         except (KeyError, TypeError, ValueError):
             # Do not pay malformed or forged client documents.
+            unverified += 1
             continue
         if settled is None:
+            waiting += 1
             continue
         status, payout = settled
         user_ref = db.collection("users").document(uid)
@@ -371,7 +375,8 @@ def main():
             "winRate": round(100 * stats["won"] / stats["settled"], 2) if stats["settled"] else 0,
             "maxOdds": round(stats["max"], 4),
         }, merge=True)
-    print(f"settled={changed} ranked={len(totals)}")
+    # 값은 개수뿐이다(uid·픽·금액은 로그에 남기지 않는다). open 이 남았는지 이 줄로 확인한다.
+    print(f"settled={changed} ranked={len(totals)} waiting={waiting} unverified={unverified}")
 
 
 if __name__ == "__main__":
