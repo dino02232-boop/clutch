@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-25T12:28:26+09:00",
+  updatedAt: "2026-11-25T13:35:46+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -19501,7 +19501,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 5패·6위·승점 5, 대한항공(원정) 3승 3패·4위·승점 9."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 12:28 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 13:35 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -19859,7 +19859,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 3패·4위·승점 8, GS칼텍스(원정) 5승 1패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 12:28 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 13:35 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-24 END */,
@@ -25597,7 +25597,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 한국전력(홈) 5승 1패·1위·승점 14, 현대캐피탈(원정) 4승 2패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 12:28 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 13:35 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -25903,7 +25903,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 화성종합실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행(홈) 4승 2패·3위·승점 12, 도로공사(원정) 5승 1패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 12:28 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-25 13:35 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-25 END */,
@@ -31030,14 +31030,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-25 06:22 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-bos-was-20261125",
           "espnId": "401909315",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-25T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Capital One Arena",
           "odds": {
             "provider": "DraftKings",
@@ -31102,6 +31102,83 @@ window.CLUTCH_DATA = {
               "text": "**워싱턴 위저즈**(홈) 7승 11패(홈 3승 5패, 최근 5경기 3승 2패, 3연승), **보스턴 셀틱스**(원정) 11승 6패(원정 5승 5패, 최근 5경기 1승 4패, 4연패). 직전 경기(11.23) **보스턴 셀틱스**는 골든스테이트 워리어스에 87-88로 졌고, Jayson Tatum 27점·10리바운드·6어시스트, Derrick White 14점·3리바운드·5어시스트를 기록했습니다. 직전 경기(11.23) **워싱턴 위저즈**는 워싱턴 위저즈에 96-116로 졌고, Tristan da Silva 18점·3리바운드·0어시스트, Desmond Bane 17점·1리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 131,
+            "homeScore": 116,
+            "lines": {
+              "away": [
+                "34",
+                "46",
+                "24",
+                "27"
+              ],
+              "home": [
+                "28",
+                "21",
+                "40",
+                "27"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Jayson Tatum",
+                "team": "BOS",
+                "min": "37",
+                "pts": 41,
+                "reb": "6",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png"
+              },
+              {
+                "name": "Anthony Davis",
+                "team": "WSH",
+                "min": "37",
+                "pts": 33,
+                "reb": "13",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png"
+              },
+              {
+                "name": "Paul George",
+                "team": "BOS",
+                "min": "33",
+                "pts": 28,
+                "reb": "4",
+                "ast": "9",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4251.png"
+              },
+              {
+                "name": "Kyshawn George",
+                "team": "WSH",
+                "min": "38",
+                "pts": 24,
+                "reb": "9",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5174563.png"
+              },
+              {
+                "name": "Neemias Queta",
+                "team": "BOS",
+                "min": "25",
+                "pts": 21,
+                "reb": "5",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397424.png"
+              },
+              {
+                "name": "AJ Dybantsa",
+                "team": "WSH",
+                "min": "41",
+                "pts": 20,
+                "reb": "11",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142718.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
