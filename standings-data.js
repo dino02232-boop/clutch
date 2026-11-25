@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-25T23:21:34+09:00
+   생성 시각(기준): 2026-11-26T00:30:48+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-25T23:21:34+09:00",
+  "updated": "2026-11-26T00:30:48+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -5151,9 +5151,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
               "team": "덴버 너기츠",
               "teamAbbr": "DEN",
-              "value": 10.933333,
+              "value": 10.9375,
               "display": "10.9리바운드",
-              "played": 15
+              "played": 16
             },
             {
               "rank": 7,
@@ -5206,9 +5206,9 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6583.png",
               "team": "워싱턴 위저즈",
               "teamAbbr": "WSH",
-              "value": 9.9375,
-              "display": "9.9리바운드",
-              "played": 16
+              "value": 10.117647,
+              "display": "10.1리바운드",
+              "played": 17
             },
             {
               "rank": 12,
@@ -5267,6 +5267,17 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 17,
+              "name": "Wendell Carter Jr.",
+              "id": "4277847",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277847.png",
+              "team": "올랜도 매직",
+              "teamAbbr": "ORL",
+              "value": 8.823529,
+              "display": "8.8리바운드",
+              "played": 17
+            },
+            {
+              "rank": 18,
               "name": "Ausar Thompson",
               "id": "4684742",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4684742.png",
@@ -5275,17 +5286,6 @@ window.CLUTCH_STANDINGS = {
               "value": 8.6,
               "display": "8.6리바운드",
               "played": 15
-            },
-            {
-              "rank": 18,
-              "name": "Wendell Carter Jr.",
-              "id": "4277847",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277847.png",
-              "team": "올랜도 매직",
-              "teamAbbr": "ORL",
-              "value": 8.5625,
-              "display": "8.6리바운드",
-              "played": 16
             },
             {
               "rank": 19,
@@ -5330,25 +5330,25 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 2,
-              "name": "Nikola Jokic",
-              "id": "3112335",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
-              "team": "덴버 너기츠",
-              "teamAbbr": "DEN",
-              "value": 9.2,
-              "display": "9.2어시스트",
-              "played": 15
-            },
-            {
-              "rank": 3,
               "name": "Trae Young",
               "id": "4277905",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277905.png",
               "team": "워싱턴 위저즈",
               "teamAbbr": "WSH",
-              "value": 8.777778,
-              "display": "8.8어시스트",
-              "played": 18
+              "value": 8.947369,
+              "display": "8.9어시스트",
+              "played": 19
+            },
+            {
+              "rank": 3,
+              "name": "Nikola Jokic",
+              "id": "3112335",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png",
+              "team": "덴버 너기츠",
+              "teamAbbr": "DEN",
+              "value": 8.9375,
+              "display": "8.9어시스트",
+              "played": 16
             },
             {
               "rank": 4,
@@ -5440,6 +5440,17 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 12,
+              "name": "Jayson Tatum",
+              "id": "4065648",
+              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
+              "team": "보스턴 셀틱스",
+              "teamAbbr": "BOS",
+              "value": 6.8125,
+              "display": "6.8어시스트",
+              "played": 16
+            },
+            {
+              "rank": 13,
               "name": "Keyonte George",
               "id": "4433627",
               "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png",
@@ -5448,17 +5459,6 @@ window.CLUTCH_STANDINGS = {
               "value": 6.7777777,
               "display": "6.8어시스트",
               "played": 18
-            },
-            {
-              "rank": 13,
-              "name": "Jayson Tatum",
-              "id": "4065648",
-              "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
-              "team": "보스턴 셀틱스",
-              "teamAbbr": "BOS",
-              "value": 6.733333,
-              "display": "6.7어시스트",
-              "played": 15
             },
             {
               "rank": 14,
