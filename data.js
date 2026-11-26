@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-26T09:49:19+09:00",
+  updatedAt: "2026-11-26T10:16:08+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -611,7 +611,58 @@ window.CLUTCH_DATA = {
             "fotmobId": 5868137,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Yassir Zabiri",
+              "teamEn": "Racing Santander",
+              "team": "라싱 산탄데르",
+              "side": "home",
+              "rating": 9.1
+            },
+            "carry": {
+              "name": "Yassir Zabiri",
+              "team": "라싱 산탄데르",
+              "side": "home",
+              "tag": "up",
+              "line": "Yassir Zabiri의 멀티골(평점 9.1)에 힘입어 3-2 승리를 거뒀습니다.",
+              "facts": [
+                "평점 9.1",
+                "골 2",
+                "유효슈팅 3",
+                "86분"
+              ],
+              "pos": "FW",
+              "rating": 9.1,
+              "min": 86,
+              "goals": 2,
+              "assists": 0,
+              "shots": 4,
+              "shotsOnTarget": 3,
+              "chancesCreated": 0,
+              "mvp": true
+            },
+            "low": {
+              "name": "Alex Remiro",
+              "team": "레알 소시에다드",
+              "side": "away",
+              "tag": "down",
+              "line": "Alex Remiro의 선방 3개·3실점(평점 5.6)으로 골문이 흔들렸습니다.",
+              "facts": [
+                "평점 5.6",
+                "선방 3",
+                "실점 3",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 5.6,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 3,
+              "conceded": 3
+            }
+          }
         },
                 {
           "id": "soccer-hsv-svw-20261123",
@@ -1157,7 +1208,59 @@ window.CLUTCH_DATA = {
             "fotmobId": 5881232,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Justin Njinmah",
+              "teamEn": "Werder Bremen",
+              "team": "베르더 브레멘",
+              "side": "home",
+              "rating": 9.2
+            },
+            "carry": {
+              "name": "Justin Njinmah",
+              "team": "베르더 브레멘",
+              "side": "home",
+              "tag": "up",
+              "line": "Justin Njinmah의 멀티골(평점 9.2)에 힘입어 4-0 승리를 거뒀습니다.",
+              "facts": [
+                "평점 9.2",
+                "골 2",
+                "유효슈팅 3",
+                "기회창출 1",
+                "88분"
+              ],
+              "pos": "FW",
+              "rating": 9.2,
+              "min": 88,
+              "goals": 2,
+              "assists": 0,
+              "shots": 5,
+              "shotsOnTarget": 3,
+              "chancesCreated": 1,
+              "mvp": true
+            },
+            "low": {
+              "name": "Daniel Heuer Fernandes",
+              "team": "함부르크",
+              "side": "away",
+              "tag": "down",
+              "line": "Daniel Heuer Fernandes의 선방 3개·4실점(평점 4.8)으로 골문이 흔들렸습니다.",
+              "facts": [
+                "평점 4.8",
+                "선방 3",
+                "실점 4",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 4.8,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 3,
+              "conceded": 4
+            }
+          }
         },
                 {
           "id": "soccer-man-liv-20261123",
@@ -1681,7 +1784,68 @@ window.CLUTCH_DATA = {
             "fotmobId": 5795521,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "리버풀 4-0 맨체스터 유나이티드: 포체티노는 안필드에서 비참한 출발을 견뎌냈습니다.",
+              "description": "맨체스터 유나이티드는 리버풀에게 4-0 굴욕을 당하며 프리미어리그 강등권에 머물렀다.",
+              "titleEn": "Liverpool 4-0 Manchester United: Pochettino endures miserable start in Anfield humbling",
+              "descriptionEn": "Manchester United remain entrenched in the Premier League relegation zone after they slumped to a 4-0 humiliation at the hands of Liverpool.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/fjvqitou3ub41x2uem7h3428u-liverpool-4-0-manchester-united-pochettino-endures-miserable-start-anfield-humbling",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-22T18:46:30Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Florian Wirtz",
+              "teamEn": "Liverpool",
+              "team": "리버풀",
+              "side": "home",
+              "rating": 9.4
+            },
+            "carry": {
+              "name": "Florian Wirtz",
+              "team": "리버풀",
+              "side": "home",
+              "tag": "up",
+              "line": "Florian Wirtz의 골과 도움 하나씩(평점 9.4)으로 승리에 힘을 보탰습니다.",
+              "facts": [
+                "평점 9.4",
+                "골 1",
+                "도움 1",
+                "유효슈팅 1",
+                "기회창출 10",
+                "90분"
+              ],
+              "pos": "MF",
+              "rating": 9.4,
+              "min": 90,
+              "goals": 1,
+              "assists": 1,
+              "shots": 2,
+              "shotsOnTarget": 1,
+              "chancesCreated": 10,
+              "mvp": true
+            },
+            "low": {
+              "name": "Lisandro Martínez",
+              "team": "맨체스터 유나이티드",
+              "side": "away",
+              "tag": "down",
+              "line": "Lisandro Martínez의 평점 4.6이 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 4.6",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 4.6,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "chancesCreated": 0
+            }
+          }
         },
                 {
           "id": "soccer-fro-mil-20261123",
@@ -2226,7 +2390,70 @@ window.CLUTCH_DATA = {
             "fotmobId": 5749750,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "AC 밀란 5-1 프로시노네: 아모림의 5성 팀이 세리에 A에서 4위를 차지했습니다.",
+              "description": "AC 밀란은 세리에 A에서 프로시노네를 상대로 큰 승리를 거두며 연승 행진을 이어가며 상위권에 가까워졌습니다.",
+              "titleEn": "AC Milan 5-1 Frosinone: Amorim's five-star side go fourth in Serie A",
+              "descriptionEn": "AC Milan soared to a big victory over Frosinone in Serie A, extending their winning run and moving closer to the top of the table.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/mgeq2okqv1k81bvb3ekdxd3vq-ac-milan-5-1-frosinone-amorims-five-star-side-go-fourth-serie",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-22T19:27:14Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Adrien Rabiot",
+              "teamEn": "Milan",
+              "team": "AC 밀란",
+              "side": "home",
+              "rating": 8.5
+            },
+            "carry": {
+              "name": "Adrien Rabiot",
+              "team": "AC 밀란",
+              "side": "home",
+              "tag": "up",
+              "line": "Adrien Rabiot의 도움 2개(평점 8.5)에 힘입어 5-1 승리를 거뒀습니다.",
+              "facts": [
+                "평점 8.5",
+                "도움 2",
+                "유효슈팅 1",
+                "기회창출 3",
+                "90분"
+              ],
+              "pos": "MF",
+              "rating": 8.5,
+              "min": 90,
+              "goals": 0,
+              "assists": 2,
+              "shots": 1,
+              "shotsOnTarget": 1,
+              "chancesCreated": 3,
+              "mvp": true
+            },
+            "low": {
+              "name": "Lorenzo Palmisani",
+              "team": "프로시노네",
+              "side": "away",
+              "tag": "down",
+              "line": "Lorenzo Palmisani의 선방 4개·5실점(평점 6.0)으로 골문이 흔들렸습니다.",
+              "facts": [
+                "평점 6.0",
+                "선방 4",
+                "실점 5",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 6.0,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 4,
+              "conceded": 5
+            }
+          }
         },
                 {
           "id": "soccer-mcf-osa-20261123",
@@ -2757,7 +2984,59 @@ window.CLUTCH_DATA = {
             "fotmobId": 5868136,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Valentin Rosier",
+              "teamEn": "Osasuna",
+              "team": "오사수나",
+              "side": "home",
+              "rating": 8.6
+            },
+            "carry": {
+              "name": "Valentin Rosier",
+              "team": "오사수나",
+              "side": "home",
+              "tag": "up",
+              "line": "Valentin Rosier의 평점 8.6이 팀에서 가장 앞섰습니다. 1-0 승리였습니다.",
+              "facts": [
+                "평점 8.6",
+                "도움 1",
+                "슈팅 1",
+                "기회창출 3",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 8.6,
+              "min": 90,
+              "goals": 0,
+              "assists": 1,
+              "shots": 1,
+              "shotsOnTarget": 0,
+              "chancesCreated": 3,
+              "mvp": true
+            },
+            "low": {
+              "name": "Alfonso Herrero",
+              "team": "말라가",
+              "side": "away",
+              "tag": "down",
+              "line": "Alfonso Herrero의 선방 1개·1실점(평점 6.1) — 팀에서 가장 낮은 평점이었습니다.",
+              "facts": [
+                "평점 6.1",
+                "선방 1",
+                "실점 1",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 6.1,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 1,
+              "conceded": 1
+            }
+          }
         },
                 {
           "id": "soccer-int-ata-20261123",
@@ -3311,7 +3590,49 @@ window.CLUTCH_DATA = {
             "fotmobId": 5749751,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "아탈란타 4-4 인터: 마지막 헐떡임 케시 페널티킥으로 세리에 A 스릴러 ​​확정",
+              "description": "인테르는 아탈란타를 상대로 계속 리드를 이어갔지만 결국 승점 3점을 모두 지키지 못했다.",
+              "titleEn": "Atalanta 4-4 Inter: Last-gasp Kessie penalty settles Serie A thriller",
+              "descriptionEn": "Inter kept extending their lead against Atalanta, but in the end, they could not hold out for all three points.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/4gpf8t09v8v61b3wx5jaw0ev3-atalanta-4-4-inter-last-gasp-kessie-penalty-settles-serie-thriller",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-22T22:06:48Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Francesco Pio Esposito",
+              "teamEn": "Inter",
+              "team": "인터 밀란",
+              "side": "away",
+              "rating": 9.6
+            },
+            "carry": {
+              "name": "Francesco Pio Esposito",
+              "team": "인터 밀란",
+              "side": "away",
+              "tag": "top",
+              "line": "Francesco Pio Esposito의 평점 9.6이 양 팀 통틀어 가장 높았습니다. 경기는 4-4 무승부였습니다.",
+              "facts": [
+                "평점 9.6",
+                "골 3",
+                "유효슈팅 4",
+                "기회창출 1",
+                "77분"
+              ],
+              "pos": "FW",
+              "rating": 9.6,
+              "min": 77,
+              "goals": 3,
+              "assists": 0,
+              "shots": 5,
+              "shotsOnTarget": 4,
+              "chancesCreated": 1
+            }
+          }
         },
                 {
           "id": "soccer-atm-get-20261123",
@@ -3876,7 +4197,67 @@ window.CLUTCH_DATA = {
             "fotmobId": 5868134,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "헤타페 0-3 아틀레티코 마드리드: 시메오네가 지배적인 승리로 라리가 역사를 만들다",
+              "description": "아틀레티코 마드리드는 헤타페를 꺾고 레알 마드리드, 바르셀로나와 보조를 맞추었고, 디에고 시메오네도 라리가 기록을 경신했습니다.",
+              "titleEn": "Getafe 0-3 Atletico Madrid: Simeone makes LaLiga history in dominant win",
+              "descriptionEn": "Atletico Madrid kept pace with Real Madrid and Barcelona by sweeping aside Getafe, with Diego Simeone also breaking a LaLiga record.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/22p3wws4mtwp1d8awy62dpum4-getafe-0-3-atletico-madrid-simeone-makes-laliga-history-dominant-win",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-22T22:25:52Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Julián Álvarez",
+              "teamEn": "Atlético Madrid",
+              "team": "아틀레티코 마드리드",
+              "side": "away",
+              "rating": 8.9
+            },
+            "carry": {
+              "name": "Julián Álvarez",
+              "team": "아틀레티코 마드리드",
+              "side": "away",
+              "tag": "up",
+              "line": "Julián Álvarez의 도움 2개(평점 8.9)에 힘입어 3-0 승리를 거뒀습니다.",
+              "facts": [
+                "평점 8.9",
+                "도움 2",
+                "유효슈팅 2",
+                "기회창출 4",
+                "75분"
+              ],
+              "pos": "FW",
+              "rating": 8.9,
+              "min": 75,
+              "goals": 0,
+              "assists": 2,
+              "shots": 2,
+              "shotsOnTarget": 2,
+              "chancesCreated": 4,
+              "mvp": true
+            },
+            "low": {
+              "name": "Djené",
+              "team": "헤타페",
+              "side": "home",
+              "tag": "down",
+              "line": "Djené의 평점 5.1이 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 5.1",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 5.1,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "chancesCreated": 0
+            }
+          }
         }
         /* SOCCER-AUTO 2026-11-23 END */,
 
@@ -7725,7 +8106,58 @@ window.CLUTCH_DATA = {
             "fotmobId": 5749756,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Demba Thiam",
+              "teamEn": "Monza",
+              "team": "몬차",
+              "side": "home",
+              "rating": 8.9
+            },
+            "carry": {
+              "name": "Gustavo Varela",
+              "team": "몬차",
+              "side": "home",
+              "tag": "up",
+              "line": "Gustavo Varela의 멀티골(평점 8.9)에 힘입어 3-0 승리를 거뒀습니다.",
+              "facts": [
+                "평점 8.9",
+                "골 2",
+                "유효슈팅 2",
+                "기회창출 1",
+                "90분"
+              ],
+              "pos": "FW",
+              "rating": 8.9,
+              "min": 90,
+              "goals": 2,
+              "assists": 0,
+              "shots": 4,
+              "shotsOnTarget": 2,
+              "chancesCreated": 1
+            },
+            "low": {
+              "name": "David de Gea",
+              "team": "피오렌티나",
+              "side": "away",
+              "tag": "down",
+              "line": "David de Gea의 선방 2개·3실점(평점 5.9)으로 골문이 흔들렸습니다.",
+              "facts": [
+                "평점 5.9",
+                "선방 2",
+                "실점 3",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 5.9,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 2,
+              "conceded": 3
+            }
+          }
         },
                 {
           "id": "soccer-elc-lev-20261124",
@@ -8251,7 +8683,38 @@ window.CLUTCH_DATA = {
             "fotmobId": 5868135,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Dani Requena",
+              "teamEn": "Levante",
+              "team": "레반테",
+              "side": "home",
+              "rating": 8.2
+            },
+            "carry": {
+              "name": "Dani Requena",
+              "team": "레반테",
+              "side": "home",
+              "tag": "top",
+              "line": "Dani Requena의 평점 8.2가 양 팀 통틀어 가장 높았습니다. 경기는 1-1 무승부였습니다.",
+              "facts": [
+                "평점 8.2",
+                "골 1",
+                "유효슈팅 1",
+                "기회창출 2",
+                "90분"
+              ],
+              "pos": "MF",
+              "rating": 8.2,
+              "min": 90,
+              "goals": 1,
+              "assists": 0,
+              "shots": 2,
+              "shotsOnTarget": 1,
+              "chancesCreated": 2
+            }
+          }
         },
                 {
           "id": "soccer-eve-bre-20261124",
@@ -8800,7 +9263,70 @@ window.CLUTCH_DATA = {
             "fotmobId": 5795517,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "브렌트포드 4-0 에버턴: 모예스의 이정표 게임은 겸손한 패배로 끝났습니다",
+              "description": "브렌트포드는 Gtech 커뮤니티 스타디움에서 10인 에버턴을 상대로 폭동을 일으키며 프리미어리그 6위로 급등했습니다.",
+              "titleEn": "Brentford 4-0 Everton: Moyes' milestone game ends in humbling defeat",
+              "descriptionEn": "Brentford surged into sixth place in the Premier League as they ran riot against 10-man Everton at the Gtech Community Stadium.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/15u7ilfg7yxt51plp71lcr9tx8-brentford-4-0-everton-moyes-milestone-game-ends-humbling-defeat",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-23T22:24:15Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Keane Lewis-Potter",
+              "teamEn": "Brentford",
+              "team": "브렌트퍼드",
+              "side": "home",
+              "rating": 9.1
+            },
+            "carry": {
+              "name": "Keane Lewis-Potter",
+              "team": "브렌트퍼드",
+              "side": "home",
+              "tag": "up",
+              "line": "Keane Lewis-Potter의 멀티골(평점 9.1)에 힘입어 4-0 승리를 거뒀습니다.",
+              "facts": [
+                "평점 9.1",
+                "골 2",
+                "유효슈팅 2",
+                "기회창출 2",
+                "74분"
+              ],
+              "pos": "DF",
+              "rating": 9.1,
+              "min": 74,
+              "goals": 2,
+              "assists": 0,
+              "shots": 7,
+              "shotsOnTarget": 2,
+              "chancesCreated": 2,
+              "mvp": true
+            },
+            "low": {
+              "name": "Jordan Pickford",
+              "team": "에버턴",
+              "side": "away",
+              "tag": "down",
+              "line": "Jordan Pickford의 선방 3개·4실점(평점 5.6)으로 골문이 흔들렸습니다.",
+              "facts": [
+                "평점 5.6",
+                "선방 3",
+                "실점 4",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 5.6,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 3,
+              "conceded": 4
+            }
+          }
         }
         /* SOCCER-AUTO 2026-11-24 END */,
 
@@ -13809,7 +14335,66 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106339,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "갈라타사라이 1-0 아스톤 빌라: 슈퍼 서브 굴(Gul)이 방문자를 파 이하로 떨어뜨림",
+              "description": "데니즈 굴(Deniz Gul)은 갈라타사라이가 RAMS 파크에서 열린 챔피언스 리그에서 터키의 거인이 애스턴 빌라를 1-0으로 꺾을 때 벤치에서 승리한 갈라타사라이의 승리자였습니다.",
+              "titleEn": "Galatasaray 1-0 Aston Villa: Super-sub Gul downs below-par visitors",
+              "descriptionEn": "Deniz Gul was Galatasaray's matchwinner from the bench as the Turkish giants beat Aston Villa 1-0 in the Champions League at RAMS Park.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/184a4hq6tob6x1n0kvzis9chpw-galatasaray-1-0-aston-villa-super-sub-gul-downs-below-par-visitors",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-24T19:58:27Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Wilfried Singo",
+              "teamEn": "Galatasaray",
+              "team": "갈라타사라이",
+              "side": "home",
+              "rating": 7.9
+            },
+            "carry": {
+              "name": "Wilfried Singo",
+              "team": "갈라타사라이",
+              "side": "home",
+              "tag": "up",
+              "line": "Wilfried Singo의 평점 7.9가 팀에서 가장 앞섰습니다. 1-0 승리였습니다.",
+              "facts": [
+                "평점 7.9",
+                "슈팅 1",
+                "기회창출 1",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 7.9,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "shots": 1,
+              "shotsOnTarget": 0,
+              "chancesCreated": 1,
+              "mvp": true
+            },
+            "low": {
+              "name": "Ian Maatsen",
+              "team": "애스턴 빌라",
+              "side": "away",
+              "tag": "down",
+              "line": "Ian Maatsen의 평점 6.0이 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 6.0",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 6.0,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "chancesCreated": 0
+            }
+          }
         },
                 {
           "id": "soccer-las-bodo-20261125",
@@ -14286,7 +14871,51 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106317,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Fredrik André Bjørkan",
+              "teamEn": "Bodø/Glimt",
+              "team": "보되/글림트",
+              "side": "home",
+              "rating": 8.1
+            },
+            "carry": {
+              "name": "Fredrik André Bjørkan",
+              "team": "보되/글림트",
+              "side": "home",
+              "tag": "up",
+              "line": "Fredrik André Bjørkan의 평점 8.1이 팀에서 가장 앞섰습니다. 1-0 승리였습니다.",
+              "facts": [
+                "평점 8.1",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 8.1,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "chancesCreated": 0,
+              "mvp": true
+            },
+            "low": {
+              "name": "Alessandro Schöpf",
+              "team": "LASK 린츠",
+              "side": "away",
+              "tag": "down",
+              "line": "Alessandro Schöpf의 평점 5.6이 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 5.6",
+                "61분"
+              ],
+              "pos": "MF",
+              "rating": 5.6,
+              "min": 61,
+              "goals": 0,
+              "assists": 0,
+              "chancesCreated": 0
+            }
+          }
         },
                 {
           "id": "soccer-aek-como-20261125",
@@ -14812,7 +15441,70 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106412,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "코모 1-0 AEK 아테네: 밀라의 충격으로 다쿠냐의 페널티킥 실패를 막아냈습니다.",
+              "description": "Como는 Luis Milla의 뛰어난 골로 AEK Athens를 제치고 챔피언스리그 순위에서 3위로 올라섰습니다.",
+              "titleEn": "Como 1-0 AEK Athens: Milla stunner spares Da Cunha's penalty miss",
+              "descriptionEn": "Como moved up to third in the Champions League standings after Luis Milla's superb goal was enough to get the better of AEK Athens.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/72014vx4xwk61204nyhz9jkry-como-1-0-aek-athens-milla-stunner-spares-da-cunhas-penalty-miss",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-24T22:44:46Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Luis Milla",
+              "teamEn": "Como",
+              "team": "코모",
+              "side": "home",
+              "rating": 8.7
+            },
+            "carry": {
+              "name": "Luis Milla",
+              "team": "코모",
+              "side": "home",
+              "tag": "up",
+              "line": "Luis Milla의 골(평점 8.7)에 힘입어 1-0 승리를 챙겼습니다.",
+              "facts": [
+                "평점 8.7",
+                "골 1",
+                "유효슈팅 1",
+                "기회창출 3",
+                "90분"
+              ],
+              "pos": "MF",
+              "rating": 8.7,
+              "min": 90,
+              "goals": 1,
+              "assists": 0,
+              "shots": 1,
+              "shotsOnTarget": 1,
+              "chancesCreated": 3,
+              "mvp": true
+            },
+            "low": {
+              "name": "Thomas Strakosha",
+              "team": "AEK 아테네",
+              "side": "away",
+              "tag": "down",
+              "line": "Thomas Strakosha의 선방 3개·1실점(평점 5.8) — 팀에서 가장 낮은 평점이었습니다.",
+              "facts": [
+                "평점 5.8",
+                "선방 3",
+                "실점 1",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 5.8,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 3,
+              "conceded": 1
+            }
+          }
         },
                 {
           "id": "soccer-bet-slb-20261125",
@@ -15328,7 +16020,59 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106394,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Juan Hernández",
+              "teamEn": "Real Betis",
+              "team": "레알 베티스",
+              "side": "away",
+              "rating": 8.9
+            },
+            "carry": {
+              "name": "Juan Hernández",
+              "team": "레알 베티스",
+              "side": "away",
+              "tag": "up",
+              "line": "Juan Hernández의 멀티골(평점 8.9)에 힘입어 2-0 승리를 거뒀습니다.",
+              "facts": [
+                "평점 8.9",
+                "골 2",
+                "유효슈팅 2",
+                "기회창출 1",
+                "63분"
+              ],
+              "pos": "FW",
+              "rating": 8.9,
+              "min": 63,
+              "goals": 2,
+              "assists": 0,
+              "shots": 5,
+              "shotsOnTarget": 2,
+              "chancesCreated": 1,
+              "mvp": true
+            },
+            "low": {
+              "name": "Dominik Takác",
+              "team": "슬로반 브라티슬라바",
+              "side": "home",
+              "tag": "down",
+              "line": "Dominik Takác의 선방 4개·2실점(평점 6.2) — 팀에서 가장 낮은 평점이었습니다.",
+              "facts": [
+                "평점 6.2",
+                "선방 4",
+                "실점 2",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 6.2,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 4,
+              "conceded": 2
+            }
+          }
         },
                 {
           "id": "soccer-dor-ars-20261125",
@@ -15879,7 +16623,49 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106259,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "아스날 1-1 보루시아 도르트문트: 교케레스의 초기 비명은 충분하지 않습니다",
+              "description": "빅토르 교케레스는 놀라운 골을 넣어 아스날이 보루시아 도르트문트를 상대로 앞서게 했지만 승점 3점을 모두 획득할 절호의 기회를 놓쳤습니다.",
+              "titleEn": "Arsenal 1-1 Borussia Dortmund: Gyokeres' early screamer not enough",
+              "descriptionEn": "Viktor Gyokeres scored a stunner to put Arsenal ahead against Borussia Dortmund, but then missed a golden chance to snatch all three points.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/vmcgl39nsx2y1kdk0bnsekft4-arsenal-1-1-borussia-dortmund-gyokeres-early-screamer-not-enough",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-24T22:15:51Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Noni Madueke",
+              "teamEn": "Arsenal",
+              "team": "아스널",
+              "side": "home",
+              "rating": 8.4
+            },
+            "carry": {
+              "name": "Noni Madueke",
+              "team": "아스널",
+              "side": "home",
+              "tag": "top",
+              "line": "Noni Madueke의 평점 8.4가 양 팀 통틀어 가장 높았습니다. 경기는 1-1 무승부였습니다.",
+              "facts": [
+                "평점 8.4",
+                "도움 1",
+                "슈팅 5",
+                "기회창출 5",
+                "90분"
+              ],
+              "pos": "FW",
+              "rating": 8.4,
+              "min": 90,
+              "goals": 0,
+              "assists": 1,
+              "shots": 5,
+              "shotsOnTarget": 0,
+              "chancesCreated": 5
+            }
+          }
         },
                 {
           "id": "soccer-fcp-fey-20261125",
@@ -16429,7 +17215,54 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106307,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Diogo Costa",
+              "teamEn": "FC Porto",
+              "team": "FC 포르투",
+              "side": "away",
+              "rating": 8.6
+            },
+            "carry": {
+              "name": "Diogo Costa",
+              "team": "FC 포르투",
+              "side": "away",
+              "tag": "up",
+              "line": "Diogo Costa의 선방 6개(평점 8.6)로 무실점 승리를 지켰습니다.",
+              "facts": [
+                "평점 8.6",
+                "선방 6",
+                "실점 0",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 8.6,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 6,
+              "conceded": 0,
+              "mvp": true
+            },
+            "low": {
+              "name": "Shaqueel van Persie",
+              "team": "페예노르트",
+              "side": "home",
+              "tag": "down",
+              "line": "Shaqueel van Persie의 평점 6.1이 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 6.1",
+                "66분"
+              ],
+              "pos": "FW",
+              "rating": 6.1,
+              "min": 66,
+              "goals": 0,
+              "assists": 0,
+              "chancesCreated": 0
+            }
+          }
         },
                 {
           "id": "soccer-nap-mnc-20261125",
@@ -16977,7 +17810,46 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106256,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "맨체스터 시티 2-2 나폴리: 체르키의 후반 레벨러, 호스트의 얼굴을 붉히지 않음",
+              "description": "나폴리는 에티하드 스타디움에서 맨체스터 시티를 상대로 두 번이나 선두를 달리고 있었지만 엔초 마레스카의 부하들은 라얀 체르키 덕분에 승점을 얻기 위해 반격했습니다.",
+              "titleEn": "Manchester City 2-2 Napoli: Cherki's late leveller spares hosts' blushes",
+              "descriptionEn": "Napoli twice led at Etihad Stadium against Manchester City, but Enzo Maresca's men fought back to claim a point thanks to Rayan Cherki.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/1wl0natg5uxi81mklc846d0lxk-manchester-city-2-2-napoli-cherkis-late-leveller-spares-hosts-blushes",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-24T22:17:11Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Jérémy Doku",
+              "teamEn": "Manchester City",
+              "team": "맨체스터 시티",
+              "side": "home",
+              "rating": 8.4
+            },
+            "carry": {
+              "name": "Jérémy Doku",
+              "team": "맨체스터 시티",
+              "side": "home",
+              "tag": "top",
+              "line": "Jérémy Doku의 평점 8.4가 양 팀 통틀어 가장 높았습니다. 경기는 2-2 무승부였습니다.",
+              "facts": [
+                "평점 8.4",
+                "도움 1",
+                "기회창출 4",
+                "35분"
+              ],
+              "pos": "FW",
+              "rating": 8.4,
+              "min": 35,
+              "goals": 0,
+              "assists": 1,
+              "chancesCreated": 4
+            }
+          }
         },
                 {
           "id": "soccer-psv-rma-20261125",
@@ -17521,7 +18393,71 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106243,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "레알 마드리드 5-1 PSV: 벨링엄의 광채 헤드라인이 만연한 챔피언스 리그 복귀",
+              "description": "레알 마드리드는 챔피언스리그에서 다시 한 번 뒤처진 모습을 보였지만 후반전에 스타일을 바꿔 PSV를 이겼습니다.",
+              "titleEn": "Real Madrid 5-1 PSV: Bellingham brilliance headlines rampant Champions League comeback",
+              "descriptionEn": "Real Madrid found themselves a goal behind once again in the Champions League, but they turned on the style in the second half to beat PSV.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/1vgd4f9fd6hrw1tx0x6o2cwvl4-real-madrid-5-1-psv-bellingham-brilliance-headlines-rampant-champions-league-comeback",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-24T22:15:50Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Kylian Mbappé",
+              "teamEn": "Real Madrid",
+              "team": "레알 마드리드",
+              "side": "home",
+              "rating": 9.5
+            },
+            "carry": {
+              "name": "Kylian Mbappé",
+              "team": "레알 마드리드",
+              "side": "home",
+              "tag": "up",
+              "line": "Kylian Mbappé의 두 골에 도움까지(평점 9.5), 5-1 승리를 혼자 만들어 냈습니다.",
+              "facts": [
+                "평점 9.5",
+                "골 2",
+                "도움 1",
+                "유효슈팅 3",
+                "기회창출 4",
+                "90분"
+              ],
+              "pos": "FW",
+              "rating": 9.5,
+              "min": 90,
+              "goals": 2,
+              "assists": 1,
+              "shots": 9,
+              "shotsOnTarget": 3,
+              "chancesCreated": 4,
+              "mvp": true
+            },
+            "low": {
+              "name": "Matěj Kovár",
+              "team": "PSV 에인트호번",
+              "side": "away",
+              "tag": "down",
+              "line": "Matěj Kovár의 선방 4개·5실점(평점 5.2)으로 골문이 흔들렸습니다.",
+              "facts": [
+                "평점 5.2",
+                "선방 4",
+                "실점 5",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 5.2,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 4,
+              "conceded": 5
+            }
+          }
         },
                 {
           "id": "soccer-rcl-rbl-20261125",
@@ -18043,7 +18979,59 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106325,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Antonio Nusa",
+              "teamEn": "RB Leipzig",
+              "team": "RB 라이프치히",
+              "side": "home",
+              "rating": 9.1
+            },
+            "carry": {
+              "name": "Antonio Nusa",
+              "team": "RB 라이프치히",
+              "side": "home",
+              "tag": "up",
+              "line": "Antonio Nusa의 멀티골(평점 9.1)에 힘입어 3-1 승리를 거뒀습니다.",
+              "facts": [
+                "평점 9.1",
+                "골 2",
+                "유효슈팅 3",
+                "기회창출 1",
+                "90분"
+              ],
+              "pos": "FW",
+              "rating": 9.1,
+              "min": 90,
+              "goals": 2,
+              "assists": 0,
+              "shots": 5,
+              "shotsOnTarget": 3,
+              "chancesCreated": 1,
+              "mvp": true
+            },
+            "low": {
+              "name": "Samson Baidoo",
+              "team": "랑스",
+              "side": "away",
+              "tag": "down",
+              "line": "Samson Baidoo의 평점 5.1이 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 5.1",
+                "유효슈팅 1",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 5.1,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "shots": 1,
+              "shotsOnTarget": 1,
+              "chancesCreated": 0
+            }
+          }
         }
         /* SOCCER-AUTO 2026-11-25 END */,
 
@@ -20319,7 +21307,70 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106421,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "사바 1-4 바르셀로나: 고든, 후반전 돌풍의 미노우로 더블 달성",
+              "description": "앤서니 고든은 바르셀로나가 바쿠에서 사바를 상대로 챔피언스리그 4-1 승리를 거두면서 두 골을 넣었습니다.",
+              "titleEn": "Sabah 1-4 Barcelona: Gordon at the double as second-half flurry downs minnows",
+              "descriptionEn": "Anthony Gordon scored twice as Barcelona eased to a 4-1 Champions League victory over Sabah in Baku.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/1nner19mxgxds1nhlzhtk0a5f4-sabah-1-4-barcelona-gordon-at-double-second-half-flurry-downs-minnows",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-25T19:59:26Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Anthony Gordon",
+              "teamEn": "Barcelona",
+              "team": "바르셀로나",
+              "side": "away",
+              "rating": 9.2
+            },
+            "carry": {
+              "name": "Anthony Gordon",
+              "team": "바르셀로나",
+              "side": "away",
+              "tag": "up",
+              "line": "Anthony Gordon의 멀티골(평점 9.2)에 힘입어 4-1 승리를 거뒀습니다.",
+              "facts": [
+                "평점 9.2",
+                "골 2",
+                "유효슈팅 3",
+                "기회창출 2",
+                "76분"
+              ],
+              "pos": "FW",
+              "rating": 9.2,
+              "min": 76,
+              "goals": 2,
+              "assists": 0,
+              "shots": 5,
+              "shotsOnTarget": 3,
+              "chancesCreated": 2,
+              "mvp": true
+            },
+            "low": {
+              "name": "Steve Solvet",
+              "team": "Sabah FK",
+              "side": "home",
+              "tag": "down",
+              "line": "Steve Solvet의 평점 4.9가 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 4.9",
+                "유효슈팅 1",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 4.9,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "shots": 1,
+              "shotsOnTarget": 1,
+              "chancesCreated": 0
+            }
+          }
         },
                 {
           "id": "soccer-vil-slp-20261126",
@@ -20826,7 +21877,60 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106391,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Tajon Buchanan",
+              "teamEn": "Villarreal",
+              "team": "비야레알",
+              "side": "away",
+              "rating": 8.3
+            },
+            "carry": {
+              "name": "Tajon Buchanan",
+              "team": "비야레알",
+              "side": "away",
+              "tag": "up",
+              "line": "Tajon Buchanan의 골(평점 8.3)에 힘입어 1-0 승리를 챙겼습니다.",
+              "facts": [
+                "평점 8.3",
+                "골 1",
+                "유효슈팅 2",
+                "기회창출 1",
+                "90분"
+              ],
+              "pos": "MF",
+              "rating": 8.3,
+              "min": 90,
+              "goals": 1,
+              "assists": 0,
+              "shots": 3,
+              "shotsOnTarget": 2,
+              "chancesCreated": 1,
+              "mvp": true
+            },
+            "low": {
+              "name": "Mojmír Chytil",
+              "team": "Slavia Prague",
+              "side": "home",
+              "tag": "down",
+              "line": "Mojmír Chytil의 슈팅 3개(유효 0)가 골로 이어지지 못했습니다(평점 6.1).",
+              "facts": [
+                "평점 6.1",
+                "슈팅 3",
+                "기회창출 1",
+                "90분"
+              ],
+              "pos": "FW",
+              "rating": 6.1,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "shots": 3,
+              "shotsOnTarget": 0,
+              "chancesCreated": 1
+            }
+          }
         },
                 {
           "id": "soccer-fen-shk-20261126",
@@ -21351,7 +22455,58 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106336,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Vedat Muriqi",
+              "teamEn": "Fenerbahçe",
+              "team": "Fenerbahce",
+              "side": "away",
+              "rating": 8.1
+            },
+            "carry": {
+              "name": "Vedat Muriqi",
+              "team": "Fenerbahce",
+              "side": "away",
+              "tag": "up",
+              "line": "Vedat Muriqi의 골(평점 8.1)에 힘입어 1-0 승리를 챙겼습니다.",
+              "facts": [
+                "평점 8.1",
+                "골 1",
+                "유효슈팅 1",
+                "86분"
+              ],
+              "pos": "FW",
+              "rating": 8.1,
+              "min": 86,
+              "goals": 1,
+              "assists": 0,
+              "shots": 6,
+              "shotsOnTarget": 1,
+              "chancesCreated": 0,
+              "mvp": true
+            },
+            "low": {
+              "name": "Alisson Santana",
+              "team": "Shakhtar Donetsk",
+              "side": "home",
+              "tag": "down",
+              "line": "Alisson Santana의 슈팅 3개(유효 1)가 골로 이어지지 못했습니다(평점 6.0).",
+              "facts": [
+                "평점 6.0",
+                "유효슈팅 1",
+                "90분"
+              ],
+              "pos": "FW",
+              "rating": 6.0,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "shots": 3,
+              "shotsOnTarget": 1,
+              "chancesCreated": 0
+            }
+          }
         },
                 {
           "id": "soccer-liv-bru-20261126",
@@ -21856,7 +23011,70 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106294,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "Club Brugge 0-3 리버풀 : Isak이 Iraola의 상위 8 위 희망을 두 배로 높였습니다.",
+              "description": "알렉산더 이삭은 리버풀이 챔피언스 리그에서 클럽 브뤼헤를 상대로 승리를 거두는 데 다시 골을 넣었고, 플로리안 비르츠도 득점에 성공했습니다.",
+              "titleEn": "Club Brugge 0-3 Liverpool: Isak double boosts Iraola's top-eight hopes",
+              "descriptionEn": "Alexander Isak was back among the goals in Liverpool's win over Club Brugge in the Champions League, with Florian Wirtz also on target.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/7h4xfuzvfpc5zxgil3jlbc24-club-brugge-0-3-liverpool-isak-double-boosts-iraolas-top-eight-hopes",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-25T22:07:05Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Alexander Isak",
+              "teamEn": "Liverpool",
+              "team": "리버풀",
+              "side": "away",
+              "rating": 9.2
+            },
+            "carry": {
+              "name": "Alexander Isak",
+              "team": "리버풀",
+              "side": "away",
+              "tag": "up",
+              "line": "Alexander Isak의 멀티골(평점 9.2)에 힘입어 3-0 승리를 거뒀습니다.",
+              "facts": [
+                "평점 9.2",
+                "골 2",
+                "유효슈팅 2",
+                "기회창출 3",
+                "86분"
+              ],
+              "pos": "FW",
+              "rating": 9.2,
+              "min": 86,
+              "goals": 2,
+              "assists": 0,
+              "shots": 5,
+              "shotsOnTarget": 2,
+              "chancesCreated": 3,
+              "mvp": true
+            },
+            "low": {
+              "name": "Yann Sommer",
+              "team": "Club Brugge",
+              "side": "home",
+              "tag": "down",
+              "line": "Yann Sommer의 선방 1개·3실점(평점 3.8)으로 골문이 흔들렸습니다.",
+              "facts": [
+                "평점 3.8",
+                "선방 1",
+                "실점 3",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 3.8,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 1,
+              "conceded": 3
+            }
+          }
         },
                 {
           "id": "soccer-man-scp-20261126",
@@ -22384,7 +23602,48 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106279,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "스포르팅 CP 2-2 맨체스터 유나이티드: 라멘스 하울러 선물 수아레스 후반 동점골",
+              "description": "모든 것이 갖춰진 경기에서 스포르팅 CP가 늦게 무승부를 기록했지만 맨체스터 유나이티드는 늦게 승자를 잡았습니다.",
+              "titleEn": "Sporting CP 2-2 Manchester United: Lammens howler gifts Suarez late equaliser",
+              "descriptionEn": "In a game that had everything, Sporting CP came from behind to snatch a late draw, though Manchester United had a late winner disallowed.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/gxop4mwf0m7p1mnlcdlnbjrcm-sporting-cp-2-2-manchester-united-lammens-howler-gifts-suarez-late-equaliser",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-25T22:30:20Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Bruno Fernandes",
+              "teamEn": "Manchester United",
+              "team": "맨체스터 유나이티드",
+              "side": "away",
+              "rating": 8.9
+            },
+            "carry": {
+              "name": "Bruno Fernandes",
+              "team": "맨체스터 유나이티드",
+              "side": "away",
+              "tag": "top",
+              "line": "Bruno Fernandes의 평점 8.9가 양 팀 통틀어 가장 높았습니다. 경기는 2-2 무승부였습니다.",
+              "facts": [
+                "평점 8.9",
+                "골 2",
+                "유효슈팅 2",
+                "89분"
+              ],
+              "pos": "MF",
+              "rating": 8.9,
+              "min": 89,
+              "goals": 2,
+              "assists": 0,
+              "shots": 3,
+              "shotsOnTarget": 2,
+              "chancesCreated": 0
+            }
+          }
         },
                 {
           "id": "soccer-mun-lill-20261126",
@@ -22921,7 +24180,67 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106310,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "릴 2-1 바이에른 뮌헨: 파블로비치의 실수로 인해 콤파니의 8강 진출이 손상되었습니다.",
+              "description": "바이에른 뮌헨은 부진한 후반전 모습을 보이며 프랑스 팀이 승점 3점을 모두 획득하기 전까지 릴을 상대로 승리를 향해 순항하는 것처럼 보였습니다.",
+              "titleEn": "Lille 2-1 Bayern Munich: Pavlovic error damages Kompany's top-eight push",
+              "descriptionEn": "Bayern Munich seemed to be coasting to victory over Lille before a poor second-half showing helped the French side to all three points.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/1tekquzmbuavi1wii2dklhkef7-lille-2-1-bayern-munich-pavlovic-error-damages-kompanys-top-eight-push",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-25T22:12:49Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Nathan Ngoy",
+              "teamEn": "Lille",
+              "team": "Lille",
+              "side": "home",
+              "rating": 8.2
+            },
+            "carry": {
+              "name": "Nathan Ngoy",
+              "team": "Lille",
+              "side": "home",
+              "tag": "up",
+              "line": "Nathan Ngoy의 평점 8.2가 팀에서 가장 앞섰습니다. 2-1 승리였습니다.",
+              "facts": [
+                "평점 8.2",
+                "도움 1",
+                "기회창출 1",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 8.2,
+              "min": 90,
+              "goals": 0,
+              "assists": 1,
+              "chancesCreated": 1,
+              "mvp": true
+            },
+            "low": {
+              "name": "Konrad Laimer",
+              "team": "바이에른 뮌헨",
+              "side": "away",
+              "tag": "down",
+              "line": "Konrad Laimer의 평점 6.1이 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 6.1",
+                "유효슈팅 1",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 6.1,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "shots": 2,
+              "shotsOnTarget": 1,
+              "chancesCreated": 0
+            }
+          }
         },
                 {
           "id": "soccer-roma-psg-20261126",
@@ -23451,7 +24770,48 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106235,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "파리 생제르맹 2-2 로마: 말렌 페널티킥으로 챔피언의 완벽한 출발 종료",
+              "description": "로마는 파리에서의 승부차기 이후 이번 시즌 챔피언스리그에서 파리 생제르맹을 상대로 패배를 면한 첫 번째 팀이었다.",
+              "titleEn": "Paris Saint-Germain 2-2 Roma: Malen penalty ends champions' perfect start",
+              "descriptionEn": "Roma were the first side to avoid defeat against Paris Saint-Germain in this season's Champions League after penalty drama in Paris.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/531akwsps7gp1e704cat2a31h-paris-saint-germain-2-2-roma-malen-penalty-ends-champions-perfect-start",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-25T22:22:55Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Mario Hermoso",
+              "teamEn": "Roma",
+              "team": "AS 로마",
+              "side": "away",
+              "rating": 8.9
+            },
+            "carry": {
+              "name": "Mario Hermoso",
+              "team": "AS 로마",
+              "side": "away",
+              "tag": "top",
+              "line": "Mario Hermoso의 평점 8.9가 양 팀 통틀어 가장 높았습니다. 경기는 2-2 무승부였습니다.",
+              "facts": [
+                "평점 8.9",
+                "골 1",
+                "유효슈팅 2",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 8.9,
+              "min": 90,
+              "goals": 1,
+              "assists": 0,
+              "shots": 5,
+              "shotsOnTarget": 2,
+              "chancesCreated": 0
+            }
+          }
         },
                 {
           "id": "soccer-vfb-int-20261126",
@@ -23958,7 +25318,70 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106253,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "인터 2-0 슈투트가르트: 수치치와 마르티네스, 자동 예선 희망 유지",
+              "description": "인테르는 페타르 수치치와 라우타로 마르티네즈의 후반전 골로 챔피언스리그 우승 행진을 3경기로 늘렸다.",
+              "titleEn": "Inter 2-0 Stuttgart: Sucic and Martinez keep automatic qualification hopes alive",
+              "descriptionEn": "Inter stretched their winning run in the Champions League to three games with second-half goals from Petar Sucic and Lautaro Martinez.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/1i87n0x0nf34m1ak4vw4u1bsmc-inter-2-0-stuttgart-sucic-martinez-keep-automatic-qualification-hopes-alive",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-25T22:48:56Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Petar Sučić",
+              "teamEn": "Inter",
+              "team": "인터 밀란",
+              "side": "home",
+              "rating": 8.4
+            },
+            "carry": {
+              "name": "Petar Sučić",
+              "team": "인터 밀란",
+              "side": "home",
+              "tag": "up",
+              "line": "Petar Sučić의 골(평점 8.4)에 힘입어 2-0 승리를 챙겼습니다.",
+              "facts": [
+                "평점 8.4",
+                "골 1",
+                "유효슈팅 1",
+                "기회창출 1",
+                "90분"
+              ],
+              "pos": "MF",
+              "rating": 8.4,
+              "min": 90,
+              "goals": 1,
+              "assists": 0,
+              "shots": 3,
+              "shotsOnTarget": 1,
+              "chancesCreated": 1,
+              "mvp": true
+            },
+            "low": {
+              "name": "Dennis Seimen",
+              "team": "슈투트가르트",
+              "side": "away",
+              "tag": "down",
+              "line": "Dennis Seimen의 선방 3개·2실점(평점 6.3) — 팀에서 가장 낮은 평점이었습니다.",
+              "facts": [
+                "평점 6.3",
+                "선방 3",
+                "실점 2",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 6.3,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 3,
+              "conceded": 2
+            }
+          }
         },
                 {
           "id": "soccer-vfk-atm-20261126",
@@ -24487,7 +25910,67 @@ window.CLUTCH_DATA = {
             "fotmobId": 6106269,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "아틀레티코 마드리드 2-0 바이킹: Sorloth와 Alvarez가 절실히 필요한 승리를 거두었습니다.",
+              "description": "아틀레티코 마드리드는 바이킹을 제치고 녹아웃 희망을 높이며 적시에 챔피언스 리그에서 두 번째 승리를 거두었습니다.",
+              "titleEn": "Atletico Madrid 2-0 Viking: Sorloth and Alvarez on target in much-needed win",
+              "descriptionEn": "Atletico Madrid secured a timely second win in the Champions League as they boosted their knockout hopes by brushing aside Viking.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/1mcpt3sv5ijc21v7mv00gn8p0f-atletico-madrid-2-0-viking-sorloth-alvarez-target-much-needed-win",
+              "lang": "ko",
+              "auto": true,
+              "updatedAt": "2026-11-25T22:50:07Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Julián Álvarez",
+              "teamEn": "Atlético Madrid",
+              "team": "아틀레티코 마드리드",
+              "side": "home",
+              "rating": 8.4
+            },
+            "carry": {
+              "name": "Julián Álvarez",
+              "team": "아틀레티코 마드리드",
+              "side": "home",
+              "tag": "up",
+              "line": "Julián Álvarez의 골(평점 8.4)에 힘입어 2-0 승리를 챙겼습니다.",
+              "facts": [
+                "평점 8.4",
+                "골 1",
+                "유효슈팅 2",
+                "기회창출 2",
+                "57분"
+              ],
+              "pos": "FW",
+              "rating": 8.4,
+              "min": 57,
+              "goals": 1,
+              "assists": 0,
+              "shots": 2,
+              "shotsOnTarget": 2,
+              "chancesCreated": 2,
+              "mvp": true
+            },
+            "low": {
+              "name": "Henrik Falchener",
+              "team": "Viking FK",
+              "side": "away",
+              "tag": "down",
+              "line": "Henrik Falchener의 평점 5.7이 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 5.7",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 5.7,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "chancesCreated": 0
+            }
+          }
         }
         /* SOCCER-AUTO 2026-11-26 END */,
 
