@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-26T13:35:38+09:00",
+  updatedAt: "2026-11-26T14:51:05+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -13488,7 +13488,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 한국전력(홈) 5승 2패·1위·승점 15, 현대캐피탈(원정) 5승 2패·2위·승점 14."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 13:35 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 14:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -13843,7 +13843,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 화성종합실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행(홈) 4승 3패·3위·승점 12, 도로공사(원정) 6승 1패·1위·승점 18."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 13:35 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 14:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-25 END */,
@@ -20492,7 +20492,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·5위·승점 9, 삼성화재(원정) 4승 2패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 13:35 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 14:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -20798,7 +20798,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, SOOP(원정) 0승 6패·7위·승점 1."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 13:35 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 14:50 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-26 END */,
@@ -28555,14 +28555,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-26 06:26 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-sac-gsw-20261126",
           "espnId": "401909324",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-26T12:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Chase Center",
           "odds": {
             "provider": "Draft Kings",
@@ -28627,6 +28627,83 @@ window.CLUTCH_DATA = {
               "text": "**골든스테이트 워리어스**(홈) 9승 8패(홈 7승 1패, 최근 5경기 1승 4패), **새크라멘토 킹스**(원정) 2승 15패(원정 1승 5패, 최근 5경기 1승 4패). 직전 경기(11.24) **새크라멘토 킹스**는 샌안토니오 스퍼스에 107-123로 졌고, Domantas Sabonis 20점·12리바운드·8어시스트, Zach LaVine 18점·6리바운드·2어시스트를 기록했습니다. 직전 경기(11.23) **골든스테이트 워리어스**는 골든스테이트 워리어스에 87-88로 졌고, Jayson Tatum 27점·10리바운드·6어시스트, Derrick White 14점·3리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 110,
+            "homeScore": 129,
+            "lines": {
+              "away": [
+                "19",
+                "34",
+                "36",
+                "21"
+              ],
+              "home": [
+                "44",
+                "28",
+                "29",
+                "28"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Domantas Sabonis",
+                "team": "SAC",
+                "min": "37",
+                "pts": 27,
+                "reb": "10",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png"
+              },
+              {
+                "name": "De'Anthony Melton",
+                "team": "GS",
+                "min": "27",
+                "pts": 24,
+                "reb": "4",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066436.png"
+              },
+              {
+                "name": "Darius Acuff Jr.",
+                "team": "SAC",
+                "min": "37",
+                "pts": 22,
+                "reb": "4",
+                "ast": "9",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5142620.png"
+              },
+              {
+                "name": "Gui Santos",
+                "team": "GS",
+                "min": "24",
+                "pts": 22,
+                "reb": "3",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4997536.png"
+              },
+              {
+                "name": "Keegan Murray",
+                "team": "SAC",
+                "min": "42",
+                "pts": 18,
+                "reb": "4",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4594327.png"
+              },
+              {
+                "name": "De'Andre Hunter",
+                "team": "SAC",
+                "min": "39",
+                "pts": 15,
+                "reb": "7",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065732.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -28865,14 +28942,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-26 06:26 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-sas-por-20261126",
           "espnId": "401909325",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-26T12:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Moda Center",
           "odds": {
             "provider": "Draft Kings",
@@ -28937,6 +29014,83 @@ window.CLUTCH_DATA = {
               "text": "**포틀랜드 트레일블레이저스**(홈) 11승 6패(홈 3승 2패, 최근 5경기 2승 3패), **샌안토니오 스퍼스**(원정) 15승 3패(원정 8승 0패, 최근 5경기 4승 1패, 3연승). 직전 경기(11.24) **샌안토니오 스퍼스**는 새크라멘토 킹스에 123-107로 이겼고, Stephon Castle 28점·8리바운드·11어시스트, Julian Champagnie 22점·7리바운드·3어시스트를 기록했습니다. 직전 경기(11.24) **포틀랜드 트레일블레이저스**는 필라델피아 세븐티식서스에 128-111로 이겼고, Deni Avdija 31점·3리바운드·7어시스트, Damian Lillard 18점·3리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 111,
+            "homeScore": 116,
+            "lines": {
+              "away": [
+                "35",
+                "22",
+                "30",
+                "24"
+              ],
+              "home": [
+                "38",
+                "22",
+                "24",
+                "32"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Victor Wembanyama",
+                "team": "SA",
+                "min": "35",
+                "pts": 44,
+                "reb": "16",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png"
+              },
+              {
+                "name": "Deni Avdija",
+                "team": "POR",
+                "min": "36",
+                "pts": 33,
+                "reb": "12",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png"
+              },
+              {
+                "name": "Damian Lillard",
+                "team": "POR",
+                "min": "34",
+                "pts": 29,
+                "reb": "3",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png"
+              },
+              {
+                "name": "Stephon Castle",
+                "team": "SA",
+                "min": "34",
+                "pts": 20,
+                "reb": "6",
+                "ast": "9",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png"
+              },
+              {
+                "name": "Devin Vassell",
+                "team": "SA",
+                "min": "38",
+                "pts": 18,
+                "reb": "3",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395630.png"
+              },
+              {
+                "name": "Sidy Cissoko",
+                "team": "POR",
+                "min": "30",
+                "pts": 16,
+                "reb": "4",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5081727.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
