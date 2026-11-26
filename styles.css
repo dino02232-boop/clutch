@@ -2105,9 +2105,9 @@ select {
   font-size: 16px;
 }
 
-/* ── 홈 첫 화면: 소개 카드 · 첫 경기 강조 ─────────────────────
+/* ── 홈 첫 화면: 소개 카드 ─────────────────────────────
    처음 온 사람이 3초 안에 이해하도록, 종목 타일 위에 짧게. 소개문만으로
-   첫 화면이 가득 차지 않게 카드 하나 + 강조 카드 하나로 끝낸다. */
+   첫 화면이 가득 차지 않게 카드 하나로 끝내고, 바로 아래에 LIVE 경기 줄이 이어진다. */
 .home-hero { margin: 0 0 14px; }
 .home-hero[hidden] { display: none; }
 
@@ -2172,35 +2172,11 @@ select {
 .hh-login { border: 1px solid var(--line-2); background: #fff; color: var(--text); }
 .hh-note { margin: 9px 0 0; font-size: 10.5px; line-height: 1.5; color: var(--text-3); letter-spacing: -.005em; word-break: keep-all; }
 
-/* 회원: 반복을 줄여 한 줄로 */
+/* 회원: 반복을 줄여 한 줄로. 이 줄이 곧 카드 제목이다 */
 .hh-card.is-mine { padding: 12px 14px; }
-.hh-mine { margin: 0; font-size: 12.5px; font-weight: 700; color: var(--text-2); word-break: keep-all; }
+.hh-mine { margin: 0; font-size: 14px; font-weight: 800; letter-spacing: -.02em; color: var(--text); word-break: keep-all; }
+.hh-mine-pt { font-weight: 700; color: var(--text-3); }
 .hh-mine b { color: var(--accent); font-variant-numeric: tabular-nums; }
-/* 회원 카드: '이용 방법 보기'는 접지 않고 늘 펼쳐 둔다(제목 줄만 작게 남긴다) */
+/* 회원 카드: 3단계는 접지 않고 늘 펼쳐 둔다 */
 .hh-card.is-mine .hh-lead { margin-top: 5px; font-size: 12px; }
-.hh-more { margin: 9px 0 0; }
-.hh-more-label { margin: 0; font-size: 11.5px; font-weight: 700; color: var(--text-3); }
-.hh-more .hh-steps { margin-top: 7px; }
-
-/* 첫 경기 강조 카드 */
-.hh-feat {
-  display: block;
-  margin: 8px 0 0;
-  padding: 13px 14px 12px;
-  border-radius: 18px;
-  border: 1px solid rgba(11, 122, 84, .22);
-  background: #fff;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 1px 2px rgba(17, 24, 39, .05), 0 12px 26px -22px rgba(11, 122, 84, .6);
-  -webkit-tap-highlight-color: transparent;
-}
-.hh-feat:active { background: #F7FBFA; }
-.hh-feat-top { display: flex; align-items: center; gap: 6px; font-size: 10.5px; font-weight: 800; color: var(--text-3); }
-.hh-live { background: rgba(220, 38, 38, .12); color: #DC2626; border-radius: 5px; padding: 1px 6px; font-size: 9.5px; letter-spacing: .04em; }
-.hh-when { color: var(--text-2); font-variant-numeric: tabular-nums; }
-.hh-lg { margin-left: auto; font-weight: 700; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.hh-teams { display: flex; align-items: baseline; gap: 7px; margin: 7px 0 0; font-size: 16.5px; font-weight: 800; letter-spacing: -.025em; flex-wrap: wrap; }
-.hh-teams i { font-style: normal; font-size: 11px; font-weight: 700; color: var(--text-3); }
-.hh-why { margin: 5px 0 0; font-size: 12px; line-height: 1.55; color: var(--text-2); word-break: keep-all; }
-.hh-go { display: inline-block; margin-top: 8px; font-size: 11.5px; font-weight: 800; color: var(--accent); }
+.hh-card.is-mine .hh-steps { margin-top: 10px; }
