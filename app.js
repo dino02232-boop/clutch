@@ -3451,7 +3451,7 @@
   // 홈(종목 선택) 첫 화면의 정체성 — 무엇을 해 주는 사이트인지 한 줄로 먼저 읽히게.
   function homeLeadHTML() {
     var names = SPORTS.map(function (s) { return s.name; }).join("·");
-    return '<span class="hl-title"><b>' + esc(names) + '</b> 오늘 경기의 두 팀 상태와 변수를 30초로 정리합니다.</span>' +
+    return '<span class="hl-title"><b>' + esc(names) + '</b> 오늘 경기의 두 팀 상태와 변수를 한눈에 정리합니다.</span>' +
       '<span class="hl-sub">승자 예측 없이 두 팀을 같은 무게로 · 아래에서 종목을 고르면 그날 일정이 열립니다.</span>';
   }
 

@@ -31,7 +31,7 @@
   /* ── 마크업 ─────────────────────────────────────────── */
   function stepsHTML() {
     return '<ol class="hh-steps">' +
-      '<li><b>경기 브리핑 보기</b><span>두 팀 상태와 변수를 30초로</span></li>' +
+      '<li><b>경기 브리핑 보기</b><span>두 팀 상태와 변수를 한눈에</span></li>' +
       '<li><b>10,000P 받기</b><span>회원가입하면 바로 들어옵니다</span></li>' +
       '<li><b>마음에 드는 쪽 예측</b><span>배당을 눌러 슬립에 담고 확정</span></li>' +
       '</ol>';
@@ -40,7 +40,7 @@
     return '<div class="hh-card">' +
       '<p class="hh-kicker">VERSUS 이용 방법</p>' +
       '<h2 class="hh-title">돈 걸지 말고, 결과 예측만 즐기세요</h2>' +
-      '<p class="hh-lead">축구·농구·배구 경기의 팀 상태와 변수를 30초로 정리해 드립니다. 마음에 드는 쪽을 골라 가상 포인트로 예측해 보세요. 가입하면 10,000P부터입니다.</p>' +
+      '<p class="hh-lead">축구·농구·배구 경기의 팀 상태와 변수를 한눈에 정리해 드립니다. 마음에 드는 쪽을 골라 가상 포인트로 예측해 보세요. 가입하면 10,000P부터입니다.</p>' +
       stepsHTML() +
       '<div class="hh-cta"><button type="button" class="hh-join" id="hhJoin">회원가입</button>' +
         '<button type="button" class="hh-login" id="hhLogin">로그인</button></div>' +
@@ -51,7 +51,7 @@
     var p = myPoints == null ? '' : '<span class="hh-mine-pt"> · 내 포인트 <b>' + Math.floor(Number(myPoints)).toLocaleString('ko-KR') + 'P</b></span>';
     return '<div class="hh-card is-mine">' +
       '<p class="hh-mine">VERSUS 이용 방법' + p + '</p>' +
-      '<p class="hh-lead">오늘 경기의 팀 상태와 변수를 30초로 정리해 드립니다. 마음에 드는 쪽을 골라 가상 포인트로 예측해 보세요.</p>' +
+      '<p class="hh-lead">오늘 경기의 팀 상태와 변수를 한눈에 정리해 드립니다. 마음에 드는 쪽을 골라 가상 포인트로 예측해 보세요.</p>' +
       stepsHTML() +
       '<p class="hh-note">포인트는 실제 돈이 아니에요. 충전·환전·현금화는 안 되고, 재미로 순위를 겨루는 놀이터입니다.</p>' +
       '</div>';

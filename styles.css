@@ -1654,7 +1654,7 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .tile-live[hidden] { display: none; }
 
-/* 좁은 화면: 실시간 줄에서 '30초 자동 갱신' 문구는 숨긴다 */
+/* 좁은 화면: 실시간 줄에서 '자동 갱신' 문구는 숨긴다 */
 @media (max-width: 430px) {
   .livebar .lb-auto { display: none; }
   .livebar { font-size: 10px; }
