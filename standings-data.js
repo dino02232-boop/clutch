@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-26T17:27:04+09:00
+   생성 시각(기준): 2026-11-26T21:58:57+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-26T17:27:04+09:00",
+  "updated": "2026-11-26T21:58:57+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -6711,6 +6711,22 @@ window.CLUTCH_STANDINGS = {
           "rows": [
             {
               "rank": 1,
+              "team": "삼성화재",
+              "abbr": "SAM",
+              "logo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
+              "played": 7,
+              "win": 5,
+              "draw": null,
+              "loss": 2,
+              "diff": null,
+              "points": 15,
+              "pct": null,
+              "gb": null,
+              "sets": "17-9",
+              "zone": null
+            },
+            {
+              "rank": 2,
               "team": "한국전력",
               "abbr": "KEP",
               "logo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
@@ -6726,7 +6742,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 2,
+              "rank": 3,
               "team": "현대캐피탈",
               "abbr": "HYC",
               "logo": "https://cdn.kovo.co.kr/emblems/skywalkers.svg",
@@ -6739,22 +6755,6 @@ window.CLUTCH_STANDINGS = {
               "pct": null,
               "gb": null,
               "sets": "16-11",
-              "zone": null
-            },
-            {
-              "rank": 3,
-              "team": "삼성화재",
-              "abbr": "SAM",
-              "logo": "https://cdn.kovo.co.kr/emblems/bluefangs.svg",
-              "played": 6,
-              "win": 4,
-              "draw": null,
-              "loss": 2,
-              "diff": null,
-              "points": 12,
-              "pct": null,
-              "gb": null,
-              "sets": "14-9",
               "zone": null
             },
             {
@@ -6778,15 +6778,15 @@ window.CLUTCH_STANDINGS = {
               "team": "우리카드",
               "abbr": "WOO",
               "logo": "https://cdn.kovo.co.kr/emblems/wooriwon.svg",
-              "played": 6,
+              "played": 7,
               "win": 3,
               "draw": null,
-              "loss": 3,
+              "loss": 4,
               "diff": null,
               "points": 9,
               "pct": null,
               "gb": null,
-              "sets": "11-12",
+              "sets": "11-15",
               "zone": null
             },
             {
@@ -6876,6 +6876,22 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 4,
+              "team": "현대건설",
+              "abbr": "HDC",
+              "logo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
+              "played": 7,
+              "win": 3,
+              "draw": null,
+              "loss": 4,
+              "diff": null,
+              "points": 9,
+              "pct": null,
+              "gb": null,
+              "sets": "10-14",
+              "zone": null
+            },
+            {
+              "rank": 5,
               "team": "정관장",
               "abbr": "JKG",
               "logo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
@@ -6891,7 +6907,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 5,
+              "rank": 6,
               "team": "흥국생명",
               "abbr": "HUN",
               "logo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
@@ -6907,35 +6923,19 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 6,
-              "team": "현대건설",
-              "abbr": "HDC",
-              "logo": "https://cdn.kovo.co.kr/emblems/hillstate.svg",
-              "played": 6,
-              "win": 2,
-              "draw": null,
-              "loss": 4,
-              "diff": null,
-              "points": 6,
-              "pct": null,
-              "gb": null,
-              "sets": "7-13",
-              "zone": null
-            },
-            {
               "rank": 7,
               "team": "SOOP",
               "abbr": "SOOP",
               "logo": "https://cdn.kovo.co.kr/emblems/soopers.svg",
-              "played": 6,
+              "played": 7,
               "win": 0,
               "draw": null,
-              "loss": 6,
+              "loss": 7,
               "diff": null,
               "points": 1,
               "pct": null,
               "gb": null,
-              "sets": "5-18",
+              "sets": "6-21",
               "zone": null
             }
           ]
