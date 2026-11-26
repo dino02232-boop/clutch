@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-27T04:54:43+09:00",
+  updatedAt: "2026-11-27T05:43:36+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -20537,7 +20537,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 4패·5위·승점 9, 삼성화재(원정) 5승 2패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 04:54 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 05:43 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -20892,7 +20892,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 3승 4패·4위·승점 9, SOOP(원정) 0승 7패·7위·승점 1."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 04:54 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 05:43 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-26 END */,
@@ -31289,6 +31289,17 @@ window.CLUTCH_DATA = {
           },
           "status": "final",
           "postgame": {
+            "review": {
+              "title": "Celta Vigo 1-2 Bournemouth: Rayan secures 10th straight win for Rose's men",
+              "description": "Bournemouth's perfect start to their Europa League campaign looked set to end, but substitute Rayan scored the winner against Celta Vigo.",
+              "titleEn": "Celta Vigo 1-2 Bournemouth: Rayan secures 10th straight win for Rose's men",
+              "descriptionEn": "Bournemouth's perfect start to their Europa League campaign looked set to end, but substitute Rayan scored the winner against Celta Vigo.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/55mmh16u0c3szfi77ops9d0n-celta-vigo-1-2-bournemouth-rayan-secures-10th-straight-win-roses-men",
+              "lang": "en",
+              "auto": false,
+              "updatedAt": "2026-11-26T19:52:33Z"
+            },
             "playerOfTheMatch": {
               "name": "Iago Aspas",
               "teamEn": "Celta Vigo",
@@ -31301,15 +31312,15 @@ window.CLUTCH_DATA = {
               "team": "본머스",
               "side": "away",
               "tag": "up",
-              "line": "Álvaro Rodríguez의 골(평점 8.1)에 힘입어 2-1 승리를 챙겼습니다.",
+              "line": "Álvaro Rodríguez의 골(평점 8.2)에 힘입어 2-1 승리를 챙겼습니다.",
               "facts": [
-                "평점 8.1",
+                "평점 8.2",
                 "골 1",
                 "유효슈팅 1",
                 "90분"
               ],
               "pos": "FW",
-              "rating": 8.1,
+              "rating": 8.2,
               "min": 90,
               "goals": 1,
               "assists": 0,
@@ -31322,15 +31333,15 @@ window.CLUTCH_DATA = {
               "team": "셀타 비고",
               "side": "home",
               "tag": "down",
-              "line": "Ionuț Radu의 선방 4개·2실점(평점 6.0) — 팀에서 가장 낮은 평점이었습니다.",
+              "line": "Ionuț Radu의 선방 4개·2실점(평점 6.2) — 팀에서 가장 낮은 평점이었습니다.",
               "facts": [
-                "평점 6.0",
+                "평점 6.2",
                 "선방 4",
                 "실점 2",
                 "90분"
               ],
               "pos": "GK",
-              "rating": 6.0,
+              "rating": 6.2,
               "min": 90,
               "goals": 0,
               "assists": 0,
@@ -31874,7 +31885,36 @@ window.CLUTCH_DATA = {
             "fotmobId": 6112357,
             "fotmobSwapped": false
           },
-          "status": "final"
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Doğan Alemdar",
+              "teamEn": "Beşiktaş",
+              "team": "베식타시",
+              "side": "home",
+              "rating": 8.9
+            },
+            "carry": {
+              "name": "Doğan Alemdar",
+              "team": "베식타시",
+              "side": "home",
+              "tag": "top",
+              "line": "Doğan Alemdar의 평점 8.9가 양 팀 통틀어 가장 높았습니다. 경기는 0-0 무승부였습니다.",
+              "facts": [
+                "평점 8.9",
+                "선방 8",
+                "실점 1",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 8.9,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 8,
+              "conceded": 1
+            }
+          }
         },
                 {
           "id": "soccer-lech-usg-20261127",
@@ -33743,15 +33783,66 @@ window.CLUTCH_DATA = {
           "status": "final",
           "postgame": {
             "review": {
-              "title": "올림피아코스 2-4 AC 밀란: 허친슨, 놀라운 유로파 리그 복귀 영감",
-              "description": "AC 밀란은 이번 시즌 유로파리그에서 또 다른 패배를 당할 것으로 보였지만 오마리 허친슨이 올림피아코스를 상대로 그들을 승리로 이끌었습니다.",
+              "title": "Olympiacos 2-4 AC Milan: Hutchinson inspires stunning Europa League comeback",
+              "description": "AC Milan looked set for another defeat in the Europa League this season, but Omari Hutchinson dragged them to victory against Olympiacos.",
               "titleEn": "Olympiacos 2-4 AC Milan: Hutchinson inspires stunning Europa League comeback",
               "descriptionEn": "AC Milan looked set for another defeat in the Europa League this season, but Omari Hutchinson dragged them to victory against Olympiacos.",
               "source": "FotMob · Opta",
               "url": "https://www.fotmob.com/news/1zismo60g2nd1sh3yckmb0vc4-olympiacos-2-4-ac-milan-hutchinson-inspires-stunning-europa-league-comeback",
-              "lang": "ko",
-              "auto": true,
+              "lang": "en",
+              "auto": false,
               "updatedAt": "2026-11-26T19:49:15Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Omari Hutchinson",
+              "teamEn": "Milan",
+              "team": "AC 밀란",
+              "side": "away",
+              "rating": 9.2
+            },
+            "carry": {
+              "name": "Omari Hutchinson",
+              "team": "AC 밀란",
+              "side": "away",
+              "tag": "up",
+              "line": "Omari Hutchinson의 골과 도움 하나씩(평점 9.2)으로 4-2 승리에 힘을 보탰습니다.",
+              "facts": [
+                "평점 9.2",
+                "골 1",
+                "도움 2",
+                "유효슈팅 1",
+                "기회창출 3",
+                "90분"
+              ],
+              "pos": "FW",
+              "rating": 9.2,
+              "min": 90,
+              "goals": 1,
+              "assists": 2,
+              "shots": 1,
+              "shotsOnTarget": 1,
+              "chancesCreated": 3,
+              "mvp": true
+            },
+            "low": {
+              "name": "Stefan Ortega",
+              "team": "올림피아코스",
+              "side": "home",
+              "tag": "down",
+              "line": "Stefan Ortega의 선방 1개·4실점(평점 4.6)으로 골문이 흔들렸습니다.",
+              "facts": [
+                "평점 4.6",
+                "선방 1",
+                "실점 4",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 4.6,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 1,
+              "conceded": 4
             }
           }
         },
@@ -38371,7 +38462,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천계양체육관에서 열립니다.",
               "**순위표** — 대한항공(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 04:54 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 05:43 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -38677,7 +38768,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
               "**순위표** — 흥국생명(홈) 2승 4패·6위·승점 6, GS칼텍스(원정) 5승 1패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 04:54 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 05:43 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-27 END */

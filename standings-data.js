@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-27T04:54:43+09:00
+   생성 시각(기준): 2026-11-27T05:43:36+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-27T04:54:43+09:00",
+  "updated": "2026-11-27T05:43:36+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4512,15 +4512,15 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 7,
-              "team": "올림피아코스",
-              "abbr": "OLY",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/435.png",
+              "team": "베식타시",
+              "abbr": "BES",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1895.png",
               "played": 5,
               "win": 3,
               "draw": 1,
               "loss": 1,
               "points": 10,
-              "diff": 1,
+              "diff": 4,
               "pct": null,
               "gb": null,
               "zone": {
@@ -4531,15 +4531,15 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 8,
-              "team": "베식타시",
-              "abbr": "BES",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1895.png",
-              "played": 4,
-              "win": 2,
+              "team": "올림피아코스",
+              "abbr": "OLY",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/435.png",
+              "played": 5,
+              "win": 3,
               "draw": 1,
               "loss": 1,
-              "points": 7,
-              "diff": 3,
+              "points": 10,
+              "diff": 1,
               "pct": null,
               "gb": null,
               "zone": {
@@ -5028,12 +5028,12 @@ window.CLUTCH_STANDINGS = {
               "team": "하포엘 베르셰바",
               "abbr": "HBE",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/13083.png",
-              "played": 4,
+              "played": 5,
               "win": 0,
               "draw": 1,
-              "loss": 3,
+              "loss": 4,
               "points": 1,
-              "diff": -7,
+              "diff": -8,
               "pct": null,
               "gb": null,
               "zone": {
