@@ -107,11 +107,13 @@
   window.addEventListener('hashchange', function () { paint(false); });
   window.addEventListener('popstate', function () { paint(false); });
   // 날짜·종목·뒤로가기 버튼은 주소를 pushState 로 바꿔 hashchange 가 오지 않는다 → 직접 다시 그린다.
+  // app.js 가 날짜 줄을 다시 그리면서 누른 버튼을 DOM 에서 떼어 내기 때문에, 버블 단계에서는
+  // e.target.closest('#dates button') 이 null 이 되어 카드가 숨지 않았다. 그래서 캡처 단계에서 먼저 알아챈다.
   document.addEventListener('click', function (e) {
     var t = e.target;
     if (!t || !t.closest) return;
-    if (t.closest('#dates button, #tabs .tab, #backBtn, #homeLink')) setTimeout(function () { paint(true); }, 0);
-  });
+    if (t.closest('#dates .day-cell, #dates button, #tabs .tab, #backBtn, #homeLink')) setTimeout(function () { paint(true); }, 0);
+  }, true);
 
   function init() {
     mount();
