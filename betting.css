@@ -66,6 +66,12 @@
 .bets-icon{border:0;background:#f2f5f6;color:var(--text-2);width:30px;height:30px;border-radius:999px;font:inherit;font-size:14px;line-height:1;cursor:pointer;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center}
 .bets-icon:hover{background:#e7edee;color:var(--text)}
 #betsClose{margin-left:auto;font-size:17px;font-weight:700}
+/* 머리 오른쪽 끝 `로그아웃` — × 왼쪽에 작은 회색 알약으로(390px 한 줄에 들어간다) */
+#betsLogout{margin-left:auto;border:0;background:#f2f5f6;color:var(--text-2);font:inherit;font-size:11.5px;font-weight:800;letter-spacing:-.01em;line-height:1;padding:8px 11px;border-radius:999px;cursor:pointer;flex:0 0 auto;-webkit-tap-highlight-color:transparent}
+#betsLogout:hover{background:#e7edee;color:var(--text)}
+#betsLogout:active{background:#dfe7e9}
+/* 로그아웃 버튼이 있으면 × 는 남는 여백을 가져가지 않는다 */
+#betsLogout + #betsClose{margin-left:0}
 /* 내 베팅 내역: ✏️(닉네임 변경)는 머리가 아니라 닉네임 바로 옆에 작게 */
 #betsNick{margin-left:-3px;width:26px;height:26px;background:transparent;font-size:12px;opacity:.75}
 #betsNick:hover{background:#f2f5f6;color:var(--text);opacity:1}
@@ -359,6 +365,12 @@
 .auth-google:hover{background:#f7f9f9}
 .auth-g{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;border-radius:999px;background:#fff;border:1px solid var(--line-2);color:#4285F4;font-size:12px;font-weight:900;line-height:1;flex:0 0 auto}
 .auth-hint{margin:9px 0 0;font-size:10.5px;color:var(--text-3);line-height:1.5;text-align:center}
+/* 알림 토스트 — 로그인·로그아웃 결과. 화면 아래 가운데에 잠깐 떴다 사라진다(모달보다 위). */
+.clutch-toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translate(-50%,10px);z-index:200;max-width:min(86vw,400px);box-sizing:border-box;background:rgba(17,24,39,.93);color:#fff;font-size:12.5px;font-weight:700;line-height:1.5;letter-spacing:-.01em;text-align:center;padding:10px 16px;border-radius:999px;box-shadow:0 8px 24px rgba(17,24,39,.3);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease}
+.clutch-toast.on{opacity:1;transform:translate(-50%,0)}
+/* 좁은 화면은 Bet 창(접힘 10px + 머리)이 아래를 차지하므로 그 위로 올린다 */
+@media(max-width:600px){.clutch-toast{bottom:calc(88px + env(safe-area-inset-bottom))}}
+@media(prefers-reduced-motion:reduce){.clutch-toast{transition:none}}
 @media(max-width:380px){.auth-box{padding:14px 15px 12px}.auth-form input{margin-bottom:10px}}
 
 /* ── 자유게시판: 머리(글 수) · 읽음 표시 · 페이지 · 글쓰기 폼 정리 ───── */

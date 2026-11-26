@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  var db = window.clutchDb, auth = window.clutchAuth, slip = [], me = null, balance = 0;
+  var db = window.clutchDb, auth = window.clutchAuth, slip = [], me = null, balance = 0, userUnsub = null;
   var el = function (id) { return document.getElementById(id); };
   var fmt = function (n) { return Math.floor(Number(n) || 0).toLocaleString('ko-KR'); };
   var esc = function (s) { return String(s || '').replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
@@ -64,6 +64,8 @@
   // 화면에 보이는 배당(소수 둘째 자리)과 예상 획득을 같은 값으로 계산한다.
   function payout(stake, mult) { var m = Math.round(mult * 100) / 100; return Math.floor(stake * m + 1e-9); }
   function say(text) { var n = el('betNotice'); if (n) n.textContent = text; }
+  // 로그인·로그아웃 결과는 auth.js 의 토스트를 그대로 쓴다(없는 화면에서는 Bet 창 안내로 대신).
+  function toast(text) { if (window.clutchToast) return window.clutchToast(text); say(text); }
   // 접힘/펼침 상태를 버튼 문구와 aria-label 로도 알려 준다.
   function syncDock() {
     var dock = el('betDock'), btn = el('betDockToggle');
@@ -150,7 +152,7 @@
     try{return auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());}
     catch(e){say('로그인에 실패했습니다: '+e.message);}
   }
-  async function onUser(user){me=user;if(!user){balance=0;window.clutchNickname='';closeBets();paint();return;}var ref=db.collection('users').doc(user.uid);try{await db.runTransaction(async function(tx){var d=await tx.get(ref);if(!d.exists)tx.set(ref,{uid:user.uid,displayName:user.displayName||'회원',photoURL:user.photoURL||'',points:10000,createdAt:firebase.firestore.FieldValue.serverTimestamp(),weekProfit:0,totalProfit:0,winRate:0,maxOdds:0});});}catch(e){say('회원 정보를 불러오지 못했습니다: '+e.message);}ref.onSnapshot(function(d){if(d.exists){var v=d.data()||{};balance=Number(v.points)||0;window.clutchNickname=v.nickname||'';if(!v.nickname&&me&&!sessionStorage.getItem('clutchNickSkip')&&!document.getElementById('nickModal'))openNick();paint();}});paint();}
+  async function onUser(user){me=user;if(userUnsub){userUnsub();userUnsub=null;}if(!user){balance=0;window.clutchNickname='';closeBets();paint();return;}var ref=db.collection('users').doc(user.uid);try{await db.runTransaction(async function(tx){var d=await tx.get(ref);if(!d.exists)tx.set(ref,{uid:user.uid,displayName:user.displayName||'회원',photoURL:user.photoURL||'',points:10000,createdAt:firebase.firestore.FieldValue.serverTimestamp(),weekProfit:0,totalProfit:0,winRate:0,maxOdds:0});});}catch(e){say('회원 정보를 불러오지 못했습니다: '+e.message);}userUnsub=ref.onSnapshot(function(d){if(d.exists){var v=d.data()||{};balance=Number(v.points)||0;window.clutchNickname=v.nickname||'';if(!v.nickname&&me&&!sessionStorage.getItem('clutchNickSkip')&&!document.getElementById('nickModal'))openNick();paint();}});paint();}
   function openNick(){
     if(!me)return; var wrap=document.createElement('div'); wrap.id='nickModal'; wrap.className='nick-modal';
     wrap.innerHTML='<div class="nick-box"><h2>닉네임 정하기</h2><p>랭킹과 게시판에 이 이름으로 보입니다.</p><input id="nickInput" maxlength="20" placeholder="2~20자"><p id="nickNotice" class="nick-notice"></p><div class="nick-actions"><button id="nickSave">저장</button><button id="nickClose">나중에</button></div></div>';
@@ -389,6 +391,18 @@
     var w = el('betsModal');
     if (w) w.remove();
   }
+  /* 내 베팅 내역 머리의 `로그아웃` → Firebase 세션을 지우고 이 창을 닫는다.
+     로그인 상태가 비회원으로 바뀌면 onUser(null) 이 위 알약·Bet 창·로그인 버튼을
+     비회원 모습으로 되돌리고, 바뀐 사실은 토스트로 알린다. */
+  function logout() {
+    if (!auth) return say('Firebase 연결을 확인해 주세요.');
+    closeBets();
+    auth.signOut().then(function () {
+      toast('로그아웃되었습니다.');
+    }, function (e) {
+      toast('로그아웃하지 못했습니다: ' + ((e && e.message) || '다시 시도해 주세요.'));
+    });
+  }
   function openBets() {
     if (!me) return login();
     closeBets();
@@ -397,6 +411,7 @@
     wrap.className = 'bets-modal';
     wrap.innerHTML = '<div class="bets-box" role="dialog" aria-modal="true" aria-label="내 베팅 내역">' +
       '<div class="bets-head"><b>🎟 내 베팅 내역</b>' +
+      '<button type="button" id="betsLogout" class="bets-logout">로그아웃</button>' +
       '<button type="button" id="betsClose" class="bets-icon" aria-label="닫기" title="닫기">×</button></div>' +
       '<div id="betsMe" class="bets-me"></div>' +
       '<div id="betsList" class="bets-list"><p class="bets-empty">불러오는 중…</p></div>' +
@@ -408,6 +423,7 @@
     wrap.addEventListener('click', function (e) {
       if (e.target === wrap) return closeBets();
       if (e.target.closest && e.target.closest('#betsClose')) return closeBets();
+      if (e.target.closest && e.target.closest('#betsLogout')) return logout();
       if (e.target.closest && e.target.closest('#betsNick')) return nick();
       if (e.target.closest && e.target.closest('#betsPastToggle')) return togglePast();
     });
