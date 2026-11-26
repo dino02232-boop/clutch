@@ -315,13 +315,52 @@
       }).join(',');
     }).join(';');
   }
+  /* ── 진행 중 / 지난 베팅 나눠 그리기 ───────────────────
+     정산 전(open) 베팅은 위쪽에 그대로 펼쳐 두고, 끝난 베팅(적중·미적중·무효)은
+     아래 '지난 베팅 내역'에 모아 기본은 접어 둔다. 접힘 여부는 다시 그려도 유지한다. */
+  var betsPastOpen = false;
+  function betStatusOf(doc) {
+    var b = doc && doc.data ? doc.data() : (doc || {});
+    var s = String(b.status || 'open');
+    return s === 'void' ? 'push' : s;
+  }
+  function sectionHead(label, count) {
+    return '<div class="bets-sec-h"><b>' + label + '</b><em>' + count + '건</em></div>';
+  }
   function renderMyBets() {
     var list = el('betsList');
     if (!list || !betsDocs) return;
     if (!betsDocs.length) { list.innerHTML = '<p class="bets-empty">아직 베팅 내역이 없습니다.</p>'; return; }
     var games = gameMap();
     betsSig = betsSignature(betsDocs, games);
-    list.innerHTML = betsDocs.map(function (d) { return betRowHTML(d, games); }).join('');
+    var active = [], past = [];
+    betsDocs.forEach(function (d) { (betStatusOf(d) === 'open' ? active : past).push(d); });
+    var activeHTML = active.length
+      ? active.map(function (d) { return betRowHTML(d, games); }).join('')
+      : '<p class="bets-empty bets-none">현재 진행 중인 베팅이 없어요.</p>';
+    var pastHTML = past.length
+      ? '<section class="bets-sec bets-past-sec">' +
+          '<button type="button" id="betsPastToggle" class="bets-toggle" aria-expanded="' + (betsPastOpen ? 'true' : 'false') + '" aria-controls="betsPast">' +
+            '<span class="bets-toggle-t">지난 베팅 내역</span>' +
+            '<em class="bets-toggle-n">(' + past.length + '건)</em>' +
+            '<span class="bets-chev" aria-hidden="true">▾</span>' +
+          '</button>' +
+          '<div id="betsPast" class="bets-past"' + (betsPastOpen ? '' : ' hidden') + '>' +
+            past.map(function (d) { return betRowHTML(d, games); }).join('') +
+          '</div>' +
+        '</section>'
+      : '';
+    list.innerHTML =
+      '<section class="bets-sec bets-active-sec">' +
+        sectionHead('진행 중인 베팅', active.length) +
+        '<div class="bets-active">' + activeHTML + '</div>' +
+      '</section>' + pastHTML;
+  }
+  function togglePast() {
+    betsPastOpen = !betsPastOpen;
+    var btn = el('betsPastToggle'), box = el('betsPast');
+    if (btn) btn.setAttribute('aria-expanded', betsPastOpen ? 'true' : 'false');
+    if (box) box.hidden = !betsPastOpen;
   }
   function refreshIfStale() {
     if (!betsDocs || !el('betsList')) return;
@@ -362,6 +401,7 @@
       '<div id="betsMe" class="bets-me"></div>' +
       '<div id="betsList" class="bets-list"><p class="bets-empty">불러오는 중…</p></div>' +
       '</div>';
+    betsPastOpen = false;
     document.body.appendChild(wrap);
     paintBetsMe();
     loadMyBets();
@@ -369,6 +409,7 @@
       if (e.target === wrap) return closeBets();
       if (e.target.closest && e.target.closest('#betsClose')) return closeBets();
       if (e.target.closest && e.target.closest('#betsNick')) return nick();
+      if (e.target.closest && e.target.closest('#betsPastToggle')) return togglePast();
     });
     document.addEventListener('keydown', function esc(ev) {
       if (ev.key === 'Escape') { closeBets(); document.removeEventListener('keydown', esc); }
