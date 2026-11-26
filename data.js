@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-27T02:47:33+09:00",
+  updatedAt: "2026-11-27T03:44:49+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -20537,7 +20537,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 4패·5위·승점 9, 삼성화재(원정) 5승 2패·1위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 02:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 03:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -20892,7 +20892,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 3승 4패·4위·승점 9, SOOP(원정) 0승 7패·7위·승점 1."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 02:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 03:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-26 END */,
@@ -30551,7 +30551,7 @@ window.CLUTCH_DATA = {
             "fotmobSwapped": false
           }
         },
-        {
+                {
           "id": "soccer-hbe-bes-20261127",
           "espnId": "401915506",
           "sport": "soccer",
@@ -30634,6 +30634,21 @@ window.CLUTCH_DATA = {
             }
           ],
           "preview": "베식타시는 터키 쉬페르리그 3위(승점 25, 득실 +13)로 상위권이고, 이 대회에서는 2승 1무 1패(8위)입니다. 하포엘 베르셰바는 이스라엘 리그 2위(승점 78, 득실 +47)로 상위권이고, 이 대회에서는 1무 3패(33위)입니다. 최근 5경기는 베식타시 3승 1무 1패, 하포엘 베르셰바 1무 4패이고, 두 팀 평균 득점을 합치면 3.0골, 평균 실점은 4.0골입니다.",
+          "result": {
+            "state": "final",
+            "detail": "Suspended",
+            "awayScore": 0,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "0"
+              ],
+              "home": [
+                "0"
+              ]
+            },
+            "winner": null
+          },
           "details": {
             "teams": [
               {
@@ -30756,7 +30771,75 @@ window.CLUTCH_DATA = {
                     "line": "복귀 시점 미정"
                   }
                 ],
-                "injurySummary": "결장 4명 · 불확실 1명"
+                "injurySummary": "결장 4명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Marco Wolff",
+                    "rating": 6.9,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Niv Yehoshua",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pedro Amador",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Yonas Malede",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Forson Amankwah",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Igor Zlatanović",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Miguel Vítor",
+                    "rating": 6.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mohammed Abu Rumi",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Djibril Diop",
+                    "rating": 6.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Zahi Ahmed",
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Guy Mizrahi",
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "BES",
@@ -30859,7 +30942,75 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 약 1~2주"
                   }
                 ],
-                "injurySummary": "결장 1명"
+                "injurySummary": "결장 1명",
+                "players": [
+                  {
+                    "name": "Doğan Alemdar",
+                    "rating": 7.7,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Orkun Kökçü",
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "İlhan Fakılı",
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Emirhan Topçu",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Wilfred Ndidi",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Kassoum Ouattara",
+                    "rating": 6.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Salih Özcan",
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Tiago Djaló",
+                    "rating": 6.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Václav Černý",
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Hyeon-Gyu Oh",
+                    "rating": 5.8,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Taylan Bulut",
+                    "rating": 5.7,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               }
             ],
             "keyPlayers": [
@@ -30895,7 +31046,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/FC_Liefering_gegen_FC_Blau-Wei%C3%9F_Linz_%2823._Mai_2021%29_18.jpg/120px-FC_Liefering_gegen_FC_Blau-Wei%C3%9F_Linz_%2823._Mai_2021%29_18.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "득점 1"
-                    ]
+                    ],
+                    "rating": 6.2
                   },
                   {
                     "name": "Zahi Ahmed",
@@ -30903,7 +31055,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%D7%96%D7%90%D7%94%D7%99_%D7%90%D7%97%D7%9E%D7%93_%D7%91%D7%9E%D7%93%D7%99_%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%91%22%D7%A9_%D7%9C%D7%A7%D7%A8%D7%90%D7%AA_%D7%94%D7%9E%D7%A9%D7%97%D7%A7_%D7%A0%D7%92%D7%93_%D7%91%D7%99%D7%AA%D7%A8_%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D.jpg?width=120",
                     "stats": [
                       "도움 1"
-                    ]
+                    ],
+                    "rating": 6.1
                   }
                 ]
               }
@@ -30932,7 +31085,8 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 6112357,
             "fotmobSwapped": false
-          }
+          },
+          "status": "final"
         },
         {
           "id": "soccer-lech-usg-20261127",
@@ -36461,7 +36615,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천계양체육관에서 열립니다.",
               "**순위표** — 대한항공(홈) 3승 3패·4위·승점 9, KB손해보험(원정) 1승 5패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 02:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 03:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -36767,7 +36921,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
               "**순위표** — 흥국생명(홈) 2승 4패·6위·승점 6, GS칼텍스(원정) 5승 1패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 02:47 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-27 03:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-27 END */
