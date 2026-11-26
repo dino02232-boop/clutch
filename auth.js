@@ -72,6 +72,10 @@
     if (code === 'auth/account-exists-with-different-credential') {
       return '같은 이메일로 이미 다른 방식의 계정이 있습니다. 아이디·비밀번호로 로그인해 주세요.';
     }
+    if (code === 'auth/web-storage-unsupported' || /web-storage|storage-partition/i.test(msg)) {
+      return '이 브라우저가 쿠키·저장소를 막고 있어 구글 로그인을 마칠 수 없습니다. 아이디·비밀번호로 로그인해 주세요.';
+    }
+    if (code === 'auth/redirect-cancelled-by-user') return '구글 로그인이 취소되었습니다. 다시 시도해 주세요.';
     if (/PASSWORD_LOGIN_DISABLED/.test(msg)) return '이메일/비밀번호 로그인이 아직 활성화되지 않았습니다.';
     return '로그인하지 못했습니다. ' + (msg || '잠시 후 다시 시도해 주세요.');
   }
@@ -218,6 +222,10 @@
     'auth/popup-blocked': 1,
     'auth/operation-not-supported-in-this-environment': 1
   };
+  // errText 의 기본 문구는 아이디·비밀번호 기준이라, 구글 버튼에서 난 오류는 여기서 갈라 준다.
+  var GOOGLE_MSG = {
+    'auth/operation-not-allowed': '구글 로그인이 아직 켜져 있지 않습니다. 관리자에게 문의해 주세요.'
+  };
   async function google() {
     if (busy) return;
     if (!auth) { notice('Firebase 연결을 확인해 주세요.'); return; }
@@ -240,7 +248,7 @@
         }
       }
       setBusy(false);
-      notice(errText(e));
+      notice(GOOGLE_MSG[code] || errText(e));
     }
   }
 
