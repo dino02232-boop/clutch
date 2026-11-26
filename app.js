@@ -2645,9 +2645,12 @@
       ? '<a class="pg-review-src" href="' + esc(url) + '" target="_blank" rel="noopener">' +
         "풋몹 리뷰 원문<span class=\"pg-sns-ext\" aria-hidden=\"true\">↗</span></a>"
       : "";
+    // 자동 번역 제목은 어색하게 옮겨지는 경우가 많아(축구 은어·말장난) 화면에는 본문만 쓰고,
+    // 원문 제목은 '영문 원문'을 펼쳤을 때 보여 준다. 번역이 없으면 영문 제목을 그대로 둔다.
+    var showTitle = rv.lang === "en" ? title : "";
     return '<div class="pg-review">' +
       '<div class="pg-review-head"><b>풋몹 리뷰</b><span>' + esc(label) + "</span></div>" +
-      (title ? '<b class="pg-review-t">' + esc(title) + "</b>" : "") +
+      (showTitle ? '<b class="pg-review-t">' + esc(showTitle) + "</b>" : "") +
       (desc ? '<p class="pg-review-d">' + esc(desc) + "</p>" : "") +
       (en || link ? '<div class="pg-review-foot">' + en + link + "</div>" : "") +
       "</div>";
