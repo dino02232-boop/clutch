@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-26T09:27:03+09:00",
+  updatedAt: "2026-11-26T09:49:19+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -12962,7 +12962,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 한국전력(홈) 5승 2패·1위·승점 15, 현대캐피탈(원정) 5승 2패·2위·승점 14."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 08:40 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 09:49 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -13317,7 +13317,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 화성종합실내체육관에서 열립니다.",
               "**순위표** — IBK기업은행(홈) 4승 3패·3위·승점 12, 도로공사(원정) 6승 1패·1위·승점 18."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 08:40 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 09:49 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-25 END */,
@@ -19504,7 +19504,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 서울장충체육관에서 열립니다.",
               "**순위표** — 우리카드(홈) 3승 3패·5위·승점 9, 삼성화재(원정) 4승 2패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 08:40 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 09:49 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -19810,7 +19810,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 수원체육관에서 열립니다.",
               "**순위표** — 현대건설(홈) 2승 4패·6위·승점 6, SOOP(원정) 0승 6패·7위·승점 1."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 08:40 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-26 09:49 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-26 END */,
@@ -24492,14 +24492,14 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-26 END */,
 
         /* NBA-AUTO 2026-11-26 START */
-        {
+                {
           "id": "nba-mia-phi-20261126",
           "espnId": "401909317",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-26T07:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Xfinity Mobile Arena",
           "odds": {
             "provider": "Draft Kings",
@@ -24564,6 +24564,83 @@ window.CLUTCH_DATA = {
               "text": "**필라델피아 세븐티식서스**(홈) 14승 4패(홈 7승 3패, 최근 5경기 4승 1패), **마이애미 히트**(원정) 10승 6패(원정 4승 3패, 최근 5경기 5승 0패, 5연승). 직전 경기(11.22) **마이애미 히트**는 오클라호마시티 썬더에 123-113로 이겼고, Bam Adebayo 24점·15리바운드·12어시스트, Pelle Larsson 21점·3리바운드·5어시스트를 기록했습니다. 직전 경기(11.24) **필라델피아 세븐티식서스**는 포틀랜드 트레일블레이저스에 111-128로 졌고, LeBron James 23점·6리바운드·3어시스트, Tyrese Maxey 22점·2리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 104,
+            "homeScore": 111,
+            "lines": {
+              "away": [
+                "32",
+                "21",
+                "28",
+                "23"
+              ],
+              "home": [
+                "29",
+                "33",
+                "28",
+                "21"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Giannis Antetokounmpo",
+                "team": "MIA",
+                "min": "36",
+                "pts": 32,
+                "reb": "14",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032977.png"
+              },
+              {
+                "name": "Tyrese Maxey",
+                "team": "PHI",
+                "min": "37",
+                "pts": 30,
+                "reb": "4",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png"
+              },
+              {
+                "name": "LeBron James",
+                "team": "PHI",
+                "min": "35",
+                "pts": 25,
+                "reb": "10",
+                "ast": "12",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png"
+              },
+              {
+                "name": "Davion Mitchell",
+                "team": "MIA",
+                "min": "40",
+                "pts": 20,
+                "reb": "4",
+                "ast": "10",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278053.png"
+              },
+              {
+                "name": "VJ Edgecombe",
+                "team": "PHI",
+                "min": "36",
+                "pts": 18,
+                "reb": "6",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5124612.png"
+              },
+              {
+                "name": "Bam Adebayo",
+                "team": "MIA",
+                "min": "35",
+                "pts": 17,
+                "reb": "11",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
