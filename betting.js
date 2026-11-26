@@ -198,16 +198,23 @@
   function statusKo(s) { return STATUS_KO[s] || s || '베팅중'; }
   function two(n) { return ('0' + n).slice(-2); }
   function paintBetsMe() {
+    if (!me) return;
+    // 머리(닉네임·✏️)와 그 아래 줄(티어·포인트·다음 티어 안내)을 한 번에 칠한다.
+    var nick = el('betsNickName');
+    if (nick) {
+      var nm = window.clutchNickname || me.displayName || '회원';
+      nick.textContent = nm;
+      nick.title = nm;
+    }
     var n = el('betsMe');
-    if (!n || !me) return;
+    if (!n) return;
     var nx = window.clutchTierNext ? window.clutchTierNext(balance) : null;
     var hint = nx
       ? '다음 ' + nx.tier.name + '까지 ' + fmt(nx.need) + 'P'
       : '최고 티어입니다';
-    n.innerHTML = '<b>' + esc(window.clutchNickname || me.displayName || '회원') + '</b>' +
-      '<button type="button" id="betsNick" class="bets-icon" aria-label="닉네임 변경" title="닉네임 변경">✏️</button>' +
+    n.innerHTML = '<span class="bets-me-main">' +
       (window.clutchTierBadge ? window.clutchTierBadge(balance, { cls: 'lg' }) : '') +
-      '<span>' + fmt(balance) + 'P</span>' +
+      '<span class="bets-pt">' + fmt(balance) + 'P</span></span>' +
       '<em class="bets-next">' + esc(hint) + '</em>';
   }
   /* ── 픽별 적중·미적중 판정 ─────────────────────────────
@@ -412,9 +419,13 @@
     wrap.id = 'betsModal';
     wrap.className = 'bets-modal';
     wrap.innerHTML = '<div class="bets-box" role="dialog" aria-modal="true" aria-label="내 베팅 내역">' +
+      // 맨 윗줄: 왼쪽에 닉네임·✏️, 오른쪽에 로그아웃·× — 제목을 없앤 만큼 왼쪽을 닉네임으로 채운다.
       '<div class="bets-head">' +
+      '<div class="bets-id"><b id="betsNickName"></b>' +
+      '<button type="button" id="betsNick" class="bets-icon" aria-label="닉네임 변경" title="닉네임 변경">✏️</button></div>' +
+      '<div class="bets-head-act">' +
       '<button type="button" id="betsLogout" class="bets-logout">로그아웃</button>' +
-      '<button type="button" id="betsClose" class="bets-icon" aria-label="닫기" title="닫기">×</button></div>' +
+      '<button type="button" id="betsClose" class="bets-icon" aria-label="닫기" title="닫기">×</button></div></div>' +
       '<div id="betsMe" class="bets-me"></div>' +
       '<div id="betsList" class="bets-list"><p class="bets-empty">불러오는 중…</p></div>' +
       '</div>';
