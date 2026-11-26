@@ -237,6 +237,10 @@
 /* 베팅 요약 — 남는 폭만 쓰고 넘치면 말줄임 */
 .bl-slip{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums;color:#7A869A}
 .bl-slip i{font-style:normal;font-size:10.5px;opacity:.85}
+/* 추천 수 — 제목 줄 오른쪽 끝 고정(긴 제목은 말줄임). 0은 흐리게, 1 이상은 에메랄드로 */
+.bl-like{flex:0 0 auto;margin-left:auto;padding-left:6px;font-size:11px;font-weight:700;color:#0B7A54;font-variant-numeric:tabular-nums;letter-spacing:-.01em;white-space:nowrap}
+.bl-like.zero{color:#C0C8D4;filter:grayscale(1);opacity:.9}
+.bl-like.mine{font-weight:800}
 .bl-empty,.bl-nocmt{margin:0;padding:22px 14px;text-align:center;font-size:12.5px;color:var(--text-3);line-height:1.6}
 .bl-nocmt{padding:12px 2px;text-align:left}
 
@@ -253,6 +257,20 @@
 .detail-meta .meta-when{font-variant-numeric:tabular-nums}
 .detail-meta .meta-chip{font-size:10px;font-weight:800;color:var(--text-2);background:#f2f5f6;border-radius:999px;padding:2px 7px}
 .detail-body{margin:12px 0 0;font-size:14px;line-height:1.68;color:#1F2937;white-space:pre-wrap;overflow-wrap:anywhere}
+/* 상세 하단 추천 — 👍 추천 N (1인 1추천 토글, 내가 누른 글은 에메랄드로 채운다) */
+.detail-likebar{display:flex;justify-content:center;margin:14px 0 2px}
+.detail-likebar:empty{display:none;margin:0}
+.detail-like{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line-2);border-radius:999px;background:#fff;padding:8px 16px;font:inherit;font-size:12.5px;font-weight:800;color:var(--text-2);letter-spacing:-.01em;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .12s,border-color .12s,transform .12s}
+.detail-like i{font-style:normal;font-size:13px;line-height:1;filter:grayscale(1);opacity:.55}
+.detail-like span{line-height:1}
+.detail-like b{line-height:1;font-weight:800;color:var(--text);font-variant-numeric:tabular-nums}
+.detail-like.on{border-color:#BFE3D2;background:#E9F6EF;color:#0B7A54}
+.detail-like.on i{filter:none;opacity:1}
+.detail-like.on b{color:#0B7A54}
+.detail-like:active{transform:scale(.97)}
+.detail-like.busy{opacity:.6;cursor:default}
+.detail-like:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(hover:hover){.detail-like:hover{border-color:var(--accent);color:var(--accent)}.detail-like.on:hover{background:#DFF1E8}}
 .detail-cmts{margin-top:16px;padding-top:11px;border-top:1px solid var(--line)}
 .detail-cmts h3{margin:0 0 4px;font-size:12.5px;font-weight:800;color:var(--text-2)}
 .detail-cmts h3 b{color:var(--accent);font-variant-numeric:tabular-nums}

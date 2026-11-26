@@ -336,6 +336,72 @@
     });
   }
 
+  /* ── 추천(👍) ────────────────────────────────────────────────
+     1인 1추천. 글 문서(posts/{id})의 likedUids 배열에 내 uid 를 넣고 빼며,
+     likeCount 는 그 배열 길이와 같게 유지한다. Firestore 규칙이 '내 uid 하나만 더하거나
+     빼고 likeCount = likedUids 길이'인 변경만 통과시킨다(제목·본문·남의 uid 는 못 건드림). */
+  var likeBusy = {};
+  function likeCount(p) { return Math.max(0, Math.floor(Number(p && p.likeCount) || 0)); }
+  function likedByMe(p) { return !!(user && p && Array.isArray(p.likedUids) && p.likedUids.indexOf(user.uid) >= 0); }
+  // 목록 제목 줄 오른쪽 — 추천이 0이면 흐리게, 1 이상이면 에메랄드로 눈에 띄게
+  function likeBadgeHTML(p) {
+    var n = likeCount(p);
+    return '<span class="bl-like' + (n > 0 ? ' on' : ' zero') + (likedByMe(p) ? ' mine' : '') + '"' +
+      ' aria-label="추천 ' + n + '개">👍 ' + fmt(n) + '</span>';
+  }
+  // 상세 하단 버튼 — 👍 추천 N (누른 글은 채워진 모양, 다시 누르면 취소)
+  function likeBarHTML(id, p) {
+    if (!p) return '';
+    var n = likeCount(p), on = likedByMe(p);
+    return '<button type="button" class="detail-like' + (on ? ' on' : '') + (likeBusy[id] ? ' busy' : '') + '"' +
+      ' data-like="' + esc(id) + '" aria-pressed="' + (on ? 'true' : 'false') + '"' +
+      ' aria-label="추천 ' + n + '개' + (on ? ', 눌러서 취소' : '') + '"' +
+      ' title="' + (on ? '추천 취소' : '이 글 추천') + '">' +
+      '<i aria-hidden="true">👍</i><span>추천</span><b>' + fmt(n) + '</b></button>';
+  }
+  function paintLikeBar(id) {
+    var bar = $('detailLikeBar');
+    if (!bar) return;
+    bar.innerHTML = id ? likeBarHTML(id, postMap[id]) : '';
+  }
+  function toggleLike(id) {
+    var p = id && postMap[id];
+    if (!p) return;
+    if (!user) return login();
+    if (likeBusy[id]) return;
+    likeBusy[id] = true;
+    paintLikeBar(id);
+    var ref = db.collection('posts').doc(id);
+    db.runTransaction(function (tx) {
+      return tx.get(ref).then(function (d) {
+        if (!d.exists) throw new Error('gone');
+        var v = d.data() || {};
+        var uids = Array.isArray(v.likedUids) ? v.likedUids.slice() : [];
+        var i = uids.indexOf(user.uid);
+        if (i >= 0) uids.splice(i, 1); else uids.push(user.uid);
+        tx.update(ref, { likedUids: uids, likeCount: uids.length });
+        return uids;
+      });
+    }).then(function (uids) {
+      p.likedUids = uids;
+      p.likeCount = uids.length;
+    }, function (e) {
+      var code = String((e && (e.code || (e.error && e.error.code))) || '');
+      var msg = String((e && e.message) || '');
+      if (code === 'permission-denied' || /permission|insufficient/i.test(msg)) {
+        say('아직 추천 규칙이 Firebase에 반영되지 않았어요. 조금 뒤 다시 눌러 주세요.');
+      } else if (code === 'not-found' || /gone/.test(msg)) {
+        say('글을 찾을 수 없어요. 목록에서 다시 열어 주세요.');
+      } else {
+        say('추천을 저장하지 못했어요. 잠시 뒤 다시 눌러 주세요.');
+      }
+    }).then(function () {
+      likeBusy[id] = false;
+      paintLikeBar(id);
+      paintRows();
+    });
+  }
+
   // 목록 한 줄 — 커뮤니티 게시판처럼 2줄로 촘촘하게.
   //   1행: 안 읽음 점 · 픽 뱃지 · 제목 · [댓글 수]
   //   2행: 상대 시간 · 닉네임 · 베팅 한 줄 요약
@@ -352,7 +418,8 @@
         (hasSlip ? '<span class="bl-bet" title="베팅 공유" aria-label="베팅 공유">픽</span>' : '') +
         '<span class="bl-title">' + esc(p.title) + '</span>' +
         '<span class="bl-cmt" data-cmt="' + esc(id) + '"' + (n ? '' : ' hidden') +
-          (n ? ' aria-label="댓글 ' + n + '개"' : '') + '>' + (n || '') + '</span></span>' +
+          (n ? ' aria-label="댓글 ' + n + '개"' : '') + '>' + (n || '') + '</span>' +
+        likeBadgeHTML(p) + '</span>' +
       '<span class="bl-meta">' +
         '<span class="bl-time"' + (full ? ' title="' + esc(full) + '"' : '') + '>' + esc(fmtRel(p.createdAt)) + '</span>' +
         postByHTML(p, false) +
@@ -414,11 +481,14 @@
         postMap[d.id] = p;
         if (p.points == null) profFetch(p.uid);
       });
-      node.hidden = false;
+      // 글 상세를 보고 있을 때는 목록을 드러내지 않는다(추천 수만 바뀌어도 스냅샷이 오므로)
+      if (!$('postDetail') || $('postDetail').hidden) node.hidden = false;
       paintRows();
       s.docs.forEach(function (d) { countComments(d.id); });
       paintAuthors();
       paintPager();
+      // 열어 둔 글의 추천 수가 다른 사람 손에 바뀌면 버튼도 따라 바뀌게
+      if (curDetailId && postMap[curDetailId] && $('postDetail') && !$('postDetail').hidden) paintLikeBar(curDetailId);
       if (want > 1 && !listDocs.length) { listPage = 1; loadPosts(1); }
     }, function () {
       node.innerHTML = '<p class="bl-empty">글을 불러오지 못했습니다.</p>';
@@ -447,6 +517,7 @@
           ' data-msg-name="' + esc((profOf(p.uid) && profOf(p.uid).nickname) || p.displayName || '') + '">✉️ 쪽지</button>' : '');
       $('detailBody').textContent = p.body || '';
       $('detailSlip').innerHTML = slipCardHTML(p.slip, '🎟 공유한 베팅', 'detail');
+      paintLikeBar(id);
       $('detailCmtCount').textContent = countCache[id] ? String(countCache[id]) : '0';
       if ($('detailNotice')) $('detailNotice').textContent = '';
       $('detailComments').innerHTML = '<div id="comments-' + esc(id) + '"><p class="bl-nocmt">댓글을 불러오는 중…</p></div>';
@@ -472,6 +543,7 @@
         $('detailMeta').innerHTML = '';
         $('detailBody').textContent = '불러오는 중…';
         $('detailSlip').innerHTML = '';
+        paintLikeBar('');
         $('detailComments').innerHTML = '';
         $('detailCommentBox').innerHTML = '';
       }
@@ -494,6 +566,7 @@
     var det = $('postDetail'), list = $('postList');
     if (det) det.hidden = true;
     if (list) list.hidden = false;
+    paintLikeBar('');
     paintRows();
     paintPager();
   }
@@ -673,6 +746,10 @@
     // 내 아이디는 쪽지 버튼이 아니어야 하므로 랭킹·게시판을 한 번 다시 그린다
     if ($('rankAll')) paintRanks();
     paintAuthors();
+    // 추천은 로그인 상태에 따라 '내가 누른 글' 표시가 달라진다 — 목록·상세를 한 번 다시 그린다
+    // (아직 목록을 못 받았을 때 다시 그리면 '글이 없습니다'가 잠깐 뜨므로 받은 뒤에만)
+    if ($('postList') && listDocs.length) paintRows();
+    if (curDetailId) paintLikeBar(curDetailId);
     if (!u) { if ($('myBetPick')) drawBetPick(); return; }
     var ref = db.collection('users').doc(u.uid);
     ref.get().then(function (d) {
@@ -687,6 +764,8 @@
     });
   });
   document.addEventListener('click', function (e) {
+    var lk = e.target.closest && e.target.closest('[data-like]');
+    if (lk) { e.preventDefault(); toggleLike(lk.getAttribute('data-like')); return; }
     if (e.target.id === 'boardLogin') login();
     if (e.target.id === 'writeToggle') toggleCompose();
     if (e.target.id === 'writeCancel') toggleCompose(false);
