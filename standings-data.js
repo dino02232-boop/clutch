@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-26T12:25:57+09:00
+   생성 시각(기준): 2026-11-26T13:35:37+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-26T12:25:57+09:00",
+  "updated": "2026-11-26T13:35:37+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -5830,6 +5830,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 4,
+              "team": "휴스턴 로키츠",
+              "abbr": "HOU",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+              "played": 19,
+              "win": 14,
+              "draw": null,
+              "loss": 5,
+              "points": null,
+              "diff": 154,
+              "pct": ".737",
+              "gb": "1.5",
+              "zone": null
+            },
+            {
+              "rank": 5,
               "team": "멤피스 그리즐리스",
               "abbr": "MEM",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
@@ -5841,21 +5856,6 @@ window.CLUTCH_STANDINGS = {
               "diff": 178,
               "pct": ".737",
               "gb": "1.5",
-              "zone": null
-            },
-            {
-              "rank": 5,
-              "team": "휴스턴 로키츠",
-              "abbr": "HOU",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
-              "played": 18,
-              "win": 13,
-              "draw": null,
-              "loss": 5,
-              "points": null,
-              "diff": 142,
-              "pct": ".722",
-              "gb": "2",
               "zone": null
             },
             {
@@ -5908,14 +5908,14 @@ window.CLUTCH_STANDINGS = {
               "team": "피닉스 선즈",
               "abbr": "PHX",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
-              "played": 16,
+              "played": 17,
               "win": 9,
               "draw": null,
-              "loss": 7,
+              "loss": 8,
               "points": null,
-              "diff": -9,
-              "pct": ".563",
-              "gb": "5",
+              "diff": -21,
+              "pct": ".529",
+              "gb": "5.5",
               "zone": null
             },
             {
