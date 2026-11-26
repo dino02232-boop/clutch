@@ -2631,22 +2631,19 @@
     var desc = String(rv.description || "").trim();
     if (!title && !desc) return "";
     var label = "Opta" + (rv.lang === "en" ? " · 원문" : " · 자동 번역");
-    var enTitle = String(rv.titleEn || "").trim();
     var enDesc = String(rv.descriptionEn || "").trim();
+    // 번역문 바로 밑에 원문 한 줄을 같이 둔다 — 기계 번역이 뜻을 비틀어도 원문으로 바로 확인된다.
     var en = "";
-    if (rv.lang !== "en" && (enTitle || enDesc)) {
-      en = '<details class="pg-review-more"><summary>영문 원문</summary>' +
-        (enTitle ? '<p class="pg-review-en-t">' + esc(enTitle) + "</p>" : "") +
-        (enDesc ? '<p class="pg-review-en">' + esc(enDesc) + "</p>" : "") +
-        "</details>";
+    if (rv.lang !== "en" && enDesc) {
+      en = '<p class="pg-review-en">' + esc(enDesc) + "</p>";
     }
     var url = String(rv.url || "").trim();
     var link = /^https?:\/\//.test(url)
       ? '<a class="pg-review-src" href="' + esc(url) + '" target="_blank" rel="noopener">' +
         "풋몹 리뷰 원문<span class=\"pg-sns-ext\" aria-hidden=\"true\">↗</span></a>"
       : "";
-    // 자동 번역 제목은 어색하게 옮겨지는 경우가 많아(축구 은어·말장난) 화면에는 본문만 쓰고,
-    // 원문 제목은 '영문 원문'을 펼쳤을 때 보여 준다. 번역이 없으면 영문 제목을 그대로 둔다.
+    // 자동 번역 제목은 축구 은어·말장난에서 어색하게 옮겨지는 일이 많아 화면에 쓰지 않는다.
+    // 번역이 없으면(lang=en) 원문 제목과 본문을 그대로 보여 준다.
     var showTitle = rv.lang === "en" ? title : "";
     return '<div class="pg-review">' +
       '<div class="pg-review-head"><b>풋몹 리뷰</b><span>' + esc(label) + "</span></div>" +

@@ -240,7 +240,8 @@ def _translate(text, src_lang="en"):
 
 
 def _localize(text, pairs):
-    """번역문에 남은 영문 팀 이름을 카드의 한글 팀 이름으로 바꾼다(있는 것만)."""
+    """번역문에 남은 영문 팀 이름을 카드의 한글 팀 이름으로 바꾸고(있는 것만),
+    축구 은어를 기계 번역이 엉뚱하게 옮긴 자리는 원문을 보고 바로잡는다."""
     if not text:
         return text
     for en, ko in pairs:
@@ -248,6 +249,25 @@ def _localize(text, pairs):
             continue
         text = re.sub(r"\b" + re.escape(en) + r"\b", ko, text)
     return text
+
+
+def _polish(ko, en):
+    """기계 번역이 축구 은어를 잘못 옮긴 곳을 원문 근거로 고친다(원문에 그 말이 있을 때만)."""
+    if not ko:
+        return ko
+    e = (en or "").lower()
+    if "shootout" not in e:
+        # penalty drama·penalty를 '승부차기'로 옮기는 오역(정규시간 페널티 상황)
+        ko = ko.replace("승부차기", "페널티 상황")
+    if re.search(r"\bhowler\b", e):
+        ko = ko.replace("하울러", "실책")
+    if "minnows" in e or "minnow" in e:
+        ko = ko.replace("미노우", "약체")
+    if re.search(r"\bscreamer\b", e):
+        ko = ko.replace("비명", "중거리포")
+    if re.search(r"\bleveller\b", e):
+        ko = ko.replace("레벨러", "동점골")
+    return ko
 
 
 def team_pairs(game):
@@ -570,6 +590,8 @@ def build_postgame(game, refresh=False, translate=True):
             pairs = team_pairs(game)
             ko_title = _localize(ko_title, pairs)
             ko_desc = _localize(ko_desc, pairs)
+            ko_title = _polish(ko_title, title)
+            ko_desc = _polish(ko_desc, desc)
         auto = bool(ko_title or ko_desc)
         out["review"] = {
             "title": ko_title or title,
@@ -651,6 +673,8 @@ def main():
     ap.add_argument("--max", type=int, default=0, help="이번 실행에서 확인할 경기 수 상한")
     ap.add_argument("--no-translate", action="store_true")
     ap.add_argument("--id", action="append", help="이 경기 id 만 확인(여러 번 쓸 수 있음)")
+    ap.add_argument("--force", action="store_true",
+                    help="이미 채운 경기도 다시 받아 문구를 새로 만든다(번역·문장 틀을 고쳤을 때)")
     args = ap.parse_args()
 
     now = datetime.now(KST)
@@ -684,7 +708,7 @@ def main():
                 kick = None
             if kick is None or kick < since:
                 continue
-        if not needs_fill(g):
+        if not args.force and not needs_fill(g):
             continue
         if args.max and checked >= args.max:
             continue

@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-26T10:16:08+09:00",
+  updatedAt: "2026-11-26T10:24:45+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -16626,7 +16626,7 @@ window.CLUTCH_DATA = {
           "status": "final",
           "postgame": {
             "review": {
-              "title": "아스날 1-1 보루시아 도르트문트: 교케레스의 초기 비명은 충분하지 않습니다",
+              "title": "아스날 1-1 보루시아 도르트문트: 교케레스의 초기 중거리포은 충분하지 않습니다",
               "description": "빅토르 교케레스는 놀라운 골을 넣어 아스날이 보루시아 도르트문트를 상대로 앞서게 했지만 승점 3점을 모두 획득할 절호의 기회를 놓쳤습니다.",
               "titleEn": "Arsenal 1-1 Borussia Dortmund: Gyokeres' early screamer not enough",
               "descriptionEn": "Viktor Gyokeres scored a stunner to put Arsenal ahead against Borussia Dortmund, but then missed a golden chance to snatch all three points.",
@@ -17813,7 +17813,7 @@ window.CLUTCH_DATA = {
           "status": "final",
           "postgame": {
             "review": {
-              "title": "맨체스터 시티 2-2 나폴리: 체르키의 후반 레벨러, 호스트의 얼굴을 붉히지 않음",
+              "title": "맨체스터 시티 2-2 나폴리: 체르키의 후반 동점골, 호스트의 얼굴을 붉히지 않음",
               "description": "나폴리는 에티하드 스타디움에서 맨체스터 시티를 상대로 두 번이나 선두를 달리고 있었지만 엔초 마레스카의 부하들은 라얀 체르키 덕분에 승점을 얻기 위해 반격했습니다.",
               "titleEn": "Manchester City 2-2 Napoli: Cherki's late leveller spares hosts' blushes",
               "descriptionEn": "Napoli twice led at Etihad Stadium against Manchester City, but Enzo Maresca's men fought back to claim a point thanks to Rayan Cherki.",
@@ -21310,7 +21310,7 @@ window.CLUTCH_DATA = {
           "status": "final",
           "postgame": {
             "review": {
-              "title": "사바 1-4 바르셀로나: 고든, 후반전 돌풍의 미노우로 더블 달성",
+              "title": "사바 1-4 바르셀로나: 고든, 후반전 돌풍의 약체로 더블 달성",
               "description": "앤서니 고든은 바르셀로나가 바쿠에서 사바를 상대로 챔피언스리그 4-1 승리를 거두면서 두 골을 넣었습니다.",
               "titleEn": "Sabah 1-4 Barcelona: Gordon at the double as second-half flurry downs minnows",
               "descriptionEn": "Anthony Gordon scored twice as Barcelona eased to a 4-1 Champions League victory over Sabah in Baku.",
@@ -23605,7 +23605,7 @@ window.CLUTCH_DATA = {
           "status": "final",
           "postgame": {
             "review": {
-              "title": "스포르팅 CP 2-2 맨체스터 유나이티드: 라멘스 하울러 선물 수아레스 후반 동점골",
+              "title": "스포르팅 CP 2-2 맨체스터 유나이티드: 라멘스 실책 선물 수아레스 후반 동점골",
               "description": "모든 것이 갖춰진 경기에서 스포르팅 CP가 늦게 무승부를 기록했지만 맨체스터 유나이티드는 늦게 승자를 잡았습니다.",
               "titleEn": "Sporting CP 2-2 Manchester United: Lammens howler gifts Suarez late equaliser",
               "descriptionEn": "In a game that had everything, Sporting CP came from behind to snatch a late draw, though Manchester United had a late winner disallowed.",
@@ -24774,7 +24774,7 @@ window.CLUTCH_DATA = {
           "postgame": {
             "review": {
               "title": "파리 생제르맹 2-2 로마: 말렌 페널티킥으로 챔피언의 완벽한 출발 종료",
-              "description": "로마는 파리에서의 승부차기 이후 이번 시즌 챔피언스리그에서 파리 생제르맹을 상대로 패배를 면한 첫 번째 팀이었다.",
+              "description": "로마는 파리에서의 페널티 상황 이후 이번 시즌 챔피언스리그에서 파리 생제르맹을 상대로 패배를 면한 첫 번째 팀이었다.",
               "titleEn": "Paris Saint-Germain 2-2 Roma: Malen penalty ends champions' perfect start",
               "descriptionEn": "Roma were the first side to avoid defeat against Paris Saint-Germain in this season's Champions League after penalty drama in Paris.",
               "source": "FotMob · Opta",
