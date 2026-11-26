@@ -237,10 +237,16 @@
 /* 베팅 요약 — 남는 폭만 쓰고 넘치면 말줄임 */
 .bl-slip{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums;color:#7A869A}
 .bl-slip i{font-style:normal;font-size:10.5px;opacity:.85}
-/* 추천 수 — 제목 줄 오른쪽 끝 고정(긴 제목은 말줄임). 0은 흐리게, 1 이상은 에메랄드로 */
-.bl-like{flex:0 0 auto;margin-left:auto;padding-left:6px;font-size:11px;font-weight:700;color:#0B7A54;font-variant-numeric:tabular-nums;letter-spacing:-.01em;white-space:nowrap}
-.bl-like.zero{color:#C0C8D4;filter:grayscale(1);opacity:.9}
-.bl-like.mine{font-weight:800}
+/* 추천 수 — 제목 줄 오른쪽 끝 고정(긴 제목은 말줄임). 0은 부드러운 회색, 1 이상은 에메랄드로 */
+.bl-like{flex:0 0 auto;margin-left:auto;padding-left:6px;display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:700;color:#059669;font-variant-numeric:tabular-nums;letter-spacing:-.01em;white-space:nowrap}
+.bl-like b{font-weight:700}
+.bl-like.zero{color:#BFC7D2;opacity:.95}
+.bl-like.zero b{color:#BFC7D2}
+.bl-like.on{color:#059669}
+.bl-like.mine{color:#10b981;font-weight:800}
+.bl-like.mine b{font-weight:800;color:#10b981}
+/* 따봉 SVG — 목록 배지와 상세 버튼이 같이 쓴다. stroke=currentColor 라서 색은 부모 color 를 따른다 */
+.like-ico{display:inline-block;vertical-align:middle;flex-shrink:0;overflow:visible}
 .bl-empty,.bl-nocmt{margin:0;padding:22px 14px;text-align:center;font-size:12.5px;color:var(--text-3);line-height:1.6}
 .bl-nocmt{padding:12px 2px;text-align:left}
 
@@ -263,20 +269,20 @@
 .detail-meta .meta-del:hover{border-color:#D95A4E;color:#B4453C;background:#FDF1F0}
 .cmt-del{margin-left:auto;border:0;background:none;padding:0 0 0 6px;font:inherit;font-size:10.5px;font-weight:700;color:#AEB7C3;cursor:pointer;-webkit-tap-highlight-color:transparent;align-self:center}
 .cmt-del:hover,.cmt-del:active{color:#B4453C}
-/* 상세 하단 추천 — 👍 추천 N (1인 1추천 토글, 내가 누른 글은 에메랄드로 채운다) */
+/* 상세 하단 추천 — 따봉 추천 N (1인 1추천 토글, 내가 누른 글은 에메랄드로 채운다) */
 .detail-likebar{display:flex;justify-content:center;margin:14px 0 2px}
 .detail-likebar:empty{display:none;margin:0}
-.detail-like{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line-2);border-radius:999px;background:#fff;padding:8px 16px;font:inherit;font-size:12.5px;font-weight:800;color:var(--text-2);letter-spacing:-.01em;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .12s,border-color .12s,transform .12s}
-.detail-like i{font-style:normal;font-size:13px;line-height:1;filter:grayscale(1);opacity:.55}
+.detail-like{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);border-radius:999px;background:#fff;padding:8px 16px;font:inherit;font-size:12.5px;font-weight:800;color:var(--text-2);letter-spacing:-.01em;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .12s,border-color .12s,transform .12s,color .12s}
+.detail-like .like-ico{opacity:.45;transition:opacity .12s,color .12s}
 .detail-like span{line-height:1}
 .detail-like b{line-height:1;font-weight:800;color:var(--text);font-variant-numeric:tabular-nums}
-.detail-like.on{border-color:#BFE3D2;background:#E9F6EF;color:#0B7A54}
-.detail-like.on i{filter:none;opacity:1}
-.detail-like.on b{color:#0B7A54}
+.detail-like.on,.detail-like[aria-pressed="true"]{border-color:#A7E4C6;background:#ECFDF5;color:#059669}
+.detail-like.on .like-ico,.detail-like[aria-pressed="true"] .like-ico{opacity:1;color:#059669}
+.detail-like.on b,.detail-like[aria-pressed="true"] b{color:#059669}
 .detail-like:active{transform:scale(.97)}
 .detail-like.busy{opacity:.6;cursor:default}
 .detail-like:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media(hover:hover){.detail-like:hover{border-color:var(--accent);color:var(--accent)}.detail-like.on:hover{background:#DFF1E8}}
+@media(hover:hover){.detail-like:hover{border-color:var(--accent);color:var(--accent)}.detail-like:hover .like-ico{opacity:.85}.detail-like.on:hover,.detail-like[aria-pressed="true"]:hover{background:#DCF7EA}}
 .detail-cmts{margin-top:16px;padding-top:11px;border-top:1px solid var(--line)}
 .detail-cmts h3{margin:0 0 4px;font-size:12.5px;font-weight:800;color:var(--text-2)}
 .detail-cmts h3 b{color:var(--accent);font-variant-numeric:tabular-nums}

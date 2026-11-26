@@ -401,10 +401,12 @@
     });
   }
 
-  /* ── 추천(👍) ────────────────────────────────────────────────
+  /* ── 추천(따봉) ──────────────────────────────────────────────
      1인 1추천. 글 문서(posts/{id})의 likedUids 배열에 내 uid 를 넣고 빼며,
      likeCount 는 그 배열 길이와 같게 유지한다. Firestore 규칙이 '내 uid 하나만 더하거나
      빼고 likeCount = likedUids 길이'인 변경만 통과시킨다(제목·본문·남의 uid 는 못 건드림). */
+  // 따봉 아이콘 — stroke="currentColor" 라서 CSS color(회색/에메랄드)를 그대로 따라간다.
+  var LIKE_ICO = '<svg class="like-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>';
   var likeBusy = {};
   function likeCount(p) { return Math.max(0, Math.floor(Number(p && p.likeCount) || 0)); }
   function likedByMe(p) { return !!(user && p && Array.isArray(p.likedUids) && p.likedUids.indexOf(user.uid) >= 0); }
@@ -412,9 +414,9 @@
   function likeBadgeHTML(p) {
     var n = likeCount(p);
     return '<span class="bl-like' + (n > 0 ? ' on' : ' zero') + (likedByMe(p) ? ' mine' : '') + '"' +
-      ' aria-label="추천 ' + n + '개">👍 ' + fmt(n) + '</span>';
+      ' aria-label="추천 ' + n + '개">' + LIKE_ICO + '<b>' + fmt(n) + '</b></span>';
   }
-  // 상세 하단 버튼 — 👍 추천 N (누른 글은 채워진 모양, 다시 누르면 취소)
+  // 상세 하단 버튼 — 따봉 추천 N (내가 누른 글은 에메랄드로 살아나고, 다시 누르면 취소)
   function likeBarHTML(id, p) {
     if (!p) return '';
     var n = likeCount(p), on = likedByMe(p);
@@ -422,7 +424,7 @@
       ' data-like="' + esc(id) + '" aria-pressed="' + (on ? 'true' : 'false') + '"' +
       ' aria-label="추천 ' + n + '개' + (on ? ', 눌러서 취소' : '') + '"' +
       ' title="' + (on ? '추천 취소' : '이 글 추천') + '">' +
-      '<i aria-hidden="true">👍</i><span>추천</span><b>' + fmt(n) + '</b></button>';
+      LIKE_ICO + '<span>추천</span><b>' + fmt(n) + '</b></button>';
   }
   function paintLikeBar(id) {
     var bar = $('detailLikeBar');
