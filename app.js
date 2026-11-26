@@ -2618,6 +2618,64 @@
       bits.map(esc).join(" · ") + "</span></div>";
   }
 
+  /* ── 축구: 풋몹(FotMob·Opta) 경기 후 리뷰 + 선수 한 줄 평 카드 ────────
+     data.js 의 postgame 은 tools/fotmob_postgame.py 가 끝난 경기에 채운다.
+       postgame.review                 { title, description, titleEn, descriptionEn, source, url, lang, auto }
+       postgame.carry / .low / (무승부) .carry(tag: top)
+           { name, team, side, tag, line, facts[], rating, pos, min }
+     데이터가 없는 경기(리뷰 미발행·옛 카드)는 아래 문구를 그리지 않고 기존 계산으로 돌아간다. */
+  function pgSoccerReviewHTML(g) {
+    var rv = g && g.postgame && g.postgame.review;
+    if (!rv) return "";
+    var title = String(rv.title || "").trim();
+    var desc = String(rv.description || "").trim();
+    if (!title && !desc) return "";
+    var label = "Opta" + (rv.lang === "en" ? " · 원문" : " · 자동 번역");
+    var enTitle = String(rv.titleEn || "").trim();
+    var enDesc = String(rv.descriptionEn || "").trim();
+    var en = "";
+    if (rv.lang !== "en" && (enTitle || enDesc)) {
+      en = '<details class="pg-review-more"><summary>영문 원문</summary>' +
+        (enTitle ? '<p class="pg-review-en-t">' + esc(enTitle) + "</p>" : "") +
+        (enDesc ? '<p class="pg-review-en">' + esc(enDesc) + "</p>" : "") +
+        "</details>";
+    }
+    var url = String(rv.url || "").trim();
+    var link = /^https?:\/\//.test(url)
+      ? '<a class="pg-review-src" href="' + esc(url) + '" target="_blank" rel="noopener">' +
+        "풋몹 리뷰 원문<span class=\"pg-sns-ext\" aria-hidden=\"true\">↗</span></a>"
+      : "";
+    return '<div class="pg-review">' +
+      '<div class="pg-review-head"><b>풋몹 리뷰</b><span>' + esc(label) + "</span></div>" +
+      (title ? '<b class="pg-review-t">' + esc(title) + "</b>" : "") +
+      (desc ? '<p class="pg-review-d">' + esc(desc) + "</p>" : "") +
+      (en || link ? '<div class="pg-review-foot">' + en + link + "</div>" : "") +
+      "</div>";
+  }
+
+  // 선수 한 줄 평 카드 — 저장된 문구(line)와 칩(facts)을 그대로 그린다.
+  function pgSoccerCardHTML(p, cls, label) {
+    if (!p || !p.name) return "";
+    var facts = (Array.isArray(p.facts) ? p.facts : []).map(function (x) {
+      return "<span>" + esc(x) + "</span>";
+    }).join("");
+    return '<article class="pg-highlight ' + cls + '">' +
+      '<div class="pg-line"><b>' + esc(label) + '</b>' +
+      (p.team ? '<span class="pg-tag ' + cls + '">' + esc(p.team) + "</span>" : "") + "</div>" +
+      '<strong class="pg-name">' + esc(p.name) + "</strong>" +
+      (p.line ? "<p>" + esc(p.line) + "</p>" : "") +
+      (facts ? '<div class="pg-facts">' + facts + "</div>" : "") +
+      "</article>";
+  }
+
+  function pgSoccerCardsHTML(g) {
+    var pg = (g && g.postgame) || {};
+    var up = pgSoccerCardHTML(pg.carry, "up", pg.carry && pg.carry.tag === "top" ? "이 경기 최고" : "캐리한 선수");
+    var down = pgSoccerCardHTML(pg.low, "down", "아쉬웠던 선수");
+    if (!up && !down) return "";
+    return '<div class="pg-highlights">' + up + down + "</div>";
+  }
+
   /* ── 축구: 결과·흐름 + 승패 원인(점유율·슈팅·선방) + 선수 활약 + 득점 장면 ── */
   function pgSoccerHTML(g) {
     var r = g.result;
@@ -2648,8 +2706,12 @@
     var entry = summaryEntry(g);
     var data = entry && entry.data;
     var boxes = data && Array.isArray(data.box) ? data.box : [];
+    var reviewHTML = pgSoccerReviewHTML(g);
+    var cardsHTML = pgSoccerCardsHTML(g);
     if (!boxes.length) {
       return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b></div>' +
+        '<p class="pg-game-line">' + esc(out.join(" ")) + "</p>" +
+        reviewHTML + cardsHTML +
         pregVsResultHTML(g) +
         '<p class="postgame-note">' +
         (entry && entry.err ? "경기 기록을 불러오지 못했습니다." : "경기 기록을 불러오는 중입니다.") +
@@ -2727,7 +2789,7 @@
     }
 
     var board = soccerBoard(g, data);
-    var verdict = board ? soccerVerdictText(g, board, false) : "";
+    var verdict = (board && !cardsHTML) ? soccerVerdictText(g, board, false) : "";
     var plTable = board ? soccerPlayerTableHTML(g, board) : "";
     // 평점이 있는 경기: 기록표와 '이 경기 평점' 목록을 팀별 한 표로 합친다(같은 선수 중복 없음).
     var roster = soccerRosterHTML(g, board);
@@ -2753,9 +2815,16 @@
       : (roster
         ? "이 경기는 ESPN 선수 기록을 받지 못해 FotMob 이 경기 평점만 표시합니다."
         : "축구는 ESPN 공개 기록에 선수별 시즌 평균이 없어 개인 평가를 만들지 않습니다. 팀 지표와 득점 장면만 정리했습니다.");
+    if (g.postgame && (g.postgame.review || g.postgame.carry)) {
+      note += (g.postgame.review ? " 경기 후 리뷰는 풋몹(FotMob·Opta) 글을 " +
+        (g.postgame.review.lang === "en" ? "영문 그대로" : "자동 번역해") + " 옮겼습니다." : "") +
+        (g.postgame.carry ? " 선수 한 줄 평은 풋몹 경기 스탯(골·도움·평점·기회창출·선방)으로 골랐습니다." : "");
+    }
 
     return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>승패 원인 · 활약</span></div>' +
       '<p class="pg-game-line">' + esc(out.join(" ")) + "</p>" +
+      reviewHTML +
+      cardsHTML +
       (verdict ? '<p class="pg-verdict">' + esc(verdict) + "</p>" : "") +
       '<div class="pg-why"><b>' + whyLabel + '</b><p>' + esc(why) + "</p></div>" +
       pregVsResultHTML(g) +

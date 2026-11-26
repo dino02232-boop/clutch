@@ -26,6 +26,12 @@ Actions → 워크플로 선택 → Run workflow.
 - `fix_soccer_photos.py` — 이미 data.js 에 있는 축구 카드의 선수 사진만 다시 채우는 보완 스크립트.
   `python3 tools/fix_soccer_photos.py --write` (미리보기는 `--write` 없이). photo 외 값은 건드리지 않습니다.
 - `refresh_results.py` — 끝난 경기 결과만 갱신(`--started-only` 로 확인 범위를 좁힘).
+- `fotmob_postgame.py` — 끝난 축구 경기의 **경기 후 리뷰·선수 한 줄 평**. FotMob `matchDetails` 의
+  `content.matchFacts.postReview`(Opta 리뷰)를 `postgame.review` 에, `playerOfTheMatch` 를 `postgame.playerOfTheMatch` 에,
+  FotMob 경기 스탯(골·도움·평점·유효슈팅·기회창출·선방)으로 고른 이긴 팀·진 팀 선수를 `postgame.carry`·`postgame.low` 에 넣습니다.
+  리뷰 제목·설명은 무료 구글 번역으로 한국어로 옮기고(실패하면 영문 원문 유지, `lang`·`auto` 로 표시),
+  `app.js` 는 `경기 후 브리핑` 안에 리뷰 블록과 선수 카드를 그립니다.
+  `results` 모드에서는 4시간 안에 시작한 경기만, `daily` 모드에서는 최근 3일을 봅니다(이미 채운 경기는 건너뜀).
 - `fetch_standings.py` — 리그 순위표 생성기. `results` 모드에서 `auto_update.py` 가 부릅니다
   (순위는 경기 결과로 바뀌므로 결과와 같은 30분 주기). 값이 실제로 바뀐 경우에만
   `standings-data.js` 를 쓰고, 한 리그라도 실패하면 기존 파일을 덮어쓰지 않습니다.

@@ -977,6 +977,26 @@ main { padding: 18px var(--pad) calc(env(safe-area-inset-bottom) + 26px); }
 }
 .pg-why > b { display: block; font-size: 10.5px; font-weight: 800; color: #0B6B4A; }
 .pg-why > p { margin: 4px 0 0; font-size: 12px; line-height: 1.7; color: #1F2937; }
+/* 경기 후 브리핑 — 풋몹(FotMob·Opta) 경기 후 리뷰 */
+.pg-review {
+  margin-top: 10px; padding: 10px 11px 11px; border-radius: 10px;
+  background: #F3F7FF; border: 1px solid rgba(37, 99, 235, .16);
+}
+.pg-review-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.pg-review-head > b { font-size: 10.5px; font-weight: 800; letter-spacing: -.01em; color: #1D4ED8; }
+.pg-review-head > span { flex: 0 0 auto; font-size: 9.5px; color: var(--text-3); }
+.pg-review-t { display: block; margin-top: 6px; font-size: 12.5px; line-height: 1.5; letter-spacing: -.012em; color: #111827; }
+.pg-review-d { margin: 4px 0 0; font-size: 11.5px; line-height: 1.68; letter-spacing: -.012em; color: #374151; }
+.pg-review-foot { margin-top: 8px; }
+.pg-review-more { min-width: 0; }
+.pg-review-more > summary { cursor: pointer; list-style: none; font-size: 10px; font-weight: 700; color: var(--text-2); }
+.pg-review-more > summary::-webkit-details-marker { display: none; }
+.pg-review-more > summary::before { content: "▸ "; color: var(--text-3); }
+.pg-review-more[open] > summary::before { content: "▾ "; }
+.pg-review-en-t { margin: 5px 0 0; font-size: 10.5px; font-weight: 700; line-height: 1.5; color: #374151; }
+.pg-review-en { margin: 3px 0 0; font-size: 10.5px; line-height: 1.6; color: var(--text-2); }
+.pg-review-src { display: inline-block; margin-top: 6px; font-size: 10px; font-weight: 700; color: #1D4ED8; text-decoration: none; }
+.pg-review-src:hover, .pg-review-src:focus-visible { text-decoration: underline; }
 .pg-more { margin-top: 12px; }
 /* 경기 전 예상 vs 결과 — 종료 카드에서 경기 전에 짚은 것과 실제 결과를 나란히 둔다 */
 .pg-cmp {

@@ -11,6 +11,8 @@
   · results 모드에서는 순위표(standings-data.js)도 fetch_standings.py 로 다시 받습니다.
     순위는 경기 결과에 따라 바뀌므로 결과와 같은 주기로 돕니다. 값이 실제로 바뀐 경우에만
     파일을 쓰고 커밋하므로 30분마다 같은 내용을 다시 커밋하지 않습니다.
+  · 끝난 축구 경기의 경기 후 리뷰(postGame)는 fotmob_postgame.py 가 채웁니다.
+    results 모드는 방금 끝난 경기(4시간 안), daily 모드는 최근 3일을 봅니다.
   · 내용이 실제로 바뀐 경우에만 data.js 를 씁니다(updatedAt 만 바뀌면 커밋하지 않음).
   · data.js 구조(스키마)는 건드리지 않고 값만 갱신합니다.
 
@@ -345,6 +347,11 @@ def mode_daily(cur, today):
         after = run_with_retry(cur, argv, label)
         if after is not None:
             cur = after
+    # 날짜 블록을 새로 만들면 끝난 경기의 경기 후 리뷰(postgame)가 빠지므로 다시 채운다.
+    after = run_with_retry(cur, ["fotmob_postgame.py", "--write", "--days", "3"],
+                           "축구 경기 후 리뷰")
+    if after is not None:
+        cur = after
     return cur
 
 
@@ -359,6 +366,11 @@ def mode_results(cur, today):
                                  "--max-age-hours", "30"], "결과 갱신 재시도")
         if after is not None:
             cur = after
+    # 방금 끝난 축구 경기의 풋몹 경기 후 리뷰·선수 한 줄 평(4시간 안에 시작한 경기만 본다).
+    after = run_with_retry(cur, ["fotmob_postgame.py", "--write", "--hours", "4"],
+                           "축구 경기 후 리뷰")
+    if after is not None:
+        cur = after
     y = (today - timedelta(days=1)).isoformat()
     after = run_script(cur, ["fetch_volley.py", "--from", y, "--to", today.isoformat(),
                              "--write"], "배구(V리그) 당일 결과")
