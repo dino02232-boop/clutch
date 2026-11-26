@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-26T07:44:51+09:00
+   생성 시각(기준): 2026-11-26T09:28:17+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-26T07:44:51+09:00",
+  "updated": "2026-11-26T09:28:17+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -4380,6 +4380,1163 @@ window.CLUTCH_STANDINGS = {
               "value": 2.0,
               "display": "2도움",
               "played": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "UEL",
+      "sport": "soccer",
+      "name": "유로파리그",
+      "source": "ESPN",
+      "full": "UEFA Europa League",
+      "season": "2026-27",
+      "groups": [
+        {
+          "name": "",
+          "rows": [
+            {
+              "rank": 1,
+              "team": "벤피카",
+              "abbr": "SLB",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1929.png",
+              "played": 4,
+              "win": 4,
+              "draw": 0,
+              "loss": 0,
+              "points": 12,
+              "diff": 10,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "16강 진출",
+                "color": "#81D6AC",
+                "src": "Qualifies for round of 16"
+              }
+            },
+            {
+              "rank": 2,
+              "team": "본머스",
+              "abbr": "BOU",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/349.png",
+              "played": 4,
+              "win": 4,
+              "draw": 0,
+              "loss": 0,
+              "points": 12,
+              "diff": 9,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "16강 진출",
+                "color": "#81D6AC",
+                "src": "Qualifies for round of 16"
+              }
+            },
+            {
+              "rank": 3,
+              "team": "페렌츠바로시",
+              "abbr": "FER",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/622.png",
+              "played": 4,
+              "win": 4,
+              "draw": 0,
+              "loss": 0,
+              "points": 12,
+              "diff": 8,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "16강 진출",
+                "color": "#81D6AC",
+                "src": "Qualifies for round of 16"
+              }
+            },
+            {
+              "rank": 4,
+              "team": "위니옹 생질루아즈",
+              "abbr": "USG",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/5807.png",
+              "played": 4,
+              "win": 3,
+              "draw": 1,
+              "loss": 0,
+              "points": 10,
+              "diff": 8,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "16강 진출",
+                "color": "#81D6AC",
+                "src": "Qualifies for round of 16"
+              }
+            },
+            {
+              "rank": 5,
+              "team": "유벤투스",
+              "abbr": "JUV",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/111.png",
+              "played": 4,
+              "win": 3,
+              "draw": 1,
+              "loss": 0,
+              "points": 10,
+              "diff": 7,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "16강 진출",
+                "color": "#81D6AC",
+                "src": "Qualifies for round of 16"
+              }
+            },
+            {
+              "rank": 6,
+              "team": "올림피아코스",
+              "abbr": "OLY",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/435.png",
+              "played": 4,
+              "win": 3,
+              "draw": 1,
+              "loss": 0,
+              "points": 10,
+              "diff": 3,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "16강 진출",
+                "color": "#81D6AC",
+                "src": "Qualifies for round of 16"
+              }
+            },
+            {
+              "rank": 7,
+              "team": "바이어 레버쿠젠",
+              "abbr": "B04",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131.png",
+              "played": 4,
+              "win": 3,
+              "draw": 0,
+              "loss": 1,
+              "points": 9,
+              "diff": 7,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "16강 진출",
+                "color": "#81D6AC",
+                "src": "Qualifies for round of 16"
+              }
+            },
+            {
+              "rank": 8,
+              "team": "베식타시",
+              "abbr": "BES",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1895.png",
+              "played": 4,
+              "win": 2,
+              "draw": 1,
+              "loss": 1,
+              "points": 7,
+              "diff": 3,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "16강 진출",
+                "color": "#81D6AC",
+                "src": "Qualifies for round of 16"
+              }
+            },
+            {
+              "rank": 9,
+              "team": "디나모 자그레브",
+              "abbr": "DZG",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/597.png",
+              "played": 4,
+              "win": 2,
+              "draw": 1,
+              "loss": 1,
+              "points": 7,
+              "diff": 1,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 10,
+              "team": "레프스키 소피아",
+              "abbr": "LEV",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/490.png",
+              "played": 4,
+              "win": 2,
+              "draw": 1,
+              "loss": 1,
+              "points": 7,
+              "diff": 1,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 11,
+              "team": "선덜랜드",
+              "abbr": "SUN",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/366.png",
+              "played": 4,
+              "win": 2,
+              "draw": 1,
+              "loss": 1,
+              "points": 7,
+              "diff": 0,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 12,
+              "team": "NEC 네이메헌",
+              "abbr": "NEC",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/147.png",
+              "played": 4,
+              "win": 2,
+              "draw": 1,
+              "loss": 1,
+              "points": 7,
+              "diff": -1,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 13,
+              "team": "리옹",
+              "abbr": "LYON",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/167.png",
+              "played": 4,
+              "win": 2,
+              "draw": 1,
+              "loss": 1,
+              "points": 7,
+              "diff": -1,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 14,
+              "team": "AZ 알크마르",
+              "abbr": "AZ",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/140.png",
+              "played": 4,
+              "win": 2,
+              "draw": 0,
+              "loss": 2,
+              "points": 6,
+              "diff": 3,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 15,
+              "team": "안더레흐트",
+              "abbr": "AND",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/441.png",
+              "played": 4,
+              "win": 2,
+              "draw": 0,
+              "loss": 2,
+              "points": 6,
+              "diff": 3,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 16,
+              "team": "OFI 크레테",
+              "abbr": "OFI",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1010.png",
+              "played": 4,
+              "win": 2,
+              "draw": 0,
+              "loss": 2,
+              "points": 6,
+              "diff": 1,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 시드",
+                "color": "#B5E7CE",
+                "src": "Knockout phase playoffs - seeded"
+              }
+            },
+            {
+              "rank": 17,
+              "team": "렌",
+              "abbr": "REN",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/169.png",
+              "played": 4,
+              "win": 1,
+              "draw": 3,
+              "loss": 0,
+              "points": 6,
+              "diff": 1,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 18,
+              "team": "오모니아 니코시아",
+              "abbr": "OMON",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/617.png",
+              "played": 4,
+              "win": 2,
+              "draw": 0,
+              "loss": 2,
+              "points": 6,
+              "diff": -1,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 19,
+              "team": "토렌세",
+              "abbr": "TOR",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/21615.png",
+              "played": 4,
+              "win": 2,
+              "draw": 0,
+              "loss": 2,
+              "points": 6,
+              "diff": -2,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 20,
+              "team": "레알 소시에다드",
+              "abbr": "RSO",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/89.png",
+              "played": 4,
+              "win": 1,
+              "draw": 2,
+              "loss": 1,
+              "points": 5,
+              "diff": 5,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 21,
+              "team": "크리스털 팰리스",
+              "abbr": "CRY",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/384.png",
+              "played": 4,
+              "win": 1,
+              "draw": 2,
+              "loss": 1,
+              "points": 5,
+              "diff": 3,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 22,
+              "team": "스파르타 프라하",
+              "abbr": "SPP",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/433.png",
+              "played": 4,
+              "win": 1,
+              "draw": 1,
+              "loss": 2,
+              "points": 4,
+              "diff": 0,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 23,
+              "team": "호펜하임",
+              "abbr": "TSG",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7911.png",
+              "played": 4,
+              "win": 1,
+              "draw": 1,
+              "loss": 2,
+              "points": 4,
+              "diff": 0,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 24,
+              "team": "슈투름 그라츠",
+              "abbr": "STG",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3746.png",
+              "played": 4,
+              "win": 1,
+              "draw": 1,
+              "loss": 2,
+              "points": 4,
+              "diff": -3,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "녹아웃 PO 비시드",
+                "color": "#B2BFD0",
+                "src": "Knockout phase playoffs - unseeded"
+              }
+            },
+            {
+              "rank": 25,
+              "team": "첼례",
+              "abbr": "NKC",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3362.png",
+              "played": 4,
+              "win": 1,
+              "draw": 1,
+              "loss": 2,
+              "points": 4,
+              "diff": -4,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 26,
+              "team": "잘츠부르크",
+              "abbr": "SLZ",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2790.png",
+              "played": 4,
+              "win": 1,
+              "draw": 1,
+              "loss": 2,
+              "points": 4,
+              "diff": -5,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 27,
+              "team": "셀타 비고",
+              "abbr": "CEL",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/85.png",
+              "played": 4,
+              "win": 1,
+              "draw": 0,
+              "loss": 3,
+              "points": 3,
+              "diff": -2,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 28,
+              "team": "AC 밀란",
+              "abbr": "MIL",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+              "played": 4,
+              "win": 1,
+              "draw": 0,
+              "loss": 3,
+              "points": 3,
+              "diff": -3,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 29,
+              "team": "야기에우오니아 비아위스토크",
+              "abbr": "JAG",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11505.png",
+              "played": 4,
+              "win": 1,
+              "draw": 0,
+              "loss": 3,
+              "points": 3,
+              "diff": -3,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 30,
+              "team": "빅토리아 플젠",
+              "abbr": "PLZ",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11706.png",
+              "played": 4,
+              "win": 1,
+              "draw": 0,
+              "loss": 3,
+              "points": 3,
+              "diff": -4,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 31,
+              "team": "마르세유",
+              "abbr": "OLM",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/176.png",
+              "played": 4,
+              "win": 1,
+              "draw": 0,
+              "loss": 3,
+              "points": 3,
+              "diff": -4,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 32,
+              "team": "셀틱",
+              "abbr": "CEL",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/256.png",
+              "played": 4,
+              "win": 1,
+              "draw": 0,
+              "loss": 3,
+              "points": 3,
+              "diff": -5,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 33,
+              "team": "하포엘 베르셰바",
+              "abbr": "HBE",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/13083.png",
+              "played": 4,
+              "win": 0,
+              "draw": 1,
+              "loss": 3,
+              "points": 1,
+              "diff": -7,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 34,
+              "team": "릴레스트룀",
+              "abbr": "LSK",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/987.png",
+              "played": 4,
+              "win": 0,
+              "draw": 1,
+              "loss": 3,
+              "points": 1,
+              "diff": -8,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 35,
+              "team": "레흐 포즈난",
+              "abbr": "LECH",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2990.png",
+              "played": 4,
+              "win": 0,
+              "draw": 1,
+              "loss": 3,
+              "points": 1,
+              "diff": -10,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            },
+            {
+              "rank": 36,
+              "team": "아라라트 아르메니아",
+              "abbr": "ARA",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20024.png",
+              "played": 4,
+              "win": 0,
+              "draw": 0,
+              "loss": 4,
+              "points": 0,
+              "diff": -10,
+              "pct": null,
+              "gb": null,
+              "zone": {
+                "label": "탈락",
+                "color": "#FF7F84",
+                "src": "Eliminated"
+              }
+            }
+          ]
+        }
+      ],
+      "leaders": [
+        {
+          "key": "goals",
+          "label": "득점",
+          "unit": "골",
+          "aggregate": "누적",
+          "rows": [
+            {
+              "rank": 1,
+              "name": "Bryan Linssen",
+              "id": "122954",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/122954.png",
+              "team": "NEC 네이메헌",
+              "teamAbbr": "NEC",
+              "value": 4.0,
+              "display": "4골",
+              "played": 4
+            },
+            {
+              "rank": 2,
+              "name": "Dion Drena Beljo",
+              "id": "306647",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/306647.png",
+              "team": "디나모 자그레브",
+              "teamAbbr": "DZG",
+              "value": 4.0,
+              "display": "4골",
+              "played": 3
+            },
+            {
+              "rank": 3,
+              "name": "Sergio Gómez",
+              "id": "265993",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/265993.png",
+              "team": "레알 소시에다드",
+              "teamAbbr": "RSO",
+              "value": 3.0,
+              "display": "3골",
+              "played": 4
+            },
+            {
+              "rank": 4,
+              "name": "Kristoffer Zachariassen",
+              "id": "253991",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/253991.png",
+              "team": "페렌츠바로시",
+              "teamAbbr": "FER",
+              "value": 3.0,
+              "display": "3골",
+              "played": 4
+            },
+            {
+              "rank": 5,
+              "name": "Nick Woltemade",
+              "id": "298349",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/298349.png",
+              "team": "유벤투스",
+              "teamAbbr": "JUV",
+              "value": 3.0,
+              "display": "3골",
+              "played": 4
+            },
+            {
+              "rank": 6,
+              "name": "Yéremy Pino",
+              "id": "297370",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/297370.png",
+              "team": "크리스털 팰리스",
+              "teamAbbr": "CRY",
+              "value": 3.0,
+              "display": "3골",
+              "played": 4
+            },
+            {
+              "rank": 7,
+              "name": "Camilo Durán",
+              "id": "367591",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/367591.png",
+              "team": "셀틱",
+              "teamAbbr": "CEL",
+              "value": 3.0,
+              "display": "3골",
+              "played": 4
+            },
+            {
+              "rank": 8,
+              "name": "Alphadjo Cissè",
+              "id": "359754",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/359754.png",
+              "team": "AC 밀란",
+              "teamAbbr": "MIL",
+              "value": 3.0,
+              "display": "3골",
+              "played": 4
+            },
+            {
+              "rank": 9,
+              "name": "Mexx Meerdink",
+              "id": "332465",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/332465.png",
+              "team": "AZ 알크마르",
+              "teamAbbr": "AZ",
+              "value": 3.0,
+              "display": "3골",
+              "played": 4
+            },
+            {
+              "rank": 10,
+              "name": "Randal Kolo Muani",
+              "id": "252971",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/252971.png",
+              "team": "유벤투스",
+              "teamAbbr": "JUV",
+              "value": 3.0,
+              "display": "3골",
+              "played": 4
+            },
+            {
+              "rank": 11,
+              "name": "Oumar Diakité",
+              "id": "329483",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/329483.png",
+              "team": "슈투름 그라츠",
+              "teamAbbr": "STG",
+              "value": 3.0,
+              "display": "3골",
+              "played": 4
+            },
+            {
+              "rank": 12,
+              "name": "Rayan",
+              "id": "357719",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/357719.png",
+              "team": "본머스",
+              "teamAbbr": "BOU",
+              "value": 3.0,
+              "display": "3골",
+              "played": 4
+            },
+            {
+              "rank": 13,
+              "name": "Javi Rodríguez",
+              "id": "376147",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/376147.png",
+              "team": "셀타 비고",
+              "teamAbbr": "CEL",
+              "value": 2.0,
+              "display": "2골",
+              "played": 4
+            },
+            {
+              "rank": 14,
+              "name": "Besfort Zeneli",
+              "id": "334024",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/334024.png",
+              "team": "위니옹 생질루아즈",
+              "teamAbbr": "USG",
+              "value": 2.0,
+              "display": "2골",
+              "played": 4
+            },
+            {
+              "rank": 15,
+              "name": "Svit Seslar",
+              "id": "306199",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/306199.png",
+              "team": "첼례",
+              "teamAbbr": "NKC",
+              "value": 2.0,
+              "display": "2골",
+              "played": 4
+            },
+            {
+              "rank": 16,
+              "name": "Bruno Wilson",
+              "id": "250920",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/250920.png",
+              "team": "아라라트 아르메니아",
+              "teamAbbr": "ARA",
+              "value": 2.0,
+              "display": "2골",
+              "played": 4
+            },
+            {
+              "rank": 17,
+              "name": "Tjaronn Chery",
+              "id": "116893",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/116893.png",
+              "team": "NEC 네이메헌",
+              "teamAbbr": "NEC",
+              "value": 2.0,
+              "display": "2골",
+              "played": 4
+            },
+            {
+              "rank": 18,
+              "name": "Reinaldo",
+              "id": "287830",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/287830.png",
+              "team": "레프스키 소피아",
+              "teamAbbr": "LEV",
+              "value": 2.0,
+              "display": "2골",
+              "played": 4
+            },
+            {
+              "rank": 19,
+              "name": "Mihajlo Cvetkovic",
+              "id": "369978",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/369978.png",
+              "team": "안더레흐트",
+              "teamAbbr": "AND",
+              "value": 2.0,
+              "display": "2골",
+              "played": 4
+            },
+            {
+              "rank": 20,
+              "name": "Guilherme Smith",
+              "id": "330077",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/330077.png",
+              "team": "위니옹 생질루아즈",
+              "teamAbbr": "USG",
+              "value": 2.0,
+              "display": "2골",
+              "played": 4
+            }
+          ]
+        },
+        {
+          "key": "assists",
+          "label": "도움",
+          "unit": "도움",
+          "aggregate": "누적",
+          "rows": [
+            {
+              "rank": 1,
+              "name": "Javier Vazquez",
+              "id": "266780",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/266780.png",
+              "team": "토렌세",
+              "teamAbbr": "TOR",
+              "value": 3.0,
+              "display": "3도움",
+              "played": 4
+            },
+            {
+              "rank": 2,
+              "name": "Kristoffer Zachariassen",
+              "id": "253991",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/253991.png",
+              "team": "페렌츠바로시",
+              "teamAbbr": "FER",
+              "value": 3.0,
+              "display": "3도움",
+              "played": 4
+            },
+            {
+              "rank": 3,
+              "name": "Mikel Oyarzabal",
+              "id": "229018",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/229018.png",
+              "team": "레알 소시에다드",
+              "teamAbbr": "RSO",
+              "value": 3.0,
+              "display": "3도움",
+              "played": 4
+            },
+            {
+              "rank": 4,
+              "name": "Junior Olaitan",
+              "id": "319985",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/319985.png",
+              "team": "베식타시",
+              "teamAbbr": "BES",
+              "value": 3.0,
+              "display": "3도움",
+              "played": 4
+            },
+            {
+              "rank": 5,
+              "name": "Nicolaos Athanasiou",
+              "id": "312967",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/312967.png",
+              "team": "OFI 크레테",
+              "teamAbbr": "OFI",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 4
+            },
+            {
+              "rank": 6,
+              "name": "Adam Wharton",
+              "id": "333419",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/333419.png",
+              "team": "크리스털 팰리스",
+              "teamAbbr": "CRY",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 4
+            },
+            {
+              "rank": 7,
+              "name": "Nick Woltemade",
+              "id": "298349",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/298349.png",
+              "team": "유벤투스",
+              "teamAbbr": "JUV",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 4
+            },
+            {
+              "rank": 8,
+              "name": "Keito Nakamura",
+              "id": "265953",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/265953.png",
+              "team": "리옹",
+              "teamAbbr": "LYON",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 4
+            },
+            {
+              "rank": 9,
+              "name": "Andrej Kramaric",
+              "id": "139520",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/139520.png",
+              "team": "호펜하임",
+              "teamAbbr": "TSG",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 4
+            },
+            {
+              "rank": 10,
+              "name": "Tim Lemperle",
+              "id": "303792",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/303792.png",
+              "team": "호펜하임",
+              "teamAbbr": "TSG",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 4
+            },
+            {
+              "rank": 11,
+              "name": "Bamidele Isa Yusuf",
+              "id": "322421",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/322421.png",
+              "team": "페렌츠바로시",
+              "teamAbbr": "FER",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 4
+            },
+            {
+              "rank": 12,
+              "name": "Randal Kolo Muani",
+              "id": "252971",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/252971.png",
+              "team": "유벤투스",
+              "teamAbbr": "JUV",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 4
+            },
+            {
+              "rank": 13,
+              "name": "Gianluca Prestianni",
+              "id": "339191",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/339191.png",
+              "team": "벤피카",
+              "teamAbbr": "SLB",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 4
+            },
+            {
+              "rank": 14,
+              "name": "Damir Redzic",
+              "id": "308980",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/308980.png",
+              "team": "잘츠부르크",
+              "teamAbbr": "SLZ",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 4
+            },
+            {
+              "rank": 15,
+              "name": "Veljko Birmancevic",
+              "id": "238991",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/238991.png",
+              "team": "페렌츠바로시",
+              "teamAbbr": "FER",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 3
+            },
+            {
+              "rank": 16,
+              "name": "Enric Llansana",
+              "id": "287172",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/287172.png",
+              "team": "안더레흐트",
+              "teamAbbr": "AND",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 3
+            },
+            {
+              "rank": 17,
+              "name": "David Bruno",
+              "id": "122768",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/122768.png",
+              "team": "토렌세",
+              "teamAbbr": "TOR",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 3
+            },
+            {
+              "rank": 18,
+              "name": "Orkun Kökçü",
+              "id": "272700",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/272700.png",
+              "team": "베식타시",
+              "teamAbbr": "BES",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 3
+            },
+            {
+              "rank": 19,
+              "name": "Maicon",
+              "id": "379245",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/379245.png",
+              "team": "레프스키 소피아",
+              "teamAbbr": "LEV",
+              "value": 1.0,
+              "display": "1도움",
+              "played": 4
+            },
+            {
+              "rank": 20,
+              "name": "Jakub Surovcik",
+              "id": "336530",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/336530.png",
+              "team": "스파르타 프라하",
+              "teamAbbr": "SPP",
+              "value": 1.0,
+              "display": "1도움",
+              "played": 4
             }
           ]
         }

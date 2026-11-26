@@ -14,7 +14,7 @@
                      - 해외 배당: scoreboard/summary odds (provider 표기 그대로)
                      구간 표식 NBA-AUTO / 생성기 tools/fetch_nba.py
                      python3 tools/fetch_nba.py --from 2026-11-26 --to 2026-12-02 --write
-      · 축구        : ESPN 공개 API (UCL·EPL·라리가·분데스리가·세리에A, 일정·전적·순위·최근 5경기·맞대결·배당)
+      · 축구        : ESPN 공개 API (UCL·UEL·EPL·라리가·분데스리가·세리에A, 일정·전적·순위·최근 5경기·맞대결·배당)
                      구간 표식 SOCCER-AUTO / 생성기 tools/fetch_soccer.py
                      부상·결장 명단은 ESPN 축구에 없어 FotMob 공개 엔드포인트에서 받아
                      details.teams[].injuries·injurySummary 로 넣습니다(생성기 tools/fotmob_injuries.py).
@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-26T08:40:40+09:00",
+  updatedAt: "2026-11-26T09:27:03+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -27169,6 +27169,6726 @@ window.CLUTCH_DATA = {
     {
       date: "2026-11-27",
       games: [
+        /* SOCCER-AUTO 2026-11-27 START */
+        {
+          "id": "soccer-ara-slz-20261127",
+          "espnId": "401915520",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T02:45:00+09:00",
+          "venue": "Red Bull Arena Salzburg",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 1400,
+              "draw": 750,
+              "home": -650
+            },
+            "spread": {
+              "homeLine": "-2.5",
+              "awayLine": "+2.5",
+              "home": 100,
+              "away": -140
+            },
+            "total": {
+              "line": "3.5",
+              "over": -130,
+              "under": 105
+            },
+            "implied": {
+              "away": 6.3,
+              "draw": 11.2,
+              "home": 82.5
+            }
+          },
+          "away": {
+            "name": "아라라트 아르메니아",
+            "abbr": "ARA",
+            "record": "0승 0무 4패",
+            "badges": [
+              {
+                "text": "리그 36위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "잘츠부르크",
+            "abbr": "SLZ",
+            "record": "1승 1무 2패",
+            "badges": [
+              {
+                "text": "리그 26위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 8명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**잘츠부르크**(홈) 1승 1무 2패(리그 26위), 최근 5경기 3승 0무 2패, **아라라트 아르메니아**(원정) 0승 0무 4패(리그 36위), 3연패."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **잘츠부르크**(홈) 0.8골 · **아라라트 아르메니아**(원정) 1.0골, 평균 실점은 홈 2.0골 · 원정 3.5골. 해외 배당을 확률로 환산하면 잘츠부르크 승 82.5% · 무 11.2% · 아라라트 아르메니아 승 6.3%."
+            }
+          ],
+          "preview": "잘츠부르크는 오스트리아 분데스리가 2위(승점 30, 득실 +23)로 상위권이고, 이 대회에서는 1승 1무 2패(26위)입니다. 아라라트 아르메니아는 이 대회에서 4전 전패(36위)입니다. 최근 5경기는 잘츠부르크 3승 2패, 아라라트 아르메니아 1승 4패이고, 두 팀 평균 득점을 합치면 1.8골, 평균 실점은 5.5골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "ARA",
+                "name": "아라라트 아르메니아",
+                "side": "away",
+                "record": "0승 0무 4패",
+                "venueRecord": "원정 0승 0무 2패",
+                "badges": [
+                  {
+                    "text": "리그 36위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "0승 0무 4패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "36위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "0"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-10"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-패-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "3.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-10"
+                  }
+                ],
+                "streak": "3연패",
+                "last5": "1승 0무 4패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "토렌세",
+                    "ha": "원정",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "AZ 알크마르",
+                    "ha": "홈",
+                    "score": "0-4",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "야기에우오니아 비아위스토크",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-03",
+                    "opp": "Ararat Yerevan",
+                    "ha": "원정",
+                    "score": "4-0",
+                    "res": "승",
+                    "comp": "2026 Club Friendly"
+                  },
+                  {
+                    "date": "2026-09-16",
+                    "opp": "스파르타 프라하",
+                    "ha": "홈",
+                    "score": "1-4",
+                    "res": "패",
+                    "comp": "UEL"
+                  }
+                ],
+                "focus": "아라라트 아르메니아는 유로파리그에서 4전 전패(승점 0, 36위)입니다. 최근 5경기는 1승 4패로 3연패 중입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "João Bravim",
+                    "status": "OUT",
+                    "line": "징계 출장정지 · 복귀 예상 2026년 11월 말"
+                  }
+                ],
+                "injurySummary": "결장 1명"
+              },
+              {
+                "abbr": "SLZ",
+                "name": "잘츠부르크",
+                "side": "home",
+                "record": "1승 1무 2패",
+                "venueRecord": "홈 0승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 26위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 1무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "26위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "4"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-5"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-승-패-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-5"
+                  }
+                ],
+                "streak": "최근 5경기 3승 0무 2패",
+                "last5": "3승 0무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "Austria Vienna",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "슈투름 그라츠",
+                    "ha": "원정",
+                    "score": "4-3",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "안더레흐트",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "Austria Lustenau",
+                    "ha": "홈",
+                    "score": "5-1",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "LASK 린츠",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  }
+                ],
+                "focus": "잘츠부르크는 오스트리아 분데스리가 2위(승점 30, 득실 +23)로 상위권이고, 유로파리그에서는 1승 1무 2패(승점 4, 26위)입니다. 최근 5경기는 3승 2패입니다. FotMob 기준 결장 7명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Damir Redzic",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Haris Tabaković",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Kévin Boma",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  },
+                  {
+                    "player": "John Mellberg",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Sota Kitano",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Dominik Schmid",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Justin Omoregie",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  }
+                ],
+                "injurySummary": "결장 7명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "잘츠부르크",
+                "players": [
+                  {
+                    "name": "Haris Tabakovic",
+                    "id": "184869",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/FC_Red_Bull_Salzburg_gegen_TSV_Hartberg_%28Bundesliga_2026-27_Erste_Runde%29_05.jpg/120px-FC_Red_Bull_Salzburg_gegen_TSV_Hartberg_%28Bundesliga_2026-27_Erste_Runde%29_05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Damir Redzic",
+                    "id": "308980",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/FC_Red_Bull_Salzburg_gegen_TSV_Hartberg_%28Bundesliga_2026-27_Erste_Runde%29_16.jpg/120px-FC_Red_Bull_Salzburg_gegen_TSV_Hartberg_%28Bundesliga_2026-27_Erste_Runde%29_16.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "아라라트 아르메니아",
+                "players": [
+                  {
+                    "name": "Bruno Wilson",
+                    "id": "250920",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Sandro Lima",
+                    "id": "192505",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Sandro_Lima.jpg/120px-Sandro_Lima.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**잘츠부르크** — 리그 26위, 승점 4, 득실 -5.",
+              "**아라라트 아르메니아** — 리그 36위, 승점 0, 득실 -10."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112297,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-b04-dzg-20261127",
+          "espnId": "401915517",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T02:45:00+09:00",
+          "venue": "Maksimir Stadium",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": -150,
+              "draw": 340,
+              "home": 350
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": 115,
+              "away": -160
+            },
+            "total": {
+              "line": "3.5",
+              "over": 120,
+              "under": -150
+            },
+            "implied": {
+              "away": 57.1,
+              "draw": 21.7,
+              "home": 21.2
+            }
+          },
+          "away": {
+            "name": "바이어 레버쿠젠",
+            "abbr": "B04",
+            "record": "3승 0무 1패",
+            "badges": [
+              {
+                "text": "리그 7위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "디나모 자그레브",
+            "abbr": "DZG",
+            "record": "2승 1무 1패",
+            "badges": [
+              {
+                "text": "리그 9위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 5명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**디나모 자그레브**(홈) 2승 1무 1패(리그 9위), 최근 5경기 2승 1무 2패, **바이어 레버쿠젠**(원정) 3승 0무 1패(리그 7위), 2연승."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **디나모 자그레브**(홈) 1.2골 · **바이어 레버쿠젠**(원정) 2.0골, 평균 실점은 홈 1.0골 · 원정 0.2골. 해외 배당을 확률로 환산하면 디나모 자그레브 승 21.2% · 무 21.7% · 바이어 레버쿠젠 승 57.1%."
+            }
+          ],
+          "preview": "디나모 자그레브는 이 대회에서 2승 1무 1패(9위)입니다. 바이어 레버쿠젠은 분데스리가 5위(승점 19, 득실 +7)로 상위권이고, 이 대회에서는 3승 1패(7위)입니다. 최근 5경기는 디나모 자그레브 2승 1무 2패, 바이어 레버쿠젠 3승 2패이고, 두 팀 평균 득점을 합치면 3.2골, 평균 실점은 1.2골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "B04",
+                "name": "바이어 레버쿠젠",
+                "side": "away",
+                "record": "3승 0무 1패",
+                "venueRecord": "원정 2승 0무 0패",
+                "badges": [
+                  {
+                    "text": "리그 7위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "3승 0무 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "7위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "9"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+7"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-패-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.2골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+7"
+                  }
+                ],
+                "streak": "2연승",
+                "last5": "3승 0무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "파더보른",
+                    "ha": "홈",
+                    "score": "4-0",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "쾰른",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "마르세유",
+                    "ha": "홈",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "슈투트가르트",
+                    "ha": "홈",
+                    "score": "2-4",
+                    "res": "패",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "1. FC Nürnberg",
+                    "ha": "홈",
+                    "score": "5-2",
+                    "res": "승",
+                    "comp": "2026-27 German Cup"
+                  }
+                ],
+                "focus": "바이어 레버쿠젠은 분데스리가 5위(승점 19, 득실 +7)로 상위권이고, 유로파리그에서는 3승 1패(승점 9, 7위)입니다. 최근 5경기는 3승 2패로 2연승 중입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Lucas Vázquez",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1주"
+                  },
+                  {
+                    "player": "Martin Terrier",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Guéla Doué",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Kennet Eichhorn",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  }
+                ],
+                "injurySummary": "결장 3명 · 불확실 1명"
+              },
+              {
+                "abbr": "DZG",
+                "name": "디나모 자그레브",
+                "side": "home",
+                "record": "2승 1무 1패",
+                "venueRecord": "홈 1승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 9위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 1무 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "9위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "7"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+1"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-패-승-무-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+1"
+                  }
+                ],
+                "streak": "최근 5경기 2승 1무 2패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "선덜랜드",
+                    "ha": "원정",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "NEC 네이메헌",
+                    "ha": "홈",
+                    "score": "2-4",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "안더레흐트",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-09-16",
+                    "opp": "하포엘 베르셰바",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-08-26",
+                    "opp": "Viking FK",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "UCL"
+                  }
+                ],
+                "focus": "디나모 자그레브는 유로파리그에서 2승 1무 1패(승점 7, 9위)입니다. 최근 5경기는 2승 1무 2패입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Robert Mudražija",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  },
+                  {
+                    "player": "Scott McKenna",
+                    "status": "OUT",
+                    "line": "복귀 예상 몇 주"
+                  }
+                ],
+                "injurySummary": "결장 2명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "디나모 자그레브",
+                "players": [
+                  {
+                    "name": "Dion Drena Beljo",
+                    "id": "306647",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/FC_RB_Salzburg_vs._SK_Rapid_Wien_%287._Dezember_2024%29_41_%28Dion_Drena_Beljo%29.jpg/120px-FC_RB_Salzburg_vs._SK_Rapid_Wien_%287._Dezember_2024%29_41_%28Dion_Drena_Beljo%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Luka Stojkovic",
+                    "id": "341418",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "바이어 레버쿠젠",
+                "players": [
+                  {
+                    "name": "Patrik Schick",
+                    "id": "212330",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/2020-03-10_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League_Achtelfinale%2C_RB_Leipzig_-_Tottenham_Hotspur_1DX_3672_by_Stepro.jpg/120px-2020-03-10_Fu%C3%9Fball%2C_M%C3%A4nner%2C_UEFA_Champions_League_Achtelfinale%2C_RB_Leipzig_-_Tottenham_Hotspur_1DX_3672_by_Stepro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Aleix García",
+                    "id": "219294",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Aleix_Garcia_Serrano_SBS_Cup_2015_%28cropped%29.jpg/120px-Aleix_Garcia_Serrano_SBS_Cup_2015_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**디나모 자그레브** — 리그 9위, 승점 7, 득실 +1.",
+              "**바이어 레버쿠젠** — 리그 7위, 승점 9, 득실 +7."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112290,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-bou-cel-20261127",
+          "espnId": "401915519",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T02:45:00+09:00",
+          "venue": "Balaidos",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 110,
+              "draw": 250,
+              "home": 245
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -140,
+              "away": 100
+            },
+            "total": {
+              "line": "2.5",
+              "over": -115,
+              "under": -110
+            },
+            "implied": {
+              "away": 45.3,
+              "draw": 27.2,
+              "home": 27.6
+            }
+          },
+          "away": {
+            "name": "본머스",
+            "abbr": "BOU",
+            "record": "4승 0무 0패",
+            "badges": [
+              {
+                "text": "리그 2위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "셀타 비고",
+            "abbr": "CEL",
+            "record": "1승 0무 3패",
+            "badges": [
+              {
+                "text": "리그 27위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 6명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**셀타 비고**(홈) 1승 0무 3패(리그 27위), 최근 5경기 1승 1무 3패, **본머스**(원정) 4승 0무 0패(리그 2위), 5연승."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **셀타 비고**(홈) 1.0골 · **본머스**(원정) 2.8골, 평균 실점은 홈 1.5골 · 원정 0.5골. 해외 배당을 확률로 환산하면 셀타 비고 승 27.6% · 무 27.2% · 본머스 승 45.3%."
+            }
+          ],
+          "preview": "셀타 비고는 라리가 14위(승점 13, 득실 -1)로 중위권이고, 이 대회에서는 1승 3패(27위)입니다. 본머스는 프리미어리그 5위(승점 18, 득실 +4)로 상위권이고, 이 대회에서는 4전 전승(2위)입니다. 최근 5경기는 셀타 비고 1승 1무 3패, 본머스 5연승이고, 두 팀 평균 득점을 합치면 3.8골, 평균 실점은 2.0골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "BOU",
+                "name": "본머스",
+                "side": "away",
+                "record": "4승 0무 0패",
+                "venueRecord": "원정 2승 0무 0패",
+                "badges": [
+                  {
+                    "text": "리그 2위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "4승 0무 0패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "2위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "12"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+9"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.8골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+9"
+                  }
+                ],
+                "streak": "5연승",
+                "last5": "5승 0무 0패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "노팅엄 포리스트",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "입스위치 타운",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "스파르타 프라하",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "리즈 유나이티드",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "애스턴 빌라",
+                    "ha": "홈",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "카라바오컵"
+                  }
+                ],
+                "focus": "본머스는 프리미어리그 5위(승점 18, 득실 +4)로 상위권이고, 유로파리그에서는 4전 전승(승점 12, 2위)입니다. 최근 5경기는 5연승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Juanlu Sánchez",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Julián Araujo",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Alex Tóth",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 2월 초"
+                  }
+                ],
+                "injurySummary": "결장 3명"
+              },
+              {
+                "abbr": "CEL",
+                "name": "셀타 비고",
+                "side": "home",
+                "record": "1승 0무 3패",
+                "venueRecord": "홈 0승 0무 2패",
+                "badges": [
+                  {
+                    "text": "리그 27위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 0무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "27위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "3"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-2"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-승-무-패-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-2"
+                  }
+                ],
+                "streak": "최근 5경기 1승 1무 3패",
+                "last5": "1승 1무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "레알 마드리드",
+                    "ha": "원정",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-13",
+                    "opp": "Salamanca UDS",
+                    "ha": "원정",
+                    "score": "5-0",
+                    "res": "승",
+                    "comp": "코파델레이"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "레반테",
+                    "ha": "홈",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "위니옹 생질루아즈",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "라요 바예카노",
+                    "ha": "원정",
+                    "score": "0-3",
+                    "res": "패",
+                    "comp": "라리가"
+                  }
+                ],
+                "focus": "셀타 비고는 라리가 14위(승점 13, 득실 -1)로 중위권이고, 유로파리그에서는 1승 3패(승점 3, 27위)입니다. 최근 5경기는 1승 1무 3패입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Hugo González",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Carl Starfelt",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  },
+                  {
+                    "player": "Miguel Román",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  },
+                  {
+                    "player": "Borja Iglesias",
+                    "status": "DOUBTFUL"
+                  }
+                ],
+                "injurySummary": "결장 3명 · 불확실 1명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "셀타 비고",
+                "players": [
+                  {
+                    "name": "Javi Rodríguez",
+                    "id": "376147",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Gran_Pe%C3%B1a_-_R%C3%A1pido_de_Bouzas%2C_no_Estadio_Municipal_de_Barreiro_91.jpg/120px-Gran_Pe%C3%B1a_-_R%C3%A1pido_de_Bouzas%2C_no_Estadio_Municipal_de_Barreiro_91.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Sergio Carreira",
+                    "id": "298343",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/p7hl8y1603553273.jpg",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "본머스",
+                "players": [
+                  {
+                    "name": "Rayan",
+                    "id": "357719",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Evanilson",
+                    "id": "102368",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Evanilson_29122024_%281%29.jpg/120px-Evanilson_29122024_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**셀타 비고** — 리그 27위, 승점 3, 득실 -2.",
+              "**본머스** — 리그 2위, 승점 12, 득실 +9."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112348,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-hbe-bes-20261127",
+          "espnId": "401915506",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T02:45:00+09:00",
+          "venue": "Batumi Stadium (Adjarabet Arena)",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 950,
+              "draw": 550,
+              "home": -425
+            },
+            "spread": {
+              "homeLine": "-1.5",
+              "awayLine": "+1.5",
+              "home": -155,
+              "away": 110
+            },
+            "total": {
+              "line": "3.5",
+              "over": -105,
+              "under": -115
+            },
+            "implied": {
+              "away": 9.0,
+              "draw": 14.6,
+              "home": 76.4
+            }
+          },
+          "away": {
+            "name": "하포엘 베르셰바",
+            "abbr": "HBE",
+            "record": "0승 1무 3패",
+            "badges": [
+              {
+                "text": "리그 33위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "베식타시",
+            "abbr": "BES",
+            "record": "2승 1무 1패",
+            "badges": [
+              {
+                "text": "리그 8위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 5명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**베식타시**(홈) 2승 1무 1패(리그 8위), 2연승, **하포엘 베르셰바**(원정) 0승 1무 3패(리그 33위), 3연패. 최근 맞대결은 2017.02.23에 열린 베식타시 2-1 하포엘 베르셰바 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **베식타시**(홈) 2.8골 · **하포엘 베르셰바**(원정) 0.2골, 평균 실점은 홈 2.0골 · 원정 2.0골. 해외 배당을 확률로 환산하면 베식타시 승 76.4% · 무 14.6% · 하포엘 베르셰바 승 9.0%."
+            }
+          ],
+          "preview": "베식타시는 터키 쉬페르리그 3위(승점 25, 득실 +13)로 상위권이고, 이 대회에서는 2승 1무 1패(8위)입니다. 하포엘 베르셰바는 이스라엘 리그 2위(승점 78, 득실 +47)로 상위권이고, 이 대회에서는 1무 3패(33위)입니다. 최근 5경기는 베식타시 3승 1무 1패, 하포엘 베르셰바 1무 4패이고, 두 팀 평균 득점을 합치면 3.0골, 평균 실점은 4.0골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "HBE",
+                "name": "하포엘 베르셰바",
+                "side": "away",
+                "record": "0승 1무 3패",
+                "venueRecord": "원정 0승 0무 2패",
+                "badges": [
+                  {
+                    "text": "리그 33위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "0승 1무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "33위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "1"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-7"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-패-패-무-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "0.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-7"
+                  }
+                ],
+                "streak": "3연패",
+                "last5": "0승 1무 4패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "OFI 크레테",
+                    "ha": "홈",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "위니옹 생질루아즈",
+                    "ha": "원정",
+                    "score": "0-4",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "AZ 알크마르",
+                    "ha": "원정",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-09-16",
+                    "opp": "디나모 자그레브",
+                    "ha": "홈",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-08-25",
+                    "opp": "Sabah FK",
+                    "ha": "원정",
+                    "score": "2-5",
+                    "res": "패",
+                    "comp": "UCL"
+                  }
+                ],
+                "focus": "하포엘 베르셰바는 이스라엘 리그 2위(승점 78, 득실 +47)로 상위권이고, 유로파리그에서는 1무 3패(승점 1, 33위)입니다. 최근 5경기는 1무 4패로 3연패 중입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Matan Baltaxa",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Ofir Marciano",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Eliel Peretz",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1주"
+                  },
+                  {
+                    "player": "Lucas Ventura",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Dan Biton",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  }
+                ],
+                "injurySummary": "결장 4명 · 불확실 1명"
+              },
+              {
+                "abbr": "BES",
+                "name": "베식타시",
+                "side": "home",
+                "record": "2승 1무 1패",
+                "venueRecord": "홈 1승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 8위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 1무 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "8위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "7"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-패-무-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.8골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  }
+                ],
+                "streak": "2연승",
+                "last5": "3승 1무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "Konyaspor",
+                    "ha": "원정",
+                    "score": "4-2",
+                    "res": "승",
+                    "comp": "2026-27 Turkish Super Lig"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "Genclerbirligi",
+                    "ha": "홈",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "2026-27 Turkish Super Lig"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "셀틱",
+                    "ha": "원정",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "Kasimpasa",
+                    "ha": "원정",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "2026-27 Turkish Super Lig"
+                  },
+                  {
+                    "date": "2026-10-26",
+                    "opp": "Istanbul Basaksehir",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "2026-27 Turkish Super Lig"
+                  }
+                ],
+                "focus": "베식타시는 터키 쉬페르리그 3위(승점 25, 득실 +13)로 상위권이고, 유로파리그에서는 2승 1무 1패(승점 7, 8위)입니다. 최근 5경기는 3승 1무 1패로 2연승 중입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Emmanuel Agbadou",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  }
+                ],
+                "injurySummary": "결장 1명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "베식타시",
+                "players": [
+                  {
+                    "name": "Amir Murillo",
+                    "id": "216420",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F216420.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Junior Olaitan",
+                    "id": "319985",
+                    "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Junior_Olaitan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "하포엘 베르셰바",
+                "players": [
+                  {
+                    "name": "Forson Amankwah",
+                    "id": "324191",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/FC_Liefering_gegen_FC_Blau-Wei%C3%9F_Linz_%2823._Mai_2021%29_18.jpg/120px-FC_Liefering_gegen_FC_Blau-Wei%C3%9F_Linz_%2823._Mai_2021%29_18.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Zahi Ahmed",
+                    "id": "365734",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%D7%96%D7%90%D7%94%D7%99_%D7%90%D7%97%D7%9E%D7%93_%D7%91%D7%9E%D7%93%D7%99_%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%91%22%D7%A9_%D7%9C%D7%A7%D7%A8%D7%90%D7%AA_%D7%94%D7%9E%D7%A9%D7%97%D7%A7_%D7%A0%D7%92%D7%93_%D7%91%D7%99%D7%AA%D7%A8_%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D.jpg?width=120",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**베식타시** — 리그 8위, 승점 7, 득실 +3.",
+              "**하포엘 베르셰바** — 리그 33위, 승점 1, 득실 -7."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2017-02-23",
+                  "home": "베식타시",
+                  "away": "하포엘 베르셰바",
+                  "score": "2-1"
+                },
+                {
+                  "date": "2017-02-16",
+                  "home": "하포엘 베르셰바",
+                  "away": "베식타시",
+                  "score": "1-3"
+                }
+              ],
+              "summary": "최근 2차례 맞대결"
+            },
+            "fotmobId": 6112357,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-lech-usg-20261127",
+          "espnId": "401915508",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T02:45:00+09:00",
+          "venue": "King Power at Den Dreef Stadion",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 650,
+              "draw": 450,
+              "home": -280
+            },
+            "spread": {
+              "homeLine": "-1.5",
+              "awayLine": "+1.5",
+              "home": -115,
+              "away": -120
+            },
+            "total": {
+              "line": "3.5",
+              "over": 115,
+              "under": -140
+            },
+            "implied": {
+              "away": 12.7,
+              "draw": 17.3,
+              "home": 70.0
+            }
+          },
+          "away": {
+            "name": "레흐 포즈난",
+            "abbr": "LECH",
+            "record": "0승 1무 3패",
+            "badges": [
+              {
+                "text": "리그 35위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "위니옹 생질루아즈",
+            "abbr": "USG",
+            "record": "3승 1무 0패",
+            "badges": [
+              {
+                "text": "리그 4위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 10명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**위니옹 생질루아즈**(홈) 3승 1무 0패(리그 4위), 5연승, **레흐 포즈난**(원정) 0승 1무 3패(리그 35위), 5경기 무승."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **위니옹 생질루아즈**(홈) 2.5골 · **레흐 포즈난**(원정) 0.5골, 평균 실점은 홈 0.5골 · 원정 3.0골. 해외 배당을 확률로 환산하면 위니옹 생질루아즈 승 70.0% · 무 17.3% · 레흐 포즈난 승 12.7%."
+            }
+          ],
+          "preview": "위니옹 생질루아즈는 벨기에 프로리그 선두(승점 32, 득실 +24)이고, 이 대회에서는 3승 1무(4위)입니다. 레흐 포즈난은 이 대회에서 1무 3패(35위)입니다. 최근 5경기는 위니옹 생질루아즈 5연승, 레흐 포즈난 2무 3패이고, 두 팀 평균 득점을 합치면 3.0골, 평균 실점은 3.5골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "LECH",
+                "name": "레흐 포즈난",
+                "side": "away",
+                "record": "0승 1무 3패",
+                "venueRecord": "원정 0승 0무 2패",
+                "badges": [
+                  {
+                    "text": "리그 35위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "0승 1무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "35위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "1"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-10"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-무-패-패-무"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "0.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "3.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-10"
+                  }
+                ],
+                "streak": "5경기 무승",
+                "last5": "0승 2무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "벤피카",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "선덜랜드",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "바이어 레버쿠젠",
+                    "ha": "홈",
+                    "score": "0-4",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-03",
+                    "opp": "Energie Cottbus",
+                    "ha": "홈",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "2026 Club Friendly"
+                  },
+                  {
+                    "date": "2026-09-17",
+                    "opp": "크리스털 팰리스",
+                    "ha": "원정",
+                    "score": "0-4",
+                    "res": "패",
+                    "comp": "UEL"
+                  }
+                ],
+                "focus": "레흐 포즈난은 유로파리그에서 1무 3패(승점 1, 35위)입니다. 최근 5경기는 2무 3패입니다. FotMob 기준 결장 7명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Mateusz Pruchniewski",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  },
+                  {
+                    "player": "Daniel Håkans",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Pablo Rodríguez",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  },
+                  {
+                    "player": "Patrik Wålemark",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Mikael Ishak",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  },
+                  {
+                    "player": "João Moutinho",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 2월 초"
+                  },
+                  {
+                    "player": "Ali Gholizadeh",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 중순"
+                  },
+                  {
+                    "player": "Alex Douglas",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  }
+                ],
+                "injurySummary": "결장 7명 · 불확실 1명"
+              },
+              {
+                "abbr": "USG",
+                "name": "위니옹 생질루아즈",
+                "side": "home",
+                "record": "3승 1무 0패",
+                "venueRecord": "홈 1승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 4위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "3승 1무 0패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "4위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "10"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+8"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+8"
+                  }
+                ],
+                "streak": "5연승",
+                "last5": "5승 0무 0패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "KV Kortrijk",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "2026-27 Belgian Pro League"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "Racing Genk",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "2026-27 Belgian Pro League"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "셀타 비고",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "Waasland-Beveren",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "2026-27 Belgian Pro League"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "Cercle Brugge KSV",
+                    "ha": "홈",
+                    "score": "5-2",
+                    "res": "승",
+                    "comp": "2026-27 Belgian Pro League"
+                  }
+                ],
+                "focus": "위니옹 생질루아즈는 벨기에 프로리그 선두(승점 32, 득실 +24)이고, 유로파리그에서는 3승 1무(승점 10, 4위)입니다. 최근 5경기는 5연승입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Nikki Havenaar",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Mateo Biondic",
+                    "status": "OUT",
+                    "line": "복귀 예상 Day to day"
+                  },
+                  {
+                    "player": "Kevin Mac Allister",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 6월 초"
+                  }
+                ],
+                "injurySummary": "결장 3명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "위니옹 생질루아즈",
+                "players": [
+                  {
+                    "name": "Besfort Zeneli",
+                    "id": "334024",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Besfort_Zeneli_France_v_Sweden_6.30.26-148.jpg/120px-Besfort_Zeneli_France_v_Sweden_6.30.26-148.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 2",
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "레흐 포즈난",
+                "players": [
+                  {
+                    "name": "Leo Bengtsson",
+                    "id": "245553",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/zbxdhq1770474201.jpg",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**위니옹 생질루아즈** — 리그 4위, 승점 10, 득실 +8.",
+              "**레흐 포즈난** — 리그 35위, 승점 1, 득실 -10."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112288,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-lev-olm-20261127",
+          "espnId": "401915507",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T02:45:00+09:00",
+          "venue": "Stade Vélodrome",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 750,
+              "draw": 450,
+              "home": -285
+            },
+            "spread": {
+              "homeLine": "-1.5",
+              "awayLine": "+1.5",
+              "home": -110,
+              "away": -125
+            },
+            "total": {
+              "line": "2.5",
+              "over": -170,
+              "under": 135
+            },
+            "implied": {
+              "away": 11.3,
+              "draw": 17.5,
+              "home": 71.2
+            }
+          },
+          "away": {
+            "name": "레프스키 소피아",
+            "abbr": "LEV",
+            "record": "2승 1무 1패",
+            "badges": [
+              {
+                "text": "리그 10위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "마르세유",
+            "abbr": "OLM",
+            "record": "1승 0무 3패",
+            "badges": [
+              {
+                "text": "리그 31위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 3명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**마르세유**(홈) 1승 0무 3패(리그 31위), 최근 5경기 4승 0무 1패, **레프스키 소피아**(원정) 2승 1무 1패(리그 10위), 2연승. 최근 맞대결은 2005.12.01에 열린 레프스키 소피아 1-0 마르세유 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **마르세유**(홈) 0.5골 · **레프스키 소피아**(원정) 1.0골, 평균 실점은 홈 1.5골 · 원정 0.8골. 해외 배당을 확률로 환산하면 마르세유 승 71.2% · 무 17.5% · 레프스키 소피아 승 11.3%."
+            }
+          ],
+          "preview": "마르세유는 리그 1에서 5위(승점 18, 득실 +7)로 상위권이고, 이 대회에서는 1승 3패(31위)입니다. 레프스키 소피아는 이 대회에서 2승 1무 1패(10위)입니다. 최근 5경기는 마르세유 4승 1패, 레프스키 소피아 2승 1무 2패이고, 두 팀 평균 득점을 합치면 1.5골, 평균 실점은 2.3골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "LEV",
+                "name": "레프스키 소피아",
+                "side": "away",
+                "record": "2승 1무 1패",
+                "venueRecord": "원정 1승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 10위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 1무 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "10위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "7"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+1"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-무-패-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+1"
+                  }
+                ],
+                "streak": "2연승",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "야기에우오니아 비아위스토크",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "빅토리아 플젠",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "NEC 네이메헌",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-09-17",
+                    "opp": "잘츠부르크",
+                    "ha": "홈",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-08-26",
+                    "opp": "AEK 아테네",
+                    "ha": "원정",
+                    "score": "0-4",
+                    "res": "패",
+                    "comp": "UCL"
+                  }
+                ],
+                "focus": "레프스키 소피아는 유로파리그에서 2승 1무 1패(승점 7, 10위)입니다. 최근 5경기는 2승 1무 2패로 2연승 중입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Radoslav Kirilov",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  }
+                ],
+                "injurySummary": "결장 1명"
+              },
+              {
+                "abbr": "OLM",
+                "name": "마르세유",
+                "side": "home",
+                "record": "1승 0무 3패",
+                "venueRecord": "홈 0승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 31위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 0무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "31위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "3"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-4"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-승-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "0.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-4"
+                  }
+                ],
+                "streak": "최근 5경기 4승 0무 1패",
+                "last5": "4승 0무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "Le Mans",
+                    "ha": "홈",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "2026-27 Ligue 1"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "랑스",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "2026-27 Ligue 1"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "바이어 레버쿠젠",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "Toulouse",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "2026-27 Ligue 1"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "Le Havre AC",
+                    "ha": "홈",
+                    "score": "4-3",
+                    "res": "승",
+                    "comp": "2026-27 Ligue 1"
+                  }
+                ],
+                "focus": "마르세유는 리그 1에서 5위(승점 18, 득실 +7)로 상위권이고, 유로파리그에서는 1승 3패(승점 3, 31위)입니다. 최근 5경기는 4승 1패입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Emerson",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  },
+                  {
+                    "player": "Derek Cornelius",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  }
+                ],
+                "injurySummary": "결장 2명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "마르세유",
+                "players": [
+                  {
+                    "name": "Amine Gouiri",
+                    "id": "259743",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Lens_-_Stade_Rennais_%2820-08-2023%29_22.jpg/120px-Lens_-_Stade_Rennais_%2820-08-2023%29_22.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Himad Abdelli",
+                    "id": "277525",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Abdelli_asse_sco_2425.png/120px-Abdelli_asse_sco_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "레프스키 소피아",
+                "players": [
+                  {
+                    "name": "Reinaldo",
+                    "id": "287830",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Maicon",
+                    "id": "379245",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**마르세유** — 리그 31위, 승점 3, 득실 -4.",
+              "**레프스키 소피아** — 리그 10위, 승점 7, 득실 +1."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2005-12-01",
+                  "home": "레프스키 소피아",
+                  "away": "마르세유",
+                  "score": "1-0"
+                }
+              ],
+              "summary": "최근 1차례 맞대결"
+            },
+            "fotmobId": 6112277,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-mil-oly-20261127",
+          "espnId": "401915521",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T02:45:00+09:00",
+          "venue": "Georgios Karaiskakis Stadium",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 145,
+              "draw": 245,
+              "home": 185
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -185,
+              "away": 130
+            },
+            "total": {
+              "line": "2.5",
+              "over": -120,
+              "under": -105
+            },
+            "implied": {
+              "away": 38.9,
+              "draw": 27.6,
+              "home": 33.5
+            }
+          },
+          "away": {
+            "name": "AC 밀란",
+            "abbr": "MIL",
+            "record": "1승 0무 3패",
+            "badges": [
+              {
+                "text": "리그 28위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "올림피아코스",
+            "abbr": "OLY",
+            "record": "3승 1무 0패",
+            "badges": [
+              {
+                "text": "리그 6위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 13명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**올림피아코스**(홈) 3승 1무 0패(리그 6위), 최근 5경기 3승 2무 0패, **AC 밀란**(원정) 1승 0무 3패(리그 28위), 2연승. 최근 맞대결은 2018.12.13에 열린 올림피아코스 3-1 AC 밀란 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **올림피아코스**(홈) 1.0골 · **AC 밀란**(원정) 1.0골, 평균 실점은 홈 0.2골 · 원정 1.8골. 해외 배당을 확률로 환산하면 올림피아코스 승 33.5% · 무 27.6% · AC 밀란 승 38.9%."
+            }
+          ],
+          "preview": "올림피아코스는 그리스 슈퍼리그 2위(승점 26, 득실 +15)로 상위권이고, 이 대회에서는 3승 1무(6위)입니다. AC 밀란은 세리에 A 4위(승점 27, 득실 +14)로 상위권이고, 이 대회에서는 1승 3패(28위)입니다. 최근 5경기는 올림피아코스 3승 2무, AC 밀란 3승 2패이고, 두 팀 평균 득점을 합치면 2.0골, 평균 실점은 2.0골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "MIL",
+                "name": "AC 밀란",
+                "side": "away",
+                "record": "1승 0무 3패",
+                "venueRecord": "원정 1승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 28위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 0무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "28위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "3"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-패-승-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  }
+                ],
+                "streak": "2연승",
+                "last5": "3승 0무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "프로시노네",
+                    "ha": "홈",
+                    "score": "5-1",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "제노아",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "페렌츠바로시",
+                    "ha": "홈",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "인터 밀란",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "볼로냐",
+                    "ha": "홈",
+                    "score": "2-4",
+                    "res": "패",
+                    "comp": "세리에A"
+                  }
+                ],
+                "focus": "AC 밀란은 세리에 A 4위(승점 27, 득실 +14)로 상위권이고, 유로파리그에서는 1승 3패(승점 3, 28위)입니다. 최근 5경기는 3승 2패로 2연승 중입니다. FotMob 기준 결장 8명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Nirash Perera",
+                    "status": "OUT",
+                    "line": "징계 출장정지 · 복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Davide Bartesaghi",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Francesco Camarda",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Luka Modrić",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Strahinja Pavlović",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Pietro Terracciano",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Matteo Gabbia",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Alexis Saelemaekers",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 중순"
+                  },
+                  {
+                    "player": "Ruben Loftus-Cheek",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Samuel Chukwueze",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 중순"
+                  }
+                ],
+                "injurySummary": "결장 8명 · 불확실 2명"
+              },
+              {
+                "abbr": "OLY",
+                "name": "올림피아코스",
+                "side": "home",
+                "record": "3승 1무 0패",
+                "venueRecord": "홈 2승 0무 0패",
+                "badges": [
+                  {
+                    "text": "리그 6위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "3승 1무 0패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "6위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "10"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-무-무-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.2골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  }
+                ],
+                "streak": "최근 5경기 3승 2무 0패",
+                "last5": "3승 2무 0패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "Iraklis",
+                    "ha": "홈",
+                    "score": "6-2",
+                    "res": "승",
+                    "comp": "2026-27 Greek Super League"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "PAOK",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "2026-27 Greek Super League"
+                  },
+                  {
+                    "date": "2026-11-04",
+                    "opp": "렌",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "Kifisia",
+                    "ha": "원정",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "2026-27 Greek Super League"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "Kalamata",
+                    "ha": "홈",
+                    "score": "5-0",
+                    "res": "승",
+                    "comp": "2026-27 Greek Super League"
+                  }
+                ],
+                "focus": "올림피아코스는 그리스 슈퍼리그 2위(승점 26, 득실 +15)로 상위권이고, 유로파리그에서는 3승 1무(승점 10, 6위)입니다. 최근 5경기는 3승 2무입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Chiquinho",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1주"
+                  },
+                  {
+                    "player": "Gustavo Puerta",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 중순"
+                  },
+                  {
+                    "player": "Santiago Hezze",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Ayoub El Kaabi",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  },
+                  {
+                    "player": "Yusuf Yazıcı",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 말"
+                  }
+                ],
+                "injurySummary": "결장 5명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "올림피아코스",
+                "players": [
+                  {
+                    "name": "Santiago Hezze",
+                    "id": "290539",
+                    "photo": "https://upload.wikimedia.org/wikipedia/commons/2/20/Santiago_Hezze%2C_2024_Summer_Olympics.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Chiquinho",
+                    "id": "275935",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Chiquinho%2C_SLB_2023.png/120px-Chiquinho%2C_SLB_2023.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "AC 밀란",
+                "players": [
+                  {
+                    "name": "Alphadjo Cissè",
+                    "id": "359754",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Davide Bartesaghi",
+                    "id": "345637",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**올림피아코스** — 리그 6위, 승점 10, 득실 +3.",
+              "**AC 밀란** — 리그 28위, 승점 3, 득실 -3."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2018-12-13",
+                  "home": "올림피아코스",
+                  "away": "AC 밀란",
+                  "score": "3-1"
+                },
+                {
+                  "date": "2018-10-04",
+                  "home": "AC 밀란",
+                  "away": "올림피아코스",
+                  "score": "3-1"
+                },
+                {
+                  "date": "2014-07-25",
+                  "home": "올림피아코스",
+                  "away": "AC 밀란",
+                  "score": "3-0"
+                },
+                {
+                  "date": "2014-07-25",
+                  "home": "AC 밀란",
+                  "away": "올림피아코스",
+                  "score": "0-3"
+                }
+              ],
+              "summary": "최근 4차례 맞대결"
+            },
+            "fotmobId": 6112266,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-slb-plz-20261127",
+          "espnId": "401915518",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T02:45:00+09:00",
+          "venue": "Doosan Arena",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": -205,
+              "draw": 400,
+              "home": 475
+            },
+            "spread": {
+              "homeLine": "+1.5",
+              "awayLine": "-1.5",
+              "home": -155,
+              "away": 110
+            },
+            "total": {
+              "line": "3.5",
+              "over": 110,
+              "under": -135
+            },
+            "implied": {
+              "away": 64.2,
+              "draw": 19.1,
+              "home": 16.6
+            }
+          },
+          "away": {
+            "name": "벤피카",
+            "abbr": "SLB",
+            "record": "4승 0무 0패",
+            "badges": [
+              {
+                "text": "리그 1위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "빅토리아 플젠",
+            "abbr": "PLZ",
+            "record": "1승 0무 3패",
+            "badges": [
+              {
+                "text": "리그 30위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 2명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**빅토리아 플젠**(홈) 1승 0무 3패(리그 30위), 최근 5경기 2승 0무 3패, **벤피카**(원정) 4승 0무 0패(리그 1위), 5연승."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **빅토리아 플젠**(홈) 0.8골 · **벤피카**(원정) 3.2골, 평균 실점은 홈 1.8골 · 원정 0.8골. 해외 배당을 확률로 환산하면 빅토리아 플젠 승 16.6% · 무 19.1% · 벤피카 승 64.2%."
+            }
+          ],
+          "preview": "빅토리아 플젠은 이 대회에서 1승 3패(30위)입니다. 벤피카는 포르투갈 프리메이라리가 2위(승점 28, 득실 +20)로 상위권이고, 이 대회에서는 4전 전승(1위)입니다. 최근 5경기는 빅토리아 플젠 2승 3패, 벤피카 5연승이고, 두 팀 평균 득점을 합치면 4.0골, 평균 실점은 2.6골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "SLB",
+                "name": "벤피카",
+                "side": "away",
+                "record": "4승 0무 0패",
+                "venueRecord": "원정 2승 0무 0패",
+                "badges": [
+                  {
+                    "text": "리그 1위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "4승 0무 0패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "1위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "12"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+10"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "3.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+10"
+                  }
+                ],
+                "streak": "5연승",
+                "last5": "5승 0무 0패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "토렌세",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "2026-27 Taca de Portugal"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "Estrela",
+                    "ha": "원정",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "2026-27 Portuguese Primeira Liga"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "레흐 포즈난",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-02",
+                    "opp": "Alverca",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "2026-27 Portuguese Primeira Liga"
+                  },
+                  {
+                    "date": "2026-10-26",
+                    "opp": "Santa Clara",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "2026-27 Portuguese Primeira Liga"
+                  }
+                ],
+                "focus": "벤피카는 포르투갈 프리메이라리가 2위(승점 28, 득실 +20)로 상위권이고, 유로파리그에서는 4전 전승(승점 12, 1위)입니다. 최근 5경기는 5연승입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Leandro Barreiro",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 7월 초"
+                  }
+                ],
+                "injurySummary": "결장 1명"
+              },
+              {
+                "abbr": "PLZ",
+                "name": "빅토리아 플젠",
+                "side": "home",
+                "record": "1승 0무 3패",
+                "venueRecord": "홈 0승 0무 2패",
+                "badges": [
+                  {
+                    "text": "리그 30위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 0무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "30위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "3"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-4"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-패-패-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-4"
+                  }
+                ],
+                "streak": "최근 5경기 2승 0무 3패",
+                "last5": "2승 0무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "릴레스트룀",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "레프스키 소피아",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "페렌츠바로시",
+                    "ha": "원정",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-09-17",
+                    "opp": "위니옹 생질루아즈",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-08-27",
+                    "opp": "Red Star Belgrade",
+                    "ha": "홈",
+                    "score": "5-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  }
+                ],
+                "focus": "빅토리아 플젠은 유로파리그에서 1승 3패(승점 3, 30위)입니다. 최근 5경기는 2승 3패입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Václav Jemelka",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  }
+                ],
+                "injurySummary": "결장 1명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "빅토리아 플젠",
+                "players": [
+                  {
+                    "name": "Christophe Kabongo",
+                    "id": "370742",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Patrik Hrosovský",
+                    "id": "169214",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/7oo12y1534347939.jpg",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "벤피카",
+                "players": [
+                  {
+                    "name": "Gianluca Prestianni",
+                    "id": "339191",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/3c8z8n1750454207.jpg",
+                    "stats": [
+                      "득점 2",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**빅토리아 플젠** — 리그 30위, 승점 3, 득실 -4.",
+              "**벤피카** — 리그 1위, 승점 12, 득실 +10."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112282,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-and-ofi-20261127",
+          "espnId": "401915503",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T05:00:00+09:00",
+          "venue": "Pankritio Stadium",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": -130,
+              "draw": 290,
+              "home": 340
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": 100,
+              "away": -140
+            },
+            "total": {
+              "line": "2.5",
+              "over": -145,
+              "under": 115
+            },
+            "implied": {
+              "away": 53.9,
+              "draw": 24.5,
+              "home": 21.7
+            }
+          },
+          "away": {
+            "name": "안더레흐트",
+            "abbr": "AND",
+            "record": "2승 0무 2패",
+            "badges": [
+              {
+                "text": "리그 15위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "OFI 크레테",
+            "abbr": "OFI",
+            "record": "2승 0무 2패",
+            "badges": [
+              {
+                "text": "리그 16위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 8명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**OFI 크레테**(홈) 2승 0무 2패(리그 16위), 최근 5경기 3승 1무 1패, **안더레흐트**(원정) 2승 0무 2패(리그 15위), 최근 5경기 3승 1무 1패."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **OFI 크레테**(홈) 1.2골 · **안더레흐트**(원정) 1.5골, 평균 실점은 홈 1.0골 · 원정 0.8골. 해외 배당을 확률로 환산하면 OFI 크레테 승 21.7% · 무 24.5% · 안더레흐트 승 53.9%."
+            }
+          ],
+          "preview": "OFI 크레테는 그리스 슈퍼리그 6위(승점 17, 득실 0)로 중위권이고, 이 대회에서는 2승 2패(16위)입니다. 안더레흐트는 벨기에 프로리그 5위(승점 23, 득실 +3)로 상위권이고, 이 대회에서는 2승 2패(15위)입니다. 최근 5경기는 OFI 크레테 3승 1무 1패, 안더레흐트 3승 1무 1패이고, 두 팀 평균 득점을 합치면 2.7골, 평균 실점은 1.8골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "AND",
+                "name": "안더레흐트",
+                "side": "away",
+                "record": "2승 0무 2패",
+                "venueRecord": "원정 1승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 15위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 0무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "15위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "6"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-무-승-승-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  }
+                ],
+                "streak": "최근 5경기 3승 1무 1패",
+                "last5": "3승 1무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "Oud-Heverlee Leuven",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "2026-27 Belgian Pro League"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "Club Brugge",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "2026-27 Belgian Pro League"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "잘츠부르크",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "KVC Westerlo",
+                    "ha": "홈",
+                    "score": "4-1",
+                    "res": "승",
+                    "comp": "2026-27 Belgian Pro League"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "KAA Gent",
+                    "ha": "원정",
+                    "score": "0-4",
+                    "res": "패",
+                    "comp": "2026-27 Belgian Pro League"
+                  }
+                ],
+                "focus": "안더레흐트는 벨기에 프로리그 5위(승점 23, 득실 +3)로 상위권이고, 유로파리그에서는 2승 2패(승점 6, 15위)입니다. 최근 5경기는 3승 1무 1패입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Ilay Camara",
+                    "status": "OUT",
+                    "line": "복귀 예상 Day to day"
+                  },
+                  {
+                    "player": "Lucas Hey",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  }
+                ],
+                "injurySummary": "결장 2명"
+              },
+              {
+                "abbr": "OFI",
+                "name": "OFI 크레테",
+                "side": "home",
+                "record": "2승 0무 2패",
+                "venueRecord": "홈 1승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 16위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 0무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "16위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "6"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+1"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-무-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+1"
+                  }
+                ],
+                "streak": "최근 5경기 3승 1무 1패",
+                "last5": "3승 1무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "Panathinaikos",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "2026-27 Greek Super League"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "Atromitos",
+                    "ha": "홈",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "2026-27 Greek Super League"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "하포엘 베르셰바",
+                    "ha": "원정",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "Panetolikos",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "2026-27 Greek Super League"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "PAOK",
+                    "ha": "홈",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "2026-27 Greek Super League"
+                  }
+                ],
+                "focus": "OFI 크레테는 그리스 슈퍼리그 6위(승점 17, 득실 0)로 중위권이고, 유로파리그에서는 2승 2패(승점 6, 16위)입니다. 최근 5경기는 3승 1무 1패입니다. FotMob 기준 결장 6명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Kenan Kodro",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1주"
+                  },
+                  {
+                    "player": "Krešimir Krizmanić",
+                    "status": "OUT",
+                    "line": "복귀 예상 몇 주"
+                  },
+                  {
+                    "player": "Fotis Koutsoupias",
+                    "status": "OUT",
+                    "line": "복귀 예상 몇 주"
+                  },
+                  {
+                    "player": "Konstantinos Lagoudakis",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Emmanouil Chnaris",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  },
+                  {
+                    "player": "Nikos Marinakis",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  }
+                ],
+                "injurySummary": "결장 6명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "OFI 크레테",
+                "players": [
+                  {
+                    "name": "Taxiarchis Fountas",
+                    "id": "183154",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F183154.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Nicolaos Athanasiou",
+                    "id": "312967",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "안더레흐트",
+                "players": [
+                  {
+                    "name": "Mihajlo Cvetkovic",
+                    "id": "369978",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Cvetkovic_1312_AnderlechtSTVV.jpg/120px-Cvetkovic_1312_AnderlechtSTVV.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Enric Llansana",
+                    "id": "287172",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F287172.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**OFI 크레테** — 리그 16위, 승점 6, 득실 +1.",
+              "**안더레흐트** — 리그 15위, 승점 6, 득실 +3."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112371,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-az-spp-20261127",
+          "espnId": "401915514",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T05:00:00+09:00",
+          "venue": "Generali Arena",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 130,
+              "draw": 275,
+              "home": 190
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -165,
+              "away": 115
+            },
+            "total": {
+              "line": "2.5",
+              "over": -150,
+              "under": 120
+            },
+            "implied": {
+              "away": 41.6,
+              "draw": 25.5,
+              "home": 33.0
+            }
+          },
+          "away": {
+            "name": "AZ 알크마르",
+            "abbr": "AZ",
+            "record": "2승 0무 2패",
+            "badges": [
+              {
+                "text": "리그 14위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "스파르타 프라하",
+            "abbr": "SPP",
+            "record": "1승 1무 2패",
+            "badges": [
+              {
+                "text": "리그 22위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 2.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 11명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**스파르타 프라하**(홈) 1승 1무 2패(리그 22위), 2연패, **AZ 알크마르**(원정) 2승 0무 2패(리그 14위), 2연승. 최근 맞대결은 2026.03.19에 열린 스파르타 프라하 0-4 AZ 알크마르 경기입니다."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **스파르타 프라하**(홈) 1.5골 · **AZ 알크마르**(원정) 1.8골, 평균 실점은 홈 1.5골 · 원정 1.0골. 해외 배당을 확률로 환산하면 스파르타 프라하 승 33.0% · 무 25.5% · AZ 알크마르 승 41.6%."
+            }
+          ],
+          "preview": "스파르타 프라하는 이 대회에서 1승 1무 2패(22위)입니다. AZ 알크마르는 에레디비시 4위(승점 26, 득실 +12)로 상위권이고, 이 대회에서는 2승 2패(14위)입니다. 최근 5경기는 스파르타 프라하 2승 1무 2패, AZ 알크마르 2승 3패이고, 두 팀 평균 득점을 합치면 3.3골, 평균 실점은 2.5골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "AZ",
+                "name": "AZ 알크마르",
+                "side": "away",
+                "record": "2승 0무 2패",
+                "venueRecord": "원정 1승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 14위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 0무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "14위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "6"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-패-패-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.8골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  }
+                ],
+                "streak": "2연승",
+                "last5": "2승 0무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "Sparta Rotterdam",
+                    "ha": "원정",
+                    "score": "5-1",
+                    "res": "승",
+                    "comp": "2026-27 Dutch Eredivisie"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "FC Groningen",
+                    "ha": "홈",
+                    "score": "4-3",
+                    "res": "승",
+                    "comp": "2026-27 Dutch Eredivisie"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "유벤투스",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "Ajax Amsterdam",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "2026-27 Dutch Eredivisie"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "FC Twente",
+                    "ha": "홈",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "2026-27 Dutch Eredivisie"
+                  }
+                ],
+                "focus": "AZ 알크마르는 에레디비시 4위(승점 26, 득실 +12)로 상위권이고, 유로파리그에서는 2승 2패(승점 6, 14위)입니다. 최근 5경기는 2승 3패로 2연승 중입니다. FotMob 기준 결장 6명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Jeroen Zoet",
+                    "status": "OUT",
+                    "line": "복귀 예상 Day to day"
+                  },
+                  {
+                    "player": "Lewis Schouten",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Kees Smit",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  },
+                  {
+                    "player": "Stije Resink",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Jizz Hornkamp",
+                    "status": "OUT",
+                    "line": "복귀 예상 Day to day"
+                  },
+                  {
+                    "player": "Weslley Pinto",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  }
+                ],
+                "injurySummary": "결장 6명"
+              },
+              {
+                "abbr": "SPP",
+                "name": "스파르타 프라하",
+                "side": "home",
+                "record": "1승 1무 2패",
+                "venueRecord": "홈 0승 1무 1패",
+                "badges": [
+                  {
+                    "text": "리그 22위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 1무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "22위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "4"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "0"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-패-무-승-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "0"
+                  }
+                ],
+                "streak": "2연패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "본머스",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "올림피아코스",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "릴레스트룀",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-02",
+                    "opp": "Vysocina Jihlava",
+                    "ha": "홈",
+                    "score": "5-3",
+                    "res": "승",
+                    "comp": "2026 Club Friendly"
+                  },
+                  {
+                    "date": "2026-09-16",
+                    "opp": "아라라트 아르메니아",
+                    "ha": "원정",
+                    "score": "4-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  }
+                ],
+                "focus": "스파르타 프라하는 유로파리그에서 1승 1무 2패(승점 4, 22위)입니다. 최근 5경기는 2승 1무 2패로 2연패 중입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Hugo Sochůrek",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Santiago Eneme",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Matěj Ryneš",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Adam Karabec",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Emmanuel Uchenna",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  },
+                  {
+                    "player": "Ondřej Penxa",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  },
+                  {
+                    "player": "Magnus Kofod Andersen",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  }
+                ],
+                "injurySummary": "결장 5명 · 불확실 2명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "스파르타 프라하",
+                "players": [
+                  {
+                    "name": "Tobias Guddal",
+                    "id": "382244",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Jakub Surovcik",
+                    "id": "336530",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/2xagy41710404845.jpg",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "AZ 알크마르",
+                "players": [
+                  {
+                    "name": "Mexx Meerdink",
+                    "id": "332465",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F332465.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Ro-Zangelo Daal",
+                    "id": "338775",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/nnarcj1757687210.jpg",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**스파르타 프라하** — 리그 22위, 승점 4, 득실 0.",
+              "**AZ 알크마르** — 리그 14위, 승점 6, 득실 +3."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "h2h": {
+              "games": [
+                {
+                  "date": "2026-03-19",
+                  "home": "스파르타 프라하",
+                  "away": "AZ 알크마르",
+                  "score": "0-4"
+                },
+                {
+                  "date": "2026-03-12",
+                  "home": "AZ 알크마르",
+                  "away": "스파르타 프라하",
+                  "score": "2-1"
+                }
+              ],
+              "summary": "최근 2차례 맞대결"
+            },
+            "fotmobId": 6112302,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-cel-tor-20261127",
+          "espnId": "401915512",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T05:00:00+09:00",
+          "venue": "Estádio Dr. Magalhaes Pessoa",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": -155,
+              "draw": 330,
+              "home": 370
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": 120,
+              "away": -165
+            },
+            "total": {
+              "line": "3.5",
+              "over": 135,
+              "under": -170
+            },
+            "implied": {
+              "away": 57.6,
+              "draw": 22.1,
+              "home": 20.2
+            }
+          },
+          "away": {
+            "name": "셀틱",
+            "abbr": "CEL",
+            "record": "1승 0무 3패",
+            "badges": [
+              {
+                "text": "리그 32위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "토렌세",
+            "abbr": "TOR",
+            "record": "2승 0무 2패",
+            "badges": [
+              {
+                "text": "리그 19위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 4명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**토렌세**(홈) 2승 0무 2패(리그 19위), 최근 5경기 2승 0무 3패, **셀틱**(원정) 1승 0무 3패(리그 32위), 3연승."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **토렌세**(홈) 1.8골 · **셀틱**(원정) 1.5골, 평균 실점은 홈 2.2골 · 원정 2.8골. 해외 배당을 확률로 환산하면 토렌세 승 20.2% · 무 22.1% · 셀틱 승 57.6%."
+            }
+          ],
+          "preview": "토렌세는 이 대회에서 2승 2패(19위)입니다. 셀틱은 스코틀랜드 프리미어십 선두(승점 34, 득실 +21)이고, 이 대회에서는 1승 3패(32위)입니다. 최근 5경기는 토렌세 2승 3패, 셀틱 3승 1무 1패이고, 두 팀 평균 득점을 합치면 3.3골, 평균 실점은 5.0골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "CEL",
+                "name": "셀틱",
+                "side": "away",
+                "record": "1승 0무 3패",
+                "venueRecord": "원정 0승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 32위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 0무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "32위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "3"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-5"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-승-패-무"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-5"
+                  }
+                ],
+                "streak": "3연승",
+                "last5": "3승 1무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "St Mirren",
+                    "ha": "홈",
+                    "score": "4-1",
+                    "res": "승",
+                    "comp": "2026-27 Scottish Premiership"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "Kilmarnock",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "2026-27 Scottish Premiership"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "베식타시",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "Falkirk",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "2026-27 Scottish Premiership"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "Dundee United",
+                    "ha": "홈",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "2026-27 Scottish Premiership"
+                  }
+                ],
+                "focus": "셀틱은 스코틀랜드 프리미어십 선두(승점 34, 득실 +21)이고, 유로파리그에서는 1승 3패(승점 3, 32위)입니다. 최근 5경기는 3승 1무 1패로 3연승 중입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Mika Baur",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 중순"
+                  },
+                  {
+                    "player": "Alistair Johnston",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  }
+                ],
+                "injurySummary": "결장 2명"
+              },
+              {
+                "abbr": "TOR",
+                "name": "토렌세",
+                "side": "home",
+                "record": "2승 0무 2패",
+                "venueRecord": "홈 1승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 19위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 0무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "19위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "6"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-2"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-승-패-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.8골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.2골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-2"
+                  }
+                ],
+                "streak": "최근 5경기 2승 0무 3패",
+                "last5": "2승 0무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "벤피카",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "2026-27 Taca de Portugal"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "아라라트 아르메니아",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "페렌츠바로시",
+                    "ha": "원정",
+                    "score": "1-4",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "선덜랜드",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-09-17",
+                    "opp": "릴레스트룀",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  }
+                ],
+                "focus": "토렌세는 유로파리그에서 2승 2패(승점 6, 19위)입니다. 최근 5경기는 2승 3패입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Jorge Aguirre",
+                    "status": "OUT",
+                    "line": "징계 출장정지 · 복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Adama Baradji",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  }
+                ],
+                "injurySummary": "결장 2명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "토렌세",
+                "players": [
+                  {
+                    "name": "Manuel Pozo",
+                    "id": "359742",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Javier Vazquez",
+                    "id": "266780",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "셀틱",
+                "players": [
+                  {
+                    "name": "Camilo Durán",
+                    "id": "367591",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/12lz801772030465.jpg",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Kieran Tierney",
+                    "id": "214794",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Kieran_Tierney_Scotland_v_Bolivia_6_June_2026-6.jpg/120px-Kieran_Tierney_Scotland_v_Bolivia_6_June_2026-6.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**토렌세** — 리그 19위, 승점 6, 득실 -2.",
+              "**셀틱** — 리그 32위, 승점 3, 득실 -5."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112359,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-jag-sun-20261127",
+          "espnId": "401915513",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T05:00:00+09:00",
+          "venue": "Stadium of Light",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 1000,
+              "draw": 500,
+              "home": -390
+            },
+            "spread": {
+              "homeLine": "-1.5",
+              "awayLine": "+1.5",
+              "home": -150,
+              "away": 105
+            },
+            "total": {
+              "line": "3.5",
+              "over": 140,
+              "under": -175
+            },
+            "implied": {
+              "away": 8.6,
+              "draw": 15.9,
+              "home": 75.5
+            }
+          },
+          "away": {
+            "name": "야기에우오니아 비아위스토크",
+            "abbr": "JAG",
+            "record": "1승 0무 3패",
+            "badges": [
+              {
+                "text": "리그 29위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "선덜랜드",
+            "abbr": "SUN",
+            "record": "2승 1무 1패",
+            "badges": [
+              {
+                "text": "리그 11위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 5명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**선덜랜드**(홈) 2승 1무 1패(리그 11위), 최근 5경기 2승 1무 2패, **야기에우오니아 비아위스토크**(원정) 1승 0무 3패(리그 29위), 2연패."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **선덜랜드**(홈) 1.0골 · **야기에우오니아 비아위스토크**(원정) 1.0골, 평균 실점은 홈 1.0골 · 원정 1.8골. 해외 배당을 확률로 환산하면 선덜랜드 승 75.5% · 무 15.9% · 야기에우오니아 비아위스토크 승 8.6%."
+            }
+          ],
+          "preview": "선덜랜드는 프리미어리그 18위(승점 9, 득실 -9)로 하위권이고, 이 대회에서는 2승 1무 1패(11위)입니다. 야기에우오니아 비아위스토크는 이 대회에서 1승 3패(29위)입니다. 최근 5경기는 선덜랜드 2승 1무 2패, 야기에우오니아 비아위스토크 2승 3패이고, 두 팀 평균 득점을 합치면 2.0골, 평균 실점은 2.8골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "JAG",
+                "name": "야기에우오니아 비아위스토크",
+                "side": "away",
+                "record": "1승 0무 3패",
+                "venueRecord": "원정 0승 0무 2패",
+                "badges": [
+                  {
+                    "text": "리그 29위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 0무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "29위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "3"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-승-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  }
+                ],
+                "streak": "2연패",
+                "last5": "2승 0무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "레프스키 소피아",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "안더레흐트",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "아라라트 아르메니아",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-03",
+                    "opp": "Polonia Warsaw",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "2026 Club Friendly"
+                  },
+                  {
+                    "date": "2026-09-29",
+                    "opp": "FK Suduva",
+                    "ha": "홈",
+                    "score": "5-0",
+                    "res": "승",
+                    "comp": "2026 Club Friendly"
+                  }
+                ],
+                "focus": "야기에우오니아 비아위스토크는 유로파리그에서 1승 3패(승점 3, 29위)입니다. 최근 5경기는 2승 3패로 2연패 중입니다. FotMob 결장 명단에 올라온 선수가 없습니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Youssuf Sylla",
+                    "status": "DOUBTFUL"
+                  }
+                ],
+                "injurySummary": "출전 불확실 1명"
+              },
+              {
+                "abbr": "SUN",
+                "name": "선덜랜드",
+                "side": "home",
+                "record": "2승 1무 1패",
+                "venueRecord": "홈 1승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 11위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 1무 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "11위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "7"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "0"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-승-패-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "0"
+                  }
+                ],
+                "streak": "최근 5경기 2승 1무 2패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "애스턴 빌라",
+                    "ha": "원정",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "첼시",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "디나모 자그레브",
+                    "ha": "홈",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "코번트리 시티",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "브렌트퍼드",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "카라바오컵"
+                  }
+                ],
+                "focus": "선덜랜드는 프리미어리그 18위(승점 9, 득실 -9)로 하위권이고, 유로파리그에서는 2승 1무 1패(승점 7, 11위)입니다. 최근 5경기는 2승 1무 2패입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Daniel Ballard",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 중순"
+                  },
+                  {
+                    "player": "Granit Xhaka",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Habib Diarra",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Brian Brobbey",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Romaine Mundle",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  }
+                ],
+                "injurySummary": "결장 5명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "선덜랜드",
+                "players": [
+                  {
+                    "name": "Noah Sadiki",
+                    "id": "340240",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Noah_Sadiki_05092026_%283%29.jpg/120px-Noah_Sadiki_05092026_%283%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Granit Xhaka",
+                    "id": "149981",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Granit_Xhaka_%28cropped%29.jpg/120px-Granit_Xhaka_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "야기에우오니아 비아위스토크",
+                "players": [
+                  {
+                    "name": "Rodrigo Conceição",
+                    "id": "323813",
+                    "photo": "https://r2.thesportsdb.com/images/media/player/thumb/v34lxd1679050219.jpg",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Anders Klynge",
+                    "id": "303934",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**선덜랜드** — 리그 11위, 승점 7, 득실 0.",
+              "**야기에우오니아 비아위스토크** — 리그 29위, 승점 3, 득실 -3."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112332,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-lsk-lyon-20261127",
+          "espnId": "401915501",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T05:00:00+09:00",
+          "venue": "Groupama Stadium",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 1100,
+              "draw": 600,
+              "home": -475
+            },
+            "spread": {
+              "homeLine": "-1.5",
+              "awayLine": "+1.5",
+              "home": -175,
+              "away": 125
+            },
+            "total": {
+              "line": "3.5",
+              "over": 100,
+              "under": -120
+            },
+            "implied": {
+              "away": 7.9,
+              "draw": 13.6,
+              "home": 78.5
+            }
+          },
+          "away": {
+            "name": "릴레스트룀",
+            "abbr": "LSK",
+            "record": "0승 1무 3패",
+            "badges": [
+              {
+                "text": "리그 34위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "리옹",
+            "abbr": "LYON",
+            "record": "2승 1무 1패",
+            "badges": [
+              {
+                "text": "리그 13위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 7명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**리옹**(홈) 2승 1무 1패(리그 13위), 최근 5경기 2승 1무 2패, **릴레스트룀**(원정) 0승 1무 3패(리그 34위), 2연승."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **리옹**(홈) 1.5골 · **릴레스트룀**(원정) 0.5골, 평균 실점은 홈 1.8골 · 원정 2.5골. 해외 배당을 확률로 환산하면 리옹 승 78.5% · 무 13.6% · 릴레스트룀 승 7.9%."
+            }
+          ],
+          "preview": "리옹은 리그 1에서 4위(승점 20, 득실 +7)로 상위권이고, 이 대회에서는 2승 1무 1패(13위)입니다. 릴레스트룀은 노르웨이 엘리테세리엔 3위(승점 48, 득실 +6)로 상위권이고, 이 대회에서는 1무 3패(34위)입니다. 최근 5경기는 리옹 2승 1무 2패, 릴레스트룀 4승 1패이고, 두 팀 평균 득점을 합치면 2.0골, 평균 실점은 4.3골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "LSK",
+                "name": "릴레스트룀",
+                "side": "away",
+                "record": "0승 1무 3패",
+                "venueRecord": "원정 0승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 34위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "0승 1무 3패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "34위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "1"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-8"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-패-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "0.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-8"
+                  }
+                ],
+                "streak": "2연승",
+                "last5": "4승 0무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "Sarpsborg FK",
+                    "ha": "원정",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "2026 Eliteserien"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "Aalesund",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "2026 Eliteserien"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "빅토리아 플젠",
+                    "ha": "홈",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "IK Start",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "2026 Eliteserien"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "SK Brann",
+                    "ha": "홈",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "2026 Eliteserien"
+                  }
+                ],
+                "focus": "릴레스트룀은 노르웨이 엘리테세리엔 3위(승점 48, 득실 +6)로 상위권이고, 유로파리그에서는 1무 3패(승점 1, 34위)입니다. 최근 5경기는 4승 1패로 2연승 중입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Espen Garnås",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  },
+                  {
+                    "player": "Daniel Bassi",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  }
+                ],
+                "injurySummary": "결장 2명"
+              },
+              {
+                "abbr": "LYON",
+                "name": "리옹",
+                "side": "home",
+                "record": "2승 1무 1패",
+                "venueRecord": "홈 1승 0무 0패",
+                "badges": [
+                  {
+                    "text": "리그 13위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 1무 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "13위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "7"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-1"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-패-무-승-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-1"
+                  }
+                ],
+                "streak": "최근 5경기 2승 1무 2패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "Lille",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "2026-27 Ligue 1"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "Brest",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "2026-27 Ligue 1"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "레알 소시에다드",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "Angers",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "2026-27 Ligue 1"
+                  },
+                  {
+                    "date": "2026-10-26",
+                    "opp": "Paris Saint-Germain",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "2026-27 Ligue 1"
+                  }
+                ],
+                "focus": "리옹은 리그 1에서 4위(승점 20, 득실 +7)로 상위권이고, 유로파리그에서는 2승 1무 1패(승점 7, 13위)입니다. 최근 5경기는 2승 1무 2패입니다. FotMob 기준 결장 5명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Mads Bidstrup",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1주"
+                  },
+                  {
+                    "player": "Clinton Mata",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Tyler Morton",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 2월 초"
+                  },
+                  {
+                    "player": "Pavel Šulc",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Mohamed Ouédraogo",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 6월 말"
+                  }
+                ],
+                "injurySummary": "결장 5명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "리옹",
+                "players": [
+                  {
+                    "name": "Corentin Tolisso",
+                    "id": "192060",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Tolisso_asse_ol_2425.png/120px-Tolisso_asse_ol_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Keito Nakamura",
+                    "id": "265953",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Nakamura_asse_sr_2425.png/120px-Nakamura_asse_sr_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "릴레스트룀",
+                "players": [
+                  {
+                    "name": "Thomas Lehne Olsen",
+                    "id": "221124",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Thomas_Lehne_Olsen_01.jpg/120px-Thomas_Lehne_Olsen_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 2"
+                    ]
+                  },
+                  {
+                    "name": "Vá",
+                    "id": "255219",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**리옹** — 리그 13위, 승점 7, 득실 -1.",
+              "**릴레스트룀** — 리그 34위, 승점 1, 득실 -8."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112261,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-nkc-fer-20261127",
+          "espnId": "401915516",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T05:00:00+09:00",
+          "venue": "Groupama Arena",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 650,
+              "draw": 450,
+              "home": -270
+            },
+            "spread": {
+              "homeLine": "-1.5",
+              "awayLine": "+1.5",
+              "home": -105,
+              "away": -130
+            },
+            "total": {
+              "line": "3.5",
+              "over": 135,
+              "under": -165
+            },
+            "implied": {
+              "away": 12.8,
+              "draw": 17.4,
+              "home": 69.8
+            }
+          },
+          "away": {
+            "name": "첼례",
+            "abbr": "NKC",
+            "record": "1승 1무 2패",
+            "badges": [
+              {
+                "text": "리그 25위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "페렌츠바로시",
+            "abbr": "FER",
+            "record": "4승 0무 0패",
+            "badges": [
+              {
+                "text": "리그 3위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 3명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**페렌츠바로시**(홈) 4승 0무 0패(리그 3위), 5연승, **첼례**(원정) 1승 1무 2패(리그 25위), 최근 5경기 1승 1무 3패."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **페렌츠바로시**(홈) 2.8골 · **첼례**(원정) 1.2골, 평균 실점은 홈 0.8골 · 원정 2.2골. 해외 배당을 확률로 환산하면 페렌츠바로시 승 69.8% · 무 17.4% · 첼례 승 12.8%."
+            }
+          ],
+          "preview": "페렌츠바로시는 이 대회에서 4전 전승(3위)입니다. 첼례는 이 대회에서 1승 1무 2패(25위)입니다. 최근 5경기는 페렌츠바로시 5연승, 첼례 1승 1무 3패이고, 두 팀 평균 득점을 합치면 4.0골, 평균 실점은 3.0골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "NKC",
+                "name": "첼례",
+                "side": "away",
+                "record": "1승 1무 2패",
+                "venueRecord": "원정 1승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 25위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 1무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "25위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "4"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-4"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-무-패-패-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.2골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-4"
+                  }
+                ],
+                "streak": "최근 5경기 1승 1무 3패",
+                "last5": "1승 1무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "슈투름 그라츠",
+                    "ha": "원정",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "잘츠부르크",
+                    "ha": "홈",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "오모니아 니코시아",
+                    "ha": "홈",
+                    "score": "0-3",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-09-16",
+                    "opp": "바이어 레버쿠젠",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-08-26",
+                    "opp": "슬로반 브라티슬라바",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "UCL"
+                  }
+                ],
+                "focus": "첼례는 유로파리그에서 1승 1무 2패(승점 4, 25위)입니다. 최근 5경기는 1승 1무 3패입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Jošt Pišek",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 중순"
+                  }
+                ],
+                "injurySummary": "결장 1명"
+              },
+              {
+                "abbr": "FER",
+                "name": "페렌츠바로시",
+                "side": "home",
+                "record": "4승 0무 0패",
+                "venueRecord": "홈 2승 0무 0패",
+                "badges": [
+                  {
+                    "text": "리그 3위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "4승 0무 0패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "3위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "12"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+8"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-승-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.8골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+8"
+                  }
+                ],
+                "streak": "5연승",
+                "last5": "5승 0무 0패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "AC 밀란",
+                    "ha": "원정",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "토렌세",
+                    "ha": "홈",
+                    "score": "4-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "빅토리아 플젠",
+                    "ha": "홈",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-09-17",
+                    "opp": "셀틱",
+                    "ha": "원정",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-08-27",
+                    "opp": "Trabzonspor",
+                    "ha": "홈",
+                    "score": "4-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  }
+                ],
+                "focus": "페렌츠바로시는 유로파리그에서 4전 전승(승점 12, 3위)입니다. 최근 5경기는 5연승입니다. FotMob 기준 결장 2명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Bamidele Yusuf",
+                    "status": "OUT",
+                    "line": "징계 출장정지 · 복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Bence Ötvös",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  }
+                ],
+                "injurySummary": "결장 2명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "페렌츠바로시",
+                "players": [
+                  {
+                    "name": "Kristoffer Zachariassen",
+                    "id": "253991",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/FC_Salzburg_vs._Ferencv%C3%A1ros_Budapest_%282025-10-23_UEFA_Euroleague%29_33_%28Kristoffer_Zachariassen%29.jpg/120px-FC_Salzburg_vs._Ferencv%C3%A1ros_Budapest_%282025-10-23_UEFA_Euroleague%29_33_%28Kristoffer_Zachariassen%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 3",
+                      "도움 3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "첼례",
+                "players": [
+                  {
+                    "name": "Svit Seslar",
+                    "id": "306199",
+                    "stats": [
+                      "득점 2",
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**페렌츠바로시** — 리그 3위, 승점 12, 득실 +8.",
+              "**첼례** — 리그 25위, 승점 4, 득실 -4."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112280,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-omon-juv-20261127",
+          "espnId": "401915502",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T05:00:00+09:00",
+          "venue": "Allianz Stadium",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 1300,
+              "draw": 650,
+              "home": -550
+            },
+            "spread": {
+              "homeLine": "-2.5",
+              "awayLine": "+2.5",
+              "home": 120,
+              "away": -165
+            },
+            "total": {
+              "line": "3.5",
+              "over": 100,
+              "under": -125
+            },
+            "implied": {
+              "away": 6.8,
+              "draw": 12.7,
+              "home": 80.5
+            }
+          },
+          "away": {
+            "name": "오모니아 니코시아",
+            "abbr": "OMON",
+            "record": "2승 0무 2패",
+            "badges": [
+              {
+                "text": "리그 18위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "유벤투스",
+            "abbr": "JUV",
+            "record": "3승 1무 0패",
+            "badges": [
+              {
+                "text": "리그 5위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 7명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**유벤투스**(홈) 3승 1무 0패(리그 5위), 최근 5경기 3승 1무 1패, **오모니아 니코시아**(원정) 2승 0무 2패(리그 18위), 2연패."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **유벤투스**(홈) 2.8골 · **오모니아 니코시아**(원정) 1.5골, 평균 실점은 홈 1.0골 · 원정 1.8골. 해외 배당을 확률로 환산하면 유벤투스 승 80.5% · 무 12.7% · 오모니아 니코시아 승 6.8%."
+            }
+          ],
+          "preview": "유벤투스는 세리에 A 6위(승점 21, 득실 +7)로 상위권이고, 이 대회에서는 3승 1무(5위)입니다. 오모니아 니코시아는 키프로스 1부리그 선두(승점 87, 득실 +64)이고, 이 대회에서는 2승 2패(18위)입니다. 최근 5경기는 유벤투스 3승 1무 1패, 오모니아 니코시아 3승 2패이고, 두 팀 평균 득점을 합치면 4.3골, 평균 실점은 2.8골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "OMON",
+                "name": "오모니아 니코시아",
+                "side": "away",
+                "record": "2승 0무 2패",
+                "venueRecord": "원정 1승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 18위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 0무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "18위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "6"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-1"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-승-승-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-1"
+                  }
+                ],
+                "streak": "2연패",
+                "last5": "3승 0무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-05",
+                    "opp": "NEC 네이메헌",
+                    "ha": "원정",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-22",
+                    "opp": "벤피카",
+                    "ha": "홈",
+                    "score": "1-4",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-15",
+                    "opp": "첼례",
+                    "ha": "원정",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-09-16",
+                    "opp": "셀타 비고",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-08-27",
+                    "opp": "Sint-Truidense",
+                    "ha": "홈",
+                    "score": "4-2",
+                    "res": "승",
+                    "comp": "UEL"
+                  }
+                ],
+                "focus": "오모니아 니코시아는 키프로스 1부리그 선두(승점 87, 득실 +64)이고, 유로파리그에서는 2승 2패(승점 6, 18위)입니다. 최근 5경기는 3승 2패로 2연패 중입니다. FotMob 기준 결장 1명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Carel Eiting",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  }
+                ],
+                "injurySummary": "결장 1명"
+              },
+              {
+                "abbr": "JUV",
+                "name": "유벤투스",
+                "side": "home",
+                "record": "3승 1무 0패",
+                "venueRecord": "홈 1승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 5위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "3승 1무 0패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "5위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "10"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+7"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "승-무-승-승-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.8골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+7"
+                  }
+                ],
+                "streak": "최근 5경기 3승 1무 1패",
+                "last5": "3승 1무 1패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "베네치아",
+                    "ha": "홈",
+                    "score": "4-0",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "피오렌티나",
+                    "ha": "원정",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "AZ 알크마르",
+                    "ha": "원정",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "나폴리",
+                    "ha": "홈",
+                    "score": "2-0",
+                    "res": "승",
+                    "comp": "세리에A"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "제노아",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "세리에A"
+                  }
+                ],
+                "focus": "유벤투스는 세리에 A 6위(승점 21, 득실 +7)로 상위권이고, 유로파리그에서는 3승 1무(승점 10, 5위)입니다. 최근 5경기는 3승 1무 1패입니다. FotMob 기준 결장 6명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Pierre Kalulu",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  },
+                  {
+                    "player": "Nicolás González",
+                    "status": "OUT",
+                    "line": "훈련 복귀"
+                  },
+                  {
+                    "player": "Kamil Grabara",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  },
+                  {
+                    "player": "Manuel Locatelli",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 3월 말"
+                  },
+                  {
+                    "player": "Khéphren Thuram-Ulien",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 중순"
+                  },
+                  {
+                    "player": "Kenan Yıldız",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 말"
+                  }
+                ],
+                "injurySummary": "결장 6명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "유벤투스",
+                "players": [
+                  {
+                    "name": "Nick Woltemade",
+                    "id": "298349",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Nick_Woltemade_Ecuador_v_Germany_25_June_2026-069.jpg/120px-Nick_Woltemade_Ecuador_v_Germany_25_June_2026-069.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 3",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "오모니아 니코시아",
+                "players": [
+                  {
+                    "name": "Jaden Montnor",
+                    "id": "366131",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Jean-Kévin Duverne",
+                    "id": "241032",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/RC_Lens_-_FC_Nantes_%2828-10-2023%29_17.jpg/120px-RC_Lens_-_FC_Nantes_%2828-10-2023%29_17.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**유벤투스** — 리그 5위, 승점 10, 득실 +7.",
+              "**오모니아 니코시아** — 리그 18위, 승점 6, 득실 -1."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112252,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-ren-nec-20261127",
+          "espnId": "401915505",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T05:00:00+09:00",
+          "venue": "Goffertstadion",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 110,
+              "draw": 295,
+              "home": 210
+            },
+            "spread": {
+              "homeLine": "+0.5",
+              "awayLine": "-0.5",
+              "home": -140,
+              "away": 100
+            },
+            "total": {
+              "line": "3.5",
+              "over": 125,
+              "under": -155
+            },
+            "implied": {
+              "away": 45.3,
+              "draw": 24.1,
+              "home": 30.7
+            }
+          },
+          "away": {
+            "name": "렌",
+            "abbr": "REN",
+            "record": "1승 3무 0패",
+            "badges": [
+              {
+                "text": "리그 17위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "NEC 네이메헌",
+            "abbr": "NEC",
+            "record": "2승 1무 1패",
+            "badges": [
+              {
+                "text": "리그 12위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 6명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**NEC 네이메헌**(홈) 2승 1무 1패(리그 12위), 최근 5경기 2승 1무 2패, **렌**(원정) 1승 3무 0패(리그 17위), 최근 5경기 1승 2무 2패."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **NEC 네이메헌**(홈) 2.0골 · **렌**(원정) 1.0골, 평균 실점은 홈 2.2골 · 원정 0.8골. 해외 배당을 확률로 환산하면 NEC 네이메헌 승 30.7% · 무 24.1% · 렌 승 45.3%."
+            }
+          ],
+          "preview": "NEC 네이메헌은 에레디비시 12위(승점 14, 득실 -4)로 중위권이고, 이 대회에서는 2승 1무 1패(12위)입니다. 렌은 리그 1에서 9위(승점 17, 득실 0)로 중위권이고, 이 대회에서는 1승 3무(17위)입니다. 최근 5경기는 NEC 네이메헌 2승 1무 2패, 렌 1승 2무 2패이고, 두 팀 평균 득점을 합치면 3.0골, 평균 실점은 3.0골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "REN",
+                "name": "렌",
+                "side": "away",
+                "record": "1승 3무 0패",
+                "venueRecord": "원정 0승 2무 0패",
+                "badges": [
+                  {
+                    "text": "리그 17위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 3무 0패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "17위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "6"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+1"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "무-패-무-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+1"
+                  }
+                ],
+                "streak": "최근 5경기 1승 2무 2패",
+                "last5": "1승 2무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "Lorient",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "2026-27 Ligue 1"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "Lille",
+                    "ha": "홈",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "2026-27 Ligue 1"
+                  },
+                  {
+                    "date": "2026-11-04",
+                    "opp": "올림피아코스",
+                    "ha": "홈",
+                    "score": "0-0",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-30",
+                    "opp": "Nice",
+                    "ha": "원정",
+                    "score": "2-5",
+                    "res": "패",
+                    "comp": "2026-27 Ligue 1"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "Strasbourg",
+                    "ha": "홈",
+                    "score": "3-0",
+                    "res": "승",
+                    "comp": "2026-27 Ligue 1"
+                  }
+                ],
+                "focus": "렌은 리그 1에서 9위(승점 17, 득실 0)로 중위권이고, 유로파리그에서는 1승 3무(승점 6, 17위)입니다. 최근 5경기는 1승 2무 2패입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Mahdi Camara",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1주"
+                  },
+                  {
+                    "player": "Eliezer Mayenda",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Valentin Rongier",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Przemysław Frankowski",
+                    "status": "OUT",
+                    "line": "복귀 예상 몇 주"
+                  }
+                ],
+                "injurySummary": "결장 3명 · 불확실 1명"
+              },
+              {
+                "abbr": "NEC",
+                "name": "NEC 네이메헌",
+                "side": "home",
+                "record": "2승 1무 1패",
+                "venueRecord": "홈 1승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 12위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "2승 1무 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "12위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "7"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-1"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-승-승-패-무"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.0골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "2.2골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-1"
+                  }
+                ],
+                "streak": "최근 5경기 2승 1무 2패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "PSV 에인트호번",
+                    "ha": "홈",
+                    "score": "1-4",
+                    "res": "패",
+                    "comp": "2026-27 Dutch Eredivisie"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "FC Utrecht",
+                    "ha": "원정",
+                    "score": "3-2",
+                    "res": "승",
+                    "comp": "2026-27 Dutch Eredivisie"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "오모니아 니코시아",
+                    "ha": "홈",
+                    "score": "3-1",
+                    "res": "승",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "Heerenveen",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "2026-27 Dutch Eredivisie"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "FC Groningen",
+                    "ha": "홈",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "2026-27 Dutch Eredivisie"
+                  }
+                ],
+                "focus": "NEC 네이메헌은 에레디비시 12위(승점 14, 득실 -4)로 중위권이고, 유로파리그에서는 2승 1무 1패(승점 7, 12위)입니다. 최근 5경기는 2승 1무 2패입니다. FotMob 기준 결장 3명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Bram Nuytinck",
+                    "status": "OUT",
+                    "line": "복귀 예상 Day to day"
+                  },
+                  {
+                    "player": "Perr Schuurs",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Emre Mor",
+                    "status": "OUT",
+                    "line": "복귀 예상 Day to day"
+                  }
+                ],
+                "injurySummary": "결장 3명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "NEC 네이메헌",
+                "players": [
+                  {
+                    "name": "Bryan Linssen",
+                    "id": "122954",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F122954.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "득점 4"
+                    ]
+                  },
+                  {
+                    "name": "Darko Nejasmic",
+                    "id": "276579",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F276579.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "렌",
+                "players": [
+                  {
+                    "name": "Mahamadou Nagida",
+                    "id": "372260",
+                    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nagida_asse_srfc_2425.png?width=120",
+                    "stats": [
+                      "득점 1"
+                    ]
+                  },
+                  {
+                    "name": "Bryan Reynolds",
+                    "id": "250758",
+                    "photo": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fheadshots%2Fsoccer%2Fplayers%2Ffull%2F250758.png&w=120&h=120&scale=crop",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**NEC 네이메헌** — 리그 12위, 승점 7, 득실 -1.",
+              "**렌** — 리그 17위, 승점 6, 득실 +1."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112367,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-rso-cry-20261127",
+          "espnId": "401915504",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T05:00:00+09:00",
+          "venue": "Selhurst Park",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 220,
+              "draw": 295,
+              "home": 105
+            },
+            "spread": {
+              "homeLine": "-0.5",
+              "awayLine": "+0.5",
+              "home": -105,
+              "away": -135
+            },
+            "total": {
+              "line": "3.5",
+              "over": 140,
+              "under": -170
+            },
+            "implied": {
+              "away": 29.7,
+              "draw": 24.0,
+              "home": 46.3
+            }
+          },
+          "away": {
+            "name": "레알 소시에다드",
+            "abbr": "RSO",
+            "record": "1승 2무 1패",
+            "badges": [
+              {
+                "text": "리그 20위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "크리스털 팰리스",
+            "abbr": "CRY",
+            "record": "1승 2무 1패",
+            "badges": [
+              {
+                "text": "리그 21위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 8명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**크리스털 팰리스**(홈) 1승 2무 1패(리그 21위), 2연패, **레알 소시에다드**(원정) 1승 2무 1패(리그 20위), 최근 5경기 2승 1무 2패."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **크리스털 팰리스**(홈) 2.2골 · **레알 소시에다드**(원정) 2.2골, 평균 실점은 홈 1.5골 · 원정 1.0골. 해외 배당을 확률로 환산하면 크리스털 팰리스 승 46.3% · 무 24.0% · 레알 소시에다드 승 29.7%."
+            }
+          ],
+          "preview": "크리스털 팰리스는 프리미어리그 20위(승점 7, 득실 -15)로 하위권이고, 이 대회에서는 1승 2무 1패(21위)입니다. 레알 소시에다드는 라리가 5위(승점 22, 득실 0)로 상위권이고, 이 대회에서는 1승 2무 1패(20위)입니다. 최근 5경기는 크리스털 팰리스 1승 1무 3패, 레알 소시에다드 2승 1무 2패이고, 두 팀 평균 득점을 합치면 4.4골, 평균 실점은 2.5골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "RSO",
+                "name": "레알 소시에다드",
+                "side": "away",
+                "record": "1승 2무 1패",
+                "venueRecord": "원정 1승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 20위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 2무 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "20위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "5"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+5"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-승-무-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.0골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+5"
+                  }
+                ],
+                "streak": "최근 5경기 2승 1무 2패",
+                "last5": "2승 1무 2패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "라싱 산탄데르",
+                    "ha": "원정",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "라요 바예카노",
+                    "ha": "홈",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "리옹",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "아틀레틱 빌바오",
+                    "ha": "원정",
+                    "score": "1-2",
+                    "res": "패",
+                    "comp": "라리가"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "레반테",
+                    "ha": "홈",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "라리가"
+                  }
+                ],
+                "focus": "레알 소시에다드는 라리가 5위(승점 22, 득실 0)로 상위권이고, 유로파리그에서는 1승 2무 1패(승점 5, 20위)입니다. 최근 5경기는 2승 1무 2패입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Jon Aramburu",
+                    "status": "OUT",
+                    "line": "복귀 예상 약 1~2주"
+                  },
+                  {
+                    "player": "Álvaro Odriozola",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Yangel Herrera",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 12월 초"
+                  },
+                  {
+                    "player": "Ander Barrenetxea",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  }
+                ],
+                "injurySummary": "결장 4명"
+              },
+              {
+                "abbr": "CRY",
+                "name": "크리스털 팰리스",
+                "side": "home",
+                "record": "1승 2무 1패",
+                "venueRecord": "홈 1승 1무 0패",
+                "badges": [
+                  {
+                    "text": "리그 21위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 2무 1패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "21위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "5"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-무-패-승"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "2.2골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "+3"
+                  }
+                ],
+                "streak": "2연패",
+                "last5": "1승 1무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "코번트리 시티",
+                    "ha": "원정",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "리버풀",
+                    "ha": "홈",
+                    "score": "1-3",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "호펜하임",
+                    "ha": "홈",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "토트넘 홋스퍼",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "EPL"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "풀럼",
+                    "ha": "원정",
+                    "score": "1-0",
+                    "res": "승",
+                    "comp": "카라바오컵"
+                  }
+                ],
+                "focus": "크리스털 팰리스는 프리미어리그 20위(승점 7, 득실 -15)로 하위권이고, 유로파리그에서는 1승 2무 1패(승점 5, 21위)입니다. 최근 5경기는 1승 1무 3패로 2연패 중입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Óscar Mingueza",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Chadi Riad",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 6월 말"
+                  },
+                  {
+                    "player": "Takehiro Tomiyasu",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Ismaïla Sarr",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Jean-Philippe Mateta",
+                    "status": "OUT",
+                    "line": "징계 출장정지 · 복귀 예상 2026년 11월 말"
+                  }
+                ],
+                "injurySummary": "결장 4명 · 불확실 1명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "크리스털 팰리스",
+                "players": [
+                  {
+                    "name": "Yéremy Pino",
+                    "id": "297370",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Yeremy_Pino_Argentina_v_Spain_19_July_2026-019.jpg/120px-Yeremy_Pino_Argentina_v_Spain_19_July_2026-019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Adam Wharton",
+                    "id": "333419",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Fredrikstad_Fotballklubb_v_Crystal_Palace_FC%2C_28_August_2025_B06_%28cropped%29.jpg/120px-Fredrikstad_Fotballklubb_v_Crystal_Palace_FC%2C_28_August_2025_B06_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "레알 소시에다드",
+                "players": [
+                  {
+                    "name": "Sergio Gómez",
+                    "id": "265993",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Sergio-Gomez-2023.jpg/120px-Sergio-Gomez-2023.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Mikel Oyarzabal",
+                    "id": "229018",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Mikel_Oyarzabal_France_v_Spain_7.24.26-161_%28cropped%29.jpg/120px-Mikel_Oyarzabal_France_v_Spain_7.24.26-161_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 3"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**크리스털 팰리스** — 리그 21위, 승점 5, 득실 +3.",
+              "**레알 소시에다드** — 리그 20위, 승점 5, 득실 +5."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112322,
+            "fotmobSwapped": false
+          }
+        },
+        {
+          "id": "soccer-stg-tsg-20261127",
+          "espnId": "401915515",
+          "sport": "soccer",
+          "league": "UEL",
+          "leagueFull": "UEFA 유로파리그",
+          "source": "espn",
+          "start": "2026-11-27T05:00:00+09:00",
+          "venue": "PreZero Arena",
+          "odds": {
+            "provider": "DraftKings",
+            "at": "2026-11-26T09:10:00+09:00",
+            "moneyline": {
+              "away": 650,
+              "draw": 475,
+              "home": -285
+            },
+            "spread": {
+              "homeLine": "-1.5",
+              "awayLine": "+1.5",
+              "home": -125,
+              "away": -110
+            },
+            "total": {
+              "line": "3.5",
+              "over": -105,
+              "under": -120
+            },
+            "implied": {
+              "away": 12.7,
+              "draw": 16.6,
+              "home": 70.7
+            }
+          },
+          "away": {
+            "name": "슈투름 그라츠",
+            "abbr": "STG",
+            "record": "1승 1무 2패",
+            "badges": [
+              {
+                "text": "리그 24위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "home": {
+            "name": "호펜하임",
+            "abbr": "TSG",
+            "record": "1승 1무 2패",
+            "badges": [
+              {
+                "text": "리그 23위",
+                "tone": "rank"
+              }
+            ]
+          },
+          "tags": [
+            {
+              "text": "UEL · UEFA 유로파리그",
+              "tone": "info"
+            },
+            {
+              "text": "오버언더 3.5골",
+              "tone": "info"
+            },
+            {
+              "text": "결장 8명",
+              "tone": "warn"
+            }
+          ],
+          "rows": [
+            {
+              "kind": "flow",
+              "label": "흐름",
+              "text": "**호펜하임**(홈) 1승 1무 2패(리그 23위), 최근 5경기 1승 1무 3패, **슈투름 그라츠**(원정) 1승 1무 2패(리그 24위), 3연패."
+            },
+            {
+              "kind": "watch",
+              "label": "관전 포인트",
+              "text": "두 팀 평균 득점은 **호펜하임**(홈) 1.5골 · **슈투름 그라츠**(원정) 0.8골, 평균 실점은 홈 1.5골 · 원정 1.5골. 해외 배당을 확률로 환산하면 호펜하임 승 70.7% · 무 16.6% · 슈투름 그라츠 승 12.7%."
+            }
+          ],
+          "preview": "호펜하임은 분데스리가 11위(승점 12, 득실 -2)로 중위권이고, 이 대회에서는 1승 1무 2패(23위)입니다. 슈투름 그라츠는 오스트리아 분데스리가 5위(승점 19, 득실 +4)로 중위권이고, 이 대회에서는 1승 1무 2패(24위)입니다. 최근 5경기는 호펜하임 1승 1무 3패, 슈투름 그라츠 2무 3패이고, 두 팀 평균 득점을 합치면 2.3골, 평균 실점은 3.0골입니다.",
+          "details": {
+            "teams": [
+              {
+                "abbr": "STG",
+                "name": "슈투름 그라츠",
+                "side": "away",
+                "record": "1승 1무 2패",
+                "venueRecord": "원정 0승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 24위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 1무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "24위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "4"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-패-패-무-무"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "0.8골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "-3"
+                  }
+                ],
+                "streak": "3연패",
+                "last5": "0승 2무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-22",
+                    "opp": "SC Rheindorf Altach",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "잘츠부르크",
+                    "ha": "홈",
+                    "score": "3-4",
+                    "res": "패",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "첼례",
+                    "ha": "홈",
+                    "score": "2-3",
+                    "res": "패",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-11-01",
+                    "opp": "Wolfsberger",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-10-25",
+                    "opp": "SV Josko Ried",
+                    "ha": "홈",
+                    "score": "2-2",
+                    "res": "무",
+                    "comp": "분데스리가"
+                  }
+                ],
+                "focus": "슈투름 그라츠는 오스트리아 분데스리가 5위(승점 19, 득실 +4)로 중위권이고, 유로파리그에서는 1승 1무 2패(승점 4, 24위)입니다. 최근 5경기는 2무 3패로 3연패 중입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Paul-Friedrich Koller",
+                    "status": "DOUBTFUL"
+                  },
+                  {
+                    "player": "Leon Grgić",
+                    "status": "OUT",
+                    "line": "복귀 예상 몇 주"
+                  },
+                  {
+                    "player": "Daniil Khudyakov",
+                    "status": "OUT",
+                    "line": "시즌 아웃"
+                  },
+                  {
+                    "player": "Otar Kiteishvili",
+                    "status": "OUT",
+                    "line": "복귀 시점 미정"
+                  },
+                  {
+                    "player": "Filip Rózga",
+                    "status": "OUT",
+                    "line": "복귀 예상 몇 주"
+                  }
+                ],
+                "injurySummary": "결장 4명 · 불확실 1명"
+              },
+              {
+                "abbr": "TSG",
+                "name": "호펜하임",
+                "side": "home",
+                "record": "1승 1무 2패",
+                "venueRecord": "홈 1승 0무 1패",
+                "badges": [
+                  {
+                    "text": "리그 23위",
+                    "tone": "rank"
+                  }
+                ],
+                "cells": [
+                  {
+                    "label": "리그 페이즈 전적",
+                    "value": "1승 1무 2패"
+                  },
+                  {
+                    "label": "리그 순위",
+                    "value": "23위"
+                  },
+                  {
+                    "label": "승점",
+                    "value": "4"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "0"
+                  },
+                  {
+                    "label": "최근 흐름",
+                    "value": "패-승-무-패-패"
+                  }
+                ],
+                "nums": [
+                  {
+                    "label": "평균 득점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "평균 실점",
+                    "value": "1.5골"
+                  },
+                  {
+                    "label": "득실차",
+                    "value": "0"
+                  }
+                ],
+                "streak": "최근 5경기 1승 1무 3패",
+                "last5": "1승 1무 3패",
+                "last5Detail": [
+                  {
+                    "date": "2026-11-21",
+                    "opp": "아인트라흐트 프랑크푸르트",
+                    "ha": "원정",
+                    "score": "0-1",
+                    "res": "패",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-08",
+                    "opp": "샬케 04",
+                    "ha": "홈",
+                    "score": "2-1",
+                    "res": "승",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-11-05",
+                    "opp": "크리스털 팰리스",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "무",
+                    "comp": "UEL"
+                  },
+                  {
+                    "date": "2026-10-31",
+                    "opp": "베르더 브레멘",
+                    "ha": "원정",
+                    "score": "0-2",
+                    "res": "패",
+                    "comp": "분데스리가"
+                  },
+                  {
+                    "date": "2026-10-28",
+                    "opp": "Holstein Kiel",
+                    "ha": "원정",
+                    "score": "1-1",
+                    "res": "패",
+                    "comp": "2026-27 German Cup"
+                  }
+                ],
+                "focus": "호펜하임은 분데스리가 11위(승점 12, 득실 -2)로 중위권이고, 유로파리그에서는 1승 1무 2패(승점 4, 23위)입니다. 최근 5경기는 1승 1무 3패입니다. FotMob 기준 결장 4명입니다.",
+                "injuryNote": "FotMob 결장 명단(2026-11-26 09:28) 기준입니다.",
+                "injuries": [
+                  {
+                    "player": "Robin Hranác",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Valentin Gendrey",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  },
+                  {
+                    "player": "Nathan De Cat",
+                    "status": "OUT",
+                    "line": "복귀 예상 2026년 11월 말"
+                  },
+                  {
+                    "player": "Albian Hajdari",
+                    "status": "OUT",
+                    "line": "복귀 예상 2027년 1월 초"
+                  }
+                ],
+                "injurySummary": "결장 4명"
+              }
+            ],
+            "keyPlayers": [
+              {
+                "side": "home",
+                "team": "호펜하임",
+                "players": [
+                  {
+                    "name": "Andrej Kramaric",
+                    "id": "139520",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Andrej_Kramaric_Croatia_v_Portugal_2_July_2026-014.jpg/120px-Andrej_Kramaric_Croatia_v_Portugal_2_July_2026-014.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 1",
+                      "도움 2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "side": "away",
+                "team": "슈투름 그라츠",
+                "players": [
+                  {
+                    "name": "Oumar Diakité",
+                    "id": "329483",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Diakite_asse_sr_2425.png/120px-Diakite_asse_sr_2425.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "득점 3"
+                    ]
+                  },
+                  {
+                    "name": "Luca Weinhandl",
+                    "id": "411273",
+                    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Luca_Weinhandl_39_SK_Sturm_Graz_20260805_%284%29_%28cropped%29.JPG/120px-Luca_Weinhandl_39_SK_Sturm_Graz_20260805_%284%29_%28cropped%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+                    "stats": [
+                      "도움 1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "checkpoints": [
+              "**호펜하임** — 리그 23위, 승점 4, 득실 0.",
+              "**슈투름 그라츠** — 리그 24위, 승점 4, 득실 -3."
+            ],
+            "note": "일정·전적·순위는 ESPN 2026-11-26 09:10 기준입니다. 부상·결장 명단과 선수 평점은 FotMob 2026-11-26 09:28 기준입니다.",
+            "fotmobId": 6112352,
+            "fotmobSwapped": false
+          }
+        }
+        /* SOCCER-AUTO 2026-11-27 END */,
+
         /* VOLLEY-AUTO 2026-11-27 START */
         {
           "id": "vball-kovo-47",
