@@ -62,12 +62,13 @@ def _photo_cache():
 # 리그 코드 → (짧은 표기, 한글 리그명)
 LEAGUES = {
     "uefa.champions": ("UCL", "UEFA 챔피언스리그"),
+    "uefa.europa": ("UEL", "UEFA 유로파리그"),
     "eng.1": ("EPL", "프리미어리그"),
     "esp.1": ("LALIGA", "라리가"),
     "ita.1": ("SERIEA", "세리에 A"),
     "ger.1": ("BUNDES", "분데스리가"),
 }
-DEFAULT_LEAGUES = ["uefa.champions", "eng.1", "esp.1", "ger.1", "ita.1"]
+DEFAULT_LEAGUES = ["uefa.champions", "uefa.europa", "eng.1", "esp.1", "ger.1", "ita.1"]
 
 # 유럽대항전 경기에서 "이 팀이 자국 리그에서 어디쯤인지"를 쓰려면 그 리그 순위표가 필요하다.
 # ESPN 팀 id 는 대회가 달라도 같아서(예: 갈라타사라이 432), 아래 리그들을 훑어 id 로 맞춘다.
@@ -186,11 +187,54 @@ TEAM_KO = {
     "VfB Stuttgart": "슈투트가르트",
     "Villarreal": "비야레알",
     "Werder Bremen": "베르더 브레멘",
+
+    # 유로파리그(UEL)에 자주 나오는 팀 — ESPN 영문 표기 그대로를 키로 쓴다.
+    "AZ Alkmaar": "AZ 알크마르",
+    "Anderlecht": "안더레흐트",
+    "Ararat-Armenia": "아라라트 아르메니아",
+    "Benfica": "벤피카",
+    "Besiktas": "베식타시",
+    "Celtic": "셀틱",
+    "Dinamo Zagreb": "디나모 자그레브",
+    "Ferencvaros": "페렌츠바로시",
+    "Hapoel Be'er": "하포엘 베르셰바",
+    "Jagiellonia Bialystok": "야기에우오니아 비아위스토크",
+    "Lech Poznan": "레흐 포즈난",
+    "Levski Sofia": "레프스키 소피아",
+    "Lillestrom": "릴레스트룀",
+    "Lyon": "리옹",
+    "Marseille": "마르세유",
+    "NEC Nijmegen": "NEC 네이메헌",
+    "NK Celje": "첼례",
+    "OFI Crete": "OFI 크레테",
+    "Olympiacos": "올림피아코스",
+    "Omonia Nicosia": "오모니아 니코시아",
+    "RB Salzburg": "잘츠부르크",
+    "SK Sturm Graz": "슈투름 그라츠",
+    "Sparta Prague": "스파르타 프라하",
+    "Stade Rennais": "렌",
+    "Torreense": "토렌세",
+    "Union St.-Gilloise": "위니옹 생질루아즈",
+    "Viktoria Plzen": "빅토리아 플젠",
 }
 
 
 def ko(name):
     return TEAM_KO.get(name, name)
+
+
+def cup_stage(league, league_full=""):
+    """유럽대항전의 대회 단계 표기 — '챔피언스리그 리그 페이즈', '유로파리그'.
+
+    두 대회 모두 리그 페이즈가 본선이지만, 유로파리그는 대회 이름에 '리그'가 들어 있어
+    '유로파리그 리그 페이즈'가 겹쳐 읽히므로 대회 이름만 씁니다(전적·순위는 리그 페이즈 표 값).
+    """
+    if league == "uefa.champions":
+        return "챔피언스리그 리그 페이즈"
+    if league == "uefa.europa":
+        return "유로파리그"
+    name = re.sub("^UEFA ", "", league_full or "") or "이 대회"
+    return name + " 리그 페이즈"
 
 
 def rec_wdl(summary):
@@ -880,17 +924,17 @@ def team_focus(name, league, league_full, rec, st, table_size,
             tail.append("승점 %d" % st["points"])
         if st.get("rank"):
             tail.append("%d위" % st["rank"])
-        cup_name = "챔피언스리그" if league == "uefa.champions" else (re.sub("^UEFA ", "", league_full or "") or "이 대회")
+        cup_name = cup_stage(league, league_full)
         if body:
             val = body + (("(%s)" % ", ".join(tail)) if tail else "")
             if s1:
-                fs.append(s1 + "%s 리그 페이즈에서는 %s입니다." % (cup_name, val))
+                fs.append(s1 + "%s에서는 %s입니다." % (cup_name, val))
             else:
-                fs.append("%s %s 리그 페이즈에서 %s입니다." % (head, cup_name, val))
+                fs.append("%s %s에서 %s입니다." % (head, cup_name, val))
         elif s1:
             fs.append(s1.rstrip(", ") + "입니다.")
         elif tail:
-            fs.append("%s %s 리그 페이즈에서 %s입니다." % (head, cup_name, ", ".join(tail)))
+            fs.append("%s %s에서 %s입니다." % (head, cup_name, ", ".join(tail)))
     else:
         sp = stand_phrase(st, league_full)
         if sp:
@@ -946,7 +990,7 @@ def build_team(comp, side, table, league_short, summary, league, refresh=False, 
 
     st = table.get(tid) or {}
     cells = []
-    rec_label = "리그 페이즈 전적" if league_short == "UCL" else "시즌 전적"
+    rec_label = "리그 페이즈 전적" if league_short in ("UCL", "UEL") else "시즌 전적"
     if rec:
         cells.append({"label": rec_label, "value": rec})
     if st.get("rank"):

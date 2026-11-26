@@ -147,8 +147,9 @@ def main():
                 continue
         if g["sport"] == "soccer":
             lg = g.get("espnLeague") or {"EPL": "eng.1", "LALIGA": "esp.1",
-                                         "UCL": "uefa.champions", "SERIEA": "ita.1",
-                                         "BUNDES": "ger.1"}.get(g.get("league"), "eng.1")
+                                         "UCL": "uefa.champions", "UEL": "uefa.europa",
+                                         "SERIEA": "ita.1", "BUNDES": "ger.1",
+                                         "LIGUE1": "fra.1"}.get(g.get("league"), "eng.1")
             url = SUM["soccer"].format(league=lg) % eid
         else:
             url = SUM["basketball"] % eid

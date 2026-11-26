@@ -56,6 +56,7 @@ SOCCER_LEAGUES = [
     ("BUNDES", "ger.1", "분데스리가", "German Bundesliga"),
     ("SERIEA", "ita.1", "세리에 A", "Italian Serie A"),
     ("UCL", "uefa.champions", "UCL", "UEFA Champions League"),
+    ("UEL", "uefa.europa", "유로파리그", "UEFA Europa League"),
 ]
 
 # ESPN note.description → 화면 띠 이름. 여기 없는 설명은 띠를 그리지 않는다(의미 불확실).

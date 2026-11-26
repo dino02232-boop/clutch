@@ -46,6 +46,7 @@ FM_LEAGUES = {
     55: "ita.1",
     1000005083: "ger.1",
     943230: "uefa.champions",
+    943229: "uefa.europa",
 }
 ESPN_TO_FM = {v: k for k, v in FM_LEAGUES.items()}
 # 사이트 카드의 짧은 리그 표기 → ESPN 리그 코드
@@ -55,6 +56,7 @@ SHORT_TO_ESPN = {
     "SERIEA": "ita.1",
     "BUNDES": "ger.1",
     "UCL": "uefa.champions",
+    "UEL": "uefa.europa",
 }
 
 SOURCE_NAME = "FotMob"
@@ -75,6 +77,7 @@ ALIASES = {
     "athletic bilbao": "athletic club",
     "sporting": "sporting cp",
     "eindhoven": "psv",
+    "stade rennais": "rennes",
 }
 DROP_TOKENS = {"fc", "cf", "afc", "sc", "ac", "as", "club", "de", "the", "1", "04", "05", "07",
                "1899", "sv", "vfl", "vfb", "fk", "tsg"}
