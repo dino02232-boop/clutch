@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-26T10:31:28+09:00",
+  updatedAt: "2026-11-26T10:35:02+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -1809,7 +1809,7 @@ window.CLUTCH_DATA = {
               "team": "리버풀",
               "side": "home",
               "tag": "up",
-              "line": "Florian Wirtz의 골과 도움 하나씩(평점 9.4)으로 승리에 힘을 보탰습니다.",
+              "line": "Florian Wirtz의 골과 도움 하나씩(평점 9.4)으로 4-0 승리에 힘을 보탰습니다.",
               "facts": [
                 "평점 9.4",
                 "골 1",
@@ -2998,7 +2998,7 @@ window.CLUTCH_DATA = {
               "team": "오사수나",
               "side": "home",
               "tag": "up",
-              "line": "Valentin Rosier의 평점 8.6이 팀에서 가장 앞섰습니다. 1-0 승리였습니다.",
+              "line": "Valentin Rosier의 평점 8.6이 팀에서 가장 높았습니다. 1-0 승리였습니다.",
               "facts": [
                 "평점 8.6",
                 "도움 1",
@@ -14360,7 +14360,7 @@ window.CLUTCH_DATA = {
               "team": "갈라타사라이",
               "side": "home",
               "tag": "up",
-              "line": "Wilfried Singo의 평점 7.9가 팀에서 가장 앞섰습니다. 1-0 승리였습니다.",
+              "line": "Wilfried Singo의 평점 7.9가 팀에서 가장 높았습니다. 1-0 승리였습니다.",
               "facts": [
                 "평점 7.9",
                 "슈팅 1",
@@ -14885,7 +14885,7 @@ window.CLUTCH_DATA = {
               "team": "보되/글림트",
               "side": "home",
               "tag": "up",
-              "line": "Fredrik André Bjørkan의 평점 8.1이 팀에서 가장 앞섰습니다. 1-0 승리였습니다.",
+              "line": "Fredrik André Bjørkan의 평점 8.1이 팀에서 가장 높았습니다. 1-0 승리였습니다.",
               "facts": [
                 "평점 8.1",
                 "90분"
@@ -24205,7 +24205,7 @@ window.CLUTCH_DATA = {
               "team": "Lille",
               "side": "home",
               "tag": "up",
-              "line": "Nathan Ngoy의 평점 8.2가 팀에서 가장 앞섰습니다. 2-1 승리였습니다.",
+              "line": "Nathan Ngoy의 평점 8.2가 팀에서 가장 높았습니다. 2-1 승리였습니다.",
               "facts": [
                 "평점 8.2",
                 "도움 1",

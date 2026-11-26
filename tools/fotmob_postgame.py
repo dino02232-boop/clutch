@@ -505,14 +505,14 @@ def carry_line(p, score):
     if g == 2:
         return "%s의 멀티골(%s)에 힘입어 %s 승리를 거뒀습니다." % (n, rt, score)
     if g == 1 and a >= 1:
-        return "%s의 골과 도움 하나씩(%s)으로 승리에 힘을 보탰습니다." % (n, rt)
+        return "%s의 골과 도움 하나씩(%s)으로 %s 승리에 힘을 보탰습니다." % (n, rt, score)
     if g == 1:
         return "%s의 골(%s)에 힘입어 %s 승리를 챙겼습니다." % (n, rt, score)
     if a >= 2:
         return "%s의 도움 %d개(%s)에 힘입어 %s 승리를 거뒀습니다." % (n, a, rt, score)
     if cc >= 4:
         return "%s의 기회창출 %d회(%s)로 공격의 물꼬를 텄습니다." % (n, cc, rt)
-    return "%s의 %s 팀에서 가장 앞섰습니다. %s 승리였습니다." % (
+    return "%s의 %s 팀에서 가장 높았습니다. %s 승리였습니다." % (
         n, josa(rt or "기록", "이", "가"), score)
 
 
