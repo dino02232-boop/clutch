@@ -878,7 +878,7 @@
   }
 
   // 팀별 정보 블록 하나
-  //  · 제목: [원정] 팀명 · 약어 / 이어서 전적칸·수치칸·주요 선수·최근 5경기·부상·관전 포인트
+  //  · 제목: [원정] 팀명 · 약어 / 이어서 전적칸·수치칸·팀 분석(t.focus)·주요 선수·최근 5경기·부상·결장
   // 축구 핵심 선수(details.keyPlayers)를 팀 블록의 주요 선수로 옮긴다. 같은 선수의 골·도움은 한 줄로 합친다.
   function statKo(s) {
     var t = String(s || "").trim();
@@ -1052,7 +1052,8 @@
       injHTML = '<h4 class="tb-sub">부상 · 결장</h4>' + head + body;
     }
 
-    var focusHTML = t.focus ? '<h4 class="tb-sub">관전 포인트</h4><p class="tb-focus">' + md(t.focus) + "</p>" : "";
+    // 팀 분석 — 예전의 '관전 포인트'. 주요 선수 위에 두어 팀 성향을 먼저 읽게 한다.
+    var focusHTML = t.focus ? '<h4 class="tb-sub">팀 분석</h4><p class="tb-focus">' + md(t.focus) + "</p>" : "";
 
     return '<section class="tblock ' + side + '" data-team-name="' + esc(t.name || "") + '">' +
       '<div class="tb-head">' +
@@ -1065,10 +1066,10 @@
       "</div>" +
       (cells ? '<dl class="tb-grid">' + cells + "</dl>" : "") +
       (numHTML ? '<div class="tb-nums">' + numHTML + "</div>" : "") +
+      focusHTML +
       playersHTML +
       l5HTML +
       injHTML +
-      focusHTML +
       "</section>";
   }
 
