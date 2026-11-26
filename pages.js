@@ -283,6 +283,59 @@
     }
   }
 
+  /* ── 삭제(글·댓글) ────────────────────────────────────────────
+     글쓴이 본인과 관리자(아래 두 계정)만 글·댓글을 지울 수 있다. 화면에서 버튼을 숨기는
+     것과 별개로 Firestore 규칙이 같은 조건을 다시 검사한다(firestore.rules 의 isAdmin·delete). */
+  var ADMIN_UIDS = ['xSLD6QapaAQIIQSsbDSYItjdFLX2', 'v5iaeJHK79bK5nRkSiDql3dcii03'];
+  function isAdminUid(uid) { return !!uid && ADMIN_UIDS.indexOf(uid) >= 0; }
+  function canDeletePost(p) { return !!(user && p && (p.uid === user.uid || isAdminUid(user.uid))); }
+  function canDeleteComment(c) { return !!(user && c && (c.uid === user.uid || isAdminUid(user.uid))); }
+  function deleteFail(e) {
+    var code = String((e && (e.code || (e.error && e.error.code))) || '');
+    var msg = String((e && e.message) || '');
+    if (code === 'permission-denied' || /permission|insufficient/i.test(msg)) {
+      say('Firebase 규칙 게시 후 사용할 수 있습니다.');
+    } else {
+      say('삭제하지 못했어요. 잠시 뒤 다시 시도해 주세요.');
+    }
+  }
+  function deletedToast() {
+    if (window.clutchToast) window.clutchToast('삭제되었습니다.');
+    else say('삭제되었습니다.');
+  }
+  function deletePost(id) {
+    var p = id && postMap[id];
+    if (!p) return;
+    if (!user) return login();
+    if (!canDeletePost(p)) return;
+    if (!window.confirm('이 글을 삭제할까요?')) return;
+    var ref = db.collection('posts').doc(id), cmts = ref.collection('comments');
+    // 글만 지우면 댓글이 주인 없는 문서로 남으므로, 볼 수 있는 댓글(최근 500개)을 먼저 함께 지운다.
+    // 댓글 정리가 실패해도 글 삭제는 그대로 진행한다.
+    cmts.limit(500).get().then(function (s) {
+      if (!s || !s.docs || !s.docs.length) return null;
+      var batch = db.batch();
+      s.docs.forEach(function (d) { batch.delete(cmts.doc(d.id)); });
+      return batch.commit();
+    }).then(function () { return ref.delete(); }).then(function () {
+      // 목록에서도 바로 빼고 상세를 닫는다(스냅샷이 오기 전에 화면이 먼저 정리된다).
+      listDocs = listDocs.filter(function (d) { return d.id !== id; });
+      delete postMap[id];
+      closeDetail();
+      if (window.clutchBoard) window.clutchBoard.refresh();
+      deletedToast();
+    }, deleteFail);
+  }
+  function deleteComment(id, cid) {
+    if (!id || !cid) return;
+    if (!user) return login();
+    if (!window.confirm('이 댓글을 삭제할까요?')) return;
+    db.collection('posts').doc(id).collection('comments').doc(cid).delete().then(function () {
+      // 댓글 목록은 실시간으로 다시 그려지고 댓글 수도 그때 줄어든다.
+      deletedToast();
+    }, deleteFail);
+  }
+
   // 댓글 수 — count 집계를 먼저 쓰고, 지원하지 않으면 최근 50개를 세어 대신한다.
   function setCount(id, n) {
     if (typeof n !== 'number' || n < 0) return;
@@ -312,23 +365,35 @@
     ref.limit(50).get().then(function (s) { setCount(id, s.size); }, function () {});
   }
   // 상세 화면의 댓글 목록(실시간)
+  //   지금 보고 있는 글의 댓글은 cmtDocs 에도 담아 두어, 로그인 상태가 늦게 정해져도
+  //   '님 댓글 삭제' 버튼이 바로 나타나도록 다시 그린다.
+  var cmtPostId = '', cmtDocs = [];
+  function paintComments(id) {
+    var node = $('comments-' + id);
+    if (!node) return;
+    node.innerHTML = cmtDocs.length
+      ? cmtDocs.map(function (d) {
+          var c = d.data() || {};
+          // 댓글쓴이 닉네임도 눌러서 쪽지를 보낼 수 있다(지금 닉네임은 users 문서에서 채운다)
+          var cpr = c.uid ? profOf(c.uid) : null;
+          if (c.uid && !isMine(c.uid)) profFetch(c.uid);
+          var cn = (cpr && cpr.nickname) || c.displayName || '회원';
+          return '<div class="cmt"><div class="cmt-h">' + authorHTML(c.uid, cn, cpr ? cpr.points : null, true) +
+            '<span class="cmt-t">' + esc(fmtTime(c.createdAt)) + '</span>' +
+            (canDeleteComment(c)
+              ? '<button type="button" class="cmt-del" data-del-cmt="' + esc(d.id) + '"' +
+                ' title="댓글 삭제" aria-label="댓글 삭제">삭제</button>'
+              : '') +
+            '</div><p>' + esc(c.body) + '</p></div>';
+        }).join('')
+      : '<p class="bl-nocmt">아직 댓글이 없습니다.</p>';
+  }
   function loadComments(id) {
+    cmtPostId = id; cmtDocs = [];
     return db.collection('posts').doc(id).collection('comments').orderBy('createdAt', 'asc').limit(100).onSnapshot(function (s) {
-      var node = $('comments-' + id);
-      if (node) {
-        node.innerHTML = s.docs.length
-          ? s.docs.map(function (d) {
-              var c = d.data() || {};
-              // 댓글쓴이 닉네임도 눌러서 쪽지를 보낼 수 있다(지금 닉네임은 users 문서에서 채운다)
-              var cpr = c.uid ? profOf(c.uid) : null;
-              if (c.uid && !isMine(c.uid)) profFetch(c.uid);
-              var cn = (cpr && cpr.nickname) || c.displayName || '회원';
-              return '<div class="cmt"><div class="cmt-h">' + authorHTML(c.uid, cn, cpr ? cpr.points : null, true) +
-                '<span class="cmt-t">' + esc(fmtTime(c.createdAt)) + '</span></div>' +
-                '<p>' + esc(c.body) + '</p></div>';
-            }).join('')
-          : '<p class="bl-nocmt">아직 댓글이 없습니다.</p>';
-      }
+      if (cmtPostId !== id) return;
+      cmtDocs = s.docs;
+      paintComments(id);
       setCount(id, s.docs.length);
     }, function () {
       var node = $('comments-' + id);
@@ -497,6 +562,19 @@
   }
 
   /* 목록 ↔ 상세: 해시(#post=id)로 오가서 브라우저 뒤로 가기도 목록 복귀가 된다 */
+  // 상세 머리(글쓴이·시각·✉️ 쪽지·삭제) — 로그인 상태가 늦게 정해지면 삭제 버튼을 다시 그린다.
+  function detailMetaHTML(id, p) {
+    var mine = !!(user && p.uid === user.uid);
+    return postByHTML(p, true) + '<span class="meta-when">' + esc(fmtFull(p.createdAt)) + '</span>' +
+      (p.uid && !mine ? '<button type="button" class="meta-msg" data-msg-to="' + esc(p.uid) + '"' +
+        ' data-msg-name="' + esc((profOf(p.uid) && profOf(p.uid).nickname) || p.displayName || '') + '">✉️ 쪽지</button>' : '') +
+      (canDeletePost(p) ? '<button type="button" class="meta-del" data-del-post="' + esc(id) + '"' +
+        ' title="이 글 삭제" aria-label="이 글 삭제">삭제</button>' : '');
+  }
+  function paintDetailMeta(id) {
+    var p = id && postMap[id];
+    if (p && $('detailMeta')) $('detailMeta').innerHTML = detailMetaHTML(id, p);
+  }
   function hashId() {
     var m = /^#post=(.+)$/.exec(location.hash || '');
     if (!m) return '';
@@ -511,10 +589,7 @@
     if (det) {
       det.hidden = false;
       $('detailTitle').textContent = p.title || '';
-      var mine = user && p.uid === user.uid;
-      $('detailMeta').innerHTML = postByHTML(p, true) + '<span class="meta-when">' + esc(fmtFull(p.createdAt)) + '</span>' +
-        (p.uid && !mine ? '<button type="button" class="meta-msg" data-msg-to="' + esc(p.uid) + '"' +
-          ' data-msg-name="' + esc((profOf(p.uid) && profOf(p.uid).nickname) || p.displayName || '') + '">✉️ 쪽지</button>' : '');
+      paintDetailMeta(id);
       $('detailBody').textContent = p.body || '';
       $('detailSlip').innerHTML = slipCardHTML(p.slip, '🎟 공유한 베팅', 'detail');
       paintLikeBar(id);
@@ -562,6 +637,7 @@
   }
   function showList() {
     curDetailId = '';
+    cmtPostId = ''; cmtDocs = [];
     if (detailUnsub) { try { detailUnsub(); } catch (_) {} detailUnsub = null; }
     var det = $('postDetail'), list = $('postList');
     if (det) det.hidden = true;
@@ -749,7 +825,11 @@
     // 추천은 로그인 상태에 따라 '내가 누른 글' 표시가 달라진다 — 목록·상세를 한 번 다시 그린다
     // (아직 목록을 못 받았을 때 다시 그리면 '글이 없습니다'가 잠깐 뜨므로 받은 뒤에만)
     if ($('postList') && listDocs.length) paintRows();
-    if (curDetailId) paintLikeBar(curDetailId);
+    if (curDetailId) {
+      paintLikeBar(curDetailId);
+      paintDetailMeta(curDetailId);
+      if (cmtPostId === curDetailId) paintComments(curDetailId);
+    }
     if (!u) { if ($('myBetPick')) drawBetPick(); return; }
     var ref = db.collection('users').doc(u.uid);
     ref.get().then(function (d) {
@@ -766,6 +846,10 @@
   document.addEventListener('click', function (e) {
     var lk = e.target.closest && e.target.closest('[data-like]');
     if (lk) { e.preventDefault(); toggleLike(lk.getAttribute('data-like')); return; }
+    var dp = e.target.closest && e.target.closest('[data-del-post]');
+    if (dp) { e.preventDefault(); deletePost(dp.getAttribute('data-del-post')); return; }
+    var dcm = e.target.closest && e.target.closest('[data-del-cmt]');
+    if (dcm) { e.preventDefault(); deleteComment(curDetailId, dcm.getAttribute('data-del-cmt')); return; }
     if (e.target.id === 'boardLogin') login();
     if (e.target.id === 'writeToggle') toggleCompose();
     if (e.target.id === 'writeCancel') toggleCompose(false);

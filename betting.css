@@ -257,6 +257,12 @@
 .detail-meta .meta-when{font-variant-numeric:tabular-nums}
 .detail-meta .meta-chip{font-size:10px;font-weight:800;color:var(--text-2);background:#f2f5f6;border-radius:999px;padding:2px 7px}
 .detail-body{margin:12px 0 0;font-size:14px;line-height:1.68;color:#1F2937;white-space:pre-wrap;overflow-wrap:anywhere}
+/* 삭제 — 글쓴이 본인·관리자에게만 보이는 버튼(같은 조건을 서버 규칙이 다시 검사한다) */
+.detail-meta .meta-del{margin-left:auto;border:1px solid var(--line-2);background:#fff;border-radius:999px;font:inherit;font-size:10.5px;font-weight:800;color:#B4453C;padding:3px 9px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.detail-meta .meta-msg + .meta-del{margin-left:0}
+.detail-meta .meta-del:hover{border-color:#D95A4E;color:#B4453C;background:#FDF1F0}
+.cmt-del{margin-left:auto;border:0;background:none;padding:0 0 0 6px;font:inherit;font-size:10.5px;font-weight:700;color:#AEB7C3;cursor:pointer;-webkit-tap-highlight-color:transparent;align-self:center}
+.cmt-del:hover,.cmt-del:active{color:#B4453C}
 /* 상세 하단 추천 — 👍 추천 N (1인 1추천 토글, 내가 누른 글은 에메랄드로 채운다) */
 .detail-likebar{display:flex;justify-content:center;margin:14px 0 2px}
 .detail-likebar:empty{display:none;margin:0}
