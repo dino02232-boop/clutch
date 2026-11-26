@@ -19,6 +19,31 @@
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function emailFor(id) { return String(id).trim().toLowerCase() + '@' + DOMAIN; }
 
+  /* 알림 토스트 — 로그인·로그아웃 결과를 화면 아래에 잠깐 띄운다.
+     로그인 창(z-index 95)보다 위에 뜨고, 여러 번 불러도 하나만 쓴다.
+     betting.js(로그아웃 안내)도 window.clutchToast 로 같이 쓴다. */
+  var toastTimer = null;
+  function toast(text) {
+    if (!text) return;
+    var t = document.getElementById('clutchToast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'clutchToast';
+      t.className = 'clutch-toast';
+      t.setAttribute('role', 'status');
+      t.setAttribute('aria-live', 'polite');
+      document.body.appendChild(t);
+    }
+    t.textContent = text;
+    // 다시 띄울 때도 떠오르는 동작이 처음부터 돌도록 한 프레임 내려 두었다가 켠다.
+    t.classList.remove('on');
+    void t.offsetWidth;
+    t.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove('on'); }, 2600);
+  }
+  window.clutchToast = toast;
+
   /* Firebase 오류 코드 → 한국어 안내 */
   function errText(e) {
     var code = String((e && (e.code || (e.error && e.error.code))) || '');
@@ -34,7 +59,19 @@
     if (code === 'auth/too-many-requests') return '시도가 너무 많습니다. 잠시 후 다시 해 주세요.';
     if (code === 'auth/network-request-failed') return '네트워크 연결을 확인해 주세요.';
     if (code === 'auth/user-disabled') return '이용이 정지된 계정입니다.';
-    if (code === 'auth/popup-closed-by-user' || code === 'auth/cancelled-popup-request') return '';
+    if (code === 'auth/popup-closed-by-user' || code === 'auth/cancelled-popup-request') {
+      return '구글 로그인 창이 닫혔습니다. 다시 시도해 주세요.';
+    }
+    if (code === 'auth/popup-blocked') return '브라우저가 로그인 창을 막았습니다. 다시 눌러 주세요.';
+    if (code === 'auth/operation-not-supported-in-this-environment') {
+      return '이 브라우저에서는 구글 로그인 창을 열 수 없습니다. 다른 브라우저로 시도해 주세요.';
+    }
+    if (code === 'auth/unauthorized-domain') {
+      return '지금 주소에서는 구글 로그인을 쓸 수 없습니다. 관리자에게 문의해 주세요.';
+    }
+    if (code === 'auth/account-exists-with-different-credential') {
+      return '같은 이메일로 이미 다른 방식의 계정이 있습니다. 아이디·비밀번호로 로그인해 주세요.';
+    }
     if (/PASSWORD_LOGIN_DISABLED/.test(msg)) return '이메일/비밀번호 로그인이 아직 활성화되지 않았습니다.';
     return '로그인하지 못했습니다. ' + (msg || '잠시 후 다시 시도해 주세요.');
   }
@@ -123,11 +160,11 @@
           '<input id="authPw2" name="password2" type="password" autocomplete="new-password" maxlength="72" placeholder="비밀번호를 한 번 더">' +
         '</div>' +
         '<button type="submit" id="authSubmit" class="auth-submit">로그인</button>' +
+        '<p id="authHint" class="auth-hint">아이디와 비밀번호를 입력해 주세요.</p>' +
       '</form>' +
       '<p id="authNotice" class="auth-notice" role="alert" aria-live="polite"></p>' +
       '<div class="auth-or"><span>또는</span></div>' +
       '<button type="button" id="authGoogle" class="auth-google"><span class="auth-g" aria-hidden="true">G</span>구글로 계속하기</button>' +
-      '<p id="authHint" class="auth-hint">아이디와 비밀번호를 입력해 주세요.</p>' +
       '</div>';
   }
 
@@ -175,21 +212,52 @@
     }
   }
 
+  // 팝업을 못 여는 환경(iOS 사파리·인앱 브라우저 등)은 같은 페이지를 떠났다 돌아오는
+  // 리다이렉트 방식으로 넘어간다. 돌아온 뒤 결과는 아래 checkRedirect() 가 받는다.
+  var REDIRECT_FALLBACK = {
+    'auth/popup-blocked': 1,
+    'auth/operation-not-supported-in-this-environment': 1
+  };
   async function google() {
     if (busy) return;
     if (!auth) { notice('Firebase 연결을 확인해 주세요.'); return; }
     notice('');
     setBusy(true, '구글 로그인 중…');
+    var provider = new firebase.auth.GoogleAuthProvider();
     try {
-      var p = new firebase.auth.GoogleAuthProvider();
-      var r = await auth.signInWithPopup(p);
+      var r = await auth.signInWithPopup(provider);
       await ensureUser(r && r.user, '');
       close();
     } catch (e) {
-      var t = errText(e);
+      var code = String((e && (e.code || (e.error && e.error.code))) || '');
+      if (REDIRECT_FALLBACK[code] && typeof auth.signInWithRedirect === 'function') {
+        try {
+          setBusy(true, '구글 로그인으로 이동 중…');
+          await auth.signInWithRedirect(provider);
+          return; // 페이지가 넘어간다. 결과는 돌아온 페이지의 checkRedirect() 가 받는다.
+        } catch (e2) {
+          e = e2;
+        }
+      }
       setBusy(false);
-      notice(t);
+      notice(errText(e));
     }
+  }
+
+  /* 구글 로그인이 리다이렉트로 넘어갔다면, 돌아온 이 페이지에서 결과를 받는다.
+     성공하면 users/{uid} 문서를 채우고, 실패하면 이유를 토스트로 알린다. */
+  function checkRedirect() {
+    if (!auth || typeof auth.getRedirectResult !== 'function') return;
+    auth.getRedirectResult().then(function (r) {
+      if (!r || !r.user) return;
+      return ensureUser(r.user, '').then(function () {
+        close();
+        toast('구글 로그인되었습니다.');
+      });
+    }).catch(function (e) {
+      var t = errText(e || {});
+      if (t) toast(t);
+    });
   }
 
   function open(m) {
@@ -218,4 +286,5 @@
 
   window.clutchLogin = open;
   window.clutchLoginModal = { open: open, close: close };
+  checkRedirect();
 })();
