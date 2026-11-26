@@ -1577,7 +1577,7 @@
     return out.join(". ") + ".";
   }
 
-  // 승부가 갈린 이유: 팀 합계에서 벌어진 항목만
+  // 경기의 승부처: 팀 합계에서 벌어진 항목만
   function volleyWhyText(g, pick) {
     if (!pick) return "";
     var w = pick.wa, l = pick.la, wn = g[pick.win].name, ln = g[pick.lose].name;
@@ -1687,7 +1687,7 @@
       (vVerdict ? "승패 원인 · 활약" : "결과 요약") + "</span></div>" +
       '<p class="pg-game-line">' + esc(line + flow) + "</p>" +
       (vVerdict ? '<p class="pg-verdict">' + esc(vVerdict) + "</p>" : "") +
-      (vWhy ? '<div class="pg-why"><b>승부가 갈린 이유</b><p>' + esc(vWhy) + "</p></div>" : "") +
+      (vWhy ? '<div class="pg-why"><b>경기의 승부처</b><p>' + esc(vWhy) + "</p></div>" : "") +
       (extra ? '<p class="pg-game-line">' + esc(extra) + "</p>" : "") +
       pregVsResultHTML(g) +
       (vTable ? pgMoreHTML("선수 기록", vTable) : "") +
@@ -2245,7 +2245,7 @@
     return '<section class="postgame"><div class="postgame-head"><b>경기 후 브리핑</b><span>승패 원인 · 활약</span></div>' +
       '<p class="pg-game-line">' + esc(flowSentences.join(" ")) + "</p>" +
       (winSide ? '<p class="pg-verdict">' + esc(verdictLine(carry, low)) + "</p>" : "") +
-      '<div class="pg-why"><b>승부가 갈린 이유</b><p>' + esc(whyText) + "</p></div>" +
+      '<div class="pg-why"><b>경기의 승부처</b><p>' + esc(whyText) + "</p></div>" +
       '<div class="pg-highlights">' + highlightHTML(carry, "up", "캐리한 선수") + highlightHTML(low, "down", "아쉬웠던 선수") + "</div>" +
       pregVsResultHTML(g) +
       (morePieces ? pgMoreHTML("경기 흐름 · 팀 지표", morePieces) : "") +
@@ -2735,7 +2735,7 @@
     }
 
     var why = "팀 지표가 비슷해 한쪽으로 기울어진 항목이 없었습니다.";
-    var whyLabel = winSide ? "승부가 갈린 이유" : "경기 양상";
+    var whyLabel = winSide ? "경기의 승부처" : "경기 양상";
     if (boxes.length >= 2) {
       var wIdx = winSide ? sideIdx(winSide) : sideIdx("away");
       var lIdx = winSide ? sideIdx(winSide === "away" ? "home" : "away") : sideIdx("home");
