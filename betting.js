@@ -135,7 +135,9 @@
     if(el('betOdds'))el('betOdds').textContent=mult.toFixed(2)+'배';
     var stake=Number(el('betStake')&&el('betStake').value)||0;
     if(el('betReturn'))el('betReturn').textContent=fmt(payout(stake,mult))+'P';
-    if(el('betBalance')){var pill=el('betBalance');pill.hidden=!me;pill.innerHTML=me?((window.clutchTierBadge?window.clutchTierBadge(balance,{label:false,cls:'pill'}):'')+'<span class="bet-pill-txt">'+esc(window.clutchNickname||me.displayName||'회원')+' · '+fmt(balance)+'P</span>'):'';}
+    // 알약 안은 [닉네임][· 포인트] 두 조각으로 나눠 둔다. 폭이 모자라면 닉네임만 말줄임되고
+    // 포인트 숫자(1,000,000P)는 끝까지 보인다.
+    if(el('betBalance')){var pill=el('betBalance');pill.hidden=!me;pill.innerHTML=me?((window.clutchTierBadge?window.clutchTierBadge(balance,{label:false,cls:'pill'}):'')+'<span class="bet-pill-txt"><span class="bet-pill-name">'+esc(window.clutchNickname||me.displayName||'회원')+'</span><span class="bet-pill-pt">'+fmt(balance)+'P</span></span>'):'';}
     if(el('betSupport'))el('betSupport').hidden=!(me&&balance<100);
     var submit=el('betSubmit'); if(submit)submit.textContent=me?'베팅 확정':'로그인 후 베팅 확정';
     if(el('betDockTitle'))el('betDockTitle').textContent='🧾 Bet'+(slip.length?' ('+slip.length+')':'');
@@ -410,7 +412,7 @@
     wrap.id = 'betsModal';
     wrap.className = 'bets-modal';
     wrap.innerHTML = '<div class="bets-box" role="dialog" aria-modal="true" aria-label="내 베팅 내역">' +
-      '<div class="bets-head"><b>🎟 내 베팅 내역</b>' +
+      '<div class="bets-head">' +
       '<button type="button" id="betsLogout" class="bets-logout">로그아웃</button>' +
       '<button type="button" id="betsClose" class="bets-icon" aria-label="닫기" title="닫기">×</button></div>' +
       '<div id="betsMe" class="bets-me"></div>' +
