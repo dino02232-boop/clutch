@@ -121,13 +121,39 @@
     return weekdayOf(dateStr) + "요일";
   }
 
+  /* ── 경기 목록 순서 ───────────────────────────────────
+     목록은 진행 중(LIVE) → 경기 전(예정) → 종료(FINAL) 묶음 순으로 놓는다.
+     같은 묶음 안에서는 시작 시각이 이른 경기가 먼저다(기존 시간순 그대로).
+     상태(result.state·status)는 실시간 점수 갱신(updateGame)이 덮어쓰므로,
+     목록을 다시 그릴 때와 paintLive 로 순서를 다시 맞출 때 지금 상태가 그대로 반영된다. */
+  var PRE_STALE_MS = 3 * 60 * 60 * 1000;   // 시작한 지 3시간이 지나도 결과가 없으면 지난 경기로 본다
+
+  function gameSortRank(g) {
+    var r = g && g.result;
+    if (r && r.state === "live") return 0;
+    if (r && r.state === "final") return 2;
+    if (!r && g && g.status === "live") return 0;
+    if (!r && g && g.status === "final") return 2;
+    var t = g && g.start ? new Date(g.start).getTime() : NaN;
+    if (isFinite(t) && Date.now() - t > PRE_STALE_MS) return 2;
+    return 1;
+  }
+
+  function compareGames(a, b) {
+    var ra = gameSortRank(a), rb = gameSortRank(b);
+    if (ra !== rb) return ra - rb;
+    var ta = new Date(a && a.start).getTime();
+    var tb = new Date(b && b.start).getTime();
+    if (!isFinite(ta)) ta = Infinity;
+    if (!isFinite(tb)) tb = Infinity;
+    return ta === tb ? 0 : (ta < tb ? -1 : 1);
+  }
+
   /* ── 데이터 조회 ───────────────────────────────────── */
   function gamesOf(dateStr) {
     var day = DAYS.filter(function (d) { return d.date === dateStr; })[0];
     if (!day || !Array.isArray(day.games)) return [];
-    return day.games.slice().sort(function (a, b) {
-      return new Date(a.start) - new Date(b.start);
-    });
+    return day.games.slice().sort(compareGames);
   }
 
   function sportMeta(id) {
@@ -3639,11 +3665,15 @@
   }
 
   function leagueChipsHTML(games) {
-    var keys = [];
+    // 칩 순서는 그 리그 첫 경기의 시작 시각 순으로 고정한다(경기 상태로 순서가 흔들리지 않게).
+    var keys = [], firstAt = {};
     games.forEach(function (g) {
       var k = leagueOf(g);
-      if (keys.indexOf(k) < 0) keys.push(k);
+      if (keys.indexOf(k) < 0) { keys.push(k); firstAt[k] = Infinity; }
+      var t = new Date(g.start).getTime();
+      if (isFinite(t) && t < firstAt[k]) firstAt[k] = t;
     });
+    keys.sort(function (a, b) { return firstAt[a] - firstAt[b]; });
     if (keys.length < 2) return "";
 
     var html = '<div class="lg-chips" role="group" aria-label="리그 선택">' +
@@ -5736,6 +5766,22 @@
     });
   }
 
+  // 지금 목록에 놓인 줄을 지금 상태 기준 순서(LIVE → 예정 → 종료)로 다시 놓는다.
+  // 이미 그 순서면 DOM 을 건드리지 않는다(10초 폴링마다 스크롤이 튀지 않게).
+  function reorderRows() {
+    var rows = elList.querySelector(".rows");
+    if (!rows) return;
+    var want;
+    if (state.favorites) want = favoriteGames().map(function (entry) { return entry.g.id; });
+    else if (state.allSports || state.sport) want = visibleGames().map(function (g) { return g.id; });
+    else return;                       // 홈(종목 타일)에는 경기 줄이 없다
+    var have = Array.prototype.map.call(rows.children, function (li) { return li.dataset.id; });
+    if (want.join("|") === have.join("|")) return;
+    var byId = {};
+    Array.prototype.forEach.call(rows.children, function (li) { byId[li.dataset.id] = li; });
+    want.forEach(function (id) { if (byId[id]) rows.appendChild(byId[id]); });
+  }
+
   // 화면의 점수 자리만 다시 그린다(줄·펼친 박스·타일·실시간 줄)
   function paintLive() {
     Array.prototype.forEach.call(elList.querySelectorAll(".mrow-item"), function (item) {
@@ -5753,14 +5799,8 @@
       }
     });
 
-    // 즐겨찾기 화면에서는 경기 상태가 바뀌면 LIVE 경기를 맨 위로 이동한다.
-    if (state.favorites) {
-      var rows = elList.querySelector(".rows");
-      if (rows) favoriteGames().forEach(function (entry) {
-        var item = itemOf(entry.g.id);
-        if (item && item.parentNode === rows) rows.appendChild(item);
-      });
-    }
+    // 경기 상태(LIVE·종료)가 바뀌면 목록 줄 순서도 LIVE → 예정 → 종료로 다시 맞춘다.
+    reorderRows();
 
     // 펼쳐 둔 박스만 다시 그린다(높이는 auto 라 애니메이션에 영향 없음)
     var open = elList.querySelector(".mrow-item.open");
