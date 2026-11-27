@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-28T06:45:07+09:00
+   생성 시각(기준): 2026-11-28T07:45:54+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-28T06:45:07+09:00",
+  "updated": "2026-11-28T07:45:54+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -151,12 +151,12 @@ window.CLUTCH_STANDINGS = {
               "team": "첼시",
               "abbr": "CHE",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/363.png",
-              "played": 11,
+              "played": 12,
               "win": 5,
               "draw": 1,
-              "loss": 5,
+              "loss": 6,
               "points": 16,
-              "diff": 0,
+              "diff": -1,
               "pct": null,
               "gb": null,
               "zone": null
@@ -238,6 +238,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 14,
+              "team": "노팅엄 포리스트",
+              "abbr": "NFO",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/393.png",
+              "played": 12,
+              "win": 3,
+              "draw": 3,
+              "loss": 6,
+              "points": 12,
+              "diff": -5,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 15,
               "team": "코번트리 시티",
               "abbr": "COV",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/388.png",
@@ -252,7 +267,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 15,
+              "rank": 16,
               "team": "풀럼",
               "abbr": "FUL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/370.png",
@@ -267,7 +282,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 16,
+              "rank": 17,
               "team": "입스위치 타운",
               "abbr": "IPS",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/373.png",
@@ -277,21 +292,6 @@ window.CLUTCH_STANDINGS = {
               "loss": 6,
               "points": 11,
               "diff": -7,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 17,
-              "team": "노팅엄 포리스트",
-              "abbr": "NFO",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/393.png",
-              "played": 11,
-              "win": 2,
-              "draw": 3,
-              "loss": 6,
-              "points": 9,
-              "diff": -6,
               "pct": null,
               "gb": null,
               "zone": null
@@ -923,15 +923,15 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 6,
-              "team": "세비야",
-              "abbr": "SEV",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/243.png",
-              "played": 13,
-              "win": 5,
-              "draw": 4,
-              "loss": 4,
-              "points": 19,
-              "diff": -2,
+              "team": "라싱 산탄데르",
+              "abbr": "RAC",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/87.png",
+              "played": 14,
+              "win": 6,
+              "draw": 2,
+              "loss": 6,
+              "points": 20,
+              "diff": -10,
               "pct": null,
               "gb": null,
               "zone": {
@@ -942,15 +942,15 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 7,
-              "team": "라싱 산탄데르",
-              "abbr": "RAC",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/87.png",
+              "team": "세비야",
+              "abbr": "SEV",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/243.png",
               "played": 13,
               "win": 5,
-              "draw": 2,
-              "loss": 6,
-              "points": 17,
-              "diff": -12,
+              "draw": 4,
+              "loss": 4,
+              "points": 19,
+              "diff": -2,
               "pct": null,
               "gb": null,
               "zone": {
@@ -1073,12 +1073,12 @@ window.CLUTCH_STANDINGS = {
               "team": "레반테",
               "abbr": "LEV",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1538.png",
-              "played": 13,
+              "played": 14,
               "win": 2,
               "draw": 6,
-              "loss": 5,
+              "loss": 6,
               "points": 12,
-              "diff": -5,
+              "diff": -7,
               "pct": null,
               "gb": null,
               "zone": null

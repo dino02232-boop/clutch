@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-28T06:45:07+09:00",
+  updatedAt: "2026-11-28T07:45:54+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -26919,7 +26919,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천계양체육관에서 열립니다.",
               "**순위표** — 대한항공(홈) 4승 3패·4위·승점 12, KB손해보험(원정) 1승 6패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 07:45 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27272,7 +27272,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
               "**순위표** — 흥국생명(홈) 2승 5패·6위·승점 6, GS칼텍스(원정) 6승 1패·1위·승점 18."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 07:45 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-27 END */
@@ -27585,7 +27585,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 5패·6위·승점 5, 한국전력(원정) 5승 2패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 07:45 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27889,7 +27889,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 3패·5위·승점 8, IBK기업은행(원정) 4승 3패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 07:45 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-28 END */,
@@ -29103,7 +29103,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-        {
+                {
           "id": "soccer-che-nfo-20261128",
           "espnId": "401879225",
           "sport": "soccer",
@@ -29186,6 +29186,23 @@ window.CLUTCH_DATA = {
             }
           ],
           "preview": "프리미어리그에서는 노팅엄 포리스트가 17위(승점 9, 득실 -6)로 하위권, 첼시가 8위(승점 16, 득실 0)로 중위권입니다. 홈에서 노팅엄 포리스트는 1승 1무 3패, 원정에서 첼시는 2승 3패이고, 최근 5경기는 노팅엄 포리스트 1승 1무 3패, 첼시 1승 4패입니다. 두 팀 평균 득점을 합치면 2.6골, 평균 실점은 3.2골입니다.",
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 2,
+            "homeScore": 3,
+            "lines": {
+              "away": [
+                "0",
+                "2"
+              ],
+              "home": [
+                "1",
+                "2"
+              ]
+            },
+            "winner": "home"
+          },
           "details": {
             "teams": [
               {
@@ -29308,7 +29325,87 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 11월 말"
                   }
                 ],
-                "injurySummary": "결장 4명 · 불확실 1명"
+                "injurySummary": "결장 4명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Emanuel Emegha",
+                    "rating": 8.5,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Pedro Neto",
+                    "rating": 8.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Moisés Caicedo",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Josh Acheampong",
+                    "rating": 7.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Cole Palmer",
+                    "rating": 7.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Emiliano Martínez",
+                    "rating": 6.5,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jordan Henderson",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Levi Colwill",
+                    "rating": 6.5,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Pep Chavarría",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Roméo Lavia",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Morgan Rogers",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Wesley Fofana",
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Danny Welbeck",
+                    "rating": 5.8,
+                    "pos": "FW",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "NFO",
@@ -29416,7 +29513,81 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 2명"
+                "injurySummary": "결장 2명",
+                "players": [
+                  {
+                    "name": "Morgan Gibbs-White",
+                    "rating": 8.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Igor Jesus",
+                    "rating": 8.1,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "James McAtee",
+                    "rating": 8.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jair Cunha",
+                    "rating": 7.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Daniel Muñoz",
+                    "rating": 7.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Liam Delap",
+                    "rating": 7.5,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Xaver Schlager",
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Murillo",
+                    "rating": 7.0,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Neco Williams",
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nikola Milenković",
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Matz Sels",
+                    "rating": 6.6,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Dan Ndoye",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -29461,9 +29632,70 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5795533,
             "fotmobSwapped": false
+          },
+          "status": "final",
+          "postgame": {
+            "review": {
+              "title": "Nottingham Forest 3-2 Chelsea: Gibbs-White double piles more pressure on Alonso",
+              "description": "Chelsea slumped to a third straight Premier League defeat on Friday, with Nottingham Forest edging a five-goal thriller at the City Ground.",
+              "titleEn": "Nottingham Forest 3-2 Chelsea: Gibbs-White double piles more pressure on Alonso",
+              "descriptionEn": "Chelsea slumped to a third straight Premier League defeat on Friday, with Nottingham Forest edging a five-goal thriller at the City Ground.",
+              "source": "FotMob · Opta",
+              "url": "https://www.fotmob.com/news/721l2f4zxc2m1tb8hqzja2jl0-nottingham-forest-3-2-chelsea-gibbs-white-double-piles-more-pressure-alonso",
+              "lang": "en",
+              "auto": false,
+              "updatedAt": "2026-11-27T22:20:16Z"
+            },
+            "playerOfTheMatch": {
+              "name": "Morgan Gibbs-White",
+              "teamEn": "Nottingham Forest",
+              "team": "노팅엄 포리스트",
+              "side": "home",
+              "rating": 8.9
+            },
+            "carry": {
+              "name": "Morgan Gibbs-White",
+              "team": "노팅엄 포리스트",
+              "side": "home",
+              "tag": "up",
+              "line": "Morgan Gibbs-White의 멀티골(평점 8.9)에 힘입어 3-2 승리를 거뒀습니다.",
+              "facts": [
+                "평점 8.9",
+                "골 2",
+                "유효슈팅 2",
+                "기회창출 1",
+                "90분"
+              ],
+              "pos": "MF",
+              "rating": 8.9,
+              "min": 90,
+              "goals": 2,
+              "assists": 0,
+              "shots": 5,
+              "shotsOnTarget": 2,
+              "chancesCreated": 1,
+              "mvp": true
+            },
+            "low": {
+              "name": "Danny Welbeck",
+              "team": "첼시",
+              "side": "away",
+              "tag": "down",
+              "line": "Danny Welbeck의 평점 5.8이 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 5.8",
+                "45분"
+              ],
+              "pos": "FW",
+              "rating": 5.8,
+              "min": 45,
+              "goals": 0,
+              "assists": 0,
+              "chancesCreated": 0
+            }
           }
         },
-        {
+                {
           "id": "soccer-rac-lev-20261128",
           "espnId": "401882791",
           "sport": "soccer",
@@ -29546,6 +29778,23 @@ window.CLUTCH_DATA = {
             }
           ],
           "preview": "라리가에서는 레반테가 15위(승점 12, 득실 -5)로 하위권, 라싱 산탄데르가 7위(승점 17, 득실 -12)로 중위권입니다. 홈에서 레반테는 2승 2무 2패, 원정에서 라싱 산탄데르는 1승 5패이고, 최근 5경기는 레반테 1승 2무 2패, 라싱 산탄데르 4승 1패입니다. 두 팀 평균 득점을 합치면 2.8골, 평균 실점은 4.2골입니다.",
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 3,
+            "homeScore": 1,
+            "lines": {
+              "away": [
+                "0",
+                "3"
+              ],
+              "home": [
+                "1",
+                "0"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -29659,7 +29908,99 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 약 1~2주"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Pablo García",
+                    "rating": 8.6,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Iñigo Vicente",
+                    "rating": 8.5,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Yassir Zabiri",
+                    "rating": 8.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jorge Salinas",
+                    "rating": 7.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "André Almeida",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Iván Martín",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pablo Ramón",
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Julen Agirrezabala",
+                    "rating": 7.3,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sergio Canales",
+                    "rating": 7.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jeanuël Belocian",
+                    "rating": 6.9,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Iker Luque",
+                    "rating": 6.7,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Matteo Prati",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pedro Felipe",
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Asier Villalibre",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Hugo Pérez",
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               },
               {
                 "abbr": "LEV",
@@ -29771,7 +30112,93 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 2명 · 불확실 1명"
+                "injurySummary": "결장 2명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Jon Olasagasti",
+                    "rating": 8.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Oriol Rey",
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Marc Santos",
+                    "rating": 7.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Iván Romero",
+                    "rating": 7.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Thiago Fernández",
+                    "rating": 6.9,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Dani Requena",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mathew Ryan",
+                    "rating": 6.6,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nacho Pérez",
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Víctor García",
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Enzo Bardeli",
+                    "rating": 6.5,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Adrián De La Fuente",
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Roger Brugué",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Aïssa Mandi",
+                    "rating": 6.0,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Etta Eyong",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -29816,6 +30243,55 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868146,
             "fotmobSwapped": false
+          },
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Pablo García",
+              "teamEn": "Racing Santander",
+              "team": "라싱 산탄데르",
+              "side": "away",
+              "rating": 8.6
+            },
+            "carry": {
+              "name": "Pablo García",
+              "team": "라싱 산탄데르",
+              "side": "away",
+              "tag": "up",
+              "line": "Pablo García의 멀티골(평점 8.6)에 힘입어 3-1 승리를 거뒀습니다.",
+              "facts": [
+                "평점 8.6",
+                "골 2",
+                "유효슈팅 2",
+                "29분"
+              ],
+              "pos": "FW",
+              "rating": 8.6,
+              "min": 29,
+              "goals": 2,
+              "assists": 0,
+              "shots": 2,
+              "shotsOnTarget": 2,
+              "chancesCreated": 0,
+              "mvp": true
+            },
+            "low": {
+              "name": "Aïssa Mandi",
+              "team": "레반테",
+              "side": "home",
+              "tag": "down",
+              "line": "Aïssa Mandi의 평점 6.0이 팀에서 가장 낮았습니다.",
+              "facts": [
+                "평점 6.0",
+                "90분"
+              ],
+              "pos": "DF",
+              "rating": 6.0,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "chancesCreated": 0
+            }
           }
         },
         {
