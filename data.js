@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-28T06:26:17+09:00",
+  updatedAt: "2026-11-28T06:45:07+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -26919,7 +26919,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천계양체육관에서 열립니다.",
               "**순위표** — 대한항공(홈) 4승 3패·4위·승점 12, KB손해보험(원정) 1승 6패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 05:45 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27272,7 +27272,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
               "**순위표** — 흥국생명(홈) 2승 5패·6위·승점 6, GS칼텍스(원정) 6승 1패·1위·승점 18."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 05:45 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-27 END */
@@ -27585,7 +27585,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 5패·6위·승점 5, 한국전력(원정) 5승 2패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:26 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27889,13 +27889,13 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 3패·5위·승점 8, IBK기업은행(원정) 4승 3패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:26 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:44 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-28 END */,
 
         /* SOCCER-AUTO 2026-11-28 START */
-        {
+                {
           "id": "soccer-bmg-svw-20261128",
           "espnId": "401884720",
           "sport": "soccer",
@@ -27978,6 +27978,23 @@ window.CLUTCH_DATA = {
             }
           ],
           "preview": "분데스리가에서는 베르더 브레멘이 6위(승점 18, 득실 +6)로 상위권, 묀헨글라트바흐가 18위(승점 4, 득실 -14)로 하위권입니다. 홈에서 베르더 브레멘은 4승 1무, 원정에서 묀헨글라트바흐는 1승 4패이고, 최근 5경기는 베르더 브레멘 3승 2패, 묀헨글라트바흐 2승 1무 2패입니다. 두 팀 평균 득점을 합치면 3.3골, 평균 실점은 4.1골입니다.",
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 3,
+            "homeScore": 3,
+            "lines": {
+              "away": [
+                "1",
+                "2"
+              ],
+              "home": [
+                "1",
+                "2"
+              ]
+            },
+            "winner": null
+          },
           "details": {
             "teams": [
               {
@@ -28105,7 +28122,87 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 5월 말"
                   }
                 ],
-                "injurySummary": "결장 5명 · 불확실 1명"
+                "injurySummary": "결장 5명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Franck Honorat",
+                    "rating": 9.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Wael Mohya",
+                    "rating": 8.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Florian Neuhaus",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Kevin Diks",
+                    "rating": 7.5,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Zento Uno",
+                    "rating": 7.3,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Daniel Batz",
+                    "rating": 7.1,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jens Castrop",
+                    "rating": 7.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Shuto Machino",
+                    "rating": 7.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Joseph Scally",
+                    "rating": 6.7,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Fabio Chiarodia",
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "David Herold",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Mathieu Nguefack",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Philipp Sander",
+                    "rating": 5.0,
+                    "pos": "DF",
+                    "starter": true
+                  }
+                ]
               },
               {
                 "abbr": "SVW",
@@ -28242,7 +28339,93 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2027년 1월 초"
                   }
                 ],
-                "injurySummary": "결장 7명 · 불확실 1명"
+                "injurySummary": "결장 7명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Eren Dinkçi",
+                    "rating": 9.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Niclas Füllkrug",
+                    "rating": 8.0,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ludovit Reis",
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Marco Friedl",
+                    "rating": 7.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Youri Regeer",
+                    "rating": 7.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mick Schmetgens",
+                    "rating": 7.0,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Olivier Deman",
+                    "rating": 7.0,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Amos Pieper",
+                    "rating": 6.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Chuki",
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Arthur",
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Mitchell Weiser",
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Karl Hein",
+                    "rating": 6.5,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Paul Erevbenagie",
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Cedric Itten",
+                    "rating": 5.8,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -28287,9 +28470,41 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5881241,
             "fotmobSwapped": false
+          },
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Franck Honorat",
+              "teamEn": "Borussia Mönchengladbach",
+              "team": "묀헨글라트바흐",
+              "side": "away",
+              "rating": 9.2
+            },
+            "carry": {
+              "name": "Franck Honorat",
+              "team": "묀헨글라트바흐",
+              "side": "away",
+              "tag": "top",
+              "line": "Franck Honorat의 평점 9.2가 양 팀 통틀어 가장 높았습니다. 경기는 3-3 무승부였습니다.",
+              "facts": [
+                "평점 9.2",
+                "골 2",
+                "유효슈팅 2",
+                "기회창출 3",
+                "84분"
+              ],
+              "pos": "MF",
+              "rating": 9.2,
+              "min": 84,
+              "goals": 2,
+              "assists": 0,
+              "shots": 5,
+              "shotsOnTarget": 2,
+              "chancesCreated": 3
+            }
           }
         },
-        {
+                {
           "id": "soccer-bol-ven-20261128",
           "espnId": "401875004",
           "sport": "soccer",
@@ -28372,6 +28587,23 @@ window.CLUTCH_DATA = {
             }
           ],
           "preview": "세리에 A에서는 베네치아가 20위(승점 6, 득실 -17)로 하위권, 볼로냐가 9위(승점 18, 득실 +2)로 중위권입니다. 홈에서 베네치아는 2승 4패, 원정에서 볼로냐는 4승 2패이고, 최근 5경기는 베네치아 1승 4패, 볼로냐 4승 1무입니다. 두 팀 평균 득점을 합치면 2.1골, 평균 실점은 3.3골입니다.",
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 0,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "0",
+                "0"
+              ],
+              "home": [
+                "0",
+                "0"
+              ]
+            },
+            "winner": null
+          },
           "details": {
             "teams": [
               {
@@ -28498,7 +28730,99 @@ window.CLUTCH_DATA = {
                     "status": "DOUBTFUL"
                   }
                 ],
-                "injurySummary": "결장 4명 · 불확실 2명"
+                "injurySummary": "결장 4명 · 불확실 2명",
+                "players": [
+                  {
+                    "name": "Łukasz Skorupski",
+                    "rating": 8.2,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nicolò Casale",
+                    "rating": 7.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Arthur Theate",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Rahim Alhassane",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Tommaso Pobega",
+                    "rating": 7.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Lewis Ferguson",
+                    "rating": 6.8,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Samuel Mbangula",
+                    "rating": 6.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Matteo Darmian",
+                    "rating": 6.5,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Federico Bernardeschi",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Martin Vitík",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nadir Zortea",
+                    "rating": 6.3,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jens Odgaard",
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nicolò Cambiaghi",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Riccardo Orsolini",
+                    "rating": 6.0,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Roberto Piccoli",
+                    "rating": 5.9,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               },
               {
                 "abbr": "VEN",
@@ -28610,7 +28934,105 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 약 1~2주"
                   }
                 ],
-                "injurySummary": "결장 2명 · 불확실 1명"
+                "injurySummary": "결장 2명 · 불확실 1명",
+                "players": [
+                  {
+                    "name": "Filip Stanković",
+                    "rating": 8.4,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Matías Moreno",
+                    "rating": 7.8,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Redouane Halhal",
+                    "rating": 7.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Ridgeciano Haps",
+                    "rating": 7.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Antoine Hainaut",
+                    "rating": 7.2,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Juan Jesus",
+                    "rating": 6.9,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Kike Pérez",
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Simon Sohm",
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Armel Bella-Kotchap",
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Gianluca Busio",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "John Yeboah",
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Akor Adams",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Albion Rrahmani",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Thórir Helgason",
+                    "rating": 6.3,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Matteo Dagasso",
+                    "rating": 6.1,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Lion Lauberbach",
+                    "rating": 5.9,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "checkpoints": [
@@ -28649,6 +29071,36 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5749769,
             "fotmobSwapped": false
+          },
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Filip Stanković",
+              "teamEn": "Venezia",
+              "team": "베네치아",
+              "side": "home",
+              "rating": 8.4
+            },
+            "carry": {
+              "name": "Filip Stanković",
+              "team": "베네치아",
+              "side": "home",
+              "tag": "top",
+              "line": "Filip Stanković의 평점 8.4가 양 팀 통틀어 가장 높았습니다. 경기는 0-0 무승부였습니다.",
+              "facts": [
+                "평점 8.4",
+                "선방 5",
+                "실점 0",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 8.4,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 5,
+              "conceded": 0
+            }
           }
         },
         {
