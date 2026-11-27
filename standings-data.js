@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-27T07:45:12+09:00
+   생성 시각(기준): 2026-11-27T18:41:20+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-27T07:45:12+09:00",
+  "updated": "2026-11-27T18:41:20+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -5097,12 +5097,56 @@ window.CLUTCH_STANDINGS = {
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/122954.png",
               "team": "NEC 네이메헌",
               "teamAbbr": "NEC",
-              "value": 4.0,
-              "display": "4골",
-              "played": 4
+              "value": 5.0,
+              "display": "5골",
+              "played": 5
             },
             {
               "rank": 2,
+              "name": "Alphadjo Cissè",
+              "id": "359754",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/359754.png",
+              "team": "AC 밀란",
+              "teamAbbr": "MIL",
+              "value": 4.0,
+              "display": "4골",
+              "played": 5
+            },
+            {
+              "rank": 3,
+              "name": "Camilo Durán",
+              "id": "367591",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/367591.png",
+              "team": "셀틱",
+              "teamAbbr": "CEL",
+              "value": 4.0,
+              "display": "4골",
+              "played": 5
+            },
+            {
+              "rank": 4,
+              "name": "Oumar Diakité",
+              "id": "329483",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/329483.png",
+              "team": "슈투름 그라츠",
+              "teamAbbr": "STG",
+              "value": 4.0,
+              "display": "4골",
+              "played": 5
+            },
+            {
+              "rank": 5,
+              "name": "Rayan",
+              "id": "357719",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/357719.png",
+              "team": "본머스",
+              "teamAbbr": "BOU",
+              "value": 4.0,
+              "display": "4골",
+              "played": 5
+            },
+            {
+              "rank": 6,
               "name": "Dion Drena Beljo",
               "id": "306647",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/306647.png",
@@ -5110,21 +5154,10 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "DZG",
               "value": 4.0,
               "display": "4골",
-              "played": 3
-            },
-            {
-              "rank": 3,
-              "name": "Sergio Gómez",
-              "id": "265993",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/265993.png",
-              "team": "레알 소시에다드",
-              "teamAbbr": "RSO",
-              "value": 3.0,
-              "display": "3골",
               "played": 4
             },
             {
-              "rank": 4,
+              "rank": 7,
               "name": "Kristoffer Zachariassen",
               "id": "253991",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/253991.png",
@@ -5132,21 +5165,21 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "FER",
               "value": 3.0,
               "display": "3골",
-              "played": 4
+              "played": 5
             },
             {
-              "rank": 5,
-              "name": "Nick Woltemade",
-              "id": "298349",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/298349.png",
-              "team": "유벤투스",
-              "teamAbbr": "JUV",
+              "rank": 8,
+              "name": "Tjaronn Chery",
+              "id": "116893",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/116893.png",
+              "team": "NEC 네이메헌",
+              "teamAbbr": "NEC",
               "value": 3.0,
               "display": "3골",
-              "played": 4
+              "played": 5
             },
             {
-              "rank": 6,
+              "rank": 9,
               "name": "Yéremy Pino",
               "id": "297370",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/297370.png",
@@ -5154,32 +5187,87 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "CRY",
               "value": 3.0,
               "display": "3골",
-              "played": 4
+              "played": 5
             },
             {
-              "rank": 7,
-              "name": "Camilo Durán",
-              "id": "367591",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/367591.png",
-              "team": "셀틱",
-              "teamAbbr": "CEL",
+              "rank": 10,
+              "name": "Clement Bischoff",
+              "id": "372851",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/372851.png",
+              "team": "NEC 네이메헌",
+              "teamAbbr": "NEC",
+              "value": 3.0,
+              "display": "3골",
+              "played": 5
+            },
+            {
+              "rank": 11,
+              "name": "Sergio Gómez",
+              "id": "265993",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/265993.png",
+              "team": "레알 소시에다드",
+              "teamAbbr": "RSO",
+              "value": 3.0,
+              "display": "3골",
+              "played": 5
+            },
+            {
+              "rank": 12,
+              "name": "Nick Woltemade",
+              "id": "298349",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/298349.png",
+              "team": "유벤투스",
+              "teamAbbr": "JUV",
+              "value": 3.0,
+              "display": "3골",
+              "played": 5
+            },
+            {
+              "rank": 13,
+              "name": "Junior Olaitan",
+              "id": "319985",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/319985.png",
+              "team": "베식타시",
+              "teamAbbr": "BES",
+              "value": 3.0,
+              "display": "3골",
+              "played": 5
+            },
+            {
+              "rank": 14,
+              "name": "Taxiarchis Fountas",
+              "id": "183154",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/183154.png",
+              "team": "OFI 크레테",
+              "teamAbbr": "OFI",
+              "value": 3.0,
+              "display": "3골",
+              "played": 5
+            },
+            {
+              "rank": 15,
+              "name": "Randal Kolo Muani",
+              "id": "252971",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/252971.png",
+              "team": "유벤투스",
+              "teamAbbr": "JUV",
+              "value": 3.0,
+              "display": "3골",
+              "played": 5
+            },
+            {
+              "rank": 16,
+              "name": "Christophe Kabongo",
+              "id": "370742",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/370742.png",
+              "team": "빅토리아 플젠",
+              "teamAbbr": "PLZ",
               "value": 3.0,
               "display": "3골",
               "played": 4
             },
             {
-              "rank": 8,
-              "name": "Alphadjo Cissè",
-              "id": "359754",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/359754.png",
-              "team": "AC 밀란",
-              "teamAbbr": "MIL",
-              "value": 3.0,
-              "display": "3골",
-              "played": 4
-            },
-            {
-              "rank": 9,
+              "rank": 17,
               "name": "Mexx Meerdink",
               "id": "332465",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/332465.png",
@@ -5190,62 +5278,7 @@ window.CLUTCH_STANDINGS = {
               "played": 4
             },
             {
-              "rank": 10,
-              "name": "Randal Kolo Muani",
-              "id": "252971",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/252971.png",
-              "team": "유벤투스",
-              "teamAbbr": "JUV",
-              "value": 3.0,
-              "display": "3골",
-              "played": 4
-            },
-            {
-              "rank": 11,
-              "name": "Oumar Diakité",
-              "id": "329483",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/329483.png",
-              "team": "슈투름 그라츠",
-              "teamAbbr": "STG",
-              "value": 3.0,
-              "display": "3골",
-              "played": 4
-            },
-            {
-              "rank": 12,
-              "name": "Rayan",
-              "id": "357719",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/357719.png",
-              "team": "본머스",
-              "teamAbbr": "BOU",
-              "value": 3.0,
-              "display": "3골",
-              "played": 4
-            },
-            {
-              "rank": 13,
-              "name": "Javi Rodríguez",
-              "id": "376147",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/376147.png",
-              "team": "셀타 비고",
-              "teamAbbr": "CEL",
-              "value": 2.0,
-              "display": "2골",
-              "played": 4
-            },
-            {
-              "rank": 14,
-              "name": "Besfort Zeneli",
-              "id": "334024",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/334024.png",
-              "team": "위니옹 생질루아즈",
-              "teamAbbr": "USG",
-              "value": 2.0,
-              "display": "2골",
-              "played": 4
-            },
-            {
-              "rank": 15,
+              "rank": 18,
               "name": "Svit Seslar",
               "id": "306199",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/306199.png",
@@ -5253,10 +5286,21 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "NKC",
               "value": 2.0,
               "display": "2골",
-              "played": 4
+              "played": 5
             },
             {
-              "rank": 16,
+              "rank": 19,
+              "name": "Peer Koopmeiners",
+              "id": "269610",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/269610.png",
+              "team": "AZ 알크마르",
+              "teamAbbr": "AZ",
+              "value": 2.0,
+              "display": "2골",
+              "played": 5
+            },
+            {
+              "rank": 20,
               "name": "Bruno Wilson",
               "id": "250920",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/250920.png",
@@ -5264,51 +5308,7 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "ARA",
               "value": 2.0,
               "display": "2골",
-              "played": 4
-            },
-            {
-              "rank": 17,
-              "name": "Tjaronn Chery",
-              "id": "116893",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/116893.png",
-              "team": "NEC 네이메헌",
-              "teamAbbr": "NEC",
-              "value": 2.0,
-              "display": "2골",
-              "played": 4
-            },
-            {
-              "rank": 18,
-              "name": "Reinaldo",
-              "id": "287830",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/287830.png",
-              "team": "레프스키 소피아",
-              "teamAbbr": "LEV",
-              "value": 2.0,
-              "display": "2골",
-              "played": 4
-            },
-            {
-              "rank": 19,
-              "name": "Mihajlo Cvetkovic",
-              "id": "369978",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/369978.png",
-              "team": "안더레흐트",
-              "teamAbbr": "AND",
-              "value": 2.0,
-              "display": "2골",
-              "played": 4
-            },
-            {
-              "rank": 20,
-              "name": "Guilherme Smith",
-              "id": "330077",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/330077.png",
-              "team": "위니옹 생질루아즈",
-              "teamAbbr": "USG",
-              "value": 2.0,
-              "display": "2골",
-              "played": 4
+              "played": 5
             }
           ]
         },
@@ -5320,6 +5320,17 @@ window.CLUTCH_STANDINGS = {
           "rows": [
             {
               "rank": 1,
+              "name": "Louis Patris",
+              "id": "306031",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/306031.png",
+              "team": "위니옹 생질루아즈",
+              "teamAbbr": "USG",
+              "value": 3.0,
+              "display": "3도움",
+              "played": 5
+            },
+            {
+              "rank": 2,
               "name": "Javier Vazquez",
               "id": "266780",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/266780.png",
@@ -5327,10 +5338,10 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "TOR",
               "value": 3.0,
               "display": "3도움",
-              "played": 4
+              "played": 5
             },
             {
-              "rank": 2,
+              "rank": 3,
               "name": "Kristoffer Zachariassen",
               "id": "253991",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/253991.png",
@@ -5338,10 +5349,10 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "FER",
               "value": 3.0,
               "display": "3도움",
-              "played": 4
+              "played": 5
             },
             {
-              "rank": 3,
+              "rank": 4,
               "name": "Mikel Oyarzabal",
               "id": "229018",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/229018.png",
@@ -5349,10 +5360,43 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "RSO",
               "value": 3.0,
               "display": "3도움",
-              "played": 4
+              "played": 5
             },
             {
-              "rank": 4,
+              "rank": 5,
+              "name": "Omari Hutchinson",
+              "id": "322771",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/322771.png",
+              "team": "AC 밀란",
+              "teamAbbr": "MIL",
+              "value": 3.0,
+              "display": "3도움",
+              "played": 5
+            },
+            {
+              "rank": 6,
+              "name": "Tim Lemperle",
+              "id": "303792",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/303792.png",
+              "team": "호펜하임",
+              "teamAbbr": "TSG",
+              "value": 3.0,
+              "display": "3도움",
+              "played": 5
+            },
+            {
+              "rank": 7,
+              "name": "Andrej Kramaric",
+              "id": "139520",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/139520.png",
+              "team": "호펜하임",
+              "teamAbbr": "TSG",
+              "value": 3.0,
+              "display": "3도움",
+              "played": 5
+            },
+            {
+              "rank": 8,
               "name": "Junior Olaitan",
               "id": "319985",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/319985.png",
@@ -5360,10 +5404,10 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "BES",
               "value": 3.0,
               "display": "3도움",
-              "played": 4
+              "played": 5
             },
             {
-              "rank": 5,
+              "rank": 9,
               "name": "Nicolaos Athanasiou",
               "id": "312967",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/312967.png",
@@ -5371,10 +5415,87 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "OFI",
               "value": 2.0,
               "display": "2도움",
-              "played": 4
+              "played": 5
             },
             {
-              "rank": 6,
+              "rank": 10,
+              "name": "Keito Nakamura",
+              "id": "265953",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/265953.png",
+              "team": "리옹",
+              "teamAbbr": "LYON",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 5
+            },
+            {
+              "rank": 11,
+              "name": "Nick Woltemade",
+              "id": "298349",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/298349.png",
+              "team": "유벤투스",
+              "teamAbbr": "JUV",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 5
+            },
+            {
+              "rank": 12,
+              "name": "Ro-Zangelo Daal",
+              "id": "338775",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/338775.png",
+              "team": "AZ 알크마르",
+              "teamAbbr": "AZ",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 5
+            },
+            {
+              "rank": 13,
+              "name": "Patrik Hrosovský",
+              "id": "169214",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/169214.png",
+              "team": "빅토리아 플젠",
+              "teamAbbr": "PLZ",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 5
+            },
+            {
+              "rank": 14,
+              "name": "Jonatan Brunes",
+              "id": "312933",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/312933.png",
+              "team": "스파르타 프라하",
+              "teamAbbr": "SPP",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 5
+            },
+            {
+              "rank": 15,
+              "name": "Randal Kolo Muani",
+              "id": "252971",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/252971.png",
+              "team": "유벤투스",
+              "teamAbbr": "JUV",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 5
+            },
+            {
+              "rank": 16,
+              "name": "Damir Redzic",
+              "id": "308980",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/308980.png",
+              "team": "잘츠부르크",
+              "teamAbbr": "SLZ",
+              "value": 2.0,
+              "display": "2도움",
+              "played": 5
+            },
+            {
+              "rank": 17,
               "name": "Adam Wharton",
               "id": "333419",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/333419.png",
@@ -5385,10 +5506,10 @@ window.CLUTCH_STANDINGS = {
               "played": 4
             },
             {
-              "rank": 7,
-              "name": "Nick Woltemade",
-              "id": "298349",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/298349.png",
+              "rank": 18,
+              "name": "Andrea Cambiaso",
+              "id": "308029",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/308029.png",
               "team": "유벤투스",
               "teamAbbr": "JUV",
               "value": 2.0,
@@ -5396,40 +5517,18 @@ window.CLUTCH_STANDINGS = {
               "played": 4
             },
             {
-              "rank": 8,
-              "name": "Keito Nakamura",
-              "id": "265953",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/265953.png",
-              "team": "리옹",
-              "teamAbbr": "LYON",
+              "rank": 19,
+              "name": "Remo Freuler",
+              "id": "152600",
+              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/152600.png",
+              "team": "올림피아코스",
+              "teamAbbr": "OLY",
               "value": 2.0,
               "display": "2도움",
               "played": 4
             },
             {
-              "rank": 9,
-              "name": "Andrej Kramaric",
-              "id": "139520",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/139520.png",
-              "team": "호펜하임",
-              "teamAbbr": "TSG",
-              "value": 2.0,
-              "display": "2도움",
-              "played": 4
-            },
-            {
-              "rank": 10,
-              "name": "Tim Lemperle",
-              "id": "303792",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/303792.png",
-              "team": "호펜하임",
-              "teamAbbr": "TSG",
-              "value": 2.0,
-              "display": "2도움",
-              "played": 4
-            },
-            {
-              "rank": 11,
+              "rank": 20,
               "name": "Bamidele Isa Yusuf",
               "id": "322421",
               "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/322421.png",
@@ -5437,105 +5536,6 @@ window.CLUTCH_STANDINGS = {
               "teamAbbr": "FER",
               "value": 2.0,
               "display": "2도움",
-              "played": 4
-            },
-            {
-              "rank": 12,
-              "name": "Randal Kolo Muani",
-              "id": "252971",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/252971.png",
-              "team": "유벤투스",
-              "teamAbbr": "JUV",
-              "value": 2.0,
-              "display": "2도움",
-              "played": 4
-            },
-            {
-              "rank": 13,
-              "name": "Gianluca Prestianni",
-              "id": "339191",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/339191.png",
-              "team": "벤피카",
-              "teamAbbr": "SLB",
-              "value": 2.0,
-              "display": "2도움",
-              "played": 4
-            },
-            {
-              "rank": 14,
-              "name": "Damir Redzic",
-              "id": "308980",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/308980.png",
-              "team": "잘츠부르크",
-              "teamAbbr": "SLZ",
-              "value": 2.0,
-              "display": "2도움",
-              "played": 4
-            },
-            {
-              "rank": 15,
-              "name": "Veljko Birmancevic",
-              "id": "238991",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/238991.png",
-              "team": "페렌츠바로시",
-              "teamAbbr": "FER",
-              "value": 2.0,
-              "display": "2도움",
-              "played": 3
-            },
-            {
-              "rank": 16,
-              "name": "Enric Llansana",
-              "id": "287172",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/287172.png",
-              "team": "안더레흐트",
-              "teamAbbr": "AND",
-              "value": 2.0,
-              "display": "2도움",
-              "played": 3
-            },
-            {
-              "rank": 17,
-              "name": "David Bruno",
-              "id": "122768",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/122768.png",
-              "team": "토렌세",
-              "teamAbbr": "TOR",
-              "value": 2.0,
-              "display": "2도움",
-              "played": 3
-            },
-            {
-              "rank": 18,
-              "name": "Orkun Kökçü",
-              "id": "272700",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/272700.png",
-              "team": "베식타시",
-              "teamAbbr": "BES",
-              "value": 2.0,
-              "display": "2도움",
-              "played": 3
-            },
-            {
-              "rank": 19,
-              "name": "Maicon",
-              "id": "379245",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/379245.png",
-              "team": "레프스키 소피아",
-              "teamAbbr": "LEV",
-              "value": 1.0,
-              "display": "1도움",
-              "played": 4
-            },
-            {
-              "rank": 20,
-              "name": "Jakub Surovcik",
-              "id": "336530",
-              "photo": "https://a.espncdn.com/i/headshots/soccer/players/full/336530.png",
-              "team": "스파르타 프라하",
-              "teamAbbr": "SPP",
-              "value": 1.0,
-              "display": "1도움",
               "played": 4
             }
           ]
