@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-27T18:41:20+09:00
+   생성 시각(기준): 2026-11-27T21:56:04+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-27T18:41:20+09:00",
+  "updated": "2026-11-27T21:56:04+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -6762,15 +6762,15 @@ window.CLUTCH_STANDINGS = {
               "team": "대한항공",
               "abbr": "KAL",
               "logo": "https://cdn.kovo.co.kr/emblems/jumbos.svg",
-              "played": 6,
-              "win": 3,
+              "played": 7,
+              "win": 4,
               "draw": null,
               "loss": 3,
               "diff": null,
-              "points": 9,
+              "points": 12,
               "pct": null,
               "gb": null,
-              "sets": "13-12",
+              "sets": "16-13",
               "zone": null
             },
             {
@@ -6810,15 +6810,15 @@ window.CLUTCH_STANDINGS = {
               "team": "KB손해보험",
               "abbr": "KB",
               "logo": "https://cdn.kovo.co.kr/emblems/stars.svg",
-              "played": 6,
+              "played": 7,
               "win": 1,
               "draw": null,
-              "loss": 5,
+              "loss": 6,
               "diff": null,
               "points": 2,
               "pct": null,
               "gb": null,
-              "sets": "7-17",
+              "sets": "8-20",
               "zone": null
             }
           ]
@@ -6828,6 +6828,22 @@ window.CLUTCH_STANDINGS = {
           "rows": [
             {
               "rank": 1,
+              "team": "GS칼텍스",
+              "abbr": "GSC",
+              "logo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
+              "played": 7,
+              "win": 6,
+              "draw": null,
+              "loss": 1,
+              "diff": null,
+              "points": 18,
+              "pct": null,
+              "gb": null,
+              "sets": "19-5",
+              "zone": null
+            },
+            {
+              "rank": 2,
               "team": "도로공사",
               "abbr": "DOW",
               "logo": "https://cdn.kovo.co.kr/emblems/hipass.svg",
@@ -6840,22 +6856,6 @@ window.CLUTCH_STANDINGS = {
               "pct": null,
               "gb": null,
               "sets": "18-6",
-              "zone": null
-            },
-            {
-              "rank": 2,
-              "team": "GS칼텍스",
-              "abbr": "GSC",
-              "logo": "https://cdn.kovo.co.kr/emblems/kixx.svg",
-              "played": 6,
-              "win": 5,
-              "draw": null,
-              "loss": 1,
-              "diff": null,
-              "points": 15,
-              "pct": null,
-              "gb": null,
-              "sets": "16-5",
               "zone": null
             },
             {
@@ -6911,15 +6911,15 @@ window.CLUTCH_STANDINGS = {
               "team": "흥국생명",
               "abbr": "HUN",
               "logo": "https://cdn.kovo.co.kr/emblems/pinkspiders.svg",
-              "played": 6,
+              "played": 7,
               "win": 2,
               "draw": null,
-              "loss": 4,
+              "loss": 5,
               "diff": null,
               "points": 6,
               "pct": null,
               "gb": null,
-              "sets": "8-12",
+              "sets": "8-15",
               "zone": null
             },
             {
