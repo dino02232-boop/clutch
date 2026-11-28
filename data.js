@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-28T11:10:09+09:00",
+  updatedAt: "2026-11-28T12:21:01+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -26919,7 +26919,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천계양체육관에서 열립니다.",
               "**순위표** — 대한항공(홈) 4승 3패·4위·승점 12, KB손해보험(원정) 1승 6패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 11:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 12:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27272,7 +27272,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
               "**순위표** — 흥국생명(홈) 2승 5패·6위·승점 6, GS칼텍스(원정) 6승 1패·1위·승점 18."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 11:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 12:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-27 END */
@@ -27585,7 +27585,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 5패·6위·승점 5, 한국전력(원정) 5승 2패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 11:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 12:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27889,7 +27889,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 3패·5위·승점 8, IBK기업은행(원정) 4승 3패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 11:09 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 12:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-28 END */,
@@ -32742,14 +32742,14 @@ window.CLUTCH_DATA = {
         /* SOCCER-AUTO 2026-11-28 END */,
 
         /* NBA-AUTO 2026-11-28 START */
-        {
+                {
           "id": "nba-mia-nyk-20261128",
           "espnId": "401909326",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T09:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Madison Square Garden",
           "odds": {
             "provider": "DraftKings",
@@ -32814,6 +32814,83 @@ window.CLUTCH_DATA = {
               "text": "**뉴욕 닉스**(홈) 12승 6패(홈 7승 3패, 최근 5경기 5승 0패, 5연승), **마이애미 히트**(원정) 10승 7패(원정 4승 4패, 최근 5경기 4승 1패). 직전 경기(11.25) **마이애미 히트**는 필라델피아 세븐티식서스에 104-111로 졌고, Giannis Antetokounmpo 32점·14리바운드·4어시스트, Davion Mitchell 20점·4리바운드·10어시스트를 기록했습니다. 직전 경기(11.26) **뉴욕 닉스**는 뉴욕 닉스에 102-121로 졌고, Donovan Mitchell 30점·4리바운드·4어시스트, James Harden 28점·1리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 108,
+            "homeScore": 105,
+            "lines": {
+              "away": [
+                "31",
+                "29",
+                "26",
+                "22"
+              ],
+              "home": [
+                "21",
+                "23",
+                "35",
+                "26"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Jalen Brunson",
+                "team": "NY",
+                "min": "40",
+                "pts": 27,
+                "reb": "3",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png"
+              },
+              {
+                "name": "Bam Adebayo",
+                "team": "MIA",
+                "min": "37",
+                "pts": 25,
+                "reb": "7",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066261.png"
+              },
+              {
+                "name": "Giannis Antetokounmpo",
+                "team": "MIA",
+                "min": "32",
+                "pts": 22,
+                "reb": "23",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3032977.png"
+              },
+              {
+                "name": "Karl-Anthony Towns",
+                "team": "NY",
+                "min": "34",
+                "pts": 19,
+                "reb": "10",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png"
+              },
+              {
+                "name": "Mikal Bridges",
+                "team": "NY",
+                "min": "34",
+                "pts": 16,
+                "reb": "6",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3147657.png"
+              },
+              {
+                "name": "Landry Shamet",
+                "team": "NY",
+                "min": "38",
+                "pts": 13,
+                "reb": "7",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3914044.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -33043,14 +33120,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-28 06:24 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-mil-det-20261128",
           "espnId": "401909327",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T09:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Little Caesars Arena",
           "odds": {
             "provider": "DraftKings",
@@ -33115,6 +33192,83 @@ window.CLUTCH_DATA = {
               "text": "**디트로이트 피스턴스**(홈) 11승 6패(홈 3승 3패, 최근 5경기 3승 2패), **밀워키 벅스**(원정) 2승 17패(원정 1승 8패, 최근 5경기 1승 4패). 직전 경기(11.26) **밀워키 벅스**는 브루클린 네츠에 97-104로 졌고, Tyler Herro 28점·2리바운드·5어시스트, Jaime Jaquez Jr. 21점·5리바운드·4어시스트를 기록했습니다. 직전 경기(11.25) **디트로이트 피스턴스**는 올랜도 매직에 104-86로 이겼고, Isaiah Joe 21점·4리바운드·0어시스트, Daniss Jenkins 15점·4리바운드·10어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 98,
+            "homeScore": 113,
+            "lines": {
+              "away": [
+                "29",
+                "21",
+                "26",
+                "22"
+              ],
+              "home": [
+                "24",
+                "24",
+                "42",
+                "23"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Brayden Burries",
+                "team": "MIL",
+                "min": "28",
+                "pts": 23,
+                "reb": "6",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5082206.png"
+              },
+              {
+                "name": "Isaiah Joe",
+                "team": "DET",
+                "min": "27",
+                "pts": 22,
+                "reb": "1",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395702.png"
+              },
+              {
+                "name": "Tyler Herro",
+                "team": "MIL",
+                "min": "35",
+                "pts": 20,
+                "reb": "3",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395725.png"
+              },
+              {
+                "name": "Jaime Jaquez Jr.",
+                "team": "MIL",
+                "min": "35",
+                "pts": 19,
+                "reb": "10",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432848.png"
+              },
+              {
+                "name": "Paul Reed",
+                "team": "DET",
+                "min": "23",
+                "pts": 14,
+                "reb": "7",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278562.png"
+              },
+              {
+                "name": "Elijah Harkless",
+                "team": "DET",
+                "min": "27",
+                "pts": 14,
+                "reb": "4",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397449.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -33343,14 +33497,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-28 06:24 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-phi-ind-20261128",
           "espnId": "401909328",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T09:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Gainbridge Fieldhouse",
           "odds": {
             "provider": "DraftKings",
@@ -33415,6 +33569,83 @@ window.CLUTCH_DATA = {
               "text": "**인디애나 페이서스**(홈) 6승 12패(홈 3승 5패, 최근 5경기 1승 4패), **필라델피아 세븐티식서스**(원정) 15승 4패(원정 7승 1패, 최근 5경기 4승 1패). 직전 경기(11.25) **필라델피아 세븐티식서스**는 마이애미 히트에 111-104로 이겼고, Tyrese Maxey 30점·4리바운드·6어시스트, LeBron James 25점·10리바운드·12어시스트를 기록했습니다. 직전 경기(11.24) **인디애나 페이서스**는 오클라호마시티 썬더에 125-120로 이겼고, Pascal Siakam 20점·8리바운드·5어시스트, Kelly Oubre Jr. 20점·4리바운드·2어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 111,
+            "homeScore": 87,
+            "lines": {
+              "away": [
+                "30",
+                "25",
+                "30",
+                "26"
+              ],
+              "home": [
+                "22",
+                "22",
+                "14",
+                "29"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "LeBron James",
+                "team": "PHI",
+                "min": "27",
+                "pts": 21,
+                "reb": "7",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png"
+              },
+              {
+                "name": "Anfernee Simons",
+                "team": "PHI",
+                "min": "25",
+                "pts": 19,
+                "reb": "2",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4351851.png"
+              },
+              {
+                "name": "Jay Huff",
+                "team": "IND",
+                "min": "22",
+                "pts": 18,
+                "reb": "1",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065731.png"
+              },
+              {
+                "name": "Joel Embiid",
+                "team": "PHI",
+                "min": "28",
+                "pts": 14,
+                "reb": "11",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3059318.png"
+              },
+              {
+                "name": "Tyrese Maxey",
+                "team": "PHI",
+                "min": "29",
+                "pts": 14,
+                "reb": "1",
+                "ast": "6",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431678.png"
+              },
+              {
+                "name": "Andrew Nembhard",
+                "team": "IND",
+                "min": "26",
+                "pts": 14,
+                "reb": "4",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395712.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -33656,14 +33887,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-28 06:25 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-bkn-tor-20261128",
           "espnId": "401909329",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T09:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Scotiabank Arena",
           "odds": {
             "provider": "DraftKings",
@@ -33728,6 +33959,83 @@ window.CLUTCH_DATA = {
               "text": "**토론토 랩터스**(홈) 6승 11패(홈 2승 7패, 최근 5경기 1승 4패), **브루클린 네츠**(원정) 4승 13패(원정 3승 7패, 최근 5경기 1승 4패). 직전 경기(11.26) **브루클린 네츠**는 밀워키 벅스에 104-97로 이겼고, Julius Randle 28점·9리바운드·3어시스트, Noah Clowney 17점·5리바운드·1어시스트를 기록했습니다. 직전 경기(11.24) **토론토 랩터스**는 밀워키 벅스에 111-116로 졌고, Scottie Barnes 31점·5리바운드·8어시스트, Jakob Poeltl 15점·10리바운드·3어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 100,
+            "homeScore": 124,
+            "lines": {
+              "away": [
+                "27",
+                "28",
+                "24",
+                "21"
+              ],
+              "home": [
+                "31",
+                "32",
+                "39",
+                "22"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Scottie Barnes",
+                "team": "TOR",
+                "min": "36",
+                "pts": 34,
+                "reb": "1",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433134.png"
+              },
+              {
+                "name": "Immanuel Quickley",
+                "team": "TOR",
+                "min": "38",
+                "pts": 24,
+                "reb": "10",
+                "ast": "14",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395724.png"
+              },
+              {
+                "name": "Julius Randle",
+                "team": "BKN",
+                "min": "31",
+                "pts": 21,
+                "reb": "5",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png"
+              },
+              {
+                "name": "Mikel Brown Jr.",
+                "team": "BKN",
+                "min": "25",
+                "pts": 21,
+                "reb": "2",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5101761.png"
+              },
+              {
+                "name": "Collin Murray-Boyles",
+                "team": "TOR",
+                "min": "25",
+                "pts": 19,
+                "reb": "7",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5093267.png"
+              },
+              {
+                "name": "Michael Porter Jr.",
+                "team": "BKN",
+                "min": "31",
+                "pts": 17,
+                "reb": "2",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278104.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {

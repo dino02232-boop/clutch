@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-28T07:45:54+09:00
+   생성 시각(기준): 2026-11-28T12:21:01+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-28T07:45:54+09:00",
+  "updated": "2026-11-28T12:21:01+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -5558,18 +5558,33 @@ window.CLUTCH_STANDINGS = {
               "team": "필라델피아 세븐티식서스",
               "abbr": "PHI",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
-              "played": 19,
-              "win": 15,
+              "played": 20,
+              "win": 16,
               "draw": null,
               "loss": 4,
               "points": null,
-              "diff": 40,
-              "pct": ".789",
+              "diff": 64,
+              "pct": ".800",
               "gb": "-",
               "zone": null
             },
             {
               "rank": 2,
+              "team": "디트로이트 피스턴스",
+              "abbr": "DET",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
+              "played": 18,
+              "win": 12,
+              "draw": null,
+              "loss": 6,
+              "points": null,
+              "diff": 110,
+              "pct": ".667",
+              "gb": "3",
+              "zone": null
+            },
+            {
+              "rank": 3,
               "team": "보스턴 셀틱스",
               "abbr": "BOS",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
@@ -5580,22 +5595,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 170,
               "pct": ".667",
-              "gb": "2.5",
-              "zone": null
-            },
-            {
-              "rank": 3,
-              "team": "뉴욕 닉스",
-              "abbr": "NY",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
-              "played": 18,
-              "win": 12,
-              "draw": null,
-              "loss": 6,
-              "points": null,
-              "diff": 116,
-              "pct": ".667",
-              "gb": "2.5",
+              "gb": "3",
               "zone": null
             },
             {
@@ -5610,22 +5610,22 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 53,
               "pct": ".647",
-              "gb": "3",
+              "gb": "3.5",
               "zone": null
             },
             {
               "rank": 5,
-              "team": "디트로이트 피스턴스",
-              "abbr": "DET",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
-              "played": 17,
-              "win": 11,
+              "team": "뉴욕 닉스",
+              "abbr": "NY",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+              "played": 19,
+              "win": 12,
               "draw": null,
-              "loss": 6,
+              "loss": 7,
               "points": null,
-              "diff": 95,
-              "pct": ".647",
-              "gb": "3",
+              "diff": 113,
+              "pct": ".632",
+              "gb": "3.5",
               "zone": null
             },
             {
@@ -5633,13 +5633,13 @@ window.CLUTCH_STANDINGS = {
               "team": "마이애미 히트",
               "abbr": "MIA",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
-              "played": 17,
-              "win": 10,
+              "played": 18,
+              "win": 11,
               "draw": null,
               "loss": 7,
               "points": null,
-              "diff": 13,
-              "pct": ".588",
+              "diff": 16,
+              "pct": ".611",
               "gb": "4",
               "zone": null
             },
@@ -5655,7 +5655,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": 7,
               "pct": ".474",
-              "gb": "6",
+              "gb": "6.5",
               "zone": null
             },
             {
@@ -5670,11 +5670,26 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -84,
               "pct": ".412",
-              "gb": "7",
+              "gb": "7.5",
               "zone": null
             },
             {
               "rank": 9,
+              "team": "토론토 랩터스",
+              "abbr": "TOR",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+              "played": 18,
+              "win": 7,
+              "draw": null,
+              "loss": 11,
+              "points": null,
+              "diff": 22,
+              "pct": ".389",
+              "gb": "8",
+              "zone": null
+            },
+            {
+              "rank": 10,
               "team": "워싱턴 위저즈",
               "abbr": "WSH",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
@@ -5685,22 +5700,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -106,
               "pct": ".368",
-              "gb": "8",
-              "zone": null
-            },
-            {
-              "rank": 10,
-              "team": "토론토 랩터스",
-              "abbr": "TOR",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-              "played": 17,
-              "win": 6,
-              "draw": null,
-              "loss": 11,
-              "points": null,
-              "diff": -2,
-              "pct": ".353",
-              "gb": "8",
+              "gb": "8.5",
               "zone": null
             },
             {
@@ -5715,7 +5715,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -111,
               "pct": ".333",
-              "gb": "8.5",
+              "gb": "9",
               "zone": null
             },
             {
@@ -5723,14 +5723,14 @@ window.CLUTCH_STANDINGS = {
               "team": "인디애나 페이서스",
               "abbr": "IND",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
-              "played": 18,
+              "played": 19,
               "win": 6,
               "draw": null,
-              "loss": 12,
+              "loss": 13,
               "points": null,
-              "diff": -60,
-              "pct": ".333",
-              "gb": "8.5",
+              "diff": -84,
+              "pct": ".316",
+              "gb": "9.5",
               "zone": null
             },
             {
@@ -5745,7 +5745,7 @@ window.CLUTCH_STANDINGS = {
               "points": null,
               "diff": -166,
               "pct": ".235",
-              "gb": "10",
+              "gb": "10.5",
               "zone": null
             },
             {
@@ -5753,14 +5753,14 @@ window.CLUTCH_STANDINGS = {
               "team": "브루클린 네츠",
               "abbr": "BKN",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
-              "played": 17,
+              "played": 18,
               "win": 4,
               "draw": null,
-              "loss": 13,
+              "loss": 14,
               "points": null,
-              "diff": -138,
-              "pct": ".235",
-              "gb": "10",
+              "diff": -162,
+              "pct": ".222",
+              "gb": "11",
               "zone": null
             },
             {
@@ -5768,14 +5768,14 @@ window.CLUTCH_STANDINGS = {
               "team": "밀워키 벅스",
               "abbr": "MIL",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
-              "played": 19,
+              "played": 20,
               "win": 2,
               "draw": null,
-              "loss": 17,
+              "loss": 18,
               "points": null,
-              "diff": -212,
-              "pct": ".105",
-              "gb": "13",
+              "diff": -227,
+              "pct": ".100",
+              "gb": "14",
               "zone": null
             }
           ]
