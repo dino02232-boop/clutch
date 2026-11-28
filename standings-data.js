@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-28T12:21:01+09:00
+   생성 시각(기준): 2026-11-28T13:27:47+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-28T12:21:01+09:00",
+  "updated": "2026-11-28T13:27:47+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -5570,6 +5570,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 2,
+              "team": "애틀랜타 호크스",
+              "abbr": "ATL",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+              "played": 18,
+              "win": 12,
+              "draw": null,
+              "loss": 6,
+              "points": null,
+              "diff": 54,
+              "pct": ".667",
+              "gb": "3",
+              "zone": null
+            },
+            {
+              "rank": 3,
               "team": "디트로이트 피스턴스",
               "abbr": "DET",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
@@ -5584,32 +5599,17 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 3,
+              "rank": 4,
               "team": "보스턴 셀틱스",
               "abbr": "BOS",
               "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
-              "played": 18,
+              "played": 19,
               "win": 12,
               "draw": null,
-              "loss": 6,
+              "loss": 7,
               "points": null,
-              "diff": 170,
-              "pct": ".667",
-              "gb": "3",
-              "zone": null
-            },
-            {
-              "rank": 4,
-              "team": "애틀랜타 호크스",
-              "abbr": "ATL",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
-              "played": 17,
-              "win": 11,
-              "draw": null,
-              "loss": 6,
-              "points": null,
-              "diff": 53,
-              "pct": ".647",
+              "diff": 169,
+              "pct": ".632",
               "gb": "3.5",
               "zone": null
             },
@@ -5815,17 +5815,17 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 3,
-              "team": "미네소타 팀버울브스",
-              "abbr": "MIN",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
-              "played": 19,
-              "win": 14,
+              "team": "멤피스 그리즐리스",
+              "abbr": "MEM",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+              "played": 20,
+              "win": 15,
               "draw": null,
               "loss": 5,
               "points": null,
-              "diff": 198,
-              "pct": ".737",
-              "gb": "1.5",
+              "diff": 183,
+              "pct": ".750",
+              "gb": "1",
               "zone": null
             },
             {
@@ -5845,17 +5845,17 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 5,
-              "team": "멤피스 그리즐리스",
-              "abbr": "MEM",
-              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
-              "played": 19,
+              "team": "미네소타 팀버울브스",
+              "abbr": "MIN",
+              "logo": "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
+              "played": 20,
               "win": 14,
               "draw": null,
-              "loss": 5,
+              "loss": 6,
               "points": null,
-              "diff": 178,
-              "pct": ".737",
-              "gb": "1.5",
+              "diff": 193,
+              "pct": ".700",
+              "gb": "2",
               "zone": null
             },
             {

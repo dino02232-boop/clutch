@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-28T12:21:01+09:00",
+  updatedAt: "2026-11-28T13:27:47+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -26919,7 +26919,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천계양체육관에서 열립니다.",
               "**순위표** — 대한항공(홈) 4승 3패·4위·승점 12, KB손해보험(원정) 1승 6패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 12:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 13:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27272,7 +27272,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
               "**순위표** — 흥국생명(홈) 2승 5패·6위·승점 6, GS칼텍스(원정) 6승 1패·1위·승점 18."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 12:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 13:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-27 END */
@@ -27585,7 +27585,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 5패·6위·승점 5, 한국전력(원정) 5승 2패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 12:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 13:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27889,7 +27889,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 3패·5위·승점 8, IBK기업은행(원정) 4승 3패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 12:20 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 13:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-28 END */,
@@ -34262,14 +34262,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-28 06:25 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-atl-bos-20261128",
           "espnId": "401909330",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T10:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "TD Garden",
           "odds": {
             "provider": "DraftKings",
@@ -34334,6 +34334,83 @@ window.CLUTCH_DATA = {
               "text": "**보스턴 셀틱스**(홈) 12승 6패(홈 6승 1패, 최근 5경기 1승 4패), **애틀랜타 호크스**(원정) 11승 6패(원정 6승 3패, 최근 5경기 4승 1패, 4연승). 직전 경기(11.22) **애틀랜타 호크스**는 디트로이트 피스턴스에 107-97로 이겼고, Nickeil Alexander-Walker 27점·2리바운드·1어시스트, Corey Kispert 18점·4리바운드·3어시스트를 기록했습니다. 직전 경기(11.25) **보스턴 셀틱스**는 워싱턴 위저즈에 131-116로 이겼고, Jayson Tatum 41점·6리바운드·8어시스트, Paul George 28점·4리바운드·9어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 87,
+            "homeScore": 86,
+            "lines": {
+              "away": [
+                "14",
+                "25",
+                "31",
+                "17"
+              ],
+              "home": [
+                "29",
+                "22",
+                "18",
+                "17"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Jalen Johnson",
+                "team": "ATL",
+                "min": "36",
+                "pts": 24,
+                "reb": "12",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4701230.png"
+              },
+              {
+                "name": "Nickeil Alexander-Walker",
+                "team": "ATL",
+                "min": "32",
+                "pts": 20,
+                "reb": "4",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278039.png"
+              },
+              {
+                "name": "Jayson Tatum",
+                "team": "BOS",
+                "min": "38",
+                "pts": 20,
+                "reb": "9",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png"
+              },
+              {
+                "name": "Luguentz Dort",
+                "team": "ATL",
+                "min": "29",
+                "pts": 14,
+                "reb": "2",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397020.png"
+              },
+              {
+                "name": "Derrick White",
+                "team": "BOS",
+                "min": "31",
+                "pts": 13,
+                "reb": "3",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3078576.png"
+              },
+              {
+                "name": "Aaron Wiggins",
+                "team": "ATL",
+                "min": "21",
+                "pts": 11,
+                "reb": "0",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397183.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -34564,14 +34641,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-28 06:25 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-mem-min-20261128",
           "espnId": "401909331",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T10:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Target Center",
           "odds": {
             "provider": "DraftKings",
@@ -34636,6 +34713,83 @@ window.CLUTCH_DATA = {
               "text": "**미네소타 팀버울브스**(홈) 14승 5패(홈 9승 3패, 최근 5경기 4승 1패, 3연승), **멤피스 그리즐리스**(원정) 14승 5패(원정 9승 1패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.26) **멤피스 그리즐리스**는 LA 클리퍼스에 115-97로 이겼고, Jaylen Wells 19점·6리바운드·1어시스트, Ty Jerome 17점·5리바운드·7어시스트를 기록했습니다. 직전 경기(11.26) **미네소타 팀버울브스**는 오클라호마시티 썬더에 113-106로 이겼고, Jaden McDaniels 32점·10리바운드·5어시스트, LaMelo Ball 19점·7리바운드·8어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 114,
+            "homeScore": 109,
+            "lines": {
+              "away": [
+                "32",
+                "29",
+                "21",
+                "32"
+              ],
+              "home": [
+                "25",
+                "25",
+                "31",
+                "28"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Ayo Dosunmu",
+                "team": "MIN",
+                "min": "37",
+                "pts": 27,
+                "reb": "4",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397002.png"
+              },
+              {
+                "name": "Cedric Coward",
+                "team": "MEM",
+                "min": "28",
+                "pts": 22,
+                "reb": "3",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4903027.png"
+              },
+              {
+                "name": "Javon Small",
+                "team": "MEM",
+                "min": "17",
+                "pts": 19,
+                "reb": "1",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4781746.png"
+              },
+              {
+                "name": "Jonathan Kuminga",
+                "team": "MIN",
+                "min": "40",
+                "pts": 19,
+                "reb": "6",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433247.png"
+              },
+              {
+                "name": "Ty Jerome",
+                "team": "MEM",
+                "min": "27",
+                "pts": 18,
+                "reb": "1",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4065733.png"
+              },
+              {
+                "name": "Cam Spencer",
+                "team": "MEM",
+                "min": "28",
+                "pts": 16,
+                "reb": "6",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433083.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
