@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-28T17:42:40+09:00
+   생성 시각(기준): 2026-11-28T18:42:02+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-28T17:42:40+09:00",
+  "updated": "2026-11-28T18:42:02+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -6863,15 +6863,15 @@ window.CLUTCH_STANDINGS = {
               "team": "IBK기업은행",
               "abbr": "IBK",
               "logo": "https://cdn.kovo.co.kr/emblems/altos.svg",
-              "played": 7,
-              "win": 4,
+              "played": 8,
+              "win": 5,
               "draw": null,
               "loss": 3,
               "diff": null,
-              "points": 12,
+              "points": 15,
               "pct": null,
               "gb": null,
-              "sets": "14-11",
+              "sets": "17-11",
               "zone": null
             },
             {
@@ -6895,15 +6895,15 @@ window.CLUTCH_STANDINGS = {
               "team": "정관장",
               "abbr": "JKG",
               "logo": "https://cdn.kovo.co.kr/emblems/redsparks.svg",
-              "played": 6,
+              "played": 7,
               "win": 3,
               "draw": null,
-              "loss": 3,
+              "loss": 4,
               "diff": null,
               "points": 8,
               "pct": null,
               "gb": null,
-              "sets": "10-13",
+              "sets": "10-16",
               "zone": null
             },
             {
