@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-28T13:27:47+09:00",
+  updatedAt: "2026-11-28T14:27:52+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -26919,7 +26919,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천계양체육관에서 열립니다.",
               "**순위표** — 대한항공(홈) 4승 3패·4위·승점 12, KB손해보험(원정) 1승 6패·7위·승점 2."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 13:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 14:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27272,7 +27272,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 인천삼산월드체육관에서 열립니다.",
               "**순위표** — 흥국생명(홈) 2승 5패·6위·승점 6, GS칼텍스(원정) 6승 1패·1위·승점 18."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 13:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 14:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-27 END */
@@ -27585,7 +27585,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 1승 5패·6위·승점 5, 한국전력(원정) 5승 2패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 13:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 14:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27889,7 +27889,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 3패·5위·승점 8, IBK기업은행(원정) 4승 3패·3위·승점 12."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 13:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 14:27 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-28 END */,
@@ -35040,14 +35040,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-28 06:25 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-dal-phx-20261128",
           "espnId": "401909332",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T11:00:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Mortgage Matchup Center",
           "odds": {
             "provider": "DraftKings",
@@ -35112,6 +35112,83 @@ window.CLUTCH_DATA = {
               "text": "**피닉스 선즈**(홈) 9승 8패(홈 5승 4패, 최근 5경기 4승 1패), **댈러스 매버릭스**(원정) 11승 7패(원정 4승 5패, 최근 5경기 4승 1패, 4연승). 직전 경기(11.25) **댈러스 매버릭스**는 덴버 너기츠에 120-101로 이겼고, Cooper Flagg 24점·6리바운드·12어시스트, P.J. Washington 14점·6리바운드·0어시스트를 기록했습니다. 직전 경기(11.26) **피닉스 선즈**는 휴스턴 로키츠에 104-116로 졌고, Devin Booker 25점·0리바운드·5어시스트, Jalen Green 16점·4리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 113,
+            "homeScore": 109,
+            "lines": {
+              "away": [
+                "28",
+                "25",
+                "25",
+                "35"
+              ],
+              "home": [
+                "29",
+                "34",
+                "32",
+                "14"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Cooper Flagg",
+                "team": "DAL",
+                "min": "42",
+                "pts": 34,
+                "reb": "7",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041939.png"
+              },
+              {
+                "name": "Devin Booker",
+                "team": "PHX",
+                "min": "38",
+                "pts": 31,
+                "reb": "5",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3136193.png"
+              },
+              {
+                "name": "Max Christie",
+                "team": "DAL",
+                "min": "20",
+                "pts": 16,
+                "reb": "3",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4432582.png"
+              },
+              {
+                "name": "Naji Marshall",
+                "team": "DAL",
+                "min": "31",
+                "pts": 14,
+                "reb": "2",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278594.png"
+              },
+              {
+                "name": "Collin Gillespie",
+                "team": "PHX",
+                "min": "30",
+                "pts": 14,
+                "reb": "9",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4278585.png"
+              },
+              {
+                "name": "Miles Bridges",
+                "team": "PHX",
+                "min": "30",
+                "pts": 13,
+                "reb": "5",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066383.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -35340,14 +35417,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-28 06:25 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-lal-sas-20261128",
           "espnId": "401909333",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T11:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Frost Bank Center",
           "odds": {
             "provider": "DraftKings",
@@ -35412,6 +35489,83 @@ window.CLUTCH_DATA = {
               "text": "**샌안토니오 스퍼스**(홈) 15승 4패(홈 7승 3패, 최근 5경기 3승 2패), **LA 레이커스**(원정) 15승 3패(원정 7승 1패, 최근 5경기 4승 1패, 2연승). 직전 경기(11.24) **LA 레이커스**는 유타 재즈에 109-94로 이겼고, Luka Doncic 28점·4리바운드·8어시스트, Jake LaRavia 15점·10리바운드·1어시스트를 기록했습니다. 직전 경기(11.26) **샌안토니오 스퍼스**는 포틀랜드 트레일블레이저스에 111-116로 졌고, Victor Wembanyama 44점·16리바운드·3어시스트, Stephon Castle 20점·6리바운드·9어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 96,
+            "homeScore": 99,
+            "lines": {
+              "away": [
+                "27",
+                "27",
+                "14",
+                "28"
+              ],
+              "home": [
+                "14",
+                "24",
+                "30",
+                "31"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Luka Doncic",
+                "team": "LAL",
+                "min": "39",
+                "pts": 31,
+                "reb": "6",
+                "ast": "8",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png"
+              },
+              {
+                "name": "Stephon Castle",
+                "team": "SA",
+                "min": "36",
+                "pts": 26,
+                "reb": "4",
+                "ast": "9",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4845367.png"
+              },
+              {
+                "name": "Victor Wembanyama",
+                "team": "SA",
+                "min": "35",
+                "pts": 25,
+                "reb": "16",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png"
+              },
+              {
+                "name": "Austin Reaves",
+                "team": "LAL",
+                "min": "36",
+                "pts": 21,
+                "reb": "8",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066457.png"
+              },
+              {
+                "name": "Dylan Harper",
+                "team": "SA",
+                "min": "24",
+                "pts": 14,
+                "reb": "4",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5037871.png"
+              },
+              {
+                "name": "Collin Sexton",
+                "team": "LAL",
+                "min": "15",
+                "pts": 12,
+                "reb": "4",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277811.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -35622,14 +35776,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-28 06:25 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-den-utah-20261128",
           "espnId": "401909334",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T11:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Delta Center",
           "odds": {
             "provider": "DraftKings",
@@ -35694,6 +35848,83 @@ window.CLUTCH_DATA = {
               "text": "**유타 재즈**(홈) 3승 16패(홈 1승 9패, 최근 5경기 2승 3패, 3연패), **덴버 너기츠**(원정) 10승 6패(원정 5승 2패, 최근 5경기 3승 2패). 직전 경기(11.25) **덴버 너기츠**는 댈러스 매버릭스에 101-120로 졌고, Jamal Murray 20점·2리바운드·3어시스트, Nikola Jokic 18점·11리바운드·5어시스트를 기록했습니다. 직전 경기(11.24) **유타 재즈**는 LA 레이커스에 94-109로 졌고, Kyle Filipowski 21점·12리바운드·4어시스트, Ace Bailey 18점·5리바운드·1어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 120,
+            "homeScore": 107,
+            "lines": {
+              "away": [
+                "27",
+                "25",
+                "33",
+                "35"
+              ],
+              "home": [
+                "22",
+                "31",
+                "32",
+                "22"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Jamal Murray",
+                "team": "DEN",
+                "min": "35",
+                "pts": 36,
+                "reb": "5",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3936299.png"
+              },
+              {
+                "name": "Keyonte George",
+                "team": "UTAH",
+                "min": "38",
+                "pts": 25,
+                "reb": "4",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4433627.png"
+              },
+              {
+                "name": "Christian Braun",
+                "team": "DEN",
+                "min": "32",
+                "pts": 20,
+                "reb": "8",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431767.png"
+              },
+              {
+                "name": "Darryn Peterson",
+                "team": "UTAH",
+                "min": "34",
+                "pts": 20,
+                "reb": "5",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5041955.png"
+              },
+              {
+                "name": "Svi Mykhailiuk",
+                "team": "UTAH",
+                "min": "28",
+                "pts": 18,
+                "reb": "2",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3133602.png"
+              },
+              {
+                "name": "Nikola Jokic",
+                "team": "DEN",
+                "min": "36",
+                "pts": 17,
+                "reb": "9",
+                "ast": "15",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3112335.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -35911,14 +36142,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-28 06:25 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-nop-lac-20261128",
           "espnId": "401909335",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T11:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Intuit Dome",
           "odds": {
             "provider": "DraftKings",
@@ -35983,6 +36214,83 @@ window.CLUTCH_DATA = {
               "text": "**LA 클리퍼스**(홈) 4승 13패(홈 4승 4패, 최근 5경기 0승 5패, 5연패), **뉴올리언스 펠리컨스**(원정) 5승 14패(원정 1승 6패, 최근 5경기 1승 4패, 4연패). 직전 경기(11.24) **뉴올리언스 펠리컨스**는 뉴올리언스 펠리컨스에 123-119로 이겼고, Jalen Green 25점·3리바운드·0어시스트, Devin Booker 22점·5리바운드·8어시스트를 기록했습니다. 직전 경기(11.26) **LA 클리퍼스**는 멤피스 그리즐리스에 97-115로 졌고, Brandon Ingram 18점·5리바운드·4어시스트, Rui Hachimura 14점·12리바운드·5어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 105,
+            "homeScore": 104,
+            "lines": {
+              "away": [
+                "29",
+                "25",
+                "26",
+                "25"
+              ],
+              "home": [
+                "28",
+                "22",
+                "27",
+                "27"
+              ]
+            },
+            "winner": "away",
+            "top": [
+              {
+                "name": "Zion Williamson",
+                "team": "NO",
+                "min": "31",
+                "pts": 25,
+                "reb": "7",
+                "ast": "5",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4395628.png"
+              },
+              {
+                "name": "Trey Murphy III",
+                "team": "NO",
+                "min": "34",
+                "pts": 25,
+                "reb": "2",
+                "ast": "0",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4397688.png"
+              },
+              {
+                "name": "Darius Garland",
+                "team": "LAC",
+                "min": "32",
+                "pts": 19,
+                "reb": "3",
+                "ast": "9",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4396907.png"
+              },
+              {
+                "name": "Brook Lopez",
+                "team": "LAC",
+                "min": "28",
+                "pts": 17,
+                "reb": "6",
+                "ast": "1",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3448.png"
+              },
+              {
+                "name": "Jordan Poole",
+                "team": "NO",
+                "min": "23",
+                "pts": 16,
+                "reb": "5",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4277956.png"
+              },
+              {
+                "name": "Brandon Ingram",
+                "team": "LAC",
+                "min": "32",
+                "pts": 15,
+                "reb": "5",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/3913176.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
@@ -36213,14 +36521,14 @@ window.CLUTCH_DATA = {
             "note": "출전 여부는 ESPN 2026-11-28 06:25 기준이며 경기 전까지 변동될 수 있습니다."
           }
         },
-        {
+                {
           "id": "nba-gsw-por-20261128",
           "espnId": "401909336",
           "sport": "basketball",
           "league": "NBA",
           "source": "espn",
           "start": "2026-11-28T11:30:00+09:00",
-          "status": "scheduled",
+          "status": "final",
           "venue": "Moda Center",
           "odds": {
             "provider": "DraftKings",
@@ -36285,6 +36593,83 @@ window.CLUTCH_DATA = {
               "text": "**포틀랜드 트레일블레이저스**(홈) 12승 6패(홈 4승 2패, 최근 5경기 3승 2패, 2연승), **골든스테이트 워리어스**(원정) 10승 8패(원정 2승 7패, 최근 5경기 2승 3패, 2연승). 직전 경기(11.26) **골든스테이트 워리어스**는 골든스테이트 워리어스에 110-129로 졌고, Domantas Sabonis 27점·10리바운드·6어시스트, Darius Acuff Jr. 22점·4리바운드·9어시스트를 기록했습니다. 직전 경기(11.26) **포틀랜드 트레일블레이저스**는 샌안토니오 스퍼스에 116-111로 이겼고, Deni Avdija 33점·12리바운드·7어시스트, Damian Lillard 29점·3리바운드·7어시스트를 기록했습니다."
             }
           ],
+          "result": {
+            "state": "final",
+            "detail": "Final",
+            "awayScore": 94,
+            "homeScore": 116,
+            "lines": {
+              "away": [
+                "11",
+                "33",
+                "34",
+                "16"
+              ],
+              "home": [
+                "37",
+                "30",
+                "24",
+                "25"
+              ]
+            },
+            "winner": "home",
+            "top": [
+              {
+                "name": "Deni Avdija",
+                "team": "POR",
+                "min": "37",
+                "pts": 26,
+                "reb": "7",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png"
+              },
+              {
+                "name": "Toumani Camara",
+                "team": "POR",
+                "min": "31",
+                "pts": 20,
+                "reb": "8",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4431736.png"
+              },
+              {
+                "name": "Yaxel Lendeborg",
+                "team": "GS",
+                "min": "30",
+                "pts": 18,
+                "reb": "7",
+                "ast": "2",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/5175737.png"
+              },
+              {
+                "name": "Scoot Henderson",
+                "team": "POR",
+                "min": "31",
+                "pts": 18,
+                "reb": "6",
+                "ast": "7",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4683678.png"
+              },
+              {
+                "name": "De'Anthony Melton",
+                "team": "GS",
+                "min": "27",
+                "pts": 17,
+                "reb": "7",
+                "ast": "3",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4066436.png"
+              },
+              {
+                "name": "Brandin Podziemski",
+                "team": "GS",
+                "min": "35",
+                "pts": 16,
+                "reb": "4",
+                "ast": "4",
+                "photo": "https://a.espncdn.com/i/headshots/nba/players/full/4709138.png"
+              }
+            ]
+          },
           "details": {
             "teams": [
               {
