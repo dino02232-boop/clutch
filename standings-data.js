@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-28T14:27:52+09:00
+   생성 시각(기준): 2026-11-28T16:44:37+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-28T14:27:52+09:00",
+  "updated": "2026-11-28T16:44:37+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -6730,15 +6730,15 @@ window.CLUTCH_STANDINGS = {
               "team": "한국전력",
               "abbr": "KEP",
               "logo": "https://cdn.kovo.co.kr/emblems/vixtorm.svg",
-              "played": 7,
+              "played": 8,
               "win": 5,
               "draw": null,
-              "loss": 2,
+              "loss": 3,
               "diff": null,
               "points": 15,
               "pct": null,
               "gb": null,
-              "sets": "17-11",
+              "sets": "18-14",
               "zone": null
             },
             {
@@ -6794,15 +6794,15 @@ window.CLUTCH_STANDINGS = {
               "team": "OK저축은행",
               "abbr": "OK",
               "logo": "https://cdn.kovo.co.kr/emblems/okman.svg",
-              "played": 6,
-              "win": 1,
+              "played": 7,
+              "win": 2,
               "draw": null,
               "loss": 5,
               "diff": null,
-              "points": 5,
+              "points": 8,
               "pct": null,
               "gb": null,
-              "sets": "10-16",
+              "sets": "13-17",
               "zone": null
             },
             {
