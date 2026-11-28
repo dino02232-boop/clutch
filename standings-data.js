@@ -4,10 +4,10 @@
    팀 순위 · 개인 순위를 ESPN 공개 API 에서 받아 그대로 넣습니다.
    손으로 고치지 말고 생성기를 다시 돌리세요(값을 지어내지 않습니다).
      python3 tools/fetch_standings.py
-   생성 시각(기준): 2026-11-28T22:55:07+09:00
+   생성 시각(기준): 2026-11-29T00:36:27+09:00
    ============================================================= */
 window.CLUTCH_STANDINGS = {
-  "updated": "2026-11-28T22:55:07+09:00",
+  "updated": "2026-11-29T00:36:27+09:00",
   "source": "ESPN",
   "leagues": [
     {
@@ -888,12 +888,12 @@ window.CLUTCH_STANDINGS = {
               "team": "레알 베티스",
               "abbr": "BET",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/244.png",
-              "played": 13,
+              "played": 14,
               "win": 8,
               "draw": 3,
-              "loss": 2,
+              "loss": 3,
               "points": 27,
-              "diff": 5,
+              "diff": 4,
               "pct": null,
               "gb": null,
               "zone": {
@@ -1040,6 +1040,21 @@ window.CLUTCH_STANDINGS = {
             },
             {
               "rank": 13,
+              "team": "라요 바예카노",
+              "abbr": "RAY",
+              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/101.png",
+              "played": 13,
+              "win": 4,
+              "draw": 3,
+              "loss": 6,
+              "points": 15,
+              "diff": -6,
+              "pct": null,
+              "gb": null,
+              "zone": null
+            },
+            {
+              "rank": 14,
               "team": "오사수나",
               "abbr": "OSA",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/97.png",
@@ -1054,7 +1069,7 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 14,
+              "rank": 15,
               "team": "셀타 비고",
               "abbr": "CEL",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/85.png",
@@ -1069,28 +1084,13 @@ window.CLUTCH_STANDINGS = {
               "zone": null
             },
             {
-              "rank": 15,
+              "rank": 16,
               "team": "레반테",
               "abbr": "LEV",
               "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1538.png",
               "played": 14,
               "win": 2,
               "draw": 6,
-              "loss": 6,
-              "points": 12,
-              "diff": -7,
-              "pct": null,
-              "gb": null,
-              "zone": null
-            },
-            {
-              "rank": 16,
-              "team": "라요 바예카노",
-              "abbr": "RAY",
-              "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/101.png",
-              "played": 12,
-              "win": 3,
-              "draw": 3,
               "loss": 6,
               "points": 12,
               "diff": -7,

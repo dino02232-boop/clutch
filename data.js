@@ -92,7 +92,7 @@
 
 window.CLUTCH_DATA = {
   version: 1,
-  updatedAt: "2026-11-28T23:38:36+09:00",
+  updatedAt: "2026-11-29T00:36:27+09:00",
 
   sports: [
     { id: "soccer", name: "축구", icon: "⚽" },
@@ -27634,7 +27634,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 부산강서체육관에서 열립니다.",
               "**순위표** — OK저축은행(홈) 2승 5패·6위·승점 8, 한국전력(원정) 5승 3패·2위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 23:38 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-29 00:36 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -27986,7 +27986,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 정관장(홈) 3승 4패·5위·승점 8, IBK기업은행(원정) 5승 3패·3위·승점 15."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 23:38 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-29 00:36 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-28 END */,
@@ -30391,7 +30391,7 @@ window.CLUTCH_DATA = {
             }
           }
         },
-        {
+                {
           "id": "soccer-ray-bet-20261128",
           "espnId": "401882796",
           "sport": "soccer",
@@ -30474,6 +30474,23 @@ window.CLUTCH_DATA = {
             }
           ],
           "preview": "라리가에서는 레알 베티스가 4위(승점 27, 득실 +5)로 상위권, 라요 바예카노가 16위(승점 12, 득실 -7)로 하위권입니다. 홈에서 레알 베티스는 5승 1패, 원정에서 라요 바예카노는 2무 4패이고, 최근 5경기는 레알 베티스 3승 1무 1패, 라요 바예카노 2승 3패입니다. 두 팀 평균 득점을 합치면 2.8골, 평균 실점은 3.0골입니다.",
+          "result": {
+            "state": "final",
+            "detail": "FT",
+            "awayScore": 1,
+            "homeScore": 0,
+            "lines": {
+              "away": [
+                "0",
+                "1"
+              ],
+              "home": [
+                "0",
+                "0"
+              ]
+            },
+            "winner": "away"
+          },
           "details": {
             "teams": [
               {
@@ -30587,7 +30604,93 @@ window.CLUTCH_DATA = {
                     "line": "시즌 아웃"
                   }
                 ],
-                "injurySummary": "결장 3명"
+                "injurySummary": "결장 3명",
+                "players": [
+                  {
+                    "name": "Emil Audero",
+                    "rating": 8.5,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pathé Ciss",
+                    "rating": 8.1,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Isi Palazón",
+                    "rating": 8.0,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Andrei Rațiu",
+                    "rating": 7.9,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Jorge de Frutos",
+                    "rating": 7.9,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Unai López",
+                    "rating": 7.5,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Florian Lejeune",
+                    "rating": 7.4,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Sergio Camello",
+                    "rating": 7.2,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Gnangoro Bouare",
+                    "rating": 6.9,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Adrià Pedrosa",
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Álvaro García",
+                    "rating": 6.5,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pedro Díaz",
+                    "rating": 6.4,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Giorgi Tsitaishvili",
+                    "rating": 6.3,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "Randy Nteka",
+                    "rating": 5.8,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               },
               {
                 "abbr": "BET",
@@ -30695,7 +30798,105 @@ window.CLUTCH_DATA = {
                     "line": "복귀 예상 2026년 12월 중순"
                   }
                 ],
-                "injurySummary": "결장 2명"
+                "injurySummary": "결장 2명",
+                "players": [
+                  {
+                    "name": "Isco",
+                    "rating": 7.6,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Marc Roca",
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Pablo Fornals",
+                    "rating": 7.4,
+                    "pos": "MF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Abdessamad Ezzalzouli",
+                    "rating": 7.3,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Natan",
+                    "rating": 7.2,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Héctor Bellerín",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Marc Bartra",
+                    "rating": 7.1,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Álvaro Vallés",
+                    "rating": 6.8,
+                    "pos": "GK",
+                    "starter": true
+                  },
+                  {
+                    "name": "Aitor Ruibal",
+                    "rating": 6.7,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Antony",
+                    "rating": 6.6,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Júnior Firpo",
+                    "rating": 6.6,
+                    "pos": "DF",
+                    "starter": true
+                  },
+                  {
+                    "name": "Fran García",
+                    "rating": 6.4,
+                    "pos": "DF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Juan Hernández",
+                    "rating": 6.4,
+                    "pos": "FW",
+                    "starter": true
+                  },
+                  {
+                    "name": "Nelson Deossa",
+                    "rating": 6.2,
+                    "pos": "MF",
+                    "starter": false
+                  },
+                  {
+                    "name": "Troy Parrott",
+                    "rating": 6.2,
+                    "pos": "FW",
+                    "starter": false
+                  },
+                  {
+                    "name": "José Antonio Morante",
+                    "rating": 6.1,
+                    "pos": "FW",
+                    "starter": false
+                  }
+                ]
               }
             ],
             "keyPlayers": [
@@ -30717,7 +30918,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Isco_2018.jpg/120px-Isco_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
                     "stats": [
                       "도움 2"
-                    ]
+                    ],
+                    "rating": 7.6
                   }
                 ]
               },
@@ -30731,7 +30933,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://r2.thesportsdb.com/images/media/player/thumb/l97zh31679052300.jpg",
                     "stats": [
                       "득점 7"
-                    ]
+                    ],
+                    "rating": 7.2
                   },
                   {
                     "name": "Unai López",
@@ -30739,7 +30942,8 @@ window.CLUTCH_DATA = {
                     "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Unai_Lopez_en_2026.jpg?width=120",
                     "stats": [
                       "도움 3"
-                    ]
+                    ],
+                    "rating": 7.5
                   }
                 ]
               }
@@ -30786,6 +30990,58 @@ window.CLUTCH_DATA = {
             },
             "fotmobId": 5868141,
             "fotmobSwapped": false
+          },
+          "status": "final",
+          "postgame": {
+            "playerOfTheMatch": {
+              "name": "Emil Audero",
+              "teamEn": "Rayo Vallecano",
+              "team": "라요 바예카노",
+              "side": "away",
+              "rating": 8.5
+            },
+            "carry": {
+              "name": "Emil Audero",
+              "team": "라요 바예카노",
+              "side": "away",
+              "tag": "up",
+              "line": "Emil Audero의 선방 5개(평점 8.5)로 무실점 승리를 지켰습니다.",
+              "facts": [
+                "평점 8.5",
+                "선방 5",
+                "실점 0",
+                "90분"
+              ],
+              "pos": "GK",
+              "rating": 8.5,
+              "min": 90,
+              "goals": 0,
+              "assists": 0,
+              "saves": 5,
+              "conceded": 0,
+              "mvp": true
+            },
+            "low": {
+              "name": "Juan Hernández",
+              "team": "레알 베티스",
+              "side": "home",
+              "tag": "down",
+              "line": "Juan Hernández의 슈팅 3개(유효 1)가 골로 이어지지 못했습니다(평점 6.4).",
+              "facts": [
+                "평점 6.4",
+                "유효슈팅 1",
+                "기회창출 3",
+                "63분"
+              ],
+              "pos": "FW",
+              "rating": 6.4,
+              "min": 63,
+              "goals": 0,
+              "assists": 0,
+              "shots": 3,
+              "shotsOnTarget": 1,
+              "chancesCreated": 3
+            }
           }
         },
         {
@@ -37323,7 +37579,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 대전충무체육관에서 열립니다.",
               "**순위표** — 삼성화재(홈) 5승 2패·1위·승점 15, 현대캐피탈(원정) 5승 2패·3위·승점 14."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:26 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-29 00:36 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         },
         {
@@ -37629,7 +37885,7 @@ window.CLUTCH_DATA = {
               "**경기장** — 숲 스타디움에서 열립니다.",
               "**순위표** — SOOP(홈) 0승 7패·7위·승점 1, 도로공사(원정) 6승 1패·2위·승점 18."
             ],
-            "note": "일정·순위는 KOVO 공식 데이터 2026-11-28 06:26 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
+            "note": "일정·순위는 KOVO 공식 데이터 2026-11-29 00:36 기준입니다. 부상·결장·배당 정보는 이 소스에 없습니다."
           }
         }
         /* VOLLEY-AUTO 2026-11-29 END */,
